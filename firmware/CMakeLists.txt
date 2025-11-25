@@ -7,8 +7,8 @@ add_definitions(-DGIT_HASH="${COMMIT_ID}") # Usable in source code.
 #add_definitions(-DDEBUG) # Uncomment for debugging
 
 # Specify USB Manufacturer and Product descriptions.
-add_definitions(-DUSBD_MANUFACTURER="harp-tech")
-add_definitions(-DUSBD_PRODUCT="Quad-DAC")
+add_definitions(-DUSBD_MANUFACTURER="Allen Institute")
+add_definitions(-DUSBD_PRODUCT="Quad DAC")
 
 if (DEFINED PICO_SDK_PATH)
     message("Using explicitly defined PICO_SDK_PATH.")
@@ -28,7 +28,8 @@ set(CMAKE_CXX_STANDARD 17)
 project(harp_quad_dac)
 
 pico_sdk_init()
-add_subdirectory(libs/firmware build) # Path to core.pico's CMakeLists.txt
+add_subdirectory(lib/no-OS-FatFS-SD-SDIO-SPI-RPi-Pico/src lib_build/no_os_fatfs_sd_sdio_spi_rpi_pico)
+add_subdirectory(lib/core.pico/firmware lib_build/pico-core)
 
 add_executable(${PROJECT_NAME}
     src/main.cpp
