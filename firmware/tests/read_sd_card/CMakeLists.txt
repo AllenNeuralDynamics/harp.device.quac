@@ -20,12 +20,11 @@ else()
 "variable or explicitly via 'cmake -DPICO_SDK_PATH=<path to pico sdk> ..'")
 endif()
 include(${PICO_SDK_PATH}/pico_sdk_init.cmake)
+set(CMAKE_CXX_STANDARD 17)
+project(read_sd_card)
+
 pico_sdk_init()
 
-# Use modern conventions like std::invoke
-set(CMAKE_CXX_STANDARD 17)
-
-project(read_sd_card)
 
 add_compile_definitions(USE_PRINTF)
 
