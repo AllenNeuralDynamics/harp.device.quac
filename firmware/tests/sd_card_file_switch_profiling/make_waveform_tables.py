@@ -11,8 +11,8 @@ import numpy as np
 from math import ceil
 import matplotlib.pyplot as plt
 
-NUM_SAMPLES = 16#5e6
-SAMPLES_PER_SECOND = 16#500000.
+NUM_SAMPLES = int(5e6)
+SAMPLES_PER_SECOND = 500000.
 FREQ = 1
 FULL_SCALE_RANGE = (1 << 16) - 1 # 16 bit resolution
 
