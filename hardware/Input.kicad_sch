@@ -380,189 +380,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "harp.device.quad.dac:AudioJack3"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "AudioJack3"
-				(at 0 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "harp.device.quad.dac.kicad:Jack_3.5mm_CUI_SJ-3524-SMT_Horizontal"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Audio Jack, 3 Poles (Stereo / TRS)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "audio jack receptacle stereo headphones phones TRS connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Jack*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "AudioJack3_0_1"
-				(rectangle
-					(start -5.08 -5.08)
-					(end -6.35 -2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.905 -2.54) (xy -1.27 -3.175) (xy -0.635 -2.54) (xy -0.635 0) (xy 2.54 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.54) (xy 0.635 -3.175) (xy 1.27 -2.54) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 2.54 3.81)
-					(end -5.08 -5.08)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy -2.54 2.54) (xy -2.54 -2.54) (xy -3.175 -3.175) (xy -3.81 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "AudioJack3_1_1"
-				(pin passive line
-					(at 5.08 2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "R"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "T"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "harp.device.quad.dac:Barrel_Jack_Switch"
 			(pin_names
 				(hide yes)
@@ -3056,27 +2873,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "5V to 3.3V level shifter"
-		(exclude_from_sim no)
-		(at 92.71 140.97 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "0b0662de-1887-4c35-af59-903c78883507")
-	)
-	(text "connect / solder this\nif the sync signal is 3.3V"
-		(exclude_from_sim no)
-		(at 78.486 194.31 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1106ed81-18fd-4acc-a829-602332891e33")
-	)
 	(text "voltage level 3.3V"
 		(exclude_from_sim no)
 		(at 114.3 87.63 0)
@@ -3098,17 +2894,6 @@
 			(justify left)
 		)
 		(uuid "2c9a7bcd-c43a-4fe8-b038-e8d20a9b70f7")
-	)
-	(text "voltage level 3.3V"
-		(exclude_from_sim no)
-		(at 118.11 157.48 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3c9c07b2-32fe-4086-9746-1821cc028150")
 	)
 	(text "power source 1\n4.5V-5.5V"
 		(exclude_from_sim no)
@@ -3154,16 +2939,6 @@
 		)
 		(uuid "74805f18-6e97-4c7f-a3bb-a486fa2705cc")
 	)
-	(text "Tip: Signal\nRing: Power\nSleeve: Ground"
-		(exclude_from_sim no)
-		(at 30.226 168.91 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "7cceb6bd-c920-4e51-b8d3-c36bda636265")
-	)
 	(text "power source 2\n12V-30V"
 		(exclude_from_sim no)
 		(at 204.978 113.284 0)
@@ -3177,16 +2952,6 @@
 	)
 	(text "DIR=H\nA input\nB output"
 		(exclude_from_sim no)
-		(at 78.74 177.8 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "8b4778b4-1cc1-4486-8719-a477a8c722dd")
-	)
-	(text "DIR=H\nA input\nB output"
-		(exclude_from_sim no)
 		(at 74.93 49.53 0)
 		(effects
 			(font
@@ -3194,17 +2959,6 @@
 			)
 		)
 		(uuid "c52f935b-caa1-4eaa-8200-8b3d257849a1")
-	)
-	(text "Harp Clock Sync Receiver (UART1)"
-		(exclude_from_sim no)
-		(at 24.384 146.558 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d66038f0-b90e-49f2-93f3-d1a897c9aaeb")
 	)
 	(text "DIR=H\nA input\nB output"
 		(exclude_from_sim no)
@@ -3326,18 +3080,6 @@
 		(uuid "0c24bf9e-f7f7-4538-b355-42c984559a77")
 	)
 	(junction
-		(at 46.99 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "158d72ff-f241-4617-a58e-4c1a450f6b9e")
-	)
-	(junction
-		(at 40.64 148.59)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "17a7a0a6-c04f-4cb3-933c-635ae3e0399a")
-	)
-	(junction
 		(at 237.49 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3368,12 +3110,6 @@
 		(uuid "498aa035-4e2f-4e9b-8ee5-64fc6f227cf4")
 	)
 	(junction
-		(at 90.17 149.86)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4b7ece65-6c2d-4afa-bd7d-3771cebb5f3d")
-	)
-	(junction
 		(at 232.41 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3392,28 +3128,10 @@
 		(uuid "6b4e080e-817f-46cc-aa39-46b9d8cfd441")
 	)
 	(junction
-		(at 95.25 149.86)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "72ca5e35-ea51-46de-b7bc-15b6ad8e3340")
-	)
-	(junction
 		(at 86.36 21.59)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7f54e6bf-3a72-499e-a7b3-4f6bdcd90a5d")
-	)
-	(junction
-		(at 46.99 158.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "80555e1b-6117-41a7-8a41-4c13fc01b33a")
-	)
-	(junction
-		(at 40.64 158.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8b40f534-4d1d-49a8-8269-0f1151f27c50")
 	)
 	(junction
 		(at 91.44 21.59)
@@ -3440,22 +3158,10 @@
 		(uuid "a175fc04-ebe3-45f2-ba42-176c646a56da")
 	)
 	(junction
-		(at 73.66 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ab5b188e-fad8-417d-b668-dbc1c4060cd8")
-	)
-	(junction
 		(at 228.6 22.86)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bacc7ad1-c266-45f7-8b03-831d436a22a2")
-	)
-	(junction
-		(at 109.22 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bc5eacb8-42da-4fd5-a0ae-db7d5d95751e")
 	)
 	(junction
 		(at 220.98 118.11)
@@ -3474,16 +3180,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f0996c4d-da8f-4957-9a80-fb047f0c1525")
-	)
-	(junction
-		(at 46.99 148.59)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ff6edc54-b7bb-4c13-aea9-8036bc3d90d8")
-	)
-	(no_connect
-		(at 102.87 166.37)
-		(uuid "45504533-42c1-4780-b468-2cc012ea1edc")
 	)
 	(no_connect
 		(at 213.36 123.19)
@@ -3525,16 +3221,6 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 148.59) (xy 52.07 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "01589126-22a2-406a-be15-e4879f742601")
-	)
-	(wire
-		(pts
 			(xy 237.49 22.86) (xy 245.11 22.86)
 		)
 		(stroke
@@ -3552,16 +3238,6 @@
 			(type default)
 		)
 		(uuid "08460e70-da73-4d95-94c9-e678933c97cc")
-	)
-	(wire
-		(pts
-			(xy 109.22 186.69) (xy 92.71 186.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e2cc461-1840-43ab-8da4-1553f07c5c83")
 	)
 	(wire
 		(pts
@@ -3662,16 +3338,6 @@
 			(type default)
 		)
 		(uuid "1b26c2cf-ba2e-4be4-a38f-456de87f9187")
-	)
-	(wire
-		(pts
-			(xy 34.29 156.21) (xy 36.83 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1eb53cd6-4e90-49e2-b8f5-bc30eaefd7fb")
 	)
 	(wire
 		(pts
@@ -3845,16 +3511,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 186.69) (xy 73.66 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "42c15895-8644-47f0-bfd5-b00cde8807b1")
-	)
-	(wire
-		(pts
 			(xy 227.33 49.53) (xy 228.6 49.53)
 		)
 		(stroke
@@ -3885,46 +3541,6 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 161.29) (xy 46.99 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4801d470-daa5-40cd-986a-ed19c8da983a")
-	)
-	(wire
-		(pts
-			(xy 81.28 171.45) (xy 82.55 171.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4b18040c-703a-4608-a55b-7217554a9ba6")
-	)
-	(wire
-		(pts
-			(xy 102.87 161.29) (xy 109.22 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4b824ae8-610a-438c-a9e1-6138f5666b02")
-	)
-	(wire
-		(pts
-			(xy 86.36 149.86) (xy 90.17 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "509558e7-a774-4e59-8f1d-00583f848623")
-	)
-	(wire
-		(pts
 			(xy 236.22 46.99) (xy 237.49 46.99)
 		)
 		(stroke
@@ -3932,16 +3548,6 @@
 			(type default)
 		)
 		(uuid "50e63935-92fe-4acf-98d1-fb76a3986e60")
-	)
-	(wire
-		(pts
-			(xy 109.22 161.29) (xy 118.11 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5695cada-ab84-4f24-bbbf-9c69c1a01cfa")
 	)
 	(wire
 		(pts
@@ -3962,36 +3568,6 @@
 			(type default)
 		)
 		(uuid "58f42629-40b1-4789-ad46-5995c6f4f2b1")
-	)
-	(wire
-		(pts
-			(xy 46.99 157.48) (xy 46.99 158.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5bf24ef9-c329-4488-aac8-26641e975c81")
-	)
-	(wire
-		(pts
-			(xy 40.64 148.59) (xy 40.64 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5fb5a2ce-0eef-4ed6-a142-6141ee09b327")
-	)
-	(wire
-		(pts
-			(xy 73.66 161.29) (xy 82.55 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6027688a-cbc6-4af7-aa4c-20d9df4f47cb")
 	)
 	(wire
 		(pts
@@ -4025,26 +3601,6 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 156.21) (xy 36.83 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6853ca19-ed4d-4161-94e6-e1c7f773bde6")
-	)
-	(wire
-		(pts
-			(xy 46.99 158.75) (xy 52.07 158.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "69642de3-a222-4ae7-8c17-53ce6aaa207d")
-	)
-	(wire
-		(pts
 			(xy 213.36 125.73) (xy 213.36 128.27)
 		)
 		(stroke
@@ -4055,16 +3611,6 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 161.29) (xy 35.56 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6bc02cd3-2c39-49c2-a48d-4eb394e9b319")
-	)
-	(wire
-		(pts
 			(xy 212.09 81.28) (xy 212.09 80.01)
 		)
 		(stroke
@@ -4072,16 +3618,6 @@
 			(type default)
 		)
 		(uuid "6c9718a7-2aa9-44c9-98a4-5e2d2a2c9bff")
-	)
-	(wire
-		(pts
-			(xy 34.29 158.75) (xy 40.64 158.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6cbf1bec-0a9d-4072-9fd0-2e4ca8f3c18e")
 	)
 	(wire
 		(pts
@@ -4122,16 +3658,6 @@
 			(type default)
 		)
 		(uuid "79ee7b66-24f8-4e7d-bf74-e4b4a0b6269b")
-	)
-	(wire
-		(pts
-			(xy 90.17 149.86) (xy 90.17 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7aa78654-7d50-4dd0-b68e-24b8320fa62e")
 	)
 	(wire
 		(pts
@@ -4195,16 +3721,6 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 149.86) (xy 99.06 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "81c9c154-53b7-46ec-a8b8-024e7a2944b2")
-	)
-	(wire
-		(pts
 			(xy 252.73 60.96) (xy 252.73 39.37)
 		)
 		(stroke
@@ -4245,16 +3761,6 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 151.13) (xy 106.68 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8927d508-f68a-44c1-bb82-95f07bc1792b")
-	)
-	(wire
-		(pts
 			(xy 99.06 38.1) (xy 114.3 38.1)
 		)
 		(stroke
@@ -4282,16 +3788,6 @@
 			(type default)
 		)
 		(uuid "8a1ccff7-6202-4dc0-b03b-615d0a7bbb43")
-	)
-	(wire
-		(pts
-			(xy 95.25 149.86) (xy 95.25 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8c32aefb-747c-49e2-8725-e7af3a87bcc9")
 	)
 	(wire
 		(pts
@@ -4435,16 +3931,6 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 162.56) (xy 46.99 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a8dd6cb3-e65a-4275-bece-a1cf18cf674d")
-	)
-	(wire
-		(pts
 			(xy 77.47 43.18) (xy 78.74 43.18)
 		)
 		(stroke
@@ -4465,46 +3951,6 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 161.29) (xy 73.66 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ac44fe5d-b31a-4c6b-af6e-35c7a7c4d5bd")
-	)
-	(wire
-		(pts
-			(xy 95.25 147.32) (xy 95.25 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ad06da20-d3e9-4c8a-a2b3-5ab55cdc6137")
-	)
-	(wire
-		(pts
-			(xy 109.22 161.29) (xy 109.22 186.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ae52c753-d948-4f94-aee6-6dddd235cba3")
-	)
-	(wire
-		(pts
-			(xy 40.64 148.59) (xy 46.99 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b1f9a74b-2e8c-43c4-968f-76e17c8d1572")
-	)
-	(wire
-		(pts
 			(xy 88.9 48.26) (xy 88.9 49.53)
 		)
 		(stroke
@@ -4512,16 +3958,6 @@
 			(type default)
 		)
 		(uuid "b22a0257-d312-4244-a6f4-332a9442bb0d")
-	)
-	(wire
-		(pts
-			(xy 81.28 166.37) (xy 82.55 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b342e221-a6e8-4d64-be87-5f00fc69b594")
 	)
 	(wire
 		(pts
@@ -4585,36 +4021,6 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 158.75) (xy 46.99 158.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c732eabf-8cf2-44b3-ac37-3baaf84508c8")
-	)
-	(wire
-		(pts
-			(xy 40.64 157.48) (xy 40.64 158.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ca21b206-e020-4628-ae04-b4bc36ee5688")
-	)
-	(wire
-		(pts
-			(xy 36.83 148.59) (xy 40.64 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cb2156d6-a54d-405d-ba79-7d1e903e041b")
-	)
-	(wire
-		(pts
 			(xy 68.58 96.52) (xy 68.58 109.22)
 		)
 		(stroke
@@ -4645,16 +4051,6 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 176.53) (xy 92.71 177.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ce45b400-d11c-4257-be4d-d1ca08746a9a")
-	)
-	(wire
-		(pts
 			(xy 78.74 33.02) (xy 68.58 33.02)
 		)
 		(stroke
@@ -4665,16 +4061,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 186.69) (xy 73.66 186.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d27a33e0-9b48-4b27-a7d4-c6fd70ed68f1")
-	)
-	(wire
-		(pts
 			(xy 236.22 49.53) (xy 237.49 49.53)
 		)
 		(stroke
@@ -4682,16 +4068,6 @@
 			(type default)
 		)
 		(uuid "d2bd98bd-10d0-44d6-be69-f47e1a2cf396")
-	)
-	(wire
-		(pts
-			(xy 90.17 147.32) (xy 90.17 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d48c10e8-126e-426a-82e1-e72b76c3262b")
 	)
 	(wire
 		(pts
@@ -4732,16 +4108,6 @@
 			(type default)
 		)
 		(uuid "d7195608-d541-496c-b462-cdb4b5e3f9c9")
-	)
-	(wire
-		(pts
-			(xy 46.99 177.8) (xy 46.99 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d78d81f2-808e-45fa-9c6f-8c78f0d56e07")
 	)
 	(wire
 		(pts
@@ -4835,16 +4201,6 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 148.59) (xy 46.99 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e9484f7b-d44c-4e85-a526-5f47301899cb")
-	)
-	(wire
-		(pts
 			(xy 36.83 21.59) (xy 38.1 21.59)
 		)
 		(stroke
@@ -4912,16 +4268,6 @@
 			(type default)
 		)
 		(uuid "fc039975-63e7-451d-a329-8be6b1cd04f2")
-	)
-	(wire
-		(pts
-			(xy 78.74 151.13) (xy 78.74 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fdd52218-e80f-4902-b1c5-43929baa390d")
 	)
 	(wire
 		(pts
@@ -5012,28 +4358,6 @@
 		(uuid "ae679cef-2992-48c7-829a-1b71b98df52c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 127.3241 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "HARP_Clk_Sync_In"
-		(shape input)
-		(at 118.11 161.29 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b19c753e-d171-4f67-b15a-b961f59a6457")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 138.0889 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5176,77 +4500,6 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
 					(reference "U?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 106.68 151.13 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0458fa58-0a29-4e8f-9ef8-d43f2cf339b8")
-		(property "Reference" "#PWR0204"
-			(at 106.68 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 106.68 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 106.68 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 106.68 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 106.68 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d5275751-6a96-464e-a291-de0c2ec010a2")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0204")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "#PWR?")
 					(unit 1)
 				)
 			)
@@ -5413,171 +4666,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
 					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:C_0603")
-		(at 40.64 153.67 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0af04de3-6518-4ade-843e-278bb95ca456")
-		(property "Reference" "C98"
-			(at 41.148 151.384 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1uF"
-			(at 41.148 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 41.6052 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 40.64 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Ceramic Capacitor, Multilayer, Ceramic, 50V, 10% +Tol, 10% -Tol, X7R, 15% TC, 1uF, Surface Mount, 0603"
-			(at 40.64 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Notes" "must not be polarized"
-			(at 40.64 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/tdk-corporation/C1608X7R1H105K080AB/25982687"
-			(at 40.64 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" ""
-			(at 40.64 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "TDK"
-			(at 40.64 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rated Voltage" "50V"
-			(at 40.64 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Temperature Coefficient" ""
-			(at 40.64 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PCBWay Link" ""
-			(at 40.64 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 40.64 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "C1608X7R1H105K080AB"
-			(at 40.64 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "TDK"
-			(at 40.64 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6f94f0b0-e2fa-4d4c-86b0-ad1056568aef")
-		)
-		(pin "2"
-			(uuid "f14cfbd0-558c-4f95-8ae2-6bab514ea641")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "C98")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "C?")
 					(unit 1)
 				)
 			)
@@ -6543,77 +5631,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 92.71 177.8 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2fe0b052-8b1b-4d25-ac64-eb26d101c9b3")
-		(property "Reference" "#PWR0200"
-			(at 92.71 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 92.71 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 92.71 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 92.71 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 92.71 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "83fb6d92-8eea-4b40-a9f4-c2053172229b")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0200")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
 		(at 220.98 123.19 180)
 		(unit 1)
@@ -6983,77 +6000,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 95.25 147.32 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3caf15dd-c75d-4c76-8499-ae9717f2e543")
-		(property "Reference" "#PWR0201"
-			(at 95.25 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 95.25 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 95.25 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 95.25 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 95.25 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bad7f442-0edd-4d50-8af1-dabdae415713")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0201")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
 		(at 243.84 123.19 0)
 		(unit 1)
@@ -7202,162 +6148,6 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:C_0603")
-		(at 102.87 149.86 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3eff0a45-956e-4d9e-a69f-55239759817b")
-		(property "Reference" "C105"
-			(at 101.346 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "100nF"
-			(at 104.648 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 99.06 150.8252 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 102.87 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 102.87 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 102.87 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "KEMET"
-			(at 102.87 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" ""
-			(at 102.87 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rated Voltage" "50V"
-			(at 102.87 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Temperature Coefficient" ""
-			(at 102.87 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 102.87 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 102.87 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 102.87 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "KEMET"
-			(at 102.87 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7421dc43-f3f0-4834-8f10-2868d9fa6a69")
-		)
-		(pin "2"
-			(uuid "144e05ea-841d-40c9-a818-8f20667345e1")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "C105")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "C?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 262.89 60.96 0)
 		(unit 1)
@@ -7417,77 +6207,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
 					(reference "#PWR0215")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 52.07 158.75 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "435cc23b-6edc-408a-a550-f388497ac3cb")
-		(property "Reference" "#PWR0185"
-			(at 48.26 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 57.785 158.75 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 52.07 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 52.07 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 52.07 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1d2d382e-3b41-437f-a1f2-1bfaac05a958")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0185")
 					(unit 1)
 				)
 			)
@@ -7677,144 +6396,6 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
 					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:74LVCH2T45DC")
-		(at 92.71 163.83 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "476288fb-68ac-4674-9e67-bc3a00606e5b")
-		(property "Reference" "U25"
-			(at 94.234 175.514 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "74LVCH2T45DC"
-			(at 93.98 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:VSSOP-8_2.3x2mm_P0.5mm"
-			(at 92.71 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74LVC_LVCH2T45.pdf"
-			(at 99.06 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual supply translating transceiver with bus-hold for unused/floating inputs, 3-state, 2-bit, VSSOP-8"
-			(at 92.71 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/74LVCH2T45DC-125/2530613"
-			(at 92.71 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Nexperia"
-			(at 92.71 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "74LVCH2T45DC,125"
-			(at 92.71 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Nexperia"
-			(at 92.71 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "74LVCH2T45DC,125"
-			(at 92.71 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8e765b95-89d1-4c92-a372-bf8e4d3e0e69")
-		)
-		(pin "2"
-			(uuid "77a9eabf-2141-4efd-aae8-5eae72e0374e")
-		)
-		(pin "3"
-			(uuid "9cfb5df5-ec74-4451-af89-571a44b447de")
-		)
-		(pin "4"
-			(uuid "99c0f65d-f886-4996-a0c4-eb219c6acc12")
-		)
-		(pin "5"
-			(uuid "7f9ef6cb-923f-42fd-b54d-08b4e8919a1e")
-		)
-		(pin "6"
-			(uuid "4a138c24-40df-4e36-a5c2-992a1e9d210b")
-		)
-		(pin "7"
-			(uuid "627b8bb3-d7d5-4fb3-b5ee-4fad8747a3cd")
-		)
-		(pin "8"
-			(uuid "e625166c-5423-4062-bb63-7dd974b1eaa7")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "U25")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "U?")
 					(unit 1)
 				)
 			)
@@ -8459,136 +7040,6 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:R_0603")
-		(at 88.9 186.69 90)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(uuid "5990afca-5aee-4c60-b796-c19317768799")
-		(property "Reference" "R102"
-			(at 89.154 188.976 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0"
-			(at 88.9 186.69 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 88.9 188.468 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 88.9 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 88.9 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" ""
-			(at 88.9 186.69 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0603JR-070RL/726675"
-			(at 88.9 186.69 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 88.9 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "RT0402BRD071KL"
-			(at 88.9 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PCBWay Link" ""
-			(at 88.9 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Yageo"
-			(at 88.9 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "RC0603JR-070RL"
-			(at 88.9 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5dac65a3-6239-4301-9a77-927db20a05b8")
-		)
-		(pin "2"
-			(uuid "47f3d71a-e5b6-467f-9483-710c6fff73f6")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "R102")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 31.75 96.52 0)
 		(unit 1)
@@ -9118,214 +7569,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 46.99 179.07 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "68f66c9b-0481-4380-bac8-9bbf82137c3e")
-		(property "Reference" "#PWR0183"
-			(at 46.99 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 45.085 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 46.99 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 46.99 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 46.99 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "dd4f2149-f5c7-406d-99e6-57d9cf10cc11")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0183")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:R_0603")
-		(at 39.37 161.29 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "69cf358a-becf-40fe-bbd8-166dcc8e5cf1")
-		(property "Reference" "R97"
-			(at 39.37 163.576 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 39.37 161.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 39.37 163.068 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 39.37 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Res Thick Film 0603 100 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD T/R Automotive AEC-Q200"
-			(at 39.37 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "1%"
-			(at 39.37 161.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/yageo/AC0603FR-13100RL/12756385"
-			(at 39.37 161.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 39.37 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "RT0402BRD071KL"
-			(at 39.37 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PCBWay Link" ""
-			(at 39.37 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Yageo"
-			(at 39.37 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "AC0603FR-13100RL"
-			(at 39.37 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4fe46464-5180-4189-8c3d-91e821db0d0e")
-		)
-		(pin "2"
-			(uuid "c91bc799-4f09-4f98-8d0a-ed65ddb9dae6")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "R97")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "R?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:ESD441DPLR")
 		(at 262.89 27.94 270)
 		(unit 1)
@@ -9496,77 +7739,6 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
 					(reference "TVS?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 81.28 171.45 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "79ea79c0-2094-493f-a094-baab434da5de")
-		(property "Reference" "#PWR0192"
-			(at 85.09 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 76.454 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 81.28 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 81.28 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 81.28 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d2f146fd-c66b-4d25-bf45-0adc4fe0b0e3")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0192")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "#PWR?")
 					(unit 1)
 				)
 			)
@@ -10027,182 +8199,6 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:ESD441DPLR")
-		(at 46.99 162.56 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8d6bed48-61ec-44f6-811b-0532346bdc7e")
-		(property "Reference" "TVS10"
-			(at 50.8 168.4019 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "ESD441DPLR"
-			(at 50.8 170.9419 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:ESD441DPLR"
-			(at 50.8 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/esd441.pdf?ts=1730589139389&ref_url=https%253A%252F%252Fapp.ultralibrarian.com%252F"
-			(at 48.26 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "ESD Suppressors / TVS Diodes 1-pF, 5.5-V, 30-KV ESD protection device in 0201 package 2-X2SON -40 to 125"
-			(at 46.99 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "ESD Suppressors / TVS Diodes 1-pF, 5.5-V, 30-KV ESD protection device in 0201 package 2-X2SON -40 to 125"
-			(at 45.72 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Height" "0.32"
-			(at 43.18 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Texas Instruments"
-			(at 40.64 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "ESD441DPLR"
-			(at 38.1 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "595-ESD441DPLR"
-			(at 35.56 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ESD441DPLR?qs=1Kr7Jg1SGW9UQFJqGMkN7Q%3D%3D"
-			(at 33.02 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "ESD441DPLR"
-			(at 30.48 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/esd441dplr/texas-instruments?utm_currency=USD&region=nac"
-			(at 27.94 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Texas Instruments"
-			(at 46.99 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/ESD441DPLR/21298753"
-			(at 46.99 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ee35cc4e-090d-48b8-a50c-d683215e7715")
-		)
-		(pin "1"
-			(uuid "9df269f8-2d55-444d-ad5d-87c89b4181a3")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "TVS10")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "TVS?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:74LVCH2T45DC")
 		(at 88.9 93.98 0)
 		(unit 1)
@@ -10400,77 +8396,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
 					(reference "#PWR0195")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 90.17 147.32 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8f2d3f14-bac9-4b24-9060-57fa1a636293")
-		(property "Reference" "#PWR0197"
-			(at 90.17 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 89.662 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 90.17 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.17 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 90.17 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "140e6026-2e05-405a-bac8-d737624a6797")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0197")
 					(unit 1)
 				)
 			)
@@ -11204,127 +9129,6 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:AudioJack3")
-		(at 29.21 158.75 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b534fe2a-2d68-48b9-bf2e-06b9a785fde9")
-		(property "Reference" "J4"
-			(at 27.686 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "AudioJack3"
-			(at 27.94 153.924 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:Jack_3.5mm_CUI_SJ-3524-SMT_Horizontal"
-			(at 29.21 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 29.21 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Audio Jack, 3 Poles (Stereo / TRS)"
-			(at 29.21 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/cui-devices/SJ-3524-SMT-TR-BE/2295987"
-			(at 29.21 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "SJ-3524-SMT-TR-BE"
-			(at 29.21 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Same Sky (Formerly CUI Devices)"
-			(at 29.21 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "SJ-3524-SMT-TR-BE"
-			(at 29.21 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Same Sky (Formerly CUI Devices)"
-			(at 29.21 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "R"
-			(uuid "9adc1504-eaa7-4245-a8c5-2a00c0171634")
-		)
-		(pin "S"
-			(uuid "43e3d1eb-d6e0-4650-acf3-c473a1f0ac72")
-		)
-		(pin "T"
-			(uuid "ac1d175f-3e98-44a4-818c-e24085183299")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "J?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:R_0603")
 		(at 232.41 46.99 90)
 		(unit 1)
@@ -11976,78 +9780,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 81.28 166.37 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ca053854-a184-4d1b-bed5-fb4776ec52cf")
-		(property "Reference" "#PWR0191"
-			(at 74.93 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 78.486 166.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 81.28 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 81.28 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 81.28 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3eb4052c-597c-44a0-ae02-a78c5b5123d3")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0191")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 102.87 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12529,162 +10261,6 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:C_0603")
-		(at 46.99 153.67 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ce2230aa-841a-4017-b92b-75e985dced6e")
-		(property "Reference" "C99"
-			(at 47.498 151.384 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "100nF"
-			(at 47.498 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 46.0248 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 46.99 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 46.99 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 46.99 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "KEMET"
-			(at 46.99 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" ""
-			(at 46.99 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rated Voltage" "50V"
-			(at 46.99 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Temperature Coefficient" ""
-			(at 46.99 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 46.99 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 46.99 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 46.99 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "KEMET"
-			(at 46.99 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fd3cef41-f174-48d3-85f2-aa3af9357b38")
-		)
-		(pin "2"
-			(uuid "54aab01f-f03c-401c-8aff-a048710a6fad")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "C99")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "C?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
 		(at 118.11 53.34 0)
 		(unit 1)
@@ -12921,77 +10497,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 78.74 151.13 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "df1d6c4e-c5fa-4841-b383-2b8195a2ca1c")
-		(property "Reference" "#PWR0190"
-			(at 78.74 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 78.74 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 78.74 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 78.74 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 78.74 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9ce9b1fd-ce64-4e98-9662-4d89b29796d8")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0190")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:ESD441DPLR")
 		(at 46.99 22.86 270)
 		(unit 1)
@@ -13162,162 +10667,6 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
 					(reference "TVS?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:C_0603")
-		(at 82.55 149.86 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e6588f14-fc86-4413-b3cd-fbdb81e21cfb")
-		(property "Reference" "C102"
-			(at 84.074 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nF"
-			(at 81.026 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 78.74 150.8252 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 82.55 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 82.55 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 82.55 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "KEMET"
-			(at 82.55 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" ""
-			(at 82.55 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rated Voltage" "50V"
-			(at 82.55 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Temperature Coefficient" ""
-			(at 82.55 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 82.55 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 82.55 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 82.55 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "KEMET"
-			(at 82.55 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9e082126-f67d-402f-b1b4-639c3a8e1b0e")
-		)
-		(pin "2"
-			(uuid "08329703-fc77-4953-9bf0-c0845c579f53")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "C102")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "C?")
 					(unit 1)
 				)
 			)
@@ -13844,78 +11193,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
 					(reference "#PWR0208")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 52.07 148.59 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f779b665-647a-453f-b945-55d374c96f18")
-		(property "Reference" "#PWR0184"
-			(at 58.42 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 54.864 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 52.07 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 52.07 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 52.07 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "00117850-0144-4dcf-885a-99132bc5b0f7")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0184")
 					(unit 1)
 				)
 			)

@@ -577,338 +577,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "harp.device.quad.dac:CDDFN10-3324P"
-			(pin_names
-				(offset 0.762)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 31.75 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "CDDFN10-3324P"
-				(at 31.75 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "CDDFN103324P"
-				(at 31.75 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CDDFN10-3324P.pdf"
-				(at 31.75 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "BOURNS - CDDFN10-3324P - DIODE, ESD PROTECTION, 3.3V, 0.45PF"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "BOURNS - CDDFN10-3324P - DIODE, ESD PROTECTION, 3.3V, 0.45PF"
-				(at 31.75 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Height" ""
-				(at 31.75 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Name" "Bourns"
-				(at 31.75 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "CDDFN10-3324P"
-				(at 31.75 -10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "652-CDDFN10-3324P"
-				(at 31.75 -12.7 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Bourns/CDDFN10-3324P?qs=3CaSHoNeR5u5NeuGJGyaBA%3D%3D"
-				(at 31.75 -15.24 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" "CDDFN10-3324P"
-				(at 31.75 -17.78 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/cddfn10-3324p/bourns?region=europe"
-				(at 31.75 -20.32 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(symbol "CDDFN10-3324P_0_0"
-				(pin passive line
-					(at 0 0 0)
-					(length 5.08)
-					(name "IN/OUT_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 0)
-					(length 5.08)
-					(name "IN/OUT_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -5.08 0)
-					(length 5.08)
-					(name "GND_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -7.62 0)
-					(length 5.08)
-					(name "IN/OUT_3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -10.16 0)
-					(length 5.08)
-					(name "IN/OUT_4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 35.56 0 180)
-					(length 5.08)
-					(name "NC_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 35.56 -2.54 180)
-					(length 5.08)
-					(name "NC_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 35.56 -5.08 180)
-					(length 5.08)
-					(name "GND_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 35.56 -7.62 180)
-					(length 5.08)
-					(name "NC_3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 35.56 -10.16 180)
-					(length 5.08)
-					(name "NC_4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "CDDFN10-3324P_0_1"
-				(polyline
-					(pts
-						(xy 5.08 2.54) (xy 30.48 2.54) (xy 30.48 -12.7) (xy 5.08 -12.7) (xy 5.08 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "harp.device.quad.dac:C_0603"
 			(pin_numbers
 				(hide yes)
@@ -1234,243 +902,6 @@
 						)
 					)
 					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "harp.device.quad.dac:Conn_01x04_Pin"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x04_Pin"
-				(at 0 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x04, script generated"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_01x04_Pin_1_1"
-				(rectangle
-					(start 0.8636 2.667)
-					(end 0 2.413)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 -4.953)
-					(end 0 -5.207)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 2.54) (xy 0.8636 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy 0.8636 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -2.54) (xy 0.8636 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -5.08) (xy 0.8636 -5.08)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at 5.08 2.54 180)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -2.54 180)
-					(length 3.81)
-					(name "Pin_3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -5.08 180)
-					(length 3.81)
-					(name "Pin_4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3793,17 +3224,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "3.3V TVS"
-		(exclude_from_sim no)
-		(at 71.12 35.56 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0623d97b-29b2-4e58-8bad-22b19efe3e48")
-	)
 	(text "USB PC\nconnect\nindicator"
 		(exclude_from_sim no)
 		(at 137.16 86.36 0)
@@ -3963,12 +3383,6 @@
 		(uuid "af276894-9338-4b56-a742-a50a3b164c59")
 	)
 	(junction
-		(at 45.72 29.21)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "00565559-eb64-4e87-9a30-12589e193173")
-	)
-	(junction
 		(at 40.64 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4003,12 +3417,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2a463aba-1fc4-4865-9326-7c853ca473a2")
-	)
-	(junction
-		(at 48.26 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3ab4fb1a-a40e-4fcd-ae60-fb24ed21d8ff")
 	)
 	(junction
 		(at 199.39 58.42)
@@ -4149,18 +3557,6 @@
 		(uuid "dd787d39-e27e-4fc9-bcb3-d9e40a9a838d")
 	)
 	(junction
-		(at 40.64 43.18)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e28b6f2e-9f85-4474-9bc1-09fb48ebfdb6")
-	)
-	(junction
-		(at 43.18 26.67)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e3d97001-a999-4540-8cdd-b37317244f98")
-	)
-	(junction
 		(at 175.26 90.17)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4173,28 +3569,8 @@
 		(uuid "fee073ee-bae8-4f1d-89a9-a07b9b2db640")
 	)
 	(no_connect
-		(at 83.82 40.64)
-		(uuid "7bd06a9d-9327-450c-86c5-accbd1076c50")
-	)
-	(no_connect
-		(at 83.82 38.1)
-		(uuid "882aa6ec-9c13-4bc8-adf3-b386407fcbc4")
-	)
-	(no_connect
 		(at 171.45 102.87)
 		(uuid "e14c8689-0a5c-4086-bce7-837cb3e3be4f")
-	)
-	(no_connect
-		(at 83.82 45.72)
-		(uuid "e3d517f2-1bb7-4462-8118-64882b509892")
-	)
-	(no_connect
-		(at 83.82 48.26)
-		(uuid "edb774d9-bb28-432e-8210-77b836301cca")
-	)
-	(no_connect
-		(at 48.26 48.26)
-		(uuid "f088dcc5-ca32-43de-8782-409198e33720")
 	)
 	(no_connect
 		(at 171.45 100.33)
@@ -4352,16 +3728,6 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 34.29) (xy 40.64 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "293bb3b5-b92e-44f5-9307-35d9a31e1bac")
-	)
-	(wire
-		(pts
 			(xy 69.85 124.46) (xy 82.55 124.46)
 		)
 		(stroke
@@ -4369,16 +3735,6 @@
 			(type default)
 		)
 		(uuid "2b0020d4-2952-4cfa-b51c-a0a176841d4b")
-	)
-	(wire
-		(pts
-			(xy 40.64 29.21) (xy 45.72 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2b4dff90-c941-4b67-b761-51ad8bae4902")
 	)
 	(wire
 		(pts
@@ -4662,16 +4018,6 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 31.75) (xy 80.01 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6089c010-5600-407c-bc50-bd1b76743bac")
-	)
-	(wire
-		(pts
 			(xy 171.45 80.01) (xy 172.72 80.01)
 		)
 		(stroke
@@ -4742,16 +4088,6 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 45.72) (xy 43.18 26.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6a085213-79ac-4997-beb5-69a2aa39fc6d")
-	)
-	(wire
-		(pts
 			(xy 41.91 88.9) (xy 41.91 73.66)
 		)
 		(stroke
@@ -4819,16 +4155,6 @@
 			(type default)
 		)
 		(uuid "74b8acc0-d6ff-41d7-a903-aa42513e42bd")
-	)
-	(wire
-		(pts
-			(xy 45.72 40.64) (xy 45.72 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7801d41a-0d4a-4a9a-8464-49e2385ac1fb")
 	)
 	(wire
 		(pts
@@ -4909,16 +4235,6 @@
 			(type default)
 		)
 		(uuid "8400fc85-70c1-455f-ad9a-6dd1fdbca279")
-	)
-	(wire
-		(pts
-			(xy 48.26 31.75) (xy 48.26 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "85aa7635-d5a0-49c4-aca1-77e05fcd8b8d")
 	)
 	(wire
 		(pts
@@ -5022,16 +4338,6 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 43.18) (xy 48.26 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9ce8410d-13db-4b42-8c0b-57f72c97e77d")
-	)
-	(wire
-		(pts
 			(xy 172.72 87.63) (xy 171.45 87.63)
 		)
 		(stroke
@@ -5112,16 +4418,6 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 45.72) (xy 43.18 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "af9aa0a5-95d7-4986-be3d-a1b6055ac285")
-	)
-	(wire
-		(pts
 			(xy 82.55 128.27) (xy 71.12 128.27)
 		)
 		(stroke
@@ -5169,16 +4465,6 @@
 			(type default)
 		)
 		(uuid "b3248c37-371a-486f-bd23-aa6217488d15")
-	)
-	(wire
-		(pts
-			(xy 40.64 26.67) (xy 43.18 26.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b3274116-5157-4e94-bc96-4dbb4fd06a2d")
 	)
 	(wire
 		(pts
@@ -5312,16 +4598,6 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 43.18) (xy 85.09 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d0f6ef89-e333-4fc0-aa19-0bc53305a75a")
-	)
-	(wire
-		(pts
 			(xy 199.39 58.42) (xy 189.23 58.42)
 		)
 		(stroke
@@ -5349,16 +4625,6 @@
 			(type default)
 		)
 		(uuid "d9449ae9-445d-4657-9c6e-f6ef7ffb50da")
-	)
-	(wire
-		(pts
-			(xy 48.26 40.64) (xy 45.72 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "da9a26ce-74cf-4730-b543-89d373b35342")
 	)
 	(wire
 		(pts
@@ -5422,16 +4688,6 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 29.21) (xy 80.01 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e34a707c-67fc-4f36-94b7-86217fc648f5")
-	)
-	(wire
-		(pts
 			(xy 257.81 87.63) (xy 262.89 87.63)
 		)
 		(stroke
@@ -5492,16 +4748,6 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 43.18) (xy 40.64 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ea077363-cc4c-438c-80ea-49cb1075c103")
-	)
-	(wire
-		(pts
 			(xy 219.71 90.17) (xy 219.71 77.47)
 		)
 		(stroke
@@ -5509,16 +4755,6 @@
 			(type default)
 		)
 		(uuid "eb9b2b51-f9b6-4f7c-b76c-33d8bd0f4f0c")
-	)
-	(wire
-		(pts
-			(xy 40.64 31.75) (xy 48.26 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ec537eaa-e06c-4bd7-b076-7f6add36a800")
 	)
 	(wire
 		(pts
@@ -5569,16 +4805,6 @@
 			(type default)
 		)
 		(uuid "f6cef228-e4bb-4ed6-9729-20bf7885db5d")
-	)
-	(wire
-		(pts
-			(xy 43.18 26.67) (xy 80.01 26.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f99c1a52-f634-4b45-b14a-90b45ad5b69b")
 	)
 	(wire
 		(pts
@@ -5670,28 +4896,6 @@
 		)
 		(uuid "e3bc6727-aa8b-4679-afc5-6ae13e612ecf")
 	)
-	(global_label "SWDIO"
-		(shape input)
-		(at 80.01 29.21 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "1a1d00a0-2ac5-42d5-896b-33ae4587fd36")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 88.8614 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "MC_UART0_RXD"
 		(shape input)
 		(at 36.83 124.46 180)
@@ -5710,28 +4914,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "Run_Reset"
-		(shape input)
-		(at 80.01 26.67 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "451cdd17-f851-49cc-8234-edecae82e90c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 92.7318 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -5798,28 +4980,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "SWCLK"
-		(shape input)
-		(at 80.01 31.75 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d6cd14ef-29c9-4a4c-b6e9-728c9b94909d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 89.2242 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -6257,123 +5417,6 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/e39fc2ef-50b8-4bcb-bb27-38e85fa8106c"
 					(reference "TVS?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:Conn_01x04_Pin")
-		(at 35.56 29.21 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "17f96e42-773f-4b82-98fe-807da0cf38dd")
-		(property "Reference" "J18"
-			(at 35.56 22.098 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_01x04_Pin"
-			(at 35.306 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
-			(at 35.56 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 35.56 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "HDR 1X4 TH 100MIL SP  336H AU 100L"
-			(at 35.56 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "n/a"
-			(at 35.56 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "n/a"
-			(at 35.56 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "TSW-104-07-G-S"
-			(at 35.56 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "SAMTEC"
-			(at 35.56 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "c0f7f227-3912-49de-b028-f5c6d86c90fe")
-		)
-		(pin "1"
-			(uuid "0d6ee962-3cfe-433a-8846-a28e5e6880f4")
-		)
-		(pin "4"
-			(uuid "0fdeaf11-eba0-4670-892b-46ae63962dea")
-		)
-		(pin "3"
-			(uuid "608bf906-7bf3-413a-ae65-716ac000ed93")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/08506a40-9943-41e4-b528-13f6a4c7e855"
-					(reference "J18")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/e39fc2ef-50b8-4bcb-bb27-38e85fa8106c"
-					(reference "J?")
 					(unit 1)
 				)
 			)
@@ -9445,77 +8488,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 85.09 43.18 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "95e3733d-abe9-4e26-8752-fe2c85f8e71c")
-		(property "Reference" "#PWR0163"
-			(at 91.44 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 89.916 43.18 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 85.09 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 85.09 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 85.09 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7e0a803e-69c2-4002-a8a8-1b681687db64")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/08506a40-9943-41e4-b528-13f6a4c7e855"
-					(reference "#PWR0163")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/e39fc2ef-50b8-4bcb-bb27-38e85fa8106c"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 41.91 88.9 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11075,77 +10047,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 40.64 46.99 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f42af8fb-f37b-40b3-a63d-78deaf883549")
-		(property "Reference" "#PWR0154"
-			(at 40.64 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 40.64 51.054 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 40.64 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 40.64 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 40.64 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9961e6bb-e0a0-419c-9cd0-6407fa5d7f56")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/08506a40-9943-41e4-b528-13f6a4c7e855"
-					(reference "#PWR0154")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/e39fc2ef-50b8-4bcb-bb27-38e85fa8106c"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
 		(at 69.85 107.95 270)
 		(unit 1)
@@ -11367,203 +10268,6 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/e39fc2ef-50b8-4bcb-bb27-38e85fa8106c"
 					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:CDDFN10-3324P")
-		(at 48.26 38.1 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "fdc99352-09b6-42eb-bad4-ed75b33336fa")
-		(property "Reference" "TVS2"
-			(at 66.04 34.544 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "CDDFN10-3324P"
-			(at 65.278 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:CDDFN103324P"
-			(at 80.01 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CDDFN10-3324P.pdf"
-			(at 80.01 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "BOURNS - CDDFN10-3324P - DIODE, ESD PROTECTION, 3.3V, 0.45PF"
-			(at 48.26 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "BOURNS - CDDFN10-3324P - DIODE, ESD PROTECTION, 3.3V, 0.45PF"
-			(at 80.01 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 80.01 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Bourns"
-			(at 80.01 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CDDFN10-3324P"
-			(at 80.01 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "652-CDDFN10-3324P"
-			(at 80.01 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Bourns/CDDFN10-3324P?qs=3CaSHoNeR5u5NeuGJGyaBA%3D%3D"
-			(at 80.01 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "CDDFN10-3324P"
-			(at 80.01 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/cddfn10-3324p/bourns?region=europe"
-			(at 80.01 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Bourns"
-			(at 48.26 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/bourns-inc/CDDFN10-3324P/5019648"
-			(at 48.26 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ff4eff77-c1df-4c93-8be5-e43071c1bd83")
-		)
-		(pin "6"
-			(uuid "ac5abd8c-aa1d-4cf1-b9b4-074cf3ef7a3c")
-		)
-		(pin "8"
-			(uuid "b0319324-dee4-422b-87d5-ced6bc4dbbf6")
-		)
-		(pin "7"
-			(uuid "46647f9a-6f31-4038-a61b-55adabd82780")
-		)
-		(pin "5"
-			(uuid "eddb0be6-d200-4ecb-9fdf-b9e5ced34815")
-		)
-		(pin "4"
-			(uuid "e0b874f1-faf8-4895-8776-0fbec2074f49")
-		)
-		(pin "3"
-			(uuid "8d77cc5c-5a5a-4332-a977-590fefb3c241")
-		)
-		(pin "9"
-			(uuid "eb99e3bc-7362-45d6-96aa-7905b5ef3d35")
-		)
-		(pin "10"
-			(uuid "ae3c4917-3ac7-449a-957e-c7578bbcea27")
-		)
-		(pin "2"
-			(uuid "1e6f8f8a-7575-46f0-a7fc-fa8a8502927b")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/08506a40-9943-41e4-b528-13f6a4c7e855"
-					(reference "TVS2")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/e39fc2ef-50b8-4bcb-bb27-38e85fa8106c"
-					(reference "TVS?")
 					(unit 1)
 				)
 			)

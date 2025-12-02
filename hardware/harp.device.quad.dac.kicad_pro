@@ -462,6 +462,7 @@
       "single_global_label": "ignore",
       "unannotated": "error",
       "unconnected_wire_endpoint": "warning",
+      "undefined_netclass": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
@@ -1502,7 +1503,7 @@
           "group_by": false,
           "label": "Value",
           "name": "Value",
-          "show": false
+          "show": true
         },
         {
           "group_by": true,
@@ -1598,7 +1599,7 @@
           "group_by": false,
           "label": "Manufacturer Number",
           "name": "Manufacturer Number",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -1703,7 +1704,7 @@
     ],
     [
       "5973743b-c3fc-4963-acef-26c8fa426708",
-      "Core_RP2350"
+      "RP2350 Core"
     ],
     [
       "50574cb8-ffd5-42a3-a56c-0f0945fbd245",
@@ -1711,7 +1712,7 @@
     ],
     [
       "1945aa77-a929-44fd-b3b6-12787633d2f2",
-      "SC_Detection"
+      "Short Circuit Detection"
     ],
     [
       "08506a40-9943-41e4-b528-13f6a4c7e855",
@@ -1723,15 +1724,11 @@
     ],
     [
       "df92df4e-37ce-471e-93c1-358fcc45baf3",
-      "Power_Supply"
+      "Power Supplies"
     ],
     [
       "1783abfe-3faf-469b-a509-8e70c13c0682",
       "Output"
-    ],
-    [
-      "0ccdaeff-cab2-4ff1-b218-5d9a4a178a6f",
-      "Block_Diagram"
     ]
   ],
   "text_variables": {}
