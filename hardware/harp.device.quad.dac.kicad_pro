@@ -107,6 +107,7 @@
         "solder_mask_bridge": "warning",
         "starved_thermal": "error",
         "text_height": "warning",
+        "text_on_edge_cuts": "error",
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
@@ -1713,10 +1714,6 @@
     [
       "1945aa77-a929-44fd-b3b6-12787633d2f2",
       "Short Circuit Detection"
-    ],
-    [
-      "08506a40-9943-41e4-b528-13f6a4c7e855",
-      "Communication"
     ],
     [
       "8b495cef-3a6a-4801-9796-978978016448",

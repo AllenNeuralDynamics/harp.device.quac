@@ -689,230 +689,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "harp.device.quad.dac:ESD441DPLR"
-			(pin_names
-				(offset 0.762)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 10.16 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" "ESD441DPLR"
-				(at 10.16 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "harp.device.quad.dac.kicad:ESD441DPLR"
-				(at 10.16 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/esd441.pdf?ts=1730589139389&ref_url=https%253A%252F%252Fapp.ultralibrarian.com%252F"
-				(at 10.16 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Description" "ESD Suppressors / TVS Diodes 1-pF, 5.5-V, 30-KV ESD protection device in 0201 package 2-X2SON -40 to 125"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "ESD Suppressors / TVS Diodes 1-pF, 5.5-V, 30-KV ESD protection device in 0201 package 2-X2SON -40 to 125"
-				(at 10.16 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Height" "0.32"
-				(at 10.16 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Name" "Texas Instruments"
-				(at 10.16 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "ESD441DPLR"
-				(at 10.16 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "595-ESD441DPLR"
-				(at 10.16 -11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ESD441DPLR?qs=1Kr7Jg1SGW9UQFJqGMkN7Q%3D%3D"
-				(at 10.16 -13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" "ESD441DPLR"
-				(at 10.16 -16.51 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/esd441dplr/texas-instruments?utm_currency=USD&region=nac"
-				(at 10.16 -19.05 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(symbol "ESD441DPLR_0_0"
-				(pin passive line
-					(at 0 0 0)
-					(length 5.08)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 15.24 0 180)
-					(length 5.08)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "ESD441DPLR_0_1"
-				(polyline
-					(pts
-						(xy 4.064 2.54) (xy 5.08 2.032)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 0) (xy 10.16 2.54) (xy 10.16 -2.54) (xy 5.08 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 -2.032) (xy 5.08 2.032)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 -2.032) (xy 6.096 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "harp.device.quad.dac:PESD12VL1BSLAZ"
 			(pin_names
 				(hide yes)
@@ -1292,6 +1068,144 @@
 					(at 0 -3.81 90)
 					(length 1.27)
 					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "kicad_component_library:VBUS05N1-HD1-G3-08"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "VBUS05N1-HD1-G3-08"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_SMD:D_SOD-882"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.vishay.com/docs/86201/vbus05n1-hd1.pdf"
+				(at -1.016 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
+				(at -0.508 5.842 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode TVS voltage suppressor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "D*SMF*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "VBUS05N1-HD1-G3-08_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VBUS05N1-HD1-G3-08_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1714,7 +1628,7 @@
 	)
 	(text "Digital Out\nTTL 5V"
 		(exclude_from_sim no)
-		(at 142.24 101.6 0)
+		(at 142.24 115.57 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1786,7 +1700,7 @@
 	)
 	(text "Digital Out\nTTL 5V"
 		(exclude_from_sim no)
-		(at 142.24 35.56 0)
+		(at 143.51 48.26 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1847,7 +1761,7 @@
 		(uuid "a044e7d0-8cbc-4115-9a4d-31b12bc99e54")
 	)
 	(junction
-		(at 110.49 29.21)
+		(at 111.76 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "231e3d32-a913-490b-9c5d-fbeb63f4c575")
@@ -1889,7 +1803,7 @@
 		(uuid "84335b9a-8607-453c-bbac-c366739070e6")
 	)
 	(junction
-		(at 110.49 95.25)
+		(at 110.49 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8518adcb-4138-4828-b23c-ab174c3f08b5")
@@ -2040,7 +1954,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 148.59) (xy 110.49 142.24)
+			(xy 110.49 135.89) (xy 110.49 134.62)
 		)
 		(stroke
 			(width 0)
@@ -2080,7 +1994,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 130.81) (xy 132.08 148.59)
+			(xy 132.08 130.81) (xy 132.08 132.08)
 		)
 		(stroke
 			(width 0)
@@ -2090,7 +2004,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 130.81) (xy 205.74 148.59)
+			(xy 205.74 130.81) (xy 205.74 132.08)
 		)
 		(stroke
 			(width 0)
@@ -2100,17 +2014,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 118.11) (xy 110.49 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35fe8712-9d6b-4886-a88d-16a5b63797ee")
-	)
-	(wire
-		(pts
-			(xy 110.49 95.25) (xy 127 95.25)
+			(xy 110.49 109.22) (xy 127 109.22)
 		)
 		(stroke
 			(width 0)
@@ -2140,7 +2044,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 35.56) (xy 205.74 53.34)
+			(xy 205.74 35.56) (xy 205.74 36.83)
 		)
 		(stroke
 			(width 0)
@@ -2180,7 +2084,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 34.29) (xy 132.08 52.07)
+			(xy 133.35 46.99) (xy 133.35 48.26)
 		)
 		(stroke
 			(width 0)
@@ -2210,7 +2114,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 29.21) (xy 127 29.21)
+			(xy 111.76 41.91) (xy 128.27 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2270,7 +2174,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 96.52) (xy 110.49 95.25)
+			(xy 110.49 110.49) (xy 110.49 109.22)
 		)
 		(stroke
 			(width 0)
@@ -2280,7 +2184,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 29.21) (xy 110.49 29.21)
+			(xy 93.98 41.91) (xy 111.76 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2390,7 +2294,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 67.31) (xy 205.74 85.09)
+			(xy 205.74 67.31) (xy 205.74 68.58)
 		)
 		(stroke
 			(width 0)
@@ -2400,7 +2304,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 29.21) (xy 93.98 52.07)
+			(xy 93.98 41.91) (xy 93.98 52.07)
 		)
 		(stroke
 			(width 0)
@@ -2450,6 +2354,16 @@
 	)
 	(wire
 		(pts
+			(xy 110.49 119.38) (xy 110.49 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "acd1af4a-bcf8-4853-bcc7-ade699cce844")
+	)
+	(wire
+		(pts
 			(xy 77.47 40.64) (xy 77.47 41.91)
 		)
 		(stroke
@@ -2470,7 +2384,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 66.04) (xy 132.08 83.82)
+			(xy 132.08 66.04) (xy 132.08 67.31)
 		)
 		(stroke
 			(width 0)
@@ -2490,7 +2404,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 95.25) (xy 110.49 95.25)
+			(xy 93.98 109.22) (xy 110.49 109.22)
 		)
 		(stroke
 			(width 0)
@@ -2550,7 +2464,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 95.25) (xy 93.98 115.57)
+			(xy 93.98 109.22) (xy 93.98 115.57)
 		)
 		(stroke
 			(width 0)
@@ -2600,7 +2514,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 100.33) (xy 132.08 118.11)
+			(xy 132.08 114.3) (xy 132.08 115.57)
 		)
 		(stroke
 			(width 0)
@@ -2620,7 +2534,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 83.82) (xy 110.49 77.47)
+			(xy 110.49 71.12) (xy 110.49 69.85)
 		)
 		(stroke
 			(width 0)
@@ -2630,7 +2544,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 33.02) (xy 110.49 29.21)
+			(xy 111.76 45.72) (xy 111.76 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2640,7 +2554,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 99.06) (xy 205.74 116.84)
+			(xy 205.74 99.06) (xy 205.74 100.33)
 		)
 		(stroke
 			(width 0)
@@ -2670,7 +2584,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 52.07) (xy 110.49 48.26)
+			(xy 111.76 54.61) (xy 111.76 53.34)
 		)
 		(stroke
 			(width 0)
@@ -2679,7 +2593,7 @@
 		(uuid "fd7ee4a0-4e18-4bd6-be77-a808f4c908f4")
 	)
 	(label "DigitalOut3"
-		(at 93.98 95.25 0)
+		(at 93.98 109.22 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2699,7 +2613,7 @@
 		(uuid "7ea37eb7-d3fa-4758-8341-996382d2f13d")
 	)
 	(label "DigitalOut1"
-		(at 93.98 29.21 0)
+		(at 93.98 41.91 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2896,7 +2810,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 110.49 83.82 0)
+		(at 110.49 71.12 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2904,7 +2818,7 @@
 		(dnp no)
 		(uuid "03cd4756-1fbc-41b9-8fb2-1194a7ae663b")
 		(property "Reference" "#PWR0302"
-			(at 110.49 90.17 0)
+			(at 110.49 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2913,7 +2827,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 110.49 87.376 0)
+			(at 110.49 74.676 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2921,7 +2835,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 110.49 83.82 0)
+			(at 110.49 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2930,7 +2844,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 83.82 0)
+			(at 110.49 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2939,7 +2853,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 110.49 83.82 0)
+			(at 110.49 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3351,7 +3265,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:Conn_Coaxial")
-		(at 132.08 95.25 0)
+		(at 132.08 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3360,7 +3274,7 @@
 		(fields_autoplaced yes)
 		(uuid "26bb8add-7ca0-433e-99cd-d98f234dc0f7")
 		(property "Reference" "J15"
-			(at 135.89 94.2731 0)
+			(at 134.62 109.5131 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3369,16 +3283,17 @@
 			)
 		)
 		(property "Value" "Conn_Coaxial"
-			(at 135.89 96.8131 0)
+			(at 135.89 110.7831 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
-			(at 132.08 95.25 0)
+			(at 132.08 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3387,7 +3302,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 132.08 95.25 0)
+			(at 132.08 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3396,7 +3311,7 @@
 			)
 		)
 		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 132.08 95.25 0)
+			(at 132.08 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3405,7 +3320,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
-			(at 132.08 95.25 0)
+			(at 132.08 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3414,7 +3329,7 @@
 			)
 		)
 		(property "Manufacturer" "TE Connectivity Linx"
-			(at 132.08 95.25 0)
+			(at 132.08 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3423,7 +3338,7 @@
 			)
 		)
 		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
-			(at 132.08 95.25 0)
+			(at 132.08 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3432,7 +3347,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "TE Connectivity Linx"
-			(at 132.08 95.25 0)
+			(at 132.08 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3441,7 +3356,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CONSMA002-SMD-G-T"
-			(at 132.08 95.25 0)
+			(at 132.08 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3466,7 +3381,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 205.74 116.84 0)
+		(at 205.74 100.33 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3474,7 +3389,7 @@
 		(dnp no)
 		(uuid "2e43f09d-ffe8-4c52-9ded-0b12dea01822")
 		(property "Reference" "#PWR0316"
-			(at 205.74 123.19 0)
+			(at 205.74 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3483,7 +3398,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 205.74 120.396 0)
+			(at 205.74 103.886 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3491,7 +3406,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 205.74 116.84 0)
+			(at 205.74 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3500,7 +3415,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 205.74 116.84 0)
+			(at 205.74 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3509,7 +3424,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 205.74 116.84 0)
+			(at 205.74 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3524,176 +3439,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
 					(reference "#PWR0316")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:ESD441DPLR")
-		(at 110.49 127 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3688ca2e-eb04-41bd-9eaf-4da5e5ffeefa")
-		(property "Reference" "TVS14"
-			(at 114.3 132.8419 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "ESD441DPLR"
-			(at 114.3 135.3819 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:ESD441DPLR"
-			(at 114.3 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/esd441.pdf?ts=1730589139389&ref_url=https%253A%252F%252Fapp.ultralibrarian.com%252F"
-			(at 111.76 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "ESD Suppressors / TVS Diodes 1-pF, 5.5-V, 30-KV ESD protection device in 0201 package 2-X2SON -40 to 125"
-			(at 110.49 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "ESD Suppressors / TVS Diodes 1-pF, 5.5-V, 30-KV ESD protection device in 0201 package 2-X2SON -40 to 125"
-			(at 109.22 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Height" "0.32"
-			(at 106.68 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Texas Instruments"
-			(at 104.14 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "ESD441DPLR"
-			(at 101.6 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "595-ESD441DPLR"
-			(at 99.06 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ESD441DPLR?qs=1Kr7Jg1SGW9UQFJqGMkN7Q%3D%3D"
-			(at 96.52 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "ESD441DPLR"
-			(at 93.98 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/esd441dplr/texas-instruments?utm_currency=USD&region=nac"
-			(at 91.44 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Texas Instruments"
-			(at 110.49 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/ESD441DPLR/21298753"
-			(at 110.49 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "2d17ff01-7c6c-497f-b255-6f7ff22be58b")
-		)
-		(pin "1"
-			(uuid "9b1d7f1a-d4e2-4b4a-8ba4-c030036e8dc4")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "TVS14")
 					(unit 1)
 				)
 			)
@@ -3775,7 +3520,7 @@
 		(fields_autoplaced yes)
 		(uuid "48da45e7-518f-43ed-95c7-55d01c49bcc4")
 		(property "Reference" "J10"
-			(at 209.55 61.2531 0)
+			(at 208.28 62.5231 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3790,6 +3535,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
@@ -3880,6 +3626,74 @@
 		)
 	)
 	(symbol
+		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
+		(at 110.49 66.04 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "49d431dc-9db9-47ce-93b2-170066fbc0aa")
+		(property "Reference" "D17"
+			(at 112.522 63.754 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VBUS05N1-HD1-G3-08"
+			(at 114.3 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-882"
+			(at 105.41 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/86201/vbus05n1-hd1.pdf"
+			(at 119.38 65.024 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
+			(at 116.332 65.532 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6f3e3356-0b55-4b41-9ab8-534da0d1725a")
+		)
+		(pin "2"
+			(uuid "0a8f53af-46a6-4902-99bd-6d8b05608181")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
+					(reference "D17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "harp.device.quad.dac:Conn_Coaxial")
 		(at 205.74 125.73 0)
 		(unit 1)
@@ -3890,7 +3704,7 @@
 		(fields_autoplaced yes)
 		(uuid "5d98993b-1fc0-4b8c-b9ce-fec4d760f8f6")
 		(property "Reference" "J12"
-			(at 209.55 124.7531 0)
+			(at 208.28 126.0231 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3905,6 +3719,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
@@ -4060,8 +3875,144 @@
 		)
 	)
 	(symbol
+		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
+		(at 110.49 114.3 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "61f89afc-379b-41a3-b1e0-4fec8fd6cdd3")
+		(property "Reference" "D18"
+			(at 112.522 112.014 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VBUS05N1-HD1-G3-08"
+			(at 114.3 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-882"
+			(at 105.41 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/86201/vbus05n1-hd1.pdf"
+			(at 119.38 113.284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
+			(at 116.332 113.792 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ebea47c3-b780-4ac8-bebd-36a071955d16")
+		)
+		(pin "2"
+			(uuid "23a842fb-8802-443b-ab5c-a8d4532e575b")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
+					(reference "D18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
+		(at 111.76 49.53 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "769b4201-9533-4b31-9e92-e5fbee3172df")
+		(property "Reference" "D16"
+			(at 113.792 47.244 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VBUS05N1-HD1-G3-08"
+			(at 115.57 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-882"
+			(at 106.68 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/86201/vbus05n1-hd1.pdf"
+			(at 120.65 48.514 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
+			(at 117.602 49.022 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a7aa4890-0bb3-44c0-8355-ac8495693dec")
+		)
+		(pin "2"
+			(uuid "8dd19b25-77d2-4dda-b577-62629a53d814")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
+					(reference "D16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 110.49 118.11 0)
+		(at 110.49 119.38 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4069,7 +4020,7 @@
 		(dnp no)
 		(uuid "7925a6df-a98b-451a-bd25-573e115e4d36")
 		(property "Reference" "#PWR0305"
-			(at 110.49 124.46 0)
+			(at 110.49 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4078,7 +4029,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 110.49 121.666 0)
+			(at 110.49 122.936 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4086,7 +4037,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 110.49 118.11 0)
+			(at 110.49 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4095,7 +4046,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 118.11 0)
+			(at 110.49 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4104,7 +4055,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 110.49 118.11 0)
+			(at 110.49 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4191,7 +4142,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 132.08 148.59 0)
+		(at 132.08 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4199,7 +4150,7 @@
 		(dnp no)
 		(uuid "7af2fd12-52a5-472d-9672-ee844df0c363")
 		(property "Reference" "#PWR0308"
-			(at 132.08 154.94 0)
+			(at 132.08 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4208,7 +4159,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 132.08 152.146 0)
+			(at 132.08 135.636 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4216,7 +4167,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 148.59 0)
+			(at 132.08 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4225,7 +4176,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.08 148.59 0)
+			(at 132.08 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4234,7 +4185,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 132.08 148.59 0)
+			(at 132.08 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4256,7 +4207,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:Conn_Coaxial")
-		(at 132.08 29.21 0)
+		(at 133.35 41.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4265,7 +4216,7 @@
 		(fields_autoplaced yes)
 		(uuid "7b844e9c-d654-4b01-b4e7-3d8dd99e730d")
 		(property "Reference" "J13"
-			(at 135.89 28.2331 0)
+			(at 135.89 42.2031 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4274,16 +4225,17 @@
 			)
 		)
 		(property "Value" "Conn_Coaxial"
-			(at 135.89 30.7731 0)
+			(at 137.16 43.4731 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
-			(at 132.08 29.21 0)
+			(at 133.35 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4292,7 +4244,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 132.08 29.21 0)
+			(at 133.35 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4301,7 +4253,7 @@
 			)
 		)
 		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 132.08 29.21 0)
+			(at 133.35 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4310,7 +4262,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
-			(at 132.08 29.21 0)
+			(at 133.35 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4319,7 +4271,7 @@
 			)
 		)
 		(property "Manufacturer" "TE Connectivity Linx"
-			(at 132.08 29.21 0)
+			(at 133.35 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4328,7 +4280,7 @@
 			)
 		)
 		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
-			(at 132.08 29.21 0)
+			(at 133.35 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4337,7 +4289,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "TE Connectivity Linx"
-			(at 132.08 29.21 0)
+			(at 133.35 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4346,7 +4298,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CONSMA002-SMD-G-T"
-			(at 132.08 29.21 0)
+			(at 133.35 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4380,7 +4332,7 @@
 		(fields_autoplaced yes)
 		(uuid "7f4b6673-1be2-4b06-bf36-54f610c4938f")
 		(property "Reference" "J16"
-			(at 135.89 124.7531 0)
+			(at 134.62 126.0231 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4395,6 +4347,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
@@ -4495,7 +4448,7 @@
 		(fields_autoplaced yes)
 		(uuid "7f9f566e-f41c-4ac4-bbaa-5a12f7fac027")
 		(property "Reference" "J11"
-			(at 209.55 93.0031 0)
+			(at 208.28 94.2731 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4510,6 +4463,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
@@ -4601,7 +4555,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 132.08 83.82 0)
+		(at 132.08 67.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4609,7 +4563,7 @@
 		(dnp no)
 		(uuid "86d8e88e-7524-4570-9848-e3adf5983de6")
 		(property "Reference" "#PWR0306"
-			(at 132.08 90.17 0)
+			(at 132.08 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4618,7 +4572,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 132.08 87.376 0)
+			(at 132.08 70.866 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4626,7 +4580,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 83.82 0)
+			(at 132.08 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4635,7 +4589,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.08 83.82 0)
+			(at 132.08 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4644,7 +4598,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 132.08 83.82 0)
+			(at 132.08 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4789,176 +4743,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
 					(reference "#PWR0299")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:ESD441DPLR")
-		(at 110.49 62.23 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8fd115f8-a42b-4578-a85f-2663b570671c")
-		(property "Reference" "TVS12"
-			(at 114.3 68.0719 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "ESD441DPLR"
-			(at 114.3 70.6119 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:ESD441DPLR"
-			(at 114.3 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/esd441.pdf?ts=1730589139389&ref_url=https%253A%252F%252Fapp.ultralibrarian.com%252F"
-			(at 111.76 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "ESD Suppressors / TVS Diodes 1-pF, 5.5-V, 30-KV ESD protection device in 0201 package 2-X2SON -40 to 125"
-			(at 110.49 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "ESD Suppressors / TVS Diodes 1-pF, 5.5-V, 30-KV ESD protection device in 0201 package 2-X2SON -40 to 125"
-			(at 109.22 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Height" "0.32"
-			(at 106.68 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Texas Instruments"
-			(at 104.14 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "ESD441DPLR"
-			(at 101.6 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "595-ESD441DPLR"
-			(at 99.06 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ESD441DPLR?qs=1Kr7Jg1SGW9UQFJqGMkN7Q%3D%3D"
-			(at 96.52 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "ESD441DPLR"
-			(at 93.98 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/esd441dplr/texas-instruments?utm_currency=USD&region=nac"
-			(at 91.44 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Texas Instruments"
-			(at 110.49 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/ESD441DPLR/21298753"
-			(at 110.49 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "1975edf6-276c-4e27-aa9d-21db123e0587")
-		)
-		(pin "1"
-			(uuid "3e311a33-a326-4b7e-aed1-c0da50bf07c8")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "TVS12")
 					(unit 1)
 				)
 			)
@@ -5181,7 +4965,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 205.74 85.09 0)
+		(at 205.74 68.58 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5189,7 +4973,7 @@
 		(dnp no)
 		(uuid "9290ca2a-b60c-4f7f-8c8f-2d2965f15658")
 		(property "Reference" "#PWR0315"
-			(at 205.74 91.44 0)
+			(at 205.74 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5198,7 +4982,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 205.74 88.646 0)
+			(at 205.74 72.136 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5206,7 +4990,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 205.74 85.09 0)
+			(at 205.74 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5215,7 +4999,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 205.74 85.09 0)
+			(at 205.74 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5224,7 +5008,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 205.74 85.09 0)
+			(at 205.74 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5255,7 +5039,7 @@
 		(fields_autoplaced yes)
 		(uuid "92ec2b03-e977-4ce0-b978-e53781938216")
 		(property "Reference" "J14"
-			(at 135.89 59.9831 0)
+			(at 134.62 61.2531 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5270,6 +5054,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
@@ -5642,8 +5427,76 @@
 		)
 	)
 	(symbol
+		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
+		(at 110.49 130.81 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "98e5ba32-3cb8-4143-a64e-045910f8e12f")
+		(property "Reference" "D19"
+			(at 112.522 128.524 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VBUS05N1-HD1-G3-08"
+			(at 114.3 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-882"
+			(at 105.41 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/86201/vbus05n1-hd1.pdf"
+			(at 119.38 129.794 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
+			(at 116.332 130.302 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "44a7fd55-92e5-49fa-9f1e-80bdbe0d08bc")
+		)
+		(pin "2"
+			(uuid "61431b2a-7000-47ee-a08f-4df63a4d8ce9")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
+					(reference "D19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 205.74 148.59 0)
+		(at 205.74 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5651,7 +5504,7 @@
 		(dnp no)
 		(uuid "9b4d0770-aea7-4a0e-bd69-b5c11203edea")
 		(property "Reference" "#PWR0317"
-			(at 205.74 154.94 0)
+			(at 205.74 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5660,7 +5513,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 205.74 152.146 0)
+			(at 205.74 135.636 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5668,7 +5521,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 205.74 148.59 0)
+			(at 205.74 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5677,7 +5530,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 205.74 148.59 0)
+			(at 205.74 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5686,7 +5539,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 205.74 148.59 0)
+			(at 205.74 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5708,7 +5561,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 205.74 53.34 0)
+		(at 205.74 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5716,7 +5569,7 @@
 		(dnp no)
 		(uuid "a829fe6a-e5a0-4412-9c04-1cd925521fe6")
 		(property "Reference" "#PWR0314"
-			(at 205.74 59.69 0)
+			(at 205.74 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5725,7 +5578,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 205.74 56.896 0)
+			(at 205.74 40.386 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5733,7 +5586,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 205.74 53.34 0)
+			(at 205.74 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5742,7 +5595,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 205.74 53.34 0)
+			(at 205.74 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5751,7 +5604,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 205.74 53.34 0)
+			(at 205.74 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5914,7 +5767,7 @@
 		(fields_autoplaced yes)
 		(uuid "aacde0de-928a-4713-bcb6-bfc911cb12fd")
 		(property "Reference" "J9"
-			(at 209.55 29.5031 0)
+			(at 209.55 30.7731 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5929,6 +5782,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
@@ -6019,178 +5873,8 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:ESD441DPLR")
-		(at 110.49 96.52 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ade659eb-aa24-41ca-9730-28174e557183")
-		(property "Reference" "TVS15"
-			(at 114.3 102.3619 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "ESD441DPLR"
-			(at 114.3 104.9019 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:ESD441DPLR"
-			(at 114.3 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/esd441.pdf?ts=1730589139389&ref_url=https%253A%252F%252Fapp.ultralibrarian.com%252F"
-			(at 111.76 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "ESD Suppressors / TVS Diodes 1-pF, 5.5-V, 30-KV ESD protection device in 0201 package 2-X2SON -40 to 125"
-			(at 110.49 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "ESD Suppressors / TVS Diodes 1-pF, 5.5-V, 30-KV ESD protection device in 0201 package 2-X2SON -40 to 125"
-			(at 109.22 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Height" "0.32"
-			(at 106.68 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Texas Instruments"
-			(at 104.14 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "ESD441DPLR"
-			(at 101.6 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "595-ESD441DPLR"
-			(at 99.06 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ESD441DPLR?qs=1Kr7Jg1SGW9UQFJqGMkN7Q%3D%3D"
-			(at 96.52 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "ESD441DPLR"
-			(at 93.98 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/esd441dplr/texas-instruments?utm_currency=USD&region=nac"
-			(at 91.44 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Texas Instruments"
-			(at 110.49 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/ESD441DPLR/21298753"
-			(at 110.49 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "709e2301-4c57-4efb-97df-ed99fb9de89c")
-		)
-		(pin "1"
-			(uuid "6314373d-47c0-4d8f-920b-c2abeb6454c6")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "TVS15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 132.08 52.07 0)
+		(at 133.35 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6198,7 +5882,7 @@
 		(dnp no)
 		(uuid "b068d3e1-d489-4ed9-bd02-03bf72eb00db")
 		(property "Reference" "#PWR0307"
-			(at 132.08 58.42 0)
+			(at 133.35 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6207,7 +5891,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 132.08 55.626 0)
+			(at 133.35 51.816 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6215,7 +5899,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 52.07 0)
+			(at 133.35 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6224,7 +5908,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.08 52.07 0)
+			(at 133.35 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6233,7 +5917,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 132.08 52.07 0)
+			(at 133.35 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6255,7 +5939,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 110.49 52.07 0)
+		(at 111.76 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6263,7 +5947,7 @@
 		(dnp no)
 		(uuid "baa6e3c5-5d56-4e23-ac87-d93d378bc048")
 		(property "Reference" "#PWR0303"
-			(at 110.49 58.42 0)
+			(at 111.76 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6272,7 +5956,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 110.49 55.626 0)
+			(at 111.76 58.166 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6280,7 +5964,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 110.49 52.07 0)
+			(at 111.76 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6289,7 +5973,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 52.07 0)
+			(at 111.76 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6298,7 +5982,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 110.49 52.07 0)
+			(at 111.76 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6343,6 +6027,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:PESD12VL1BSLAZ"
@@ -6684,7 +6369,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 110.49 148.59 0)
+		(at 110.49 135.89 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6692,7 +6377,7 @@
 		(dnp no)
 		(uuid "c2e6e9d1-15b0-482e-a403-750fe2520e03")
 		(property "Reference" "#PWR0304"
-			(at 110.49 154.94 0)
+			(at 110.49 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6701,7 +6386,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 110.49 152.146 0)
+			(at 110.49 139.446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6709,7 +6394,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 110.49 148.59 0)
+			(at 110.49 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6718,7 +6403,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 148.59 0)
+			(at 110.49 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6727,7 +6412,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 110.49 148.59 0)
+			(at 110.49 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6814,7 +6499,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 132.08 118.11 0)
+		(at 132.08 115.57 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6822,7 +6507,7 @@
 		(dnp no)
 		(uuid "cd80fc50-27aa-435c-a363-33ee53e37471")
 		(property "Reference" "#PWR0309"
-			(at 132.08 124.46 0)
+			(at 132.08 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6831,7 +6516,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 132.08 121.666 0)
+			(at 132.08 119.126 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6839,7 +6524,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 118.11 0)
+			(at 132.08 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6848,7 +6533,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.08 118.11 0)
+			(at 132.08 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6857,7 +6542,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 132.08 118.11 0)
+			(at 132.08 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6902,6 +6587,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:PESD12VL1BSLAZ"
@@ -7351,6 +7037,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:PESD12VL1BSLAZ"
@@ -7800,6 +7487,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:PESD12VL1BSLAZ"
@@ -8134,176 +7822,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
 					(reference "R128")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:ESD441DPLR")
-		(at 110.49 33.02 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fdc657bb-490c-4f22-972a-0018a7f13dbf")
-		(property "Reference" "TVS13"
-			(at 114.3 38.8619 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "ESD441DPLR"
-			(at 114.3 41.4019 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:ESD441DPLR"
-			(at 114.3 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/esd441.pdf?ts=1730589139389&ref_url=https%253A%252F%252Fapp.ultralibrarian.com%252F"
-			(at 111.76 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "ESD Suppressors / TVS Diodes 1-pF, 5.5-V, 30-KV ESD protection device in 0201 package 2-X2SON -40 to 125"
-			(at 110.49 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "ESD Suppressors / TVS Diodes 1-pF, 5.5-V, 30-KV ESD protection device in 0201 package 2-X2SON -40 to 125"
-			(at 109.22 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Height" "0.32"
-			(at 106.68 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Texas Instruments"
-			(at 104.14 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "ESD441DPLR"
-			(at 101.6 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "595-ESD441DPLR"
-			(at 99.06 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/ESD441DPLR?qs=1Kr7Jg1SGW9UQFJqGMkN7Q%3D%3D"
-			(at 96.52 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "ESD441DPLR"
-			(at 93.98 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/esd441dplr/texas-instruments?utm_currency=USD&region=nac"
-			(at 91.44 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Texas Instruments"
-			(at 110.49 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/ESD441DPLR/21298753"
-			(at 110.49 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "84c966f1-2596-4885-8d63-794abeee870a")
-		)
-		(pin "1"
-			(uuid "69a3562e-489c-41c0-a171-c5d39d805478")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "TVS13")
 					(unit 1)
 				)
 			)

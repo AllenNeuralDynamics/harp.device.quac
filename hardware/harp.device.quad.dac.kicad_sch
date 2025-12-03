@@ -13,50 +13,7 @@
 	)
 	(lib_symbols)
 	(sheet
-		(at 210.82 30.48)
-		(size 50.8 25.4)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.6096)
-			(type solid)
-			(color 0 0 255 1)
-		)
-		(fill
-			(color 255 255 160 1.0000)
-		)
-		(uuid "08506a40-9943-41e4-b528-13f6a4c7e855")
-		(property "Sheetname" "Communication"
-			(at 210.82 29.1334 0)
-			(effects
-				(font
-					(size 2.54 2.54)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Communication.kicad_sch"
-			(at 210.82 56.4646 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447"
-					(page "4")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 152.4 67.31)
+		(at 170.18 66.04)
 		(size 50.8 24.13)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -73,7 +30,7 @@
 		)
 		(uuid "1783abfe-3faf-469b-a509-8e70c13c0682")
 		(property "Sheetname" "Output"
-			(at 152.4 65.9634 0)
+			(at 170.18 64.6934 0)
 			(effects
 				(font
 					(size 2.54 2.54)
@@ -82,7 +39,7 @@
 			)
 		)
 		(property "Sheetfile" "Output.kicad_sch"
-			(at 152.4 92.0246 0)
+			(at 170.18 90.7546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -99,7 +56,7 @@
 		)
 	)
 	(sheet
-		(at 152.4 30.48)
+		(at 170.18 29.21)
 		(size 50.8 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -116,7 +73,7 @@
 		)
 		(uuid "1945aa77-a929-44fd-b3b6-12787633d2f2")
 		(property "Sheetname" "Short Circuit Detection"
-			(at 152.4 29.1334 0)
+			(at 170.18 27.8634 0)
 			(effects
 				(font
 					(size 2.54 2.54)
@@ -125,7 +82,7 @@
 			)
 		)
 		(property "Sheetfile" "SC_Detection.kicad_sch"
-			(at 152.4 56.4646 0)
+			(at 170.18 55.1946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -142,7 +99,7 @@
 		)
 	)
 	(sheet
-		(at 92.71 30.48)
+		(at 110.49 29.21)
 		(size 50.8 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -159,7 +116,7 @@
 		)
 		(uuid "50574cb8-ffd5-42a3-a56c-0f0945fbd245")
 		(property "Sheetname" "DACs"
-			(at 92.71 28.9048 0)
+			(at 110.49 27.6348 0)
 			(effects
 				(font
 					(size 2.54 2.54)
@@ -168,7 +125,7 @@
 			)
 		)
 		(property "Sheetfile" "DACs.kicad_sch"
-			(at 92.71 56.6932 0)
+			(at 110.49 55.4232 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -185,7 +142,7 @@
 		)
 	)
 	(sheet
-		(at 33.02 30.48)
+		(at 50.8 29.21)
 		(size 50.8 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -202,7 +159,7 @@
 		)
 		(uuid "5973743b-c3fc-4963-acef-26c8fa426708")
 		(property "Sheetname" "RP2350 Core"
-			(at 33.02 28.9048 0)
+			(at 50.8 27.6348 0)
 			(effects
 				(font
 					(size 2.54 2.54)
@@ -211,7 +168,7 @@
 			)
 		)
 		(property "Sheetfile" "Core_RP2350.kicad_sch"
-			(at 33.02 56.6932 0)
+			(at 50.8 55.4232 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -228,7 +185,7 @@
 		)
 	)
 	(sheet
-		(at 33.02 67.31)
+		(at 50.8 66.04)
 		(size 50.8 24.13)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -245,7 +202,7 @@
 		)
 		(uuid "8b495cef-3a6a-4801-9796-978978016448")
 		(property "Sheetname" "Input"
-			(at 33.02 65.9634 0)
+			(at 50.8 64.6934 0)
 			(effects
 				(font
 					(size 2.54 2.54)
@@ -254,7 +211,7 @@
 			)
 		)
 		(property "Sheetfile" "Input.kicad_sch"
-			(at 33.02 92.0246 0)
+			(at 50.8 90.7546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -271,7 +228,7 @@
 		)
 	)
 	(sheet
-		(at 92.71 67.31)
+		(at 110.49 66.04)
 		(size 50.8 24.13)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -288,7 +245,7 @@
 		)
 		(uuid "df92df4e-37ce-471e-93c1-358fcc45baf3")
 		(property "Sheetname" "Power Supplies"
-			(at 92.71 65.9634 0)
+			(at 110.49 64.6934 0)
 			(effects
 				(font
 					(size 2.54 2.54)
@@ -297,7 +254,7 @@
 			)
 		)
 		(property "Sheetfile" "Power_Supply.kicad_sch"
-			(at 92.71 92.0246 0)
+			(at 110.49 90.7546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
