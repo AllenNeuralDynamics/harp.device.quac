@@ -1327,6 +1327,131 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:+12V"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+12V"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+12V\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+12V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+12V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+2V5"
 			(power)
 			(pin_numbers
@@ -1577,6 +1702,107 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:-12V"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "-12V"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"-12V\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "-12V_0_0"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "-12V_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy 0.762 1.27) (xy 0 2.54) (xy -0.762 1.27) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers
@@ -1659,131 +1885,6 @@
 			(symbol "GND_1_1"
 				(pin power_in line
 					(at 0 0 270)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "power:VBUS"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "VBUS"
-				(at 0 3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"VBUS\""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "VBUS_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "VBUS_1_1"
-				(pin power_in line
-					(at 0 0 90)
 					(length 0)
 					(name "~"
 						(effects
@@ -1914,16 +2015,16 @@
 		(uuid "11ce0755-0aed-4b11-bdda-f751c3d88b60")
 	)
 	(junction
-		(at 27.94 25.4)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "154800ac-b562-45c1-868a-6a2948f7d726")
-	)
-	(junction
 		(at 128.27 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "155bd405-a2c2-492e-9e3a-4782b9e2d670")
+	)
+	(junction
+		(at 27.94 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1a099eb7-d640-4713-822a-a26a4a4225da")
 	)
 	(junction
 		(at 146.05 163.83)
@@ -1944,16 +2045,16 @@
 		(uuid "2f8bcaaf-f2d4-4236-9b1f-148aecf43671")
 	)
 	(junction
+		(at 27.94 67.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "32caae94-2705-4f7f-8596-32731203b934")
+	)
+	(junction
 		(at 27.94 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2fee9e27-bda7-4cfe-ba4e-6f18e61468d3")
-	)
-	(junction
-		(at 27.94 171.45)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3975dab6-4b3a-4c4a-9911-774ab03866ce")
+		(uuid "33e8fce6-180d-4aea-a04a-5e0f1b2915e3")
 	)
 	(junction
 		(at 21.59 35.56)
@@ -1980,10 +2081,10 @@
 		(uuid "4a30e0e3-43a2-4e2f-a463-e6d16bfeae7f")
 	)
 	(junction
-		(at 27.94 87.63)
+		(at 27.94 151.13)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "4c9b1812-0312-4a65-a775-55a2329ae697")
+		(uuid "4d57d471-2426-4b47-a0aa-e65d16af8eca")
 	)
 	(junction
 		(at 125.73 80.01)
@@ -2008,12 +2109,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5910ffeb-1447-4428-8f91-832e902953f4")
-	)
-	(junction
-		(at 27.94 67.31)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5a071d55-af10-4bbf-96c9-90fb5290992c")
 	)
 	(junction
 		(at 128.27 44.45)
@@ -2046,6 +2141,12 @@
 		(uuid "740389e6-c559-4601-a249-9e04df0e794a")
 	)
 	(junction
+		(at 27.94 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7852aa8f-5836-4814-b2cf-fe8b9bd6d9fc")
+	)
+	(junction
 		(at 105.41 52.07)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2070,10 +2171,10 @@
 		(uuid "9ba3fb93-0c1d-48ec-b1ab-f0482e96f693")
 	)
 	(junction
-		(at 27.94 109.22)
+		(at 27.94 25.4)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a09a85bb-a7e7-4cda-a351-703a8cc46451")
+		(uuid "a67d0036-1f6d-4b23-b849-8bd555dbe779")
 	)
 	(junction
 		(at 262.89 149.86)
@@ -2112,16 +2213,16 @@
 		(uuid "ba6d4d96-08a0-4c9e-ac96-48dbeef2a065")
 	)
 	(junction
+		(at 27.94 129.54)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bd80826f-1dc0-4866-8f32-6641190afcd7")
+	)
+	(junction
 		(at 148.59 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d281ba6a-c9da-4851-bba7-e8e737bded1c")
-	)
-	(junction
-		(at 27.94 129.54)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e3f68374-c449-4e21-b94c-6769f674f646")
 	)
 	(junction
 		(at 158.75 121.92)
@@ -2142,10 +2243,10 @@
 		(uuid "f6d80f53-277f-40ea-9771-abb8c8f15b5b")
 	)
 	(junction
-		(at 27.94 151.13)
+		(at 27.94 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "fa70144c-dec0-4761-9af2-3de368919bb4")
+		(uuid "f97bd16d-4bd0-4a62-aa66-1b0c024161f5")
 	)
 	(junction
 		(at 269.24 149.86)
@@ -5362,6 +5463,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:-12V")
+		(at 27.94 87.63 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0c473a2a-0fc1-4121-b59d-ac930f8a1cf2")
+		(property "Reference" "#PWR0127"
+			(at 27.94 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-12V"
+			(at 27.94 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 27.94 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.94 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"-12V\""
+			(at 27.94 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8edb095f-45b3-4808-b803-b2f2d0c1ecd5")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR0127")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "harp.device.quad.dac:LT1461CIS8-2.5#PBF")
 		(at 229.87 144.78 0)
 		(unit 1)
@@ -5627,7 +5794,7 @@
 				)
 			)
 		)
-		(property "Value" "0.08"
+		(property "Value" "0.05"
 			(at 153.67 163.83 90)
 			(effects
 				(font
@@ -5672,71 +5839,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "R23")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VBUS")
-		(at 27.94 45.72 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1170e799-2376-4fef-b928-68fb3c6504ba")
-		(property "Reference" "#PWR0159"
-			(at 27.94 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VRail-"
-			(at 25.908 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 27.94 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 27.94 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 27.94 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8762fbcf-f47d-41f7-b6fd-6ec679352402")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
-					(reference "#PWR0159")
 					(unit 1)
 				)
 			)
@@ -6145,6 +6247,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:-12V")
+		(at 27.94 171.45 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "207bb917-0afb-4a3c-8a74-156060b03ae8")
+		(property "Reference" "#PWR049"
+			(at 27.94 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-12V"
+			(at 27.94 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 27.94 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.94 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"-12V\""
+			(at 27.94 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aeedb630-4dbe-44e7-9f9b-1494b4b206c6")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR049")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 128.27 91.44 180)
 		(unit 1)
@@ -6515,71 +6683,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:VBUS")
-		(at 27.94 129.54 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2bd7af9d-2271-4696-8962-e9aec4b8aa0a")
-		(property "Reference" "#PWR049"
-			(at 27.94 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VRail-"
-			(at 25.908 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 27.94 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 27.94 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 27.94 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9f4945d0-bc44-448b-a7a0-8ddd073a3cf7")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
-					(reference "#PWR049")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Amplifier_Operational:OPA2994xD")
 		(at 137.16 121.92 0)
 		(unit 2)
@@ -6633,16 +6736,16 @@
 			)
 		)
 		(pin "4"
-			(uuid "d5914d43-7611-4a60-ac45-18e580c248ec")
+			(uuid "d5914d43-7611-4a60-ac45-18e580c248ed")
 		)
 		(pin "3"
-			(uuid "9668767d-e706-4596-88ae-a1852afec7a4")
+			(uuid "9668767d-e706-4596-88ae-a1852afec7a6")
 		)
 		(pin "2"
-			(uuid "f0c540b2-fbfe-4dfe-b072-34e7ca1921c4")
+			(uuid "f0c540b2-fbfe-4dfe-b072-34e7ca1921c6")
 		)
 		(pin "1"
-			(uuid "49cbdb85-14a9-44fd-8b19-5d881ea9a60d")
+			(uuid "49cbdb85-14a9-44fd-8b19-5d881ea9a60f")
 		)
 		(pin "5"
 			(uuid "0ad1d9f4-eca7-4f08-97a8-6cc93f0a3d81")
@@ -6654,7 +6757,7 @@
 			(uuid "e702c62b-93c8-4c91-8fd3-671f1acba407")
 		)
 		(pin "8"
-			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc05")
+			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc06")
 		)
 		(instances
 			(project "harp.device.quad.dac"
@@ -6666,16 +6769,17 @@
 		)
 	)
 	(symbol
-		(lib_id "power:VBUS")
-		(at 27.94 25.4 0)
+		(lib_id "power:-12V")
+		(at 27.94 45.72 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2f41772f-bd0e-4367-aa63-f5b30f1a5a1e")
-		(property "Reference" "#PWR0158"
-			(at 27.94 29.21 0)
+		(fields_autoplaced yes)
+		(uuid "2fc21000-05c3-4f19-80c8-7f754edd0a8e")
+		(property "Reference" "#PWR0121"
+			(at 27.94 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6683,8 +6787,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "VRail+"
-			(at 25.908 21.59 0)
+		(property "Value" "-12V"
+			(at 27.94 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6692,7 +6796,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 27.94 25.4 0)
+			(at 27.94 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6701,7 +6805,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 27.94 25.4 0)
+			(at 27.94 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6709,8 +6813,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 27.94 25.4 0)
+		(property "Description" "Power symbol creates a global label with name \"-12V\""
+			(at 27.94 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6719,12 +6823,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "b8197a03-b57a-4bb8-b865-f5f4727c17d7")
+			(uuid "74ab6ee4-3ab2-49f1-a97e-6b073225527e")
 		)
 		(instances
-			(project "harp.device.quad.dac"
+			(project ""
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
-					(reference "#PWR0158")
+					(reference "#PWR0121")
 					(unit 1)
 				)
 			)
@@ -6788,22 +6892,22 @@
 			(uuid "759d7789-0e54-4ab2-b218-67088dc0c6e9")
 		)
 		(pin "3"
-			(uuid "9668767d-e706-4596-88ae-a1852afec7a5")
+			(uuid "9668767d-e706-4596-88ae-a1852afec7a7")
 		)
 		(pin "2"
-			(uuid "f0c540b2-fbfe-4dfe-b072-34e7ca1921c5")
+			(uuid "f0c540b2-fbfe-4dfe-b072-34e7ca1921c7")
 		)
 		(pin "1"
-			(uuid "49cbdb85-14a9-44fd-8b19-5d881ea9a60e")
+			(uuid "49cbdb85-14a9-44fd-8b19-5d881ea9a610")
 		)
 		(pin "5"
-			(uuid "a39ff87c-cb4d-4b72-bdd4-8417539cad2b")
+			(uuid "a39ff87c-cb4d-4b72-bdd4-8417539cad2c")
 		)
 		(pin "6"
-			(uuid "29088d53-43cf-4729-a7ef-0b13828f0599")
+			(uuid "29088d53-43cf-4729-a7ef-0b13828f059a")
 		)
 		(pin "7"
-			(uuid "12c899c4-f1e0-47c9-82ac-85545dbcfe7e")
+			(uuid "12c899c4-f1e0-47c9-82ac-85545dbcfe7f")
 		)
 		(pin "8"
 			(uuid "fd84a881-fdcc-4a74-b65b-427405064e00")
@@ -7107,13 +7211,13 @@
 			(uuid "c2a9e86b-bcdf-4819-9490-409d66141172")
 		)
 		(pin "5"
-			(uuid "a39ff87c-cb4d-4b72-bdd4-8417539cad2c")
+			(uuid "a39ff87c-cb4d-4b72-bdd4-8417539cad2d")
 		)
 		(pin "6"
-			(uuid "29088d53-43cf-4729-a7ef-0b13828f059a")
+			(uuid "29088d53-43cf-4729-a7ef-0b13828f059b")
 		)
 		(pin "7"
-			(uuid "12c899c4-f1e0-47c9-82ac-85545dbcfe7f")
+			(uuid "12c899c4-f1e0-47c9-82ac-85545dbcfe80")
 		)
 		(pin "8"
 			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc07")
@@ -8016,7 +8120,7 @@
 			)
 		)
 		(pin "4"
-			(uuid "d5914d43-7611-4a60-ac45-18e580c248ee")
+			(uuid "d5914d43-7611-4a60-ac45-18e580c248ef")
 		)
 		(pin "3"
 			(uuid "c0b9bd27-74e7-4ba5-9985-ea140460cd9d")
@@ -8028,16 +8132,16 @@
 			(uuid "dda4fb65-b396-4b35-8354-11f9b10dccd6")
 		)
 		(pin "5"
-			(uuid "a39ff87c-cb4d-4b72-bdd4-8417539cad2c")
+			(uuid "a39ff87c-cb4d-4b72-bdd4-8417539cad2f")
 		)
 		(pin "6"
-			(uuid "29088d53-43cf-4729-a7ef-0b13828f059a")
+			(uuid "29088d53-43cf-4729-a7ef-0b13828f059d")
 		)
 		(pin "7"
-			(uuid "12c899c4-f1e0-47c9-82ac-85545dbcfe7f")
+			(uuid "12c899c4-f1e0-47c9-82ac-85545dbcfe82")
 		)
 		(pin "8"
-			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc07")
+			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc08")
 		)
 		(instances
 			(project "harp.device.quad.dac"
@@ -8171,22 +8275,22 @@
 			(uuid "89331bd3-6b1f-4480-86cd-0823ea96d295")
 		)
 		(pin "3"
-			(uuid "9668767d-e706-4596-88ae-a1852afec7a7")
+			(uuid "9668767d-e706-4596-88ae-a1852afec7a8")
 		)
 		(pin "2"
-			(uuid "f0c540b2-fbfe-4dfe-b072-34e7ca1921c7")
+			(uuid "f0c540b2-fbfe-4dfe-b072-34e7ca1921c8")
 		)
 		(pin "1"
-			(uuid "49cbdb85-14a9-44fd-8b19-5d881ea9a610")
+			(uuid "49cbdb85-14a9-44fd-8b19-5d881ea9a611")
 		)
 		(pin "5"
-			(uuid "a39ff87c-cb4d-4b72-bdd4-8417539cad2d")
+			(uuid "a39ff87c-cb4d-4b72-bdd4-8417539cad30")
 		)
 		(pin "6"
-			(uuid "29088d53-43cf-4729-a7ef-0b13828f059b")
+			(uuid "29088d53-43cf-4729-a7ef-0b13828f059e")
 		)
 		(pin "7"
-			(uuid "12c899c4-f1e0-47c9-82ac-85545dbcfe80")
+			(uuid "12c899c4-f1e0-47c9-82ac-85545dbcfe83")
 		)
 		(pin "8"
 			(uuid "952e9c34-d150-4476-a405-5aa47ab3655b")
@@ -8335,6 +8439,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+12V")
+		(at 27.94 67.31 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "87c99976-580e-4231-bf70-ea6b53cbfa9d")
+		(property "Reference" "#PWR0124"
+			(at 27.94 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 27.94 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 27.94 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.94 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 27.94 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2fb8f484-6c87-49d0-b4f3-9cba6059ddaf")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR0124")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 153.67 38.1 270)
 		(mirror x)
@@ -8352,7 +8522,7 @@
 				)
 			)
 		)
-		(property "Value" "0.08"
+		(property "Value" "0.05"
 			(at 153.67 38.1 90)
 			(effects
 				(font
@@ -8420,7 +8590,7 @@
 				)
 			)
 		)
-		(property "Value" "0.08"
+		(property "Value" "0.05"
 			(at 153.67 121.92 90)
 			(effects
 				(font
@@ -8878,16 +9048,16 @@
 			)
 		)
 		(pin "4"
-			(uuid "d5914d43-7611-4a60-ac45-18e580c248ec")
+			(uuid "d5914d43-7611-4a60-ac45-18e580c248f1")
 		)
 		(pin "3"
-			(uuid "9668767d-e706-4596-88ae-a1852afec7a4")
+			(uuid "9668767d-e706-4596-88ae-a1852afec7a9")
 		)
 		(pin "2"
-			(uuid "f0c540b2-fbfe-4dfe-b072-34e7ca1921c4")
+			(uuid "f0c540b2-fbfe-4dfe-b072-34e7ca1921c9")
 		)
 		(pin "1"
-			(uuid "49cbdb85-14a9-44fd-8b19-5d881ea9a60d")
+			(uuid "49cbdb85-14a9-44fd-8b19-5d881ea9a612")
 		)
 		(pin "5"
 			(uuid "b697ceaf-5806-46c9-97ee-c91193fd1d14")
@@ -8899,78 +9069,13 @@
 			(uuid "bcdcd551-225d-4518-a89e-d702855b2e81")
 		)
 		(pin "8"
-			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc05")
+			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc0a")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "U4")
 					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VBUS")
-		(at 27.94 151.13 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a13b5ee4-dac6-4356-8d70-afa391e9bfb0")
-		(property "Reference" "#PWR050"
-			(at 27.94 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VRail+"
-			(at 25.908 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 27.94 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 27.94 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 27.94 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "15ab4996-8501-440e-8cdb-f157389d8303")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
-					(reference "#PWR050")
-					(unit 1)
 				)
 			)
 		)
@@ -9036,6 +9141,72 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "#PWR045")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 27.94 151.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a4bb5c0b-47da-437b-be75-07bcdf4470df")
+		(property "Reference" "#PWR048"
+			(at 27.94 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 27.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 27.94 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.94 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 27.94 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "27525311-8275-498e-b115-a739dca3f1c8")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -9432,16 +9603,16 @@
 			)
 		)
 		(pin "4"
-			(uuid "d5914d43-7611-4a60-ac45-18e580c248ed")
+			(uuid "d5914d43-7611-4a60-ac45-18e580c248f2")
 		)
 		(pin "3"
-			(uuid "9668767d-e706-4596-88ae-a1852afec7a6")
+			(uuid "9668767d-e706-4596-88ae-a1852afec7aa")
 		)
 		(pin "2"
-			(uuid "f0c540b2-fbfe-4dfe-b072-34e7ca1921c6")
+			(uuid "f0c540b2-fbfe-4dfe-b072-34e7ca1921ca")
 		)
 		(pin "1"
-			(uuid "49cbdb85-14a9-44fd-8b19-5d881ea9a60f")
+			(uuid "49cbdb85-14a9-44fd-8b19-5d881ea9a613")
 		)
 		(pin "5"
 			(uuid "96cf5fcd-e00c-49c7-98d2-c9ff37015927")
@@ -9453,7 +9624,7 @@
 			(uuid "0dd661d4-102c-41b8-a928-7f6ce75163c5")
 		)
 		(pin "8"
-			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc06")
+			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc0b")
 		)
 		(instances
 			(project "harp.device.quad.dac"
@@ -9993,6 +10164,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+12V")
+		(at 27.94 25.4 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b4215d69-e02e-4799-ad64-d1888d96e93b")
+		(property "Reference" "#PWR0118"
+			(at 27.94 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 27.94 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 27.94 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.94 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 27.94 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e89cc462-4712-4422-9e02-e5d312477512")
+		)
+		(instances
+			(project ""
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR0118")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
 		(at 269.24 154.94 0)
 		(unit 1)
@@ -10224,71 +10461,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:VBUS")
-		(at 27.94 67.31 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "bfb62ed8-c907-4c32-a910-ceb12904570e")
-		(property "Reference" "#PWR033"
-			(at 27.94 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VRail+"
-			(at 25.908 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 27.94 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 27.94 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 27.94 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9c4d7419-8f09-46cd-871f-9ec8305e3cc6")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
-					(reference "#PWR033")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+2V5")
 		(at 95.25 67.31 0)
 		(unit 1)
@@ -10354,16 +10526,17 @@
 		)
 	)
 	(symbol
-		(lib_id "power:VBUS")
-		(at 27.94 171.45 180)
+		(lib_id "power:+12V")
+		(at 27.94 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d1b3af05-21f2-422e-b099-97720b583f47")
-		(property "Reference" "#PWR051"
-			(at 27.94 167.64 0)
+		(fields_autoplaced yes)
+		(uuid "d3037fc5-7971-4767-9fc9-91b1ea546dcc")
+		(property "Reference" "#PWR033"
+			(at 27.94 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10371,8 +10544,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "VRail-"
-			(at 25.908 175.26 0)
+		(property "Value" "+12V"
+			(at 27.94 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10380,7 +10553,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 27.94 171.45 0)
+			(at 27.94 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10389,7 +10562,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 27.94 171.45 0)
+			(at 27.94 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10397,8 +10570,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 27.94 171.45 0)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 27.94 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10407,12 +10580,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "19a06429-357f-4c8b-8a0f-f2ad344d4661")
+			(uuid "c6bd5a1e-88a4-4d02-86a2-cf8aaf7f6bfc")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
-					(reference "#PWR051")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -10823,6 +10996,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:-12V")
+		(at 27.94 129.54 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e22ca76d-7829-447a-99ba-2d6e95596a32")
+		(property "Reference" "#PWR041"
+			(at 27.94 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-12V"
+			(at 27.94 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 27.94 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.94 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"-12V\""
+			(at 27.94 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b392238d-bac7-40e7-8694-b4a4e61003bd")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR041")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 90.17 109.22 0)
 		(unit 1)
@@ -11006,28 +11245,28 @@
 			)
 		)
 		(pin "4"
-			(uuid "d5914d43-7611-4a60-ac45-18e580c248ec")
+			(uuid "d5914d43-7611-4a60-ac45-18e580c248f3")
 		)
 		(pin "3"
-			(uuid "9668767d-e706-4596-88ae-a1852afec7a4")
+			(uuid "9668767d-e706-4596-88ae-a1852afec7ab")
 		)
 		(pin "2"
-			(uuid "f0c540b2-fbfe-4dfe-b072-34e7ca1921c4")
+			(uuid "f0c540b2-fbfe-4dfe-b072-34e7ca1921cb")
 		)
 		(pin "1"
-			(uuid "49cbdb85-14a9-44fd-8b19-5d881ea9a60d")
+			(uuid "49cbdb85-14a9-44fd-8b19-5d881ea9a614")
 		)
 		(pin "5"
-			(uuid "a39ff87c-cb4d-4b72-bdd4-8417539cad2a")
+			(uuid "a39ff87c-cb4d-4b72-bdd4-8417539cad31")
 		)
 		(pin "6"
-			(uuid "29088d53-43cf-4729-a7ef-0b13828f0598")
+			(uuid "29088d53-43cf-4729-a7ef-0b13828f059f")
 		)
 		(pin "7"
-			(uuid "12c899c4-f1e0-47c9-82ac-85545dbcfe7d")
+			(uuid "12c899c4-f1e0-47c9-82ac-85545dbcfe84")
 		)
 		(pin "8"
-			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc05")
+			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc0c")
 		)
 		(instances
 			(project ""
@@ -11161,28 +11400,28 @@
 			)
 		)
 		(pin "4"
-			(uuid "d5914d43-7611-4a60-ac45-18e580c248ec")
+			(uuid "d5914d43-7611-4a60-ac45-18e580c248f4")
 		)
 		(pin "3"
-			(uuid "9668767d-e706-4596-88ae-a1852afec7a4")
+			(uuid "9668767d-e706-4596-88ae-a1852afec7ac")
 		)
 		(pin "2"
-			(uuid "f0c540b2-fbfe-4dfe-b072-34e7ca1921c4")
+			(uuid "f0c540b2-fbfe-4dfe-b072-34e7ca1921cc")
 		)
 		(pin "1"
-			(uuid "49cbdb85-14a9-44fd-8b19-5d881ea9a60d")
+			(uuid "49cbdb85-14a9-44fd-8b19-5d881ea9a615")
 		)
 		(pin "5"
-			(uuid "a39ff87c-cb4d-4b72-bdd4-8417539cad2a")
+			(uuid "a39ff87c-cb4d-4b72-bdd4-8417539cad32")
 		)
 		(pin "6"
-			(uuid "29088d53-43cf-4729-a7ef-0b13828f0598")
+			(uuid "29088d53-43cf-4729-a7ef-0b13828f05a0")
 		)
 		(pin "7"
-			(uuid "12c899c4-f1e0-47c9-82ac-85545dbcfe7d")
+			(uuid "12c899c4-f1e0-47c9-82ac-85545dbcfe85")
 		)
 		(pin "8"
-			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc05")
+			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc0d")
 		)
 		(instances
 			(project ""
@@ -11211,7 +11450,7 @@
 				)
 			)
 		)
-		(property "Value" "0.08"
+		(property "Value" "0.05"
 			(at 153.67 80.01 90)
 			(effects
 				(font
@@ -11256,136 +11495,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VBUS")
-		(at 27.94 109.22 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f7559e9b-3196-406f-bbfd-9f526b40c17d")
-		(property "Reference" "#PWR048"
-			(at 27.94 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VRail+"
-			(at 25.908 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 27.94 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 27.94 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 27.94 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9601cf7f-ab77-4591-a4d5-705b61718a61")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
-					(reference "#PWR048")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VBUS")
-		(at 27.94 87.63 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f8669a2e-3679-4696-8424-4e6ced095b71")
-		(property "Reference" "#PWR041"
-			(at 27.94 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VRail-"
-			(at 25.908 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 27.94 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 27.94 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 27.94 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b27e0881-4328-45ac-add8-48c474e6d6bf")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
-					(reference "#PWR041")
 					(unit 1)
 				)
 			)

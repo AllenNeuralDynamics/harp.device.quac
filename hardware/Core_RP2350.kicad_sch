@@ -11377,28 +11377,6 @@
 			)
 		)
 	)
-	(global_label "ShortCircuitCh1"
-		(shape input)
-		(at 299.72 81.28 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "20d9a313-3a7e-4fbd-9858-0c831a2e2994")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 317.5822 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "DAC_1_DIN"
 		(shape input)
 		(at 138.43 62.23 0)
@@ -11883,50 +11861,6 @@
 			)
 		)
 	)
-	(global_label "ShortCircuitCh3"
-		(shape input)
-		(at 299.72 86.36 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "da6f0021-03c4-424b-8e0b-1d8684b8a3e1")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 317.5822 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "ShortCircuitCh4"
-		(shape input)
-		(at 299.72 88.9 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e234a817-fa4e-46be-be43-8a3c06e64797")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 317.5822 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "DAC_2_CS"
 		(shape input)
 		(at 138.43 77.47 0)
@@ -11962,28 +11896,6 @@
 		(uuid "fccd95db-ff25-4823-8002-355843823dd0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 155.6874 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "ShortCircuitCh2"
-		(shape input)
-		(at 299.72 83.82 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "feeb2607-55ff-4600-b19b-844e4c7ea76d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 317.5822 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
