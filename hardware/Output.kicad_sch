@@ -1739,27 +1739,6 @@
 		)
 		(uuid "f48f662f-e561-4c86-aae9-24e4f2efbfda")
 	)
-	(text_box "in this sheet:\ncapacitors: 10V rated\nresistors: 0603, 0.1W"
-		(exclude_from_sim no)
-		(at 177.038 157.734 0)
-		(size 23.114 7.874)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill
-			(type color)
-			(color 0 255 0 1)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "a044e7d0-8cbc-4115-9a4d-31b12bc99e54")
-	)
 	(junction
 		(at 111.76 41.91)
 		(diameter 0)
@@ -2544,7 +2523,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 45.72) (xy 111.76 41.91)
+			(xy 111.76 43.18) (xy 111.76 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2584,7 +2563,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 54.61) (xy 111.76 53.34)
+			(xy 111.76 52.07) (xy 111.76 50.8)
 		)
 		(stroke
 			(width 0)
@@ -2632,7 +2611,7 @@
 		)
 		(uuid "8b315002-6938-4c6f-9033-1df5228178a5")
 	)
-	(global_label "AnalogOut4"
+	(global_label "AnalogOut3"
 		(shape input)
 		(at 181.61 125.73 180)
 		(fields_autoplaced yes)
@@ -2654,7 +2633,7 @@
 			)
 		)
 	)
-	(global_label "MC_DigitalOut2"
+	(global_label "MC_DigitalOut1"
 		(shape input)
 		(at 63.5 57.15 180)
 		(fields_autoplaced yes)
@@ -2676,7 +2655,7 @@
 			)
 		)
 	)
-	(global_label "AnalogOut3"
+	(global_label "AnalogOut2"
 		(shape input)
 		(at 181.61 93.98 180)
 		(fields_autoplaced yes)
@@ -2698,7 +2677,7 @@
 			)
 		)
 	)
-	(global_label "AnalogOut1"
+	(global_label "AnalogOut0"
 		(shape input)
 		(at 181.61 30.48 180)
 		(fields_autoplaced yes)
@@ -2720,7 +2699,7 @@
 			)
 		)
 	)
-	(global_label "MC_DigitalOut1"
+	(global_label "MC_DigitalOut0"
 		(shape input)
 		(at 63.5 52.07 180)
 		(fields_autoplaced yes)
@@ -2742,7 +2721,7 @@
 			)
 		)
 	)
-	(global_label "MC_DigitalOut4"
+	(global_label "MC_DigitalOut3"
 		(shape input)
 		(at 63.5 120.65 180)
 		(fields_autoplaced yes)
@@ -2764,7 +2743,7 @@
 			)
 		)
 	)
-	(global_label "MC_DigitalOut3"
+	(global_label "MC_DigitalOut2"
 		(shape input)
 		(at 63.5 115.57 180)
 		(fields_autoplaced yes)
@@ -2786,7 +2765,7 @@
 			)
 		)
 	)
-	(global_label "AnalogOut2"
+	(global_label "AnalogOut1"
 		(shape input)
 		(at 181.61 62.23 180)
 		(fields_autoplaced yes)
@@ -3944,7 +3923,7 @@
 	)
 	(symbol
 		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
-		(at 111.76 49.53 270)
+		(at 111.76 46.99 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3952,7 +3931,7 @@
 		(dnp no)
 		(uuid "769b4201-9533-4b31-9e92-e5fbee3172df")
 		(property "Reference" "D16"
-			(at 113.792 47.244 90)
+			(at 113.792 44.704 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3960,7 +3939,7 @@
 			)
 		)
 		(property "Value" "VBUS05N1-HD1-G3-08"
-			(at 115.57 49.53 0)
+			(at 115.57 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3969,7 +3948,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-882"
-			(at 106.68 49.53 0)
+			(at 106.68 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3978,7 +3957,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/86201/vbus05n1-hd1.pdf"
-			(at 120.65 48.514 0)
+			(at 120.65 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3987,7 +3966,7 @@
 			)
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
-			(at 117.602 49.022 0)
+			(at 117.602 46.482 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5939,7 +5918,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 111.76 54.61 0)
+		(at 111.76 52.07 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5947,7 +5926,7 @@
 		(dnp no)
 		(uuid "baa6e3c5-5d56-4e23-ac87-d93d378bc048")
 		(property "Reference" "#PWR0303"
-			(at 111.76 60.96 0)
+			(at 111.76 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5956,7 +5935,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 111.76 58.166 0)
+			(at 111.76 55.626 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5964,7 +5943,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 111.76 54.61 0)
+			(at 111.76 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5973,7 +5952,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 111.76 54.61 0)
+			(at 111.76 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5982,7 +5961,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 111.76 54.61 0)
+			(at 111.76 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)

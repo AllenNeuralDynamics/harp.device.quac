@@ -11465,7 +11465,7 @@
 			)
 		)
 	)
-	(global_label "MC_DigitalOut4"
+	(global_label "MC_DigitalOut3"
 		(shape input)
 		(at 138.43 133.35 0)
 		(fields_autoplaced yes)
@@ -11509,7 +11509,7 @@
 			)
 		)
 	)
-	(global_label "MC_DigitalOut2"
+	(global_label "MC_DigitalOut1"
 		(shape input)
 		(at 138.43 128.27 0)
 		(fields_autoplaced yes)
@@ -11729,7 +11729,7 @@
 			)
 		)
 	)
-	(global_label "MC_DigitalOut3"
+	(global_label "MC_DigitalOut2"
 		(shape input)
 		(at 138.43 130.81 0)
 		(fields_autoplaced yes)
@@ -11883,7 +11883,7 @@
 			)
 		)
 	)
-	(global_label "MC_DigitalOut1"
+	(global_label "MC_DigitalOut0"
 		(shape input)
 		(at 138.43 125.73 0)
 		(fields_autoplaced yes)

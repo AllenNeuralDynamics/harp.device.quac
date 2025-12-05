@@ -380,228 +380,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "harp.device.quad.dac:Barrel_Jack_Switch"
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 5.334 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Barrel_Jack_Switch"
-				(at 0 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 1.27 -1.016 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 1.27 -1.016 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "DC Barrel Jack with an internal switch"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "DC power barrel jack connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "BarrelJack*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Barrel_Jack_Switch_0_1"
-				(rectangle
-					(start -5.08 3.81)
-					(end 5.08 -3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.81 -2.54) (xy -2.54 -2.54) (xy -1.27 -1.27) (xy 0 -2.54) (xy 2.54 -2.54) (xy 5.08 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -3.302 1.905)
-					(mid -3.9343 2.54)
-					(end -3.302 3.175)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -3.302 1.905)
-					(mid -3.9343 2.54)
-					(end -3.302 3.175)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -2.286) (xy 1.905 -1.651)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 3.683 3.175)
-					(end -3.302 1.905)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 2.54) (xy 3.81 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 0) (xy 1.27 0) (xy 1.27 -2.286) (xy 0.635 -1.651)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Barrel_Jack_Switch_1_1"
-				(pin passive line
-					(at 7.62 2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 -2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "harp.device.quad.dac:C_0603"
 			(pin_numbers
 				(hide yes)
@@ -911,343 +689,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "harp.device.quad.dac:L_Coupled_1423"
-			(pin_names
-				(offset 0.254)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "L"
-				(at 0 4.445 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "L_Coupled_1423"
-				(at 0 -4.445 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "harp.device.quad.dac.kicad:L_CommonModeChoke_TDKCorporation_1210"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Coupled inductor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "inductor choke coil reactor magnetic coupled"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Choke_* *Coil* Inductor_* L_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "L_Coupled_1423_0_1"
-				(circle
-					(center -3.048 1.524)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center -3.048 -1.27)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 2.032) (xy -2.54 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 -2.032) (xy -2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.524 2.032)
-					(mid -2.032 1.5262)
-					(end -2.54 2.032)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -2.54 -2.032)
-					(mid -2.032 -1.5262)
-					(end -1.524 -2.032)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.508 2.032)
-					(mid -1.016 1.5262)
-					(end -1.524 2.032)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.524 -2.032)
-					(mid -1.016 -1.5262)
-					(end -0.508 -2.032)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.508 2.032)
-					(mid 0 1.5262)
-					(end -0.508 2.032)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.508 -2.032)
-					(mid 0 -1.5262)
-					(end 0.508 -2.032)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 1.524 2.032)
-					(mid 1.016 1.5262)
-					(end 0.508 2.032)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.508 -2.032)
-					(mid 1.016 -1.5262)
-					(end 1.524 -2.032)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 2.54 2.032)
-					(mid 2.032 1.5262)
-					(end 1.524 2.032)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 1.524 -2.032)
-					(mid 2.032 -1.5262)
-					(end 2.54 -2.032)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 2.032)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.032) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "L_Coupled_1423_1_1"
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 2.54 180)
-					(length 2.54)
-					(name "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -2.54 180)
-					(length 2.54)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "harp.device.quad.dac:R_0603"
 			(pin_numbers
 				(hide yes)
@@ -1500,131 +941,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "power:+12V"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "+12V"
-				(at 0 3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+12V\""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "+12V_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+12V_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1986,107 +1302,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:GND2"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "GND2"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"GND2\" , ground"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "GND2_0_1"
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "GND2_1_1"
-				(pin power_in line
-					(at 0 0 270)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 	)
 	(text "voltage level 3.3V"
 		(exclude_from_sim no)
@@ -2110,17 +1325,6 @@
 		)
 		(uuid "5a391e99-dba5-45ec-83e8-4fc9f6891810")
 	)
-	(text "common mode\nchoke"
-		(exclude_from_sim no)
-		(at 59.69 20.32 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify bottom)
-		)
-		(uuid "64590870-3838-46a0-abd2-697295125759")
-	)
 	(text "voltage level 3.3V"
 		(exclude_from_sim no)
 		(at 164.084 67.31 0)
@@ -2131,17 +1335,6 @@
 			(justify left bottom)
 		)
 		(uuid "74805f18-6e97-4c7f-a3bb-a486fa2705cc")
-	)
-	(text "??V-30V"
-		(exclude_from_sim no)
-		(at 15.24 18.542 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "85074c75-584c-4d7b-b780-eb060d423ffd")
 	)
 	(text "DIR=H\nA input\nB output"
 		(exclude_from_sim no)
@@ -2180,18 +1373,6 @@
 		(uuid "08e9c4d0-0ddb-45cc-90b6-cb66b79d5be7")
 	)
 	(junction
-		(at 44.45 21.59)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "090954b8-6f82-4830-8d77-f078ff905015")
-	)
-	(junction
-		(at 35.56 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "38139cb1-1cd2-48bf-814c-ea2500a4e9c6")
-	)
-	(junction
 		(at 149.86 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2202,18 +1383,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3fce4a29-a222-4df5-9edc-22d8533e9014")
-	)
-	(junction
-		(at 53.34 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "498aa035-4e2f-4e9b-8ee5-64fc6f227cf4")
-	)
-	(junction
-		(at 44.45 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4e2f23dc-0fa0-4e4f-a88c-f65ac1a2a025")
 	)
 	(junction
 		(at 125.73 116.84)
@@ -2234,52 +1403,16 @@
 		(uuid "96fc98ef-cb1e-467d-ad76-67dd847b4556")
 	)
 	(junction
-		(at 53.34 21.59)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a074aa45-2869-4c72-9404-418046c80a2e")
-	)
-	(junction
 		(at 125.73 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a175fc04-ebe3-45f2-ba42-176c646a56da")
 	)
 	(junction
-		(at 35.56 21.59)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e0f93522-c2a0-4dc2-bf2b-a1bc10ef85ac")
-	)
-	(junction
 		(at 154.94 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f0996c4d-da8f-4957-9a80-fb047f0c1525")
-	)
-	(no_connect
-		(at 27.94 26.67)
-		(uuid "4915f89f-2764-4fec-9610-7d9da2d206d1")
-	)
-	(wire
-		(pts
-			(xy 27.94 24.13) (xy 27.94 21.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "008df852-26c9-4c30-893a-852bc138d917")
-	)
-	(wire
-		(pts
-			(xy 72.39 33.02) (xy 71.12 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "08505af4-a8f6-43ff-8b92-0616ff2230aa")
 	)
 	(wire
 		(pts
@@ -2323,16 +1456,6 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 24.13) (xy 59.69 24.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "17bddc78-beb5-4daa-ba7d-cccd4420db40")
-	)
-	(wire
-		(pts
 			(xy 149.86 114.3) (xy 149.86 116.84)
 		)
 		(stroke
@@ -2353,16 +1476,6 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 31.75) (xy 44.45 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1a83af1f-f33b-4069-bc74-8f87f24af017")
-	)
-	(wire
-		(pts
 			(xy 125.73 116.84) (xy 132.08 116.84)
 		)
 		(stroke
@@ -2370,16 +1483,6 @@
 			(type default)
 		)
 		(uuid "1a8c86a9-a904-4c20-8aa6-b090fc97dd17")
-	)
-	(wire
-		(pts
-			(xy 35.56 30.48) (xy 35.56 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "25b30f83-6917-4d8f-8bed-5754dc77530f")
 	)
 	(wire
 		(pts
@@ -2393,16 +1496,6 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 21.59) (xy 35.56 22.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "28bed1fc-c108-4671-b82a-99d2cf6d884b")
-	)
-	(wire
-		(pts
 			(xy 181.61 90.17) (xy 181.61 91.44)
 		)
 		(stroke
@@ -2410,16 +1503,6 @@
 			(type default)
 		)
 		(uuid "2a2be042-ef3e-4c50-b67f-3b60b32ceb78")
-	)
-	(wire
-		(pts
-			(xy 53.34 30.48) (xy 53.34 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2f0ebb25-9f4f-4e26-9d82-f3190c29d3e0")
 	)
 	(wire
 		(pts
@@ -2453,16 +1536,6 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 21.59) (xy 44.45 21.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "388bb71c-88ca-4d22-b6b0-62f64b51a9a9")
-	)
-	(wire
-		(pts
 			(xy 154.94 116.84) (xy 154.94 118.11)
 		)
 		(stroke
@@ -2483,26 +1556,6 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 29.21) (xy 59.69 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4242d1cd-c9cd-4064-a8ed-29859caed8c7")
-	)
-	(wire
-		(pts
-			(xy 44.45 31.75) (xy 53.34 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "46428674-5d92-4c4f-afc6-c4778b49b939")
-	)
-	(wire
-		(pts
 			(xy 162.56 69.85) (xy 163.83 69.85)
 		)
 		(stroke
@@ -2513,16 +1566,6 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 21.59) (xy 44.45 22.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "58f42629-40b1-4789-ad46-5995c6f4f2b1")
-	)
-	(wire
-		(pts
 			(xy 125.73 68.58) (xy 125.73 69.85)
 		)
 		(stroke
@@ -2530,26 +1573,6 @@
 			(type default)
 		)
 		(uuid "63c52057-1916-43bf-9157-2c766fc331c9")
-	)
-	(wire
-		(pts
-			(xy 72.39 24.13) (xy 72.39 20.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "63eb05f8-581c-4b78-9984-c5616a10cbc3")
-	)
-	(wire
-		(pts
-			(xy 27.94 29.21) (xy 27.94 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6b667ab2-57b9-4cd4-a509-2a362c629081")
 	)
 	(wire
 		(pts
@@ -2583,16 +1606,6 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 24.13) (xy 59.69 21.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7af0e716-8ea2-4c79-8ad2-5f5c72ab9856")
-	)
-	(wire
-		(pts
 			(xy 142.24 74.93) (xy 132.08 74.93)
 		)
 		(stroke
@@ -2600,16 +1613,6 @@
 			(type default)
 		)
 		(uuid "7b1c409b-1121-438a-9d85-56f22a62e0a7")
-	)
-	(wire
-		(pts
-			(xy 60.96 29.21) (xy 59.69 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7b3ffae8-8760-45ee-abc1-45e3e20db767")
 	)
 	(wire
 		(pts
@@ -2650,16 +1653,6 @@
 			(type default)
 		)
 		(uuid "8525b54c-5302-4c92-b1ad-b2255f2e0699")
-	)
-	(wire
-		(pts
-			(xy 27.94 21.59) (xy 35.56 21.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "890326b7-df97-4f2a-bae2-43f470aa74cc")
 	)
 	(wire
 		(pts
@@ -2713,26 +1706,6 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 31.75) (xy 44.45 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "931094f9-c9b6-4854-adf6-251614319802")
-	)
-	(wire
-		(pts
-			(xy 71.12 24.13) (xy 72.39 24.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "959765a2-ceb5-4059-8e4a-f35bd9589d7f")
-	)
-	(wire
-		(pts
 			(xy 146.05 116.84) (xy 149.86 116.84)
 		)
 		(stroke
@@ -2740,16 +1713,6 @@
 			(type default)
 		)
 		(uuid "9c82a89a-0008-4fc5-aeba-628935ed0973")
-	)
-	(wire
-		(pts
-			(xy 53.34 21.59) (xy 53.34 22.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9d57dbf8-9ee5-4d55-9710-f8bc5cb49d5b")
 	)
 	(wire
 		(pts
@@ -2783,16 +1746,6 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 31.75) (xy 59.69 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a5c83f66-a64f-47dc-99fb-d4bf4944f5d4")
-	)
-	(wire
-		(pts
 			(xy 140.97 80.01) (xy 142.24 80.01)
 		)
 		(stroke
@@ -2823,16 +1776,6 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 30.48) (xy 44.45 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b4f1529b-f262-4bf9-9aad-bb15b60e8877")
-	)
-	(wire
-		(pts
 			(xy 142.24 128.27) (xy 132.08 128.27)
 		)
 		(stroke
@@ -2840,26 +1783,6 @@
 			(type default)
 		)
 		(uuid "b842bdaa-1cb0-44a7-af66-5014a92776f9")
-	)
-	(wire
-		(pts
-			(xy 53.34 21.59) (xy 59.69 21.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c04d210e-a526-4a3b-bfa8-e00bfd3970ed")
-	)
-	(wire
-		(pts
-			(xy 71.12 33.02) (xy 71.12 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c643a687-3ed8-47ff-8768-834804516159")
 	)
 	(wire
 		(pts
@@ -2900,16 +1823,6 @@
 			(type default)
 		)
 		(uuid "d528963b-8721-47e8-9b65-1ec5c50786cc")
-	)
-	(wire
-		(pts
-			(xy 44.45 20.32) (xy 44.45 21.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d577ed0e-d20f-4ca0-8e0a-fc81de0a1a97")
 	)
 	(wire
 		(pts
@@ -3003,16 +1916,6 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 21.59) (xy 53.34 21.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e435de9b-c0e9-4414-a14b-1d8bea815be1")
-	)
-	(wire
-		(pts
 			(xy 125.73 60.96) (xy 125.73 59.69)
 		)
 		(stroke
@@ -3050,16 +1953,6 @@
 			(type default)
 		)
 		(uuid "f20e25a5-18d6-473b-bf15-0646c775c691")
-	)
-	(wire
-		(pts
-			(xy 27.94 31.75) (xy 35.56 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f269445f-8825-4000-b1f0-363b469acaa2")
 	)
 	(wire
 		(pts
@@ -3396,136 +2289,6 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:Barrel_Jack_Switch")
-		(at 20.32 26.67 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "11aa33cd-d87f-48c4-ad5b-17d4705e1334")
-		(property "Reference" "J2"
-			(at 20.32 21.336 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Barrel_Jack_Switch"
-			(at 21.336 33.274 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:BarrelJack_CUI_PJ-102AH_Horizontal"
-			(at 21.59 27.686 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 21.59 27.686 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "DC Barrel Jack with an internal switch"
-			(at 20.32 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/cui-devices/PJ-102AH/408448"
-			(at 20.32 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "PJ-102AH"
-			(at 20.32 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/PJ102AH/484087/"
-			(at 20.32 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Same Sky (Formerly CUI Devices)"
-			(at 20.32 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "PJ-102AH"
-			(at 20.32 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Same Sky (Formerly CUI Devices)"
-			(at 20.32 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "575c10b6-79ca-49ac-bb00-a4d5c8de4609")
-		)
-		(pin "2"
-			(uuid "4d186b00-a428-45d0-a434-92863c230bd4")
-		)
-		(pin "3"
-			(uuid "407ec02e-c46c-45a3-89bf-c52cf5a8e4c1")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "J2")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "J?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 125.73 90.17 0)
 		(unit 1)
@@ -3657,233 +2420,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
 					(reference "#PWR0187")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:C_0603")
-		(at 35.56 26.67 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "30f7b2c3-fd52-40ae-88b3-a188d5e0b2c4")
-		(property "Reference" "C107"
-			(at 36.068 24.638 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "100nF"
-			(at 36.068 28.956 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 34.5948 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 35.56 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 35.56 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 35.56 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "KEMET"
-			(at 35.56 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" ""
-			(at 35.56 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rated Voltage" "50V"
-			(at 35.56 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Temperature Coefficient" ""
-			(at 35.56 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 35.56 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 35.56 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 35.56 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "KEMET"
-			(at 35.56 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8807ce17-6e15-4661-873c-93bed19224ec")
-		)
-		(pin "2"
-			(uuid "2fd09c2b-f3c3-4cd3-8c58-1494b8e372d9")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "C107")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "C?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 72.39 33.02 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "37741657-ccfb-4680-9bdd-d3b80bad4bca")
-		(property "Reference" "#PWR0217"
-			(at 72.39 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 72.39 36.576 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 72.39 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 72.39 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 72.39 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f0fdf2bb-f2c1-4ff9-9e26-b20e635f02ed")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0217")
 					(unit 1)
 				)
 			)
@@ -4032,154 +2568,6 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
 					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:C_0603")
-		(at 53.34 26.67 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3d89b1f1-093f-49f5-b36f-36cf39a00668")
-		(property "Reference" "C110"
-			(at 53.594 24.638 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10uF"
-			(at 54.102 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 54.3052 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 53.34 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "10 µF ±10% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
-			(at 51.816 9.398 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
-			(at 53.34 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" ""
-			(at 53.34 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rated Voltage" "25V"
-			(at 53.34 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Temperature Coefficient" ""
-			(at 53.34 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Murata Electronics"
-			(at 53.34 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 53.34 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "GRM188R61E106KA73D"
-			(at 53.34 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Murata Electronics"
-			(at 53.34 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "aa80501e-bd4b-4e65-a7fc-877eff18de4e")
-		)
-		(pin "2"
-			(uuid "b9d3eaae-11d6-4acf-87d8-eb16abe844ee")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "C110")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "C?")
 					(unit 1)
 				)
 			)
@@ -5090,132 +3478,6 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
 					(reference "C?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:L_Coupled_1423")
-		(at 66.04 26.67 0)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "68339fd1-98ba-4928-890f-affcaa6c1a20")
-		(property "Reference" "CMC1"
-			(at 66.04 21.336 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "L_Coupled_1423"
-			(at 65.659 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:L_CommonModeChoke_TDKCorporation_1210"
-			(at 66.04 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 66.04 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "2 Line Common Mode Choke Surface Mount 1 kOhms @ 100 MHz 1.5A DCR 50mOhm (Typ)"
-			(at 66.04 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/tdk-corporation/ACP3225-102-2P-T000/3024970"
-			(at 66.04 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "TDK"
-			(at 66.04 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "ACP3225-102-2P-T000"
-			(at 66.04 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "TDK"
-			(at 66.04 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "ACP3225-102-2P-T000"
-			(at 66.04 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8b9bdf33-3e5c-4cf3-8e1f-fd4cad4b37e7")
-		)
-		(pin "2"
-			(uuid "ce640ff6-3ae2-4e08-a9dc-588143043567")
-		)
-		(pin "3"
-			(uuid "b035537b-f00f-4b49-803d-18a5e4370527")
-		)
-		(pin "4"
-			(uuid "b081dcdd-b14e-4bcc-a48c-3568c004ccc1")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "CMC1")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "CMC?")
 					(unit 1)
 				)
 			)
@@ -6807,148 +5069,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+12V")
-		(at 44.45 20.32 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c8216afe-c6ba-458e-9e10-abaa84c986a5")
-		(property "Reference" "#PWR0210"
-			(at 44.45 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VDC"
-			(at 44.45 16.764 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 44.45 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 44.45 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+12V\""
-			(at 44.45 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "dbbee142-495b-4d9d-986a-11911a05ef57")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0210")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 72.39 20.32 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c9a90094-19a0-452a-b4f0-3b3280e0575e")
-		(property "Reference" "#PWR0216"
-			(at 72.39 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VBUS2"
-			(at 72.39 16.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 72.39 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 72.39 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 72.39 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "dc8ca805-b0f6-46d0-aff6-ce7044a03789")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0216")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 166.37 118.11 0)
 		(unit 1)
@@ -7503,171 +5623,6 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:C_0603")
-		(at 44.45 26.67 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d5c7f9e9-aa74-4917-8449-4db8d4d53283")
-		(property "Reference" "C108"
-			(at 44.704 24.638 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1uF"
-			(at 44.958 28.956 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 45.4152 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 44.45 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Ceramic Capacitor, Multilayer, Ceramic, 50V, 10% +Tol, 10% -Tol, X7R, 15% TC, 1uF, Surface Mount, 0603"
-			(at 44.45 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Notes" "must not be polarized"
-			(at 44.45 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/tdk-corporation/C1608X7R1H105K080AB/25982687"
-			(at 44.45 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" ""
-			(at 44.45 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "TDK"
-			(at 44.45 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rated Voltage" "50V"
-			(at 44.45 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Temperature Coefficient" ""
-			(at 44.45 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PCBWay Link" ""
-			(at 44.45 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 44.45 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "C1608X7R1H105K080AB"
-			(at 44.45 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "TDK"
-			(at 44.45 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "58b8fc98-41a9-4127-9b56-88f995b4bebb")
-		)
-		(pin "2"
-			(uuid "598c6432-490e-4c7e-ad4b-764374e3d68f")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "C108")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "C?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
 		(at 125.73 64.77 270)
 		(unit 1)
@@ -7730,77 +5685,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
 					(reference "D10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND2")
-		(at 44.45 33.02 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ec26b72e-2fbd-46a4-9040-19ccfc57a743")
-		(property "Reference" "#PWR0211"
-			(at 44.45 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND_DC"
-			(at 44.45 36.322 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 44.45 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 44.45 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND2\" , ground"
-			(at 44.45 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6b09bb4b-5749-4df4-8f89-8ffe87734329")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0211")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "#PWR?")
 					(unit 1)
 				)
 			)
