@@ -689,130 +689,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "harp.device.quad.dac:R_0603"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "R_0603"
-				(at 0 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-				(at -1.778 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R res resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_0603_0_1"
-				(rectangle
-					(start -1.016 -2.54)
-					(end 1.016 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_0603_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "kicad_component_library:VBUS05N1-HD1-G3-08"
 			(pin_numbers
 				(hide yes)
@@ -1338,21 +1214,23 @@
 	)
 	(text "DIR=H\nA input\nB output"
 		(exclude_from_sim no)
-		(at 138.43 86.36 0)
+		(at 134.62 84.582 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
+			(justify left)
 		)
 		(uuid "c52f935b-caa1-4eaa-8200-8b3d257849a1")
 	)
 	(text "DIR=H\nA input\nB output"
 		(exclude_from_sim no)
-		(at 138.43 144.78 0)
+		(at 134.874 144.78 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
+			(justify left)
 		)
 		(uuid "f6b95810-1d66-4d24-baa7-b9045a082a61")
 	)
@@ -1436,7 +1314,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 123.19) (xy 110.49 121.92)
+			(xy 118.11 123.19) (xy 118.11 121.92)
 		)
 		(stroke
 			(width 0)
@@ -1446,7 +1324,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 86.36) (xy 110.49 85.09)
+			(xy 118.11 86.36) (xy 118.11 85.09)
 		)
 		(stroke
 			(width 0)
@@ -1486,7 +1364,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 144.78) (xy 110.49 143.51)
+			(xy 118.11 144.78) (xy 118.11 143.51)
 		)
 		(stroke
 			(width 0)
@@ -1546,7 +1424,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 80.01) (xy 116.84 80.01)
+			(xy 123.19 80.01) (xy 125.73 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1576,7 +1454,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 138.43) (xy 116.84 138.43)
+			(xy 123.19 138.43) (xy 125.73 138.43)
 		)
 		(stroke
 			(width 0)
@@ -1646,16 +1524,6 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 59.69) (xy 125.73 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8525b54c-5302-4c92-b1ad-b2255f2e0699")
-	)
-	(wire
-		(pts
 			(xy 162.56 74.93) (xy 163.83 74.93)
 		)
 		(stroke
@@ -1676,7 +1544,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 66.04) (xy 110.49 64.77)
+			(xy 118.11 66.04) (xy 118.11 64.77)
 		)
 		(stroke
 			(width 0)
@@ -1713,16 +1581,6 @@
 			(type default)
 		)
 		(uuid "9c82a89a-0008-4fc5-aeba-628935ed0973")
-	)
-	(wire
-		(pts
-			(xy 124.46 138.43) (xy 125.73 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9e5c1af3-4dd0-437f-a591-4cc1307169ff")
 	)
 	(wire
 		(pts
@@ -1816,16 +1674,6 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 80.01) (xy 124.46 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d528963b-8721-47e8-9b65-1ec5c50786cc")
-	)
-	(wire
-		(pts
 			(xy 125.73 80.01) (xy 132.08 80.01)
 		)
 		(stroke
@@ -1856,23 +1704,13 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 116.84) (xy 116.84 116.84)
+			(xy 123.19 116.84) (xy 125.73 116.84)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "d93206c3-e999-49ab-b9c3-e9e16809047e")
-	)
-	(wire
-		(pts
-			(xy 124.46 116.84) (xy 125.73 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d970ab79-24cd-4bd9-b541-d3a821cad28d")
 	)
 	(wire
 		(pts
@@ -1926,7 +1764,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 59.69) (xy 116.84 59.69)
+			(xy 123.19 59.69) (xy 125.73 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2168,7 +2006,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74LVCH2T45DC"
+		(property "Value" "SN74LVC2T45DCTR"
 			(at 153.416 86.36 0)
 			(effects
 				(font
@@ -2204,7 +2042,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/74LVCH2T45DC-125/2530613"
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/SN74LVC2T45DCTR/639457"
 			(at 152.4 72.39 0)
 			(effects
 				(font
@@ -2213,7 +2051,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Nexperia"
+		(property "Manufacturer" "Texas Instruments"
 			(at 152.4 72.39 0)
 			(effects
 				(font
@@ -2222,25 +2060,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "74LVCH2T45DC,125"
-			(at 152.4 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Nexperia"
-			(at 152.4 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "74LVCH2T45DC,125"
+		(property "Manufacturer Number" "SN74LVC2T45DCTR"
 			(at 152.4 72.39 0)
 			(effects
 				(font
@@ -2575,7 +2395,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:Conn_Coaxial")
-		(at 110.49 138.43 0)
+		(at 118.11 138.43 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2584,7 +2404,7 @@
 		(dnp no)
 		(uuid "46f238c9-2465-4645-b7b9-eaf3308302ec")
 		(property "Reference" "J5"
-			(at 108.458 137.414 0)
+			(at 116.078 137.414 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2593,7 +2413,7 @@
 			)
 		)
 		(property "Value" "Conn_Coaxial"
-			(at 106.68 139.9931 0)
+			(at 114.3 139.9931 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2603,7 +2423,7 @@
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
-			(at 110.49 138.43 0)
+			(at 118.11 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2612,7 +2432,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 110.49 138.43 0)
+			(at 118.11 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2620,8 +2440,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 110.49 138.43 0)
+		(property "Description" "SMA Connector Receptacle, Female Socket 50 Ohms Surface Mount, Right Angle Solder"
+			(at 118.11 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2630,7 +2450,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
-			(at 110.49 138.43 0)
+			(at 118.11 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2639,7 +2459,7 @@
 			)
 		)
 		(property "Manufacturer" "TE Connectivity Linx"
-			(at 110.49 138.43 0)
+			(at 118.11 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2647,8 +2467,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "TE Connectivity Linx"
-			(at 110.49 138.43 0)
+		(property "Manufacturer_Name" ""
+			(at 118.11 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2656,8 +2476,17 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CONSMA002-SMD-G-T"
-			(at 110.49 138.43 0)
+		(property "Manufacturer_Part_Number" ""
+			(at 118.11 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
+			(at 118.11 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2758,280 +2587,8 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:R_0603")
-		(at 120.65 116.84 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4be63e28-fbca-4e49-847e-b810c5228c2e")
-		(property "Reference" "R101"
-			(at 120.65 114.3 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 120.65 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 120.65 118.618 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 120.65 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Res Thick Film 0603 100 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD T/R Automotive AEC-Q200"
-			(at 120.65 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "1%"
-			(at 120.65 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/yageo/AC0603FR-13100RL/12756385"
-			(at 120.65 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 120.65 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "RT0402BRD071KL"
-			(at 120.65 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PCBWay Link" ""
-			(at 120.65 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Yageo"
-			(at 120.65 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "AC0603FR-13100RL"
-			(at 120.65 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c77cf0cd-616f-40d8-a26d-87e66a1b57ae")
-		)
-		(pin "2"
-			(uuid "6acfeda7-e1c5-4ffa-b037-803b5b871c00")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "R101")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "R?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:R_0603")
-		(at 120.65 59.69 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4f338ba3-4ca6-4af6-bc4a-49c84b63bdf8")
-		(property "Reference" "R99"
-			(at 120.65 57.15 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 120.65 59.69 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 120.65 61.468 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 120.65 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Res Thick Film 0603 100 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD T/R Automotive AEC-Q200"
-			(at 120.65 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "1%"
-			(at 120.65 59.69 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/yageo/AC0603FR-13100RL/12756385"
-			(at 120.65 59.69 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 120.65 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "RT0402BRD071KL"
-			(at 120.65 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PCBWay Link" ""
-			(at 120.65 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Yageo"
-			(at 120.65 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "AC0603FR-13100RL"
-			(at 120.65 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ff3bf99e-236f-4ffa-b79d-92e0686c6186")
-		)
-		(pin "2"
-			(uuid "11a03ee4-1810-48dd-b71c-713d9b987621")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "R99")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "R?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:Conn_Coaxial")
-		(at 110.49 80.01 0)
+		(at 118.11 80.01 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3040,7 +2597,7 @@
 		(dnp no)
 		(uuid "5157dbe2-12a4-4e4a-b40a-8899f7172251")
 		(property "Reference" "J7"
-			(at 108.458 78.994 0)
+			(at 116.078 78.994 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3049,7 +2606,7 @@
 			)
 		)
 		(property "Value" "Conn_Coaxial"
-			(at 106.68 81.5731 0)
+			(at 114.3 81.5731 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3059,7 +2616,7 @@
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
-			(at 110.49 80.01 0)
+			(at 118.11 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3068,7 +2625,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 110.49 80.01 0)
+			(at 118.11 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3076,8 +2633,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 110.49 80.01 0)
+		(property "Description" "SMA Connector Receptacle, Female Socket 50 Ohms Surface Mount, Right Angle Solder"
+			(at 118.11 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3086,7 +2643,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
-			(at 110.49 80.01 0)
+			(at 118.11 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3095,7 +2652,7 @@
 			)
 		)
 		(property "Manufacturer" "TE Connectivity Linx"
-			(at 110.49 80.01 0)
+			(at 118.11 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3103,8 +2660,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "TE Connectivity Linx"
-			(at 110.49 80.01 0)
+		(property "Manufacturer_Name" ""
+			(at 118.11 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3112,8 +2669,17 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CONSMA002-SMD-G-T"
-			(at 110.49 80.01 0)
+		(property "Manufacturer_Part_Number" ""
+			(at 118.11 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
+			(at 118.11 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3144,7 +2710,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:Conn_Coaxial")
-		(at 110.49 116.84 0)
+		(at 118.11 116.84 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3153,7 +2719,7 @@
 		(dnp no)
 		(uuid "51996bb2-dd3f-441b-9e06-3caf629be3b6")
 		(property "Reference" "J6"
-			(at 108.458 115.824 0)
+			(at 116.078 115.824 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3162,7 +2728,7 @@
 			)
 		)
 		(property "Value" "Conn_Coaxial"
-			(at 106.68 118.4031 0)
+			(at 114.3 118.4031 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3172,7 +2738,7 @@
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
-			(at 110.49 116.84 0)
+			(at 118.11 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3181,7 +2747,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 110.49 116.84 0)
+			(at 118.11 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3189,8 +2755,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 110.49 116.84 0)
+		(property "Description" "SMA Connector Receptacle, Female Socket 50 Ohms Surface Mount, Right Angle Solder"
+			(at 118.11 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3199,7 +2765,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
-			(at 110.49 116.84 0)
+			(at 118.11 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3208,7 +2774,7 @@
 			)
 		)
 		(property "Manufacturer" "TE Connectivity Linx"
-			(at 110.49 116.84 0)
+			(at 118.11 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3216,8 +2782,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "TE Connectivity Linx"
-			(at 110.49 116.84 0)
+		(property "Manufacturer_Name" ""
+			(at 118.11 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3225,8 +2791,17 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CONSMA002-SMD-G-T"
-			(at 110.49 116.84 0)
+		(property "Manufacturer_Part_Number" ""
+			(at 118.11 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
+			(at 118.11 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3257,7 +2832,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 110.49 123.19 0)
+		(at 118.11 123.19 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3265,7 +2840,7 @@
 		(dnp no)
 		(uuid "59fed7ab-765e-4911-ada7-f2fd71707e21")
 		(property "Reference" "#PWR0178"
-			(at 110.49 129.54 0)
+			(at 118.11 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3274,7 +2849,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 108.585 127 0)
+			(at 116.205 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3283,7 +2858,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 110.49 123.19 0)
+			(at 118.11 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3292,7 +2867,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 123.19 0)
+			(at 118.11 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3301,7 +2876,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 110.49 123.19 0)
+			(at 118.11 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3399,7 +2974,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C104K5RACTU"
 			(at 142.24 58.42 0)
 			(effects
 				(font
@@ -3546,7 +3121,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "GRM188R61E106KA73D"
 			(at 181.61 95.25 0)
 			(effects
 				(font
@@ -3711,7 +3286,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C104K5RACTU"
 			(at 162.56 58.42 0)
 			(effects
 				(font
@@ -3884,7 +3459,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74LVCH2T45DC"
+		(property "Value" "SN74LVC2T45DCTR"
 			(at 153.67 144.78 0)
 			(effects
 				(font
@@ -3920,7 +3495,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/74LVCH2T45DC-125/2530613"
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/SN74LVC2T45DCTR/639457"
 			(at 152.4 130.81 0)
 			(effects
 				(font
@@ -3929,7 +3504,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Nexperia"
+		(property "Manufacturer" "Texas Instruments"
 			(at 152.4 130.81 0)
 			(effects
 				(font
@@ -3938,25 +3513,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "74LVCH2T45DC,125"
-			(at 152.4 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Nexperia"
-			(at 152.4 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "74LVCH2T45DC,125"
+		(property "Manufacturer Number" "SN74LVC2T45DCTR"
 			(at 152.4 130.81 0)
 			(effects
 				(font
@@ -4216,7 +3773,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 110.49 66.04 0)
+		(at 118.11 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4224,7 +3781,7 @@
 		(dnp no)
 		(uuid "9473461b-c83b-4f03-9ff6-802a0ddb3a9a")
 		(property "Reference" "#PWR0176"
-			(at 110.49 72.39 0)
+			(at 118.11 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4233,7 +3790,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 108.585 69.85 0)
+			(at 116.205 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4242,7 +3799,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 110.49 66.04 0)
+			(at 118.11 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4251,7 +3808,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 66.04 0)
+			(at 118.11 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4260,7 +3817,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 110.49 66.04 0)
+			(at 118.11 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4358,7 +3915,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C104K5RACTU"
 			(at 162.56 116.84 0)
 			(effects
 				(font
@@ -4726,142 +4283,6 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:R_0603")
-		(at 120.65 80.01 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a2a9ce14-80e5-4e42-8ae8-a42c595a82e4")
-		(property "Reference" "R98"
-			(at 120.65 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 120.65 80.01 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 120.65 81.788 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 120.65 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Res Thick Film 0603 100 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD T/R Automotive AEC-Q200"
-			(at 120.65 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "1%"
-			(at 120.65 80.01 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/yageo/AC0603FR-13100RL/12756385"
-			(at 120.65 80.01 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 120.65 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "RT0402BRD071KL"
-			(at 120.65 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PCBWay Link" ""
-			(at 120.65 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Yageo"
-			(at 120.65 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "AC0603FR-13100RL"
-			(at 120.65 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "337067ab-e4bc-4bf5-9029-e6e1f8a851ec")
-		)
-		(pin "2"
-			(uuid "5aaa60c2-cd01-4195-b6a1-9dd65b7d8a2d")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "R98")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "R?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3.3V")
 		(at 140.97 80.01 90)
 		(unit 1)
@@ -4927,142 +4348,6 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
 					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:R_0603")
-		(at 120.65 138.43 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "bd61a2cc-b419-46a4-aca7-7d75f4a18ba8")
-		(property "Reference" "R100"
-			(at 120.65 135.89 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 120.65 138.43 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 120.65 140.208 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 120.65 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Res Thick Film 0603 100 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD T/R Automotive AEC-Q200"
-			(at 120.65 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "1%"
-			(at 120.65 138.43 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/yageo/AC0603FR-13100RL/12756385"
-			(at 120.65 138.43 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 120.65 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "RT0402BRD071KL"
-			(at 120.65 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PCBWay Link" ""
-			(at 120.65 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Yageo"
-			(at 120.65 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "AC0603FR-13100RL"
-			(at 120.65 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0ea1d494-a1ff-408f-ae98-f899c3541f9e")
-		)
-		(pin "2"
-			(uuid "9d8317e6-ed99-4327-bf18-ab1506116849")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "R100")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
-					(reference "R?")
 					(unit 1)
 				)
 			)
@@ -5141,7 +4426,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 110.49 144.78 0)
+		(at 118.11 144.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5149,7 +4434,7 @@
 		(dnp no)
 		(uuid "cbc1c6d0-a4e6-4f04-a051-c11d2dba178c")
 		(property "Reference" "#PWR0177"
-			(at 110.49 151.13 0)
+			(at 118.11 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5158,7 +4443,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 108.585 148.59 0)
+			(at 116.205 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5167,7 +4452,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 110.49 144.78 0)
+			(at 118.11 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5176,7 +4461,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 144.78 0)
+			(at 118.11 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5185,7 +4470,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 110.49 144.78 0)
+			(at 118.11 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5354,7 +4639,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C104K5RACTU"
 			(at 142.24 116.84 0)
 			(effects
 				(font
@@ -5440,7 +4725,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:Conn_Coaxial")
-		(at 110.49 59.69 0)
+		(at 118.11 59.69 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5449,7 +4734,7 @@
 		(dnp no)
 		(uuid "cdd081e7-f9a2-4059-b524-66f7df26bcbd")
 		(property "Reference" "J8"
-			(at 108.458 58.674 0)
+			(at 116.078 58.674 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5458,7 +4743,7 @@
 			)
 		)
 		(property "Value" "Conn_Coaxial"
-			(at 106.68 61.2531 0)
+			(at 114.3 61.2531 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5468,7 +4753,7 @@
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
-			(at 110.49 59.69 0)
+			(at 118.11 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5477,7 +4762,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 110.49 59.69 0)
+			(at 118.11 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5485,8 +4770,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 110.49 59.69 0)
+		(property "Description" "SMA Connector Receptacle, Female Socket 50 Ohms Surface Mount, Right Angle Solder"
+			(at 118.11 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5495,7 +4780,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
-			(at 110.49 59.69 0)
+			(at 118.11 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5504,7 +4789,7 @@
 			)
 		)
 		(property "Manufacturer" "TE Connectivity Linx"
-			(at 110.49 59.69 0)
+			(at 118.11 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5512,8 +4797,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "TE Connectivity Linx"
-			(at 110.49 59.69 0)
+		(property "Manufacturer_Name" ""
+			(at 118.11 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5521,8 +4806,17 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CONSMA002-SMD-G-T"
-			(at 110.49 59.69 0)
+		(property "Manufacturer_Part_Number" ""
+			(at 118.11 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
+			(at 118.11 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5834,7 +5128,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 110.49 86.36 0)
+		(at 118.11 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5842,7 +5136,7 @@
 		(dnp no)
 		(uuid "f3fbd28b-32c6-4009-bf81-3c9143a57ccb")
 		(property "Reference" "#PWR0175"
-			(at 110.49 92.71 0)
+			(at 118.11 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5851,7 +5145,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 108.585 90.17 0)
+			(at 116.205 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5860,7 +5154,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 110.49 86.36 0)
+			(at 118.11 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5869,7 +5163,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 86.36 0)
+			(at 118.11 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5878,7 +5172,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 110.49 86.36 0)
+			(at 118.11 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)

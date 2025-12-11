@@ -1,4 +1,4 @@
-26920401968717000
+26922167381815449
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -106568,9 +106568,16 @@ LED_Kingbright_APA2107LZGCK
 2
 2
 kicad_component_library
+L_0806_2016Metric
+Inductor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 80, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+inductor
+0
+2
+2
+kicad_component_library
 L_Bourns-SRP4030FA
-Bourns SRN4018 series SMD inductor, https://www.bourns.com/docs/Product-Datasheets/SRN4018.pdf
-Bourns SRN4018 SMD inductor
+Bourns SRP4030FA series SMD inductor
+Bourns SRP4030FA SMD inductor
 0
 2
 2

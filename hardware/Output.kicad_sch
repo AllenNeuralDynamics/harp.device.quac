@@ -689,278 +689,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "harp.device.quad.dac:PESD12VL1BSLAZ"
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 12.7 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" "PESD12VL1BSLAZ"
-				(at 12.7 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "harp.device.quad.dac.kicad:PESD12VL1BSLAZ"
-				(at 12.7 -93.65 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESD12VL1BSL.pdf"
-				(at 12.7 -193.65 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Description" "ESD Suppressors / TVS Diodes PESD12VL1BSL/SO2"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Height" "0.45"
-				(at 12.7 -393.65 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Name" "Nexperia"
-				(at 12.7 -493.65 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "PESD12VL1BSLAZ"
-				(at 12.7 -593.65 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "771-PESD12VL1BSLAZ"
-				(at 12.7 -693.65 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nexperia/PESD12VL1BSLAZ?qs=Li%252BoUPsLEnsvnACK22XOiQ%3D%3D"
-				(at 12.7 -793.65 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" "PESD12VL1BSLAZ"
-				(at 12.7 -893.65 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/pesd12vl1bslaz/nexperia?region=nac"
-				(at 12.7 -993.65 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-					(hide yes)
-				)
-			)
-			(symbol "PESD12VL1BSLAZ_1_1"
-				(polyline
-					(pts
-						(xy 5.08 2.54) (xy 5.08 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 2.54) (xy 10.16 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 9.144 2.54) (xy 10.16 2.032)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 0) (xy 5.08 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 0) (xy 15.24 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 -2.032) (xy 10.16 2.032)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 -2.032) (xy 11.176 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 15.24 2.54) (xy 10.16 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 15.24 2.54) (xy 15.24 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at 0 0 0)
-					(length 5.08)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 20.32 0 180)
-					(length 5.08)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "harp.device.quad.dac:R_0603"
 			(pin_numbers
 				(hide yes)
@@ -1575,70 +1303,9 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "voltage level 5V"
-		(exclude_from_sim no)
-		(at 85.852 119.126 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "128e3d23-087d-40da-9df8-3b02fc020656")
-	)
-	(text "Digital Out\nTTL 5V"
-		(exclude_from_sim no)
-		(at 142.24 67.31 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "1ea0bb34-c8f6-45c5-931a-aedaa4638429")
-	)
-	(text "Digital Out\nTTL 5V"
-		(exclude_from_sim no)
-		(at 142.24 132.08 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "1fc5ba65-d3e6-45ab-8492-08575aa3b4a8")
-	)
-	(text "Analog Out\n-10V to +10V"
-		(exclude_from_sim no)
-		(at 215.9 100.33 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "35b133e8-b461-4bb4-832c-020e45c17f46")
-	)
-	(text "Analog Out\n-10V to +10V"
-		(exclude_from_sim no)
-		(at 215.9 68.58 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "450bd479-b961-4525-bde4-eb240a3bf27f")
-	)
-	(text "Digital Out\nTTL 5V"
-		(exclude_from_sim no)
-		(at 142.24 115.57 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "5daa3ed0-1e9b-4e6f-acef-20dfca927fe7")
-	)
 	(text "3.3V to 5V level shifter"
 		(exclude_from_sim no)
-		(at 74.93 31.75 0)
+		(at 127 53.34 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1648,7 +1315,7 @@
 	)
 	(text "3.3V to 5V level shifter"
 		(exclude_from_sim no)
-		(at 74.93 95.25 0)
+		(at 127 100.33 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1656,19 +1323,9 @@
 		)
 		(uuid "7aaa8c51-2b44-400a-b549-fa4c8e32f9cb")
 	)
-	(text "Analog Out\n-10V to +10V"
-		(exclude_from_sim no)
-		(at 215.9 132.08 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "7e546407-6105-4c4d-994f-752e4280617f")
-	)
 	(text "voltage level 3.3V"
 		(exclude_from_sim no)
-		(at 46.99 55.88 0)
+		(at 98.298 71.12 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1677,30 +1334,9 @@
 		)
 		(uuid "817e14e4-532b-45b1-8f39-a2644c36e4d1")
 	)
-	(text "Analog Out\n-10V to +10V"
-		(exclude_from_sim no)
-		(at 215.9 36.83 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "bdb0d69a-722d-4817-9246-42850e6e96b4")
-	)
-	(text "voltage level 5V"
-		(exclude_from_sim no)
-		(at 86.106 57.15 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c9f3e88e-204b-4272-af6f-928d8d960152")
-	)
 	(text "Digital Out\nTTL 5V"
 		(exclude_from_sim no)
-		(at 143.51 48.26 0)
+		(at 172.466 62.484 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1708,20 +1344,9 @@
 		)
 		(uuid "d20707cf-96eb-4392-82c9-dc9c85005a76")
 	)
-	(text "voltage level 3.3V"
-		(exclude_from_sim no)
-		(at 46.99 119.38 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d2fb376b-6922-4ff3-ad8f-172687184e01")
-	)
 	(text "DIR=H\nA input\nB output"
 		(exclude_from_sim no)
-		(at 60.96 68.58 0)
+		(at 113.03 90.17 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1731,7 +1356,7 @@
 	)
 	(text "DIR=H\nA input\nB output"
 		(exclude_from_sim no)
-		(at 60.96 132.08 0)
+		(at 113.03 137.16 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1740,90 +1365,56 @@
 		(uuid "f48f662f-e561-4c86-aae9-24e4f2efbfda")
 	)
 	(junction
-		(at 111.76 41.91)
+		(at 163.83 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "231e3d32-a913-490b-9c5d-fbeb63f4c575")
 	)
 	(junction
-		(at 184.15 93.98)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "59c7be9b-0191-487a-92f2-dc64834e78b9")
-	)
-	(junction
-		(at 72.39 40.64)
+		(at 124.46 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5a1cc586-34ed-4919-9786-465383bd048a")
 	)
 	(junction
-		(at 184.15 125.73)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "77cfc389-49fd-4086-9e7f-0101727b0efc")
-	)
-	(junction
-		(at 184.15 30.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "79d776d4-df4c-4e9c-9801-d8cbf33fad4e")
-	)
-	(junction
-		(at 110.49 125.73)
+		(at 162.56 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7d83ba7b-1102-4efd-9385-eacb737ba12a")
 	)
 	(junction
-		(at 77.47 40.64)
+		(at 129.54 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "84335b9a-8607-453c-bbac-c366739070e6")
 	)
 	(junction
-		(at 110.49 109.22)
+		(at 162.56 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8518adcb-4138-4828-b23c-ab174c3f08b5")
 	)
 	(junction
-		(at 72.39 104.14)
+		(at 162.56 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bbb672d4-5862-4922-a339-15d6d7b92927")
+	)
+	(junction
+		(at 124.46 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bbe579e5-8841-4cd1-ad80-3c91c5953d98")
 	)
 	(junction
-		(at 110.49 60.96)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c45cf4b4-75d4-447a-85ec-3f2cfe59fd6e")
-	)
-	(junction
-		(at 77.47 104.14)
+		(at 129.54 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cf647e78-ef66-418f-8eba-0759e1f79ebf")
 	)
-	(junction
-		(at 184.15 62.23)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ee84289e-3d72-4280-84ad-dcda97c8fe2d")
-	)
 	(wire
 		(pts
-			(xy 184.15 30.48) (xy 184.15 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "00a43e9b-f866-4017-8252-3514c4b72c7f")
-	)
-	(wire
-		(pts
-			(xy 77.47 104.14) (xy 77.47 105.41)
+			(xy 129.54 109.22) (xy 129.54 110.49)
 		)
 		(stroke
 			(width 0)
@@ -1833,7 +1424,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 101.6) (xy 72.39 104.14)
+			(xy 124.46 106.68) (xy 124.46 109.22)
 		)
 		(stroke
 			(width 0)
@@ -1843,7 +1434,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 60.96) (xy 86.36 60.96)
+			(xy 137.16 78.74) (xy 138.43 78.74)
 		)
 		(stroke
 			(width 0)
@@ -1853,7 +1444,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 38.1) (xy 77.47 40.64)
+			(xy 129.54 59.69) (xy 129.54 62.23)
 		)
 		(stroke
 			(width 0)
@@ -1863,7 +1454,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 105.41) (xy 90.17 104.14)
+			(xy 142.24 110.49) (xy 142.24 109.22)
 		)
 		(stroke
 			(width 0)
@@ -1873,17 +1464,7 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 125.73) (xy 184.15 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "11f23326-352a-4bea-be29-fc965895d3bb")
-	)
-	(wire
-		(pts
-			(xy 110.49 60.96) (xy 127 60.96)
+			(xy 162.56 83.82) (xy 166.37 83.82)
 		)
 		(stroke
 			(width 0)
@@ -1893,17 +1474,7 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 62.23) (xy 184.15 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "18776264-1308-445a-9562-acf44f4429c0")
-	)
-	(wire
-		(pts
-			(xy 69.85 40.64) (xy 72.39 40.64)
+			(xy 121.92 62.23) (xy 124.46 62.23)
 		)
 		(stroke
 			(width 0)
@@ -1913,7 +1484,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 105.41) (xy 60.96 104.14)
+			(xy 113.03 110.49) (xy 113.03 109.22)
 		)
 		(stroke
 			(width 0)
@@ -1923,17 +1494,7 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 30.48) (xy 184.15 30.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1c421250-9a84-4b48-960a-6d4d9b7cfc1c")
-	)
-	(wire
-		(pts
-			(xy 110.49 135.89) (xy 110.49 134.62)
+			(xy 162.56 140.97) (xy 162.56 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1943,7 +1504,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 62.23) (xy 110.49 60.96)
+			(xy 162.56 85.09) (xy 162.56 83.82)
 		)
 		(stroke
 			(width 0)
@@ -1953,7 +1514,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 41.91) (xy 60.96 40.64)
+			(xy 113.03 63.5) (xy 113.03 62.23)
 		)
 		(stroke
 			(width 0)
@@ -1963,7 +1524,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 41.91) (xy 90.17 40.64)
+			(xy 142.24 63.5) (xy 142.24 62.23)
 		)
 		(stroke
 			(width 0)
@@ -1973,7 +1534,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 130.81) (xy 132.08 132.08)
+			(xy 171.45 135.89) (xy 171.45 137.16)
 		)
 		(stroke
 			(width 0)
@@ -1983,17 +1544,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 130.81) (xy 205.74 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2ae5c011-b403-4ad2-b10a-50e9a964df75")
-	)
-	(wire
-		(pts
-			(xy 110.49 109.22) (xy 127 109.22)
+			(xy 162.56 114.3) (xy 166.37 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2003,7 +1554,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 127) (xy 110.49 125.73)
+			(xy 162.56 132.08) (xy 162.56 130.81)
 		)
 		(stroke
 			(width 0)
@@ -2013,7 +1564,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 115.57) (xy 63.5 115.57)
+			(xy 116.84 120.65) (xy 115.57 120.65)
 		)
 		(stroke
 			(width 0)
@@ -2023,27 +1574,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 35.56) (xy 205.74 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "42497278-7790-426d-a8b1-a9ade6a66dd7")
-	)
-	(wire
-		(pts
-			(xy 184.15 62.23) (xy 184.15 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "44519969-98fc-484e-9d1d-938bd2761930")
-	)
-	(wire
-		(pts
-			(xy 93.98 60.96) (xy 110.49 60.96)
+			(xy 146.05 83.82) (xy 162.56 83.82)
 		)
 		(stroke
 			(width 0)
@@ -2053,17 +1584,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 125.73) (xy 200.66 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "47ba3726-b26b-4bf6-b7b0-ecffeec6ac87")
-	)
-	(wire
-		(pts
-			(xy 133.35 46.99) (xy 133.35 48.26)
+			(xy 172.72 72.39) (xy 172.72 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2073,27 +1594,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 93.98) (xy 184.15 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4e8a96b8-4e19-4351-a4e4-12259cf9f00f")
-	)
-	(wire
-		(pts
-			(xy 184.15 148.59) (xy 184.15 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "552c346c-c479-437c-b9ae-4f20e636abb5")
-	)
-	(wire
-		(pts
-			(xy 111.76 41.91) (xy 128.27 41.91)
+			(xy 163.83 67.31) (xy 167.64 67.31)
 		)
 		(stroke
 			(width 0)
@@ -2103,7 +1604,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 125.73) (xy 93.98 120.65)
+			(xy 146.05 130.81) (xy 146.05 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2113,7 +1614,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 40.64) (xy 81.28 40.64)
+			(xy 129.54 62.23) (xy 133.35 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2123,7 +1624,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 52.07) (xy 86.36 52.07)
+			(xy 137.16 73.66) (xy 138.43 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2133,7 +1634,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 125.73) (xy 64.77 125.73)
+			(xy 115.57 130.81) (xy 116.84 130.81)
 		)
 		(stroke
 			(width 0)
@@ -2143,7 +1644,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 120.65) (xy 63.5 120.65)
+			(xy 116.84 125.73) (xy 115.57 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2153,7 +1654,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 110.49) (xy 110.49 109.22)
+			(xy 162.56 115.57) (xy 162.56 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2163,7 +1664,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 41.91) (xy 111.76 41.91)
+			(xy 146.05 67.31) (xy 163.83 67.31)
 		)
 		(stroke
 			(width 0)
@@ -2173,7 +1674,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 104.14) (xy 72.39 105.41)
+			(xy 124.46 109.22) (xy 124.46 110.49)
 		)
 		(stroke
 			(width 0)
@@ -2183,27 +1684,7 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 93.98) (xy 184.15 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "720fe652-5da1-4ffb-a728-2b37120bf297")
-	)
-	(wire
-		(pts
-			(xy 184.15 116.84) (xy 184.15 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "76b80565-6d96-46db-be12-b5c9b54a4e24")
-	)
-	(wire
-		(pts
-			(xy 90.17 104.14) (xy 88.9 104.14)
+			(xy 142.24 109.22) (xy 140.97 109.22)
 		)
 		(stroke
 			(width 0)
@@ -2213,7 +1694,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 104.14) (xy 72.39 104.14)
+			(xy 121.92 109.22) (xy 124.46 109.22)
 		)
 		(stroke
 			(width 0)
@@ -2223,7 +1704,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 130.81) (xy 74.93 132.08)
+			(xy 127 135.89) (xy 127 137.16)
 		)
 		(stroke
 			(width 0)
@@ -2233,37 +1714,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 125.73) (xy 184.15 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7f9d3b70-6ed8-4734-bff1-cbba0691b9c7")
-	)
-	(wire
-		(pts
-			(xy 184.15 53.34) (xy 184.15 52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8a4ff007-86a6-4be1-965c-0bfdc97cfda1")
-	)
-	(wire
-		(pts
-			(xy 184.15 30.48) (xy 200.66 30.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8c9acb39-a6b6-4228-aa82-9b44a25d1829")
-	)
-	(wire
-		(pts
-			(xy 110.49 125.73) (xy 127 125.73)
+			(xy 162.56 130.81) (xy 166.37 130.81)
 		)
 		(stroke
 			(width 0)
@@ -2273,17 +1724,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 67.31) (xy 205.74 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f27b617-44f6-46c0-b81b-86b8c1af9900")
-	)
-	(wire
-		(pts
-			(xy 93.98 41.91) (xy 93.98 52.07)
+			(xy 146.05 67.31) (xy 146.05 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2293,7 +1734,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 120.65) (xy 85.09 120.65)
+			(xy 138.43 125.73) (xy 137.16 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2303,7 +1744,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 40.64) (xy 88.9 40.64)
+			(xy 142.24 62.23) (xy 140.97 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2313,17 +1754,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 93.98) (xy 200.66 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9e826110-12f8-4273-bc36-b9f98bd320ab")
-	)
-	(wire
-		(pts
-			(xy 64.77 52.07) (xy 63.5 52.07)
+			(xy 116.84 73.66) (xy 115.57 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2333,7 +1764,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 119.38) (xy 110.49 118.11)
+			(xy 162.56 124.46) (xy 162.56 123.19)
 		)
 		(stroke
 			(width 0)
@@ -2343,7 +1774,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 40.64) (xy 77.47 41.91)
+			(xy 129.54 62.23) (xy 129.54 63.5)
 		)
 		(stroke
 			(width 0)
@@ -2353,17 +1784,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 85.09) (xy 184.15 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "af4e04f1-4ce1-4ad5-ad15-bba2db5deafe")
-	)
-	(wire
-		(pts
-			(xy 132.08 66.04) (xy 132.08 67.31)
+			(xy 171.45 88.9) (xy 171.45 90.17)
 		)
 		(stroke
 			(width 0)
@@ -2373,7 +1794,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 115.57) (xy 86.36 115.57)
+			(xy 137.16 120.65) (xy 138.43 120.65)
 		)
 		(stroke
 			(width 0)
@@ -2383,7 +1804,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 109.22) (xy 110.49 109.22)
+			(xy 146.05 114.3) (xy 162.56 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2393,7 +1814,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 104.14) (xy 81.28 104.14)
+			(xy 129.54 109.22) (xy 133.35 109.22)
 		)
 		(stroke
 			(width 0)
@@ -2403,7 +1824,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 40.64) (xy 72.39 41.91)
+			(xy 124.46 62.23) (xy 124.46 63.5)
 		)
 		(stroke
 			(width 0)
@@ -2413,17 +1834,17 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 60.96) (xy 85.09 57.15)
+			(xy 146.05 83.82) (xy 146.05 78.74)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c4431da0-32bb-4470-b67b-11ad7d5709fc")
+		(uuid "c548ba73-50d1-40f2-ad44-9d2507187f8e")
 	)
 	(wire
 		(pts
-			(xy 60.96 40.64) (xy 62.23 40.64)
+			(xy 113.03 62.23) (xy 114.3 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2433,17 +1854,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 62.23) (xy 200.66 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cce5da84-e48f-4b9e-8092-5b9c2ff5caa3")
-	)
-	(wire
-		(pts
-			(xy 93.98 109.22) (xy 93.98 115.57)
+			(xy 146.05 114.3) (xy 146.05 120.65)
 		)
 		(stroke
 			(width 0)
@@ -2453,7 +1864,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 125.73) (xy 110.49 125.73)
+			(xy 146.05 130.81) (xy 162.56 130.81)
 		)
 		(stroke
 			(width 0)
@@ -2463,7 +1874,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 104.14) (xy 62.23 104.14)
+			(xy 113.03 109.22) (xy 114.3 109.22)
 		)
 		(stroke
 			(width 0)
@@ -2473,7 +1884,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 62.23) (xy 64.77 62.23)
+			(xy 115.57 83.82) (xy 116.84 83.82)
 		)
 		(stroke
 			(width 0)
@@ -2483,7 +1894,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 57.15) (xy 63.5 57.15)
+			(xy 116.84 78.74) (xy 115.57 78.74)
 		)
 		(stroke
 			(width 0)
@@ -2493,7 +1904,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 114.3) (xy 132.08 115.57)
+			(xy 171.45 119.38) (xy 171.45 120.65)
 		)
 		(stroke
 			(width 0)
@@ -2503,7 +1914,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 67.31) (xy 74.93 68.58)
+			(xy 127 88.9) (xy 127 90.17)
 		)
 		(stroke
 			(width 0)
@@ -2513,7 +1924,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 71.12) (xy 110.49 69.85)
+			(xy 162.56 93.98) (xy 162.56 92.71)
 		)
 		(stroke
 			(width 0)
@@ -2523,7 +1934,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 43.18) (xy 111.76 41.91)
+			(xy 163.83 68.58) (xy 163.83 67.31)
 		)
 		(stroke
 			(width 0)
@@ -2533,17 +1944,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 99.06) (xy 205.74 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ef106b11-8414-416a-9d82-9714e90773b7")
-	)
-	(wire
-		(pts
-			(xy 72.39 38.1) (xy 72.39 40.64)
+			(xy 124.46 59.69) (xy 124.46 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2553,7 +1954,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 101.6) (xy 77.47 104.14)
+			(xy 129.54 106.68) (xy 129.54 109.22)
 		)
 		(stroke
 			(width 0)
@@ -2563,7 +1964,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 52.07) (xy 111.76 50.8)
+			(xy 163.83 77.47) (xy 163.83 76.2)
 		)
 		(stroke
 			(width 0)
@@ -2572,7 +1973,7 @@
 		(uuid "fd7ee4a0-4e18-4bd6-be77-a808f4c908f4")
 	)
 	(label "DigitalOut3"
-		(at 93.98 109.22 0)
+		(at 146.05 114.3 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2582,7 +1983,7 @@
 		(uuid "65684ba8-44fc-41b6-8955-1e35959aaf1f")
 	)
 	(label "DigitalOut2"
-		(at 93.98 60.96 0)
+		(at 146.05 83.82 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2592,7 +1993,7 @@
 		(uuid "7ea37eb7-d3fa-4758-8341-996382d2f13d")
 	)
 	(label "DigitalOut1"
-		(at 93.98 41.91 0)
+		(at 146.05 67.31 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2602,7 +2003,7 @@
 		(uuid "87c8b347-218a-4a05-bcba-12eda33fa35a")
 	)
 	(label "DigitalOut4"
-		(at 93.98 125.73 0)
+		(at 146.05 130.81 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2611,31 +2012,9 @@
 		)
 		(uuid "8b315002-6938-4c6f-9033-1df5228178a5")
 	)
-	(global_label "AnalogOut3"
-		(shape input)
-		(at 181.61 125.73 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2fd3325d-f253-4dfc-99fe-6c43179e0fdd")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 167.8603 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "MC_DigitalOut1"
 		(shape input)
-		(at 63.5 57.15 180)
+		(at 115.57 78.74 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2645,51 +2024,7 @@
 		)
 		(uuid "4a5ee1e2-f8c7-4e33-921e-068618f543e8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 46.2426 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "AnalogOut2"
-		(shape input)
-		(at 181.61 93.98 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "4d180690-e06b-4c07-b480-6c635bc47d34")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 167.8603 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "AnalogOut0"
-		(shape input)
-		(at 181.61 30.48 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6dea0b58-1346-4e23-924c-ecb986ba9300")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 167.8603 30.48 0)
+			(at 98.3126 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2701,7 +2036,7 @@
 	)
 	(global_label "MC_DigitalOut0"
 		(shape input)
-		(at 63.5 52.07 180)
+		(at 115.57 73.66 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2711,7 +2046,7 @@
 		)
 		(uuid "839c6528-a9f2-46e7-84df-30c5a0bc8356")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 46.2426 52.07 0)
+			(at 98.3126 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2723,7 +2058,7 @@
 	)
 	(global_label "MC_DigitalOut3"
 		(shape input)
-		(at 63.5 120.65 180)
+		(at 115.57 125.73 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2733,7 +2068,7 @@
 		)
 		(uuid "adf053b6-f819-4200-b25d-a3bfeb60d004")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 46.2426 120.65 0)
+			(at 98.3126 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2745,7 +2080,7 @@
 	)
 	(global_label "MC_DigitalOut2"
 		(shape input)
-		(at 63.5 115.57 180)
+		(at 115.57 120.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2755,29 +2090,7 @@
 		)
 		(uuid "ba556951-4e6a-4974-b699-fb2d25a8b57d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 46.2426 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "AnalogOut1"
-		(shape input)
-		(at 181.61 62.23 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e177bfc3-ee5f-4994-8f23-4133c45e8ecb")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 167.8603 62.23 0)
+			(at 98.3126 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2789,7 +2102,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 110.49 71.12 0)
+		(at 162.56 93.98 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2797,7 +2110,7 @@
 		(dnp no)
 		(uuid "03cd4756-1fbc-41b9-8fb2-1194a7ae663b")
 		(property "Reference" "#PWR0302"
-			(at 110.49 77.47 0)
+			(at 162.56 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2806,7 +2119,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 110.49 74.676 0)
+			(at 162.56 97.536 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2814,7 +2127,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 110.49 71.12 0)
+			(at 162.56 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2823,7 +2136,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 71.12 0)
+			(at 162.56 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2832,7 +2145,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 110.49 71.12 0)
+			(at 162.56 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2854,7 +2167,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 74.93 68.58 0)
+		(at 127 90.17 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2862,7 +2175,7 @@
 		(dnp no)
 		(uuid "045ef9f9-b3cc-47f1-abb5-eef89cba4e42")
 		(property "Reference" "#PWR0296"
-			(at 74.93 74.93 0)
+			(at 127 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2871,7 +2184,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 74.93 72.39 0)
+			(at 127 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2879,7 +2192,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 74.93 68.58 0)
+			(at 127 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2888,7 +2201,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 74.93 68.58 0)
+			(at 127 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2897,7 +2210,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 74.93 68.58 0)
+			(at 127 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2918,73 +2231,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 184.15 148.59 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "18d19f3b-1a56-4c7c-9ba9-46e167a79576")
-		(property "Reference" "#PWR0313"
-			(at 184.15 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 184.15 152.146 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 184.15 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 184.15 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 184.15 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8260c95c-2d40-4c97-bb47-3c9bb8aae422")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "#PWR0313")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3.3V")
-		(at 63.5 125.73 90)
+		(at 115.57 130.81 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2992,7 +2240,7 @@
 		(dnp no)
 		(uuid "1c3ab672-05d5-47ef-90aa-5940cbfc2f30")
 		(property "Reference" "#PWR0293"
-			(at 67.31 125.73 0)
+			(at 119.38 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3001,7 +2249,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 57.785 125.73 90)
+			(at 109.855 130.81 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3009,7 +2257,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 63.5 125.73 0)
+			(at 115.57 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3018,7 +2266,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 63.5 125.73 0)
+			(at 115.57 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3027,7 +2275,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 63.5 125.73 0)
+			(at 115.57 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3048,203 +2296,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 184.15 85.09 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1e1fef15-df51-4c64-bb72-e0c63dc16ab1")
-		(property "Reference" "#PWR0311"
-			(at 184.15 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 184.15 88.646 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 184.15 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 184.15 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 184.15 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b957cf3c-bd24-438c-ad63-eca9bf827347")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "#PWR0311")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:R_0603")
-		(at 90.17 115.57 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "228d6c53-8492-4653-a73f-2f2773f77fa7")
-		(property "Reference" "R131"
-			(at 90.17 113.284 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10"
-			(at 90.17 115.57 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 90.17 117.348 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 90.17 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Res Thick Film 0603 10 Ohm 1% 0.1W(1/10W) ±200ppm/C Epoxy Pad SMD Automotive T/R"
-			(at 90.17 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/yageo/AC0603FR-1310RL/17006001"
-			(at 90.17 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 90.17 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "SR0603FR-7T100RL"
-			(at 90.17 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Notes" "1/4W"
-			(at 90.17 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "1%"
-			(at 90.17 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Yageo"
-			(at 90.17 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "AC0603FR-1310RL"
-			(at 90.17 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a49eb560-4f85-444d-9b89-9249e82b7f09")
-		)
-		(pin "2"
-			(uuid "ab161a69-97ba-4d16-9f62-9154a32fd08d")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "R131")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:Conn_Coaxial")
-		(at 132.08 109.22 0)
+		(at 171.45 114.3 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3253,7 +2306,7 @@
 		(fields_autoplaced yes)
 		(uuid "26bb8add-7ca0-433e-99cd-d98f234dc0f7")
 		(property "Reference" "J15"
-			(at 134.62 109.5131 0)
+			(at 173.99 114.5931 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3262,7 +2315,7 @@
 			)
 		)
 		(property "Value" "Conn_Coaxial"
-			(at 135.89 110.7831 0)
+			(at 175.26 115.8631 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3272,7 +2325,7 @@
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
-			(at 132.08 109.22 0)
+			(at 171.45 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3281,7 +2334,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 132.08 109.22 0)
+			(at 171.45 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3289,8 +2342,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 132.08 109.22 0)
+		(property "Description" "SMA Connector Receptacle, Female Socket 50 Ohms Surface Mount, Right Angle Solder"
+			(at 171.45 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3299,7 +2352,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
-			(at 132.08 109.22 0)
+			(at 171.45 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3308,7 +2361,7 @@
 			)
 		)
 		(property "Manufacturer" "TE Connectivity Linx"
-			(at 132.08 109.22 0)
+			(at 171.45 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3317,7 +2370,7 @@
 			)
 		)
 		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
-			(at 132.08 109.22 0)
+			(at 171.45 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3325,8 +2378,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "TE Connectivity Linx"
-			(at 132.08 109.22 0)
+		(property "Manufacturer_Name" ""
+			(at 171.45 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3334,8 +2387,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CONSMA002-SMD-G-T"
-			(at 132.08 109.22 0)
+		(property "Manufacturer_Part_Number" ""
+			(at 171.45 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3359,166 +2412,32 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 205.74 100.33 0)
+		(lib_id "harp.device.quad.dac:R_0603")
+		(at 142.24 120.65 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2e43f09d-ffe8-4c52-9ded-0b12dea01822")
-		(property "Reference" "#PWR0316"
-			(at 205.74 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 205.74 103.886 0)
+		(uuid "3a2c6a4f-3910-4fb0-b39a-0b1f913561a5")
+		(property "Reference" "R49"
+			(at 142.24 118.364 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 205.74 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 205.74 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 205.74 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "52eaa22e-d123-4e19-8cb2-1d1a00ac6428")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "#PWR0316")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 184.15 53.34 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3c714dbf-f50a-4a0b-95b8-b8776c4b7287")
-		(property "Reference" "#PWR0310"
-			(at 184.15 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 184.15 56.896 0)
+		(property "Value" "100"
+			(at 142.24 120.65 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 184.15 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 184.15 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 184.15 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f0512048-0fd2-4296-9abf-7d2e7543edd7")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "#PWR0310")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:Conn_Coaxial")
-		(at 205.74 62.23 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "48da45e7-518f-43ed-95c7-55d01c49bcc4")
-		(property "Reference" "J10"
-			(at 208.28 62.5231 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 209.55 63.7931 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
-			(at 205.74 62.23 0)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 142.24 122.428 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3527,7 +2446,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 205.74 62.23 0)
+			(at 142.24 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3535,8 +2454,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 205.74 62.23 0)
+		(property "Description" ""
+			(at 142.24 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3544,8 +2463,8 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
-			(at 205.74 62.23 0)
+		(property "Link" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/SG73P1JTTD1000F/10188091"
+			(at 142.24 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3553,8 +2472,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity Linx"
-			(at 205.74 62.23 0)
+		(property "Manufacturer" "KOA Speer Electronics, Inc."
+			(at 142.24 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3562,8 +2481,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
-			(at 205.74 62.23 0)
+		(property "Manufacturer Number" "SG73P1JTTD1000F"
+			(at 142.24 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3571,8 +2490,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "TE Connectivity Linx"
-			(at 205.74 62.23 0)
+		(property "Notes" "1/2W"
+			(at 142.24 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3580,8 +2499,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CONSMA002-SMD-G-T"
-			(at 205.74 62.23 0)
+		(property "Tolerance" "1%"
+			(at 142.24 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3590,15 +2509,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "8436a34c-d4f3-4fc4-961d-42d25ebfe55d")
+			(uuid "ed4c2c3c-bf28-4cec-8c24-23be8128b55d")
 		)
 		(pin "2"
-			(uuid "7a81acee-ff19-40bc-a7f1-c8c6f05e74fc")
+			(uuid "2635dc94-596d-40d3-a5f1-7c23818288bc")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "J10")
+					(reference "R49")
 					(unit 1)
 				)
 			)
@@ -3606,7 +2525,7 @@
 	)
 	(symbol
 		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
-		(at 110.49 66.04 270)
+		(at 162.56 88.9 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3614,7 +2533,7 @@
 		(dnp no)
 		(uuid "49d431dc-9db9-47ce-93b2-170066fbc0aa")
 		(property "Reference" "D17"
-			(at 112.522 63.754 90)
+			(at 164.592 86.614 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3622,7 +2541,7 @@
 			)
 		)
 		(property "Value" "VBUS05N1-HD1-G3-08"
-			(at 114.3 66.04 0)
+			(at 166.37 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3631,7 +2550,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-882"
-			(at 105.41 66.04 0)
+			(at 157.48 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3640,7 +2559,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/86201/vbus05n1-hd1.pdf"
-			(at 119.38 65.024 0)
+			(at 171.45 87.884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3649,7 +2568,7 @@
 			)
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
-			(at 116.332 65.532 0)
+			(at 168.402 88.392 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3673,124 +2592,8 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:Conn_Coaxial")
-		(at 205.74 125.73 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5d98993b-1fc0-4b8c-b9ce-fec4d760f8f6")
-		(property "Reference" "J12"
-			(at 208.28 126.0231 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 209.55 127.2931 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
-			(at 205.74 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 205.74 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 205.74 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
-			(at 205.74 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "TE Connectivity Linx"
-			(at 205.74 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
-			(at 205.74 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "TE Connectivity Linx"
-			(at 205.74 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CONSMA002-SMD-G-T"
-			(at 205.74 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5353a44a-4fc4-44b6-bf6e-47b89b804e78")
-		)
-		(pin "2"
-			(uuid "a1dcaf98-ae78-48d6-a263-ff9fc0323196")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "J12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 60.96 105.41 0)
+		(at 113.03 110.49 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3798,7 +2601,7 @@
 		(dnp no)
 		(uuid "6048b3e7-834d-4759-b809-a2f3d28d7079")
 		(property "Reference" "#PWR0291"
-			(at 60.96 111.76 0)
+			(at 113.03 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3807,7 +2610,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 60.96 109.22 0)
+			(at 113.03 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3815,7 +2618,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 60.96 105.41 0)
+			(at 113.03 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3824,7 +2627,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 60.96 105.41 0)
+			(at 113.03 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3833,7 +2636,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 60.96 105.41 0)
+			(at 113.03 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3855,7 +2658,7 @@
 	)
 	(symbol
 		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
-		(at 110.49 114.3 270)
+		(at 162.56 119.38 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3863,7 +2666,7 @@
 		(dnp no)
 		(uuid "61f89afc-379b-41a3-b1e0-4fec8fd6cdd3")
 		(property "Reference" "D18"
-			(at 112.522 112.014 90)
+			(at 164.592 117.094 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3871,7 +2674,7 @@
 			)
 		)
 		(property "Value" "VBUS05N1-HD1-G3-08"
-			(at 114.3 114.3 0)
+			(at 166.37 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3880,7 +2683,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-882"
-			(at 105.41 114.3 0)
+			(at 157.48 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3889,7 +2692,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/86201/vbus05n1-hd1.pdf"
-			(at 119.38 113.284 0)
+			(at 171.45 118.364 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3898,7 +2701,7 @@
 			)
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
-			(at 116.332 113.792 0)
+			(at 168.402 118.872 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3922,8 +2725,120 @@
 		)
 	)
 	(symbol
+		(lib_id "harp.device.quad.dac:R_0603")
+		(at 142.24 125.73 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6bfc2d7c-d2b9-4726-a73f-d6eb7c991e34")
+		(property "Reference" "R53"
+			(at 142.24 123.444 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 142.24 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 142.24 127.508 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 142.24 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/SG73P1JTTD1000F/10188091"
+			(at 142.24 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "KOA Speer Electronics, Inc."
+			(at 142.24 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "SG73P1JTTD1000F"
+			(at 142.24 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Notes" "1/2W"
+			(at 142.24 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 142.24 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dfc10be9-2f8b-4533-99d1-4eb956edaa34")
+		)
+		(pin "2"
+			(uuid "5a73cb03-b1cc-48e0-87af-828891669bef")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
+					(reference "R53")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
-		(at 111.76 46.99 270)
+		(at 163.83 72.39 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3931,7 +2846,7 @@
 		(dnp no)
 		(uuid "769b4201-9533-4b31-9e92-e5fbee3172df")
 		(property "Reference" "D16"
-			(at 113.792 44.704 90)
+			(at 165.862 70.104 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3939,7 +2854,7 @@
 			)
 		)
 		(property "Value" "VBUS05N1-HD1-G3-08"
-			(at 115.57 46.99 0)
+			(at 167.64 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3948,7 +2863,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-882"
-			(at 106.68 46.99 0)
+			(at 158.75 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3957,7 +2872,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/86201/vbus05n1-hd1.pdf"
-			(at 120.65 45.974 0)
+			(at 172.72 71.374 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3966,7 +2881,7 @@
 			)
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
-			(at 117.602 46.482 0)
+			(at 169.672 71.882 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3991,7 +2906,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 110.49 119.38 0)
+		(at 162.56 124.46 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3999,7 +2914,7 @@
 		(dnp no)
 		(uuid "7925a6df-a98b-451a-bd25-573e115e4d36")
 		(property "Reference" "#PWR0305"
-			(at 110.49 125.73 0)
+			(at 162.56 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4008,7 +2923,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 110.49 122.936 0)
+			(at 162.56 128.016 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4016,7 +2931,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 110.49 119.38 0)
+			(at 162.56 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4025,7 +2940,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 119.38 0)
+			(at 162.56 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4034,7 +2949,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 110.49 119.38 0)
+			(at 162.56 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4056,7 +2971,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 74.93 132.08 0)
+		(at 127 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4064,7 +2979,7 @@
 		(dnp no)
 		(uuid "7a76ddc6-d481-4cdf-beba-fca8afcc0d5f")
 		(property "Reference" "#PWR0297"
-			(at 74.93 138.43 0)
+			(at 127 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4073,7 +2988,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 74.93 135.89 0)
+			(at 127 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4081,7 +2996,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 74.93 132.08 0)
+			(at 127 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4090,7 +3005,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 74.93 132.08 0)
+			(at 127 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4099,7 +3014,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 74.93 132.08 0)
+			(at 127 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4121,7 +3036,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 132.08 132.08 0)
+		(at 171.45 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4129,7 +3044,7 @@
 		(dnp no)
 		(uuid "7af2fd12-52a5-472d-9672-ee844df0c363")
 		(property "Reference" "#PWR0308"
-			(at 132.08 138.43 0)
+			(at 171.45 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4138,7 +3053,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 132.08 135.636 0)
+			(at 171.45 140.716 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4146,7 +3061,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 132.08 0)
+			(at 171.45 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4155,7 +3070,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.08 132.08 0)
+			(at 171.45 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4164,7 +3079,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 132.08 132.08 0)
+			(at 171.45 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4186,7 +3101,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:Conn_Coaxial")
-		(at 133.35 41.91 0)
+		(at 172.72 67.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4195,7 +3110,7 @@
 		(fields_autoplaced yes)
 		(uuid "7b844e9c-d654-4b01-b4e7-3d8dd99e730d")
 		(property "Reference" "J13"
-			(at 135.89 42.2031 0)
+			(at 175.26 67.6031 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4204,7 +3119,7 @@
 			)
 		)
 		(property "Value" "Conn_Coaxial"
-			(at 137.16 43.4731 0)
+			(at 176.53 68.8731 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4214,7 +3129,7 @@
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
-			(at 133.35 41.91 0)
+			(at 172.72 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4223,7 +3138,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 133.35 41.91 0)
+			(at 172.72 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4231,8 +3146,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 133.35 41.91 0)
+		(property "Description" "SMA Connector Receptacle, Female Socket 50 Ohms Surface Mount, Right Angle Solder"
+			(at 172.72 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4241,7 +3156,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
-			(at 133.35 41.91 0)
+			(at 172.72 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4250,7 +3165,7 @@
 			)
 		)
 		(property "Manufacturer" "TE Connectivity Linx"
-			(at 133.35 41.91 0)
+			(at 172.72 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4259,7 +3174,7 @@
 			)
 		)
 		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
-			(at 133.35 41.91 0)
+			(at 172.72 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4267,8 +3182,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "TE Connectivity Linx"
-			(at 133.35 41.91 0)
+		(property "Manufacturer_Name" ""
+			(at 172.72 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4276,8 +3191,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CONSMA002-SMD-G-T"
-			(at 133.35 41.91 0)
+		(property "Manufacturer_Part_Number" ""
+			(at 172.72 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4302,7 +3217,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:Conn_Coaxial")
-		(at 132.08 125.73 0)
+		(at 171.45 130.81 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4311,7 +3226,7 @@
 		(fields_autoplaced yes)
 		(uuid "7f4b6673-1be2-4b06-bf36-54f610c4938f")
 		(property "Reference" "J16"
-			(at 134.62 126.0231 0)
+			(at 173.99 131.1031 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4320,7 +3235,7 @@
 			)
 		)
 		(property "Value" "Conn_Coaxial"
-			(at 135.89 127.2931 0)
+			(at 175.26 132.3731 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4330,7 +3245,7 @@
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
-			(at 132.08 125.73 0)
+			(at 171.45 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4339,7 +3254,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 132.08 125.73 0)
+			(at 171.45 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4347,8 +3262,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 132.08 125.73 0)
+		(property "Description" "SMA Connector Receptacle, Female Socket 50 Ohms Surface Mount, Right Angle Solder"
+			(at 171.45 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4357,7 +3272,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
-			(at 132.08 125.73 0)
+			(at 171.45 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4366,7 +3281,7 @@
 			)
 		)
 		(property "Manufacturer" "TE Connectivity Linx"
-			(at 132.08 125.73 0)
+			(at 171.45 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4375,7 +3290,7 @@
 			)
 		)
 		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
-			(at 132.08 125.73 0)
+			(at 171.45 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4383,8 +3298,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "TE Connectivity Linx"
-			(at 132.08 125.73 0)
+		(property "Manufacturer_Name" ""
+			(at 171.45 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4392,8 +3307,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CONSMA002-SMD-G-T"
-			(at 132.08 125.73 0)
+		(property "Manufacturer_Part_Number" ""
+			(at 171.45 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4417,124 +3332,8 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:Conn_Coaxial")
-		(at 205.74 93.98 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7f9f566e-f41c-4ac4-bbaa-5a12f7fac027")
-		(property "Reference" "J11"
-			(at 208.28 94.2731 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 209.55 95.5431 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
-			(at 205.74 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 205.74 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 205.74 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
-			(at 205.74 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "TE Connectivity Linx"
-			(at 205.74 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
-			(at 205.74 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "TE Connectivity Linx"
-			(at 205.74 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CONSMA002-SMD-G-T"
-			(at 205.74 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c7a12883-e075-43cc-b1f2-9d1b53f5a2d7")
-		)
-		(pin "2"
-			(uuid "f0af621a-ebec-4c63-9431-22273fe2d1f4")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "J11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 132.08 67.31 0)
+		(at 171.45 90.17 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4542,7 +3341,7 @@
 		(dnp no)
 		(uuid "86d8e88e-7524-4570-9848-e3adf5983de6")
 		(property "Reference" "#PWR0306"
-			(at 132.08 73.66 0)
+			(at 171.45 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4551,7 +3350,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 132.08 70.866 0)
+			(at 171.45 93.726 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4559,7 +3358,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 67.31 0)
+			(at 171.45 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4568,7 +3367,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.08 67.31 0)
+			(at 171.45 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4577,7 +3376,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 132.08 67.31 0)
+			(at 171.45 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4599,7 +3398,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 77.47 38.1 0)
+		(at 129.54 59.69 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4607,7 +3406,7 @@
 		(dnp no)
 		(uuid "86f615a9-8121-491d-a730-2aeb4e733335")
 		(property "Reference" "#PWR0298"
-			(at 77.47 41.91 0)
+			(at 129.54 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4616,7 +3415,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 77.47 34.29 0)
+			(at 129.54 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4624,7 +3423,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 77.47 38.1 0)
+			(at 129.54 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4633,7 +3432,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 77.47 38.1 0)
+			(at 129.54 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4642,7 +3441,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 77.47 38.1 0)
+			(at 129.54 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4664,7 +3463,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 77.47 101.6 0)
+		(at 129.54 106.68 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4672,7 +3471,7 @@
 		(dnp no)
 		(uuid "8df99e8f-acb7-4ece-9afc-1880f78f9860")
 		(property "Reference" "#PWR0299"
-			(at 77.47 105.41 0)
+			(at 129.54 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4681,7 +3480,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 77.47 97.79 0)
+			(at 129.54 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4689,7 +3488,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 77.47 101.6 0)
+			(at 129.54 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4698,7 +3497,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 77.47 101.6 0)
+			(at 129.54 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4707,7 +3506,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 77.47 101.6 0)
+			(at 129.54 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4729,7 +3528,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 85.09 40.64 270)
+		(at 137.16 62.23 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4737,7 +3536,7 @@
 		(dnp no)
 		(uuid "90a0e63d-c491-4d6a-b4d8-3eb16f00b824")
 		(property "Reference" "C150"
-			(at 83.82 39.624 90)
+			(at 135.89 61.214 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4746,7 +3545,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 86.36 39.624 90)
+			(at 138.43 61.214 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4755,7 +3554,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 81.28 41.6052 0)
+			(at 133.35 63.1952 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4764,7 +3563,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 85.09 40.64 0)
+			(at 137.16 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4773,7 +3572,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 85.09 40.64 0)
+			(at 137.16 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4782,7 +3581,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 85.09 40.64 0)
+			(at 137.16 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4791,7 +3590,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 85.09 40.64 0)
+			(at 137.16 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4799,8 +3598,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 85.09 40.64 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 137.16 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4809,7 +3608,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 85.09 40.64 0)
+			(at 137.16 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4818,7 +3617,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 85.09 40.64 0)
+			(at 137.16 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4827,7 +3626,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 85.09 40.64 0)
+			(at 137.16 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4836,7 +3635,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 85.09 40.64 0)
+			(at 137.16 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4845,7 +3644,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 85.09 40.64 0)
+			(at 137.16 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4854,7 +3653,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 85.09 40.64 0)
+			(at 137.16 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4879,7 +3678,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 72.39 101.6 0)
+		(at 124.46 106.68 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4887,7 +3686,7 @@
 		(dnp no)
 		(uuid "918bdfcb-b9fb-46b4-b1e3-3a7365a30f80")
 		(property "Reference" "#PWR0295"
-			(at 72.39 105.41 0)
+			(at 124.46 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4896,7 +3695,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 71.882 97.79 0)
+			(at 123.952 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4904,7 +3703,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 72.39 101.6 0)
+			(at 124.46 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4913,7 +3712,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 72.39 101.6 0)
+			(at 124.46 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4922,7 +3721,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 72.39 101.6 0)
+			(at 124.46 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4943,73 +3742,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 205.74 68.58 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "9290ca2a-b60c-4f7f-8c8f-2d2965f15658")
-		(property "Reference" "#PWR0315"
-			(at 205.74 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 205.74 72.136 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 205.74 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 205.74 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 205.74 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "df15414c-6025-439a-a577-b25ea95d8ac6")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "#PWR0315")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:Conn_Coaxial")
-		(at 132.08 60.96 0)
+		(at 171.45 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5018,7 +3752,7 @@
 		(fields_autoplaced yes)
 		(uuid "92ec2b03-e977-4ce0-b978-e53781938216")
 		(property "Reference" "J14"
-			(at 134.62 61.2531 0)
+			(at 173.99 84.1131 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5027,7 +3761,7 @@
 			)
 		)
 		(property "Value" "Conn_Coaxial"
-			(at 135.89 62.5231 0)
+			(at 175.26 85.3831 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5037,7 +3771,7 @@
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
-			(at 132.08 60.96 0)
+			(at 171.45 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5046,7 +3780,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 132.08 60.96 0)
+			(at 171.45 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5054,8 +3788,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 132.08 60.96 0)
+		(property "Description" "SMA Connector Receptacle, Female Socket 50 Ohms Surface Mount, Right Angle Solder"
+			(at 171.45 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5064,7 +3798,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
-			(at 132.08 60.96 0)
+			(at 171.45 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5073,7 +3807,7 @@
 			)
 		)
 		(property "Manufacturer" "TE Connectivity Linx"
-			(at 132.08 60.96 0)
+			(at 171.45 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5082,7 +3816,7 @@
 			)
 		)
 		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
-			(at 132.08 60.96 0)
+			(at 171.45 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5090,8 +3824,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "TE Connectivity Linx"
-			(at 132.08 60.96 0)
+		(property "Manufacturer_Name" ""
+			(at 171.45 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5099,8 +3833,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CONSMA002-SMD-G-T"
-			(at 132.08 60.96 0)
+		(property "Manufacturer_Part_Number" ""
+			(at 171.45 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5125,7 +3859,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:74LVCH2T45DC")
-		(at 74.93 118.11 0)
+		(at 127 123.19 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5133,7 +3867,7 @@
 		(dnp no)
 		(uuid "9349b71f-c5e3-4ad5-b7b1-beb7b751b564")
 		(property "Reference" "U32"
-			(at 76.454 129.794 0)
+			(at 128.524 134.874 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5141,8 +3875,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74LVCH2T45DC"
-			(at 76.2 132.08 0)
+		(property "Value" "SN74LVC2T45DCTR"
+			(at 128.27 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5151,7 +3885,7 @@
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:VSSOP-8_2.3x2mm_P0.5mm"
-			(at 74.93 139.7 0)
+			(at 127 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5160,7 +3894,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74LVC_LVCH2T45.pdf"
-			(at 81.28 124.46 0)
+			(at 133.35 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5169,7 +3903,7 @@
 			)
 		)
 		(property "Description" "Dual supply translating transceiver with bus-hold for unused/floating inputs, 3-state, 2-bit, VSSOP-8"
-			(at 74.93 118.11 0)
+			(at 127 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5177,8 +3911,8 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/74LVCH2T45DC-125/2530613"
-			(at 74.93 118.11 0)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/SN74LVC2T45DCTR/639457"
+			(at 127 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5186,8 +3920,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Nexperia"
-			(at 74.93 118.11 0)
+		(property "Manufacturer" "Texas Instruments"
+			(at 127 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5195,26 +3929,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "74LVCH2T45DC,125"
-			(at 74.93 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Nexperia"
-			(at 74.93 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "74LVCH2T45DC,125"
-			(at 74.93 118.11 0)
+		(property "Manufacturer Number" "SN74LVC2T45DCTR"
+			(at 127 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5257,7 +3973,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 66.04 40.64 270)
+		(at 118.11 62.23 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5265,7 +3981,7 @@
 		(dnp no)
 		(uuid "95a0dee2-52e2-4413-b32b-ae4693fb422b")
 		(property "Reference" "C148"
-			(at 67.564 39.37 90)
+			(at 119.634 60.96 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5274,7 +3990,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 64.516 39.37 90)
+			(at 116.586 60.96 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5283,7 +3999,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 62.23 41.6052 0)
+			(at 114.3 63.1952 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5292,7 +4008,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 66.04 40.64 0)
+			(at 118.11 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5301,7 +4017,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 66.04 40.64 0)
+			(at 118.11 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5310,7 +4026,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 66.04 40.64 0)
+			(at 118.11 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5319,7 +4035,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 66.04 40.64 0)
+			(at 118.11 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5327,8 +4043,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 66.04 40.64 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 118.11 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5337,7 +4053,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 66.04 40.64 0)
+			(at 118.11 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5346,7 +4062,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 66.04 40.64 0)
+			(at 118.11 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5355,7 +4071,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 66.04 40.64 0)
+			(at 118.11 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5364,7 +4080,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 66.04 40.64 0)
+			(at 118.11 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5373,7 +4089,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 66.04 40.64 0)
+			(at 118.11 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5382,7 +4098,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 66.04 40.64 0)
+			(at 118.11 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5407,7 +4123,7 @@
 	)
 	(symbol
 		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
-		(at 110.49 130.81 270)
+		(at 162.56 135.89 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5415,7 +4131,7 @@
 		(dnp no)
 		(uuid "98e5ba32-3cb8-4143-a64e-045910f8e12f")
 		(property "Reference" "D19"
-			(at 112.522 128.524 90)
+			(at 164.592 133.604 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5423,7 +4139,7 @@
 			)
 		)
 		(property "Value" "VBUS05N1-HD1-G3-08"
-			(at 114.3 130.81 0)
+			(at 166.37 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5432,7 +4148,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-882"
-			(at 105.41 130.81 0)
+			(at 157.48 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5441,7 +4157,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/86201/vbus05n1-hd1.pdf"
-			(at 119.38 129.794 0)
+			(at 171.45 134.874 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5450,7 +4166,7 @@
 			)
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
-			(at 116.332 130.302 0)
+			(at 168.402 135.382 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5474,138 +4190,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 205.74 132.08 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "9b4d0770-aea7-4a0e-bd69-b5c11203edea")
-		(property "Reference" "#PWR0317"
-			(at 205.74 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 205.74 135.636 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 205.74 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 205.74 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 205.74 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "284f7ca6-3fa5-4176-9c15-6810deb437e6")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "#PWR0317")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 205.74 36.83 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a829fe6a-e5a0-4412-9c04-1cd925521fe6")
-		(property "Reference" "#PWR0314"
-			(at 205.74 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 205.74 40.386 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 205.74 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 205.74 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 205.74 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5f145672-4dec-45e0-b30c-8d89d54685ad")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "#PWR0314")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:74LVCH2T45DC")
-		(at 74.93 54.61 0)
+		(at 127 76.2 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5613,7 +4199,7 @@
 		(dnp no)
 		(uuid "a8d85f45-6d44-42a9-8e31-1cc053285481")
 		(property "Reference" "U31"
-			(at 76.454 66.294 0)
+			(at 128.524 87.884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5621,8 +4207,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74LVCH2T45DC"
-			(at 76.2 68.58 0)
+		(property "Value" "SN74LVC2T45DCTR"
+			(at 128.27 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5631,7 +4217,7 @@
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:VSSOP-8_2.3x2mm_P0.5mm"
-			(at 74.93 76.2 0)
+			(at 127 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5640,7 +4226,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74LVC_LVCH2T45.pdf"
-			(at 81.28 60.96 0)
+			(at 133.35 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5649,7 +4235,7 @@
 			)
 		)
 		(property "Description" "Dual supply translating transceiver with bus-hold for unused/floating inputs, 3-state, 2-bit, VSSOP-8"
-			(at 74.93 54.61 0)
+			(at 127 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5657,8 +4243,8 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/74LVCH2T45DC-125/2530613"
-			(at 74.93 54.61 0)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/SN74LVC2T45DCTR/639457"
+			(at 127 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5666,8 +4252,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Nexperia"
-			(at 74.93 54.61 0)
+		(property "Manufacturer" "Texas Instruments"
+			(at 127 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5675,26 +4261,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "74LVCH2T45DC,125"
-			(at 74.93 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Nexperia"
-			(at 74.93 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "74LVCH2T45DC,125"
-			(at 74.93 54.61 0)
+		(property "Manufacturer Number" "SN74LVC2T45DCTR"
+			(at 127 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5736,124 +4304,8 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:Conn_Coaxial")
-		(at 205.74 30.48 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "aacde0de-928a-4713-bcb6-bfc911cb12fd")
-		(property "Reference" "J9"
-			(at 209.55 30.7731 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_Coaxial"
-			(at 209.55 32.0431 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
-			(at 205.74 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 205.74 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 205.74 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
-			(at 205.74 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "TE Connectivity Linx"
-			(at 205.74 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
-			(at 205.74 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "TE Connectivity Linx"
-			(at 205.74 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CONSMA002-SMD-G-T"
-			(at 205.74 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a8c081b9-4073-48a7-8c81-4b803d0758ec")
-		)
-		(pin "2"
-			(uuid "24c43ed5-cf15-48d1-841c-69e58bbb24f6")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "J9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 133.35 48.26 0)
+		(at 172.72 73.66 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5861,7 +4313,7 @@
 		(dnp no)
 		(uuid "b068d3e1-d489-4ed9-bd02-03bf72eb00db")
 		(property "Reference" "#PWR0307"
-			(at 133.35 54.61 0)
+			(at 172.72 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5870,7 +4322,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 133.35 51.816 0)
+			(at 172.72 77.216 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5878,7 +4330,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 133.35 48.26 0)
+			(at 172.72 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5887,7 +4339,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 133.35 48.26 0)
+			(at 172.72 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5896,7 +4348,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 133.35 48.26 0)
+			(at 172.72 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5918,7 +4370,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 111.76 52.07 0)
+		(at 163.83 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5926,7 +4378,7 @@
 		(dnp no)
 		(uuid "baa6e3c5-5d56-4e23-ac87-d93d378bc048")
 		(property "Reference" "#PWR0303"
-			(at 111.76 58.42 0)
+			(at 163.83 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5935,7 +4387,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 111.76 55.626 0)
+			(at 163.83 81.026 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5943,7 +4395,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 111.76 52.07 0)
+			(at 163.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5952,7 +4404,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 111.76 52.07 0)
+			(at 163.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5961,7 +4413,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 111.76 52.07 0)
+			(at 163.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5982,308 +4434,8 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:PESD12VL1BSLAZ")
-		(at 184.15 95.25 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "bb749277-c7ee-4e7b-bc34-fedf68a21b8d")
-		(property "Reference" "TVS18"
-			(at 186.69 104.14 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PESD12VL1BSLAZ"
-			(at 190.5 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:PESD12VL1BSLAZ"
-			(at 90.5 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESD12VL1BSL.pdf"
-			(at -9.5 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "ESD Suppressors / TVS Diodes PESD12VL1BSL/SO2"
-			(at 184.15 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "28.6V Clamp 11A (8/20s) Ipp Tvs Diode Surface Mount SOD-323"
-			(at 182.88 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Height" "0.45"
-			(at -209.5 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Nexperia"
-			(at -309.5 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "PESD12VL1BSLAZ"
-			(at -409.5 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "771-PESD12VL1BSLAZ"
-			(at -509.5 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nexperia/PESD12VL1BSLAZ?qs=Li%252BoUPsLEnsvnACK22XOiQ%3D%3D"
-			(at -609.5 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "PESD12VL1BSLAZ"
-			(at -709.5 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/pesd12vl1bslaz/nexperia?region=nac"
-			(at -809.5 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Nexperia"
-			(at 184.15 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/PESD12VL1BSLAZ/16021611"
-			(at 184.15 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f9b0b3cf-7c3d-4f9b-989b-6fe808948061")
-		)
-		(pin "2"
-			(uuid "a1d0e970-ac2d-4da4-a751-d2fa223e2ed7")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "TVS18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:R_0603")
-		(at 90.17 120.65 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "bf8601f9-5ca4-4431-b64e-df0cb0a16096")
-		(property "Reference" "R130"
-			(at 90.17 123.444 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10"
-			(at 90.17 120.65 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 90.17 122.428 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 90.17 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Res Thick Film 0603 10 Ohm 1% 0.1W(1/10W) ±200ppm/C Epoxy Pad SMD Automotive T/R"
-			(at 90.17 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/yageo/AC0603FR-1310RL/17006001"
-			(at 90.17 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 90.17 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "SR0603FR-7T100RL"
-			(at 90.17 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Notes" "1/4W"
-			(at 90.17 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "1%"
-			(at 90.17 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Yageo"
-			(at 90.17 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "AC0603FR-1310RL"
-			(at 90.17 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "918f4298-d1a3-40ec-a909-be27133f3a82")
-		)
-		(pin "2"
-			(uuid "c20f7c41-a336-46ff-915f-717782b945d0")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "R130")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3.3V")
-		(at 63.5 62.23 90)
+		(at 115.57 83.82 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6291,7 +4443,7 @@
 		(dnp no)
 		(uuid "c252f5fd-bf46-4449-94f5-468921f39ca3")
 		(property "Reference" "#PWR0292"
-			(at 67.31 62.23 0)
+			(at 119.38 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6300,7 +4452,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 57.785 62.23 90)
+			(at 109.855 83.82 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6308,7 +4460,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 63.5 62.23 0)
+			(at 115.57 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6317,7 +4469,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 63.5 62.23 0)
+			(at 115.57 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6326,7 +4478,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 63.5 62.23 0)
+			(at 115.57 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6348,7 +4500,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 110.49 135.89 0)
+		(at 162.56 140.97 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6356,7 +4508,7 @@
 		(dnp no)
 		(uuid "c2e6e9d1-15b0-482e-a403-750fe2520e03")
 		(property "Reference" "#PWR0304"
-			(at 110.49 142.24 0)
+			(at 162.56 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6365,7 +4517,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 110.49 139.446 0)
+			(at 162.56 144.526 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6373,7 +4525,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 110.49 135.89 0)
+			(at 162.56 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6382,7 +4534,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 135.89 0)
+			(at 162.56 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6391,7 +4543,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 110.49 135.89 0)
+			(at 162.56 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6413,7 +4565,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 60.96 41.91 0)
+		(at 113.03 63.5 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6421,7 +4573,7 @@
 		(dnp no)
 		(uuid "c4fd0576-40a5-45eb-9a1f-7a4805abd15b")
 		(property "Reference" "#PWR0290"
-			(at 60.96 48.26 0)
+			(at 113.03 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6430,7 +4582,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 60.96 45.72 0)
+			(at 113.03 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6438,7 +4590,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 60.96 41.91 0)
+			(at 113.03 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6447,7 +4599,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 60.96 41.91 0)
+			(at 113.03 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6456,7 +4608,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 60.96 41.91 0)
+			(at 113.03 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6478,7 +4630,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 132.08 115.57 0)
+		(at 171.45 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6486,7 +4638,7 @@
 		(dnp no)
 		(uuid "cd80fc50-27aa-435c-a363-33ee53e37471")
 		(property "Reference" "#PWR0309"
-			(at 132.08 121.92 0)
+			(at 171.45 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6495,7 +4647,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 132.08 119.126 0)
+			(at 171.45 124.206 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6503,7 +4655,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 115.57 0)
+			(at 171.45 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6512,7 +4664,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.08 115.57 0)
+			(at 171.45 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6521,7 +4673,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 132.08 115.57 0)
+			(at 171.45 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6542,178 +4694,8 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:PESD12VL1BSLAZ")
-		(at 184.15 31.75 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "cf766076-3041-4720-a715-3ded57215a12")
-		(property "Reference" "TVS16"
-			(at 186.69 40.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PESD12VL1BSLAZ"
-			(at 190.5 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:PESD12VL1BSLAZ"
-			(at 90.5 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESD12VL1BSL.pdf"
-			(at -9.5 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "ESD Suppressors / TVS Diodes PESD12VL1BSL/SO2"
-			(at 184.15 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "28.6V Clamp 11A (8/20s) Ipp Tvs Diode Surface Mount SOD-323"
-			(at 182.88 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Height" "0.45"
-			(at -209.5 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Nexperia"
-			(at -309.5 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "PESD12VL1BSLAZ"
-			(at -409.5 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "771-PESD12VL1BSLAZ"
-			(at -509.5 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nexperia/PESD12VL1BSLAZ?qs=Li%252BoUPsLEnsvnACK22XOiQ%3D%3D"
-			(at -609.5 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "PESD12VL1BSLAZ"
-			(at -709.5 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/pesd12vl1bslaz/nexperia?region=nac"
-			(at -809.5 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Nexperia"
-			(at 184.15 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/PESD12VL1BSLAZ/16021611"
-			(at 184.15 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e28801ab-3475-4f3c-910b-0b113dca0408")
-		)
-		(pin "2"
-			(uuid "2f31a1e9-4da9-438d-9b2d-7504e118adc7")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "TVS16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 66.04 104.14 270)
+		(at 118.11 109.22 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6721,7 +4703,7 @@
 		(dnp no)
 		(uuid "d5f51187-e0a3-4899-8bf8-c32aaffaa7db")
 		(property "Reference" "C149"
-			(at 67.564 102.87 90)
+			(at 119.634 107.95 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6730,7 +4712,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 64.516 102.87 90)
+			(at 116.586 107.95 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6739,7 +4721,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 62.23 105.1052 0)
+			(at 114.3 110.1852 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6748,7 +4730,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 66.04 104.14 0)
+			(at 118.11 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6757,7 +4739,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 66.04 104.14 0)
+			(at 118.11 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6766,7 +4748,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 66.04 104.14 0)
+			(at 118.11 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6775,7 +4757,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 66.04 104.14 0)
+			(at 118.11 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6783,8 +4765,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 66.04 104.14 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 118.11 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6793,7 +4775,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 66.04 104.14 0)
+			(at 118.11 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6802,7 +4784,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 66.04 104.14 0)
+			(at 118.11 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6811,7 +4793,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 66.04 104.14 0)
+			(at 118.11 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6820,7 +4802,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 66.04 104.14 0)
+			(at 118.11 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6829,7 +4811,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 66.04 104.14 0)
+			(at 118.11 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6838,7 +4820,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 66.04 104.14 0)
+			(at 118.11 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6863,23 +4845,23 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:R_0603")
-		(at 90.17 52.07 90)
+		(at 142.24 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d918b89b-32a0-4247-9df8-9a4c22b5b4ca")
-		(property "Reference" "R129"
-			(at 90.17 49.784 90)
+		(uuid "d89a0236-75be-4078-b7c4-27061d64c092")
+		(property "Reference" "R48"
+			(at 142.24 76.454 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "10"
-			(at 90.17 52.07 90)
+		(property "Value" "100"
+			(at 142.24 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6887,7 +4869,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 90.17 53.848 90)
+			(at 142.24 80.518 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6896,7 +4878,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 90.17 52.07 0)
+			(at 142.24 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6904,8 +4886,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Res Thick Film 0603 10 Ohm 1% 0.1W(1/10W) ±200ppm/C Epoxy Pad SMD Automotive T/R"
-			(at 90.17 52.07 0)
+		(property "Description" ""
+			(at 142.24 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6913,8 +4895,8 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/yageo/AC0603FR-1310RL/17006001"
-			(at 90.17 52.07 0)
+		(property "Link" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/SG73P1JTTD1000F/10188091"
+			(at 142.24 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6922,8 +4904,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Yageo"
-			(at 90.17 52.07 0)
+		(property "Manufacturer" "KOA Speer Electronics, Inc."
+			(at 142.24 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6931,8 +4913,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "SR0603FR-7T100RL"
-			(at 90.17 52.07 0)
+		(property "Manufacturer Number" "SG73P1JTTD1000F"
+			(at 142.24 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6940,8 +4922,8 @@
 				(hide yes)
 			)
 		)
-		(property "Notes" "1/4W"
-			(at 90.17 52.07 0)
+		(property "Notes" "1/2W"
+			(at 142.24 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6950,7 +4932,7 @@
 			)
 		)
 		(property "Tolerance" "1%"
-			(at 90.17 52.07 0)
+			(at 142.24 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6958,8 +4940,48 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Yageo"
-			(at 90.17 52.07 0)
+		(pin "1"
+			(uuid "7c852b9f-f191-4015-b4db-82363c7f270b")
+		)
+		(pin "2"
+			(uuid "6391ee2d-42ab-4063-8b7e-1b593c0516f7")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
+					(reference "R48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "harp.device.quad.dac:R_0603")
+		(at 142.24 73.66 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d918b89b-32a0-4247-9df8-9a4c22b5b4ca")
+		(property "Reference" "R129"
+			(at 142.24 71.374 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 142.24 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 142.24 75.438 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6967,8 +4989,62 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "AC0603FR-1310RL"
-			(at 90.17 52.07 0)
+		(property "Datasheet" "~"
+			(at 142.24 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/SG73P1JTTD1000F/10188091"
+			(at 142.24 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "KOA Speer Electronics, Inc."
+			(at 142.24 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "SG73P1JTTD1000F"
+			(at 142.24 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Notes" "1/2W"
+			(at 142.24 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 142.24 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6992,178 +5068,8 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:PESD12VL1BSLAZ")
-		(at 184.15 127 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "dc41515d-34c8-437b-a5da-a477a5946909")
-		(property "Reference" "TVS19"
-			(at 186.69 135.89 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PESD12VL1BSLAZ"
-			(at 190.5 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:PESD12VL1BSLAZ"
-			(at 90.5 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESD12VL1BSL.pdf"
-			(at -9.5 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "ESD Suppressors / TVS Diodes PESD12VL1BSL/SO2"
-			(at 184.15 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "28.6V Clamp 11A (8/20s) Ipp Tvs Diode Surface Mount SOD-323"
-			(at 182.88 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Height" "0.45"
-			(at -209.5 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Nexperia"
-			(at -309.5 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "PESD12VL1BSLAZ"
-			(at -409.5 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "771-PESD12VL1BSLAZ"
-			(at -509.5 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nexperia/PESD12VL1BSLAZ?qs=Li%252BoUPsLEnsvnACK22XOiQ%3D%3D"
-			(at -609.5 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "PESD12VL1BSLAZ"
-			(at -709.5 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/pesd12vl1bslaz/nexperia?region=nac"
-			(at -809.5 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Nexperia"
-			(at 184.15 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/PESD12VL1BSLAZ/16021611"
-			(at 184.15 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3dac7350-39d5-43cb-9169-c80ddd9dcb05")
-		)
-		(pin "2"
-			(uuid "13166827-e0ba-4d38-83ca-3bb43b7ec6be")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "TVS19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 90.17 41.91 0)
+		(at 142.24 63.5 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7171,7 +5077,7 @@
 		(dnp no)
 		(uuid "e17118e9-5ca1-4d64-88c8-2749cb5627e8")
 		(property "Reference" "#PWR0300"
-			(at 90.17 48.26 0)
+			(at 142.24 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7180,7 +5086,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 90.17 45.72 0)
+			(at 142.24 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7188,7 +5094,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 90.17 41.91 0)
+			(at 142.24 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7197,7 +5103,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 90.17 41.91 0)
+			(at 142.24 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7206,7 +5112,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 90.17 41.91 0)
+			(at 142.24 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7228,7 +5134,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 85.09 104.14 270)
+		(at 137.16 109.22 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7236,7 +5142,7 @@
 		(dnp no)
 		(uuid "e2721f6c-b736-47f4-ae58-31be8f24f33d")
 		(property "Reference" "C151"
-			(at 83.82 103.124 90)
+			(at 135.89 108.204 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7245,7 +5151,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 86.36 103.124 90)
+			(at 138.43 108.204 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7254,7 +5160,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 81.28 105.1052 0)
+			(at 133.35 110.1852 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7263,7 +5169,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 85.09 104.14 0)
+			(at 137.16 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7272,7 +5178,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 85.09 104.14 0)
+			(at 137.16 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7281,7 +5187,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 85.09 104.14 0)
+			(at 137.16 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7290,7 +5196,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 85.09 104.14 0)
+			(at 137.16 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7298,8 +5204,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 85.09 104.14 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 137.16 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7308,7 +5214,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 85.09 104.14 0)
+			(at 137.16 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7317,7 +5223,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 85.09 104.14 0)
+			(at 137.16 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7326,7 +5232,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 85.09 104.14 0)
+			(at 137.16 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7335,7 +5241,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 85.09 104.14 0)
+			(at 137.16 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7344,7 +5250,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 85.09 104.14 0)
+			(at 137.16 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7353,7 +5259,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 85.09 104.14 0)
+			(at 137.16 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7378,7 +5284,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 90.17 105.41 0)
+		(at 142.24 110.49 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7386,7 +5292,7 @@
 		(dnp no)
 		(uuid "e768b6f0-1ba7-4a68-a336-667e5333983c")
 		(property "Reference" "#PWR0301"
-			(at 90.17 111.76 0)
+			(at 142.24 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7395,7 +5301,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 90.17 109.22 0)
+			(at 142.24 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7403,7 +5309,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 90.17 105.41 0)
+			(at 142.24 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7412,7 +5318,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 90.17 105.41 0)
+			(at 142.24 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7421,7 +5327,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 90.17 105.41 0)
+			(at 142.24 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7442,373 +5348,8 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:PESD12VL1BSLAZ")
-		(at 184.15 63.5 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ed828e5b-0db2-443e-b1b0-73b152830123")
-		(property "Reference" "TVS17"
-			(at 186.69 72.39 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PESD12VL1BSLAZ"
-			(at 190.5 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:PESD12VL1BSLAZ"
-			(at 90.5 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESD12VL1BSL.pdf"
-			(at -9.5 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Description" "ESD Suppressors / TVS Diodes PESD12VL1BSL/SO2"
-			(at 184.15 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "28.6V Clamp 11A (8/20s) Ipp Tvs Diode Surface Mount SOD-323"
-			(at 182.88 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Height" "0.45"
-			(at -209.5 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Nexperia"
-			(at -309.5 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "PESD12VL1BSLAZ"
-			(at -409.5 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "771-PESD12VL1BSLAZ"
-			(at -509.5 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nexperia/PESD12VL1BSLAZ?qs=Li%252BoUPsLEnsvnACK22XOiQ%3D%3D"
-			(at -609.5 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "PESD12VL1BSLAZ"
-			(at -709.5 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/pesd12vl1bslaz/nexperia?region=nac"
-			(at -809.5 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Nexperia"
-			(at 184.15 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/PESD12VL1BSLAZ/16021611"
-			(at 184.15 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3aec4368-8b1d-4195-a99e-41b72ca00eda")
-		)
-		(pin "2"
-			(uuid "39a7d02d-ab05-4044-85ba-530743fcca42")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "TVS17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 184.15 116.84 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f18a7b7c-dafe-47a9-a79b-24f433d51e96")
-		(property "Reference" "#PWR0312"
-			(at 184.15 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 184.15 120.396 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 184.15 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 184.15 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 184.15 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c92f4cd7-901d-4fdb-a2a8-29d5cf9718ae")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "#PWR0312")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:R_0603")
-		(at 90.17 60.96 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f887f62c-e759-4337-af68-2ee3f7124825")
-		(property "Reference" "R128"
-			(at 90.17 63.246 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10"
-			(at 90.17 60.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 90.17 62.738 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 90.17 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Res Thick Film 0603 10 Ohm 1% 0.1W(1/10W) ±200ppm/C Epoxy Pad SMD Automotive T/R"
-			(at 90.17 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/yageo/AC0603FR-1310RL/17006001"
-			(at 90.17 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 90.17 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "SR0603FR-7T100RL"
-			(at 90.17 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Notes" "1/4W"
-			(at 90.17 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "1%"
-			(at 90.17 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Yageo"
-			(at 90.17 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "AC0603FR-1310RL"
-			(at 90.17 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f3cbb6bf-fdb6-4653-83ed-d32996b73af2")
-		)
-		(pin "2"
-			(uuid "751c00d8-46fb-4db6-828d-e85333fc8bda")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1783abfe-3faf-469b-a509-8e70c13c0682"
-					(reference "R128")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
-		(at 72.39 38.1 0)
+		(at 124.46 59.69 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7816,7 +5357,7 @@
 		(dnp no)
 		(uuid "fec60579-e126-465c-a809-a4b8142aad0c")
 		(property "Reference" "#PWR0294"
-			(at 72.39 41.91 0)
+			(at 124.46 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7825,7 +5366,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 71.882 34.29 0)
+			(at 123.952 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7833,7 +5374,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 72.39 38.1 0)
+			(at 124.46 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7842,7 +5383,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 72.39 38.1 0)
+			(at 124.46 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7851,7 +5392,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 72.39 38.1 0)
+			(at 124.46 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)

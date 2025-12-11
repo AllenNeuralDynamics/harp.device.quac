@@ -5,11 +5,11 @@
 	(uuid "7e50f2b3-ad7c-4ca1-aa67-f754ca02f837")
 	(paper "A4")
 	(title_block
-		(title "harp device quad dac")
-		(date "2025-07-15")
+		(title "harp.device.quad-dac")
+		(date "2025-12-10")
 		(rev "1.1")
 		(company "The Allen Institute")
-		(comment 1 "Hexabitz")
+		(comment 1 "Sonya Vasquez and Hexabitz")
 	)
 	(lib_symbols
 		(symbol "Connector:Micro_SD_Card_Det_Hirose_DM3AT"
@@ -385,6 +385,292 @@
 						)
 					)
 					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:L"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "L"
+				(at -1.27 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "L"
+				(at 1.905 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Inductor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "inductor choke coil reactor magnetic"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Choke_* *Coil* Inductor_* L_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "L_0_1"
+				(arc
+					(start 0 2.54)
+					(mid 0.6323 1.905)
+					(end 0 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 1.27)
+					(mid 0.6323 0.635)
+					(end 0 0)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 0)
+					(mid 0.6323 -0.635)
+					(end 0 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -1.27)
+					(mid 0.6323 -1.905)
+					(end 0 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "L_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1921,94 +2207,6 @@
 								(size 1.27 1.27)
 							)
 						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "harp.device.quad.dac:MountingHole_Pad"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim yes)
-			(in_bom no)
-			(on_board yes)
-			(property "Reference" "H"
-				(at 0 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "MountingHole_Pad"
-				(at 0 4.445 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Footprint" "harp.device.quad.dac.kicad:MountingHole_3.2mm_M3_DIN965"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Mounting Hole with connection"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "mounting hole"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "MountingHole*Pad*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "MountingHole_Pad_0_1"
-				(circle
-					(center 0 1.27)
-					(radius 1.27)
-					(stroke
-						(width 1.27)
-						(type default)
-					)
-					(fill
-						(type none)
 					)
 				)
 			)
@@ -5234,230 +5432,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "harp.device.quad.dac:XGL3530-332MEC"
-			(pin_names
-				(offset 0.762)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "L"
-				(at 16.51 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "XGL3530-332MEC"
-				(at 16.51 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "harp.device.quad.dac.kicad:XGL3530332MEC"
-				(at 16.51 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.coilcraft.com/en-us/files/datasheet/XGL3530"
-				(at 16.51 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "3.3 H Shielded Molded Inductor 5.4 A 37.4mOhm Max Nonstandard"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "3.3 H Shielded Molded Inductor 5.4 A 37.4mOhm Max Nonstandard"
-				(at 16.51 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Height" "3"
-				(at 16.51 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Name" "COILCRAFT"
-				(at 16.51 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "XGL3530-332MEC"
-				(at 16.51 -11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" ""
-				(at 16.51 -13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" ""
-				(at 16.51 -16.51 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" ""
-				(at 16.51 -19.05 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" ""
-				(at 16.51 -21.59 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(symbol "XGL3530-332MEC_0_0"
-				(pin passive line
-					(at 0 0 0)
-					(length 5.08)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 20.32 0 180)
-					(length 5.08)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "XGL3530-332MEC_0_1"
-				(arc
-					(start 7.62 0)
-					(mid 6.35 -1.3218)
-					(end 5.08 0)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 10.16 0)
-					(mid 8.89 -1.3218)
-					(end 7.62 0)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 12.7 0)
-					(mid 11.43 -1.3218)
-					(end 10.16 0)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 15.24 0)
-					(mid 13.97 -1.3218)
-					(end 12.7 0)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "kicad_component_library:VBUS05N1-HD1-G3-08"
 			(pin_numbers
 				(hide yes)
@@ -5950,7 +5924,7 @@
 	)
 	(text "bypass caps, one per pin group, close to package."
 		(exclude_from_sim no)
-		(at 80.01 179.324 0)
+		(at 73.66 179.324 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5994,7 +5968,7 @@
 	)
 	(text "DVDD bypass caps"
 		(exclude_from_sim no)
-		(at 24.13 42.672 0)
+		(at 26.67 42.672 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6060,7 +6034,7 @@
 	)
 	(text "cutoff frequency\nf_{c}=1.25kHz"
 		(exclude_from_sim no)
-		(at 58.42 23.622 0)
+		(at 54.102 22.098 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6252,7 +6226,7 @@
 		(uuid "01066bb2-2f2e-411e-82a3-776a52391a83")
 	)
 	(junction
-		(at 44.45 53.34)
+		(at 46.99 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "02fadd37-c3fb-4119-8394-e27969a4904b")
@@ -6268,6 +6242,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "04eac31d-4632-4600-8a69-bdf7f82353d7")
+	)
+	(junction
+		(at 226.06 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "06405a10-f34e-4085-a507-719734780cb0")
 	)
 	(junction
 		(at 260.35 25.4)
@@ -6294,7 +6274,7 @@
 		(uuid "172386e0-c7e7-4ad7-888e-4b4b48afd0f9")
 	)
 	(junction
-		(at 105.41 190.5)
+		(at 99.06 190.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1a3e3bbb-191c-4b6f-8c10-0b3f874b2afd")
@@ -6318,10 +6298,16 @@
 		(uuid "21e292ed-1736-4273-9e17-24cd17bb3cbb")
 	)
 	(junction
-		(at 74.93 190.5)
+		(at 68.58 190.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "22daf4bd-bb15-4c58-a89d-42bdd5837a78")
+	)
+	(junction
+		(at 226.06 151.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "22fe9a2a-894d-46fc-bc2a-4ac96e3f64fc")
 	)
 	(junction
 		(at 27.94 152.4)
@@ -6342,10 +6328,16 @@
 		(uuid "28bbb0e5-33f7-4c7b-bfba-8a5ebfc4d8f0")
 	)
 	(junction
-		(at 22.86 53.34)
+		(at 25.4 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "28c26ae5-601b-49e3-8f49-732694e055be")
+	)
+	(junction
+		(at 66.04 27.94)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2978bb04-0667-4fcf-bf23-2c2107ef6a06")
 	)
 	(junction
 		(at 106.68 21.59)
@@ -6360,7 +6352,13 @@
 		(uuid "2c2d9db2-004e-49d7-a3cc-467df7e1129c")
 	)
 	(junction
-		(at 128.27 180.34)
+		(at 226.06 140.97)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2dd765fe-865f-4f70-b15a-9830efe74314")
+	)
+	(junction
+		(at 121.92 180.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "321775f2-3c3a-41da-903e-c228d42000b0")
@@ -6390,25 +6388,25 @@
 		(uuid "393403a4-92b3-4fe9-8b77-6dfb9cc2200a")
 	)
 	(junction
-		(at 82.55 190.5)
+		(at 76.2 190.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3c017924-6b68-4488-b699-0a29d89e3cd7")
 	)
 	(junction
-		(at 30.48 53.34)
+		(at 33.02 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3c75bcd6-9c82-4032-b73b-2d13734964c1")
 	)
 	(junction
-		(at 22.86 43.18)
+		(at 25.4 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3cf29619-9971-4446-b1e3-bbd0662e612c")
 	)
 	(junction
-		(at 189.23 158.75)
+		(at 204.47 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3fa63cec-67d1-4c76-afd2-2305e91aa149")
@@ -6426,7 +6424,7 @@
 		(uuid "41de1abe-b067-46cd-b499-ea5211369436")
 	)
 	(junction
-		(at 120.65 190.5)
+		(at 114.3 190.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "42b9eef4-aaac-4ea2-879a-7169c32ea0a3")
@@ -6438,10 +6436,16 @@
 		(uuid "42f6a53d-e627-4cb0-a794-5428c3525bae")
 	)
 	(junction
-		(at 38.1 43.18)
+		(at 40.64 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "44407bb8-0f19-4f1d-a607-0686e534aab5")
+	)
+	(junction
+		(at 217.17 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "480ba165-a6d8-44ff-82e0-94ffe6ca5e20")
 	)
 	(junction
 		(at 22.86 68.58)
@@ -6456,13 +6460,13 @@
 		(uuid "4cd18071-96bf-464b-b730-69c998e83302")
 	)
 	(junction
-		(at 44.45 43.18)
+		(at 46.99 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4d3d8dbe-ed7b-490b-bdeb-b3d854f2a3b6")
 	)
 	(junction
-		(at 120.65 180.34)
+		(at 114.3 180.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4e5a022c-5650-49ad-9831-3f6998fee982")
@@ -6492,13 +6496,13 @@
 		(uuid "5b4c1752-b7a8-4b90-a01e-f711743a30d7")
 	)
 	(junction
-		(at 113.03 180.34)
+		(at 106.68 180.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5dca06c0-a325-4c8a-a1f9-436c6c2c5c22")
 	)
 	(junction
-		(at 38.1 53.34)
+		(at 40.64 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5ef195d3-130e-44da-96e6-d4379fb6055b")
@@ -6508,6 +6512,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "676d09d1-653a-4705-975a-fc13f54c1159")
+	)
+	(junction
+		(at 217.17 149.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "69454838-8cad-4536-8c32-fc0f6a6ba77b")
 	)
 	(junction
 		(at 213.36 25.4)
@@ -6522,13 +6532,19 @@
 		(uuid "714c371f-d885-4d77-bf40-8f7e7295e998")
 	)
 	(junction
+		(at 217.17 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "772c2634-f0be-4eb7-b5d5-4afc2b4e6717")
+	)
+	(junction
 		(at 27.94 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "792c1161-3938-4e50-8156-b757927dca09")
 	)
 	(junction
-		(at 97.79 180.34)
+		(at 91.44 180.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "816e9c9b-36a9-40f8-8893-edcf4d458329")
@@ -6594,7 +6610,7 @@
 		(uuid "9bb2b00b-6829-4f71-8bba-97bb61c5dab1")
 	)
 	(junction
-		(at 128.27 190.5)
+		(at 121.92 190.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9c188528-0997-4d11-901e-1e10fd13322a")
@@ -6618,7 +6634,19 @@
 		(uuid "a157359d-cf72-4884-b41c-2c4b06c36317")
 	)
 	(junction
-		(at 177.8 137.16)
+		(at 217.17 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a4283200-aa1b-4c1a-97f6-52492882335c")
+	)
+	(junction
+		(at 226.06 146.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a5920319-78d6-4290-8baa-afe12f43f315")
+	)
+	(junction
+		(at 193.04 92.71)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a7e9d913-6072-4281-831e-2079153e6b0a")
@@ -6636,7 +6664,7 @@
 		(uuid "ab2506ce-f588-4a0d-a8ca-f3791790c806")
 	)
 	(junction
-		(at 74.93 180.34)
+		(at 68.58 180.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "af4f651a-72aa-4586-93c7-0b28de3db903")
@@ -6648,16 +6676,22 @@
 		(uuid "b56700bf-b68e-4162-933b-c4e99ea82054")
 	)
 	(junction
+		(at 226.06 135.89)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b5d93109-9e69-4631-b4c6-a3c9a0adbd45")
+	)
+	(junction
 		(at 34.29 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bb657def-ac4f-4e9d-963a-0ba1c5eb742f")
 	)
 	(junction
-		(at 66.04 30.48)
+		(at 217.17 144.78)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "bbced2c4-80f5-4dd8-910b-a29033b89913")
+		(uuid "bda62f8f-5d60-483f-9b1b-b0242f4a725f")
 	)
 	(junction
 		(at 29.21 86.36)
@@ -6678,7 +6712,13 @@
 		(uuid "cbb1bcf6-297a-4f65-b085-6de3d39e0d8d")
 	)
 	(junction
-		(at 82.55 180.34)
+		(at 46.99 24.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ce7acb71-81c6-400c-92fd-940e87b3f50f")
+	)
+	(junction
+		(at 76.2 180.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cfdc9f4a-38f7-40ea-84eb-9a01ef70630d")
@@ -6690,7 +6730,7 @@
 		(uuid "d10f50fc-caa6-43f1-9b50-c6b1f7f4f86f")
 	)
 	(junction
-		(at 189.23 130.81)
+		(at 204.47 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d414411e-d9a5-42ba-b928-00d092401954")
@@ -6702,7 +6742,7 @@
 		(uuid "d526546f-3d86-48c8-840a-87b464e0b9ab")
 	)
 	(junction
-		(at 90.17 190.5)
+		(at 83.82 190.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d915d580-d91d-4779-a362-1e57da22acc8")
@@ -6714,10 +6754,28 @@
 		(uuid "dc17f762-d281-4836-b20b-70f8b06c55fc")
 	)
 	(junction
+		(at 226.06 156.21)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "de365228-932c-4f15-9ffc-de6284752c37")
+	)
+	(junction
+		(at 217.17 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dec593b1-3f67-4519-9709-b82e032ef26a")
+	)
+	(junction
 		(at 232.41 52.07)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dfdb8d8f-f3ce-4daf-a91d-c4df25dceac2")
+	)
+	(junction
+		(at 226.06 153.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e05dbafb-c6ce-41e0-9441-73361f2c4a53")
 	)
 	(junction
 		(at 267.97 38.1)
@@ -6726,7 +6784,7 @@
 		(uuid "e1ab3768-2faa-4310-80be-232c5e58b650")
 	)
 	(junction
-		(at 113.03 190.5)
+		(at 106.68 190.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e22d20b1-ef70-4bdc-a542-1197c6217238")
@@ -6738,7 +6796,7 @@
 		(uuid "e4fa0d4b-c73a-453d-8a4c-74818b993c49")
 	)
 	(junction
-		(at 30.48 43.18)
+		(at 33.02 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e6c850fc-d623-43b0-8c96-265bba918126")
@@ -6756,7 +6814,7 @@
 		(uuid "e7953207-135d-4e76-ba79-3d9bc28b074f")
 	)
 	(junction
-		(at 105.41 180.34)
+		(at 99.06 180.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ef2a4bbc-ca73-4da5-b763-2df56f418019")
@@ -6792,39 +6850,31 @@
 		(uuid "fb223654-a83a-434c-89a0-3eb9414ce9d9")
 	)
 	(junction
-		(at 90.17 180.34)
+		(at 83.82 180.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ff7393d5-41d9-4912-b29b-79c4140a56bf")
 	)
 	(junction
-		(at 97.79 190.5)
+		(at 91.44 190.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ff97b511-9615-4756-b163-afbb90518538")
 	)
 	(no_connect
-		(at 137.16 151.13)
+		(at 137.16 161.29)
 		(uuid "1ee1fc38-99e0-4c07-9f17-1fc770dfc1af")
 	)
 	(no_connect
-		(at 137.16 107.95)
-		(uuid "26808867-2aa8-4418-a1f5-d66e425edd1a")
-	)
-	(no_connect
-		(at 137.16 148.59)
+		(at 137.16 158.75)
 		(uuid "4e1cdc99-0266-42dc-91cb-9b15b9d1b6b7")
-	)
-	(no_connect
-		(at 228.6 158.75)
-		(uuid "51621731-73f3-4544-adf7-d7d8f66bc72a")
 	)
 	(no_connect
 		(at 67.31 82.55)
 		(uuid "5c15f192-b9d8-4e5b-ae2f-830e96dc14b6")
 	)
 	(no_connect
-		(at 137.16 146.05)
+		(at 137.16 156.21)
 		(uuid "5dabf8e2-fbca-4691-a7b7-7947931919a8")
 	)
 	(no_connect
@@ -6848,15 +6898,11 @@
 		(uuid "bfb50d37-d1f2-4112-b61b-e72ce642f8fe")
 	)
 	(no_connect
-		(at 228.6 156.21)
-		(uuid "d03c7aea-e7b6-4809-a7c8-9a3fc27303f3")
-	)
-	(no_connect
 		(at 137.16 140.97)
 		(uuid "dff0bf94-bae9-4214-88c9-418a70588129")
 	)
 	(no_connect
-		(at 137.16 153.67)
+		(at 137.16 163.83)
 		(uuid "f5325bbc-9845-4063-896b-8e429dce8fba")
 	)
 	(wire
@@ -6871,13 +6917,23 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 53.34) (xy 30.48 52.07)
+			(xy 33.02 53.34) (xy 33.02 52.07)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "00cdcdc8-3349-4291-af80-bc52d78fb601")
+	)
+	(wire
+		(pts
+			(xy 137.16 97.79) (xy 158.75 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "019808d1-e3c0-4357-be8d-d80520687825")
 	)
 	(wire
 		(pts
@@ -6891,7 +6947,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 137.16) (xy 179.07 137.16)
+			(xy 193.04 92.71) (xy 194.31 92.71)
 		)
 		(stroke
 			(width 0)
@@ -6901,7 +6957,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 156.21) (xy 138.43 156.21)
+			(xy 137.16 146.05) (xy 138.43 146.05)
 		)
 		(stroke
 			(width 0)
@@ -6951,6 +7007,16 @@
 	)
 	(wire
 		(pts
+			(xy 217.17 149.86) (xy 217.17 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0555be56-7c48-4446-b590-51761dff4912")
+	)
+	(wire
+		(pts
 			(xy 26.67 24.13) (xy 34.29 24.13)
 		)
 		(stroke
@@ -6958,16 +7024,6 @@
 			(type default)
 		)
 		(uuid "091fa54d-a624-4954-8c55-91fce9ff74cd")
-	)
-	(wire
-		(pts
-			(xy 137.16 102.87) (xy 138.43 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "09330df7-6bed-4285-8429-cc2bc73fe34a")
 	)
 	(wire
 		(pts
@@ -6991,7 +7047,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 30.48) (xy 66.04 30.48)
+			(xy 64.77 27.94) (xy 66.04 27.94)
 		)
 		(stroke
 			(width 0)
@@ -7001,7 +7057,7 @@
 	)
 	(wire
 		(pts
-			(xy 220.98 143.51) (xy 228.6 143.51)
+			(xy 207.01 143.51) (xy 229.87 143.51)
 		)
 		(stroke
 			(width 0)
@@ -7051,6 +7107,16 @@
 	)
 	(wire
 		(pts
+			(xy 217.17 152.4) (xy 217.17 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1037ec9c-9a87-4095-9f87-457506ba7853")
+	)
+	(wire
+		(pts
 			(xy 213.36 25.4) (xy 222.25 25.4)
 		)
 		(stroke
@@ -7061,7 +7127,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 158.75) (xy 138.43 158.75)
+			(xy 137.16 148.59) (xy 138.43 148.59)
 		)
 		(stroke
 			(width 0)
@@ -7071,7 +7137,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 43.18) (xy 22.86 44.45)
+			(xy 25.4 43.18) (xy 25.4 44.45)
 		)
 		(stroke
 			(width 0)
@@ -7091,7 +7157,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 181.61) (xy 135.89 180.34)
+			(xy 129.54 181.61) (xy 129.54 180.34)
 		)
 		(stroke
 			(width 0)
@@ -7131,7 +7197,17 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 180.34) (xy 82.55 181.61)
+			(xy 137.16 107.95) (xy 158.75 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1434528e-987a-42e3-bf3a-962f58f6a94e")
+	)
+	(wire
+		(pts
+			(xy 76.2 180.34) (xy 76.2 181.61)
 		)
 		(stroke
 			(width 0)
@@ -7271,7 +7347,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 190.5) (xy 128.27 190.5)
+			(xy 114.3 190.5) (xy 121.92 190.5)
 		)
 		(stroke
 			(width 0)
@@ -7291,6 +7367,16 @@
 	)
 	(wire
 		(pts
+			(xy 226.06 138.43) (xy 229.87 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1fa1fb3e-b6a2-44fb-8e54-9e8e2826db61")
+	)
+	(wire
+		(pts
 			(xy 34.29 95.25) (xy 35.56 95.25)
 		)
 		(stroke
@@ -7298,6 +7384,26 @@
 			(type default)
 		)
 		(uuid "1fa66c8e-bbaa-49f8-b926-23455f50dc84")
+	)
+	(wire
+		(pts
+			(xy 217.17 139.7) (xy 217.17 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20f6efc9-94cd-49af-a7ed-2454c41a76d6")
+	)
+	(wire
+		(pts
+			(xy 217.17 134.62) (xy 218.44 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "211141fe-1107-4dcd-b844-b745e1720dbc")
 	)
 	(wire
 		(pts
@@ -7321,7 +7427,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 43.18) (xy 30.48 43.18)
+			(xy 25.4 43.18) (xy 33.02 43.18)
 		)
 		(stroke
 			(width 0)
@@ -7331,13 +7437,13 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 95.25) (xy 138.43 95.25)
+			(xy 226.06 152.4) (xy 226.06 153.67)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2433665f-704f-4605-bacb-f41948b12e8d")
+		(uuid "23dbf3d4-b134-4902-a20d-54ec664e1f89")
 	)
 	(wire
 		(pts
@@ -7351,16 +7457,6 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 24.13) (xy 54.61 25.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "251eb8da-a8a2-466d-a5a3-734c7dd9c900")
-	)
-	(wire
-		(pts
 			(xy 34.29 24.13) (xy 40.64 24.13)
 		)
 		(stroke
@@ -7371,13 +7467,13 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 138.43) (xy 228.6 138.43)
+			(xy 226.06 146.05) (xy 229.87 146.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "25f55f21-502b-4a53-ac14-a0f012b5dc08")
+		(uuid "25afd979-e77a-45aa-b90f-cbf136d6d478")
 	)
 	(wire
 		(pts
@@ -7401,7 +7497,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 52.07) (xy 44.45 53.34)
+			(xy 46.99 52.07) (xy 46.99 53.34)
 		)
 		(stroke
 			(width 0)
@@ -7428,6 +7524,16 @@
 			(type default)
 		)
 		(uuid "2b085c1b-566e-488a-9d5a-0b9df94a555c")
+	)
+	(wire
+		(pts
+			(xy 226.06 149.86) (xy 226.06 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b9e7992-2c1a-40b4-a445-015df77ac5eb")
 	)
 	(wire
 		(pts
@@ -7491,7 +7597,17 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 45.72) (xy 52.07 53.34)
+			(xy 226.06 151.13) (xy 229.87 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3127ef2d-37cf-43d0-98e4-c89e75ae1ef9")
+	)
+	(wire
+		(pts
+			(xy 54.61 45.72) (xy 54.61 53.34)
 		)
 		(stroke
 			(width 0)
@@ -7501,7 +7617,17 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 190.5) (xy 105.41 190.5)
+			(xy 217.17 149.86) (xy 218.44 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31b8be25-ca51-4df2-968e-7fe7acb1f67e")
+	)
+	(wire
+		(pts
+			(xy 106.68 190.5) (xy 99.06 190.5)
 		)
 		(stroke
 			(width 0)
@@ -7511,7 +7637,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 181.61) (xy 120.65 180.34)
+			(xy 114.3 181.61) (xy 114.3 180.34)
 		)
 		(stroke
 			(width 0)
@@ -7531,7 +7657,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 43.18) (xy 44.45 43.18)
+			(xy 40.64 43.18) (xy 46.99 43.18)
 		)
 		(stroke
 			(width 0)
@@ -7571,13 +7697,23 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 107.95) (xy 199.39 107.95)
+			(xy 267.97 88.9) (xy 269.24 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "350f01b3-99df-463a-b750-60eecc021d97")
+	)
+	(wire
+		(pts
+			(xy 46.99 24.13) (xy 57.15 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "358e0c9a-9de3-4720-aacc-e5d1f2e4bda7")
 	)
 	(wire
 		(pts
@@ -7661,7 +7797,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 161.29) (xy 138.43 161.29)
+			(xy 137.16 151.13) (xy 138.43 151.13)
 		)
 		(stroke
 			(width 0)
@@ -7721,7 +7857,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 40.64) (xy 44.45 43.18)
+			(xy 46.99 40.64) (xy 46.99 43.18)
 		)
 		(stroke
 			(width 0)
@@ -7811,7 +7947,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 180.34) (xy 113.03 180.34)
+			(xy 99.06 180.34) (xy 106.68 180.34)
 		)
 		(stroke
 			(width 0)
@@ -7911,7 +8047,17 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 148.59) (xy 203.2 158.75)
+			(xy 137.16 92.71) (xy 158.75 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47362ab2-203f-49cf-b5f6-b551bcf3d0ca")
+	)
+	(wire
+		(pts
+			(xy 218.44 104.14) (xy 218.44 114.3)
 		)
 		(stroke
 			(width 0)
@@ -7921,7 +8067,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 157.48) (xy 189.23 158.75)
+			(xy 204.47 113.03) (xy 204.47 114.3)
 		)
 		(stroke
 			(width 0)
@@ -7931,7 +8077,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 189.23) (xy 82.55 190.5)
+			(xy 76.2 189.23) (xy 76.2 190.5)
 		)
 		(stroke
 			(width 0)
@@ -7941,7 +8087,17 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 189.23) (xy 97.79 190.5)
+			(xy 217.17 144.78) (xy 218.44 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4860d681-cb8b-4aa7-b482-f93b24259415")
+	)
+	(wire
+		(pts
+			(xy 91.44 189.23) (xy 91.44 190.5)
 		)
 		(stroke
 			(width 0)
@@ -7991,7 +8147,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 127) (xy 177.8 128.27)
+			(xy 193.04 82.55) (xy 193.04 83.82)
 		)
 		(stroke
 			(width 0)
@@ -8011,7 +8167,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 140.97) (xy 228.6 140.97)
+			(xy 214.63 140.97) (xy 226.06 140.97)
 		)
 		(stroke
 			(width 0)
@@ -8041,7 +8197,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 44.45) (xy 38.1 43.18)
+			(xy 40.64 44.45) (xy 40.64 43.18)
 		)
 		(stroke
 			(width 0)
@@ -8051,7 +8207,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 189.23) (xy 120.65 190.5)
+			(xy 114.3 189.23) (xy 114.3 190.5)
 		)
 		(stroke
 			(width 0)
@@ -8081,7 +8237,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 142.24) (xy 179.07 142.24)
+			(xy 191.77 97.79) (xy 194.31 97.79)
 		)
 		(stroke
 			(width 0)
@@ -8091,7 +8247,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 180.34) (xy 90.17 181.61)
+			(xy 83.82 180.34) (xy 83.82 181.61)
 		)
 		(stroke
 			(width 0)
@@ -8121,6 +8277,16 @@
 	)
 	(wire
 		(pts
+			(xy 137.16 102.87) (xy 158.75 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5305e67c-d729-4060-976c-2cef71578f1c")
+	)
+	(wire
+		(pts
 			(xy 274.32 25.4) (xy 267.97 25.4)
 		)
 		(stroke
@@ -8128,6 +8294,16 @@
 			(type default)
 		)
 		(uuid "53a4db18-8197-4a41-b085-186060ff3406")
+	)
+	(wire
+		(pts
+			(xy 66.04 27.94) (xy 66.04 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53b00a70-bd6e-4a92-933f-8eceb726a594")
 	)
 	(wire
 		(pts
@@ -8171,7 +8347,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 146.05) (xy 228.6 146.05)
+			(xy 214.63 146.05) (xy 226.06 146.05)
 		)
 		(stroke
 			(width 0)
@@ -8241,7 +8417,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 180.34) (xy 120.65 180.34)
+			(xy 121.92 180.34) (xy 114.3 180.34)
 		)
 		(stroke
 			(width 0)
@@ -8251,7 +8427,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 189.23) (xy 67.31 190.5)
+			(xy 60.96 189.23) (xy 60.96 190.5)
 		)
 		(stroke
 			(width 0)
@@ -8261,7 +8437,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 158.75) (xy 189.23 160.02)
+			(xy 204.47 114.3) (xy 204.47 115.57)
 		)
 		(stroke
 			(width 0)
@@ -8301,7 +8477,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 189.23) (xy 135.89 190.5)
+			(xy 129.54 189.23) (xy 129.54 190.5)
 		)
 		(stroke
 			(width 0)
@@ -8331,7 +8507,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 180.34) (xy 113.03 181.61)
+			(xy 106.68 180.34) (xy 106.68 181.61)
 		)
 		(stroke
 			(width 0)
@@ -8381,7 +8557,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 180.34) (xy 105.41 181.61)
+			(xy 99.06 180.34) (xy 99.06 181.61)
 		)
 		(stroke
 			(width 0)
@@ -8391,7 +8567,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 43.18) (xy 38.1 43.18)
+			(xy 33.02 43.18) (xy 40.64 43.18)
 		)
 		(stroke
 			(width 0)
@@ -8401,7 +8577,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 25.4) (xy 66.04 25.4)
+			(xy 64.77 24.13) (xy 66.04 24.13)
 		)
 		(stroke
 			(width 0)
@@ -8421,7 +8597,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 179.07) (xy 74.93 180.34)
+			(xy 68.58 179.07) (xy 68.58 180.34)
 		)
 		(stroke
 			(width 0)
@@ -8431,7 +8607,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 180.34) (xy 74.93 181.61)
+			(xy 68.58 180.34) (xy 68.58 181.61)
 		)
 		(stroke
 			(width 0)
@@ -8441,7 +8617,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 190.5) (xy 90.17 190.5)
+			(xy 91.44 190.5) (xy 83.82 190.5)
 		)
 		(stroke
 			(width 0)
@@ -8451,7 +8627,17 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 129.54) (xy 189.23 130.81)
+			(xy 226.06 134.62) (xy 226.06 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "629fb7da-48e0-47a0-a10d-d0e61e66467f")
+	)
+	(wire
+		(pts
+			(xy 204.47 85.09) (xy 204.47 86.36)
 		)
 		(stroke
 			(width 0)
@@ -8481,7 +8667,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 190.5) (xy 82.55 190.5)
+			(xy 83.82 190.5) (xy 76.2 190.5)
 		)
 		(stroke
 			(width 0)
@@ -8491,7 +8677,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 107.95) (xy 181.61 107.95)
+			(xy 250.19 88.9) (xy 251.46 88.9)
 		)
 		(stroke
 			(width 0)
@@ -8541,7 +8727,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 43.18) (xy 44.45 44.45)
+			(xy 46.99 43.18) (xy 46.99 44.45)
 		)
 		(stroke
 			(width 0)
@@ -8571,7 +8757,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 53.34) (xy 38.1 52.07)
+			(xy 40.64 53.34) (xy 40.64 52.07)
 		)
 		(stroke
 			(width 0)
@@ -8601,7 +8787,17 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 53.34) (xy 38.1 53.34)
+			(xy 217.17 133.35) (xy 217.17 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e2a16a6-667c-4793-ae5c-fd93af051984")
+	)
+	(wire
+		(pts
+			(xy 33.02 53.34) (xy 40.64 53.34)
 		)
 		(stroke
 			(width 0)
@@ -8611,7 +8807,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 25.4) (xy 66.04 30.48)
+			(xy 66.04 24.13) (xy 66.04 27.94)
 		)
 		(stroke
 			(width 0)
@@ -8701,7 +8897,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 53.34) (xy 52.07 53.34)
+			(xy 46.99 53.34) (xy 54.61 53.34)
 		)
 		(stroke
 			(width 0)
@@ -8731,7 +8927,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 130.81) (xy 189.23 130.81)
+			(xy 218.44 86.36) (xy 204.47 86.36)
 		)
 		(stroke
 			(width 0)
@@ -8771,7 +8967,7 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 148.59) (xy 228.6 148.59)
+			(xy 207.01 148.59) (xy 229.87 148.59)
 		)
 		(stroke
 			(width 0)
@@ -8788,6 +8984,26 @@
 			(type default)
 		)
 		(uuid "78f9c746-03c1-41fa-b8da-0916bee76c4c")
+	)
+	(wire
+		(pts
+			(xy 229.87 158.75) (xy 228.6 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a56c518-9362-408e-9a8a-4fd37f4a02ed")
+	)
+	(wire
+		(pts
+			(xy 228.6 158.75) (xy 228.6 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c51837b-946d-48d3-845e-d954b03f9a96")
 	)
 	(wire
 		(pts
@@ -8851,7 +9067,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 149.86) (xy 176.53 149.86)
+			(xy 194.31 105.41) (xy 191.77 105.41)
 		)
 		(stroke
 			(width 0)
@@ -8881,7 +9097,7 @@
 	)
 	(wire
 		(pts
-			(xy 273.05 158.75) (xy 271.78 158.75)
+			(xy 274.32 158.75) (xy 273.05 158.75)
 		)
 		(stroke
 			(width 0)
@@ -8921,7 +9137,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 139.7) (xy 179.07 139.7)
+			(xy 191.77 95.25) (xy 194.31 95.25)
 		)
 		(stroke
 			(width 0)
@@ -8971,7 +9187,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 180.34) (xy 82.55 180.34)
+			(xy 68.58 180.34) (xy 76.2 180.34)
 		)
 		(stroke
 			(width 0)
@@ -9001,7 +9217,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 190.5) (xy 74.93 191.77)
+			(xy 68.58 190.5) (xy 68.58 191.77)
 		)
 		(stroke
 			(width 0)
@@ -9041,7 +9257,17 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 30.48) (xy 57.15 30.48)
+			(xy 217.17 139.7) (xy 218.44 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86a90e3a-0010-4b1e-906a-ed9cf618e76f")
+	)
+	(wire
+		(pts
+			(xy 54.61 27.94) (xy 57.15 27.94)
 		)
 		(stroke
 			(width 0)
@@ -9051,7 +9277,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 104.14) (xy 181.61 104.14)
+			(xy 250.19 85.09) (xy 251.46 85.09)
 		)
 		(stroke
 			(width 0)
@@ -9081,17 +9307,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 92.71) (xy 138.43 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "895556c9-90d8-4ae9-ab07-da41b2f71dd6")
-	)
-	(wire
-		(pts
-			(xy 198.12 104.14) (xy 199.39 104.14)
+			(xy 267.97 85.09) (xy 269.24 85.09)
 		)
 		(stroke
 			(width 0)
@@ -9141,6 +9357,16 @@
 	)
 	(wire
 		(pts
+			(xy 226.06 156.21) (xy 229.87 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "904143eb-036b-43fe-ae0a-b0bcecef5a0f")
+	)
+	(wire
+		(pts
 			(xy 250.19 102.87) (xy 251.46 102.87)
 		)
 		(stroke
@@ -9151,7 +9377,17 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 180.34) (xy 74.93 180.34)
+			(xy 214.63 156.21) (xy 226.06 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "912e6cdc-8c69-4c75-95f9-b9dfec5366bc")
+	)
+	(wire
+		(pts
+			(xy 60.96 180.34) (xy 68.58 180.34)
 		)
 		(stroke
 			(width 0)
@@ -9161,7 +9397,17 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 189.23) (xy 113.03 190.5)
+			(xy 217.17 137.16) (xy 218.44 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91b03158-38a8-4c18-b874-189f3ce25451")
+	)
+	(wire
+		(pts
+			(xy 106.68 189.23) (xy 106.68 190.5)
 		)
 		(stroke
 			(width 0)
@@ -9251,7 +9497,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 44.45) (xy 30.48 43.18)
+			(xy 33.02 44.45) (xy 33.02 43.18)
 		)
 		(stroke
 			(width 0)
@@ -9271,7 +9517,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 190.5) (xy 128.27 189.23)
+			(xy 121.92 190.5) (xy 121.92 189.23)
 		)
 		(stroke
 			(width 0)
@@ -9301,23 +9547,13 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 135.89) (xy 177.8 137.16)
+			(xy 193.04 91.44) (xy 193.04 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "96f3a9ae-c8be-4421-bd42-2d526f611571")
-	)
-	(wire
-		(pts
-			(xy 66.04 30.48) (xy 66.04 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9751f5da-2567-4a18-b3a0-1f727fd3fe5c")
 	)
 	(wire
 		(pts
@@ -9341,7 +9577,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 107.95) (xy 190.5 107.95)
+			(xy 259.08 88.9) (xy 260.35 88.9)
 		)
 		(stroke
 			(width 0)
@@ -9381,7 +9617,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 52.07) (xy 22.86 53.34)
+			(xy 25.4 52.07) (xy 25.4 53.34)
 		)
 		(stroke
 			(width 0)
@@ -9411,13 +9647,23 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 153.67) (xy 228.6 153.67)
+			(xy 214.63 153.67) (xy 226.06 153.67)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "9d4ab823-1646-4179-aa98-9ff84b959f3f")
+	)
+	(wire
+		(pts
+			(xy 217.17 152.4) (xy 218.44 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9dd6863f-45c0-4017-b5f4-ee12965fcc1e")
 	)
 	(wire
 		(pts
@@ -9451,7 +9697,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 151.13) (xy 228.6 151.13)
+			(xy 214.63 151.13) (xy 226.06 151.13)
 		)
 		(stroke
 			(width 0)
@@ -9501,7 +9747,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 53.34) (xy 44.45 53.34)
+			(xy 40.64 53.34) (xy 46.99 53.34)
 		)
 		(stroke
 			(width 0)
@@ -9511,7 +9757,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 45.72) (xy 52.07 45.72)
+			(xy 67.31 45.72) (xy 54.61 45.72)
 		)
 		(stroke
 			(width 0)
@@ -9581,7 +9827,17 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 180.34) (xy 82.55 180.34)
+			(xy 137.16 105.41) (xy 158.75 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a60de8c1-395e-46a9-bbf7-f23ab42eb80e")
+	)
+	(wire
+		(pts
+			(xy 83.82 180.34) (xy 76.2 180.34)
 		)
 		(stroke
 			(width 0)
@@ -9591,13 +9847,13 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 25.4) (xy 57.15 25.4)
+			(xy 217.17 144.78) (xy 217.17 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a7738fd2-7817-4568-8046-98f0ed22a1d5")
+		(uuid "a7c1c45b-ecad-4a95-80e8-605f704d42c4")
 	)
 	(wire
 		(pts
@@ -9611,7 +9867,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 137.16) (xy 177.8 137.16)
+			(xy 191.77 92.71) (xy 193.04 92.71)
 		)
 		(stroke
 			(width 0)
@@ -9641,7 +9897,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 158.75) (xy 189.23 158.75)
+			(xy 218.44 114.3) (xy 204.47 114.3)
 		)
 		(stroke
 			(width 0)
@@ -9741,6 +9997,16 @@
 	)
 	(wire
 		(pts
+			(xy 226.06 144.78) (xy 226.06 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5568b5d-46f0-4715-9103-4eb1da9155dc")
+	)
+	(wire
+		(pts
 			(xy 137.16 57.15) (xy 138.43 57.15)
 		)
 		(stroke
@@ -9771,7 +10037,17 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 190.5) (xy 97.79 190.5)
+			(xy 226.06 137.16) (xy 226.06 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6b5b777-ea33-4874-b667-17d7361eeff6")
+	)
+	(wire
+		(pts
+			(xy 99.06 190.5) (xy 91.44 190.5)
 		)
 		(stroke
 			(width 0)
@@ -9781,7 +10057,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 180.34) (xy 105.41 180.34)
+			(xy 91.44 180.34) (xy 99.06 180.34)
 		)
 		(stroke
 			(width 0)
@@ -9841,7 +10117,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 53.34) (xy 22.86 54.61)
+			(xy 25.4 53.34) (xy 25.4 54.61)
 		)
 		(stroke
 			(width 0)
@@ -9861,7 +10137,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 53.34) (xy 30.48 53.34)
+			(xy 25.4 53.34) (xy 33.02 53.34)
 		)
 		(stroke
 			(width 0)
@@ -9871,7 +10147,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 189.23) (xy 105.41 190.5)
+			(xy 99.06 189.23) (xy 99.06 190.5)
 		)
 		(stroke
 			(width 0)
@@ -9891,7 +10167,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 31.75) (xy 54.61 30.48)
+			(xy 54.61 29.21) (xy 54.61 27.94)
 		)
 		(stroke
 			(width 0)
@@ -9901,7 +10177,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 140.97) (xy 203.2 130.81)
+			(xy 218.44 96.52) (xy 218.44 86.36)
 		)
 		(stroke
 			(width 0)
@@ -9911,7 +10187,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 181.61) (xy 67.31 180.34)
+			(xy 60.96 181.61) (xy 60.96 180.34)
 		)
 		(stroke
 			(width 0)
@@ -9941,6 +10217,16 @@
 	)
 	(wire
 		(pts
+			(xy 137.16 95.25) (xy 158.75 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5ba1043-9a04-449f-82c4-afc533524ae5")
+	)
+	(wire
+		(pts
 			(xy 267.97 36.83) (xy 267.97 38.1)
 		)
 		(stroke
@@ -9961,7 +10247,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 189.23) (xy 74.93 190.5)
+			(xy 68.58 189.23) (xy 68.58 190.5)
 		)
 		(stroke
 			(width 0)
@@ -9971,13 +10257,23 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 190.5) (xy 74.93 190.5)
+			(xy 60.96 190.5) (xy 68.58 190.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c835c7cc-86d1-4db2-971f-0e9c6e422f50")
+	)
+	(wire
+		(pts
+			(xy 214.63 135.89) (xy 226.06 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8a68ccc-0ae2-4473-bb64-80a0c181cdf9")
 	)
 	(wire
 		(pts
@@ -10001,13 +10297,23 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 190.5) (xy 82.55 190.5)
+			(xy 68.58 190.5) (xy 76.2 190.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c99d914b-0a86-4ab5-8eac-873482851947")
+	)
+	(wire
+		(pts
+			(xy 217.17 134.62) (xy 217.17 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca2715bb-9b85-4c66-8165-a9bcedbb8142")
 	)
 	(wire
 		(pts
@@ -10041,6 +10347,26 @@
 	)
 	(wire
 		(pts
+			(xy 226.06 140.97) (xy 229.87 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cdbeb1a7-4212-480c-a1d1-3aee17338841")
+	)
+	(wire
+		(pts
+			(xy 226.06 135.89) (xy 229.87 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce650c78-e2a1-4bb8-847f-8ed3dbe87aa6")
+	)
+	(wire
+		(pts
 			(xy 137.16 67.31) (xy 138.43 67.31)
 		)
 		(stroke
@@ -10061,7 +10387,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 181.61) (xy 97.79 180.34)
+			(xy 91.44 181.61) (xy 91.44 180.34)
 		)
 		(stroke
 			(width 0)
@@ -10081,7 +10407,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 181.61) (xy 128.27 180.34)
+			(xy 121.92 181.61) (xy 121.92 180.34)
 		)
 		(stroke
 			(width 0)
@@ -10111,6 +10437,16 @@
 	)
 	(wire
 		(pts
+			(xy 217.17 154.94) (xy 218.44 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d3d16ea7-adca-4159-89e4-1c108e122c6a")
+	)
+	(wire
+		(pts
 			(xy 36.83 166.37) (xy 43.18 166.37)
 		)
 		(stroke
@@ -10118,16 +10454,6 @@
 			(type default)
 		)
 		(uuid "d3f1d796-751a-4b27-be76-4b8688c4e8e8")
-	)
-	(wire
-		(pts
-			(xy 137.16 100.33) (xy 138.43 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d44ad60b-2c80-4b8f-b1c4-af0148b1e1c5")
 	)
 	(wire
 		(pts
@@ -10171,7 +10497,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 104.14) (xy 190.5 104.14)
+			(xy 259.08 85.09) (xy 260.35 85.09)
 		)
 		(stroke
 			(width 0)
@@ -10241,7 +10567,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 41.91) (xy 22.86 43.18)
+			(xy 25.4 41.91) (xy 25.4 43.18)
 		)
 		(stroke
 			(width 0)
@@ -10311,7 +10637,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 190.5) (xy 135.89 190.5)
+			(xy 121.92 190.5) (xy 129.54 190.5)
 		)
 		(stroke
 			(width 0)
@@ -10341,7 +10667,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 180.34) (xy 120.65 180.34)
+			(xy 106.68 180.34) (xy 114.3 180.34)
 		)
 		(stroke
 			(width 0)
@@ -10351,7 +10677,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 189.23) (xy 90.17 190.5)
+			(xy 83.82 189.23) (xy 83.82 190.5)
 		)
 		(stroke
 			(width 0)
@@ -10371,7 +10697,7 @@
 	)
 	(wire
 		(pts
-			(xy 273.05 160.02) (xy 273.05 158.75)
+			(xy 274.32 160.02) (xy 274.32 158.75)
 		)
 		(stroke
 			(width 0)
@@ -10421,7 +10747,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 130.81) (xy 189.23 132.08)
+			(xy 204.47 86.36) (xy 204.47 87.63)
 		)
 		(stroke
 			(width 0)
@@ -10448,26 +10774,6 @@
 			(type default)
 		)
 		(uuid "e8a3ebfe-71ae-421b-97bc-524e129ca36a")
-	)
-	(wire
-		(pts
-			(xy 227.33 135.89) (xy 228.6 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb0a7a50-ea82-47bb-bda1-fd200dc7f5d1")
-	)
-	(wire
-		(pts
-			(xy 137.16 105.41) (xy 138.43 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb289bcc-0354-4070-8a6c-bb99c7555ae6")
 	)
 	(wire
 		(pts
@@ -10501,13 +10807,13 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 97.79) (xy 138.43 97.79)
+			(xy 226.06 153.67) (xy 229.87 153.67)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ebc689bd-fd42-4d20-ae9a-b85b48321eb4")
+		(uuid "ec32286c-1cb0-4593-89bb-4ce4039c8d7d")
 	)
 	(wire
 		(pts
@@ -10531,7 +10837,17 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 190.5) (xy 113.03 190.5)
+			(xy 226.06 154.94) (xy 226.06 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed80e8b9-fe04-4030-9b26-248b60e30b11")
+	)
+	(wire
+		(pts
+			(xy 114.3 190.5) (xy 106.68 190.5)
 		)
 		(stroke
 			(width 0)
@@ -10541,7 +10857,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 147.32) (xy 176.53 147.32)
+			(xy 194.31 102.87) (xy 191.77 102.87)
 		)
 		(stroke
 			(width 0)
@@ -10551,7 +10867,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 40.64) (xy 67.31 40.64)
+			(xy 46.99 40.64) (xy 67.31 40.64)
 		)
 		(stroke
 			(width 0)
@@ -10568,6 +10884,16 @@
 			(type default)
 		)
 		(uuid "f1499ed1-7f38-4d0d-aedd-12d443dfce5a")
+	)
+	(wire
+		(pts
+			(xy 226.06 139.7) (xy 226.06 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f17e60e1-b7d6-44fc-b0d7-bf6619871f1c")
 	)
 	(wire
 		(pts
@@ -10588,6 +10914,16 @@
 			(type default)
 		)
 		(uuid "f217c33f-49e7-4884-b350-f192c3181132")
+	)
+	(wire
+		(pts
+			(xy 217.17 137.16) (xy 217.17 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f25ac18f-6345-4e66-9f90-024261202d80")
 	)
 	(wire
 		(pts
@@ -10621,7 +10957,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 163.83) (xy 138.43 163.83)
+			(xy 137.16 153.67) (xy 138.43 153.67)
 		)
 		(stroke
 			(width 0)
@@ -10638,6 +10974,16 @@
 			(type default)
 		)
 		(uuid "f4dd0c3c-2819-4a7a-8a9e-49db22e570ed")
+	)
+	(wire
+		(pts
+			(xy 137.16 100.33) (xy 158.75 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f544c505-520d-41d7-9a6b-74e86baff25b")
 	)
 	(wire
 		(pts
@@ -10661,7 +11007,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 180.34) (xy 97.79 180.34)
+			(xy 83.82 180.34) (xy 91.44 180.34)
 		)
 		(stroke
 			(width 0)
@@ -10691,7 +11037,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 144.78) (xy 176.53 144.78)
+			(xy 194.31 100.33) (xy 191.77 100.33)
 		)
 		(stroke
 			(width 0)
@@ -10741,7 +11087,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 43.18) (xy 45.72 43.18)
+			(xy 46.99 43.18) (xy 58.42 43.18)
 		)
 		(stroke
 			(width 0)
@@ -10751,7 +11097,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 180.34) (xy 128.27 180.34)
+			(xy 129.54 180.34) (xy 121.92 180.34)
 		)
 		(stroke
 			(width 0)
@@ -10771,6 +11117,16 @@
 	)
 	(wire
 		(pts
+			(xy 214.63 138.43) (xy 226.06 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fef5b1ba-d353-4338-a140-e2f3cc6e292a")
+	)
+	(wire
+		(pts
 			(xy 35.56 81.28) (xy 35.56 86.36)
 		)
 		(stroke
@@ -10780,7 +11136,7 @@
 		(uuid "ffcf2781-cb26-4fb2-8ef3-d95d9ba6588a")
 	)
 	(label "SD_DAT1"
-		(at 227.33 153.67 180)
+		(at 214.63 153.67 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10810,7 +11166,7 @@
 		(uuid "0cb236f4-a2e0-4cc6-b98a-4c5ecfb8e798")
 	)
 	(label "SD_CLK"
-		(at 138.43 105.41 0)
+		(at 158.75 105.41 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10850,7 +11206,7 @@
 		(uuid "1bd7019d-da01-46cc-9684-fc0d64ec7c99")
 	)
 	(label "QSPI_IO1"
-		(at 176.53 144.78 180)
+		(at 191.77 100.33 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10890,7 +11246,7 @@
 		(uuid "358e1941-d366-411b-9166-0e08f8369fbd")
 	)
 	(label "SD_CMD"
-		(at 227.33 140.97 180)
+		(at 214.63 140.97 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10909,6 +11265,16 @@
 		)
 		(uuid "39f0fbae-bcc6-4afb-8499-18362601545c")
 	)
+	(label "CARD_DETECT"
+		(at 158.75 107.95 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3cc69071-bfe6-49b2-9d5a-74e388263ced")
+	)
 	(label "QSPI_CLK"
 		(at 66.04 67.31 180)
 		(effects
@@ -10920,7 +11286,7 @@
 		(uuid "3e45d7a0-478d-4b6a-8242-51ad753e644b")
 	)
 	(label "SD_DAT2"
-		(at 138.43 97.79 0)
+		(at 158.75 97.79 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10928,6 +11294,16 @@
 			(justify left bottom)
 		)
 		(uuid "485cd63a-fda2-4054-964a-2e61dc45a4b8")
+	)
+	(label "CARD_DETECT"
+		(at 214.63 156.21 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4959736c-70ec-446a-ac5f-6b0c5a0a9622")
 	)
 	(label "DEBUG_UART_RX"
 		(at 138.43 44.45 0)
@@ -10950,7 +11326,7 @@
 		(uuid "51f92d9f-3412-4472-b2be-19d598c68b0f")
 	)
 	(label "QSPI_IO2"
-		(at 176.53 147.32 180)
+		(at 191.77 102.87 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10960,7 +11336,7 @@
 		(uuid "568e86dc-b83d-4386-b3ab-f9112eedca26")
 	)
 	(label "SD_DAT3"
-		(at 227.33 138.43 180)
+		(at 214.63 138.43 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11000,7 +11376,7 @@
 		(uuid "6bc32efd-4e40-40e5-a38f-6365799390cc")
 	)
 	(label "SD_DAT3"
-		(at 138.43 100.33 0)
+		(at 158.75 100.33 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11020,7 +11396,7 @@
 		(uuid "6f9f35b9-e988-420d-8cc4-e07487cef732")
 	)
 	(label "QSPI_CLK"
-		(at 176.53 139.7 180)
+		(at 191.77 95.25 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11050,7 +11426,7 @@
 		(uuid "7dc596de-28a8-4af2-9b04-c0b41d3d21e5")
 	)
 	(label "QSPI_IO0"
-		(at 176.53 142.24 180)
+		(at 191.77 97.79 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11090,7 +11466,7 @@
 		(uuid "9bb2b996-9dc6-4ec2-911e-c920dde38418")
 	)
 	(label "SD_DAT0"
-		(at 227.33 151.13 180)
+		(at 214.63 151.13 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11100,7 +11476,7 @@
 		(uuid "9fd29ff6-5905-4ab4-9dbb-e755dec8bad6")
 	)
 	(label "QSPI_CS0"
-		(at 176.53 137.16 180)
+		(at 191.77 92.71 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11150,7 +11526,7 @@
 		(uuid "be9435eb-d554-442f-a505-63f2ebe3d8d9")
 	)
 	(label "SD_CLK"
-		(at 227.33 146.05 180)
+		(at 214.63 146.05 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11160,7 +11536,7 @@
 		(uuid "c30aa7b8-e6fa-4d51-bc51-002d90c67166")
 	)
 	(label "SD_DAT2"
-		(at 227.33 135.89 180)
+		(at 214.63 135.89 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11170,7 +11546,7 @@
 		(uuid "cb2317ef-9137-4027-8d0b-a78a9e1f598a")
 	)
 	(label "DEBUG_LED_1"
-		(at 180.34 107.95 180)
+		(at 250.19 88.9 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11190,7 +11566,7 @@
 		(uuid "cd245717-833c-411a-bb42-5e7ff4a13964")
 	)
 	(label "QSPI_IO3"
-		(at 176.53 149.86 180)
+		(at 191.77 105.41 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11200,7 +11576,7 @@
 		(uuid "d0afa73c-a0d6-430e-b6c2-2e27126ad1ed")
 	)
 	(label "SD_CMD"
-		(at 138.43 102.87 0)
+		(at 158.75 102.87 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11240,7 +11616,7 @@
 		(uuid "df221dd5-340e-4299-9055-2aa1ce003f9f")
 	)
 	(label "SD_DAT1"
-		(at 138.43 95.25 0)
+		(at 158.75 95.25 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11260,7 +11636,7 @@
 		(uuid "ef2f7003-f5fa-47a9-b631-67ee4fded4ef")
 	)
 	(label "DEBUG_LED_0"
-		(at 180.34 104.14 180)
+		(at 250.19 85.09 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11270,7 +11646,7 @@
 		(uuid "f5387f26-179b-4195-94af-c5153fe824b3")
 	)
 	(label "SD_DAT0"
-		(at 138.43 92.71 0)
+		(at 158.75 92.71 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11311,9 +11687,9 @@
 			)
 		)
 	)
-	(global_label "OverCurrent_1"
+	(global_label "Current1"
 		(shape input)
-		(at 138.43 158.75 0)
+		(at 138.43 148.59 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11323,7 +11699,7 @@
 		)
 		(uuid "0e7211ac-082d-4491-8802-7c3459c62b95")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 154.7199 158.75 0)
+			(at 149.5794 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11421,9 +11797,9 @@
 			)
 		)
 	)
-	(global_label "OverCurrent_0"
+	(global_label "Current0"
 		(shape input)
-		(at 138.43 156.21 0)
+		(at 138.43 146.05 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11433,7 +11809,7 @@
 		)
 		(uuid "2ed3a0e1-bb78-4b0a-b9fc-3fc11efc8309")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 154.7199 156.21 0)
+			(at 149.5794 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11487,9 +11863,9 @@
 			)
 		)
 	)
-	(global_label "OverCurrent_3"
+	(global_label "Current3"
 		(shape input)
-		(at 138.43 163.83 0)
+		(at 138.43 153.67 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11499,7 +11875,7 @@
 		)
 		(uuid "41f95775-07b8-4154-846a-053a58ce85a8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 154.7199 163.83 0)
+			(at 149.5794 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11817,9 +12193,9 @@
 			)
 		)
 	)
-	(global_label "OverCurrent_2"
+	(global_label "Current2"
 		(shape input)
-		(at 138.43 161.29 0)
+		(at 138.43 151.13 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11829,7 +12205,7 @@
 		)
 		(uuid "cfbf6257-d6fa-46f6-9041-4748434114a7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 154.7199 161.29 0)
+			(at 149.5794 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11977,7 +12353,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C104K5RACTU"
 			(at 274.32 33.02 0)
 			(effects
 				(font
@@ -12163,6 +12539,75 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
 					(reference "FID?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 222.25 137.16 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "058264d4-bf10-45a4-802d-a9d2de4335a2")
+		(property "Reference" "R60"
+			(at 229.87 137.16 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47K"
+			(at 224.282 137.16 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 222.25 138.938 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 222.25 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 222.25 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "89e4c3fd-72d9-4b54-b7c8-dd724228d6c9")
+		)
+		(pin "1"
+			(uuid "5dd691ed-58eb-413c-8dd6-81cfd5e905f7")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "R60")
 					(unit 1)
 				)
 			)
@@ -12376,7 +12821,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C1608X7R1H105K080AB"
 			(at 205.74 31.75 0)
 			(effects
 				(font
@@ -12535,7 +12980,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C1608X7R1H105K080AB"
 			(at 36.83 171.45 0)
 			(effects
 				(font
@@ -12624,7 +13069,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 199.39 107.95 90)
+		(at 269.24 88.9 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12633,7 +13078,7 @@
 		(dnp no)
 		(uuid "0b515b47-6e8a-43e4-a65a-32e68a4b9780")
 		(property "Reference" "#PWR029"
-			(at 205.74 107.95 0)
+			(at 275.59 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12642,7 +13087,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 204.216 107.95 90)
+			(at 274.066 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12650,7 +13095,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 199.39 107.95 0)
+			(at 269.24 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12659,7 +13104,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 199.39 107.95 0)
+			(at 269.24 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12668,7 +13113,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 199.39 107.95 0)
+			(at 269.24 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12766,7 +13211,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C104K5RACTU"
 			(at 213.36 31.75 0)
 			(effects
 				(font
@@ -12839,6 +13284,75 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "C152")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 222.25 154.94 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0ce0d6cd-ba34-4197-b546-c58427107b9b")
+		(property "Reference" "R65"
+			(at 229.87 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47K"
+			(at 224.282 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 222.25 156.718 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 222.25 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 222.25 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c60e81b1-fa9c-49d5-9ac0-883981e915ea")
+		)
+		(pin "1"
+			(uuid "7d6c9da3-2456-49eb-9b06-636d5305303b")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "R65")
 					(unit 1)
 				)
 			)
@@ -13153,7 +13667,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:R_0603")
-		(at 185.42 104.14 90)
+		(at 255.27 85.09 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -13162,7 +13676,7 @@
 		(dnp no)
 		(uuid "132c92e3-4890-4e0d-a2c1-0c750720ac92")
 		(property "Reference" "R14"
-			(at 187.198 102.108 90)
+			(at 257.048 83.058 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13171,7 +13685,7 @@
 			)
 		)
 		(property "Value" "330"
-			(at 187.198 104.14 90)
+			(at 257.048 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13180,7 +13694,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 185.42 102.362 90)
+			(at 255.27 83.312 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13189,7 +13703,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 185.42 104.14 0)
+			(at 255.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13198,7 +13712,7 @@
 			)
 		)
 		(property "Description" "100Mw Thick Film Resistors 100Ppm/ 1% 330 0603 Chip Resistor Surface Mount Rohs"
-			(at 185.42 104.14 0)
+			(at 255.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13207,7 +13721,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0603FR-07330RL/727162"
-			(at 185.42 104.14 90)
+			(at 255.27 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13216,7 +13730,7 @@
 			)
 		)
 		(property "Manufacturer" "Yageo"
-			(at 185.42 104.14 0)
+			(at 255.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13225,7 +13739,7 @@
 			)
 		)
 		(property "Manufacturer Number" "RC0402FR-07680RL"
-			(at 185.42 104.14 0)
+			(at 255.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13234,7 +13748,7 @@
 			)
 		)
 		(property "Tolerance" "1%"
-			(at 185.42 104.14 0)
+			(at 255.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13243,7 +13757,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Yageo"
-			(at 185.42 104.14 0)
+			(at 255.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13252,7 +13766,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "RC0603FR-07330RL"
-			(at 185.42 104.14 0)
+			(at 255.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13283,7 +13797,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:LED")
-		(at 194.31 107.95 0)
+		(at 264.16 88.9 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -13292,7 +13806,7 @@
 		(dnp no)
 		(uuid "151e61ba-2deb-4623-a561-ff14cc9e199f")
 		(property "Reference" "LED1"
-			(at 191.516 110.236 0)
+			(at 261.366 91.186 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13301,7 +13815,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 195.072 109.474 90)
+			(at 264.922 90.424 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13311,7 +13825,7 @@
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
-			(at 194.31 107.95 0)
+			(at 264.16 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13320,7 +13834,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.sunledusa.com/products/spec/XZCDGK53W-1VF.pdf"
-			(at 194.31 107.95 0)
+			(at 264.16 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13329,7 +13843,7 @@
 			)
 		)
 		(property "Description" "Red 0603 130° Clear 54 mcd 2 V Surface Mount ChipLED"
-			(at 194.31 107.95 0)
+			(at 264.16 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13337,8 +13851,8 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/sunled/XZCDGK53W-1VF/15761905"
-			(at 194.31 107.95 0)
+		(property "Link" ""
+			(at 264.16 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13347,7 +13861,7 @@
 			)
 		)
 		(property "Notes" "2mA, 98mcd, green"
-			(at 194.31 107.95 0)
+			(at 264.16 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13356,7 +13870,7 @@
 			)
 		)
 		(property "Manufacturer" "SunLED"
-			(at 194.31 107.95 0)
+			(at 264.16 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13365,7 +13879,7 @@
 			)
 		)
 		(property "Manufacturer Number" "XZCDGK53W-1VF"
-			(at 194.31 107.95 0)
+			(at 264.16 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13374,7 +13888,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/XZCDGK53W1VF/501988/"
-			(at 194.31 107.95 0)
+			(at 264.16 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13382,8 +13896,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "VLMS1300-GS08"
-			(at 195.072 105.41 0)
+		(property "Manufacturer_Part_Number" ""
+			(at 264.922 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13391,8 +13905,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Vishay"
-			(at 194.31 107.95 0)
+		(property "Manufacturer_Name" ""
+			(at 264.16 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13493,7 +14007,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C104K5RACTU"
 			(at 19.05 29.21 0)
 			(effects
 				(font
@@ -13649,7 +14163,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C103K5RACTU"
 			(at 29.21 77.47 0)
 			(effects
 				(font
@@ -13719,6 +14233,75 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
 					(reference "C?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 222.25 152.4 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1ba6606e-3efa-4434-8109-1a026aa65bef")
+		(property "Reference" "R64"
+			(at 229.87 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47K"
+			(at 224.282 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 222.25 154.178 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 222.25 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 222.25 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7fa6d467-6814-41e7-aec0-7c672b7b9e79")
+		)
+		(pin "1"
+			(uuid "6ac71cd5-29a0-40ce-af51-53c40d838d2d")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "R64")
 					(unit 1)
 				)
 			)
@@ -13933,7 +14516,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 22.86 48.26 180)
+		(at 25.4 48.26 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13941,7 +14524,7 @@
 		(dnp no)
 		(uuid "233e8260-dc44-46c2-9365-3e924b5da4c5")
 		(property "Reference" "C2"
-			(at 23.368 45.974 0)
+			(at 25.908 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13950,7 +14533,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 23.368 50.546 0)
+			(at 25.908 50.546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13959,7 +14542,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 21.8948 44.45 0)
+			(at 24.4348 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13968,7 +14551,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 22.86 48.26 0)
+			(at 25.4 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13977,7 +14560,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 22.86 48.26 0)
+			(at 25.4 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13986,7 +14569,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 22.86 48.26 0)
+			(at 25.4 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13995,7 +14578,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 22.86 48.26 0)
+			(at 25.4 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14003,8 +14586,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 22.86 48.26 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 25.4 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14013,7 +14596,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 22.86 48.26 0)
+			(at 25.4 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14022,7 +14605,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 22.86 48.26 0)
+			(at 25.4 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14031,7 +14614,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 22.86 48.26 0)
+			(at 25.4 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14040,7 +14623,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 22.86 48.26 0)
+			(at 25.4 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14049,7 +14632,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 22.86 48.26 0)
+			(at 25.4 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14058,7 +14641,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 22.86 48.26 0)
+			(at 25.4 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14089,7 +14672,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 120.65 185.42 180)
+		(at 114.3 185.42 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14097,7 +14680,7 @@
 		(dnp no)
 		(uuid "274643bf-7d1e-42d7-adc8-1a3ff3aa5ee9")
 		(property "Reference" "C24"
-			(at 121.158 183.134 0)
+			(at 114.808 183.134 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14106,7 +14689,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 121.158 187.706 0)
+			(at 114.808 187.706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14115,7 +14698,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 119.6848 181.61 0)
+			(at 113.3348 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14124,7 +14707,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 120.65 185.42 0)
+			(at 114.3 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14133,7 +14716,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 120.65 185.42 0)
+			(at 114.3 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14142,7 +14725,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 120.65 185.42 0)
+			(at 114.3 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14151,7 +14734,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 120.65 185.42 0)
+			(at 114.3 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14159,8 +14742,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 120.65 185.42 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 114.3 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14169,7 +14752,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 120.65 185.42 0)
+			(at 114.3 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14178,7 +14761,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 120.65 185.42 0)
+			(at 114.3 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14187,7 +14770,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 120.65 185.42 0)
+			(at 114.3 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14196,7 +14779,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 120.65 185.42 0)
+			(at 114.3 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14205,7 +14788,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 120.65 185.42 0)
+			(at 114.3 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14214,7 +14797,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 120.65 185.42 0)
+			(at 114.3 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14449,7 +15032,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 273.05 160.02 0)
+		(at 274.32 160.02 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14457,7 +15040,7 @@
 		(dnp no)
 		(uuid "29f7ba5d-a250-44ae-80ea-dc2afb60b2b1")
 		(property "Reference" "#PWR0320"
-			(at 273.05 166.37 0)
+			(at 274.32 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14466,7 +15049,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 273.05 164.084 0)
+			(at 274.32 164.084 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14474,7 +15057,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 273.05 160.02 0)
+			(at 274.32 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14483,7 +15066,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 273.05 160.02 0)
+			(at 274.32 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14492,7 +15075,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 273.05 160.02 0)
+			(at 274.32 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14773,7 +15356,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C1608X7R1H105K080AB"
 			(at 267.97 33.02 0)
 			(effects
 				(font
@@ -14930,7 +15513,7 @@
 	)
 	(symbol
 		(lib_id "power:+1V1")
-		(at 22.86 41.91 0)
+		(at 25.4 41.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14938,7 +15521,7 @@
 		(dnp no)
 		(uuid "2e25cfa6-158b-4dde-915d-06ea59bd7367")
 		(property "Reference" "#PWR03"
-			(at 22.86 45.72 0)
+			(at 25.4 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14947,7 +15530,7 @@
 			)
 		)
 		(property "Value" "+1V1"
-			(at 25.654 38.862 0)
+			(at 28.194 38.862 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14955,7 +15538,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 22.86 41.91 0)
+			(at 25.4 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14964,7 +15547,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 22.86 41.91 0)
+			(at 25.4 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14973,7 +15556,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+1V1\""
-			(at 22.86 41.91 0)
+			(at 25.4 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15071,105 +15654,8 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:MountingHole_Pad")
-		(at 36.83 195.58 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "2f1c5a78-cf3e-41cd-8253-2c6320fedbc0")
-		(property "Reference" "H2"
-			(at 35.814 191.262 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 39.37 195.5799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:MountingHole_3.2mm_M3_DIN965"
-			(at 36.83 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 36.83 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 36.83 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "n/a"
-			(at 36.83 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "n/a"
-			(at 36.83 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer_Part_Number" "n/a"
-			(at 36.83 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer_Name" "n/a"
-			(at 36.83 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "H2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 219.71 148.59 270)
+		(at 207.01 148.59 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15177,7 +15663,7 @@
 		(dnp no)
 		(uuid "2faf2db7-73e9-4bab-bbda-d79b4edd5653")
 		(property "Reference" "#PWR0319"
-			(at 213.36 148.59 0)
+			(at 200.66 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15186,7 +15672,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 214.884 148.59 90)
+			(at 202.184 148.59 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15194,7 +15680,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 219.71 148.59 0)
+			(at 207.01 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15203,7 +15689,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 219.71 148.59 0)
+			(at 207.01 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15212,7 +15698,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 219.71 148.59 0)
+			(at 207.01 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15299,7 +15785,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 60.96 30.48 90)
+		(at 60.96 27.94 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15307,7 +15793,7 @@
 		(dnp no)
 		(uuid "3306cfab-fa51-44aa-a717-97d0b2cfc193")
 		(property "Reference" "C16"
-			(at 59.69 29.21 90)
+			(at 59.69 26.67 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15316,7 +15802,7 @@
 			)
 		)
 		(property "Value" "4.7uF"
-			(at 58.674 34.036 90)
+			(at 58.674 31.496 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15325,7 +15811,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 64.77 29.5148 0)
+			(at 64.77 26.9748 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15334,7 +15820,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 60.96 30.48 0)
+			(at 60.96 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15343,7 +15829,7 @@
 			)
 		)
 		(property "Description" "C Series 0603 4.7 uF 35 V ±10 % Tolerance X5R SMT Multilayer Ceramic Capacitor"
-			(at 60.96 30.48 0)
+			(at 60.96 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15352,7 +15838,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/tdk-corporation/C1608X5R1V475K080AC/3648577"
-			(at 60.96 30.48 0)
+			(at 60.96 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15360,8 +15846,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 60.96 30.48 0)
+		(property "Manufacturer Number" "C1608X5R1V475K080AC"
+			(at 60.96 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15370,7 +15856,7 @@
 			)
 		)
 		(property "Rated Voltage" "35V"
-			(at 60.96 30.48 0)
+			(at 60.96 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15379,7 +15865,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 60.96 30.48 0)
+			(at 60.96 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15388,7 +15874,7 @@
 			)
 		)
 		(property "Manufacturer" "TDK"
-			(at 60.96 30.48 0)
+			(at 60.96 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15397,7 +15883,7 @@
 			)
 		)
 		(property "Alternate" "CL21B106KOQNNNE"
-			(at 60.96 30.48 0)
+			(at 60.96 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15406,7 +15892,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 60.96 30.48 0)
+			(at 60.96 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15415,7 +15901,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C1608X5R1V475K080AC"
-			(at 60.96 30.48 0)
+			(at 60.96 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15424,7 +15910,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "TDK"
-			(at 60.96 30.48 0)
+			(at 60.96 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15455,7 +15941,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:W25Q128JVS")
-		(at 189.23 144.78 0)
+		(at 204.47 100.33 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15463,7 +15949,7 @@
 		(dnp no)
 		(uuid "3650035b-31f5-45ad-8c69-945ba88c0515")
 		(property "Reference" "U3"
-			(at 181.356 133.35 0)
+			(at 196.596 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15472,7 +15958,7 @@
 			)
 		)
 		(property "Value" "W25Q128JVS"
-			(at 189.484 133.35 0)
+			(at 204.724 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15481,7 +15967,7 @@
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:SOIC-8_5.3x5.3mm_P1.27mm"
-			(at 189.23 121.92 0)
+			(at 204.47 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15490,7 +15976,7 @@
 			)
 		)
 		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/7161/256_W25Q128JV.pdf"
-			(at 189.23 119.38 0)
+			(at 204.47 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15499,7 +15985,7 @@
 			)
 		)
 		(property "Description" "128Mbit / 16MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, SOIC-8"
-			(at 189.23 116.84 0)
+			(at 204.47 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15508,7 +15994,7 @@
 			)
 		)
 		(property "Manufacturer" "Winbond Electronics"
-			(at 189.23 144.78 0)
+			(at 204.47 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15517,7 +16003,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Winbond Electronics"
-			(at 189.23 144.78 0)
+			(at 204.47 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15526,7 +16012,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "W25Q128JVSIQ TR"
-			(at 189.23 144.78 0)
+			(at 204.47 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15535,7 +16021,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/winbond-electronics/W25Q128JVSIQ-TR/5803944"
-			(at 189.23 144.78 0)
+			(at 204.47 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15649,7 +16135,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 105.41 185.42 180)
+		(at 99.06 185.42 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15657,7 +16143,7 @@
 		(dnp no)
 		(uuid "38e4d300-4b87-45c4-8bed-b76bf04a9a36")
 		(property "Reference" "C22"
-			(at 105.918 183.134 0)
+			(at 99.568 183.134 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15666,7 +16152,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 105.918 187.706 0)
+			(at 99.568 187.706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15675,7 +16161,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 104.4448 181.61 0)
+			(at 98.0948 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15684,7 +16170,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 105.41 185.42 0)
+			(at 99.06 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15693,7 +16179,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 105.41 185.42 0)
+			(at 99.06 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15702,7 +16188,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 105.41 185.42 0)
+			(at 99.06 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15711,7 +16197,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 105.41 185.42 0)
+			(at 99.06 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15719,8 +16205,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 105.41 185.42 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 99.06 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15729,7 +16215,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 105.41 185.42 0)
+			(at 99.06 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15738,7 +16224,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 105.41 185.42 0)
+			(at 99.06 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15747,7 +16233,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 105.41 185.42 0)
+			(at 99.06 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15756,7 +16242,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 105.41 185.42 0)
+			(at 99.06 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15765,7 +16251,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 105.41 185.42 0)
+			(at 99.06 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15774,7 +16260,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 105.41 185.42 0)
+			(at 99.06 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15805,7 +16291,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:R_0603")
-		(at 185.42 107.95 90)
+		(at 255.27 88.9 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15814,7 +16300,7 @@
 		(dnp no)
 		(uuid "3951cc2d-25c6-4429-8110-acceefa169be")
 		(property "Reference" "R13"
-			(at 187.198 109.982 90)
+			(at 257.048 90.932 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15823,7 +16309,7 @@
 			)
 		)
 		(property "Value" "330"
-			(at 187.198 107.95 90)
+			(at 257.048 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15832,7 +16318,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 185.42 106.172 90)
+			(at 255.27 87.122 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15841,7 +16327,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 185.42 107.95 0)
+			(at 255.27 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15850,7 +16336,7 @@
 			)
 		)
 		(property "Description" "100Mw Thick Film Resistors 100Ppm/ 1% 330 0603 Chip Resistor Surface Mount Rohs"
-			(at 185.42 107.95 0)
+			(at 255.27 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15859,7 +16345,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0603FR-07330RL/727162"
-			(at 185.42 107.95 90)
+			(at 255.27 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15868,7 +16354,7 @@
 			)
 		)
 		(property "Manufacturer" "Yageo"
-			(at 185.42 107.95 0)
+			(at 255.27 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15877,7 +16363,7 @@
 			)
 		)
 		(property "Manufacturer Number" "RC0402FR-07680RL"
-			(at 185.42 107.95 0)
+			(at 255.27 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15886,7 +16372,7 @@
 			)
 		)
 		(property "Tolerance" "1%"
-			(at 185.42 107.95 0)
+			(at 255.27 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15895,7 +16381,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Yageo"
-			(at 185.42 107.95 0)
+			(at 255.27 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15904,7 +16390,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "RC0603FR-07330RL"
-			(at 185.42 107.95 0)
+			(at 255.27 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15935,7 +16421,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 128.27 185.42 180)
+		(at 121.92 185.42 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15943,7 +16429,7 @@
 		(dnp no)
 		(uuid "4090d72f-fc94-4691-9df0-8222f2148f4d")
 		(property "Reference" "C25"
-			(at 128.778 183.134 0)
+			(at 122.428 183.134 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15952,7 +16438,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 128.778 187.706 0)
+			(at 122.428 187.706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15961,7 +16447,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 127.3048 181.61 0)
+			(at 120.9548 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15970,7 +16456,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 128.27 185.42 0)
+			(at 121.92 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15979,7 +16465,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 128.27 185.42 0)
+			(at 121.92 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15988,7 +16474,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 128.27 185.42 0)
+			(at 121.92 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15997,7 +16483,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 128.27 185.42 0)
+			(at 121.92 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16005,8 +16491,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 128.27 185.42 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 121.92 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16015,7 +16501,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 128.27 185.42 0)
+			(at 121.92 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16024,7 +16510,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 128.27 185.42 0)
+			(at 121.92 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16033,7 +16519,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 128.27 185.42 0)
+			(at 121.92 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16042,7 +16528,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 128.27 185.42 0)
+			(at 121.92 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16051,7 +16537,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 128.27 185.42 0)
+			(at 121.92 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16060,7 +16546,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 128.27 185.42 0)
+			(at 121.92 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16155,182 +16641,8 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:XGL3530-332MEC")
-		(at 66.04 43.18 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4467c701-c030-4dea-8fe5-08908e4f10e6")
-		(property "Reference" "L1"
-			(at 56.134 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "XGL3530-332MEC"
-			(at 61.214 44.704 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:XGL3530332MEC"
-			(at 49.53 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.coilcraft.com/en-us/files/datasheet/XGL3530"
-			(at 49.53 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "3.3 H Shielded Molded Inductor 5.4 A 37.4mOhm Max Nonstandard"
-			(at 66.04 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "3.3 H Shielded Molded Inductor 5.4 A 37.4mOhm Max Nonstandard"
-			(at 49.53 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Height" "3"
-			(at 49.53 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "COILCRAFT"
-			(at 49.53 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "XGL3530-332MEC"
-			(at 49.53 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 49.53 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 49.53 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 49.53 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 49.53 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "COILCRAFT"
-			(at 66.04 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/coilcraft/XGL3530-332MEC/16634565"
-			(at 66.04 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b6f58f0e-18e6-461a-bbf3-dfa6f640a50c")
-		)
-		(pin "2"
-			(uuid "a2cb8fc9-925d-4856-a5b9-4343188e66c0")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "L1")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
-					(reference "L?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 44.45 48.26 0)
+		(at 46.99 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16338,7 +16650,7 @@
 		(dnp no)
 		(uuid "451fcd6e-8762-4845-af02-0c1e61c5a459")
 		(property "Reference" "C11"
-			(at 45.72 45.72 0)
+			(at 48.26 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16347,7 +16659,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 45.72 50.8 0)
+			(at 48.26 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16356,7 +16668,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 45.4152 52.07 0)
+			(at 47.9552 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16365,7 +16677,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 44.45 48.26 0)
+			(at 46.99 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16374,7 +16686,7 @@
 			)
 		)
 		(property "Description" "10 µF ±10% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
-			(at 44.45 48.26 0)
+			(at 46.99 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16383,7 +16695,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
-			(at 44.45 48.26 0)
+			(at 46.99 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16391,8 +16703,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 44.45 48.26 0)
+		(property "Manufacturer Number" "GRM188R61E106KA73D"
+			(at 46.99 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16401,7 +16713,7 @@
 			)
 		)
 		(property "Rated Voltage" "25V"
-			(at 44.45 48.26 0)
+			(at 46.99 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16410,7 +16722,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 44.45 48.26 0)
+			(at 46.99 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16419,7 +16731,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata Electronics"
-			(at 44.45 48.26 0)
+			(at 46.99 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16428,7 +16740,7 @@
 			)
 		)
 		(property "Alternate" "CL21B106KOQNNNE"
-			(at 44.45 48.26 0)
+			(at 46.99 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16437,7 +16749,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 44.45 48.26 0)
+			(at 46.99 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16446,7 +16758,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "GRM188R61E106KA73D"
-			(at 44.45 48.26 0)
+			(at 46.99 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16455,7 +16767,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Murata Electronics"
-			(at 44.45 48.26 0)
+			(at 46.99 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16677,7 +16989,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C102K5RACTU"
 			(at 22.86 77.47 0)
 			(effects
 				(font
@@ -16883,7 +17195,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 74.93 179.07 0)
+		(at 68.58 179.07 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16891,7 +17203,7 @@
 		(dnp no)
 		(uuid "49a776b0-59ce-4a58-9c23-961c38ab6b26")
 		(property "Reference" "#PWR027"
-			(at 74.93 182.88 0)
+			(at 68.58 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16900,7 +17212,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 74.93 175.26 0)
+			(at 68.58 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16908,7 +17220,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 74.93 179.07 0)
+			(at 68.58 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16917,7 +17229,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 74.93 179.07 0)
+			(at 68.58 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16926,7 +17238,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 74.93 179.07 0)
+			(at 68.58 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17024,7 +17336,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C104K5RACTU"
 			(at 26.67 29.21 0)
 			(effects
 				(font
@@ -17110,7 +17422,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 135.89 185.42 180)
+		(at 129.54 185.42 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17118,7 +17430,7 @@
 		(dnp no)
 		(uuid "4bfbc203-a0f0-4186-a457-6087781ee196")
 		(property "Reference" "C26"
-			(at 136.398 183.134 0)
+			(at 130.048 183.134 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17127,7 +17439,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 136.398 187.706 0)
+			(at 130.048 187.706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17136,7 +17448,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 134.9248 181.61 0)
+			(at 128.5748 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17145,7 +17457,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 135.89 185.42 0)
+			(at 129.54 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17154,7 +17466,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 135.89 185.42 0)
+			(at 129.54 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17163,7 +17475,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 135.89 185.42 0)
+			(at 129.54 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17172,7 +17484,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 135.89 185.42 0)
+			(at 129.54 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17180,8 +17492,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 135.89 185.42 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 129.54 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17190,7 +17502,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 135.89 185.42 0)
+			(at 129.54 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17199,7 +17511,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 135.89 185.42 0)
+			(at 129.54 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17208,7 +17520,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 135.89 185.42 0)
+			(at 129.54 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17217,7 +17529,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 135.89 185.42 0)
+			(at 129.54 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17226,7 +17538,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 135.89 185.42 0)
+			(at 129.54 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17235,7 +17547,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 135.89 185.42 0)
+			(at 129.54 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17331,7 +17643,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 90.17 185.42 180)
+		(at 83.82 185.42 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17339,7 +17651,7 @@
 		(dnp no)
 		(uuid "51cca8aa-377b-4caf-83c5-d8abb8a99a74")
 		(property "Reference" "C20"
-			(at 90.678 183.134 0)
+			(at 84.328 183.134 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17348,7 +17660,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 90.678 187.706 0)
+			(at 84.328 187.706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17357,7 +17669,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 89.2048 181.61 0)
+			(at 82.8548 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17366,7 +17678,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 90.17 185.42 0)
+			(at 83.82 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17375,7 +17687,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 90.17 185.42 0)
+			(at 83.82 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17384,7 +17696,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 90.17 185.42 0)
+			(at 83.82 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17393,7 +17705,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 90.17 185.42 0)
+			(at 83.82 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17401,8 +17713,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 90.17 185.42 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 83.82 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17411,7 +17723,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 90.17 185.42 0)
+			(at 83.82 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17420,7 +17732,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 90.17 185.42 0)
+			(at 83.82 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17429,7 +17741,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 90.17 185.42 0)
+			(at 83.82 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17438,7 +17750,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 90.17 185.42 0)
+			(at 83.82 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17447,7 +17759,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 90.17 185.42 0)
+			(at 83.82 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17456,7 +17768,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 90.17 185.42 0)
+			(at 83.82 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17619,7 +17931,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "GRM188R61E106KA73D"
 			(at 40.64 29.21 0)
 			(effects
 				(font
@@ -17950,7 +18262,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 54.61 31.75 0)
+		(at 54.61 29.21 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17958,7 +18270,7 @@
 		(dnp no)
 		(uuid "637474d8-d4cb-4e3a-9a75-907780771228")
 		(property "Reference" "#PWR020"
-			(at 54.61 38.1 0)
+			(at 54.61 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17967,7 +18279,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 52.705 35.56 0)
+			(at 52.705 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17976,7 +18288,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 54.61 31.75 0)
+			(at 54.61 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17985,7 +18297,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 54.61 31.75 0)
+			(at 54.61 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17994,7 +18306,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 54.61 31.75 0)
+			(at 54.61 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18022,7 +18334,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 74.93 191.77 0)
+		(at 68.58 191.77 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -18030,7 +18342,7 @@
 		(dnp no)
 		(uuid "64b3cfc3-7404-4239-857a-75ebef713481")
 		(property "Reference" "#PWR028"
-			(at 74.93 198.12 0)
+			(at 68.58 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18039,7 +18351,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 73.025 195.58 0)
+			(at 66.675 195.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18048,7 +18360,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 74.93 191.77 0)
+			(at 68.58 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18057,7 +18369,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 74.93 191.77 0)
+			(at 68.58 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18066,7 +18378,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 74.93 191.77 0)
+			(at 68.58 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18225,7 +18537,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:LED")
-		(at 194.31 104.14 0)
+		(at 264.16 85.09 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -18234,7 +18546,7 @@
 		(dnp no)
 		(uuid "6c605b2f-da71-420d-a2da-cf822c5f11bf")
 		(property "Reference" "LED2"
-			(at 191.516 101.854 0)
+			(at 261.366 82.804 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18243,7 +18555,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 195.072 105.664 90)
+			(at 264.922 86.614 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18253,7 +18565,7 @@
 			)
 		)
 		(property "Footprint" "harp.device.quad.dac.kicad:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
-			(at 194.31 104.14 0)
+			(at 264.16 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18262,7 +18574,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.sunledusa.com/products/spec/XZCDGK53W-1VF.pdf"
-			(at 194.31 104.14 0)
+			(at 264.16 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18271,7 +18583,7 @@
 			)
 		)
 		(property "Description" "Red 0603 130° Clear 54 mcd 2 V Surface Mount ChipLED"
-			(at 194.31 104.14 0)
+			(at 264.16 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18279,8 +18591,8 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/sunled/XZCDGK53W-1VF/15761905"
-			(at 194.31 104.14 0)
+		(property "Link" ""
+			(at 264.16 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18289,7 +18601,7 @@
 			)
 		)
 		(property "Notes" "2mA, 98mcd, green"
-			(at 194.31 104.14 0)
+			(at 264.16 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18298,7 +18610,7 @@
 			)
 		)
 		(property "Manufacturer" "SunLED"
-			(at 194.31 104.14 0)
+			(at 264.16 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18307,7 +18619,7 @@
 			)
 		)
 		(property "Manufacturer Number" "XZCDGK53W-1VF"
-			(at 194.31 104.14 0)
+			(at 264.16 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18316,7 +18628,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/XZCDGK53W1VF/501988/"
-			(at 194.31 104.14 0)
+			(at 264.16 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18324,8 +18636,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "VLMS1300-GS08"
-			(at 193.04 99.822 0)
+		(property "Manufacturer_Part_Number" ""
+			(at 262.89 80.772 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18333,8 +18645,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Vishay"
-			(at 194.31 104.14 0)
+		(property "Manufacturer_Name" ""
+			(at 264.16 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18358,6 +18670,75 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
 					(reference "LED?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 222.25 134.62 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6cfa6f5a-cd25-4b15-b70d-5cc5fee422a2")
+		(property "Reference" "R54"
+			(at 229.87 134.62 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47K"
+			(at 224.282 134.62 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 222.25 136.398 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 222.25 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 222.25 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "1367b698-0e12-436e-b226-3257edc7c4e2")
+		)
+		(pin "1"
+			(uuid "2b9a2401-adf8-4d28-813e-4f72d5958934")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "R54")
 					(unit 1)
 				)
 			)
@@ -18437,7 +18818,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 30.48 48.26 180)
+		(at 33.02 48.26 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -18445,7 +18826,7 @@
 		(dnp no)
 		(uuid "6fdf8434-493d-498d-9a57-c02af68820b6")
 		(property "Reference" "C5"
-			(at 30.988 45.974 0)
+			(at 33.528 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18454,7 +18835,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 30.988 50.546 0)
+			(at 33.528 50.546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18463,7 +18844,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 29.5148 44.45 0)
+			(at 32.0548 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18472,7 +18853,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 30.48 48.26 0)
+			(at 33.02 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18481,7 +18862,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 30.48 48.26 0)
+			(at 33.02 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18490,7 +18871,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 30.48 48.26 0)
+			(at 33.02 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18499,7 +18880,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 30.48 48.26 0)
+			(at 33.02 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18507,8 +18888,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 30.48 48.26 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 33.02 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18517,7 +18898,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 30.48 48.26 0)
+			(at 33.02 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18526,7 +18907,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 30.48 48.26 0)
+			(at 33.02 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18535,7 +18916,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 30.48 48.26 0)
+			(at 33.02 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18544,7 +18925,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 30.48 48.26 0)
+			(at 33.02 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18553,7 +18934,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 30.48 48.26 0)
+			(at 33.02 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18562,7 +18943,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 30.48 48.26 0)
+			(at 33.02 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18586,6 +18967,75 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
 					(reference "C?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 222.25 144.78 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "72ec6252-87d5-476e-a93a-5bd5d1de8174")
+		(property "Reference" "R62"
+			(at 229.87 144.78 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47K"
+			(at 224.282 144.78 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 222.25 146.558 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 222.25 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 222.25 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b428630b-f179-44cc-8fb4-375157b6cdf4")
+		)
+		(pin "1"
+			(uuid "db316ec6-b40d-43ef-b9fe-57ab70d13f4c")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "R62")
 					(unit 1)
 				)
 			)
@@ -18760,7 +19210,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:R_0603")
-		(at 60.96 25.4 90)
+		(at 60.96 24.13 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -18768,7 +19218,7 @@
 		(dnp no)
 		(uuid "7b4da6b6-40f9-48bd-8269-f9e710e6bdd0")
 		(property "Reference" "R9"
-			(at 56.896 24.13 90)
+			(at 56.896 22.86 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18776,7 +19226,7 @@
 			)
 		)
 		(property "Value" "24"
-			(at 60.96 25.4 90)
+			(at 60.96 24.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18784,7 +19234,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 60.96 27.178 90)
+			(at 60.96 25.908 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18793,7 +19243,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 60.96 25.4 0)
+			(at 60.96 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18802,7 +19252,7 @@
 			)
 		)
 		(property "Description" "Res Thick Film 0603 24 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD Automotive T/R"
-			(at 60.96 25.4 0)
+			(at 60.96 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18811,7 +19261,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/yageo/AC0603FR-0724RL/5895947"
-			(at 60.96 25.4 0)
+			(at 60.96 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18820,7 +19270,7 @@
 			)
 		)
 		(property "Manufacturer" "Yageo"
-			(at 60.96 25.4 0)
+			(at 60.96 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18829,7 +19279,7 @@
 			)
 		)
 		(property "Manufacturer Number" "AC0402FR-0724RL"
-			(at 60.96 25.4 0)
+			(at 60.96 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18838,7 +19288,7 @@
 			)
 		)
 		(property "Tolerance" "1%"
-			(at 60.96 25.4 0)
+			(at 60.96 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18847,7 +19297,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Yageo"
-			(at 60.96 25.4 0)
+			(at 60.96 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18856,7 +19306,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "AC0603FR-0724RL"
-			(at 60.96 25.4 0)
+			(at 60.96 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18881,7 +19331,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 38.1 48.26 0)
+		(at 40.64 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -18889,7 +19339,7 @@
 		(dnp no)
 		(uuid "81f07c0e-7de0-4878-9e55-337e6268e96c")
 		(property "Reference" "C8"
-			(at 39.37 45.72 0)
+			(at 41.91 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18898,7 +19348,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 39.37 50.8 0)
+			(at 41.91 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18907,7 +19357,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 39.0652 52.07 0)
+			(at 41.6052 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18916,7 +19366,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 38.1 48.26 0)
+			(at 40.64 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18925,7 +19375,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor, Multilayer, Ceramic, 50V, 10% +Tol, 10% -Tol, X7R, 15% TC, 1uF, Surface Mount, 0603"
-			(at 38.1 48.26 0)
+			(at 40.64 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18934,7 +19384,7 @@
 			)
 		)
 		(property "Notes" "must not be polarized"
-			(at 38.1 48.26 0)
+			(at 40.64 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18943,7 +19393,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/tdk-corporation/C1608X7R1H105K080AB/25982687"
-			(at 38.1 48.26 0)
+			(at 40.64 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18951,8 +19401,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 38.1 48.26 0)
+		(property "Manufacturer Number" "C1608X7R1H105K080AB"
+			(at 40.64 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18961,7 +19411,7 @@
 			)
 		)
 		(property "Manufacturer" "TDK"
-			(at 38.1 48.26 0)
+			(at 40.64 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18970,7 +19420,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 38.1 48.26 0)
+			(at 40.64 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18979,7 +19429,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 38.1 48.26 0)
+			(at 40.64 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18988,7 +19438,7 @@
 			)
 		)
 		(property "PCBWay Link" ""
-			(at 38.1 48.26 0)
+			(at 40.64 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18997,7 +19447,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 38.1 48.26 0)
+			(at 40.64 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19006,7 +19456,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C1608X7R1H105K080AB"
-			(at 38.1 48.26 0)
+			(at 40.64 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19015,7 +19465,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "TDK"
-			(at 38.1 48.26 0)
+			(at 40.64 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19111,7 +19561,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 22.86 54.61 0)
+		(at 25.4 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -19119,7 +19569,7 @@
 		(dnp no)
 		(uuid "886d9223-721c-4c7f-ae6a-5785a1e43b05")
 		(property "Reference" "#PWR04"
-			(at 22.86 60.96 0)
+			(at 25.4 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19128,7 +19578,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 23.876 57.404 0)
+			(at 26.416 57.404 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19137,7 +19587,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 22.86 54.61 0)
+			(at 25.4 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19146,7 +19596,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 22.86 54.61 0)
+			(at 25.4 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19155,7 +19605,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 22.86 54.61 0)
+			(at 25.4 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19513,102 +19963,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "R12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:MountingHole_Pad")
-		(at 31.75 195.58 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "8cf07fc4-1c91-4dae-8e9d-6b79a388f9ca")
-		(property "Reference" "H1"
-			(at 30.734 191.262 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 34.29 195.5799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:MountingHole_3.2mm_M3_DIN965"
-			(at 31.75 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 31.75 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 31.75 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "n/a"
-			(at 31.75 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "n/a"
-			(at 31.75 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer_Part_Number" "n/a"
-			(at 31.75 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer_Name" "n/a"
-			(at 31.75 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project ""
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -20265,7 +20619,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 97.79 185.42 180)
+		(at 91.44 185.42 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20273,7 +20627,7 @@
 		(dnp no)
 		(uuid "991c736f-672a-4c41-ab9d-e08f9642880b")
 		(property "Reference" "C21"
-			(at 98.298 183.134 0)
+			(at 91.948 183.134 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20282,7 +20636,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 98.298 187.706 0)
+			(at 91.948 187.706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20291,7 +20645,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 96.8248 181.61 0)
+			(at 90.4748 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20300,7 +20654,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 97.79 185.42 0)
+			(at 91.44 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20309,7 +20663,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 97.79 185.42 0)
+			(at 91.44 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20318,7 +20672,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 97.79 185.42 0)
+			(at 91.44 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20327,7 +20681,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 97.79 185.42 0)
+			(at 91.44 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20335,8 +20689,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 97.79 185.42 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 91.44 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20345,7 +20699,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 97.79 185.42 0)
+			(at 91.44 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20354,7 +20708,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 97.79 185.42 0)
+			(at 91.44 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20363,7 +20717,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 97.79 185.42 0)
+			(at 91.44 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20372,7 +20726,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 97.79 185.42 0)
+			(at 91.44 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20381,7 +20735,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 97.79 185.42 0)
+			(at 91.44 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20390,7 +20744,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 97.79 185.42 0)
+			(at 91.44 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20676,7 +21030,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C104K5RACTU"
 			(at 261.62 107.95 0)
 			(effects
 				(font
@@ -20888,7 +21242,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 67.31 185.42 0)
+		(at 60.96 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20896,7 +21250,7 @@
 		(dnp no)
 		(uuid "a3ae5b5e-2f2a-4bb0-945b-3544dbdffc19")
 		(property "Reference" "C17"
-			(at 67.564 183.134 0)
+			(at 61.214 183.134 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20905,7 +21259,7 @@
 			)
 		)
 		(property "Value" "4.7uF"
-			(at 67.818 187.96 0)
+			(at 61.468 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20914,7 +21268,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 68.2752 189.23 0)
+			(at 61.9252 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20923,7 +21277,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 67.31 185.42 0)
+			(at 60.96 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20932,7 +21286,7 @@
 			)
 		)
 		(property "Description" "C Series 0603 4.7 uF 35 V ±10 % Tolerance X5R SMT Multilayer Ceramic Capacitor"
-			(at 67.31 185.42 0)
+			(at 60.96 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20941,7 +21295,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/tdk-corporation/C1608X5R1V475K080AC/3648577"
-			(at 67.31 185.42 0)
+			(at 60.96 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20949,8 +21303,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 67.31 185.42 0)
+		(property "Manufacturer Number" "C1608X5R1V475K080AC"
+			(at 60.96 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20959,7 +21313,7 @@
 			)
 		)
 		(property "Rated Voltage" "35V"
-			(at 67.31 185.42 0)
+			(at 60.96 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20968,7 +21322,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 67.31 185.42 0)
+			(at 60.96 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20977,7 +21331,7 @@
 			)
 		)
 		(property "Manufacturer" "TDK"
-			(at 67.31 185.42 0)
+			(at 60.96 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20986,7 +21340,7 @@
 			)
 		)
 		(property "Alternate" "CL21B106KOQNNNE"
-			(at 67.31 185.42 0)
+			(at 60.96 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20995,7 +21349,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 67.31 185.42 0)
+			(at 60.96 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21004,7 +21358,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C1608X5R1V475K080AC"
-			(at 67.31 185.42 0)
+			(at 60.96 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21013,7 +21367,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "TDK"
-			(at 67.31 185.42 0)
+			(at 60.96 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21114,7 +21468,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C104K5RACTU"
 			(at 44.45 100.33 0)
 			(effects
 				(font
@@ -21200,7 +21554,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 82.55 185.42 180)
+		(at 76.2 185.42 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -21208,7 +21562,7 @@
 		(dnp no)
 		(uuid "a919fafe-613d-4284-8fa9-e782faeda90e")
 		(property "Reference" "C19"
-			(at 83.058 182.88 0)
+			(at 76.708 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21217,7 +21571,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 83.312 187.706 0)
+			(at 76.962 187.706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21226,7 +21580,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 81.5848 181.61 0)
+			(at 75.2348 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21235,7 +21589,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 82.55 185.42 0)
+			(at 76.2 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21244,7 +21598,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 82.55 185.42 0)
+			(at 76.2 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21253,7 +21607,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 82.55 185.42 0)
+			(at 76.2 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21262,7 +21616,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 82.55 185.42 0)
+			(at 76.2 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21270,8 +21624,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 82.55 185.42 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 76.2 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21280,7 +21634,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 82.55 185.42 0)
+			(at 76.2 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21289,7 +21643,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 82.55 185.42 0)
+			(at 76.2 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21298,7 +21652,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 82.55 185.42 0)
+			(at 76.2 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21307,7 +21661,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 82.55 185.42 0)
+			(at 76.2 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21316,7 +21670,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 82.55 185.42 0)
+			(at 76.2 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21325,7 +21679,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 82.55 185.42 0)
+			(at 76.2 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21426,7 +21780,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C104K5RACTU"
 			(at 35.56 77.47 0)
 			(effects
 				(font
@@ -21632,6 +21986,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 228.6 160.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b1cb1e44-c605-46a8-9f27-75203812be50")
+		(property "Reference" "#PWR044"
+			(at 228.6 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 228.6 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 228.6 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 228.6 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b1ae79a1-4809-428e-bc32-07640b8d3473")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "#PWR044")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
 		(at 38.1 181.61 0)
 		(unit 1)
@@ -21694,6 +22113,109 @@
 			(project ""
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "D11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L")
+		(at 62.23 43.18 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b332bc0e-61a2-46e1-96ee-c3ff8c5754e6")
+		(property "Reference" "L2"
+			(at 57.912 42.164 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "3.3uH"
+			(at 62.23 44.45 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "kicad_component_library:L_0806_2016Metric"
+			(at 62.23 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://abracon.com/datasheets/AOTA-B201610S3R3-101-T.pdf"
+			(at 62.23 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Inductor"
+			(at 62.23 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/abracon-llc/AOTA-B201610S3R3-101-T/25621527"
+			(at 62.23 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "AOTA-B201610S3R3-101-T"
+			(at 62.23 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Abracon LLC"
+			(at 62.23 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DC Resistance" "140mOhm"
+			(at 62.23 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "38fe7185-f154-48b3-8064-8797a6d07631")
+		)
+		(pin "1"
+			(uuid "a09d08cc-8786-4032-8bac-de87f791a106")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "L2")
 					(unit 1)
 				)
 			)
@@ -21881,7 +22403,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 203.2 144.78 180)
+		(at 218.44 100.33 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -21889,7 +22411,7 @@
 		(dnp no)
 		(uuid "b7d628e4-4f28-4c61-bf0d-609b5d71d50f")
 		(property "Reference" "C27"
-			(at 207.264 142.494 0)
+			(at 222.504 98.044 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21898,7 +22420,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 209.55 147.32 0)
+			(at 224.79 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21907,7 +22429,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 202.2348 140.97 0)
+			(at 217.4748 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21916,7 +22438,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 203.2 144.78 0)
+			(at 218.44 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21925,7 +22447,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 203.2 144.78 0)
+			(at 218.44 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21934,7 +22456,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 203.2 144.78 0)
+			(at 218.44 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21943,7 +22465,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 203.2 144.78 0)
+			(at 218.44 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21951,8 +22473,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 203.2 144.78 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 218.44 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21961,7 +22483,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 203.2 144.78 0)
+			(at 218.44 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21970,7 +22492,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 203.2 144.78 0)
+			(at 218.44 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21979,7 +22501,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 203.2 144.78 0)
+			(at 218.44 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21988,7 +22510,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 203.2 144.78 0)
+			(at 218.44 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21997,7 +22519,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 203.2 144.78 0)
+			(at 218.44 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22006,7 +22528,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 203.2 144.78 0)
+			(at 218.44 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22365,7 +22887,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C104K5RACTU"
 			(at 276.86 143.51 0)
 			(effects
 				(font
@@ -22714,7 +23236,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 189.23 129.54 0)
+		(at 204.47 85.09 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -22722,7 +23244,7 @@
 		(dnp no)
 		(uuid "c486edb3-2d33-48b4-abb6-e8d0839be525")
 		(property "Reference" "#PWR035"
-			(at 189.23 133.35 0)
+			(at 204.47 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22731,7 +23253,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 189.23 125.984 0)
+			(at 204.47 81.534 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22739,7 +23261,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 189.23 129.54 0)
+			(at 204.47 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22748,7 +23270,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 189.23 129.54 0)
+			(at 204.47 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22757,7 +23279,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 189.23 129.54 0)
+			(at 204.47 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22874,6 +23396,15 @@
 			)
 		)
 		(property "Manufacturer_Name" "Raspberry Pi"
+			(at 102.87 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "SC1510-A4"
 			(at 102.87 92.71 0)
 			(effects
 				(font
@@ -23142,7 +23673,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 189.23 160.02 0)
+		(at 204.47 115.57 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -23150,7 +23681,7 @@
 		(dnp no)
 		(uuid "c51d9f51-c270-442e-a61c-ce7bbcfeaafb")
 		(property "Reference" "#PWR036"
-			(at 189.23 166.37 0)
+			(at 204.47 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23159,7 +23690,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 189.23 164.084 0)
+			(at 204.47 119.634 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23167,7 +23698,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 189.23 160.02 0)
+			(at 204.47 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23176,7 +23707,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 189.23 160.02 0)
+			(at 204.47 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23185,7 +23716,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 189.23 160.02 0)
+			(at 204.47 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23334,7 +23865,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 113.03 185.42 180)
+		(at 106.68 185.42 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -23342,7 +23873,7 @@
 		(dnp no)
 		(uuid "c85b1096-4613-4447-85a2-967a418b82ed")
 		(property "Reference" "C23"
-			(at 113.538 183.134 0)
+			(at 107.188 183.134 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23351,7 +23882,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 113.538 187.706 0)
+			(at 107.188 187.706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23360,7 +23891,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 112.0648 181.61 0)
+			(at 105.7148 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23369,7 +23900,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 113.03 185.42 0)
+			(at 106.68 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23378,7 +23909,7 @@
 			)
 		)
 		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
-			(at 113.03 185.42 0)
+			(at 106.68 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23387,7 +23918,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
-			(at 113.03 185.42 0)
+			(at 106.68 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23396,7 +23927,7 @@
 			)
 		)
 		(property "Manufacturer" "KEMET"
-			(at 113.03 185.42 0)
+			(at 106.68 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23404,8 +23935,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 113.03 185.42 0)
+		(property "Manufacturer Number" "C0603C104K5RACTU"
+			(at 106.68 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23414,7 +23945,7 @@
 			)
 		)
 		(property "Rated Voltage" "50V"
-			(at 113.03 185.42 0)
+			(at 106.68 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23423,7 +23954,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 113.03 185.42 0)
+			(at 106.68 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23432,7 +23963,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 113.03 185.42 0)
+			(at 106.68 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23441,7 +23972,7 @@
 			)
 		)
 		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 113.03 185.42 0)
+			(at 106.68 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23450,7 +23981,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 113.03 185.42 0)
+			(at 106.68 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23459,7 +23990,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "KEMET"
-			(at 113.03 185.42 0)
+			(at 106.68 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23560,7 +24091,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C0603C104K5RACTU"
 			(at 43.18 171.45 0)
 			(effects
 				(font
@@ -23640,7 +24171,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 220.98 143.51 90)
+		(at 207.01 143.51 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -23648,7 +24179,7 @@
 		(dnp no)
 		(uuid "ce7ee828-fc2d-40aa-80f8-90f1e2ab7647")
 		(property "Reference" "#PWR0318"
-			(at 224.79 143.51 0)
+			(at 210.82 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23657,7 +24188,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 214.884 143.51 90)
+			(at 200.914 143.51 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23665,7 +24196,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 220.98 143.51 0)
+			(at 207.01 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23674,7 +24205,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 220.98 143.51 0)
+			(at 207.01 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23683,7 +24214,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 220.98 143.51 0)
+			(at 207.01 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23698,175 +24229,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "#PWR0318")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 54.61 24.13 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d2b56327-bc56-4492-99be-39139c124a65")
-		(property "Reference" "#PWR019"
-			(at 54.61 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 54.61 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 54.61 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 54.61 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 54.61 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6130eea6-c1f9-41a5-ba9b-da5595d7892a")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "#PWR019")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:MountingHole_Pad")
-		(at 46.99 195.58 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "d437dfcc-ac9f-48a8-a768-38d70699ee0b")
-		(property "Reference" "H4"
-			(at 45.974 191.262 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 49.53 195.5799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:MountingHole_3.2mm_M3_DIN965"
-			(at 46.99 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 46.99 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 46.99 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "n/a"
-			(at 46.99 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "n/a"
-			(at 46.99 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "n/a"
-			(at 46.99 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer_Name" "n/a"
-			(at 46.99 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "H4")
 					(unit 1)
 				)
 			)
@@ -24275,7 +24637,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "C1608X7R1H105K080AB"
 			(at 34.29 29.21 0)
 			(effects
 				(font
@@ -24796,7 +25158,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 74.93 185.42 0)
+		(at 68.58 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -24804,7 +25166,7 @@
 		(dnp no)
 		(uuid "e4768087-3620-416d-a39f-007537edfbf3")
 		(property "Reference" "C18"
-			(at 75.438 182.88 0)
+			(at 69.088 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24814,7 +25176,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 75.438 187.96 0)
+			(at 69.088 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24823,7 +25185,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 75.8952 189.23 0)
+			(at 69.5452 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24832,7 +25194,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 74.93 185.42 0)
+			(at 68.58 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24841,7 +25203,7 @@
 			)
 		)
 		(property "Description" "10 µF ±10% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
-			(at 74.93 185.42 0)
+			(at 68.58 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24850,7 +25212,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
-			(at 74.93 185.42 0)
+			(at 68.58 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24858,8 +25220,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
-			(at 74.93 185.42 0)
+		(property "Manufacturer Number" "GRM188R61E106KA73D"
+			(at 68.58 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24868,7 +25230,7 @@
 			)
 		)
 		(property "Rated Voltage" "25V"
-			(at 74.93 185.42 0)
+			(at 68.58 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24877,7 +25239,7 @@
 			)
 		)
 		(property "Temperature Coefficient" ""
-			(at 74.93 185.42 0)
+			(at 68.58 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24886,7 +25248,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata Electronics"
-			(at 74.93 185.42 0)
+			(at 68.58 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24895,7 +25257,7 @@
 			)
 		)
 		(property "Alternate" "CL21B106KOQNNNE"
-			(at 74.93 185.42 0)
+			(at 68.58 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24904,7 +25266,7 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 74.93 185.42 0)
+			(at 68.58 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24913,7 +25275,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "GRM188R61E106KA73D"
-			(at 74.93 185.42 0)
+			(at 68.58 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24922,7 +25284,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Murata Electronics"
-			(at 74.93 185.42 0)
+			(at 68.58 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24952,105 +25314,8 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:MountingHole_Pad")
-		(at 41.91 195.58 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "e4f67eaf-0f8d-4356-b725-4f810feacdd1")
-		(property "Reference" "H3"
-			(at 40.894 191.262 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 44.45 195.5799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "harp.device.quad.dac.kicad:MountingHole_3.2mm_M3_DIN965"
-			(at 41.91 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 41.91 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 41.91 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "n/a"
-			(at 41.91 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "n/a"
-			(at 41.91 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer_Part_Number" "n/a"
-			(at 41.91 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer_Name" "n/a"
-			(at 41.91 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "H3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:Micro_SD_Card_Det_Hirose_DM3AT")
-		(at 251.46 146.05 0)
+		(at 252.73 146.05 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25058,7 +25323,7 @@
 		(dnp no)
 		(uuid "e5ab4c2f-f7f7-4454-8095-31e2f2fb01a4")
 		(property "Reference" "J19"
-			(at 234.188 128.27 0)
+			(at 235.458 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25066,7 +25331,7 @@
 			)
 		)
 		(property "Value" "Micro_SD_Card_Det_Hirose_DM3AT"
-			(at 252.095 127 0)
+			(at 253.365 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25075,7 +25340,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Card:microSD_HC_Hirose_DM3AT-SF-PEJM5"
-			(at 303.53 128.27 0)
+			(at 304.8 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25083,8 +25348,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1"
-			(at 251.46 143.51 0)
+		(property "Datasheet" "https://www.hirose.com/product/document?clcode=CL0609-0033-6-00&productname=DM3AT-SF-PEJ2M5&series=DM3&documenttype=Catalog&lang=en&documentid=D49662_en"
+			(at 252.73 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25092,8 +25357,35 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Micro SD Card Socket with card detection pins"
-			(at 251.46 146.05 0)
+		(property "Description" "Micro SD Card Socket with card detection pins and push-in/push-out insertion/removal."
+			(at 252.73 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/hirose-electric-co-ltd/DM3AT-SF-PEJM5/2533565"
+			(at 252.73 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Hirose Electric Co Ltd"
+			(at 252.73 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "DM3AT-SF-PEJM5"
+			(at 252.73 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25138,6 +25430,140 @@
 			(project ""
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "J19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 217.17 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ed4d8577-e782-483d-b5d7-bdedf41dd283")
+		(property "Reference" "#PWR038"
+			(at 217.17 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 217.17 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 217.17 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 217.17 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b87b7945-1b0e-4da5-b6b8-1ed38b799edd")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "#PWR038")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 222.25 139.7 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f22695a9-d25b-49d9-b532-557834fa040e")
+		(property "Reference" "R61"
+			(at 229.87 139.7 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47K"
+			(at 224.282 139.7 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 222.25 141.478 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 222.25 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 222.25 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "0204fdf9-922e-4b86-99f7-f1ae3bad3e43")
+		)
+		(pin "1"
+			(uuid "b0709d3a-b19e-4a5b-8539-0506fcbeaf9d")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "R61")
 					(unit 1)
 				)
 			)
@@ -25281,7 +25707,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 199.39 104.14 90)
+		(at 269.24 85.09 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -25290,7 +25716,7 @@
 		(dnp no)
 		(uuid "f4a9eeab-0175-4171-b705-9f43707150d7")
 		(property "Reference" "#PWR030"
-			(at 205.74 104.14 0)
+			(at 275.59 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25299,7 +25725,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 204.216 104.14 90)
+			(at 274.066 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25307,7 +25733,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 199.39 104.14 0)
+			(at 269.24 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25316,7 +25742,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 199.39 104.14 0)
+			(at 269.24 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25325,7 +25751,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 199.39 104.14 0)
+			(at 269.24 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25490,7 +25916,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:R_0603")
-		(at 177.8 132.08 180)
+		(at 193.04 87.63 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25498,7 +25924,7 @@
 		(dnp no)
 		(uuid "fb413dca-6416-4934-8ec5-0e0f41b8ec3e")
 		(property "Reference" "R16"
-			(at 178.308 128.27 0)
+			(at 193.548 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25507,7 +25933,7 @@
 			)
 		)
 		(property "Value" "10K"
-			(at 177.8 133.858 90)
+			(at 193.04 89.408 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25516,7 +25942,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 179.578 132.08 90)
+			(at 194.818 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25525,7 +25951,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 177.8 132.08 0)
+			(at 193.04 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25534,7 +25960,7 @@
 			)
 		)
 		(property "Description" "Res Thin Film 0603 10K Ohm 0.1% 1/10W ¦25ppm/¦C SMD Paper T/R"
-			(at 177.8 132.08 0)
+			(at 193.04 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25543,7 +25969,7 @@
 			)
 		)
 		(property "Tolerance" "0.1%"
-			(at 177.8 132.08 90)
+			(at 193.04 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25552,7 +25978,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0603BRD0710KL/1072198"
-			(at 177.8 132.08 90)
+			(at 193.04 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25561,7 +25987,7 @@
 			)
 		)
 		(property "Manufacturer" "Yageo"
-			(at 177.8 132.08 0)
+			(at 193.04 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25570,7 +25996,7 @@
 			)
 		)
 		(property "Manufacturer Number" "RT0402BRD071KL"
-			(at 177.8 132.08 0)
+			(at 193.04 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25579,7 +26005,7 @@
 			)
 		)
 		(property "PCBWay Link" ""
-			(at 177.8 132.08 0)
+			(at 193.04 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25588,7 +26014,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Yageo"
-			(at 177.8 132.08 0)
+			(at 193.04 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25597,7 +26023,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "RT0603BRD0710KL"
-			(at 177.8 132.08 0)
+			(at 193.04 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25622,7 +26048,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 177.8 127 0)
+		(at 193.04 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25630,7 +26056,7 @@
 		(dnp no)
 		(uuid "fca113b8-bdb0-4313-818f-eaa31437e028")
 		(property "Reference" "#PWR032"
-			(at 177.8 130.81 0)
+			(at 193.04 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25639,7 +26065,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 177.8 123.698 0)
+			(at 193.04 79.248 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25647,7 +26073,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 177.8 127 0)
+			(at 193.04 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25656,7 +26082,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 177.8 127 0)
+			(at 193.04 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25665,7 +26091,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 177.8 127 0)
+			(at 193.04 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25686,6 +26112,75 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
 					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 222.25 149.86 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fd61bac3-af35-4c0c-aa1f-dd30ad0f1c6f")
+		(property "Reference" "R63"
+			(at 229.87 149.86 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47K"
+			(at 224.282 149.86 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 222.25 151.638 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 222.25 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 222.25 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "38c68921-936b-4601-8e7c-fc93f6c3b112")
+		)
+		(pin "1"
+			(uuid "7e626c29-cd2a-4335-ac22-f973b2af02d0")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "R63")
 					(unit 1)
 				)
 			)
