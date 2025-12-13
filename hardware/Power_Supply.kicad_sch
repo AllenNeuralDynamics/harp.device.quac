@@ -3744,7 +3744,7 @@
 		)
 		(uuid "628da270-1b66-49e9-9e16-090fef83418a")
 	)
-	(text "Hot-Swap\n(i.e: Soft-Start)\nControl + eFuse"
+	(text "Hot-Swap Protection\n(i.e: Soft-Start)\nwith eFuse"
 		(exclude_from_sim no)
 		(at 65.786 22.606 0)
 		(effects
@@ -3777,6 +3777,16 @@
 			(justify left bottom)
 		)
 		(uuid "930d63cb-75c9-4642-a62c-bde2fff90efd")
+	)
+	(text "Equation 11"
+		(exclude_from_sim no)
+		(at 100.076 130.81 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a79e1fb0-0b06-4b8f-b44c-ec8da7808e4f")
 	)
 	(text "Bypass\nUVLO"
 		(exclude_from_sim no)
@@ -6403,7 +6413,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 84.1248 171.45 0)
 			(effects
 				(font
@@ -6412,7 +6422,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 85.09 175.26 0)
 			(effects
 				(font
@@ -6421,7 +6431,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Capacitor, Multilayer, Ceramic, 50V, 10%, X7R, 15% Tc, 0.01Uf, Surface Mount, 0603"
+		(property "Description" ""
 			(at 85.09 175.26 0)
 			(effects
 				(font
@@ -6430,7 +6440,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C103K5RACTU/411090"
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM1555C1E103GE01D/16033920"
 			(at 85.09 175.26 0)
 			(effects
 				(font
@@ -6439,7 +6449,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "KEMET"
+		(property "Manufacturer" "Murata Electronics"
 			(at 85.09 175.26 0)
 			(effects
 				(font
@@ -6448,7 +6458,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "C0603C103K5RACTU"
+		(property "Manufacturer Number" "GRM1555C1E103GE01D"
 			(at 85.09 175.26 0)
 			(effects
 				(font
@@ -6457,7 +6467,7 @@
 				(hide yes)
 			)
 		)
-		(property "Rated Voltage" "50V"
+		(property "Rated Voltage" ">= 16V"
 			(at 85.09 175.26 0)
 			(effects
 				(font
@@ -6466,34 +6476,7 @@
 				(hide yes)
 			)
 		)
-		(property "Temperature Coefficient" ""
-			(at 85.09 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 85.09 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "C0603C103K5RACTU"
-			(at 85.09 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "KEMET"
+		(property "Temperature Coefficient" "X7R or better"
 			(at 85.09 175.26 0)
 			(effects
 				(font
@@ -6597,6 +6580,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 210.82 33.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a4647ac7-c2c9-461a-b39b-7d4d7c184501")
 		)
@@ -6629,15 +6621,15 @@
 				)
 			)
 		)
-		(property "Value" "C"
-			(at 94.742 136.906 0)
+		(property "Value" "6.8pF"
+			(at 99.06 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 94.9452 138.43 0)
 			(effects
 				(font
@@ -6646,7 +6638,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GCM1555C1HR50BA16-01A.pdf"
 			(at 93.98 134.62 0)
 			(effects
 				(font
@@ -6655,7 +6647,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" ""
+			(at 93.98 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 93.98 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GCM1555C1H6R8BA16J/11618426"
+			(at 93.98 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 93.98 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GCM1555C1H6R8BA16J"
+			(at 93.98 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R or better"
 			(at 93.98 134.62 0)
 			(effects
 				(font
@@ -6881,15 +6918,6 @@
 				(hide yes)
 			)
 		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/PJ102AH/484087/"
-			(at 21.59 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer" "Same Sky (Formerly CUI Devices)"
 			(at 21.59 33.02 0)
 			(effects
@@ -6899,16 +6927,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "PJ-102AH"
-			(at 21.59 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Same Sky (Formerly CUI Devices)"
+		(property "Height" ""
 			(at 21.59 33.02 0)
 			(effects
 				(font
@@ -7020,7 +7039,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 106.426 148.59 90)
+			(at 106.934 148.336 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7157,17 +7176,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
-			(at 58.42 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFG" ""
-			(at 58.42 92.71 0)
+		(property "Height" ""
+			(at 58.42 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7411,17 +7421,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
-			(at 166.37 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFG" ""
-			(at 166.37 35.56 0)
+		(property "Height" ""
+			(at 166.37 35.56 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7535,6 +7536,15 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
+			(at 52.07 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 52.07 134.62 0)
 			(effects
 				(font
@@ -7848,7 +7858,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 47.9552 96.52 0)
 			(effects
 				(font
@@ -7857,7 +7867,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://calchip.com/wp-content/uploads/2023/09/GMC-Series-2.pdf"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E106KA73-01.pdf"
 			(at 46.99 92.71 0)
 			(effects
 				(font
@@ -7866,7 +7876,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10 µF ±10% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
 			(at 46.99 92.71 0)
 			(effects
 				(font
@@ -7875,7 +7885,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "GMC21X7R106K25NT"
+		(property "Manufacturer Number" "GRM188R61E106KA73D"
 			(at 46.99 92.71 0)
 			(effects
 				(font
@@ -7884,7 +7894,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Cal-Chip Electronics, Inc."
+		(property "Manufacturer" "Murata Electronics"
 			(at 46.99 92.71 0)
 			(effects
 				(font
@@ -7893,7 +7903,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/GMC21X7R106K25NT/22639515"
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
 			(at 46.99 92.71 0)
 			(effects
 				(font
@@ -7902,7 +7912,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Height" ""
 			(at 46.99 92.71 0)
 			(effects
 				(font
@@ -7911,7 +7921,7 @@
 				(hide yes)
 			)
 		)
-		(property "MFG" ""
+		(property "Temperature Coefficient" "X5R"
 			(at 46.99 92.71 0)
 			(effects
 				(font
@@ -8027,7 +8037,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 112.7252 138.43 0)
 			(effects
 				(font
@@ -8036,7 +8046,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://calchip.com/wp-content/uploads/2023/09/GMC-Series-2.pdf"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E106KA73-01.pdf"
 			(at 111.76 134.62 0)
 			(effects
 				(font
@@ -8045,7 +8055,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10 µF ±10% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
 			(at 111.76 134.62 0)
 			(effects
 				(font
@@ -8054,7 +8064,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "GMC21X7R106K25NT"
+		(property "Manufacturer Number" "GRM188R61E106KA73D"
 			(at 111.76 134.62 0)
 			(effects
 				(font
@@ -8063,7 +8073,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Cal-Chip Electronics, Inc."
+		(property "Manufacturer" "Murata Electronics"
 			(at 111.76 134.62 0)
 			(effects
 				(font
@@ -8072,7 +8082,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/GMC21X7R106K25NT/22639515"
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
 			(at 111.76 134.62 0)
 			(effects
 				(font
@@ -8081,7 +8091,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Height" ""
 			(at 111.76 134.62 0)
 			(effects
 				(font
@@ -8090,7 +8100,7 @@
 				(hide yes)
 			)
 		)
-		(property "MFG" ""
+		(property "Temperature Coefficient" "X5R"
 			(at 111.76 134.62 0)
 			(effects
 				(font
@@ -8141,7 +8151,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 119.0752 179.07 0)
 			(effects
 				(font
@@ -8150,7 +8160,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://calchip.com/wp-content/uploads/2023/09/GMC-Series-2.pdf"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E106KA73-01.pdf"
 			(at 118.11 175.26 0)
 			(effects
 				(font
@@ -8159,7 +8169,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10 µF ±10% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
 			(at 118.11 175.26 0)
 			(effects
 				(font
@@ -8168,7 +8178,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "GMC21X7R106K25NT"
+		(property "Manufacturer Number" "GRM188R61E106KA73D"
 			(at 118.11 175.26 0)
 			(effects
 				(font
@@ -8177,7 +8187,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Cal-Chip Electronics, Inc."
+		(property "Manufacturer" "Murata Electronics"
 			(at 118.11 175.26 0)
 			(effects
 				(font
@@ -8186,7 +8196,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/GMC21X7R106K25NT/22639515"
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
 			(at 118.11 175.26 0)
 			(effects
 				(font
@@ -8195,7 +8205,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Height" ""
 			(at 118.11 175.26 0)
 			(effects
 				(font
@@ -8204,7 +8214,7 @@
 				(hide yes)
 			)
 		)
-		(property "MFG" ""
+		(property "Temperature Coefficient" "X5R"
 			(at 118.11 175.26 0)
 			(effects
 				(font
@@ -8383,6 +8393,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 58.42 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6d16de70-d031-4ec2-bd7d-07a4185ecff5")
 		)
@@ -8408,22 +8427,22 @@
 		(dnp no)
 		(uuid "3d781d01-c897-412c-ab29-a745e77cf6fa")
 		(property "Reference" "C79"
-			(at 99.568 150.114 90)
+			(at 93.218 149.86 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "C"
-			(at 92.202 150.114 90)
+		(property "Value" "6.8pF"
+			(at 100.33 149.86 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 100.33 150.1648 0)
 			(effects
 				(font
@@ -8432,7 +8451,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GCM1555C1HR50BA16-01A.pdf"
 			(at 96.52 151.13 0)
 			(effects
 				(font
@@ -8441,8 +8460,53 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" ""
 			(at 96.52 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 96.52 151.13 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GCM1555C1H6R8BA16J/11618426"
+			(at 96.52 151.13 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 96.52 151.13 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GCM1555C1H6R8BA16J"
+			(at 96.52 151.13 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R or better"
+			(at 96.52 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8556,6 +8620,15 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
+			(at 97.79 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 97.79 92.71 0)
 			(effects
 				(font
@@ -8696,16 +8769,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "C1608X5R1V475K080AC"
-			(at 44.45 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "TDK"
+		(property "Height" ""
 			(at 44.45 160.02 0)
 			(effects
 				(font
@@ -8756,7 +8820,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 112.7252 179.07 0)
 			(effects
 				(font
@@ -8765,7 +8829,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://calchip.com/wp-content/uploads/2023/09/GMC-Series-2.pdf"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E106KA73-01.pdf"
 			(at 111.76 175.26 0)
 			(effects
 				(font
@@ -8774,7 +8838,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10 µF ±10% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
 			(at 111.76 175.26 0)
 			(effects
 				(font
@@ -8783,7 +8847,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "GMC21X7R106K25NT"
+		(property "Manufacturer Number" "GRM188R61E106KA73D"
 			(at 111.76 175.26 0)
 			(effects
 				(font
@@ -8792,7 +8856,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Cal-Chip Electronics, Inc."
+		(property "Manufacturer" "Murata Electronics"
 			(at 111.76 175.26 0)
 			(effects
 				(font
@@ -8801,7 +8865,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/GMC21X7R106K25NT/22639515"
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
 			(at 111.76 175.26 0)
 			(effects
 				(font
@@ -8810,7 +8874,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Height" ""
 			(at 111.76 175.26 0)
 			(effects
 				(font
@@ -8819,7 +8883,7 @@
 				(hide yes)
 			)
 		)
-		(property "MFG" ""
+		(property "Temperature Coefficient" "X5R"
 			(at 111.76 175.26 0)
 			(effects
 				(font
@@ -9007,6 +9071,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 236.22 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c5603c87-49b9-433b-8b23-ff7b880ef868")
 		)
@@ -9096,6 +9169,15 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/CUS10S30-H3F/5114299"
+			(at 106.68 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 106.68 162.56 0)
 			(effects
 				(font
@@ -9272,6 +9354,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 101.6 175.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "6285df3f-0b83-4304-8733-e87bfdd87b14")
 		)
@@ -9380,7 +9471,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 152.0952 39.37 0)
 			(effects
 				(font
@@ -9389,7 +9480,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://calchip.com/wp-content/uploads/2023/09/GMC-Series-2.pdf"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E106KA73-01.pdf"
 			(at 151.13 35.56 0)
 			(effects
 				(font
@@ -9398,7 +9489,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10 µF ±10% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
 			(at 151.13 35.56 0)
 			(effects
 				(font
@@ -9407,7 +9498,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "GMC21X7R106K25NT"
+		(property "Manufacturer Number" "GRM188R61E106KA73D"
 			(at 151.13 35.56 0)
 			(effects
 				(font
@@ -9416,7 +9507,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Cal-Chip Electronics, Inc."
+		(property "Manufacturer" "Murata Electronics"
 			(at 151.13 35.56 0)
 			(effects
 				(font
@@ -9425,7 +9516,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/GMC21X7R106K25NT/22639515"
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
 			(at 151.13 35.56 0)
 			(effects
 				(font
@@ -9434,7 +9525,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Height" ""
 			(at 151.13 35.56 0)
 			(effects
 				(font
@@ -9443,7 +9534,7 @@
 				(hide yes)
 			)
 		)
-		(property "MFG" ""
+		(property "Temperature Coefficient" "X5R"
 			(at 151.13 35.56 0)
 			(effects
 				(font
@@ -9720,6 +9811,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 86.36 33.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c83e4090-9173-4a39-bffa-69eeb0b139a1")
 		)
@@ -9959,17 +10059,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
-			(at 215.9 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFG" ""
-			(at 215.9 38.1 0)
+		(property "Height" ""
+			(at 215.9 38.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10048,6 +10139,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 44.45 33.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5c81ba6c-d94c-41e5-b6e7-cc7ad07582ab")
 		)
@@ -10093,7 +10193,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 119.0752 138.43 0)
 			(effects
 				(font
@@ -10102,7 +10202,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://calchip.com/wp-content/uploads/2023/09/GMC-Series-2.pdf"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E106KA73-01.pdf"
 			(at 118.11 134.62 0)
 			(effects
 				(font
@@ -10111,7 +10211,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10 µF ±10% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
 			(at 118.11 134.62 0)
 			(effects
 				(font
@@ -10120,7 +10220,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "GMC21X7R106K25NT"
+		(property "Manufacturer Number" "GRM188R61E106KA73D"
 			(at 118.11 134.62 0)
 			(effects
 				(font
@@ -10129,7 +10229,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Cal-Chip Electronics, Inc."
+		(property "Manufacturer" "Murata Electronics"
 			(at 118.11 134.62 0)
 			(effects
 				(font
@@ -10138,7 +10238,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/GMC21X7R106K25NT/22639515"
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
 			(at 118.11 134.62 0)
 			(effects
 				(font
@@ -10147,7 +10247,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Height" ""
 			(at 118.11 134.62 0)
 			(effects
 				(font
@@ -10156,7 +10256,7 @@
 				(hide yes)
 			)
 		)
-		(property "MFG" ""
+		(property "Temperature Coefficient" "X5R"
 			(at 118.11 134.62 0)
 			(effects
 				(font
@@ -10225,7 +10325,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
 			(at 54.61 160.02 0)
 			(effects
 				(font
@@ -10288,25 +10388,7 @@
 				(hide yes)
 			)
 		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 54.61 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 54.61 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFG" ""
+		(property "Height" ""
 			(at 54.61 160.02 0)
 			(effects
 				(font
@@ -10485,6 +10567,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 74.93 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "6"
 			(uuid "8ea82350-d925-4485-87cd-25c294a7e711")
 		)
@@ -10594,6 +10685,15 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 171.45 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 171.45 40.64 0)
 			(effects
 				(font
@@ -10848,6 +10948,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 220.98 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "34c16b71-3810-4833-a256-be00e354161a")
 		)
@@ -10956,7 +11065,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 152.0952 152.4 0)
 			(effects
 				(font
@@ -10965,7 +11074,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://calchip.com/wp-content/uploads/2023/09/GMC-Series-2.pdf"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E106KA73-01.pdf"
 			(at 151.13 148.59 0)
 			(effects
 				(font
@@ -10974,7 +11083,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10 µF ±10% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
 			(at 151.13 148.59 0)
 			(effects
 				(font
@@ -10983,7 +11092,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "GMC21X7R106K25NT"
+		(property "Manufacturer Number" "GRM188R61E106KA73D"
 			(at 151.13 148.59 0)
 			(effects
 				(font
@@ -10992,7 +11101,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Cal-Chip Electronics, Inc."
+		(property "Manufacturer" "Murata Electronics"
 			(at 151.13 148.59 0)
 			(effects
 				(font
@@ -11001,7 +11110,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/GMC21X7R106K25NT/22639515"
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
 			(at 151.13 148.59 0)
 			(effects
 				(font
@@ -11010,7 +11119,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Height" ""
 			(at 151.13 148.59 0)
 			(effects
 				(font
@@ -11019,7 +11128,7 @@
 				(hide yes)
 			)
 		)
-		(property "MFG" ""
+		(property "Temperature Coefficient" "X5R"
 			(at 151.13 148.59 0)
 			(effects
 				(font
@@ -11201,7 +11310,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 85.852 149.86 90)
 			(effects
 				(font
@@ -11210,7 +11319,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"
 			(at 87.63 149.86 0)
 			(effects
 				(font
@@ -11219,8 +11328,44 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 87.63 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 87.63 149.86 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100KL/726526"
+			(at 87.63 149.86 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 87.63 149.86 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-07100KL"
+			(at 87.63 149.86 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11391,6 +11536,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 73.66 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "803118ec-7bbe-4b28-9654-ae40af3e4684")
 		)
@@ -11431,7 +11585,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 49.53 156.718 90)
 			(effects
 				(font
@@ -11449,8 +11603,44 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 49.53 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 49.53 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/SG73P1JTTD1000F/10188091"
+			(at 49.53 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "KOA Speer Electronics, Inc."
+			(at 49.53 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "SG73P1JTTD1000F"
+			(at 49.53 154.94 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11518,7 +11708,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
 			(at 200.66 27.94 0)
 			(effects
 				(font
@@ -11581,26 +11771,8 @@
 				(hide yes)
 			)
 		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 200.66 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 200.66 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFG" ""
-			(at 200.66 27.94 0)
+		(property "Height" ""
+			(at 200.66 27.94 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11680,6 +11852,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 45.72 132.08 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "184a4fd6-8793-4f64-a8bd-c69b90229527")
 		)
@@ -11723,7 +11904,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 100.33 145.0848 0)
 			(effects
 				(font
@@ -11732,7 +11913,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71C224KA12-01.pdf"
 			(at 96.52 146.05 0)
 			(effects
 				(font
@@ -11741,8 +11922,53 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" ">6.3V"
 			(at 96.52 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 96.52 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X5R or better"
+			(at 96.52 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71C224KA12D/2175204"
+			(at 96.52 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 96.52 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71C224KA12D"
+			(at 96.52 146.05 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11792,7 +12018,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 93.6752 179.07 0)
 			(effects
 				(font
@@ -11801,7 +12027,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM1555C1H472GE01-01A.pdf"
 			(at 92.71 175.26 0)
 			(effects
 				(font
@@ -11811,6 +12037,33 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 92.71 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 92.71 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM1555C1H472GE01D"
+			(at 92.71 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "C0G/NP0"
 			(at 92.71 175.26 0)
 			(effects
 				(font
@@ -11970,6 +12223,15 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/TPS65131RGER/1672464"
+			(at 73.66 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 73.66 157.48 0)
 			(effects
 				(font
@@ -12210,6 +12472,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 52.07 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c1dd3fdd-6608-4b38-8db1-e5aaa33b927b")
 		)
@@ -12315,17 +12586,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
-			(at 215.9 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFG" ""
-			(at 215.9 48.26 0)
+		(property "Height" ""
+			(at 215.9 48.26 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12420,6 +12682,15 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/richtek-usa-inc/RT6150B-33GQW/6676709"
+			(at 73.66 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 73.66 90.17 0)
 			(effects
 				(font
@@ -12569,6 +12840,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 228.6 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1864ec69-6269-4a4c-9071-7900804d82d2")
 		)
@@ -12666,6 +12946,15 @@
 			)
 		)
 		(property "Tolerance" "1%"
+			(at 44.45 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 44.45 44.45 0)
 			(effects
 				(font
@@ -12779,17 +13068,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
-			(at 62.23 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFG" ""
-			(at 62.23 36.83 0)
+		(property "Height" ""
+			(at 62.23 36.83 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12903,6 +13183,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 184.15 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "adb23b38-b67a-4a10-87a1-e029980de85a")
 		)
@@ -12975,7 +13264,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
 			(at 143.51 35.56 0)
 			(effects
 				(font
@@ -13038,25 +13327,7 @@
 				(hide yes)
 			)
 		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 143.51 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 143.51 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFG" ""
+		(property "Height" ""
 			(at 143.51 35.56 0)
 			(effects
 				(font
@@ -13172,7 +13443,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 87.122 134.62 90)
 			(effects
 				(font
@@ -13190,7 +13461,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
+			(at 88.9 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 88.9 134.62 0)
 			(effects
 				(font
@@ -13286,16 +13566,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Texas Instruments"
-			(at 134.62 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "LM2990S-12/NOPB"
+		(property "Height" ""
 			(at 134.62 153.67 0)
 			(effects
 				(font
@@ -13485,17 +13756,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
-			(at 88.9 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFG" ""
-			(at 88.9 92.71 0)
+		(property "Height" ""
+			(at 88.9 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13543,7 +13805,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 99.06 141.478 90)
 			(effects
 				(font
@@ -13552,7 +13814,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"
 			(at 99.06 139.7 0)
 			(effects
 				(font
@@ -13561,8 +13823,44 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 99.06 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 99.06 139.7 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100KL/726526"
+			(at 99.06 139.7 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 99.06 139.7 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-07100KL"
+			(at 99.06 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13714,6 +14012,15 @@
 			)
 		)
 		(property "Manufacturer Number" "LM2940IMPX-12/NOPB"
+			(at 134.62 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 134.62 133.35 0)
 			(effects
 				(font
@@ -13893,6 +14200,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 57.15 129.54 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "112ea8b4-d0c0-4931-8a42-38cb15f29588")
 		)
@@ -13935,7 +14251,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 152.0952 142.24 0)
 			(effects
 				(font
@@ -13944,7 +14260,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://calchip.com/wp-content/uploads/2023/09/GMC-Series-2.pdf"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E106KA73-01.pdf"
 			(at 151.13 138.43 0)
 			(effects
 				(font
@@ -13953,7 +14269,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10 µF ±10% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
 			(at 151.13 138.43 0)
 			(effects
 				(font
@@ -13962,7 +14278,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "GMC21X7R106K25NT"
+		(property "Manufacturer Number" "GRM188R61E106KA73D"
 			(at 151.13 138.43 0)
 			(effects
 				(font
@@ -13971,7 +14287,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Cal-Chip Electronics, Inc."
+		(property "Manufacturer" "Murata Electronics"
 			(at 151.13 138.43 0)
 			(effects
 				(font
@@ -13980,7 +14296,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/GMC21X7R106K25NT/22639515"
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
 			(at 151.13 138.43 0)
 			(effects
 				(font
@@ -13989,7 +14305,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Height" ""
 			(at 151.13 138.43 0)
 			(effects
 				(font
@@ -13998,7 +14314,7 @@
 				(hide yes)
 			)
 		)
-		(property "MFG" ""
+		(property "Temperature Coefficient" "X5R"
 			(at 151.13 138.43 0)
 			(effects
 				(font
@@ -14115,7 +14431,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 96.52 153.162 90)
 			(effects
 				(font
@@ -14133,8 +14449,17 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 96.52 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 96.52 154.94 90)
 			(effects
 				(font
 					(size 1.27 1.27)

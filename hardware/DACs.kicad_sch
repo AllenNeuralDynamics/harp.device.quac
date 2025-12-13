@@ -2278,22 +2278,6 @@
 		(color 0 0 0 0)
 		(uuid "fc4e485e-9cd3-4dc2-8f07-063033adfdda")
 	)
-	(no_connect
-		(at 55.88 39.37)
-		(uuid "40dbb2d6-abf7-4f34-bc45-9be411713160")
-	)
-	(no_connect
-		(at 55.88 81.28)
-		(uuid "9005764c-4f8b-450b-bd36-79b2ca69b318")
-	)
-	(no_connect
-		(at 55.88 165.1)
-		(uuid "bfb55c0f-f1ac-4266-be23-706c76588cfa")
-	)
-	(no_connect
-		(at 55.88 123.19)
-		(uuid "e9deec62-ca9f-4090-8d6a-6821d7b3c5f0")
-	)
 	(wire
 		(pts
 			(xy 83.82 163.83) (xy 83.82 173.99)
@@ -2416,7 +2400,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 162.56) (xy 55.88 162.56)
+			(xy 53.34 162.56) (xy 55.88 162.56)
 		)
 		(stroke
 			(width 0)
@@ -2456,7 +2440,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 157.48) (xy 55.88 157.48)
+			(xy 53.34 157.48) (xy 55.88 157.48)
 		)
 		(stroke
 			(width 0)
@@ -2586,7 +2570,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 115.57) (xy 55.88 115.57)
+			(xy 53.34 115.57) (xy 55.88 115.57)
 		)
 		(stroke
 			(width 0)
@@ -2846,7 +2830,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 34.29) (xy 55.88 34.29)
+			(xy 53.34 34.29) (xy 55.88 34.29)
 		)
 		(stroke
 			(width 0)
@@ -2943,6 +2927,16 @@
 			(type default)
 		)
 		(uuid "3c01c089-8004-441d-8457-de140b476f30")
+	)
+	(wire
+		(pts
+			(xy 54.61 165.1) (xy 54.61 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c0d908f-0880-4945-930b-2f0f6338681d")
 	)
 	(wire
 		(pts
@@ -3116,6 +3110,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 105.41) (xy 54.61 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50d438f9-5621-4dd8-a2fb-bc6d962b6a33")
+	)
+	(wire
+		(pts
 			(xy 21.59 77.47) (xy 21.59 78.74)
 		)
 		(stroke
@@ -3173,6 +3177,16 @@
 			(type default)
 		)
 		(uuid "5645a5c1-a84e-4c13-b39a-0e6c967bb20f")
+	)
+	(wire
+		(pts
+			(xy 54.61 165.1) (xy 55.88 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5687b6bd-54b2-4851-9c38-fb4a0cf11458")
 	)
 	(wire
 		(pts
@@ -3246,7 +3260,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 160.02) (xy 55.88 160.02)
+			(xy 53.34 160.02) (xy 55.88 160.02)
 		)
 		(stroke
 			(width 0)
@@ -3273,6 +3287,16 @@
 			(type default)
 		)
 		(uuid "663dd6a8-751c-43c1-8dc3-54d0914994b6")
+	)
+	(wire
+		(pts
+			(xy 54.61 147.32) (xy 54.61 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67312444-d9aa-40ac-973a-26674279187b")
 	)
 	(wire
 		(pts
@@ -3426,6 +3450,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 21.59) (xy 54.61 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "776d4e90-468a-4ffd-9f4c-194dde576c75")
+	)
+	(wire
+		(pts
 			(xy 107.95 161.29) (xy 107.95 175.26)
 		)
 		(stroke
@@ -3456,7 +3490,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 120.65) (xy 55.88 120.65)
+			(xy 53.34 120.65) (xy 55.88 120.65)
 		)
 		(stroke
 			(width 0)
@@ -3536,6 +3570,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 39.37) (xy 55.88 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80df4530-87e1-4207-bccb-6ed24eadab02")
+	)
+	(wire
+		(pts
 			(xy 83.82 121.92) (xy 83.82 132.08)
 		)
 		(stroke
@@ -3563,6 +3607,16 @@
 			(type default)
 		)
 		(uuid "826d01bc-6025-47de-a994-07ebb478cc84")
+	)
+	(wire
+		(pts
+			(xy 31.75 72.39) (xy 31.75 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "826d46e9-23b2-49f1-bc62-f0045211115e")
 	)
 	(wire
 		(pts
@@ -3746,7 +3800,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 118.11) (xy 55.88 118.11)
+			(xy 53.34 118.11) (xy 55.88 118.11)
 		)
 		(stroke
 			(width 0)
@@ -3786,7 +3840,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 76.2) (xy 55.88 76.2)
+			(xy 53.34 76.2) (xy 55.88 76.2)
 		)
 		(stroke
 			(width 0)
@@ -3863,6 +3917,16 @@
 			(type default)
 		)
 		(uuid "a58036ff-0daf-4601-9bc4-48a7a5a29548")
+	)
+	(wire
+		(pts
+			(xy 31.75 39.37) (xy 31.75 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a667661c-c4af-49b5-858f-8fec7cbe6ece")
 	)
 	(wire
 		(pts
@@ -3976,7 +4040,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 78.74) (xy 55.88 78.74)
+			(xy 53.34 78.74) (xy 55.88 78.74)
 		)
 		(stroke
 			(width 0)
@@ -4014,6 +4078,16 @@
 		)
 		(uuid "b525a8c8-20eb-489b-aae8-6644d18498ee")
 	)
+	(wire
+		(pts
+			(xy 31.75 165.1) (xy 31.75 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b68d6b20-666e-4a94-a713-ffba99216b5a")
+	)
 	(polyline
 		(pts
 			(xy 128.27 147.32) (xy 128.27 160.02)
@@ -4036,7 +4110,27 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 73.66) (xy 55.88 73.66)
+			(xy 54.61 39.37) (xy 54.61 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8f17fa4-3b35-4323-8d34-a00863a0d2fe")
+	)
+	(wire
+		(pts
+			(xy 54.61 81.28) (xy 55.88 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b907a0bc-301f-44a5-a7cf-6e141c3fdb3f")
+	)
+	(wire
+		(pts
+			(xy 53.34 73.66) (xy 55.88 73.66)
 		)
 		(stroke
 			(width 0)
@@ -4073,6 +4167,16 @@
 			(type default)
 		)
 		(uuid "bebae3ab-2598-45d4-a38c-1fe90c22327e")
+	)
+	(wire
+		(pts
+			(xy 54.61 63.5) (xy 54.61 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bffe1d8a-d97d-498b-adbf-a64f6d01cbce")
 	)
 	(wire
 		(pts
@@ -4113,6 +4217,16 @@
 			(type default)
 		)
 		(uuid "c45ceace-1a82-4197-9a7a-d732ba79b5d8")
+	)
+	(wire
+		(pts
+			(xy 31.75 156.21) (xy 31.75 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4d81566-dffa-480f-a7b8-36b6de1b3f24")
 	)
 	(wire
 		(pts
@@ -4206,7 +4320,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 31.75) (xy 55.88 31.75)
+			(xy 53.34 31.75) (xy 55.88 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4286,6 +4400,16 @@
 	)
 	(wire
 		(pts
+			(xy 31.75 114.3) (xy 31.75 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d5a0e66a-0c8e-4af3-88dc-324557eaea17")
+	)
+	(wire
+		(pts
 			(xy 91.44 121.92) (xy 87.63 121.92)
 		)
 		(stroke
@@ -4323,6 +4447,16 @@
 			(type default)
 		)
 		(uuid "da726517-9b74-42f4-a37a-7eb23a85adf3")
+	)
+	(wire
+		(pts
+			(xy 31.75 123.19) (xy 31.75 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dac1ea75-3c9b-4237-9b46-d87f5d94b4f6")
 	)
 	(wire
 		(pts
@@ -4456,7 +4590,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 36.83) (xy 55.88 36.83)
+			(xy 53.34 36.83) (xy 55.88 36.83)
 		)
 		(stroke
 			(width 0)
@@ -4536,6 +4670,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 123.19) (xy 55.88 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef32a5be-b1c8-456e-b264-31227940b24b")
+	)
+	(wire
+		(pts
 			(xy 106.68 35.56) (xy 107.95 35.56)
 		)
 		(stroke
@@ -4576,6 +4720,26 @@
 	)
 	(wire
 		(pts
+			(xy 31.75 81.28) (xy 31.75 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0c4bbda-3552-4a85-97df-ba80ea2aedee")
+	)
+	(wire
+		(pts
+			(xy 54.61 81.28) (xy 54.61 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1074dc7-26c9-4321-bc57-fa02ed8de88a")
+	)
+	(wire
+		(pts
 			(xy 124.46 167.64) (xy 128.27 167.64)
 		)
 		(stroke
@@ -4593,6 +4757,16 @@
 			(type default)
 		)
 		(uuid "f3aaad93-d7ab-43ee-8f4b-92e672bea244")
+	)
+	(wire
+		(pts
+			(xy 54.61 123.19) (xy 54.61 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3f2a5fb-a027-43b0-9c1d-df926ba819fc")
 	)
 	(wire
 		(pts
@@ -4626,6 +4800,16 @@
 	)
 	(wire
 		(pts
+			(xy 31.75 30.48) (xy 31.75 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fac6b37c-a1d5-452f-a544-6d623fb9f52a")
+	)
+	(wire
+		(pts
 			(xy 264.16 156.21) (xy 264.16 157.48)
 		)
 		(stroke
@@ -4644,9 +4828,9 @@
 		)
 		(uuid "ffc479a0-0bfb-4e42-b4c1-1aff7b7d383a")
 	)
-	(global_label "DAC_0_CS"
+	(global_label "DAC_3_CS"
 		(shape input)
-		(at 54.61 157.48 180)
+		(at 53.34 157.48 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4656,7 +4840,7 @@
 		)
 		(uuid "059273b7-27f5-4702-9635-1b3f8433081c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 42.372 157.48 0)
+			(at 41.102 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4666,9 +4850,9 @@
 			)
 		)
 	)
-	(global_label "DAC_0_DIN"
+	(global_label "DAC_2_DIN"
 		(shape input)
-		(at 54.61 120.65 180)
+		(at 53.34 120.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4678,7 +4862,7 @@
 		)
 		(uuid "126c499e-f8e7-49e5-9356-6d9dffb9561d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.6462 120.65 0)
+			(at 40.3762 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4688,9 +4872,9 @@
 			)
 		)
 	)
-	(global_label "DAC_0_DIN"
+	(global_label "DAC_1_DIN"
 		(shape input)
-		(at 54.61 78.74 180)
+		(at 53.34 78.74 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4700,7 +4884,7 @@
 		)
 		(uuid "1ca063b8-a88d-4536-a320-f5e13810cdb8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.6462 78.74 0)
+			(at 40.3762 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4710,9 +4894,9 @@
 			)
 		)
 	)
-	(global_label "DAC_0_DIN"
+	(global_label "DAC_3_DIN"
 		(shape input)
-		(at 54.61 162.56 180)
+		(at 53.34 162.56 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4722,7 +4906,7 @@
 		)
 		(uuid "1ebdcaec-9254-4555-8251-64b99ecf123b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.6462 162.56 0)
+			(at 40.3762 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4733,7 +4917,7 @@
 		)
 	)
 	(global_label "SENSE_3_B"
-		(shape input)
+		(shape output)
 		(at 142.24 156.21 0)
 		(fields_autoplaced yes)
 		(effects
@@ -4755,7 +4939,7 @@
 		)
 	)
 	(global_label "SENSE_1_B"
-		(shape input)
+		(shape output)
 		(at 142.24 72.39 0)
 		(fields_autoplaced yes)
 		(effects
@@ -4799,7 +4983,7 @@
 		)
 	)
 	(global_label "VREF_2V5"
-		(shape input)
+		(shape output)
 		(at 269.24 146.05 0)
 		(fields_autoplaced yes)
 		(effects
@@ -4821,7 +5005,7 @@
 		)
 	)
 	(global_label "SENSE_3_A"
-		(shape input)
+		(shape output)
 		(at 142.24 153.67 0)
 		(fields_autoplaced yes)
 		(effects
@@ -4844,7 +5028,7 @@
 	)
 	(global_label "DAC_0_DIN"
 		(shape input)
-		(at 54.61 36.83 180)
+		(at 53.34 36.83 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4854,7 +5038,7 @@
 		)
 		(uuid "63c47e14-71e8-4994-b773-acbe06973591")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.6462 36.83 0)
+			(at 40.3762 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4864,9 +5048,9 @@
 			)
 		)
 	)
-	(global_label "DAC_0_SCK"
+	(global_label "DAC_2_SCK"
 		(shape input)
-		(at 54.61 118.11 180)
+		(at 53.34 118.11 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4876,7 +5060,7 @@
 		)
 		(uuid "799cb146-780b-400a-937b-6046f0aeda32")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.102 118.11 0)
+			(at 39.832 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4887,7 +5071,7 @@
 		)
 	)
 	(global_label "SENSE_1_A"
-		(shape input)
+		(shape output)
 		(at 142.24 69.85 0)
 		(fields_autoplaced yes)
 		(effects
@@ -4930,9 +5114,9 @@
 			)
 		)
 	)
-	(global_label "DAC_0_CS"
+	(global_label "DAC_2_CS"
 		(shape input)
-		(at 54.61 115.57 180)
+		(at 53.34 115.57 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4942,7 +5126,7 @@
 		)
 		(uuid "8ebac6f1-0867-4c78-882c-4c3f377c210e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 42.372 115.57 0)
+			(at 41.102 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4952,9 +5136,9 @@
 			)
 		)
 	)
-	(global_label "DAC_0_SCK"
+	(global_label "DAC_1_SCK"
 		(shape input)
-		(at 54.61 76.2 180)
+		(at 53.34 76.2 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4964,7 +5148,7 @@
 		)
 		(uuid "95733d5a-5f0b-463e-9d89-0d3f828aaecb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.102 76.2 0)
+			(at 39.832 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4975,7 +5159,7 @@
 		)
 	)
 	(global_label "SENSE_0_B"
-		(shape input)
+		(shape output)
 		(at 142.24 30.48 0)
 		(fields_autoplaced yes)
 		(effects
@@ -4997,7 +5181,7 @@
 		)
 	)
 	(global_label "SENSE_2_B"
-		(shape input)
+		(shape output)
 		(at 142.24 114.3 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5020,7 +5204,7 @@
 	)
 	(global_label "DAC_0_CS"
 		(shape input)
-		(at 54.61 31.75 180)
+		(at 53.34 31.75 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5030,7 +5214,7 @@
 		)
 		(uuid "c258c7c6-7110-42b4-a87a-cdc0af170f67")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 42.372 31.75 0)
+			(at 41.102 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5041,7 +5225,7 @@
 		)
 	)
 	(global_label "SENSE_0_A"
-		(shape input)
+		(shape output)
 		(at 142.24 27.94 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5064,7 +5248,7 @@
 	)
 	(global_label "DAC_0_SCK"
 		(shape input)
-		(at 54.61 34.29 180)
+		(at 53.34 34.29 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5074,7 +5258,7 @@
 		)
 		(uuid "ca6f6c81-3d2f-4a72-9f34-6fc26322b756")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.102 34.29 0)
+			(at 39.832 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5084,9 +5268,9 @@
 			)
 		)
 	)
-	(global_label "DAC_0_SCK"
+	(global_label "DAC_3_SCK"
 		(shape input)
-		(at 54.61 160.02 180)
+		(at 53.34 160.02 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5096,7 +5280,7 @@
 		)
 		(uuid "cf7aee7b-51b7-4d93-96d4-e276f5c8cdec")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.102 160.02 0)
+			(at 39.832 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5128,9 +5312,9 @@
 			)
 		)
 	)
-	(global_label "DAC_0_CS"
+	(global_label "DAC_1_CS"
 		(shape input)
-		(at 54.61 73.66 180)
+		(at 53.34 73.66 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5140,7 +5324,7 @@
 		)
 		(uuid "f25aa8cf-74a5-42f3-815d-193086ac9033")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 42.372 73.66 0)
+			(at 41.102 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5173,7 +5357,7 @@
 		)
 	)
 	(global_label "SENSE_2_A"
-		(shape input)
+		(shape output)
 		(at 142.24 111.76 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5277,16 +5461,17 @@
 				(justify left)
 			)
 		)
-		(property "Value" "OPA2994xD"
+		(property "Value" "OPA2994IDGKR"
 			(at 25.146 166.878 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 29.21 158.75 0)
 			(effects
 				(font
@@ -5305,6 +5490,33 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+			(at 30.48 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 30.48 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 30.48 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "OPA2994IDGKR"
 			(at 30.48 161.29 0)
 			(effects
 				(font
@@ -5430,16 +5642,17 @@
 				(justify left)
 			)
 		)
-		(property "Value" "OPA2994xD"
+		(property "Value" "OPA2994IDGKR"
 			(at 25.146 41.148 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 29.21 33.02 0)
 			(effects
 				(font
@@ -5458,6 +5671,33 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+			(at 30.48 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 30.48 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 30.48 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "OPA2994IDGKR"
 			(at 30.48 35.56 0)
 			(effects
 				(font
@@ -5500,6 +5740,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 31.75 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "084b5732-7dc4-4652-947b-5b2eb64a8762")
+		(property "Reference" "#PWR0115"
+			(at 31.75 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 33.782 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 31.75 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 31.75 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 31.75 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "782c2d53-9ded-4ae9-89f9-e62bf1a85f89")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR0115")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 120.65 125.73 90)
 		(unit 1)
@@ -5524,7 +5830,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 120.65 127.508 90)
 			(effects
 				(font
@@ -5551,6 +5857,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 120.65 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "14c977f4-8079-4f7f-a518-76e773f65c42")
 		)
@@ -5561,6 +5876,136 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "R20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 54.61 147.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0a47975c-1662-481b-9c1c-8f690fa75367")
+		(property "Reference" "#PWR079"
+			(at 54.61 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 54.61 143.764 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 54.61 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 54.61 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 54.61 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3fe40a70-205a-4d00-816a-ffad1b58eccc")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR079")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 54.61 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0c1be00a-7d5a-487f-a8c5-8f1cf5fb9fb6")
+		(property "Reference" "#PWR072"
+			(at 54.61 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 54.61 59.944 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 54.61 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 54.61 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 54.61 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7a2d7157-f440-4808-82ba-427125b4158f")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR072")
 					(unit 1)
 				)
 			)
@@ -5657,7 +6102,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 120.65 43.688 90)
 			(effects
 				(font
@@ -5677,6 +6122,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 120.65 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 120.65 41.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5725,7 +6179,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 135.89 163.068 90)
 			(effects
 				(font
@@ -5734,7 +6188,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDN0000/AOA0000C313.pdf"
 			(at 135.89 161.29 0)
 			(effects
 				(font
@@ -5745,6 +6199,42 @@
 		)
 		(property "Description" "Resistor"
 			(at 135.89 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 135.89 161.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2BWFR050X/5647400"
+			(at 135.89 161.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Panasonic Electronic Components"
+			(at 135.89 161.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "ERJ-2BWFR050X"
+			(at 135.89 161.29 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5792,7 +6282,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 120.65 85.598 90)
 			(effects
 				(font
@@ -5819,6 +6309,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 120.65 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "de8ba124-0c6a-4d66-b137-b8da068d4dbf")
 		)
@@ -5829,6 +6328,138 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "harp.device.quad.dac:C_0603")
+		(at 31.75 161.29 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "14fa67c2-e7b0-4b2a-8d5d-cbfbbe185cdc")
+		(property "Reference" "C68"
+			(at 31.75 159.258 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "100nF"
+			(at 37.846 163.576 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 30.7848 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
+			(at 31.75 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 31.75 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 31.75 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 31.75 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 31.75 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rated Voltage" "50V"
+			(at 31.75 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 31.75 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "10%"
+			(at 31.75 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 31.75 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "eaf327da-f76a-4264-8efd-c0adaf04d99d")
+		)
+		(pin "2"
+			(uuid "96e02639-53d5-41fb-98cb-205fadac0490")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "C68")
 					(unit 1)
 				)
 			)
@@ -5924,7 +6555,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 120.65 169.418 90)
 			(effects
 				(font
@@ -5951,6 +6582,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 120.65 167.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "de4db49e-c625-4672-8f28-ecbec650fa46")
 		)
@@ -5961,6 +6601,82 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 54.61 26.67 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "19a8472b-8ae7-4f8b-9981-d63998eb2424")
+		(property "Reference" "R25"
+			(at 56.896 23.114 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 54.61 26.67 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 56.388 26.67 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 54.61 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 54.61 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 54.61 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0e4db0fd-6d2f-4168-8b0d-a9d1cd0d3c9d")
+		)
+		(pin "2"
+			(uuid "b6e41b8a-7a99-4853-805c-72b3b9ac529a")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -6056,7 +6772,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 112.268 172.72 90)
 			(effects
 				(font
@@ -6074,7 +6790,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
+			(at 110.49 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 110.49 172.72 0)
 			(effects
 				(font
@@ -6189,7 +6914,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 112.268 88.9 90)
 			(effects
 				(font
@@ -6207,7 +6932,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
+			(at 110.49 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 110.49 88.9 0)
 			(effects
 				(font
@@ -6249,7 +6983,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100nF"
 			(at 17.272 42.926 0)
 			(effects
 				(font
@@ -6258,7 +6992,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 22.5552 44.45 0)
 			(effects
 				(font
@@ -6267,7 +7001,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
 			(at 21.59 40.64 0)
 			(effects
 				(font
@@ -6276,7 +7010,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 21.59 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 21.59 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 21.59 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 21.59 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 21.59 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
 			(at 21.59 40.64 0)
 			(effects
 				(font
@@ -6383,7 +7162,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100nF"
 			(at 17.272 116.586 0)
 			(effects
 				(font
@@ -6392,7 +7171,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 22.5552 118.11 0)
 			(effects
 				(font
@@ -6401,7 +7180,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
 			(at 21.59 114.3 0)
 			(effects
 				(font
@@ -6410,7 +7189,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 21.59 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 21.59 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 21.59 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 21.59 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 21.59 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
 			(at 21.59 114.3 0)
 			(effects
 				(font
@@ -6429,6 +7253,82 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "C31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 54.61 110.49 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2658df3d-00f5-4cae-957e-c077e2519538")
+		(property "Reference" "R67"
+			(at 56.896 106.934 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 54.61 110.49 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 56.388 110.49 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 54.61 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 54.61 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 54.61 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c41ab842-fdf3-4a1d-936a-470554be224f")
+		)
+		(pin "2"
+			(uuid "942f3794-dd29-4944-96af-1403d439f6e5")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "R67")
 					(unit 1)
 				)
 			)
@@ -6517,6 +7417,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 143.51 82.55 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c2b6f89e-20b7-4212-aaaa-9954979992bc")
 		)
@@ -6550,7 +7459,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994xD"
+		(property "Value" "OPA2994IDGKR"
 			(at 119.38 113.03 0)
 			(effects
 				(font
@@ -6558,7 +7467,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 118.11 116.84 0)
 			(effects
 				(font
@@ -6577,6 +7486,33 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+			(at 119.38 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 119.38 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 119.38 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "OPA2994IDGKR"
 			(at 119.38 119.38 0)
 			(effects
 				(font
@@ -6777,7 +7713,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 233.9848 148.59 0)
 			(effects
 				(font
@@ -6786,7 +7722,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
 			(at 234.95 152.4 0)
 			(effects
 				(font
@@ -6795,7 +7731,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
 			(at 234.95 152.4 0)
 			(effects
 				(font
@@ -6804,7 +7740,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
 			(at 234.95 152.4 0)
 			(effects
 				(font
@@ -6813,7 +7749,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "KEMET"
+		(property "Manufacturer" "Murata Electronics"
 			(at 234.95 152.4 0)
 			(effects
 				(font
@@ -6822,7 +7758,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "C0603C104K5RACTU"
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
 			(at 234.95 152.4 0)
 			(effects
 				(font
@@ -6840,7 +7776,7 @@
 				(hide yes)
 			)
 		)
-		(property "Temperature Coefficient" ""
+		(property "Temperature Coefficient" "X7R"
 			(at 234.95 152.4 0)
 			(effects
 				(font
@@ -6858,25 +7794,7 @@
 				(hide yes)
 			)
 		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 234.95 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 234.95 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "KEMET"
+		(property "Height" ""
 			(at 234.95 152.4 0)
 			(effects
 				(font
@@ -6983,16 +7901,17 @@
 				(justify left)
 			)
 		)
-		(property "Value" "OPA2994xD"
+		(property "Value" "OPA2994IDGKR"
 			(at 25.146 83.058 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 29.21 74.93 0)
 			(effects
 				(font
@@ -7011,6 +7930,33 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+			(at 30.48 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 30.48 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 30.48 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "OPA2994IDGKR"
 			(at 30.48 77.47 0)
 			(effects
 				(font
@@ -7070,7 +8016,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100nF"
 			(at 17.272 74.676 0)
 			(effects
 				(font
@@ -7079,7 +8025,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 22.5552 76.2 0)
 			(effects
 				(font
@@ -7088,7 +8034,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
 			(at 21.59 72.39 0)
 			(effects
 				(font
@@ -7097,7 +8043,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 21.59 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 21.59 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 21.59 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 21.59 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 21.59 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
 			(at 21.59 72.39 0)
 			(effects
 				(font
@@ -7204,16 +8195,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 154.94 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
+		(property "Height" ""
 			(at 154.94 77.47 0)
 			(effects
 				(font
@@ -7232,6 +8214,72 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 31.75 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4c258ff2-8ad2-457a-a330-79945902328a")
+		(property "Reference" "#PWR0122"
+			(at 31.75 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 33.782 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 31.75 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 31.75 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 31.75 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "19e3f217-c163-47fd-95f6-e270eb384d07")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR0122")
 					(unit 1)
 				)
 			)
@@ -7319,7 +8367,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994xD"
+		(property "Value" "OPA2994IDGKR"
 			(at 99.06 71.12 0)
 			(effects
 				(font
@@ -7327,7 +8375,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 97.79 74.93 0)
 			(effects
 				(font
@@ -7346,6 +8394,33 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+			(at 99.06 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 99.06 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 99.06 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "OPA2994IDGKR"
 			(at 99.06 77.47 0)
 			(effects
 				(font
@@ -7404,15 +8479,15 @@
 				)
 			)
 		)
-		(property "Value" "10pF"
-			(at 90.17 45.466 0)
+		(property "Value" "6.8pF"
+			(at 90.424 45.466 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 86.6648 39.37 0)
 			(effects
 				(font
@@ -7421,7 +8496,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GCM1555C1HR50BA16-01A.pdf"
 			(at 87.63 43.18 0)
 			(effects
 				(font
@@ -7430,7 +8505,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Stabilization Capacitor (See LTC264x datasheet)"
+			(at 87.63 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 87.63 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GCM1555C1H6R8BA16J/11618426"
+			(at 87.63 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 87.63 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GCM1555C1H6R8BA16J"
+			(at 87.63 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "C0G/NP0"
 			(at 87.63 43.18 0)
 			(effects
 				(font
@@ -7479,7 +8599,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 112.268 46.99 90)
 			(effects
 				(font
@@ -7497,7 +8617,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
+			(at 110.49 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 110.49 46.99 0)
 			(effects
 				(font
@@ -7629,15 +8758,6 @@
 				(hide yes)
 			)
 		)
-		(property "PCBWay Link" ""
-			(at 264.16 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Tolerance" "10%"
 			(at 264.16 152.4 0)
 			(effects
@@ -7647,16 +8767,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "C1608X7R1H105K080AB"
-			(at 264.16 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "TDK"
+		(property "Height" ""
 			(at 264.16 152.4 0)
 			(effects
 				(font
@@ -7763,16 +8874,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 154.94 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
+		(property "Height" ""
 			(at 154.94 161.29 0)
 			(effects
 				(font
@@ -7813,7 +8915,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994xD"
+		(property "Value" "OPA2994IDGKR"
 			(at 99.06 113.03 0)
 			(effects
 				(font
@@ -7821,7 +8923,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 97.79 116.84 0)
 			(effects
 				(font
@@ -7840,6 +8942,33 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+			(at 99.06 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 99.06 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 99.06 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "OPA2994IDGKR"
 			(at 99.06 119.38 0)
 			(effects
 				(font
@@ -7948,6 +9077,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 31.75 30.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6e353d1a-fcbc-422b-8c79-efb42e7d9e0f")
+		(property "Reference" "#PWR084"
+			(at 31.75 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 31.75 26.924 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 31.75 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 31.75 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 31.75 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9dbf9133-9e62-40c9-b612-df2ae21c6507")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR084")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 21.59 124.46 0)
 		(unit 1)
@@ -7965,7 +9159,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100nF"
 			(at 17.272 126.746 0)
 			(effects
 				(font
@@ -7974,7 +9168,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 22.5552 128.27 0)
 			(effects
 				(font
@@ -7983,7 +9177,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
 			(at 21.59 124.46 0)
 			(effects
 				(font
@@ -7992,7 +9186,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 21.59 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 21.59 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 21.59 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 21.59 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 21.59 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
 			(at 21.59 124.46 0)
 			(effects
 				(font
@@ -8011,6 +9250,212 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "C32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 54.61 152.4 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6eaf900a-d19b-4c7a-9ce8-5d866e45fcae")
+		(property "Reference" "R68"
+			(at 56.896 148.844 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 54.61 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 56.388 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 54.61 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 54.61 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 54.61 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "76681d99-3e74-4260-af47-fb7e01818c33")
+		)
+		(pin "2"
+			(uuid "6cfbd11c-e8cc-4064-81f1-178fb7fa4b5d")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "R68")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 54.61 21.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6f1a69d3-09a0-45d4-93c3-1f2020e416e5")
+		(property "Reference" "#PWR019"
+			(at 54.61 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 54.61 18.034 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 54.61 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 54.61 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 54.61 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dda83a05-811a-4af4-a2d1-b3da0ef38c4a")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 31.75 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6faa9886-b081-44ed-907b-f1c5a65e5b46")
+		(property "Reference" "#PWR0119"
+			(at 31.75 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 31.75 110.744 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 31.75 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 31.75 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 31.75 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fc501518-d28e-4795-b964-7f0d25432511")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR0119")
 					(unit 1)
 				)
 			)
@@ -8041,7 +9486,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:MSOP-10_3x3mm_P0.5mm"
 			(at 68.58 167.64 0)
 			(effects
 				(font
@@ -8078,6 +9523,15 @@
 			)
 		)
 		(property "Manufacturer" "Analog Devices Inc."
+			(at 72.39 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 72.39 161.29 0)
 			(effects
 				(font
@@ -8208,7 +9662,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994xD"
+		(property "Value" "OPA2994IDGKR"
 			(at 99.06 154.94 0)
 			(effects
 				(font
@@ -8216,7 +9670,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 97.79 158.75 0)
 			(effects
 				(font
@@ -8235,6 +9689,33 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+			(at 99.06 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 99.06 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 99.06 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "OPA2994IDGKR"
 			(at 99.06 161.29 0)
 			(effects
 				(font
@@ -8294,16 +9775,17 @@
 				(justify left)
 			)
 		)
-		(property "Value" "OPA2994xD"
+		(property "Value" "OPA2994IDGKR"
 			(at 25.146 124.968 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 29.21 116.84 0)
 			(effects
 				(font
@@ -8322,6 +9804,33 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+			(at 30.48 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 30.48 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 30.48 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "OPA2994IDGKR"
 			(at 30.48 119.38 0)
 			(effects
 				(font
@@ -8446,6 +9955,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 143.51 166.37 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "0acc2294-09e1-4638-bb5c-0bd7522b3f11")
 		)
@@ -8456,6 +9974,71 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "D15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 54.61 105.41 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7e184b9f-64cb-4056-8f40-6ce39c0bd386")
+		(property "Reference" "#PWR078"
+			(at 54.61 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 54.61 101.854 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 54.61 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 54.61 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 54.61 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "570569d2-158a-4c01-a33a-c6dcd6599699")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR078")
 					(unit 1)
 				)
 			)
@@ -8543,16 +10126,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 154.94 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
+		(property "Height" ""
 			(at 154.94 119.38 0)
 			(effects
 				(font
@@ -8601,7 +10175,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 112.268 130.81 90)
 			(effects
 				(font
@@ -8619,7 +10193,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
+			(at 110.49 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 110.49 130.81 0)
 			(effects
 				(font
@@ -8660,15 +10243,15 @@
 				)
 			)
 		)
-		(property "Value" "10pF"
-			(at 90.17 87.376 0)
+		(property "Value" "6.8pF"
+			(at 90.424 87.376 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 86.6648 81.28 0)
 			(effects
 				(font
@@ -8677,7 +10260,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GCM1555C1HR50BA16-01A.pdf"
 			(at 87.63 85.09 0)
 			(effects
 				(font
@@ -8686,7 +10269,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Stabilization Capacitor (See LTC264x datasheet)"
+			(at 87.63 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 87.63 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GCM1555C1H6R8BA16J/11618426"
+			(at 87.63 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 87.63 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GCM1555C1H6R8BA16J"
+			(at 87.63 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "C0G/NP0"
 			(at 87.63 85.09 0)
 			(effects
 				(font
@@ -8802,7 +10430,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 135.89 37.338 90)
 			(effects
 				(font
@@ -8811,7 +10439,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDN0000/AOA0000C313.pdf"
 			(at 135.89 35.56 0)
 			(effects
 				(font
@@ -8822,6 +10450,42 @@
 		)
 		(property "Description" "Resistor"
 			(at 135.89 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 135.89 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2BWFR050X/5647400"
+			(at 135.89 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Panasonic Electronic Components"
+			(at 135.89 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "ERJ-2BWFR050X"
+			(at 135.89 35.56 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8870,7 +10534,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 135.89 121.158 90)
 			(effects
 				(font
@@ -8879,7 +10543,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDN0000/AOA0000C313.pdf"
 			(at 135.89 119.38 0)
 			(effects
 				(font
@@ -8890,6 +10554,42 @@
 		)
 		(property "Description" "Resistor"
 			(at 135.89 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 135.89 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2BWFR050X/5647400"
+			(at 135.89 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Panasonic Electronic Components"
+			(at 135.89 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "ERJ-2BWFR050X"
+			(at 135.89 119.38 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9059,15 +10759,15 @@
 				)
 			)
 		)
-		(property "Value" "10pF"
-			(at 90.17 129.286 0)
+		(property "Value" "6.8pF"
+			(at 90.424 129.286 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 86.6648 123.19 0)
 			(effects
 				(font
@@ -9076,7 +10776,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GCM1555C1HR50BA16-01A.pdf"
 			(at 87.63 127 0)
 			(effects
 				(font
@@ -9085,7 +10785,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Stabilization Capacitor (See LTC264x datasheet)"
+			(at 87.63 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 87.63 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GCM1555C1H6R8BA16J/11618426"
+			(at 87.63 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 87.63 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GCM1555C1H6R8BA16J"
+			(at 87.63 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "C0G/NP0"
 			(at 87.63 127 0)
 			(effects
 				(font
@@ -9323,7 +11068,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994xD"
+		(property "Value" "OPA2994IDGKR"
 			(at 119.38 71.12 0)
 			(effects
 				(font
@@ -9331,7 +11076,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 118.11 74.93 0)
 			(effects
 				(font
@@ -9350,6 +11095,33 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+			(at 119.38 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 119.38 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 119.38 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "OPA2994IDGKR"
 			(at 119.38 77.47 0)
 			(effects
 				(font
@@ -9607,7 +11379,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100nF"
 			(at 17.272 158.496 0)
 			(effects
 				(font
@@ -9616,7 +11388,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 22.5552 160.02 0)
 			(effects
 				(font
@@ -9625,7 +11397,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
 			(at 21.59 156.21 0)
 			(effects
 				(font
@@ -9634,7 +11406,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 21.59 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 21.59 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 21.59 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 21.59 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 21.59 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
 			(at 21.59 156.21 0)
 			(effects
 				(font
@@ -9719,6 +11536,71 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "#PWR047")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 31.75 72.39 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a6b2b57d-8745-40d7-bc5f-56bf689aa38c")
+		(property "Reference" "#PWR0116"
+			(at 31.75 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 31.75 68.834 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 31.75 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 31.75 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 31.75 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "047f72ee-7ba3-422a-bb7a-7563846bf727")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR0116")
 					(unit 1)
 				)
 			)
@@ -9937,16 +11819,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 154.94 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
+		(property "Height" ""
 			(at 154.94 35.56 0)
 			(effects
 				(font
@@ -9988,7 +11861,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994xD"
+		(property "Value" "OPA2994IDGKR"
 			(at 119.38 154.94 0)
 			(effects
 				(font
@@ -9996,7 +11869,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 118.11 158.75 0)
 			(effects
 				(font
@@ -10015,6 +11888,33 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+			(at 119.38 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 119.38 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 119.38 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "OPA2994IDGKR"
 			(at 119.38 161.29 0)
 			(effects
 				(font
@@ -10081,7 +11981,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:MSOP-10_3x3mm_P0.5mm"
 			(at 68.58 125.73 0)
 			(effects
 				(font
@@ -10118,6 +12018,15 @@
 			)
 		)
 		(property "Manufacturer" "Analog Devices Inc."
+			(at 72.39 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 72.39 119.38 0)
 			(effects
 				(font
@@ -10183,7 +12092,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100nF"
 			(at 17.272 84.836 0)
 			(effects
 				(font
@@ -10192,7 +12101,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 22.5552 86.36 0)
 			(effects
 				(font
@@ -10201,7 +12110,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
 			(at 21.59 82.55 0)
 			(effects
 				(font
@@ -10210,7 +12119,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 21.59 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 21.59 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 21.59 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 21.59 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 21.59 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
 			(at 21.59 82.55 0)
 			(effects
 				(font
@@ -10229,6 +12183,138 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "harp.device.quad.dac:C_0603")
+		(at 31.75 119.38 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "af37159c-bd35-416f-95d3-496ab4e5f311")
+		(property "Reference" "C67"
+			(at 31.75 117.348 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "100nF"
+			(at 37.846 121.666 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 30.7848 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
+			(at 31.75 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 31.75 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 31.75 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 31.75 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 31.75 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rated Voltage" "50V"
+			(at 31.75 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 31.75 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "10%"
+			(at 31.75 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 31.75 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fab7a7d7-d958-40ef-a753-fbf8117e2e72")
+		)
+		(pin "2"
+			(uuid "e5e04a67-4e18-4c68-983f-bcf3c813114c")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "C67")
 					(unit 1)
 				)
 			)
@@ -10486,6 +12572,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 248.92 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "dc64fda4-3fba-4068-ac29-d65ad2066d7b")
 		)
@@ -10574,6 +12669,138 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "#PWR033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "harp.device.quad.dac:C_0603")
+		(at 31.75 35.56 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d336182d-6dac-484b-a706-fd4343c3aeb4")
+		(property "Reference" "C49"
+			(at 31.75 33.528 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "100nF"
+			(at 37.846 37.846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 30.7848 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
+			(at 31.75 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 31.75 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 31.75 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 31.75 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 31.75 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rated Voltage" "50V"
+			(at 31.75 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 31.75 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "10%"
+			(at 31.75 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 31.75 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8504d47e-fea1-4699-9c74-e7ae99e4e2e0")
+		)
+		(pin "2"
+			(uuid "644bfb8d-b4dd-4611-af52-236aaed92d0d")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "C49")
 					(unit 1)
 				)
 			)
@@ -10720,6 +12947,15 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/PESD12VL1BSLAZ/16021611"
+			(at 143.51 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 143.51 40.64 90)
 			(effects
 				(font
@@ -10956,15 +13192,15 @@
 				)
 			)
 		)
-		(property "Value" "10pF"
-			(at 90.17 171.196 0)
+		(property "Value" "6.8pF"
+			(at 90.424 171.196 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 86.6648 165.1 0)
 			(effects
 				(font
@@ -10973,7 +13209,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GCM1555C1HR50BA16-01A.pdf"
 			(at 87.63 168.91 0)
 			(effects
 				(font
@@ -10982,7 +13218,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Stabilization Capacitor (See LTC264x datasheet)"
+			(at 87.63 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 87.63 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GCM1555C1H6R8BA16J/11618426"
+			(at 87.63 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 87.63 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GCM1555C1H6R8BA16J"
+			(at 87.63 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "C0G/NP0"
 			(at 87.63 168.91 0)
 			(effects
 				(font
@@ -11114,15 +13395,6 @@
 				(hide yes)
 			)
 		)
-		(property "PCBWay Link" ""
-			(at 257.81 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Tolerance" "10%"
 			(at 257.81 152.4 0)
 			(effects
@@ -11132,16 +13404,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "C1608X7R1H105K080AB"
-			(at 257.81 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "TDK"
+		(property "Height" ""
 			(at 257.81 152.4 0)
 			(effects
 				(font
@@ -11166,6 +13429,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 31.75 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dd70066b-f494-4f54-8bd1-9776ce835880")
+		(property "Reference" "#PWR0117"
+			(at 31.75 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 33.782 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 31.75 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 31.75 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 31.75 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f62c036b-0317-409d-b600-74181ef7e7ab")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR0117")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 21.59 30.48 0)
 		(unit 1)
@@ -11183,7 +13512,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100nF"
 			(at 17.272 32.766 0)
 			(effects
 				(font
@@ -11192,7 +13521,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 22.5552 34.29 0)
 			(effects
 				(font
@@ -11201,7 +13530,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
 			(at 21.59 30.48 0)
 			(effects
 				(font
@@ -11210,7 +13539,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 21.59 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 21.59 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 21.59 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 21.59 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 21.59 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
 			(at 21.59 30.48 0)
 			(effects
 				(font
@@ -11229,6 +13603,82 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "C93")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 54.61 68.58 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e030638c-0441-4a41-9480-00e75d3b4f29")
+		(property "Reference" "R66"
+			(at 56.896 65.024 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 54.61 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 56.388 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 54.61 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 54.61 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 54.61 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3583e1ee-2823-4d3d-ac6e-64dc136b31f7")
+		)
+		(pin "2"
+			(uuid "810584d0-933f-4a2f-8997-53600d379944")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "R66")
 					(unit 1)
 				)
 			)
@@ -11366,6 +13816,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 31.75 156.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e5f50346-f132-494c-b06a-01e14566ddef")
+		(property "Reference" "#PWR0123"
+			(at 31.75 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 31.75 152.654 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 31.75 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 31.75 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 31.75 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "910f05b1-b0d7-49b5-99fa-7304bb27600b")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR0123")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 72.39 132.08 0)
 		(unit 1)
@@ -11448,7 +13963,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994xD"
+		(property "Value" "OPA2994IDGKR"
 			(at 99.06 29.21 0)
 			(effects
 				(font
@@ -11456,7 +13971,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 97.79 33.02 0)
 			(effects
 				(font
@@ -11475,6 +13990,33 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+			(at 99.06 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 99.06 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 99.06 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "OPA2994IDGKR"
 			(at 99.06 35.56 0)
 			(effects
 				(font
@@ -11534,7 +14076,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100nF"
 			(at 17.272 168.656 0)
 			(effects
 				(font
@@ -11543,7 +14085,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 22.5552 170.18 0)
 			(effects
 				(font
@@ -11552,7 +14094,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
 			(at 21.59 166.37 0)
 			(effects
 				(font
@@ -11561,7 +14103,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 21.59 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 21.59 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 21.59 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 21.59 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 21.59 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
 			(at 21.59 166.37 0)
 			(effects
 				(font
@@ -11603,7 +14190,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994xD"
+		(property "Value" "OPA2994IDGKR"
 			(at 119.38 29.21 0)
 			(effects
 				(font
@@ -11611,7 +14198,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
 			(at 118.11 33.02 0)
 			(effects
 				(font
@@ -11630,6 +14217,33 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+			(at 119.38 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 119.38 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 119.38 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "OPA2994IDGKR"
 			(at 119.38 35.56 0)
 			(effects
 				(font
@@ -11762,7 +14376,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 135.89 79.248 90)
 			(effects
 				(font
@@ -11771,7 +14385,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDN0000/AOA0000C313.pdf"
 			(at 135.89 77.47 0)
 			(effects
 				(font
@@ -11782,6 +14396,42 @@
 		)
 		(property "Description" "Resistor"
 			(at 135.89 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 135.89 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2BWFR050X/5647400"
+			(at 135.89 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Panasonic Electronic Components"
+			(at 135.89 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "ERJ-2BWFR050X"
+			(at 135.89 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11829,7 +14479,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:MSOP-10_3x3mm_P0.5mm"
 			(at 68.58 83.82 0)
 			(effects
 				(font
@@ -11874,6 +14524,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 72.39 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "bc304db3-2ca8-4180-8c94-e0031cae96f8")
 		)
@@ -11908,6 +14567,138 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "U6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "harp.device.quad.dac:C_0603")
+		(at 31.75 77.47 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fc718ecb-2e7c-41dd-bde5-8a0733e4a742")
+		(property "Reference" "C66"
+			(at 31.75 75.438 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "100nF"
+			(at 37.846 79.756 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 30.7848 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
+			(at 31.75 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 31.75 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 31.75 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 31.75 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 31.75 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rated Voltage" "50V"
+			(at 31.75 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 31.75 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "10%"
+			(at 31.75 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 31.75 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0e304da4-f328-4bdb-9a70-50b94df8f509")
+		)
+		(pin "2"
+			(uuid "36715165-396f-44be-8976-7dd2e3de36f6")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "C66")
 					(unit 1)
 				)
 			)
@@ -11996,6 +14787,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 143.51 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c6d54d13-3cd3-4908-8283-2647d11db898")
 		)
@@ -12006,6 +14806,72 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 31.75 166.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fe5abc15-f9f2-486f-849c-4e352fe7f03d")
+		(property "Reference" "#PWR0125"
+			(at 31.75 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 33.782 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 31.75 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 31.75 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 31.75 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c96ea6ec-5ef4-45fd-8f0b-43dd835b6382")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
+					(reference "#PWR0125")
 					(unit 1)
 				)
 			)
@@ -12036,7 +14902,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:MSOP-10_3x3mm_P0.5mm"
 			(at 68.58 41.91 0)
 			(effects
 				(font
@@ -12073,6 +14939,15 @@
 			)
 		)
 		(property "Manufacturer" "Analog Devices Inc."
+			(at 72.39 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 72.39 35.56 0)
 			(effects
 				(font

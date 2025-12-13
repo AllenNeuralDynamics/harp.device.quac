@@ -2378,16 +2378,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 171.45 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
+		(property "Height" ""
 			(at 171.45 114.3 0)
 			(effects
 				(font
@@ -2508,6 +2499,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 142.24 120.65 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ed4c2c3c-bf28-4cec-8c24-23be8128b55d")
 		)
@@ -2569,6 +2569,42 @@
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
 			(at 168.402 88.392 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 162.56 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/vishay-general-semiconductor-diodes-division/VBUS05N1-HD1-G3-08/16028335"
+			(at 162.56 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Vishay General Semiconductor - Diodes Division"
+			(at 162.56 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
+			(at 162.56 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2709,6 +2745,42 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 162.56 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/vishay-general-semiconductor-diodes-division/VBUS05N1-HD1-G3-08/16028335"
+			(at 162.56 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Vishay General Semiconductor - Diodes Division"
+			(at 162.56 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
+			(at 162.56 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ebea47c3-b780-4ac8-bebd-36a071955d16")
 		)
@@ -2821,6 +2893,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 142.24 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "dfc10be9-2f8b-4533-99d1-4eb956edaa34")
 		)
@@ -2882,6 +2963,42 @@
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
 			(at 169.672 71.882 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 163.83 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/vishay-general-semiconductor-diodes-division/VBUS05N1-HD1-G3-08/16028335"
+			(at 163.83 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Vishay General Semiconductor - Diodes Division"
+			(at 163.83 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
+			(at 163.83 72.39 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3182,16 +3299,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 172.72 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
+		(property "Height" ""
 			(at 172.72 67.31 0)
 			(effects
 				(font
@@ -3298,16 +3406,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 171.45 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
+		(property "Height" ""
 			(at 171.45 130.81 0)
 			(effects
 				(font
@@ -3553,7 +3652,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 133.35 63.1952 0)
 			(effects
 				(font
@@ -3562,7 +3661,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
 			(at 137.16 62.23 0)
 			(effects
 				(font
@@ -3571,7 +3670,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
 			(at 137.16 62.23 0)
 			(effects
 				(font
@@ -3580,7 +3679,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
 			(at 137.16 62.23 0)
 			(effects
 				(font
@@ -3589,7 +3688,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "KEMET"
+		(property "Manufacturer" "Murata Electronics"
 			(at 137.16 62.23 0)
 			(effects
 				(font
@@ -3598,7 +3697,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "C0603C104K5RACTU"
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
 			(at 137.16 62.23 0)
 			(effects
 				(font
@@ -3616,7 +3715,7 @@
 				(hide yes)
 			)
 		)
-		(property "Temperature Coefficient" ""
+		(property "Temperature Coefficient" "X7R"
 			(at 137.16 62.23 0)
 			(effects
 				(font
@@ -3634,26 +3733,8 @@
 				(hide yes)
 			)
 		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 137.16 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 137.16 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "KEMET"
-			(at 137.16 62.23 0)
+		(property "Height" ""
+			(at 137.16 62.23 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3824,16 +3905,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 171.45 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
+		(property "Height" ""
 			(at 171.45 83.82 0)
 			(effects
 				(font
@@ -3938,6 +4010,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 127 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8f2ad7a7-cc63-41d4-ac92-063832c5c844")
 		)
@@ -3998,7 +4079,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 114.3 63.1952 0)
 			(effects
 				(font
@@ -4007,7 +4088,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
 			(at 118.11 62.23 0)
 			(effects
 				(font
@@ -4016,7 +4097,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
 			(at 118.11 62.23 0)
 			(effects
 				(font
@@ -4025,7 +4106,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
 			(at 118.11 62.23 0)
 			(effects
 				(font
@@ -4034,7 +4115,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "KEMET"
+		(property "Manufacturer" "Murata Electronics"
 			(at 118.11 62.23 0)
 			(effects
 				(font
@@ -4043,7 +4124,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "C0603C104K5RACTU"
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
 			(at 118.11 62.23 0)
 			(effects
 				(font
@@ -4061,7 +4142,7 @@
 				(hide yes)
 			)
 		)
-		(property "Temperature Coefficient" ""
+		(property "Temperature Coefficient" "X7R"
 			(at 118.11 62.23 0)
 			(effects
 				(font
@@ -4079,26 +4160,8 @@
 				(hide yes)
 			)
 		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 118.11 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 118.11 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "KEMET"
-			(at 118.11 62.23 0)
+		(property "Height" ""
+			(at 118.11 62.23 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4167,6 +4230,42 @@
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
 			(at 168.402 135.382 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 162.56 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/vishay-general-semiconductor-diodes-division/VBUS05N1-HD1-G3-08/16028335"
+			(at 162.56 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Vishay General Semiconductor - Diodes Division"
+			(at 162.56 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
+			(at 162.56 135.89 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4262,6 +4361,15 @@
 			)
 		)
 		(property "Manufacturer Number" "SN74LVC2T45DCTR"
+			(at 127 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
 			(at 127 76.2 0)
 			(effects
 				(font
@@ -4720,7 +4828,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 114.3 110.1852 0)
 			(effects
 				(font
@@ -4729,7 +4837,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
 			(at 118.11 109.22 0)
 			(effects
 				(font
@@ -4738,7 +4846,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
 			(at 118.11 109.22 0)
 			(effects
 				(font
@@ -4747,7 +4855,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
 			(at 118.11 109.22 0)
 			(effects
 				(font
@@ -4756,7 +4864,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "KEMET"
+		(property "Manufacturer" "Murata Electronics"
 			(at 118.11 109.22 0)
 			(effects
 				(font
@@ -4765,7 +4873,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "C0603C104K5RACTU"
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
 			(at 118.11 109.22 0)
 			(effects
 				(font
@@ -4783,7 +4891,7 @@
 				(hide yes)
 			)
 		)
-		(property "Temperature Coefficient" ""
+		(property "Temperature Coefficient" "X7R"
 			(at 118.11 109.22 0)
 			(effects
 				(font
@@ -4801,26 +4909,8 @@
 				(hide yes)
 			)
 		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 118.11 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 118.11 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "KEMET"
-			(at 118.11 109.22 0)
+		(property "Height" ""
+			(at 118.11 109.22 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4940,6 +5030,15 @@
 				(hide yes)
 			)
 		)
+		(property "Height" ""
+			(at 142.24 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7c852b9f-f191-4015-b4db-82363c7f270b")
 		)
@@ -5045,6 +5144,15 @@
 		)
 		(property "Tolerance" "1%"
 			(at 142.24 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 142.24 73.66 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5159,7 +5267,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 133.35 110.1852 0)
 			(effects
 				(font
@@ -5168,7 +5276,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
 			(at 137.16 109.22 0)
 			(effects
 				(font
@@ -5177,7 +5285,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Capacitor, Ceramic, Multilayer, 50 V, X7R, 0.1 Uf, Surface Mount, 0603"
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
 			(at 137.16 109.22 0)
 			(effects
 				(font
@@ -5186,7 +5294,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/kemet/C0603C104K5RACTU/1465594"
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
 			(at 137.16 109.22 0)
 			(effects
 				(font
@@ -5195,7 +5303,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "KEMET"
+		(property "Manufacturer" "Murata Electronics"
 			(at 137.16 109.22 0)
 			(effects
 				(font
@@ -5204,7 +5312,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "C0603C104K5RACTU"
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
 			(at 137.16 109.22 0)
 			(effects
 				(font
@@ -5222,7 +5330,7 @@
 				(hide yes)
 			)
 		)
-		(property "Temperature Coefficient" ""
+		(property "Temperature Coefficient" "X7R"
 			(at 137.16 109.22 0)
 			(effects
 				(font
@@ -5240,26 +5348,8 @@
 				(hide yes)
 			)
 		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/0402B104K160CT/307171/"
-			(at 137.16 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "C0603C104K5RACTU"
-			(at 137.16 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "KEMET"
-			(at 137.16 109.22 0)
+		(property "Height" ""
+			(at 137.16 109.22 90)
 			(effects
 				(font
 					(size 1.27 1.27)

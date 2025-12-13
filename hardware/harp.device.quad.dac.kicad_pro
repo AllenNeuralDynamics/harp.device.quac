@@ -1513,7 +1513,7 @@
           "show": true
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Manufacturer Number",
           "name": "Manufacturer Number",
           "show": true
@@ -1525,22 +1525,10 @@
           "show": true
         },
         {
-          "group_by": true,
-          "label": "MPN",
-          "name": "Manufacturer_Part_Number",
-          "show": true
-        },
-        {
-          "group_by": false,
-          "label": "MFN",
-          "name": "Manufacturer_Name",
-          "show": true
-        },
-        {
           "group_by": false,
           "label": "Footprint",
           "name": "Footprint",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -1576,25 +1564,7 @@
           "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Arrow Part Number",
-          "name": "Arrow Part Number",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Arrow Price/Stock",
-          "name": "Arrow Price/Stock",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Description_1",
-          "name": "Description_1",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -1610,62 +1580,26 @@
         },
         {
           "group_by": false,
-          "label": "Mouser Part Number",
-          "name": "Mouser Part Number",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Mouser Price/Stock",
-          "name": "Mouser Price/Stock",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "Notes",
           "name": "Notes",
           "show": false
         },
         {
           "group_by": false,
-          "label": "PCBWay Link",
-          "name": "PCBWay Link",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Supplier Link",
-          "name": "Supplier Link",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "Temperature Coefficient",
           "name": "Temperature Coefficient",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
           "label": "Alternate",
           "name": "Alternate",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "MFG",
-          "name": "MFG",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
           "label": "DC Resistance",
           "name": "DC Resistance",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "LCSC",
-          "name": "LCSC",
           "show": false
         }
       ],
@@ -1674,7 +1608,7 @@
       "include_excluded_from_bom": false,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Manufacturer"
+      "sort_field": "Value"
     },
     "connection_grid_size": 50.0,
     "drawing": {
