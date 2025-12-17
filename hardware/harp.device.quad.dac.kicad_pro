@@ -38,8 +38,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 0.0,
-          "height": 2.05,
-          "width": 2.05
+          "height": 0.78,
+          "width": 0.22
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -135,7 +135,7 @@
         "min_silk_clearance": 0.0,
         "min_text_height": 0.7,
         "min_text_thickness": 0.08,
-        "min_through_hole_diameter": 0.25,
+        "min_through_hole_diameter": 0.254,
         "min_track_width": 0.127,
         "min_via_annular_width": 0.1016,
         "min_via_diameter": 0.4572,
@@ -532,14 +532,6 @@
       {
         "netclass": "Power",
         "pattern": "+5V"
-      },
-      {
-        "netclass": "Power",
-        "pattern": "GND2"
-      },
-      {
-        "netclass": "Power",
-        "pattern": "IN1"
       }
     ]
   },
@@ -1600,6 +1592,24 @@
           "group_by": false,
           "label": "DC Resistance",
           "name": "DC Resistance",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "PCBWay Link",
+          "name": "PCBWay Link",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer Num",
+          "name": "Manufacturer Num",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Vendor Num",
+          "name": "Vendor Num",
           "show": false
         }
       ],

@@ -2033,7 +2033,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0430f978-9f05-4e72-a15d-713a89b79a75")
-		(property "Reference" "U23"
+		(property "Reference" "U22"
 			(at 153.416 84.074 0)
 			(effects
 				(font
@@ -2051,7 +2051,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "harp.device.quad.dac.kicad:VSSOP-8_2.3x2mm_P0.5mm"
+		(property "Footprint" "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
 			(at 152.4 93.98 0)
 			(effects
 				(font
@@ -2141,7 +2141,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "U23")
+					(reference "U22")
 					(unit 1)
 				)
 			)
@@ -2162,7 +2162,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "19ae5ab3-2da7-4b13-8fbc-0be923d03dce")
-		(property "Reference" "#PWR0179"
+		(property "Reference" "#PWR0142"
 			(at 125.73 96.52 0)
 			(effects
 				(font
@@ -2213,7 +2213,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0179")
+					(reference "#PWR0142")
 					(unit 1)
 				)
 			)
@@ -2234,7 +2234,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "233e1796-9976-46e9-90a1-bb9c05953663")
-		(property "Reference" "#PWR0187"
+		(property "Reference" "#PWR0146"
 			(at 138.43 124.46 0)
 			(effects
 				(font
@@ -2284,7 +2284,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0187")
+					(reference "#PWR0146")
 					(unit 1)
 				)
 			)
@@ -2305,7 +2305,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "37b713fd-7978-458b-8ed6-48130d8b9fad")
-		(property "Reference" "#PWR0199"
+		(property "Reference" "#PWR0154"
 			(at 154.94 118.11 0)
 			(effects
 				(font
@@ -2355,7 +2355,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0199")
+					(reference "#PWR0154")
 					(unit 1)
 				)
 			)
@@ -2376,7 +2376,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "39fc1350-1c67-45cb-911c-bb15c01866ba")
-		(property "Reference" "#PWR0206"
+		(property "Reference" "#PWR0158"
 			(at 181.61 106.68 0)
 			(effects
 				(font
@@ -2426,7 +2426,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0206")
+					(reference "#PWR0158")
 					(unit 1)
 				)
 			)
@@ -2448,7 +2448,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "46f238c9-2465-4645-b7b9-eaf3308302ec")
-		(property "Reference" "J5"
+		(property "Reference" "J13"
 			(at 116.078 137.414 0)
 			(effects
 				(font
@@ -2467,7 +2467,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
+		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
 			(at 118.11 138.43 0)
 			(effects
 				(font
@@ -2476,7 +2476,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
 			(at 118.11 138.43 0)
 			(effects
 				(font
@@ -2485,7 +2485,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "SMA Connector Receptacle, Female Socket 50 Ohms Surface Mount, Right Angle Solder"
+		(property "Description" ""
 			(at 118.11 138.43 0)
 			(effects
 				(font
@@ -2494,7 +2494,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
+		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
 			(at 118.11 138.43 0)
 			(effects
 				(font
@@ -2512,7 +2512,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
+		(property "Manufacturer Number" "CONBNC001"
 			(at 118.11 138.43 0)
 			(effects
 				(font
@@ -2539,7 +2539,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "J5")
+					(reference "J13")
 					(unit 1)
 				)
 			)
@@ -2560,7 +2560,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "47251aab-071e-4bd7-80d2-2cea8aaf195e")
-		(property "Reference" "#PWR0189"
+		(property "Reference" "#PWR0148"
 			(at 144.78 138.43 0)
 			(effects
 				(font
@@ -2610,7 +2610,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0189")
+					(reference "#PWR0148")
 					(unit 1)
 				)
 			)
@@ -2632,7 +2632,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5157dbe2-12a4-4e4a-b40a-8899f7172251")
-		(property "Reference" "J7"
+		(property "Reference" "J11"
 			(at 116.078 78.994 0)
 			(effects
 				(font
@@ -2651,7 +2651,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
+		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
 			(at 118.11 80.01 0)
 			(effects
 				(font
@@ -2660,7 +2660,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
 			(at 118.11 80.01 0)
 			(effects
 				(font
@@ -2669,7 +2669,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "SMA Connector Receptacle, Female Socket 50 Ohms Surface Mount, Right Angle Solder"
+		(property "Description" ""
 			(at 118.11 80.01 0)
 			(effects
 				(font
@@ -2678,7 +2678,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
+		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
 			(at 118.11 80.01 0)
 			(effects
 				(font
@@ -2696,7 +2696,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
+		(property "Manufacturer Number" "CONBNC001"
 			(at 118.11 80.01 0)
 			(effects
 				(font
@@ -2723,7 +2723,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "J7")
+					(reference "J11")
 					(unit 1)
 				)
 			)
@@ -2745,7 +2745,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "51996bb2-dd3f-441b-9e06-3caf629be3b6")
-		(property "Reference" "J6"
+		(property "Reference" "J12"
 			(at 116.078 115.824 0)
 			(effects
 				(font
@@ -2764,7 +2764,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
+		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
 			(at 118.11 116.84 0)
 			(effects
 				(font
@@ -2773,7 +2773,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
 			(at 118.11 116.84 0)
 			(effects
 				(font
@@ -2782,7 +2782,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "SMA Connector Receptacle, Female Socket 50 Ohms Surface Mount, Right Angle Solder"
+		(property "Description" ""
 			(at 118.11 116.84 0)
 			(effects
 				(font
@@ -2791,7 +2791,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
+		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
 			(at 118.11 116.84 0)
 			(effects
 				(font
@@ -2809,7 +2809,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
+		(property "Manufacturer Number" "CONBNC001"
 			(at 118.11 116.84 0)
 			(effects
 				(font
@@ -2836,7 +2836,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "J6")
+					(reference "J12")
 					(unit 1)
 				)
 			)
@@ -2857,7 +2857,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "59fed7ab-765e-4911-ada7-f2fd71707e21")
-		(property "Reference" "#PWR0178"
+		(property "Reference" "#PWR0139"
 			(at 118.11 129.54 0)
 			(effects
 				(font
@@ -2908,7 +2908,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0178")
+					(reference "#PWR0139")
 					(unit 1)
 				)
 			)
@@ -2929,7 +2929,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "60baac34-0650-46f1-9ba4-c8bd0c660e3c")
-		(property "Reference" "C100"
+		(property "Reference" "C59"
 			(at 143.764 57.15 90)
 			(effects
 				(font
@@ -3046,7 +3046,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "C100")
+					(reference "C59")
 					(unit 1)
 				)
 			)
@@ -3067,7 +3067,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7ce5c072-00d5-44c9-bbe1-04b44e343de7")
-		(property "Reference" "C106"
+		(property "Reference" "C63"
 			(at 182.88 92.71 0)
 			(effects
 				(font
@@ -3193,7 +3193,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "C106")
+					(reference "C63")
 					(unit 1)
 				)
 			)
@@ -3214,7 +3214,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7d02854a-75cd-4821-883a-6fa9a992a3eb")
-		(property "Reference" "C103"
+		(property "Reference" "C61"
 			(at 161.036 57.15 90)
 			(effects
 				(font
@@ -3331,7 +3331,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "C103")
+					(reference "C61")
 					(unit 1)
 				)
 			)
@@ -3352,7 +3352,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "890a978e-a8e5-4ea0-85c6-3b07b349c667")
-		(property "Reference" "#PWR0196"
+		(property "Reference" "#PWR0152"
 			(at 152.4 151.13 0)
 			(effects
 				(font
@@ -3402,7 +3402,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0196")
+					(reference "#PWR0152")
 					(unit 1)
 				)
 			)
@@ -3423,7 +3423,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8d78070a-f770-4a40-8f59-18e774a635c1")
-		(property "Reference" "U24"
+		(property "Reference" "U23"
 			(at 153.924 142.494 0)
 			(effects
 				(font
@@ -3441,7 +3441,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "harp.device.quad.dac.kicad:VSSOP-8_2.3x2mm_P0.5mm"
+		(property "Footprint" "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
 			(at 152.4 152.4 0)
 			(effects
 				(font
@@ -3531,7 +3531,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "U24")
+					(reference "U23")
 					(unit 1)
 				)
 			)
@@ -3552,7 +3552,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8e2855ab-af02-4f83-9ccb-01d5bc84d7f2")
-		(property "Reference" "#PWR0195"
+		(property "Reference" "#PWR0151"
 			(at 152.4 92.71 0)
 			(effects
 				(font
@@ -3602,7 +3602,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0195")
+					(reference "#PWR0151")
 					(unit 1)
 				)
 			)
@@ -3623,7 +3623,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "90aa52f2-c163-4822-b674-307b839e2f71")
-		(property "Reference" "#PWR0198"
+		(property "Reference" "#PWR0153"
 			(at 154.94 59.69 0)
 			(effects
 				(font
@@ -3673,7 +3673,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0198")
+					(reference "#PWR0153")
 					(unit 1)
 				)
 			)
@@ -3798,7 +3798,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9473461b-c83b-4f03-9ff6-802a0ddb3a9a")
-		(property "Reference" "#PWR0176"
+		(property "Reference" "#PWR0137"
 			(at 118.11 72.39 0)
 			(effects
 				(font
@@ -3849,7 +3849,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0176")
+					(reference "#PWR0137")
 					(unit 1)
 				)
 			)
@@ -3870,7 +3870,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9bc03413-647d-457a-b330-0b5233afd05e")
-		(property "Reference" "C104"
+		(property "Reference" "C62"
 			(at 161.036 115.57 90)
 			(effects
 				(font
@@ -3987,7 +3987,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "C104")
+					(reference "C62")
 					(unit 1)
 				)
 			)
@@ -4008,7 +4008,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9bca3c21-f09c-414a-b6e9-1d77ade8eb14")
-		(property "Reference" "#PWR0186"
+		(property "Reference" "#PWR0145"
 			(at 138.43 66.04 0)
 			(effects
 				(font
@@ -4058,7 +4058,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0186")
+					(reference "#PWR0145")
 					(unit 1)
 				)
 			)
@@ -4079,7 +4079,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9d0bfd97-bec5-41c1-a008-69efe03ac784")
-		(property "Reference" "#PWR0182"
+		(property "Reference" "#PWR0143"
 			(at 125.73 133.35 0)
 			(effects
 				(font
@@ -4130,7 +4130,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0182")
+					(reference "#PWR0143")
 					(unit 1)
 				)
 			)
@@ -4151,7 +4151,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9f83c682-b585-4f9b-a196-34615e5ad2e0")
-		(property "Reference" "#PWR0181"
+		(property "Reference" "#PWR0144"
 			(at 125.73 154.94 0)
 			(effects
 				(font
@@ -4202,7 +4202,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0181")
+					(reference "#PWR0144")
 					(unit 1)
 				)
 			)
@@ -4327,7 +4327,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a7aa2742-9098-48ae-8782-9eb51af83f83")
-		(property "Reference" "#PWR0188"
+		(property "Reference" "#PWR0147"
 			(at 144.78 80.01 0)
 			(effects
 				(font
@@ -4377,7 +4377,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0188")
+					(reference "#PWR0147")
 					(unit 1)
 				)
 			)
@@ -4398,7 +4398,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ca536d9a-5791-48bf-a774-62058becbaf6")
-		(property "Reference" "#PWR0203"
+		(property "Reference" "#PWR0156"
 			(at 166.37 124.46 0)
 			(effects
 				(font
@@ -4448,7 +4448,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0203")
+					(reference "#PWR0156")
 					(unit 1)
 				)
 			)
@@ -4469,7 +4469,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cbc1c6d0-a4e6-4f04-a051-c11d2dba178c")
-		(property "Reference" "#PWR0177"
+		(property "Reference" "#PWR0140"
 			(at 118.11 151.13 0)
 			(effects
 				(font
@@ -4520,7 +4520,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0177")
+					(reference "#PWR0140")
 					(unit 1)
 				)
 			)
@@ -4541,7 +4541,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cc5440ef-1a41-4dce-be3f-ab153ab7135b")
-		(property "Reference" "#PWR0202"
+		(property "Reference" "#PWR0155"
 			(at 166.37 66.04 0)
 			(effects
 				(font
@@ -4591,7 +4591,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0202")
+					(reference "#PWR0155")
 					(unit 1)
 				)
 			)
@@ -4612,7 +4612,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cdccaccc-cffb-4279-91a5-de431106e64b")
-		(property "Reference" "C101"
+		(property "Reference" "C60"
 			(at 143.764 115.57 90)
 			(effects
 				(font
@@ -4729,7 +4729,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "C101")
+					(reference "C60")
 					(unit 1)
 				)
 			)
@@ -4751,7 +4751,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cdd081e7-f9a2-4059-b524-66f7df26bcbd")
-		(property "Reference" "J8"
+		(property "Reference" "J10"
 			(at 116.078 58.674 0)
 			(effects
 				(font
@@ -4770,7 +4770,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "harp.device.quad.dac.kicad:SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal"
+		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
 			(at 118.11 59.69 0)
 			(effects
 				(font
@@ -4779,7 +4779,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
 			(at 118.11 59.69 0)
 			(effects
 				(font
@@ -4788,7 +4788,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "SMA Connector Receptacle, Female Socket 50 Ohms Surface Mount, Right Angle Solder"
+		(property "Description" ""
 			(at 118.11 59.69 0)
 			(effects
 				(font
@@ -4797,7 +4797,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONSMA002-SMD-G-T/10524518"
+		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
 			(at 118.11 59.69 0)
 			(effects
 				(font
@@ -4815,7 +4815,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "CONSMA002-SMD-G-T"
+		(property "Manufacturer Number" "CONBNC001"
 			(at 118.11 59.69 0)
 			(effects
 				(font
@@ -4842,7 +4842,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "J8")
+					(reference "J10")
 					(unit 1)
 				)
 			)
@@ -4863,7 +4863,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d2c7c7b2-73a2-4760-a4c4-53f465967a6e")
-		(property "Reference" "#PWR0205"
+		(property "Reference" "#PWR0157"
 			(at 181.61 93.98 0)
 			(effects
 				(font
@@ -4913,7 +4913,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0205")
+					(reference "#PWR0157")
 					(unit 1)
 				)
 			)
@@ -4934,7 +4934,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e135193c-f31c-49f7-a9f3-ed4b355df8dc")
-		(property "Reference" "D10"
+		(property "Reference" "D11"
 			(at 127.762 62.484 90)
 			(effects
 				(font
@@ -5023,7 +5023,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "D10")
+					(reference "D11")
 					(unit 1)
 				)
 			)
@@ -5038,7 +5038,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ec724f98-b597-4db9-b770-73925b50176e")
-		(property "Reference" "#PWR0193"
+		(property "Reference" "#PWR0149"
 			(at 149.86 59.69 0)
 			(effects
 				(font
@@ -5088,7 +5088,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0193")
+					(reference "#PWR0149")
 					(unit 1)
 				)
 			)
@@ -5109,7 +5109,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ef18512c-0b98-470b-8396-d2379626ff15")
-		(property "Reference" "#PWR0194"
+		(property "Reference" "#PWR0150"
 			(at 149.86 118.11 0)
 			(effects
 				(font
@@ -5159,7 +5159,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0194")
+					(reference "#PWR0150")
 					(unit 1)
 				)
 			)
@@ -5180,7 +5180,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f3fbd28b-32c6-4009-bf81-3c9143a57ccb")
-		(property "Reference" "#PWR0175"
+		(property "Reference" "#PWR0138"
 			(at 118.11 92.71 0)
 			(effects
 				(font
@@ -5231,7 +5231,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0175")
+					(reference "#PWR0138")
 					(unit 1)
 				)
 			)
@@ -5252,7 +5252,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f948bdbc-3ce2-410e-8a56-12cc9912b160")
-		(property "Reference" "#PWR0180"
+		(property "Reference" "#PWR0141"
 			(at 125.73 76.2 0)
 			(effects
 				(font
@@ -5303,7 +5303,7 @@
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
-					(reference "#PWR0180")
+					(reference "#PWR0141")
 					(unit 1)
 				)
 			)

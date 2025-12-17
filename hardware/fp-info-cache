@@ -1,4 +1,4 @@
-26922167381957227
+26926962943548577
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -106364,560 +106364,560 @@ Varistor VF
 0
 2
 2
-kicad_component_library
+kicad-lib
+3M_Mini-Clamp-Socket-37203-62B3-003PL-1x3_Vertical
+
+
+0
+5
+3
+kicad-lib
+3M_Mini-Clamp-Socket-37212-62M3-003PL-3x4_Vertical
+
+
+0
+12
+12
+kicad-lib
 3M_ribbon_connector_5x2_right_angle_45210-500230
 http://www.mouser.com/ds/2/1/CD2437-269173.pdf
 3M, shrouded header, 1.27mm pitch
 0
 10
 10
-kicad_component_library
+kicad-lib
 219-2LPSTR
 
 
 0
 4
 4
-kicad_component_library
+kicad-lib
 37203-1AE0-003PL
 
 
 0
 4
 3
-kicad_component_library
+kicad-lib
 37204-1AEO-004PL
 
 
 0
 5
 4
-kicad_component_library
+kicad-lib
 37212-62M3-003PL
 
 
 0
 10
 6
-kicad_component_library
+kicad-lib
 45210-220230
 http://www.mouser.com/ds/2/1/CD2437-269173.pdf
 3M, shrouded header, 1.27mm pitch, SMD
 0
 10
 10
-kicad_component_library
+kicad-lib
 45210-600230
 http://www.mouser.com/ds/2/1/CD2437-269173.pdf
 3M, shrouded header, 1.27mm pitch
 0
 10
 10
-kicad_component_library
+kicad-lib
 45210-620230
 http://www.mouser.com/ds/2/1/CD2437-269173.pdf
 3M, shrouded header, 1.27mm pitch
 0
 10
 10
-kicad_component_library
+kicad-lib
 159120-6002-THRU
 
 
 0
 20
 20
-kicad_component_library
+kicad-lib
 929974-01-36
 http://www.sullinscorp.com/drawings/75_1BFC_10483.pdf
 female in header, through hole, 36x1, 0.1-in spacing
 0
 36
 36
-kicad_component_library
+kicad-lib
 1776244-2
 http://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1776244&DocType=Customer+Drawing&DocLang=English
 
 0
 2
 2
-kicad_component_library
+kicad-lib
 0039303058
 
 
 0
 4
 4
-kicad_component_library
+kicad-lib
 0878311241
 http://www.molex.com/pdm_docs/sd/878311241_sd.pdf
 shrouded keyed header 2mm pitch
 0
 12
 12
-kicad_component_library
+kicad-lib
 BB_MOUNT_HOLE
 
 
 0
 1
 0
-kicad_component_library
+kicad-lib
 BNC_AmphenolRF_031-5329-52RFX_Vertical
 BNC female PCB mount 4 pin straight chassis connector http://www.te.com/usa-en/product-1-1478204-0.html
 BNC female PCB mount 4 pin straight chassis connector 
 0
 5
 2
-kicad_component_library
+kicad-lib
 BNC_TEConnectivity_CONBNC001_Vertical
 BNC female PCB mount 4 pin straight chassis connector http://www.te.com/usa-en/product-1-1478204-0.html
 BNC female PCB mount 4 pin straight chassis connector 
 0
 5
 2
-kicad_component_library
+kicad-lib
 BREAKOUT_HOLE_PATTERN
 
 
 0
 4
 0
-kicad_component_library
+kicad-lib
 Banana_Jack_2Pin
 Dual banana socket, footprint - 2 x 1.5 mm drills
 banana socket
 0
 2
 1
-kicad_component_library
+kicad-lib
+BarrelJack_CUI_PJ-102AH_Horizontal
+Thin-pin DC Barrel Jack, https://cdn-shop.adafruit.com/datasheets/21mmdcjackDatasheet.pdf
+Power Jack
+0
+3
+3
+kicad-lib
 CP_Radial_D8.0mm_P3.50mm_Bent_90
 CP, Radial series, Radial, pin pitch=3.50mm, , diameter=8mm, Electrolytic Capacitor
 CP Radial series Radial pin pitch 3.50mm  diameter 8mm Electrolytic Capacitor
 0
 2
 2
-kicad_component_library
+kicad-lib
 DFN-8_3x2mm_P0.5mm
 8-Lead Plastic Dual Flat, No Lead Package (8MA2) - 2x3x0.6 mm Body [UDFN] (see Atmel-8815-SEEPROM-AT24CS01-02-Datasheet.pdf)
 DFN 0.5
 0
 8
 8
-kicad_component_library
+kicad-lib
 DHVQFN-20-1EP_4.5x2.5mm_P0.5mm_EP
 https://assets.nexperia.com/documents/package-information/SOT764-1.pdf)
 QFN NoLead
 0
 21
 21
-kicad_component_library
+kicad-lib
 DI2C_to_Peripheral_Breakout_Pattern_1x1
 
 
 0
 0
 0
-kicad_component_library
+kicad-lib
 DO-219AB
 
 diode
 0
 2
 2
-kicad_component_library
+kicad-lib
+EE-SX1140
+
+
+0
+4
+4
+kicad-lib
 GBC36SBSN-M89
 http://www.sullinscorp.com/catalogs/77_PAGE108-109_.100_MALE_HDR.pdf
 right-angle, pin header, surface mount, 36x1, 0.1-in spacing
 0
 40
 40
-kicad_component_library
+kicad-lib
 JUMPER-3
 
 jumper 3 three-way
 0
 3
 3
-kicad_component_library
+kicad-lib
 J_0402
 jumper 0402
 jumper 0402
 0
 2
 2
-kicad_component_library
+kicad-lib
 Jack_3.5mm_Kycon_STX-3680-5NB_Vertical
 
 
 0
 5
 3
-kicad_component_library
+kicad-lib
 KMS221GPLFS
 
 
 0
 4
 4
-kicad_component_library
+kicad-lib
 LED_Kingbright_APA2107LZGCK
 
 
 0
 2
 2
-kicad_component_library
-L_0806_2016Metric
-Inductor SMD 0806 (2016 Metric)
-inductor
-0
-2
-2
-kicad_component_library
-L_Bourns-SRP4030FA
-Bourns SRP4030FA series SMD inductor
-Bourns SRP4030FA SMD inductor
-0
-2
-2
-kicad_component_library
+kicad-lib
 L_CommonModeChoke_TDKCorporation_1210
 
 
 0
 4
 4
-kicad_component_library
+kicad-lib
+L_Murata_1226AS-H-1R5N=P2
+
+
+0
+2
+2
+kicad-lib
 L_Wuerth_5.5x5.3mm
 Inductor, Wuerth Elektronik, Wuerth_MAPI-2010, 2.0mmx1.6mm
 inductor Wuerth smd
 0
 2
 2
-kicad_component_library
+kicad-lib
 M3 NPTH with Pad
 
 
 0
 8
 1
-kicad_component_library
+kicad-lib
 MSOP-8
 
 
 0
 8
 8
-kicad_component_library
+kicad-lib
 MicroFet_1.6x_1.6_Thin
 
 
 0
 3
 3
-kicad_component_library
+kicad-lib
 Mill-Max_4280-0-43-80-16-27-10-0
 http://www.mill-max.com/assets/pdfs/197.pdf
 mill-max
 0
 1
 1
-kicad_component_library
+kicad-lib
 Molex_Micro-Fit_3.0_43045-0218_2x01-MP_P3.00mm_Vertical
 
 
 0
 0
 0
-kicad_component_library
+kicad-lib
 Molex_Micro-Fit_3.0_43650-0212_1x02_P3.00mm
 
 
 0
 4
 2
-kicad_component_library
+kicad-lib
 Molex_MiniFit_Jr._CONN_1x05_0039302050
 http://www.molex.com/pdm_docs/sd/039302050_sd.pdf
 Molex, Minifit Jr.
 0
 5
 5
-kicad_component_library
+kicad-lib
 Molex_MiniFit_Jr._RIGHT_ANGLE_CONN_1x05_0039303058
 http://www.molex.com/pdm_docs/sd/039303058_sd.pdf
 Molex, Minifit Jr.
 0
 5
 5
-kicad_component_library
+kicad-lib
 Molex_UltraFit_2x1_Right_Angle
 http://www.molex.com/pdm_docs/sd/1723101102_sd.pdf
 Molex, Ultrafit
 0
 2
 2
-kicad_component_library
+kicad-lib
 Molex_UltraFit_2x2_Right_Angle
 http://www.molex.com/pdm_docs/sd/1723161104_sd.pdf
 Molex, Ultrafit
 0
 4
 4
-kicad_component_library
+kicad-lib
 MountingHole_.116_4-40
 Mounting Hole 3.2mm, no annular, M3
 mounting hole 3.2mm no annular m3
 0
 0
 0
-kicad_component_library
+kicad-lib
 NPPN361BFCN-RC
 http://www.sullinscorp.com/drawings/75_1BFC_10483.pdf
 female in header, through hole, 36x1, 0.1-in spacing
 0
 36
 36
-kicad_component_library
+kicad-lib
 NPPN401BFCN-RC
 http://www.sullinscorp.com/drawings/75_1BFC_10483.pdf
 female in header, through hole, 40x1, 0.1-in spacing
 0
 40
 40
-kicad_component_library
+kicad-lib
 NRPN401PAEN-RC
 http://www.sullinscorp.com/drawings/75_1BFC_10483.pdf
 female in header, through hole, 40x1, 0.1-in spacing
 0
 40
 40
-kicad_component_library
+kicad-lib
 NRPN401PARN-RC
 http://www.sullinscorp.com/catalogs/77_PAGE108-109_.100_MALE_HDR.pdf
 right-angle, pin header, surface mount, 36x1, 0.1-in spacing
 0
 40
 40
-kicad_component_library
+kicad-lib
 OSTVN02A150
 
 
 0
 2
 2
-kicad_component_library
+kicad-lib
 PQFN_3.3x3.3_Outline_B
 
 
 0
 9
 8
-kicad_component_library
+kicad-lib
 Phoenix_Contect_Terminal_Block_Socket_2_pos_1844210
 
 
 0
 2
 2
-kicad_component_library
+kicad-lib
 Phoenix_Contect_Terminal_Block_Socket_8_pos_1844278
 http://www.mouser.com/ds/2/324/ItemDetail_1844278-919151.pdf
 
 0
 8
 8
-kicad_component_library
+kicad-lib
 PinHeader_2x08_P2.54mm_Horizontal_SMD
 surface-mounted straight pin header, 2x08, 2.54mm pitch, double rows
 Surface mounted pin header SMD 2x08 2.54mm double row
 0
 16
 16
-kicad_component_library
+kicad-lib
 RJ45_Adam_Tech_SMD_MTJ-88YX1
 
 
 0
 10
 8
-kicad_component_library
+kicad-lib
 RJ45_Amphenol_SMD_RJSSE-5080-01T
 
 
 0
 10
 8
-kicad_component_library
+kicad-lib
 RJ45_Molex_SMD_0955036891
 
 
 0
 8
 8
-kicad_component_library
+kicad-lib
 RP2040-QFN-56
 QFN, 56 Pin (http://www.cypress.com/file/416486/download#page=40), generated with kicad-footprint-generator ipc_dfn_qfn_generator.py
 QFN DFN_QFN
 0
 70
 57
-kicad_component_library
+kicad-lib
+RP2350-QFN-80-1EP_10x10_P0.4mm_EP3.4x3.4mm_ThermalVias
+
+
+0
+102
+81
+kicad-lib
 SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal
 https://www.digikey.com/htmldatasheets/production/58667/0/0/1/consma002-smd-g.pdf
 SMA SMD Female Jack Horizontal
 0
 3
 2
-kicad_component_library
+kicad-lib
 SMD_RADIAL_CAN
 
 
 0
 2
 2
-kicad_component_library
+kicad-lib
 SOT23-3-BAS70-04
 
 
 0
 3
 3
-kicad_component_library
+kicad-lib
 SS3P5
 
 
 0
 2
 2
-kicad_component_library
+kicad-lib
 SW_Push_1P1T-SH_NO_Vertical_Wuerth_WS-TASV
 
 
 0
 5
 5
-kicad_component_library
+kicad-lib
 SW_SPDT_CK_JS102011JCQN
 Sub-miniature slide switch
 switch spdt
 0
 3
 3
-kicad_component_library
-SYNTHEGO_LOGO_10mm
-
-
-0
-0
-0
-kicad_component_library
-SYNTHEGO_LOGO_20mm
-
-
-0
-0
-0
-kicad_component_library
-SYNTHEGO_LOGO_40mm
-
-
-0
-0
-0
-kicad_component_library
-SYNTHEGO_LOGO_80mm
-
-
-0
-0
-0
-kicad_component_library
+kicad-lib
 SolderWirePad_1x01_SMD_1x2mm
 Wire Pad, Square, SMD Pad,  5mm x 10mm,
 MesurementPoint Square SMDPad 5mmx10mm 
 0
 1
 1
-kicad_component_library
+kicad-lib
 SolderWirePad_1x01_SMD_3x6mm
 Wire Pad, Square, SMD Pad,  5mm x 10mm,
 MesurementPoint Square SMDPad 5mmx10mm 
 0
 1
 1
-kicad_component_library
+kicad-lib
 SolderWirePad_1x01_SMD_5x10mm
 Wire Pad, Square, SMD Pad,  5mm x 10mm,
 MesurementPoint Square SMDPad 5mmx10mm 
 0
 1
 1
-kicad_component_library
+kicad-lib
 TRB_Trompeter_CBBJR79A_Horizontal
 
 
 0
 6
 3
-kicad_component_library
+kicad-lib
 Terminal_Keystone_779x_EdgeMount_Horizontal
 https://www.keyelco.com/userAssets/file/M65p69.pdf
 7790, 7689, 7695, 7792, 7793, 7794
 0
 4
 1
-kicad_component_library
+kicad-lib
 TestPoint_Keystone_5027_Miniature
 
 
 0
 2
 1
-kicad_component_library
+kicad-lib
 USB_C_Receptacle_JAE_DX07S016JA1R1500
 USB TYPE C, USB 2.0, SMT, https://www.jae.com/en/connectors/series/detail/product/id=91780
 USB C Type-C Receptacle SMD USB 2.0
 0
 22
 17
-kicad_component_library
+kicad-lib
 WDFN-10-1EP_2.5x2.5mm_P0.5_EP1.25x2.1mm
 
 RT6150B-33GQW 
 0
 11
 11
-kicad_component_library
+kicad-lib
 Winbond-8USON-2x3mm
 https://site.eettaiwan.com/events/iot2021/download/[Winbond]SpiFlashPCBLayoutGuideline.pdf
 
 0
 9
 9
-kicad_component_library
+kicad-lib
 Wire_to_Edge_Card_Connector_5-pos_172159-0205
 http://www.molex.com/pdm_docs/sd/1721590205_sd.pdf
 wire to edge card, connector
 0
 5
 5
-kicad_component_library
+kicad-lib
 aind_logo
 
 
 0
 0
 0
-kicad_component_library
+kicad-lib
 conn_bnc_receptacle_50ohm
 
 
 0
 3
 2
-kicad_component_library
+kicad-lib
 pololu_BD65496MUV_breakout
 
 
