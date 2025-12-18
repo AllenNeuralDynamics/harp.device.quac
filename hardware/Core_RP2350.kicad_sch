@@ -6209,6 +6209,17 @@
 		)
 		(uuid "eb062fa3-1027-4db3-9f16-28ac381ba1ce")
 	)
+	(text "Close to package."
+		(exclude_from_sim no)
+		(at 134.874 27.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "eb83a7ca-e6b5-42de-b196-0d626499d458")
+	)
 	(text "PIO1 SM0"
 		(exclude_from_sim no)
 		(at 114.046 103.886 0)
@@ -7519,7 +7530,7 @@
 	)
 	(wire
 		(pts
-			(xy 267.97 88.9) (xy 269.24 88.9)
+			(xy 267.97 81.28) (xy 269.24 81.28)
 		)
 		(stroke
 			(width 0)
@@ -8419,7 +8430,7 @@
 	)
 	(wire
 		(pts
-			(xy 250.19 88.9) (xy 251.46 88.9)
+			(xy 250.19 81.28) (xy 251.46 81.28)
 		)
 		(stroke
 			(width 0)
@@ -9199,7 +9210,7 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 88.9) (xy 260.35 88.9)
+			(xy 259.08 81.28) (xy 260.35 81.28)
 		)
 		(stroke
 			(width 0)
@@ -9346,6 +9357,16 @@
 			(type default)
 		)
 		(uuid "a3ad1868-d700-490b-915f-43729805f117")
+	)
+	(wire
+		(pts
+			(xy 143.51 31.75) (xy 144.78 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3e454c3-840a-4e54-b97c-91cbba1b35b9")
 	)
 	(wire
 		(pts
@@ -10219,7 +10240,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 34.29) (xy 134.62 34.29)
+			(xy 134.62 34.29) (xy 135.89 34.29)
 		)
 		(stroke
 			(width 0)
@@ -10329,7 +10350,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 31.75) (xy 134.62 31.75)
+			(xy 134.62 31.75) (xy 135.89 31.75)
 		)
 		(stroke
 			(width 0)
@@ -10486,6 +10507,16 @@
 			(type default)
 		)
 		(uuid "ee5d5905-6aa9-4ac0-a128-93035f1eab2b")
+	)
+	(wire
+		(pts
+			(xy 143.51 34.29) (xy 144.78 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee82c068-461a-489b-98c9-d9ee6cdd5d00")
 	)
 	(wire
 		(pts
@@ -10758,7 +10789,7 @@
 		(uuid "0525d354-1624-4be7-adc7-fdc5c886e673")
 	)
 	(label "USB+"
-		(at 135.89 31.75 0)
+		(at 144.78 31.75 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10818,7 +10849,7 @@
 		(uuid "283baf55-e335-4b43-8c47-0696f9888af2")
 	)
 	(label "USB-"
-		(at 135.89 34.29 0)
+		(at 144.78 34.29 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11148,7 +11179,7 @@
 		(uuid "cb2317ef-9137-4027-8d0b-a78a9e1f598a")
 	)
 	(label "DEBUG_LED_1"
-		(at 250.19 88.9 180)
+		(at 250.19 85.09 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11238,7 +11269,7 @@
 		(uuid "ef2f7003-f5fa-47a9-b631-67ee4fded4ef")
 	)
 	(label "DEBUG_LED_0"
-		(at 250.19 85.09 180)
+		(at 250.19 81.28 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11291,7 +11322,7 @@
 	)
 	(global_label "Current1"
 		(shape input)
-		(at 135.89 148.59 0)
+		(at 135.89 151.13 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11301,7 +11332,7 @@
 		)
 		(uuid "0e7211ac-082d-4491-8802-7c3459c62b95")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 147.0394 148.59 0)
+			(at 147.0394 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11401,7 +11432,7 @@
 	)
 	(global_label "Current0"
 		(shape input)
-		(at 135.89 146.05 0)
+		(at 135.89 153.67 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11411,7 +11442,7 @@
 		)
 		(uuid "2ed3a0e1-bb78-4b0a-b9fc-3fc11efc8309")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 147.0394 146.05 0)
+			(at 147.0394 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11467,7 +11498,7 @@
 	)
 	(global_label "Current3"
 		(shape input)
-		(at 135.89 153.67 0)
+		(at 135.89 146.05 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11477,7 +11508,7 @@
 		)
 		(uuid "41f95775-07b8-4154-846a-053a58ce85a8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 147.0394 153.67 0)
+			(at 147.0394 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11797,7 +11828,7 @@
 	)
 	(global_label "Current2"
 		(shape input)
-		(at 135.89 151.13 0)
+		(at 135.89 148.59 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11807,7 +11838,7 @@
 		)
 		(uuid "cfbf6257-d6fa-46f6-9041-4748434114a7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 147.0394 151.13 0)
+			(at 147.0394 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11880,6 +11911,118 @@
 				)
 				(justify left)
 				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 139.7 34.29 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "002839fe-97c1-40e1-b92e-17cc7b14283a")
+		(property "Reference" "R77"
+			(at 139.7 36.322 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "27"
+			(at 139.7 34.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 139.7 36.068 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "RC0402FR-0727RL"
+			(at 139.7 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 139.7 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-0727RL/5280946"
+			(at 139.7 34.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 139.7 34.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-0727RL"
+			(at 139.7 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 139.7 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PCBWay Link" "https://www.pcbway.com/components/detail/RC0402FR0727RL/656670/"
+			(at 139.7 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ea67653d-0409-4f24-8f1f-509d98fbd6d0")
+		)
+		(pin "2"
+			(uuid "f4719a2b-8114-45ff-95d8-4b6b143db767")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "R77")
+					(unit 1)
+				)
 			)
 		)
 	)
@@ -12619,7 +12762,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 269.24 88.9 90)
+		(at 269.24 81.28 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12628,7 +12771,7 @@
 		(dnp no)
 		(uuid "0b515b47-6e8a-43e4-a65a-32e68a4b9780")
 		(property "Reference" "#PWR047"
-			(at 275.59 88.9 0)
+			(at 275.59 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12637,7 +12780,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 274.066 88.9 90)
+			(at 274.066 81.28 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12645,7 +12788,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 269.24 88.9 0)
+			(at 269.24 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12654,7 +12797,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 269.24 88.9 0)
+			(at 269.24 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12663,7 +12806,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 269.24 88.9 0)
+			(at 269.24 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13304,7 +13447,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:LED")
-		(at 264.16 88.9 0)
+		(at 264.16 81.28 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -13313,7 +13456,7 @@
 		(dnp no)
 		(uuid "151e61ba-2deb-4623-a561-ff14cc9e199f")
 		(property "Reference" "LED2"
-			(at 261.366 91.186 0)
+			(at 261.366 83.566 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13322,7 +13465,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 264.922 90.424 90)
+			(at 264.922 82.804 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13331,8 +13474,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "harp.device.quad.dac.kicad:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
-			(at 264.16 88.9 0)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 264.16 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13341,7 +13484,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.sunledusa.com/products/spec/XZCDGK53W-1VF.pdf"
-			(at 264.16 88.9 0)
+			(at 264.16 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13350,7 +13493,7 @@
 			)
 		)
 		(property "Description" "Red 0603 130° Clear 54 mcd 2 V Surface Mount ChipLED"
-			(at 264.16 88.9 0)
+			(at 264.16 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13359,7 +13502,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 264.16 88.9 0)
+			(at 264.16 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13368,7 +13511,7 @@
 			)
 		)
 		(property "Notes" "2mA, 98mcd, green"
-			(at 264.16 88.9 0)
+			(at 264.16 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13377,7 +13520,7 @@
 			)
 		)
 		(property "Manufacturer" "SunLED"
-			(at 264.16 88.9 0)
+			(at 264.16 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13386,7 +13529,7 @@
 			)
 		)
 		(property "Manufacturer Number" "XZCDGK53W-1VF"
-			(at 264.16 88.9 0)
+			(at 264.16 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13395,7 +13538,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 264.16 88.9 0)
+			(at 264.16 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13686,6 +13829,118 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
 					(reference "R?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "harp.device.quad.dac:R_0603")
+		(at 256.54 102.87 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "21f7dd12-0acf-4939-a8b1-13e2ceb22aea")
+		(property "Reference" "R19"
+			(at 256.54 100.838 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 256.54 102.87 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 256.54 104.648 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 256.54 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Res Thick Film 0603 100 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD T/R Automotive AEC-Q200"
+			(at 256.54 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 256.54 102.87 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/AC0603FR-13100RL/12756385"
+			(at 256.54 102.87 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 256.54 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RT0402BRD071KL"
+			(at 256.54 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 256.54 102.87 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "221ef46d-4552-439a-a617-ec2232cf6858")
+		)
+		(pin "2"
+			(uuid "c49ffd14-5c82-4a0e-9e29-36acdf87864b")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -15339,7 +15594,7 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:R_0603")
-		(at 255.27 88.9 90)
+		(at 255.27 81.28 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15348,7 +15603,7 @@
 		(dnp no)
 		(uuid "3951cc2d-25c6-4429-8110-acceefa169be")
 		(property "Reference" "R18"
-			(at 257.048 90.932 90)
+			(at 257.048 83.312 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15357,7 +15612,7 @@
 			)
 		)
 		(property "Value" "330"
-			(at 257.048 88.9 90)
+			(at 257.048 81.28 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15366,7 +15621,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 255.27 87.122 90)
+			(at 255.27 79.502 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15375,7 +15630,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 255.27 88.9 0)
+			(at 255.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15384,7 +15639,7 @@
 			)
 		)
 		(property "Description" "100Mw Thick Film Resistors 100Ppm/ 1% 330 0603 Chip Resistor Surface Mount Rohs"
-			(at 255.27 88.9 0)
+			(at 255.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15393,7 +15648,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0603FR-07330RL/727162"
-			(at 255.27 88.9 90)
+			(at 255.27 81.28 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15402,7 +15657,7 @@
 			)
 		)
 		(property "Manufacturer" "Yageo"
-			(at 255.27 88.9 0)
+			(at 255.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15411,7 +15666,7 @@
 			)
 		)
 		(property "Manufacturer Number" "RC0402FR-07680RL"
-			(at 255.27 88.9 0)
+			(at 255.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15420,7 +15675,7 @@
 			)
 		)
 		(property "Tolerance" "1%"
-			(at 255.27 88.9 0)
+			(at 255.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15429,7 +15684,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 255.27 88.9 90)
+			(at 255.27 81.28 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16818,7 +17073,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "harp.device.quad.dac.kicad:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
 			(at 264.16 85.09 0)
 			(effects
 				(font
@@ -17401,6 +17656,118 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 139.7 31.75 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7c2245a0-4bc8-470e-8473-ff64d9c6967b")
+		(property "Reference" "R76"
+			(at 139.7 29.718 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "27"
+			(at 139.7 31.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 139.7 33.528 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "RC0402FR-0727RL"
+			(at 139.7 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 139.7 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-0727RL/5280946"
+			(at 139.7 31.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 139.7 31.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-0727RL"
+			(at 139.7 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 139.7 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PCBWay Link" "https://www.pcbway.com/components/detail/RC0402FR0727RL/656670/"
+			(at 139.7 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "47b21a53-c4dc-4499-97a3-543526b73de3")
+		)
+		(pin "2"
+			(uuid "fd41e3b8-9d2a-4720-8cfe-2af4d7dd2273")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "R76")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 41.91 142.24 90)
 		(unit 1)
@@ -17532,124 +17899,6 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
 					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:R_0603")
-		(at 256.54 102.87 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8898c18d-ffad-4f57-961b-ebd8865f7644")
-		(property "Reference" "R19"
-			(at 256.54 100.838 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10"
-			(at 256.54 102.87 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 256.54 104.648 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 256.54 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 256.54 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "1%"
-			(at 256.54 102.87 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/yageo/AC0603FR-1310RL/17006001"
-			(at 256.54 102.87 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" ""
-			(at 256.54 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" ""
-			(at 256.54 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 256.54 102.87 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "001f54c7-d04f-4ba8-b954-6bc8d2398687")
-		)
-		(pin "2"
-			(uuid "ccfa64ac-ed3c-4772-9a7e-f7fbf617e36f")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "R19")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
-					(reference "R?")
 					(unit 1)
 				)
 			)
@@ -18804,144 +19053,6 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:C_0603")
-		(at 261.62 107.95 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "9be0f60d-1aa8-4800-b9aa-280212fc6e26")
-		(property "Reference" "C27"
-			(at 262.128 105.664 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "100nF"
-			(at 262.128 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 260.6548 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
-			(at 261.62 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Ceramic Capacitor 0.1uF 50V"
-			(at 261.62 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
-			(at 261.62 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Murata Electronics"
-			(at 261.62 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "GRM155R71H104KE14D"
-			(at 261.62 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rated Voltage" "50V"
-			(at 261.62 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Temperature Coefficient" "X7R"
-			(at 261.62 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 261.62 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 261.62 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "df72e308-76ca-42e3-b268-f4c489e81785")
-		)
-		(pin "2"
-			(uuid "15bb2be4-e6fd-4e4b-93db-030b2cb04f04")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "C27")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
-					(reference "C?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:TPD2EUSB30")
 		(at 208.28 59.69 0)
 		(unit 1)
@@ -19185,144 +19296,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "C14")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
-					(reference "C?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:C_0603")
-		(at 46.99 100.33 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a7294a9e-cdbd-470a-a896-4557c363c6fe")
-		(property "Reference" "C12"
-			(at 47.498 98.044 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "100nF"
-			(at 47.498 102.616 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 46.0248 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Ceramic Capacitor 0.1uF 50V"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Murata Electronics"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "GRM155R71H104KE14D"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rated Voltage" "50V"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Temperature Coefficient" "X7R"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7c2d39d1-67cb-4e61-9056-0e9052b80a45")
-		)
-		(pin "2"
-			(uuid "5e377e4d-decf-4eb9-8bd5-c57fedccb074")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -21433,6 +21406,148 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
+		(at 46.99 100.33 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c8482a0f-a62d-47a3-841b-e55ca2228a32")
+		(property "Reference" "C3"
+			(at 47.498 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10uF"
+			(at 47.498 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 47.9552 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E106KA73-01.pdf"
+			(at 46.99 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "10 µF ±10% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
+			(at 46.99 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
+			(at 46.99 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM188R61E106KA73D"
+			(at 46.99 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rated Voltage" "25V"
+			(at 46.99 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X5R"
+			(at 46.99 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 46.99 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Alternate" ""
+			(at 46.99 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "10%"
+			(at 46.99 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 46.99 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "34b0bc31-847d-455c-9b7a-9c718df62b09")
+		)
+		(pin "2"
+			(uuid "0348a103-763b-4852-b7da-5f85af7a50d0")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "harp.device.quad.dac:C_0603")
 		(at 113.03 185.42 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -22869,7 +22984,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
 		(property "Value" "10uF"
@@ -23192,6 +23306,148 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "#PWR036")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "harp.device.quad.dac:C_0603")
+		(at 261.62 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ee1c44f6-2bc7-49f6-a7c2-2ef0cdc3fe26")
+		(property "Reference" "C4"
+			(at 262.128 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10uF"
+			(at 262.128 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 262.5852 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E106KA73-01.pdf"
+			(at 261.62 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "10 µF ±10% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
+			(at 261.62 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
+			(at 261.62 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM188R61E106KA73D"
+			(at 261.62 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rated Voltage" "25V"
+			(at 261.62 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X5R"
+			(at 261.62 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 261.62 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Alternate" ""
+			(at 261.62 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "10%"
+			(at 261.62 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 261.62 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "428ae42e-461f-4896-be3a-5126eeb3033d")
+		)
+		(pin "2"
+			(uuid "0b90408b-9dba-45d2-b79f-0ce683acd65d")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "C4")
 					(unit 1)
 				)
 			)

@@ -12,7 +12,7 @@
 		(comment 1 "Hexabitz")
 	)
 	(lib_symbols)
-	(text "TODO: LED indicating when the SD card is being written to.\nTODO: TPD8E003DQDR for EMI protection on SD card.\nTODO: CS pullups on LTC2642 devices.\nUpdate Split rail Power Supply (+/-15 and smaller voltage regulator)\nTODO: Consider Grounded Mounting Holes\nTODO: Ground Lug\nTODO: Check SPI Pullup configuration with reference design."
+	(text "TODO: LED indicating when the SD card is being written to.\nTODO: TPD8E003DQDR for EMI protection on SD card.\nTODO: CS pullups on LTC2642 devices.\nUpdate Split rail Power Supply (+/-15 and smaller voltage regulator)\nTODO: Consider Grounded Mounting Holes\nTODO: Ground Lug\nTODO: Check SPI Pullup configuration with reference design.\nTODO: Sacrifice RUN button?"
 		(exclude_from_sim no)
 		(at 96.012 127.254 0)
 		(effects

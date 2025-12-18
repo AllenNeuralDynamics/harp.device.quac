@@ -6,6 +6,9 @@ add_definitions(-DGIT_HASH="${COMMIT_ID}") # Usable in source code.
 
 #add_definitions(-DDEBUG) # Uncomment for debugging
 
+set(PICO_BOARD pico2)
+set(PICO_PLATFORM rp2350-arm-s)
+
 # Specify USB Manufacturer and Product descriptions.
 add_definitions(-DUSBD_MANUFACTURER="Allen Institute")
 add_definitions(-DUSBD_PRODUCT="Quad DAC")
@@ -21,15 +24,18 @@ else()
 "variable or explicitly via 'cmake -DPICO_SDK_PATH=<path to pico sdk> ..'")
 endif()
 include(${PICO_SDK_PATH}/pico_sdk_init.cmake)
+pico_sdk_init()
 
 # Use modern conventions like std::invoke
 set(CMAKE_CXX_STANDARD 17)
 
 project(harp_quad_dac)
 
-pico_sdk_init()
+
+add_compile_definitions(USE_PRINTF)
+
 add_subdirectory(lib/no-OS-FatFS-SD-SDIO-SPI-RPi-Pico/src lib_build/no_os_fatfs_sd_sdio_spi_rpi_pico)
-add_subdirectory(lib/core.pico/firmware lib_build/pico-core)
+#add_subdirectory(lib/core.pico/firmware lib_build/pico-core)
 
 add_executable(${PROJECT_NAME}
     src/main.cpp
@@ -38,14 +44,18 @@ add_executable(${PROJECT_NAME}
 include_directories(inc)
 
 target_link_libraries(${PROJECT_NAME}
-    harp_c_app
-    harp_sync
+    #harp_c_app
+    #harp_sync
     pico_stdlib
-    hardware_adc
-    hardware_dma
+    #hardware_adc
+    #hardware_dma
+    no-OS-FatFS-SD-SDIO-SPI-RPi-Pico
+
 )
 
 pico_add_extra_outputs(${PROJECT_NAME})
+
+pico_enable_stdio_usb(${PROJECT_NAME} 1)
 
 if(DEBUG)
     message(WARNING "Debug printf() messages from harp core to UART with baud \
