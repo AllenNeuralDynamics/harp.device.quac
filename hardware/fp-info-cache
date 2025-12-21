@@ -1,4 +1,4 @@
-26926962943548577
+26928729247501069
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -106560,6 +106560,13 @@ right-angle, pin header, surface mount, 36x1, 0.1-in spacing
 0
 40
 40
+kicad-lib
+IC_TPD6E004RSER
+
+
+0
+8
+8
 kicad-lib
 JUMPER-3
 
