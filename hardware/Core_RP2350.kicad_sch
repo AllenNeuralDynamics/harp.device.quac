@@ -7363,17 +7363,6 @@
 		)
 		(uuid "141a85d5-076d-475b-8e77-a0a821cb287a")
 	)
-	(text "Reset"
-		(exclude_from_sim no)
-		(at 22.86 93.472 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1dc3cc0f-2c19-4b42-8700-38c44df2f3d9")
-	)
 	(text "PIO0 SM3"
 		(exclude_from_sim no)
 		(at 114.046 86.106 0)
@@ -7711,12 +7700,6 @@
 		(uuid "01066bb2-2f2e-411e-82a3-776a52391a83")
 	)
 	(junction
-		(at 36.83 95.25)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0461e125-48a6-4e7c-a1ba-f89db0fce6fe")
-	)
-	(junction
 		(at 226.06 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7745,12 +7728,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "172386e0-c7e7-4ad7-888e-4b4b48afd0f9")
-	)
-	(junction
-		(at 46.99 95.25)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1ebb02e4-ae4b-4b3a-8351-5e6c52cd6e58")
 	)
 	(junction
 		(at 226.06 151.13)
@@ -7837,12 +7814,6 @@
 		(uuid "3fa63cec-67d1-4c76-afd2-2305e91aa149")
 	)
 	(junction
-		(at 24.13 100.33)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4109b024-3011-4c37-9bef-0e68afe68552")
-	)
-	(junction
 		(at 205.74 39.37)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7865,12 +7836,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "480ba165-a6d8-44ff-82e0-94ffe6ca5e20")
-	)
-	(junction
-		(at 64.77 95.25)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4cd18071-96bf-464b-b730-69c998e83302")
 	)
 	(junction
 		(at 120.65 180.34)
@@ -7955,12 +7920,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "88e9a94c-f2c1-4b06-be91-4af5e4ceb68a")
-	)
-	(junction
-		(at 24.13 97.79)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8add9ca7-d017-44d0-a831-61cc624f445b")
 	)
 	(junction
 		(at 96.52 21.59)
@@ -8460,16 +8419,6 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 95.25) (xy 46.99 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e18e663-877c-4484-9f2f-980b4e216c04")
-	)
-	(wire
-		(pts
 			(xy 31.75 138.43) (xy 31.75 132.08)
 		)
 		(stroke
@@ -8720,16 +8669,6 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 95.25) (xy 38.1 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1fa66c8e-bbaa-49f8-b926-23455f50dc84")
-	)
-	(wire
-		(pts
 			(xy 217.17 139.7) (xy 217.17 144.78)
 		)
 		(stroke
@@ -8750,7 +8689,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 92.71) (xy 55.88 92.71)
+			(xy 64.77 95.25) (xy 66.04 95.25)
 		)
 		(stroke
 			(width 0)
@@ -8850,16 +8789,6 @@
 	)
 	(wire
 		(pts
-			(xy 24.13 100.33) (xy 30.48 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2baae865-6e8c-4d0b-9725-47160a219315")
-	)
-	(wire
-		(pts
 			(xy 24.13 120.65) (xy 24.13 118.11)
 		)
 		(stroke
@@ -8897,16 +8826,6 @@
 			(type default)
 		)
 		(uuid "2f3e382e-3c16-43c1-b3b8-e1023b51e1c6")
-	)
-	(wire
-		(pts
-			(xy 46.99 95.25) (xy 64.77 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2f47bd9b-25cd-4341-8072-2844c9586770")
 	)
 	(wire
 		(pts
@@ -8987,16 +8906,6 @@
 			(type default)
 		)
 		(uuid "34a3fe91-ff9f-4824-b249-98479d75d6ba")
-	)
-	(wire
-		(pts
-			(xy 46.99 105.41) (xy 46.99 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34ef9b3b-8624-4986-852a-62a395c729d7")
 	)
 	(wire
 		(pts
@@ -9620,16 +9529,6 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 97.79) (xy 36.83 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "549eb867-5f88-4622-b06d-0e85fd12f43c")
-	)
-	(wire
-		(pts
 			(xy 214.63 146.05) (xy 226.06 146.05)
 		)
 		(stroke
@@ -9757,16 +9656,6 @@
 			(type default)
 		)
 		(uuid "59d900bf-305d-41bd-9788-8cae2d89e8e8")
-	)
-	(wire
-		(pts
-			(xy 24.13 95.25) (xy 25.4 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "59f69752-7159-41f4-9203-91a1a608d4b4")
 	)
 	(wire
 		(pts
@@ -10010,26 +9899,6 @@
 	)
 	(wire
 		(pts
-			(xy 24.13 97.79) (xy 25.4 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6dc1ce3d-5fd4-44a4-8e7e-76327ad23fe0")
-	)
-	(wire
-		(pts
-			(xy 30.48 99.06) (xy 30.48 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6de499a7-1cff-44d6-8004-4d08208333d9")
-	)
-	(wire
-		(pts
 			(xy 217.17 133.35) (xy 217.17 134.62)
 		)
 		(stroke
@@ -10037,16 +9906,6 @@
 			(type default)
 		)
 		(uuid "6e2a16a6-667c-4793-ae5c-fd93af051984")
-	)
-	(wire
-		(pts
-			(xy 35.56 97.79) (xy 36.83 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6f3ff83f-aaf6-48a4-ab84-bf2f4e1b68eb")
 	)
 	(wire
 		(pts
@@ -10580,16 +10439,6 @@
 	)
 	(wire
 		(pts
-			(xy 24.13 101.6) (xy 24.13 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "93bd93a9-05cc-4e75-80a2-dd91c39db7b8")
-	)
-	(wire
-		(pts
 			(xy 45.72 167.64) (xy 45.72 168.91)
 		)
 		(stroke
@@ -10817,16 +10666,6 @@
 			(type default)
 		)
 		(uuid "a0f9abe0-0e57-4cfc-94b7-8e4ce09ec8f1")
-	)
-	(wire
-		(pts
-			(xy 63.5 92.71) (xy 64.77 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a1114163-58ea-4f7c-9b22-41cf66b48119")
 	)
 	(wire
 		(pts
@@ -11210,16 +11049,6 @@
 	)
 	(wire
 		(pts
-			(xy 24.13 100.33) (xy 24.13 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bd54ac00-975d-4da2-bfd6-71c354041dd9")
-	)
-	(wire
-		(pts
 			(xy 105.41 189.23) (xy 105.41 190.5)
 		)
 		(stroke
@@ -11227,16 +11056,6 @@
 			(type default)
 		)
 		(uuid "bfa3f606-f81f-47d3-9a29-70bf6e91bdbd")
-	)
-	(wire
-		(pts
-			(xy 35.56 95.25) (xy 36.83 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c00b1c7d-91c6-4ec8-8a3f-a45ac43351c1")
 	)
 	(wire
 		(pts
@@ -11307,16 +11126,6 @@
 			(type default)
 		)
 		(uuid "c67dffcb-4d08-46eb-93e9-cb1c43600db3")
-	)
-	(wire
-		(pts
-			(xy 64.77 92.71) (xy 64.77 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c67f05bb-37ad-49a9-b9ad-0c9226351d38")
 	)
 	(wire
 		(pts
@@ -11467,16 +11276,6 @@
 			(type default)
 		)
 		(uuid "cfc27c85-c9ee-434c-a9bd-e8276b106631")
-	)
-	(wire
-		(pts
-			(xy 64.77 95.25) (xy 66.04 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cfe1dce3-2b30-41da-9c46-8be6178a1504")
 	)
 	(wire
 		(pts
@@ -12040,16 +11839,6 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 95.25) (xy 46.99 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f2d29f41-1ff5-4688-a9f4-07be9318a65a")
-	)
-	(wire
-		(pts
 			(xy 39.37 177.8) (xy 45.72 177.8)
 		)
 		(stroke
@@ -12117,16 +11906,6 @@
 			(type default)
 		)
 		(uuid "f5eb5792-214e-4417-b6e8-2a14ac69c817")
-	)
-	(wire
-		(pts
-			(xy 24.13 95.25) (xy 24.13 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f69dd10a-7288-4e48-9ec3-329d59e83fba")
 	)
 	(wire
 		(pts
@@ -14755,7 +14534,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 54.61 92.71 90)
+		(at 64.77 95.25 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14763,7 +14542,7 @@
 		(dnp no)
 		(uuid "1122ea4e-6aa0-4d7d-aa51-a51f3d693793")
 		(property "Reference" "#PWR020"
-			(at 58.42 92.71 0)
+			(at 68.58 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14772,7 +14551,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 49.022 92.71 90)
+			(at 59.182 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14780,7 +14559,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 54.61 92.71 0)
+			(at 64.77 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14789,7 +14568,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 54.61 92.71 0)
+			(at 64.77 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14798,7 +14577,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 54.61 92.71 0)
+			(at 64.77 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15134,195 +14913,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "R13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 46.99 105.41 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "20b245d8-9e22-40d7-99d3-05a42454c14b")
-		(property "Reference" "#PWR016"
-			(at 46.99 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 46.99 108.966 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 46.99 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 46.99 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 46.99 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8d7969c7-0e6a-444a-aa38-f77fb24118b2")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "#PWR016")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
-					(reference "#PWR?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:R_0603")
-		(at 41.91 95.25 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "212d436d-05b1-4c61-8b11-b231a81ef162")
-		(property "Reference" "R1"
-			(at 41.91 93.218 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 41.91 95.25 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 41.91 97.028 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 41.91 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Res Thick Film 0603 100 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD T/R Automotive AEC-Q200"
-			(at 41.91 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "1%"
-			(at 41.91 95.25 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/yageo/AC0603FR-13100RL/12756385"
-			(at 41.91 95.25 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 41.91 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "RT0402BRD071KL"
-			(at 41.91 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 41.91 95.25 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "52de6381-e52f-434c-b170-8a8bdd83a65c")
-		)
-		(pin "2"
-			(uuid "1898f9bd-e34b-410b-8f91-1688328851ad")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
-					(reference "R?")
 					(unit 1)
 				)
 			)
@@ -17646,117 +17236,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "#PWR0211")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:SW_Push_with_gnd")
-		(at 30.48 95.25 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "49941e94-57b4-462f-8287-002fa5b9d4ce")
-		(property "Reference" "SW1"
-			(at 32.004 99.568 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SPST-NO"
-			(at 30.48 91.186 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "kicad-lib:SW_Push_1P1T-SH_NO_Vertical_Wuerth_WS-TASV"
-			(at 30.48 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/435451019820.pdf"
-			(at 30.48 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Wurth Elektronik washable switch"
-			(at 30.48 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/435451019820/18735367"
-			(at 30.48 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Würth Elektronik"
-			(at 30.48 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 30.48 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8b927ace-687d-45a8-a96d-e556b4b20d54")
-		)
-		(pin "2"
-			(uuid "610fce67-b724-4f1d-b1e0-9528157b5864")
-		)
-		(pin "3"
-			(uuid "78417551-c410-4667-a21c-8f74f11d2e48")
-		)
-		(pin "4"
-			(uuid "66883087-7666-452f-98a3-8c6e98bd0ca4")
-		)
-		(pin "SH"
-			(uuid "b765cb52-ec3c-4dd2-a611-9f6cb3bf968b")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "SW1")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
-					(reference "SW?")
 					(unit 1)
 				)
 			)
@@ -23205,148 +22684,6 @@
 	)
 	(symbol
 		(lib_id "harp.device.quad.dac:C_0603")
-		(at 46.99 100.33 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c8482a0f-a62d-47a3-841b-e55ca2228a32")
-		(property "Reference" "C3"
-			(at 47.498 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Value" "10uF"
-			(at 47.498 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 47.9552 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61E106KA73-01.pdf"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "10 µF ±10% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "GRM188R61E106KA73D"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rated Voltage" "25V"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Temperature Coefficient" "X5R"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Murata Electronics"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Alternate" ""
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 46.99 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "34b0bc31-847d-455c-9b7a-9c718df62b09")
-		)
-		(pin "2"
-			(uuid "0348a103-763b-4852-b7da-5f85af7a50d0")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "C3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "harp.device.quad.dac:C_0603")
 		(at 113.03 185.42 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -24329,120 +23666,6 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:R_0603")
-		(at 59.69 92.71 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "da8cb3c7-2bf6-470f-976f-cb7ca5b9a72e")
-		(property "Reference" "R4"
-			(at 62.23 90.678 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10K"
-			(at 61.468 92.71 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 59.69 94.488 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 59.69 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 59.69 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" ""
-			(at 59.69 92.71 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" ""
-			(at 59.69 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" ""
-			(at 59.69 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "0.1%"
-			(at 59.69 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 59.69 92.71 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bb9f57bd-d680-4ec4-85eb-5c3714ccf657")
-		)
-		(pin "2"
-			(uuid "ea5d2e90-fe4d-42df-98ce-e4c3afc1ffe7")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "R4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 180.34 73.66 0)
 		(unit 1)
@@ -25248,77 +24471,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "R10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 24.13 101.6 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f2b9b2bf-a3b6-4457-a70f-4926d40473f3")
-		(property "Reference" "#PWR03"
-			(at 24.13 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 24.13 105.156 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 24.13 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 24.13 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 24.13 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f0528a4b-1272-4fb7-ab68-b6bf81bfbe0c")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
-					(reference "#PWR?")
 					(unit 1)
 				)
 			)
