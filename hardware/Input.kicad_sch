@@ -1973,15 +1973,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 125.73 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/vishay-general-semiconductor-diodes-division/VBUS05N1-HD1-G3-08/16028335"
 			(at 125.73 143.51 90)
 			(effects
@@ -2097,15 +2088,6 @@
 			)
 		)
 		(property "Manufacturer Number" "SN74LVC2T45DCTR"
-			(at 152.4 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 152.4 72.39 0)
 			(effects
 				(font
@@ -2521,15 +2503,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 118.11 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "3cc09d2c-ac04-49ea-81b0-f3b3242b0b84")
 		)
@@ -2705,15 +2678,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 118.11 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "194d848c-081c-42b1-bd7b-c3f67f441326")
 		)
@@ -2810,15 +2774,6 @@
 			)
 		)
 		(property "Manufacturer Number" "CONBNC001"
-			(at 118.11 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 118.11 116.84 0)
 			(effects
 				(font
@@ -3028,15 +2983,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 142.24 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "8e0bc399-b171-4a33-9ab6-acb5506072cf")
 		)
@@ -3175,15 +3121,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 181.61 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "a4071bd1-7b0d-4e42-a384-a5f910f6a8c8")
 		)
@@ -3306,15 +3243,6 @@
 		)
 		(property "Tolerance" "10%"
 			(at 162.56 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 162.56 58.42 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3487,15 +3415,6 @@
 			)
 		)
 		(property "Manufacturer Number" "SN74LVC2T45DCTR"
-			(at 152.4 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 152.4 130.81 0)
 			(effects
 				(font
@@ -3738,15 +3657,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 125.73 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/vishay-general-semiconductor-diodes-division/VBUS05N1-HD1-G3-08/16028335"
 			(at 125.73 85.09 90)
 			(effects
@@ -3962,15 +3872,6 @@
 		)
 		(property "Tolerance" "10%"
 			(at 162.56 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 162.56 116.84 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4260,15 +4161,6 @@
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
 			(at 131.572 121.412 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 125.73 121.92 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4711,15 +4603,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 142.24 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "8243c686-0222-42fe-aecd-8afa526d3449")
 		)
@@ -4816,15 +4699,6 @@
 			)
 		)
 		(property "Manufacturer Number" "CONBNC001"
-			(at 118.11 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 118.11 59.69 0)
 			(effects
 				(font
@@ -4971,15 +4845,6 @@
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
 			(at 131.572 64.262 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 125.73 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)

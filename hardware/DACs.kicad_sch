@@ -6068,15 +6068,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 30.48 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer" "Texas Instruments"
 			(at 30.48 161.29 0)
 			(effects
@@ -6249,15 +6240,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 30.48 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer" "Texas Instruments"
 			(at 30.48 35.56 0)
 			(effects
@@ -6420,15 +6402,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 124.46 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 124.46 125.73 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6726,15 +6699,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 124.46 41.91 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERA-2AEB303X/1706040"
 			(at 124.46 41.91 90)
 			(effects
@@ -6830,15 +6794,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 139.7 161.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2BWFR050X/5647400"
 			(at 139.7 161.29 90)
 			(effects
@@ -6926,15 +6881,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 124.46 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 124.46 83.82 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7092,15 +7038,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 31.75 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "eaf327da-f76a-4264-8efd-c0adaf04d99d")
 		)
@@ -7233,15 +7170,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 124.46 167.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERA-2AEB303X/1706040"
 			(at 124.46 167.64 90)
 			(effects
@@ -7328,15 +7256,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 58.42 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 58.42 26.67 0)
 			(effects
 				(font
@@ -7496,15 +7415,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 114.3 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 114.3 172.72 0)
 			(effects
 				(font
@@ -7673,15 +7583,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 114.3 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 114.3 88.9 0)
 			(effects
@@ -7770,15 +7671,6 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor 0.1uF 50V"
-			(at 21.59 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 21.59 40.64 0)
 			(effects
 				(font
@@ -7957,15 +7849,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 21.59 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
 			(at 21.59 114.3 0)
 			(effects
@@ -8061,15 +7944,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 58.42 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 58.42 110.49 0)
 			(effects
 				(font
@@ -8203,15 +8077,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 147.32 82.55 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "c2b6f89e-20b7-4212-aaaa-9954979992bc")
 		)
@@ -8272,15 +8137,6 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
-			(at 123.19 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 123.19 119.38 0)
 			(effects
 				(font
@@ -8580,15 +8436,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 234.95 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "d8838db5-a01d-4c54-af4f-772a2fbfbcd6")
 		)
@@ -8648,15 +8495,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 55.88 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 55.88 68.58 0)
 			(effects
 				(font
@@ -8827,15 +8665,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 30.48 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer" "Texas Instruments"
 			(at 30.48 77.47 0)
 			(effects
@@ -8933,15 +8762,6 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor 0.1uF 50V"
-			(at 21.59 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 21.59 72.39 0)
 			(effects
 				(font
@@ -9084,15 +8904,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 158.75 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "8436a34c-d4f3-4fc4-961d-42d25ebfe55d")
 		)
@@ -9218,15 +9029,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 55.88 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 55.88 152.4 0)
 			(effects
 				(font
@@ -9394,15 +9196,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 102.87 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer" "Texas Instruments"
 			(at 102.87 77.47 0)
 			(effects
@@ -9506,15 +9299,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 91.44 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GCM1555C1H6R8BA16J/11618426"
 			(at 91.44 43.18 0)
 			(effects
@@ -9610,15 +9394,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 114.3 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 114.3 46.99 0)
 			(effects
 				(font
@@ -9786,15 +9561,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 264.16 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "63bdca36-f3d7-4e1c-b26f-41d11bc59bf4")
 		)
@@ -9893,15 +9659,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 158.75 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "5353a44a-4fc4-44b6-bf6e-47b89b804e78")
 		)
@@ -9961,15 +9718,6 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
-			(at 102.87 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 102.87 119.38 0)
 			(effects
 				(font
@@ -10214,15 +9962,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 21.59 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
 			(at 21.59 124.46 0)
 			(effects
@@ -10318,15 +10057,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 58.42 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 58.42 152.4 0)
 			(effects
 				(font
@@ -10577,15 +10307,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 76.2 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "10"
 			(uuid "3c47eae3-8309-4201-93ef-678dc270fdd0")
 		)
@@ -10743,15 +10464,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 102.87 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer" "Texas Instruments"
 			(at 102.87 161.29 0)
 			(effects
@@ -10850,15 +10562,6 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
-			(at 30.48 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 30.48 119.38 0)
 			(effects
 				(font
@@ -10993,15 +10696,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/PESD12VL1BSLAZ/16021611"
-			(at 147.32 166.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 147.32 166.37 90)
 			(effects
 				(font
@@ -11172,15 +10866,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 158.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "c7a12883-e075-43cc-b1f2-9d1b53f5a2d7")
 		)
@@ -11240,15 +10925,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 114.3 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 114.3 130.81 0)
 			(effects
 				(font
@@ -11343,15 +11019,6 @@
 			)
 		)
 		(property "Description" "Stabilization Capacitor (See LTC264x datasheet)"
-			(at 91.44 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 91.44 85.09 0)
 			(effects
 				(font
@@ -11529,15 +11196,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 55.88 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 55.88 110.49 0)
 			(effects
@@ -11633,15 +11291,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 139.7 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2BWFR050X/5647400"
 			(at 139.7 35.56 90)
 			(effects
@@ -11730,15 +11379,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 139.7 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 139.7 119.38 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11962,15 +11602,6 @@
 			)
 		)
 		(property "Description" "Stabilization Capacitor (See LTC264x datasheet)"
-			(at 91.44 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 91.44 127 0)
 			(effects
 				(font
@@ -12279,15 +11910,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 123.19 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer" "Texas Instruments"
 			(at 123.19 77.47 0)
 			(effects
@@ -12583,15 +12205,6 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor 0.1uF 50V"
-			(at 21.59 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 21.59 156.21 0)
 			(effects
 				(font
@@ -12995,15 +12608,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 158.75 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "a8c081b9-4073-48a7-8c81-4b803d0758ec")
 		)
@@ -13064,15 +12668,6 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
-			(at 123.19 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 123.19 161.29 0)
 			(effects
 				(font
@@ -13202,15 +12797,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 76.2 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "10"
 			(uuid "1048f554-8078-406c-8566-b2e13160ecac")
 		)
@@ -13296,15 +12882,6 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor 0.1uF 50V"
-			(at 21.59 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 21.59 82.55 0)
 			(effects
 				(font
@@ -13464,15 +13041,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 31.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 31.75 119.38 0)
 			(effects
 				(font
@@ -13748,15 +13316,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 248.92 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://mou.sr/45eDj2t"
 			(at 248.92 146.05 0)
 			(effects
@@ -13985,15 +13544,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 31.75 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "8504d47e-fea1-4699-9c74-e7ae99e4e2e0")
 		)
@@ -14150,15 +13700,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/PESD12VL1BSLAZ/16021611"
-			(at 147.32 40.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 147.32 40.64 90)
 			(effects
 				(font
@@ -14430,15 +13971,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 91.44 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GCM1555C1H6R8BA16J/11618426"
 			(at 91.44 168.91 0)
 			(effects
@@ -14607,15 +14139,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 257.81 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "a38d5ef6-f226-4770-8ff6-33e0dacd3ec3")
 		)
@@ -14751,15 +14274,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 21.59 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
 			(at 21.59 30.48 0)
 			(effects
@@ -14863,15 +14377,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 58.42 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 58.42 68.58 0)
 			(effects
@@ -14958,15 +14463,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 55.88 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 55.88 26.67 0)
 			(effects
 				(font
@@ -15331,15 +14827,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 102.87 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer" "Texas Instruments"
 			(at 102.87 35.56 0)
 			(effects
@@ -15445,15 +14932,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 21.59 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
 			(at 21.59 166.37 0)
 			(effects
@@ -15550,15 +15028,6 @@
 			)
 		)
 		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
-			(at 123.19 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 123.19 35.56 0)
 			(effects
 				(font
@@ -15736,15 +15205,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 139.7 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2BWFR050X/5647400"
 			(at 139.7 77.47 90)
 			(effects
@@ -15849,15 +15309,6 @@
 			)
 		)
 		(property "Manufacturer" "Analog Devices Inc."
-			(at 76.2 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 76.2 77.47 0)
 			(effects
 				(font
@@ -16013,15 +15464,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 31.75 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "0e304da4-f328-4bdb-9a70-50b94df8f509")
 		)
@@ -16112,15 +15554,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/PESD12VL1BSLAZ/16021611"
-			(at 147.32 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 147.32 124.46 90)
 			(effects
 				(font
@@ -16273,15 +15706,6 @@
 			)
 		)
 		(property "Manufacturer" "Analog Devices Inc."
-			(at 76.2 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 76.2 35.56 0)
 			(effects
 				(font

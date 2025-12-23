@@ -13424,15 +13424,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 274.32 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "f6a12e9b-ecef-4646-b926-c57b49083b0d")
 		)
@@ -13530,15 +13521,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 162.56 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
@@ -13601,15 +13583,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 222.25 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 222.25 137.16 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13906,15 +13879,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 205.74 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "05667e4e-b277-4a5b-b431-74d6fe7a9a09")
 		)
@@ -14039,15 +14003,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 39.37 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 39.37 172.72 0)
 			(effects
 				(font
@@ -14251,15 +14206,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 213.36 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "2535cc6e-91f7-43d8-8d3a-a8928434f593")
 		)
@@ -14322,15 +14268,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 222.25 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 222.25 154.94 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14452,15 +14389,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 30.48 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer Number" "435451019820"
 			(at 30.48 115.57 0)
 			(effects
@@ -14574,15 +14502,6 @@
 			)
 		)
 		(property "Manufacturer Number" "n/a"
-			(at 167.64 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 167.64 195.58 0)
 			(effects
 				(font
@@ -14763,15 +14682,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 264.16 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "16f82738-95aa-4853-9afe-0ddd4ffa99a9")
 		)
@@ -14840,15 +14750,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 222.25 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 222.25 152.4 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15006,15 +14907,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 120.65 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "5b9c273e-2e75-4176-b4b4-2dbdd1433108")
 		)
@@ -15082,15 +14974,6 @@
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
 			(at 36.322 132.588 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 36.83 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15323,15 +15206,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 222.25 30.48 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/vishay-general-semiconductor-diodes-division/VBUS05N1-HD1-G3-08/16028335"
 			(at 222.25 30.48 90)
 			(effects
@@ -15455,15 +15329,6 @@
 		)
 		(property "Tolerance" "1%"
 			(at 223.52 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 223.52 49.53 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15603,15 +15468,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 267.97 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "63097ff2-6205-4ed6-b424-9fbe4d9bdee1")
 		)
@@ -15673,15 +15529,6 @@
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
 			(at 36.322 136.398 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 36.83 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16120,15 +15967,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 59.69 30.48 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "63d27294-5c5e-4b3e-a21c-7c3d368ae1f7")
 		)
@@ -16443,15 +16281,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 105.41 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "137f078d-0b85-4e05-97c3-0c29987ad8d0")
 		)
@@ -16519,15 +16348,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 255.27 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 255.27 85.09 0)
 			(effects
 				(font
@@ -16678,15 +16498,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 128.27 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 128.27 185.42 0)
 			(effects
 				(font
@@ -16862,15 +16673,6 @@
 		)
 		(property "Tolerance" "1%"
 			(at 266.7 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 266.7 49.53 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17108,15 +16910,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 30.48 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 30.48 30.48 0)
 			(effects
 				(font
@@ -17384,15 +17177,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 135.89 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "dafa72d7-3f58-43a3-b0a0-22c0d1d0a064")
 		)
@@ -17579,15 +17363,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 90.17 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 90.17 185.42 0)
 			(effects
 				(font
@@ -17861,15 +17636,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 170.18 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "50149a47-3628-4099-9ccb-b57d95de1692")
 		)
@@ -17958,15 +17724,6 @@
 			)
 		)
 		(property "Manufacturer" "Analog Devices"
-			(at 246.38 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 246.38 49.53 0)
 			(effects
 				(font
@@ -18399,15 +18156,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 264.16 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "222df053-60dc-4581-88ed-99a6db03f06f")
 		)
@@ -18476,15 +18224,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 222.25 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 222.25 134.62 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18726,15 +18465,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 222.25 144.78 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-0747KL/726616"
 			(at 222.25 144.78 90)
 			(effects
@@ -18849,15 +18579,6 @@
 			)
 		)
 		(property "Manufacturer Number" "DX07S016JA1R1500"
-			(at 180.34 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 180.34 49.53 0)
 			(effects
 				(font
@@ -19007,15 +18728,6 @@
 		)
 		(property "Tolerance" "1%"
 			(at 59.69 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 59.69 25.4 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19196,15 +18908,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 255.27 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 255.27 81.28 0)
 			(effects
 				(font
@@ -19480,15 +19183,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 200.66 41.91 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "2c1eedbb-ddad-45ed-a21b-5097594ef3b6")
 		)
@@ -19657,15 +19351,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 223.52 46.99 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "25da235e-45d1-48a2-996e-2399f5017f2c")
 		)
@@ -19792,15 +19477,6 @@
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
 			(at 36.322 150.368 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 36.83 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20003,15 +19679,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 200.66 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "98370fd4-3115-4fbb-8336-340e2ada418a")
 		)
@@ -20063,7 +19730,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.te.com/usa-en/product-5-146281-3.datasheet.pdf"
 			(at 21.59 134.62 0)
 			(effects
 				(font
@@ -20081,7 +19748,7 @@
 				(hide yes)
 			)
 		)
-		(property "Notes" "DNP"
+		(property "Notes" ""
 			(at 21.59 134.62 0)
 			(effects
 				(font
@@ -20090,7 +19757,7 @@
 				(hide yes)
 			)
 		)
-		(property "Alternate" "n/a"
+		(property "Alternate" ""
 			(at 21.59 134.62 0)
 			(effects
 				(font
@@ -20099,7 +19766,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "n/a"
+		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/5-146281-3/2275903"
 			(at 21.59 134.62 0)
 			(effects
 				(font
@@ -20108,7 +19775,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "n/a"
+		(property "Manufacturer" "TE Connectivity AMP Connectors"
 			(at 21.59 134.62 0)
 			(effects
 				(font
@@ -20117,16 +19784,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "n/a"
-			(at 21.59 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
+		(property "Manufacturer Number" "5-146281-3"
 			(at 21.59 134.62 0)
 			(effects
 				(font
@@ -20261,15 +19919,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 97.79 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "aadaaa29-4fdb-4a76-8d96-37bb3fc2df79")
 		)
@@ -20365,15 +20014,6 @@
 			)
 		)
 		(property "Manufacturer Number" "n/a"
-			(at 172.72 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 172.72 195.58 0)
 			(effects
 				(font
@@ -20615,15 +20255,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 208.28 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "deb4b280-29f6-4ced-ad35-7cc7bbde8499")
 		)
@@ -20751,15 +20382,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 67.31 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 67.31 185.42 0)
 			(effects
 				(font
@@ -20962,15 +20584,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 82.55 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "88c2f146-d278-40d7-badd-48cdbc627283")
 		)
@@ -21100,15 +20713,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 38.1 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "7c237f0b-0df3-4025-920b-8e9856f90e69")
 		)
@@ -21211,15 +20815,6 @@
 		)
 		(property "Tolerance" "0.1%"
 			(at 41.91 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 41.91 115.57 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21360,15 +20955,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 40.64 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/vishay-general-semiconductor-diodes-division/VBUS05N1-HD1-G3-08/16028335"
 			(at 40.64 182.88 0)
 			(effects
@@ -21491,15 +21077,6 @@
 			)
 		)
 		(property "DC Resistance" "140mOhm"
-			(at 58.42 43.18 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 58.42 43.18 90)
 			(effects
 				(font
@@ -21667,15 +21244,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 29.21 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "R"
 			(uuid "9adc1504-eaa7-4245-a8c5-2a00c0171634")
 		)
@@ -21811,15 +21379,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 40.64 48.26 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "c096517c-7211-40f7-a53f-a447dea12292")
 		)
@@ -21935,15 +21494,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 233.68 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 233.68 100.33 0)
 			(effects
 				(font
@@ -22073,15 +21623,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 276.86 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 276.86 143.51 0)
 			(effects
 				(font
@@ -22423,15 +21964,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 24.13 30.48 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "40c6c872-cd06-4e2c-ac37-f497bd669d4d")
 		)
@@ -22493,15 +22025,6 @@
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
 			(at 36.322 154.178 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 36.83 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22781,15 +22304,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 266.7 46.99 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "74b3a6cd-80e7-4e5e-9a10-35d3913ade51")
 		)
@@ -22905,15 +22419,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 113.03 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 113.03 185.42 0)
 			(effects
 				(font
@@ -23060,15 +22565,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 48.26 48.26 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "5f0d3d50-7885-4781-9e68-fa74c5814c9c")
 		)
@@ -23184,15 +22680,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 45.72 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 45.72 172.72 0)
 			(effects
 				(font
@@ -24043,15 +23530,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 53.34 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "70556684-1811-40e2-b197-fa98ac29356c")
 		)
@@ -24115,7 +23593,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.te.com/usa-en/product-5-146281-3.datasheet.pdf"
 			(at 21.59 153.67 0)
 			(effects
 				(font
@@ -24133,7 +23611,7 @@
 				(hide yes)
 			)
 		)
-		(property "Notes" "DNP"
+		(property "Notes" ""
 			(at 21.59 153.67 0)
 			(effects
 				(font
@@ -24142,7 +23620,7 @@
 				(hide yes)
 			)
 		)
-		(property "Alternate" "n/a"
+		(property "Alternate" ""
 			(at 21.59 153.67 0)
 			(effects
 				(font
@@ -24151,7 +23629,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "n/a"
+		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/5-146281-3/2275903"
 			(at 21.59 153.67 0)
 			(effects
 				(font
@@ -24160,7 +23638,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "n/a"
+		(property "Manufacturer" "TE Connectivity AMP Connectors"
 			(at 21.59 153.67 0)
 			(effects
 				(font
@@ -24169,16 +23647,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "n/a"
-			(at 21.59 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
+		(property "Manufacturer Number" "5-146281-3"
 			(at 21.59 153.67 0)
 			(effects
 				(font
@@ -24322,15 +23791,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 74.93 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "f2e95433-bc46-42cb-a596-18a68a9a4371")
 		)
@@ -24424,15 +23884,6 @@
 			)
 		)
 		(property "Manufacturer Number" "DM3AT-SF-PEJM5"
-			(at 252.73 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 252.73 146.05 0)
 			(effects
 				(font
@@ -24595,15 +24046,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 222.25 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 222.25 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25017,15 +24459,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 208.28 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "c170be06-d312-4ea5-bee0-0c407d5fe3aa")
 		)
@@ -25159,15 +24592,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 222.25 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 222.25 149.86 90)
 			(effects
 				(font
 					(size 1.27 1.27)

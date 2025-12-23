@@ -1,0 +1,4 @@
+Ref,Val,Package,PosX,PosY,Rot,Side
+"H1","MountingHole_Pad","Terminal_Keystone_779x_EdgeMount_Horizontal",68.350000,92.400000,0.000000,bottom
+"J3","AudioJack3","Jack_3.5mm_CUI_SJ-3524-SMT_Horizontal",34.000000,93.800000,180.000000,bottom
+"J14","Barrel_Jack_Switch","BarrelJack_CUI_PJ-102AH_Horizontal",78.900000,86.200000,0.000000,bottom

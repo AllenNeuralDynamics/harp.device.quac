@@ -7064,15 +7064,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 210.82 33.02 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "a4647ac7-c2c9-461a-b39b-7d4d7c184501")
 		)
@@ -7132,15 +7123,6 @@
 			)
 		)
 		(property "Description" ""
-			(at 93.98 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 93.98 134.62 0)
 			(effects
 				(font
@@ -7743,15 +7725,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 59.69 87.63 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "5ee6bb8f-0117-445c-8de6-51bb66bbff7e")
 		)
@@ -7988,15 +7961,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 166.37 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "62519842-8392-4d26-ad96-c18830e92774")
 		)
@@ -8103,15 +8067,6 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
-			(at 52.07 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 52.07 134.62 0)
 			(effects
 				(font
@@ -8479,15 +8434,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 48.26 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Temperature Coefficient" "X5R"
 			(at 48.26 87.63 0)
 			(effects
@@ -8658,15 +8604,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 111.76 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Temperature Coefficient" "X5R"
 			(at 111.76 134.62 0)
 			(effects
@@ -8764,15 +8701,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
-			(at 118.11 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 118.11 175.26 0)
 			(effects
 				(font
@@ -8961,15 +8889,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 59.69 90.17 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "6d16de70-d031-4ec2-bd7d-07a4185ecff5")
 		)
@@ -9030,15 +8949,6 @@
 		)
 		(property "Description" ""
 			(at 96.52 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 96.52 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9196,15 +9106,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 99.06 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "b5517997-0cef-4a47-b5a9-a0b67c3089ea")
 		)
@@ -9337,15 +9238,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 44.45 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "da3290c3-f238-4142-9a0d-29bcaba3ce3d")
 		)
@@ -9434,15 +9326,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
-			(at 111.76 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 111.76 175.26 0)
 			(effects
 				(font
@@ -9639,15 +9522,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 236.22 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "c5603c87-49b9-433b-8b23-ff7b880ef868")
 		)
@@ -9737,15 +9611,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/CUS10S30-H3F/5114299"
-			(at 106.68 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 106.68 162.56 0)
 			(effects
 				(font
@@ -9922,15 +9787,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 101.6 175.26 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "6285df3f-0b83-4304-8733-e87bfdd87b14")
 		)
@@ -10085,15 +9941,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
-			(at 151.13 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 151.13 35.56 0)
 			(effects
 				(font
@@ -10380,15 +10227,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 86.36 33.02 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/vishay-siliconix/SI2369DS-T1-BE3/16397693"
 			(at 86.36 33.02 90)
 			(effects
@@ -10655,15 +10493,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 215.9 38.1 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "71d1141c-0573-4944-be29-8a5046d1aaca")
 		)
@@ -10728,15 +10557,6 @@
 		)
 		(property "Description" "-7.6A Id, -30V Vds, P-Channel MOSFET, SOT-23"
 			(at 44.45 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 44.45 33.02 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10966,15 +10786,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 118.11 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Temperature Coefficient" "X5R"
 			(at 118.11 134.62 0)
 			(effects
@@ -11173,15 +10984,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 54.61 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "4c2e48e6-5759-4dda-87f7-757c16311b0c")
 		)
@@ -11352,15 +11154,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 74.93 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "6"
 			(uuid "8ea82350-d925-4485-87cd-25c294a7e711")
 		)
@@ -11470,15 +11263,6 @@
 			)
 		)
 		(property "Tolerance" "1%"
-			(at 171.45 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 171.45 40.64 0)
 			(effects
 				(font
@@ -11733,15 +11517,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 220.98 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "34c16b71-3810-4833-a256-be00e354161a")
 		)
@@ -11896,15 +11671,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
-			(at 156.21 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 156.21 149.86 0)
 			(effects
 				(font
@@ -12123,15 +11889,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 87.63 149.86 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100KL/726526"
 			(at 87.63 149.86 90)
 			(effects
@@ -12322,15 +12079,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 73.66 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "803118ec-7bbe-4b28-9654-ae40af3e4684")
 		)
@@ -12494,15 +12242,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 49.53 154.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Link" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/SG73P1JTTD1000F/10188091"
 			(at 49.53 154.94 90)
 			(effects
@@ -12653,15 +12392,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 200.66 27.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "9a38a1ad-9078-49df-b83b-c3b343340090")
 		)
@@ -12727,15 +12457,6 @@
 		)
 		(property "Description" "-7.6A Id, -30V Vds, P-Channel MOSFET, SOT-23"
 			(at 45.72 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 45.72 132.08 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12833,15 +12554,6 @@
 		)
 		(property "Description" ">6.3V"
 			(at 96.52 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 96.52 146.05 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13132,15 +12844,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/TPS65131RGER/1672464"
-			(at 73.66 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 73.66 157.48 0)
 			(effects
 				(font
@@ -13541,15 +13244,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 52.07 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "c1dd3fdd-6608-4b38-8db1-e5aaa33b927b")
 		)
@@ -13750,15 +13444,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Num" ""
-			(at 21.59 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Vendor Num" ""
 			(at 21.59 33.02 0)
 			(effects
@@ -13876,15 +13561,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 215.9 48.26 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "0df7bb48-14e7-41ee-9189-de45fc980e7d")
 		)
@@ -13972,15 +13648,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/richtek-usa-inc/RT6150B-33GQW/6676709"
-			(at 74.93 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 74.93 85.09 0)
 			(effects
 				(font
@@ -14130,15 +13797,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 228.6 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "1864ec69-6269-4a4c-9071-7900804d82d2")
 		)
@@ -14236,15 +13894,6 @@
 			)
 		)
 		(property "Tolerance" "1%"
-			(at 44.45 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 44.45 44.45 0)
 			(effects
 				(font
@@ -14351,15 +14000,6 @@
 		)
 		(property "Tolerance" "1%"
 			(at 62.23 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 62.23 36.83 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14569,15 +14209,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 184.15 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "adb23b38-b67a-4a10-87a1-e029980de85a")
 		)
@@ -14705,15 +14336,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 143.51 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 143.51 35.56 0)
 			(effects
 				(font
@@ -15142,15 +14764,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 90.17 87.63 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "35b82c64-e99f-46f6-aba0-5463fbba7230")
 		)
@@ -15277,15 +14890,6 @@
 		)
 		(property "Description" ""
 			(at 99.06 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 99.06 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15472,15 +15076,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 137.16 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "08675be4-1344-4f7c-81f2-8507aa7adf13")
 		)
@@ -15652,15 +15247,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 57.15 129.54 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "112ea8b4-d0c0-4931-8a42-38cb15f29588")
 		)
@@ -15749,15 +15335,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E106KA73D/9867922"
-			(at 156.21 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
 			(at 156.21 137.16 0)
 			(effects
 				(font
