@@ -5588,7 +5588,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 151.13 161.29 0)
+		(at 151.13 162.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5597,7 +5597,7 @@
 		(fields_autoplaced yes)
 		(uuid "3bf3b487-d166-48d5-ab6f-b910e9f790f6")
 		(property "Reference" "#PWR0131"
-			(at 151.13 165.1 0)
+			(at 151.13 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5606,7 +5606,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 151.13 156.21 0)
+			(at 151.13 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5614,7 +5614,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 151.13 161.29 0)
+			(at 151.13 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5623,7 +5623,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 151.13 161.29 0)
+			(at 151.13 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5632,7 +5632,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 151.13 161.29 0)
+			(at 151.13 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)

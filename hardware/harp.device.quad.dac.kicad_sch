@@ -12,17 +12,6 @@
 		(comment 1 "Hexabitz")
 	)
 	(lib_symbols)
-	(text "TODO: LED indicating when the SD card is being written to.\nUpdate Split rail Power Supply (+/-15)\nTODO: Consider Grounded Mounting Holes\n\nTODO: Check SPI Pullup configuration with reference design.\nTODO: Sacrifice RUN button?\nTODO: CS pullups on LTC2642 devices.\n\nDONE: Ground Lug"
-		(exclude_from_sim no)
-		(at 96.012 127.254 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3cca1d2d-b22e-4566-8e2f-62864e8b1eb8")
-	)
 	(sheet
 		(at 170.18 66.04)
 		(size 50.8 24.13)
