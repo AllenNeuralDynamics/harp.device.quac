@@ -8223,7 +8223,7 @@
 		(uuid "4e1cdc99-0266-42dc-91cb-9b15b9d1b6b7")
 	)
 	(no_connect
-		(at 64.77 82.55)
+		(at 66.04 82.55)
 		(uuid "5c15f192-b9d8-4e5b-ae2f-830e96dc14b6")
 	)
 	(no_connect
@@ -12128,7 +12128,7 @@
 		)
 		(uuid "322c5e59-31e9-443c-802a-335017349914")
 	)
-	(label "QSPI_CS0"
+	(label "QSPI_CS"
 		(at 46.99 115.57 0)
 		(effects
 			(font
@@ -12308,7 +12308,7 @@
 		)
 		(uuid "6de52401-bb20-421a-baf0-224b56a7bd2d")
 	)
-	(label "QSPI_CS0"
+	(label "QSPI_CS"
 		(at 64.77 53.34 180)
 		(effects
 			(font
@@ -12398,7 +12398,7 @@
 		)
 		(uuid "9fd29ff6-5905-4ab4-9dbb-e755dec8bad6")
 	)
-	(label "QSPI_CS0"
+	(label "QSPI_CS"
 		(at 207.01 92.71 180)
 		(effects
 			(font
@@ -13590,7 +13590,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 222.25 137.16 0)
 			(effects
 				(font
@@ -13609,6 +13609,33 @@
 			)
 		)
 		(property "Height" ""
+			(at 222.25 137.16 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-0747KL/726616"
+			(at 222.25 137.16 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 222.25 137.16 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-0747KL"
 			(at 222.25 137.16 90)
 			(effects
 				(font
@@ -14284,7 +14311,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 222.25 154.94 0)
 			(effects
 				(font
@@ -14303,6 +14330,33 @@
 			)
 		)
 		(property "Height" ""
+			(at 222.25 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-0747KL/726616"
+			(at 222.25 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 222.25 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-0747KL"
 			(at 222.25 154.94 90)
 			(effects
 				(font
@@ -14399,6 +14453,15 @@
 			)
 		)
 		(property "Height" ""
+			(at 30.48 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "435451019820"
 			(at 30.48 115.57 0)
 			(effects
 				(font
@@ -14609,127 +14672,6 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:R_0603")
-		(at 255.27 85.09 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "132c92e3-4890-4e0d-a2c1-0c750720ac92")
-		(property "Reference" "R17"
-			(at 257.048 87.376 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "330"
-			(at 257.048 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 255.27 83.312 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 255.27 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "100Mw Thick Film Resistors 100Ppm/ 1% 330 0603 Chip Resistor Surface Mount Rohs"
-			(at 255.27 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0603FR-07330RL/727162"
-			(at 255.27 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 255.27 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "RC0402FR-07680RL"
-			(at 255.27 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "1%"
-			(at 255.27 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 255.27 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a254b760-3f5e-472d-9dc2-f6f68cc5c4f8")
-		)
-		(pin "2"
-			(uuid "799f827d-ea35-48bd-933b-6cf5318818b3")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
-					(reference "R17")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
-					(reference "R?")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "harp.device.quad.dac:LED")
 		(at 264.16 81.28 0)
 		(mirror y)
@@ -14887,7 +14829,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 222.25 152.4 0)
 			(effects
 				(font
@@ -14906,6 +14848,33 @@
 			)
 		)
 		(property "Height" ""
+			(at 222.25 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-0747KL/726616"
+			(at 222.25 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 222.25 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-0747KL"
 			(at 222.25 152.4 90)
 			(effects
 				(font
@@ -16505,17 +16474,16 @@
 		)
 	)
 	(symbol
-		(lib_id "harp.device.quad.dac:R_0603")
-		(at 255.27 81.28 90)
-		(mirror x)
+		(lib_id "Device:R")
+		(at 255.27 85.09 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3951cc2d-25c6-4429-8110-acceefa169be")
+		(uuid "3c6e34b2-daf8-43aa-b5a3-51e4d535145f")
 		(property "Reference" "R18"
-			(at 257.048 79.248 90)
+			(at 253.238 87.122 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16523,8 +16491,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "330"
-			(at 257.048 81.28 90)
+		(property "Value" "1K"
+			(at 253.492 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16532,8 +16500,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 255.27 79.502 90)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 255.27 83.312 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16541,8 +16509,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 255.27 81.28 0)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+			(at 255.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16550,44 +16518,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "100Mw Thick Film Resistors 100Ppm/ 1% 330 0603 Chip Resistor Surface Mount Rohs"
-			(at 255.27 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0603FR-07330RL/727162"
-			(at 255.27 81.28 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Yageo"
-			(at 255.27 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "RC0402FR-07680RL"
-			(at 255.27 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "1%"
-			(at 255.27 81.28 0)
+		(property "Description" ""
+			(at 255.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16596,7 +16528,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 255.27 81.28 90)
+			(at 255.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16604,22 +16536,43 @@
 				(hide yes)
 			)
 		)
-		(pin "1"
-			(uuid "c8f02651-12b5-4ec5-a94f-a78c5996a7fd")
+		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+			(at 255.27 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Panasonic Electronic Components"
+			(at 255.27 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "ERJ-2RKF1001X"
+			(at 255.27 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(pin "2"
-			(uuid "0dcae127-e239-4af7-8a09-b6cf383d43f8")
+			(uuid "52d00208-c2a9-4db2-960f-72f63365e142")
+		)
+		(pin "1"
+			(uuid "3376b836-90d2-44ba-920d-dc2a20af0714")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "R18")
-					(unit 1)
-				)
-			)
-			(project "multi_ch_harp_dac"
-				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/cdcf055f-9bf3-404c-8523-cd00817ffdb6"
-					(reference "R?")
 					(unit 1)
 				)
 			)
@@ -18512,7 +18465,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 222.25 134.62 0)
 			(effects
 				(font
@@ -18531,6 +18484,33 @@
 			)
 		)
 		(property "Height" ""
+			(at 222.25 134.62 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-0747KL/726616"
+			(at 222.25 134.62 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 222.25 134.62 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-0747KL"
 			(at 222.25 134.62 90)
 			(effects
 				(font
@@ -18728,7 +18708,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 222.25 144.78 0)
 			(effects
 				(font
@@ -18747,6 +18727,33 @@
 			)
 		)
 		(property "Height" ""
+			(at 222.25 144.78 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-0747KL/726616"
+			(at 222.25 144.78 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 222.25 144.78 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-0747KL"
 			(at 222.25 144.78 90)
 			(effects
 				(font
@@ -19144,6 +19151,111 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 255.27 81.28 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7e97e949-8fb2-4969-b709-8b3873b09977")
+		(property "Reference" "R17"
+			(at 253.238 79.248 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1K"
+			(at 253.492 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 255.27 79.502 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+			(at 255.27 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 255.27 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 255.27 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+			(at 255.27 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Panasonic Electronic Components"
+			(at 255.27 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "ERJ-2RKF1001X"
+			(at 255.27 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b007016e-47bc-42f9-91d9-7c7f30fb996d")
+		)
+		(pin "1"
+			(uuid "70a6eb2c-eb42-4935-b6c7-1aa0f03a69ed")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 41.91 142.24 90)
 		(unit 1)
@@ -19314,7 +19426,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 200.66 41.91 0)
 			(effects
 				(font
@@ -19332,7 +19444,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-075K1L/726624"
 			(at 200.66 41.91 0)
 			(effects
 				(font
@@ -19341,7 +19453,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 200.66 41.91 0)
 			(effects
 				(font
@@ -19350,7 +19462,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "RC0402FR-075K1L"
 			(at 200.66 41.91 0)
 			(effects
 				(font
@@ -19837,7 +19949,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 200.66 39.37 0)
 			(effects
 				(font
@@ -19855,7 +19967,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-075K1L/726624"
 			(at 200.66 39.37 0)
 			(effects
 				(font
@@ -19864,7 +19976,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 200.66 39.37 0)
 			(effects
 				(font
@@ -19873,7 +19985,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "RC0402FR-075K1L"
 			(at 200.66 39.37 0)
 			(effects
 				(font
@@ -21052,7 +21164,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
 			(at 41.91 115.57 0)
 			(effects
 				(font
@@ -21070,7 +21182,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
 			(at 41.91 115.57 90)
 			(effects
 				(font
@@ -21079,7 +21191,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "Panasonic Electronic Components"
 			(at 41.91 115.57 0)
 			(effects
 				(font
@@ -21088,7 +21200,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "ERJ-2RKF1001X"
 			(at 41.91 115.57 0)
 			(effects
 				(font
@@ -23205,7 +23317,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf"
 			(at 78.74 74.93 0)
 			(effects
 				(font
@@ -23214,7 +23326,34 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RP2350B 80-QFN (no internal flash)"
+			(at 97.79 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/raspberry-pi/SC1510-A4/26241109"
+			(at 97.79 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Raspberry Pi"
+			(at 97.79 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "SC1510-A4"
 			(at 97.79 74.93 0)
 			(effects
 				(font
@@ -24445,7 +24584,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 222.25 139.7 0)
 			(effects
 				(font
@@ -24464,6 +24603,33 @@
 			)
 		)
 		(property "Height" ""
+			(at 222.25 139.7 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-0747KL/726616"
+			(at 222.25 139.7 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 222.25 139.7 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-0747KL"
 			(at 222.25 139.7 90)
 			(effects
 				(font
@@ -24797,7 +24963,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
 			(at 208.28 87.63 0)
 			(effects
 				(font
@@ -24824,7 +24990,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
 			(at 208.28 87.63 90)
 			(effects
 				(font
@@ -24833,7 +24999,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 208.28 87.63 0)
 			(effects
 				(font
@@ -24842,7 +25008,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" ""
+		(property "Manufacturer Number" "RC1005F103CS"
 			(at 208.28 87.63 0)
 			(effects
 				(font
@@ -24982,7 +25148,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
 			(at 222.25 149.86 0)
 			(effects
 				(font
@@ -25001,6 +25167,33 @@
 			)
 		)
 		(property "Height" ""
+			(at 222.25 149.86 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-0747KL/726616"
+			(at 222.25 149.86 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 222.25 149.86 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-0747KL"
 			(at 222.25 149.86 90)
 			(effects
 				(font
