@@ -1,4 +1,4 @@
-26930495700045052
+26942865596116332
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -106470,6 +106470,13 @@ shrouded keyed header 2mm pitch
 12
 12
 kicad-lib
+AG1171
+
+
+0
+14
+14
+kicad-lib
 BB_MOUNT_HOLE
 
 
@@ -106610,6 +106617,13 @@ LED_Kingbright_APA2107LZGCK
 2
 2
 kicad-lib
+L_0806_2016Metric
+Inductor SMD 0806 (2016 Metric)
+inductor
+0
+2
+2
+kicad-lib
 L_CommonModeChoke_TDKCorporation_1210
 
 
@@ -106644,6 +106658,13 @@ MSOP-8
 0
 8
 8
+kicad-lib
+MSOP-10_3x3mm_P0.5mm_AnalogDevices
+MSOP, 10 Pin (https://www.jedec.org/system/files/docs/mo-187F.pdf variant BA), generated with kicad-footprint-generator ipc_gullwing_generator.py
+MSOP SO Texas_DGS0010A
+0
+10
+10
 kicad-lib
 MicroFet_1.6x_1.6_Thin
 
@@ -106771,6 +106792,13 @@ Surface mounted pin header SMD 2x08 2.54mm double row
 16
 16
 kicad-lib
+RJ9_TE_Connectivity_1-1705949-1_Horizontal
+
+
+0
+4
+4
+kicad-lib
 RJ45_Adam_Tech_SMD_MTJ-88YX1
 
 
@@ -106805,6 +106833,13 @@ RP2350-QFN-80-1EP_10x10_P0.4mm_EP3.4x3.4mm_ThermalVias
 0
 102
 81
+kicad-lib
+SA618F22-C1-U
+
+
+0
+26
+26
 kicad-lib
 SMA_TE_Connectivity_CONSMA002-SMD-G-T_Horizontal
 https://www.digikey.com/htmldatasheets/production/58667/0/0/1/consma002-smd-g.pdf
@@ -106896,6 +106931,20 @@ USB C Type-C Receptacle SMD USB 2.0
 0
 22
 17
+kicad-lib
+VSSOP-8_2.3x2mm_P0.5mm_TexasInstruments
+VSSOP, 8 Pin (https://www.jedec.org/standards-documents/docs/mo-187-f), generated with kicad-footprint-generator ipc_gullwing_generator.py
+VSSOP SO JEDEC-MO-187-CA Texas_DCU0008A
+0
+8
+8
+kicad-lib
+VSSOP-8_3x3mm_P0.65mm_TexasInstruments
+VSSOP, 8 Pin (https://www.jedec.org/standards-documents/docs/mo-187-f), generated with kicad-footprint-generator ipc_gullwing_generator.py
+VSSOP SO JEDEC-MO-187-AA Texas_DGK0008A
+0
+8
+8
 kicad-lib
 WDFN-10-1EP_2.5x2.5mm_P0.5_EP1.25x2.1mm
 

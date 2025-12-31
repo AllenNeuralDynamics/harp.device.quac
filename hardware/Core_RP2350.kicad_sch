@@ -13467,7 +13467,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "harp.device.quad.dac.kicad:Fiducial_0.5mm_Mask1mm"
+		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1mm"
 			(at 162.56 195.58 0)
 			(effects
 				(font
@@ -14456,7 +14456,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "harp.device.quad.dac.kicad:Fiducial_0.5mm_Mask1mm"
+		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1mm"
 			(at 167.64 195.58 0)
 			(effects
 				(font
@@ -19968,7 +19968,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "harp.device.quad.dac.kicad:Fiducial_0.5mm_Mask1mm"
+		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1mm"
 			(at 172.72 195.58 0)
 			(effects
 				(font
@@ -21022,7 +21022,7 @@
 				)
 			)
 		)
-		(property "Footprint" "kicad_component_library:L_0806_2016Metric"
+		(property "Footprint" "kicad-lib:L_0806_2016Metric"
 			(at 58.42 43.18 0)
 			(effects
 				(font

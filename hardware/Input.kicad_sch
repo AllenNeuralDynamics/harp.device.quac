@@ -2042,7 +2042,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
+		(property "Footprint" "kicad-lib:VSSOP-8_2.3x2mm_P0.5mm_TexasInstruments"
 			(at 152.4 93.98 0)
 			(effects
 				(font
@@ -3369,7 +3369,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
+		(property "Footprint" "kicad-lib:VSSOP-8_2.3x2mm_P0.5mm_TexasInstruments"
 			(at 152.4 152.4 0)
 			(effects
 				(font
