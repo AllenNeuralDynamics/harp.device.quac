@@ -29,13 +29,21 @@ add_compile_definitions(USE_PRINTF) # For debugging no-os-* library.
 
 add_subdirectory(../../lib/no-OS-FatFS-SD-SDIO-SPI-RPi-Pico/src lib_build/no_os_fatfs_sd_sdio_spi_rpi_pico)
 
+add_library(dma_double_buffer INTERFACE)
+target_sources(dma_double_buffer INTERFACE
+    ../../inc/dma_double_buffer.h
+)
+
 add_executable(${PROJECT_NAME}
     src/main.cpp
 )
 
+include_directories(../../inc)
+
 target_link_libraries(${PROJECT_NAME}
     pico_stdlib
     no-OS-FatFS-SD-SDIO-SPI-RPi-Pico
+    dma_double_buffer
 )
 
 pico_add_extra_outputs(${PROJECT_NAME})

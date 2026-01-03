@@ -7,7 +7,7 @@
 
 // Restrict template class to 8-bit, 16-bit and 32-bit integral types.
 template<typename T>
-concept TransferType = std::is_integral<T> && sizeof(T) <= 4;
+concept TransferType = std::integral<T> && (sizeof(T) <= 4);
 
 
 /**
@@ -19,6 +19,7 @@ concept TransferType = std::is_integral<T> && sizeof(T) <= 4;
 template <TransferType T, size_t BUF_SIZE>
 class DMADoubleBuffer
 {
+public:
 
 /**
  * \brief constructor. Setup 2 DMA channels in chained configuration.
@@ -31,17 +32,17 @@ class DMADoubleBuffer
         {
             dma_channel_cfgs_[i] = dma_channel_get_default_config(dma_channels_[i]);
             auto& cfg = dma_channel_cfgs_[i];
-            channel_config_set_transfer_data_size(&cfg, sizeof(T)>>1);
-            channel_config_read_increment(&cfg, true);
-            channel_config_write_increment(&cfg, false);
-            channel_config_set_chain_to(&cfg, dma_channels[(i+1)%2]);
+            channel_config_set_transfer_data_size(&cfg, dma_channel_transfer_size(sizeof(T)>>1));
+            channel_config_set_read_increment(&cfg, true);
+            channel_config_set_write_increment(&cfg, false);
+            channel_config_set_chain_to(&cfg, dma_channels_[(i+1)%2]);
             // Note: we must still specify source/destination addresses to
             // finish the setup.
         }
     }
 
     ~DMADoubleBuffer()
-    {dma_unclaim_mask((1u << dma_channels_[i]) | (1u << dma_channels_[i]));}
+    {dma_unclaim_mask((1u << dma_channels_[0]) | (1u << dma_channels_[1]));}
 
 /**
  * \brief Setup the data-request pacing of the DMA transfers.
@@ -55,13 +56,13 @@ class DMADoubleBuffer
     void connect_external_pacing_signal(dreq_num_t pacing_signal)
     {
         for (auto& dma_channel_cfg: dma_channel_cfgs_)
-            channel_config_set_dreq(pacing_signal);
+            channel_config_set_dreq(&dma_channel_cfg, pacing_signal);
     }
 
 /**
  * \brief specify the destination address (likely a peripheral).
  */
-    void set_target_address(void* target_address)
+    void set_target_address(volatile void* target_address)
     {
         for (size_t i = 0; i < 2; ++i)
         {
@@ -79,7 +80,7 @@ class DMADoubleBuffer
  * \note alternatively, you can write to the idle buffer directly with
  *  \ref get_idle_buffer
  */
-    load_buffer(T* word_source, size_t num_words)
+    void load_buffer(T* word_source, size_t num_words)
     {
         size_t idle_buffer_id = get_idle_buffer_id();
         memcpy(&buffers_[idle_buffer_id], word_source, num_words*sizeof(T));
@@ -114,22 +115,24 @@ class DMADoubleBuffer
 /**
  * \brief return pointer to the specified buffer.
 */
-    T(*)[SIZE] get_buffer(size_t buffer_id)
+    T (*get_buffer(size_t buffer_id))[BUF_SIZE]
     {return &(buffers_[buffer_id]);}
 
-    T(*)[SIZE] get_idle_buffer()
+    T (*get_idle_buffer())[BUF_SIZE]
     {return get_buffer(get_idle_buffer_id());}
 
 /**
  * \brief Exit the Ping-Pong Buffer endless chaining loop
  */
-    void setup_last_dma_transfer(size_t dma_channel, size_t word_count);
-    {}
+    void setup_last_dma_transfer(size_t dma_channel, size_t word_count)
+    {
+        // TODO: implement this.
+    }
 
     void start_transfer()
     {
-        dma_start_channel_mask((1u << dma_channels_[i]) |
-                               (1u << dma_channels_[i]));
+        dma_start_channel_mask((1u << dma_channels_[0]) |
+                               (1u << dma_channels_[1]));
     }
 
 /**
@@ -143,7 +146,7 @@ class DMADoubleBuffer
     //void resume_transfer();
 
     void abort_transfer()
-    {dma_channel_abort(dma_channels_[get_busy_buffer_id()]);
+    {dma_channel_abort(dma_channels_[get_busy_buffer_id()]);}
 
     //void set_internal_transfer_rate(uint32_t words_per_sec);
 
@@ -156,9 +159,9 @@ class DMADoubleBuffer
               dma_channel_is_busy(dma_channels_[1]));}
 
 private:
-    alignas(16) T buffers_[2][SIZE];
+    alignas(16) T buffers_[2][BUF_SIZE];
     int dma_channels_[2];
-    dma_channel_config_t dma_channel_cfgs_[2];
+    dma_channel_config dma_channel_cfgs_[2];
 };
 #endif // DMA_DOUBLE_BUFFER
 
