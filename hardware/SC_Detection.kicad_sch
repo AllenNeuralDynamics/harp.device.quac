@@ -4664,7 +4664,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
+		(property "Footprint" "kicad-lib:VSSOP-8_3x3mm_P0.65mm_TexasInstruments"
 			(at 30.48 46.99 0)
 			(effects
 				(font
@@ -5724,7 +5724,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
+		(property "Footprint" "kicad-lib:VSSOP-8_3x3mm_P0.65mm_TexasInstruments"
 			(at 30.48 172.72 0)
 			(effects
 				(font
@@ -5836,7 +5836,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
+		(property "Footprint" "kicad-lib:VSSOP-8_3x3mm_P0.65mm_TexasInstruments"
 			(at 139.7 179.07 0)
 			(effects
 				(font
@@ -7162,7 +7162,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
+		(property "Footprint" "kicad-lib:VSSOP-8_3x3mm_P0.65mm_TexasInstruments"
 			(at 139.7 82.55 0)
 			(effects
 				(font
@@ -7881,7 +7881,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
+		(property "Footprint" "kicad-lib:VSSOP-8_3x3mm_P0.65mm_TexasInstruments"
 			(at 139.7 124.46 0)
 			(effects
 				(font
@@ -8059,7 +8059,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
+		(property "Footprint" "kicad-lib:VSSOP-8_3x3mm_P0.65mm_TexasInstruments"
 			(at 139.7 40.64 0)
 			(effects
 				(font
@@ -8662,7 +8662,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
+		(property "Footprint" "kicad-lib:VSSOP-8_3x3mm_P0.65mm_TexasInstruments"
 			(at 139.7 166.37 0)
 			(effects
 				(font
@@ -9035,7 +9035,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
+		(property "Footprint" "kicad-lib:VSSOP-8_3x3mm_P0.65mm_TexasInstruments"
 			(at 30.48 88.9 0)
 			(effects
 				(font
@@ -9411,7 +9411,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
+		(property "Footprint" "kicad-lib:VSSOP-8_3x3mm_P0.65mm_TexasInstruments"
 			(at 139.7 137.16 0)
 			(effects
 				(font
@@ -10159,7 +10159,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
+		(property "Footprint" "kicad-lib:VSSOP-8_3x3mm_P0.65mm_TexasInstruments"
 			(at 30.48 130.81 0)
 			(effects
 				(font
@@ -10339,7 +10339,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
+		(property "Footprint" "kicad-lib:VSSOP-8_3x3mm_P0.65mm_TexasInstruments"
 			(at 139.7 53.34 0)
 			(effects
 				(font
@@ -11106,7 +11106,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:VSSOP-8_3x3mm_P0.65mm"
+		(property "Footprint" "kicad-lib:VSSOP-8_3x3mm_P0.65mm_TexasInstruments"
 			(at 139.7 95.25 0)
 			(effects
 				(font

@@ -1,4 +1,4 @@
-### Footprint positions - created on 2025-12-31T13:18:20-0800 ###
+### Footprint positions - created on 2026-01-01T13:25:42-0800 ###
 ### Printed by KiCad version 9.0.6
 ## Unit = mm, Angle = deg.
 ## Side : top
@@ -235,10 +235,10 @@ U9        LTC2642                         MSOP-10_3x3mm_P0.5mm_AnalogDevices    
 U10       LTC2642                         MSOP-10_3x3mm_P0.5mm_AnalogDevices                        29.0000    32.8000  180.0000  top
 U11       LTC2642                         MSOP-10_3x3mm_P0.5mm_AnalogDevices                        29.0000    14.7000  180.0000  top
 U12       REF3525                         SOT-23-6                                                  27.1000     4.9000  180.0000  top
-U13       LMV393IDGKR                     VSSOP-8_3x3mm_P0.65mm                                     23.6000    63.6000    0.0000  top
-U14       LMV393IDGKR                     VSSOP-8_3x3mm_P0.65mm                                     23.6000    45.5050    0.0000  top
-U15       LMV393IDGKR                     VSSOP-8_3x3mm_P0.65mm                                     23.6000    27.6000    0.0000  top
-U16       LMV393IDGKR                     VSSOP-8_3x3mm_P0.65mm                                     23.6000     9.5000    0.0000  top
+U13       LMV393IDGKR                     VSSOP-8_3x3mm_P0.65mm_TexasInstruments                    23.6000    63.6000    0.0000  top
+U14       LMV393IDGKR                     VSSOP-8_3x3mm_P0.65mm_TexasInstruments                    23.6000    45.5050    0.0000  top
+U15       LMV393IDGKR                     VSSOP-8_3x3mm_P0.65mm_TexasInstruments                    23.6000    27.6000    0.0000  top
+U16       LMV393IDGKR                     VSSOP-8_3x3mm_P0.65mm_TexasInstruments                    23.6000     9.5000    0.0000  top
 U17       INA181A1                        SOT-23-6                                                  16.1000    64.7950  180.0000  top
 U18       INA181A1                        SOT-23-6                                                  16.1000    46.8000  180.0000  top
 U19       INA181A1                        SOT-23-6                                                  16.1000    28.8000  180.0000  top
