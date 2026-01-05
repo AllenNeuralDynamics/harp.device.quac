@@ -618,7 +618,7 @@
       "plot": "exports/harp.device.quac-v1.0.0/gerbers/",
       "pos_files": "exports/harp.device.quac-v1.0.0/position_files/",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../../../Downloads/harp.device.quac.step",
       "svg": "",
       "vrml": ""
     },
