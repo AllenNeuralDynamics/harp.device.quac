@@ -62559,6 +62559,17 @@
 			(uuid "a7a64fe2-30d8-49c5-b118-b96408b22d72")
 		)
 		(embedded_fonts no)
+		(model "/home/poofjunior/projects/kicad_libraries/kicad-lib/kicad-lib.3dshapes/435451019820.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "kicad-lib:MSOP-10_3x3mm_P0.5mm_AnalogDevices"
 		(layer "F.Cu")
