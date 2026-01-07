@@ -4,3 +4,6 @@
 [submodule "firmware/lib/core.pico"]
 	path = firmware/lib/core.pico
 	url = https://github.com/harp-tech/core.pico.git
+[submodule "firmware/lib/rp2040.pio-ltc264x"]
+	path = firmware/lib/rp2040.pio-ltc264x
+	url = https://github.com/AllenNeuralDynamics/rp2040.pio-ltc264x.git

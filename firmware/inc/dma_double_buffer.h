@@ -3,11 +3,20 @@
 #include <hardware/dma.h>
 #include <type_traits>
 #include <concepts>
+#include <bit>
+#include <functional>
 
 
 // Restrict template class to 8-bit, 16-bit and 32-bit integral types.
 template<typename T>
 concept TransferType = std::integral<T> && (sizeof(T) <= 4);
+
+// Restrict Buffer to power of two due to limitations of the DMA hardware as
+// currently implemented.
+template<typename T>
+concept BufSize = std::integral<T>;// && std::has_single_bit<T>;// && requires(T t){ t <= 32768;};
+
+
 
 
 /**
@@ -23,8 +32,18 @@ public:
 
 /**
  * \brief constructor. Setup 2 DMA channels in chained configuration.
+ * \param pacing_signal the data-request pacing signal of the DMA transfer.
+ * Examples include:
+ * - `DREQ_DMA_TIMER0` DMA timer that fires on a configurable interval.
+ * - `DREQ_PIO0_TX0` as soon as the outgoing buffer of PIO0 State Machine 0 can
+ *  accept a new value.
+ * - `DREQ_PIO0_RX0` as soona as the receive buffer of PIO0 State Machine 0
+ *   receives a new value.
+ * \param target_address target address for the output of the buffer
+ * (likely a peripheral).
  */
-    DMADoubleBuffer()
+    DMADoubleBuffer(dreq_num_t pacing_signal, T* target_address,
+                    bool increment = false)
     {
         for (size_t i = 0; i < 2; ++i)
             dma_channels_[i] = dma_claim_unused_channel(true);
@@ -32,48 +51,27 @@ public:
         {
             dma_channel_cfgs_[i] = dma_channel_get_default_config(dma_channels_[i]);
             auto& cfg = dma_channel_cfgs_[i];
+            channel_config_set_dreq(&cfg, pacing_signal);
             channel_config_set_transfer_data_size(&cfg, dma_channel_transfer_size(sizeof(T)>>1));
             channel_config_set_read_increment(&cfg, true);
-            channel_config_set_write_increment(&cfg, false);
+            channel_config_set_write_increment(&cfg, increment);
             channel_config_set_chain_to(&cfg, dma_channels_[(i+1)%2]);
-            // Note: we must still specify source/destination addresses to
-            // finish the setup.
+            // By default, the DMA's write address will not reset after the
+            // transfer completes without reconfiguration unless we set the
+            // ring buffer setting. Note that this will only reset on a power
+            // of two.
+            channel_config_set_ring(&cfg, true, 15);
+            // Apply the configuration.
+            dma_channel_configure(dma_channels_[i], &cfg,
+                                  target_address,   // write address
+                                  buffers_[i],      // read address.
+                                  BUF_SIZE,
+                                  false);  // Don't start.
         }
     }
 
     ~DMADoubleBuffer()
     {dma_unclaim_mask((1u << dma_channels_[0]) | (1u << dma_channels_[1]));}
-
-/**
- * \brief Setup the data-request pacing of the DMA transfers.
- * Examples include:
- * - `DREQ_DMA_TIMER0` DMA timer that fires on a configurable interval.
- * - `DREQ_PIO0_TX0` as soon as the outgoing buffer of PIO0 State Machine 0 can
- *  accept a new value.
- * - `DREQ_PIO0_RX0` as soona as the receive buffer of PIO0 State Machine 0
- *   receives a new value.
- */
-    void connect_external_pacing_signal(dreq_num_t pacing_signal)
-    {
-        for (auto& dma_channel_cfg: dma_channel_cfgs_)
-            channel_config_set_dreq(&dma_channel_cfg, pacing_signal);
-    }
-
-/**
- * \brief specify the destination address (likely a peripheral).
- */
-    void set_target_address(volatile void* target_address)
-    {
-        for (size_t i = 0; i < 2; ++i)
-        {
-            auto& cfg = dma_channel_cfgs_[i];
-            dma_channel_configure(dma_channels_[i], &cfg,
-                                  target_address,   // read address
-                                  buffers_[i],      // write address.
-                                  BUF_SIZE,
-                                  false);  // Don't start.
-        }
-    }
 
 /**
  * \brief load the buffer with \p num_words words of data from \p word_source.
@@ -124,16 +122,16 @@ public:
 /**
  * \brief Exit the Ping-Pong Buffer endless chaining loop
  */
-    void setup_last_dma_transfer(size_t dma_channel, size_t word_count)
+    void setup_last_dma_transfer(size_t word_count)
     {
-        // TODO: implement this.
+        //uint32_t encoded_transfer_count = dma_encode_transfer_count(word_count);
+        uint channel = dma_channels_[get_idle_buffer_id()];
+        //dma_channel_hw_addr(channel)->transfer_count = encoded_transfer_count;
+        dma_channel_hw_addr(channel)->transfer_count = word_count;
     }
 
     void start_transfer()
-    {
-        dma_start_channel_mask((1u << dma_channels_[0]) |
-                               (1u << dma_channels_[1]));
-    }
+    {dma_start_channel_mask(1u << dma_channels_[0]);}
 
 /**
  * \brief true if either channel is transferring (or paused mid-transfer).
@@ -155,11 +153,11 @@ public:
  * \brief True if neither dma is actively transferring.
  */
     bool transfer_complete()
-    {return !(dma_channel_is_busy(dma_channels_[0]) &&
+    {return !(dma_channel_is_busy(dma_channels_[0]) ||
               dma_channel_is_busy(dma_channels_[1]));}
 
 private:
-    alignas(16) T buffers_[2][BUF_SIZE];
+    alignas(8*sizeof(T)) T buffers_[2][BUF_SIZE];
     int dma_channels_[2];
     dma_channel_config dma_channel_cfgs_[2];
 };
