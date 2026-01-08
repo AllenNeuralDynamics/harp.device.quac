@@ -32,6 +32,13 @@ int main() {
     DMADoubleBuffer<uint16_t, BUFFER_SIZE> file_buf(pacing_signal, &short_sink);
     //In practice it will be: &pio0->txf[0]);
 
+    //printf("idle buffer id: %p\r\n", (void*)file_buf.get_idle_buffer());
+    //printf("idle buffer id: %d\r\n", dma_channel_hw_addr(file_buf.ctrl_chan_)->read_addr);
+    printf("idle buffer id: %p\r\n", file_buf.get_idle_buffer());
+    printf("double buffer 0 id: %p\r\n", file_buf.buffers_[0]);
+    printf("double buffer 1 id: %p\r\n", file_buf.buffers_[1]);
+
+/*
     // Load starting buffer with data.
     uint16_t idle_buffer_id = file_buf.get_idle_buffer_id();
     printf("Loading buffer with first block of data into buffer[%d].\r\n", idle_buffer_id);
@@ -72,4 +79,5 @@ int main() {
     // Thats it!
     printf("Transfer Complete! Goodbye, world!\r\n");
     for (;;);
+*/
 }
