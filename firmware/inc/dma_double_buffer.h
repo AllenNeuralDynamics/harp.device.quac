@@ -24,6 +24,7 @@ concept BufSize = std::integral<T>;// && std::has_single_bit<T>;// && requires(T
  *
  * The main use case is to keep the destination (usually a peripheral) topped
  * off with a constant stream of data provided at a regular time interval.
+ *
 */
 template <TransferType T, size_t BUF_SIZE>
 class DMADoubleBuffer
@@ -61,8 +62,9 @@ public:
         channel_config_set_read_increment(&cfg, true);
         channel_config_set_write_increment(&cfg, false);
         channel_config_set_irq_quiet(&cfg, true);
-        channel_config_set_ring(&cfg, false, // wrap read ptr
-                                3); // 8-byte (i.e: 1 << 3) boundary: ring-size = 2.
+        channel_config_set_ring(&cfg, false, // wrap read ptr.
+                                3); // 8-byte (i.e: 1 << 3) boundary
+                                    // creates a ring-size = 2 words.
                                     // Note: addresses are 4 bytes.
         // Apply the configuration.
         dma_channel_configure(ctrl_chan_, &cfg,
@@ -98,29 +100,11 @@ public:
  * \note alternatively, you can write to the idle buffer directly with
  *  \ref get_idle_buffer
  */
-//    void load_buffer(T* word_source, size_t num_words)
-//    {
-//        memcpy(get_idle_buffer(), word_source, num_words*sizeof(T));
-//    }
-
-
-/**
- * \brief return index of the buffer that is not currently being used
- *  for DMA transfer. If no active transfer is taking place, return the
- *  next buffer that would be used when the transfer is started.
-*/
-/*
-    size_t get_idle_buffer_id()
+    void load_buffer(T* word_source, size_t num_words)
     {
-        if (dma_channel_hw_addr(ctrl_chan_)->write_addr == )
-            return read_address;
+        memcpy(get_idle_buffer(), word_source, num_words*sizeof(T));
     }
 
-    size_t get_busy_buffer_id()
-    {
-        return dma_channel_hw_addr(data_chan_)->read_addr;
-    }
-*/
 
     //T (*get_idle_buffer())[BUF_SIZE]
     T* get_idle_buffer()
@@ -133,10 +117,12 @@ public:
     {
         // setting the transfer count while the dma channel is running sets the
         // *next* transfer count; it doesn't affect the active transfer.
-        //uint32_t encoded_transfer_count = dma_encode_transfer_count(word_count);
+        // ref: RP2350 pg 1126
+        //TODO: uint32_t encoded_transfer_count = dma_encode_transfer_count(word_count);
         dma_channel_hw_addr(data_chan_)->transfer_count = word_count;
 
-        // Disable chaining on the *next* transfer.
+        // Disable chaining on the next transfer.
+        // Modifying the CTRL register updates the *next*
         dma_channel_config cfg = dma_get_channel_config(data_chan_);
         channel_config_set_chain_to(&cfg, data_chan_); // chain-to-self disables chaining.
         dma_channel_set_config(data_chan_, &cfg, false); // trigger = false

@@ -25,7 +25,7 @@ int main() {
     // Setup transfer rate for 500K words-per-sec. Assume soure clock of 150MHz.
     int dma_timer_chan = dma_claim_unused_timer(true);
     printf("Claimed DMA Timer %d.\r\n", dma_timer_chan);
-    dma_timer_set_fraction(dma_timer_chan, 1, 300); // numerator=1, denominator=300
+    dma_timer_set_fraction(dma_timer_chan, 1, 3000); // numerator=1, denominator=300
     dreq_num_t pacing_signal = dreq_num_t(dma_get_timer_dreq(dma_timer_chan));
 
     // Create double-buffer.
@@ -50,42 +50,37 @@ int main() {
     // Load starting buffer with data.
     uint16_t* idle_buffer = file_buf.get_idle_buffer();
     printf("Loading buffer with first block of data into buffer@%p.\r\n", idle_buffer);
-    //uint16_t(*idle_buffer)[BUFFER_SIZE] = file_buf.get_idle_buffer();
     //for (uint16_t i = 0 ; i < BUFFER_SIZE; ++i)
     //    (*idle_buffer)[i] = i;
 
-    // Kick off the transfer.
     printf("Starting transfer.\r\n");
     file_buf.start_transfer();
 
     for (size_t i = 0; i < 5; ++i)
     {
         // Load open buffer with data while the busy buffer transfers out.
+        // We assume we can fill the buffer fast than it will be written out.
         idle_buffer = file_buf.get_idle_buffer();
         printf("Loading idle buffer@%p.\r\n", idle_buffer);
         //for (uint16_t i = 0 ; i < BUFFER_SIZE; ++i)
         //    (*idle_buffer)[i] = i;
-
         // Wait for buffer-switch.
         printf("Waiting for buffer to switch.\r\n");
         while (idle_buffer == file_buf.get_idle_buffer()){}
     }
 
-/*
     // Setup final transfer. (We can use f_eof in practice.)
     printf("Setting up last block transfer.\r\n");
     size_t last_transfer_num_words = std::ceil(BUFFER_SIZE/2);// arbitrary value.
     file_buf.setup_last_dma_transfer(last_transfer_num_words);
-    idle_buffer_id = file_buf.get_idle_buffer_id();
-    idle_buffer = file_buf.get_buffer(idle_buffer_id);
+    idle_buffer = file_buf.get_idle_buffer();
+    printf("Loading idle buffer@%p.\r\n", idle_buffer);
     //for (uint16_t i = 0 ; i < last_transfer_num_words; ++i)
     //    (*idle_buffer)[i] = i;
-
-    // Wait for transfer to complete.
+    // Wait for final transfer to kick off and complete.
     while (!file_buf.transfer_complete()){}
 
     // Thats it!
     printf("Transfer Complete! Goodbye, world!\r\n");
     for (;;);
-*/
 }
