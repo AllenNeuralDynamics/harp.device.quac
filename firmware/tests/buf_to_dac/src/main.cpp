@@ -12,8 +12,8 @@
 
 
 //static constexpr size_t BUFFER_SIZE = 512*64; // 32768 words
-//static constexpr size_t BUFFER_SIZE = 512*32; // 32768 bytes
 static constexpr size_t BUFFER_SIZE = 512*32; // 32768 bytes
+//static constexpr size_t BUFFER_SIZE = 512;
 
 int main() {
     uint16_t short_sink; // temporary place to dump the data.
@@ -32,17 +32,25 @@ int main() {
     DMADoubleBuffer<uint16_t, BUFFER_SIZE> file_buf(pacing_signal, &short_sink);
     //In practice it will be: &pio0->txf[0]);
 
-    //printf("idle buffer id: %p\r\n", (void*)file_buf.get_idle_buffer());
-    //printf("idle buffer id: %d\r\n", dma_channel_hw_addr(file_buf.ctrl_chan_)->read_addr);
-    printf("idle buffer id: %p\r\n", file_buf.get_idle_buffer());
-    printf("double buffer 0 id: %p\r\n", file_buf.buffers_[0]);
-    printf("double buffer 1 id: %p\r\n", file_buf.buffers_[1]);
-
 /*
+    file_buf.buffers_[0][0] = 37;
+    file_buf.buffers_[1][0] = 97;
+    printf("idle buffer id: %p\r\n", file_buf.get_idle_buffer());
+    printf("double buffer[0][0]: %d\r\n", (file_buf.get_idle_buffer())[0]);
+*/
+    printf("double buffer[0][]: %p\r\n", file_buf.buffers_[0]);
+    printf("double buffer[1][]: %p\r\n", file_buf.buffers_[1]);
+    //printf("ctrl_chan_data_: %p\r\n", file_buf.ctrl_chan_data_);
+    printf("ctrl_chan_data_[0]: %p\r\n", file_buf.ctrl_chan_data_[0]);
+    printf("ctrl_chan_data_[1]: %p\r\n", file_buf.ctrl_chan_data_[1]);
+    //printf("ctrl_chan read addr: %x\r\n", dma_channel_hw_addr(file_buf.ctrl_chan_)->read_addr);
+    printf("ctrl_chan read addr (as pointer): %p\r\n", dma_channel_hw_addr(file_buf.ctrl_chan_)->read_addr);
+    //printf("ctrl_chan read addr (dereferenced pointer): %x\r\n", *((unsigned short *)(dma_channel_hw_addr(file_buf.ctrl_chan_)->read_addr)));
+
     // Load starting buffer with data.
-    uint16_t idle_buffer_id = file_buf.get_idle_buffer_id();
-    printf("Loading buffer with first block of data into buffer[%d].\r\n", idle_buffer_id);
-    uint16_t(*idle_buffer)[BUFFER_SIZE] = file_buf.get_idle_buffer();
+    uint16_t* idle_buffer = file_buf.get_idle_buffer();
+    printf("Loading buffer with first block of data into buffer@%p.\r\n", idle_buffer);
+    //uint16_t(*idle_buffer)[BUFFER_SIZE] = file_buf.get_idle_buffer();
     //for (uint16_t i = 0 ; i < BUFFER_SIZE; ++i)
     //    (*idle_buffer)[i] = i;
 
@@ -53,17 +61,17 @@ int main() {
     for (size_t i = 0; i < 5; ++i)
     {
         // Load open buffer with data while the busy buffer transfers out.
-        idle_buffer_id = file_buf.get_idle_buffer_id();
-        printf("Loading idle buffer (buffer[%d]).\r\n", idle_buffer_id);
-        idle_buffer = file_buf.get_buffer(idle_buffer_id);
+        idle_buffer = file_buf.get_idle_buffer();
+        printf("Loading idle buffer@%p.\r\n", idle_buffer);
         //for (uint16_t i = 0 ; i < BUFFER_SIZE; ++i)
         //    (*idle_buffer)[i] = i;
 
         // Wait for buffer-switch.
         printf("Waiting for buffer to switch.\r\n");
-        while (idle_buffer_id == file_buf.get_idle_buffer_id()){}
+        while (idle_buffer == file_buf.get_idle_buffer()){}
     }
 
+/*
     // Setup final transfer. (We can use f_eof in practice.)
     printf("Setting up last block transfer.\r\n");
     size_t last_transfer_num_words = std::ceil(BUFFER_SIZE/2);// arbitrary value.

@@ -45,48 +45,47 @@ public:
     DMADoubleBuffer(dreq_num_t pacing_signal, T* target_address)
     :ctrl_chan_{-1}, data_chan_{-1}
     {
+        ctrl_chan_ = dma_claim_unused_channel(true);
+        data_chan_ = dma_claim_unused_channel(true);
         // Setup the control channel.
         // Cycle between writing 2 buffer address each time the ctrl channel
         // is invoked using the ring feature.
         // Write to update the data channel's read address.
         // Use alias3 to start the transfer in one write.
-        ctrl_chan_ = dma_claim_unused_channel(true);
-        T (*ctrl_chan_data[2])[BUF_SIZE] = {&(buffers_[0]), &(buffers_[1])};
-        ctrl_chan_ = dma_claim_unused_channel(true);
+        ctrl_chan_data_[0] = &buffers_[0];
+        ctrl_chan_data_[1] = &buffers_[1];
         ctrl_chan_cfg_ = dma_channel_get_default_config(ctrl_chan_);
-        auto& cfg = data_chan_cfg_;
-        //channel_config_set_dreq(&cfg, pacing_signal);
+        auto& cfg = ctrl_chan_cfg_;
+        channel_config_set_dreq(&cfg, DREQ_FORCE); // Go as fast as possible.
         channel_config_set_transfer_data_size(&cfg, DMA_SIZE_32);
         channel_config_set_read_increment(&cfg, true);
         channel_config_set_write_increment(&cfg, false);
-        channel_config_set_dreq(&cfg, DREQ_FORCE); // Go as fast as possible.
-        channel_config_set_ring(&cfg, false, // ring-setting applies to read address
-                                1); // ring-size = 2.
+        channel_config_set_irq_quiet(&cfg, true);
+        channel_config_set_ring(&cfg, false, // wrap read ptr
+                                3); // 8-byte (i.e: 1 << 3) boundary: ring-size = 2.
+                                    // Note: addresses are 4 bytes.
         // Apply the configuration.
         dma_channel_configure(ctrl_chan_, &cfg,
                               &dma_hw->ch[data_chan_].al3_read_addr_trig, // write address
-                              ctrl_chan_data,      // read address.
+                              &ctrl_chan_data_[0],      // read address.
                               1,
                               false);  // Don't start.
 
         // Setup the data channel
         // By chaining-to the ctrl channel, completing a transfer will retrigger
         // the control channel.
-        data_chan_ = dma_claim_unused_channel(true);
         data_chan_cfg_ = dma_channel_get_default_config(data_chan_);
         cfg = data_chan_cfg_;
         channel_config_set_dreq(&cfg, pacing_signal);
-        channel_config_set_transfer_data_size(&cfg, dma_channel_transfer_size(sizeof(T)>>1));
+        channel_config_set_transfer_data_size(&cfg, DMA_SIZE_16);//FIXME: dma_channel_transfer_size(sizeof(T)>>1));
         channel_config_set_read_increment(&cfg, true);
         channel_config_set_write_increment(&cfg, false);
+        channel_config_set_irq_quiet(&cfg, true);
         channel_config_set_chain_to(&cfg, ctrl_chan_);
         // Apply the configuration.
-        // read address will be overwritten by ctrl_chan_, including its initial
-        // value. Initial value only matters to return something sensible from
-        // get_busy_buffer()
         dma_channel_configure(data_chan_, &cfg,
                               target_address,   // write address
-                              &(buffers_[1]),    // read address. Will be populated by ctrl_chan_
+                              nullptr,          // read address. Will be populated by ctrl_chan_
                               BUF_SIZE,
                               false);  // Don't start.
     }
@@ -123,21 +122,9 @@ public:
     }
 */
 
-/**
- * \brief return pointer to the specified buffer.
-*/
-/*
-    T (*get_buffer(size_t buffer_id))[BUF_SIZE]
-    {return &(buffers_[buffer_id]);}
-*/
-
     //T (*get_idle_buffer())[BUF_SIZE]
     T* get_idle_buffer()
-    {   // FIXME: we want to cast to pointer to array pointer.
-        return *((T**)(dma_channel_hw_addr(ctrl_chan_)->read_addr));}
-
-//    {return get_buffer(get_idle_buffer_id());}
-
+    {return *((T**)(dma_channel_hw_addr(ctrl_chan_)->read_addr));}
 
 /**
  * \brief Exit the Ping-Pong Buffer endless chaining loop
@@ -179,9 +166,10 @@ public:
     {return !(dma_channel_is_busy(ctrl_chan_) || dma_channel_is_busy(data_chan_));}
 
 //private:
-    alignas(8*sizeof(T)) T buffers_[2][BUF_SIZE];
+    alignas(8*sizeof(T)) T buffers_[2][BUF_SIZE]; // FIXME: huge alignment isn't needed.
     int ctrl_chan_;
     dma_channel_config ctrl_chan_cfg_;
+    T (*ctrl_chan_data_[2])[BUF_SIZE];
     int data_chan_;
     dma_channel_config data_chan_cfg_;
 
