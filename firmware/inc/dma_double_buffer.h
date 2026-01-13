@@ -43,7 +43,7 @@ public:
  * \param target_address target address for the output of the buffer
  * (likely a peripheral).
  */
-    DMADoubleBuffer(dreq_num_t pacing_signal, T* target_address)
+    DMADoubleBuffer(dreq_num_t pacing_signal, volatile void* target_address)
     :ctrl_chan_{-1}, data_chan_{-1}
     {
         ctrl_chan_ = dma_claim_unused_channel(true);
@@ -58,7 +58,7 @@ public:
         ctrl_chan_cfg_ = dma_channel_get_default_config(ctrl_chan_);
         auto& cfg = ctrl_chan_cfg_;
         channel_config_set_dreq(&cfg, DREQ_FORCE); // Go as fast as possible.
-        channel_config_set_transfer_data_size(&cfg, DMA_SIZE_32);
+        channel_config_set_transfer_data_size(&cfg, DMA_SIZE_32); // system address size.
         channel_config_set_read_increment(&cfg, true);
         channel_config_set_write_increment(&cfg, false);
         channel_config_set_irq_quiet(&cfg, true);
@@ -79,7 +79,7 @@ public:
         data_chan_cfg_ = dma_channel_get_default_config(data_chan_);
         cfg = data_chan_cfg_;
         channel_config_set_dreq(&cfg, pacing_signal);
-        channel_config_set_transfer_data_size(&cfg, DMA_SIZE_16);//FIXME: dma_channel_transfer_size(sizeof(T)>>1));
+        channel_config_set_transfer_data_size(&cfg, dma_channel_transfer_size(sizeof(T)>>1));
         channel_config_set_read_increment(&cfg, true);
         channel_config_set_write_increment(&cfg, false);
         channel_config_set_irq_quiet(&cfg, true);
@@ -152,7 +152,7 @@ public:
     {return !(dma_channel_is_busy(ctrl_chan_) || dma_channel_is_busy(data_chan_));}
 
 //private:
-    alignas(8*sizeof(T)) T buffers_[2][BUF_SIZE]; // FIXME: huge alignment isn't needed.
+    alignas(8*sizeof(T)) T buffers_[2][BUF_SIZE];
     int ctrl_chan_;
     dma_channel_config ctrl_chan_cfg_;
     T (*ctrl_chan_data_[2])[BUF_SIZE];
