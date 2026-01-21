@@ -1,0 +1,163 @@
+#include <stdio.h>
+#include <pico/stdlib.h>
+#include <cmath>
+#include <dma_double_buffer.h>
+#include <hardware/dma.h>
+#include <hardware/pio.h>
+#include <pio_ltc264x.h>
+#include "f_util.h"
+#include "ff.h"
+#include "hw_config.h"
+#include <algorithm>
+//#include <list> // FIXME: use etl list.
+
+using T = uint16_t;
+
+static constexpr size_t NUM_FILES = 1;
+static constexpr size_t DATA_NUM_WORDS = 5'000'000;
+static constexpr size_t DATA_NUM_BYTES = DATA_NUM_WORDS * sizeof(T);
+static constexpr size_t SD_CHUNK_SIZE = 32768;  // must be factor of 512.
+
+FIL __not_in_flash("file_handlers") fil[NUM_FILES];
+
+#define PICO_PIN (15)
+#define SCK_PIN (16)
+#define CS_PIN (17)
+
+/* SDIO Interface */
+static sd_sdio_if_t sdio_if = {
+// Pins CLK_gpio, D1_gpio, D2_gpio, and D3_gpio are at offsets from pin D0_gpio.
+
+//  CLK_gpio = D0_gpio - 2; -> derived from D0_gpio.
+    .CMD_gpio = 3,
+    .D0_gpio = 4,
+//    D1_gpio = D0_gpio + 1; -> derived from D0_gpio.
+//    D2_gpio = D0_gpio + 2; -> derived from D0_gpio.
+//    D3_gpio = D0_gpio + 3; -> derived from D0_gpio.
+    .SDIO_PIO = pio0,
+    .baud_rate = 150 * 1000 * 1000 / 5, // RP2350: */8 -> 18750000 Hz.
+                                        // RP2350: */5 -> 30000000 Hz
+                                        // RP2040: */6 -> 20833333 Hz
+};
+
+/* Hardware Configuration of the SD Card socket "object" */
+static sd_card_t sd_card = {.type = SD_IF_SDIO, .sdio_if_p = &sdio_if};
+
+/**
+ * @brief Get the number of SD cards.
+ * @return The number of SD cards, which is 1 in this case.
+ */
+size_t sd_get_num() { return 1; }
+
+/**
+ * @brief Get a pointer to an SD card object by its number.
+ *
+ * @param[in] num The number of the SD card to get.
+ *
+ * @return A pointer to the SD card object, or @c NULL if the number is invalid.
+ */
+sd_card_t* sd_get_by_num(size_t num) {
+    if (0 == num)
+    {return &sd_card;}
+    else
+    {return NULL;}
+}
+
+int main() {
+    // Setup
+    const char* const filename[] = {"channel_0.txt", "channel_1.txt",
+                                    "channel_2.txt", "channel_3.txt"};
+    UINT bytes_read;
+
+    stdio_init_all();
+    while (!stdio_usb_connected()){ sleep_ms(100);} // Wait for user to open com port.
+    // Mount SD card.
+    FATFS fs;
+    FRESULT fr = f_mount(&fs, "", 1);
+    if (FR_OK != fr)
+    {panic("f_mount error: %s (%d)\n", FRESULT_str(fr), fr);}
+    printf("Hello, world, from a Raspberry Pi Pico!\r\n");
+
+    // Setup PIO Block for DAC communication.
+    PIO_LTC264x dac(pio2, SCK_PIN, PICO_PIN); // CS pin is <SCK pin> + 1
+    dac.start();
+
+    // Setup transfer rate for 500K words-per-sec. Assume soure clock of 150MHz.
+    int dma_timer_chan = dma_claim_unused_timer(true);
+    printf("Claimed DMA Timer %d.\r\n", dma_timer_chan);
+    dma_timer_set_fraction(dma_timer_chan, 1, 300); // numerator=1, denominator=300
+    dreq_num_t pacing_signal = dreq_num_t(dma_get_timer_dreq(dma_timer_chan));
+
+    // Create double-buffer.
+    // FIXME: should resize based on NUM_FILES
+    DMADoubleBuffer<T, SD_CHUNK_SIZE> file_bufs[] {{pacing_signal, &pio2->txf[dac.sm_]}};
+
+    std::array<T*, NUM_FILES> idle_buffers;
+    std::ranges::fill(idle_buffers, nullptr);
+
+    // Open 4 files. Note: max number is set by FF_FS_LOCK in ffconf.h
+    for (size_t file_index = 0; file_index < NUM_FILES; ++file_index)
+    {
+        fr = f_open(&fil[file_index], filename[file_index], FA_READ);
+        if (fr != FR_OK)
+            {panic("Could not open: %s", filename[file_index]);}
+    }
+    printf("Opened %d file(s).\r\n", NUM_FILES);
+    // FIXME: should be iterating until we reach the EOF for each file.
+    // Read the data in chunks. Top off the DMA channels.
+    for (size_t chunk_index = 0; chunk_index < ceil(DATA_NUM_BYTES/SD_CHUNK_SIZE)+1; ++chunk_index)
+    {
+        for (size_t file_index = 0; file_index < NUM_FILES; ++file_index)
+        {
+            // Get the open buffer.
+            idle_buffers[file_index] = file_bufs[file_index].get_idle_buffer();
+            auto& idle_buffer = idle_buffers[file_index];
+            //printf("Loading idle buffer@%p.\r\n", idle_buffer);
+            // Read the data to the buffer.
+            fr = f_read(&fil[file_index], idle_buffer, SD_CHUNK_SIZE, &bytes_read);
+            if (fr != FR_OK)
+                {panic("Could not read the data: %s", filename[file_index]);}
+            printf("Chunk: %d . Read %d bytes.\r\n", chunk_index, bytes_read);
+
+/*
+            printf("First few uint16s per block: ");
+            T* buffer_as_T = reinterpret_cast<T*>(idle_buffer);
+            for (size_t i = 0; i < 8; ++i)
+                {printf("%d ", buffer_as_T[i]);}
+            printf("\r\n");
+*/
+
+            // Handle end-of-file. Wind down the DMA stream.
+            if (bytes_read < SD_CHUNK_SIZE)
+            {
+                printf("setting up last transfer!\r\n");
+                // TODO: See if this works for a 0-byte transfer.
+                file_bufs[file_index].setup_last_dma_transfer(bytes_read);
+                // TODO: erase(it) instead, and make fil a list.
+            }
+            // Start the transfer on our first read. TODO: pre-read next time.
+            if (chunk_index == 0)
+            {file_bufs[file_index].start_transfer();}
+        }
+        // Wait for all buffers to switch.
+        for (size_t file_index = 0; file_index < NUM_FILES; ++file_index)
+        {while (idle_buffers[file_index] == file_bufs[file_index].get_idle_buffer()){}}
+    }
+
+    // Close all files.
+    for (size_t file_index = 0; file_index < NUM_FILES; ++file_index)
+    {
+        fr = f_close(&fil[file_index]);
+        if (fr != FR_OK)
+            {panic("Could not close: %s", filename[file_index]);}
+    }
+    // Unmount.
+    f_unmount("");
+    printf("Finished reading!\r\n");
+    // Wait for final transfer to kick off and complete.
+    for (size_t file_index = 0; file_index < NUM_FILES; ++file_index)
+    {while (!file_bufs[file_index].transfer_complete()){}}
+    printf("Transfer Complete! Goodbye, world!\r\n");
+    for (;;);
+}
+
