@@ -141,10 +141,19 @@ int main() {
         }
         // Wait for all buffers to switch.
         for (size_t file_index = 0; file_index < NUM_FILES; ++file_index)
-        {while (idle_buffers[file_index] == file_bufs[file_index].get_idle_buffer()){}}
+        {
+            while (true)
+            {
+                if (file_bufs[file_index].transfer_complete())
+                    break;
+                if (idle_buffers[file_index] != file_bufs[file_index].get_idle_buffer())
+                    break;
+            }
+        }
     }
 
     // Close all files.
+    printf("Closing files.\r\n");
     for (size_t file_index = 0; file_index < NUM_FILES; ++file_index)
     {
         fr = f_close(&fil[file_index]);
