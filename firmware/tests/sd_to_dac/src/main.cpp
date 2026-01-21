@@ -9,7 +9,8 @@
 #include "ff.h"
 #include "hw_config.h"
 #include <algorithm>
-//#include <list> // FIXME: use etl list.
+#include <numeric>
+#include <list> // FIXME: use etl list.
 
 using T = uint16_t;
 
@@ -95,30 +96,37 @@ int main() {
     std::array<T*, NUM_FILES> idle_buffers;
     std::ranges::fill(idle_buffers, nullptr);
 
+    // Create a list of indexes that we can prune as we finish reading files.
+    std::list<size_t> file_ids;
+    file_ids.resize(NUM_FILES);
+    std::iota(file_ids.begin(), file_ids.end(), 0);
+
     // Open 4 files. Note: max number is set by FF_FS_LOCK in ffconf.h
-    for (size_t file_index = 0; file_index < NUM_FILES; ++file_index)
+    for (const auto& id: file_ids)
     {
-        fr = f_open(&fil[file_index], filename[file_index], FA_READ);
+        fr = f_open(&fil[id], filename[id], FA_READ);
         if (fr != FR_OK)
-            {panic("Could not open: %s", filename[file_index]);}
+            {panic("Could not open: %s", filename[id]);}
     }
     printf("Opened %d file(s).\r\n", NUM_FILES);
-    // FIXME: should be iterating until we reach the EOF for each file.
-    // Read the data in chunks. Top off the DMA channels.
-    for (size_t chunk_index = 0; chunk_index < ceil(DATA_NUM_BYTES/SD_CHUNK_SIZE)+1; ++chunk_index)
+    // Read the data in chunks until we reach each file's EOF. Top off the DMA channels.
+    // Files can be different lengths, so we track their IDs in a linked list
+    // and pop the IDs that have been fully read.
+    size_t chunk_index = 0;
+    while (file_ids.size())
     {
-        for (size_t file_index = 0; file_index < NUM_FILES; ++file_index)
+        for (auto it = file_ids.begin(); it != file_ids.end(); ++it)
         {
+            size_t id = *it;
             // Get the open buffer.
-            idle_buffers[file_index] = file_bufs[file_index].get_idle_buffer();
-            auto& idle_buffer = idle_buffers[file_index];
+            idle_buffers[id] = file_bufs[id].get_idle_buffer();
+            auto& idle_buffer = idle_buffers[id];
             //printf("Loading idle buffer@%p.\r\n", idle_buffer);
             // Read the data to the buffer.
-            fr = f_read(&fil[file_index], idle_buffer, SD_CHUNK_SIZE, &bytes_read);
+            fr = f_read(&fil[id], idle_buffer, SD_CHUNK_SIZE, &bytes_read);
             if (fr != FR_OK)
-                {panic("Could not read the data: %s", filename[file_index]);}
+                {panic("Could not read the data: %s", filename[id]);}
             printf("Chunk: %d . Read %d bytes.\r\n", chunk_index, bytes_read);
-
 /*
             printf("First few uint16s per block: ");
             T* buffer_as_T = reinterpret_cast<T*>(idle_buffer);
@@ -126,47 +134,41 @@ int main() {
                 {printf("%d ", buffer_as_T[i]);}
             printf("\r\n");
 */
-
             // Handle end-of-file. Wind down the DMA stream.
             if (bytes_read < SD_CHUNK_SIZE)
             {
                 printf("setting up last transfer!\r\n");
                 // TODO: See if this works for a 0-byte transfer.
-                file_bufs[file_index].setup_last_dma_transfer(bytes_read);
-                // TODO: erase(it) instead, and make fil a list.
+                file_bufs[id].setup_last_dma_transfer(bytes_read);
+                // Pop the fully-read file ID from the list.
+                file_ids.erase(it);
             }
             // Start the transfer on our first read. TODO: pre-read next time.
             if (chunk_index == 0)
-            {file_bufs[file_index].start_transfer();}
+            {file_bufs[id].start_transfer();}
         }
-        // Wait for all buffers to switch.
-        for (size_t file_index = 0; file_index < NUM_FILES; ++file_index)
-        {
-            while (true)
-            {
-                if (file_bufs[file_index].transfer_complete())
-                    break;
-                if (idle_buffers[file_index] != file_bufs[file_index].get_idle_buffer())
-                    break;
-            }
-        }
+        // Wait for all double-buffers to switch or finish.
+        for (const auto& id: file_ids)
+        {while(idle_buffers[id] == file_bufs[id].get_idle_buffer()){}}
+        ++chunk_index;
     }
 
     // Close all files.
     printf("Closing files.\r\n");
-    for (size_t file_index = 0; file_index < NUM_FILES; ++file_index)
+    for (size_t id = 0; id < NUM_FILES; ++id)
     {
-        fr = f_close(&fil[file_index]);
+        fr = f_close(&fil[id]);
         if (fr != FR_OK)
-            {panic("Could not close: %s", filename[file_index]);}
+            {panic("Could not close: %s", filename[id]);}
     }
+
     // Unmount.
     f_unmount("");
     printf("Finished reading!\r\n");
     // Wait for final transfer to kick off and complete.
-    for (size_t file_index = 0; file_index < NUM_FILES; ++file_index)
-    {while (!file_bufs[file_index].transfer_complete()){}}
-    printf("Transfer Complete! Goodbye, world!\r\n");
+    for (size_t id = 0; id < NUM_FILES; ++id)
+    {while (!file_bufs[id].transfer_complete()){}}
+    printf("All transfers complete! Goodbye, world!\r\n");
     for (;;);
 }
 
