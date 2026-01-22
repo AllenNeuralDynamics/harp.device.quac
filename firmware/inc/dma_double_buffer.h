@@ -142,7 +142,8 @@ public:
 
     void abort_transfer()
     {dma_hw->abort = (1u << ctrl_chan_) | (1u << data_chan_);
-    // FIXME: we need to setup the transfer all over again.
+    // FIXME: we need to setup the transfer all over again but we only do this
+    // in the constructor.
     }
 
 /**

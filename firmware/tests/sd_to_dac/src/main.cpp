@@ -15,8 +15,10 @@
 using T = uint16_t;
 
 static constexpr size_t NUM_FILES = 1;
-static constexpr size_t DATA_NUM_WORDS = 5'000'000;
-static constexpr size_t DATA_NUM_BYTES = DATA_NUM_WORDS * sizeof(T);
+// Warning: if SD_CHUNK_SIZE is too small, then the overhead of re-accessing
+// the file and reading the data will be too large such that the buffer may
+// re-toggle, and you will see bogus extra transfers.
+// FIXME: maybe there is a way to catch this??
 static constexpr size_t SD_CHUNK_SIZE = 32768;  // must be factor of 512.
 
 FIL __not_in_flash("file_handlers") fil[NUM_FILES];
@@ -89,10 +91,12 @@ int main() {
     dma_timer_set_fraction(dma_timer_chan, 1, 300); // numerator=1, denominator=300
     dreq_num_t pacing_signal = dreq_num_t(dma_get_timer_dreq(dma_timer_chan));
 
-    // Create double-buffer.
-    // FIXME: should resize based on NUM_FILES
-    DMADoubleBuffer<T, SD_CHUNK_SIZE> file_bufs[] {{pacing_signal, &pio2->txf[dac.sm_]}};
+    // Create double-buffer. Note: buffer is sized in T-size, not byte size.
+    // FIXME: file_bufs[] should resize based on NUM_FILES
+    DMADoubleBuffer<T, SD_CHUNK_SIZE/sizeof(T)> file_bufs[] {{pacing_signal, &pio2->txf[dac.sm_]}};
 
+    // Container to store the current idle buffer name so we can track when
+    // they toggle.
     std::array<T*, NUM_FILES> idle_buffers;
     std::ranges::fill(idle_buffers, nullptr);
 
@@ -135,10 +139,10 @@ int main() {
             printf("\r\n");
 */
             // Handle end-of-file. Wind down the DMA stream.
-            if (bytes_read < SD_CHUNK_SIZE)
+            if ((bytes_read < SD_CHUNK_SIZE) || f_eof(&fil[id]))
             {
                 printf("setting up last transfer!\r\n");
-                // TODO: See if this works for a 0-byte transfer.
+                // Next transfer will be the last transfer.
                 file_bufs[id].setup_last_dma_transfer(bytes_read);
                 // Pop the fully-read file ID from the list.
                 file_ids.erase(it);
