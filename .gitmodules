@@ -7,3 +7,6 @@
 [submodule "firmware/lib/rp2040.pio-ltc264x"]
 	path = firmware/lib/rp2040.pio-ltc264x
 	url = https://github.com/AllenNeuralDynamics/rp2040.pio-ltc264x.git
+[submodule "firmware/lib/etl"]
+	path = firmware/lib/etl
+	url = https://github.com/ETLCPP/etl.git

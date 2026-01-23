@@ -14,7 +14,7 @@
 
 using T = uint16_t;
 
-static constexpr size_t NUM_FILES = 1;
+static constexpr size_t NUM_FILES = 4;
 // Warning: if SD_CHUNK_SIZE is too small, then the overhead of re-accessing
 // the file and reading the data will be too large such that the buffer may
 // re-toggle, and you will see bogus extra transfers.
@@ -26,6 +26,18 @@ FIL __not_in_flash("file_handlers") fil[NUM_FILES];
 #define PICO_PIN (15)
 #define SCK_PIN (16)
 #define CS_PIN (17)
+
+#define PICO_PIN1 (18)
+#define SCK_PIN1 (19)
+#define CS_PIN1 (20)
+
+#define PICO_PIN2 (22)
+#define SCK_PIN2 (23)
+#define CS_PIN2 (24)
+
+#define PICO_PIN3 (25)
+#define SCK_PIN3 (26)
+#define CS_PIN3 (27)
 
 /* SDIO Interface */
 static sd_sdio_if_t sdio_if = {
@@ -82,8 +94,17 @@ int main() {
     printf("Hello, world, from a Raspberry Pi Pico!\r\n");
 
     // Setup PIO Block for DAC communication.
-    PIO_LTC264x dac(pio2, SCK_PIN, PICO_PIN); // CS pin is <SCK pin> + 1
-    dac.start();
+    //PIO_LTC264x dac(pio2, SCK_PIN, PICO_PIN); // CS pin is <SCK pin> + 1
+    std::array<PIO_LTC264x, NUM_FILES> dacs
+    {{{pio2, SCK_PIN, PICO_PIN},
+      {pio2, SCK_PIN1, PICO_PIN1, false, dacs[0].get_offset()},
+      {pio2, SCK_PIN2, PICO_PIN2, false, dacs[0].get_offset()},
+      {pio2, SCK_PIN3, PICO_PIN3, false, dacs[0].get_offset()}}};
+    for (size_t i = 0; i < NUM_FILES; ++i)
+        printf("dacs[%d]: offset_ = %d, sm = %d \r\n", i, dacs[i].get_offset(),
+               dacs[i].get_sm());
+    for (const auto& dac: dacs)
+        dac.start();
 
     // Setup transfer rate for 500K words-per-sec. Assume soure clock of 150MHz.
     int dma_timer_chan = dma_claim_unused_timer(true);
@@ -93,7 +114,12 @@ int main() {
 
     // Create double-buffer. Note: buffer is sized in T-size, not byte size.
     // FIXME: file_bufs[] should resize based on NUM_FILES
-    DMADoubleBuffer<T, SD_CHUNK_SIZE/sizeof(T)> file_bufs[] {{pacing_signal, &pio2->txf[dac.sm_]}};
+    // FIXME: use std::array
+    DMADoubleBuffer<T, SD_CHUNK_SIZE/sizeof(T)> file_bufs[]
+    {{pacing_signal, &pio2->txf[dacs[0].get_sm()]},
+     {pacing_signal, &pio2->txf[dacs[1].get_sm()]},
+     {pacing_signal, &pio2->txf[dacs[2].get_sm()]},
+     {pacing_signal, &pio2->txf[dacs[3].get_sm()]}};
 
     // Container to store the current idle buffer name so we can track when
     // they toggle.
@@ -119,7 +145,9 @@ int main() {
     size_t chunk_index = 0;
     while (file_ids.size())
     {
-        for (auto it = file_ids.begin(); it != file_ids.end(); ++it)
+        //for (auto it = file_ids.begin(); it != file_ids.end(); ++it)
+        auto it = file_ids.begin();
+        while (it != file_ids.end())
         {
             size_t id = *it;
             // Get the open buffer.
@@ -130,28 +158,35 @@ int main() {
             fr = f_read(&fil[id], idle_buffer, SD_CHUNK_SIZE, &bytes_read);
             if (fr != FR_OK)
                 {panic("Could not read the data: %s", filename[id]);}
-            printf("Chunk: %d . Read %d bytes.\r\n", chunk_index, bytes_read);
-/*
-            printf("First few uint16s per block: ");
-            T* buffer_as_T = reinterpret_cast<T*>(idle_buffer);
-            for (size_t i = 0; i < 8; ++i)
-                {printf("%d ", buffer_as_T[i]);}
-            printf("\r\n");
-*/
+//            printf("Chunk: %d . Read %d bytes.\r\n", chunk_index, bytes_read);
+//            printf("First few uint16s per block: ");
+//            T* buffer_as_T = reinterpret_cast<T*>(idle_buffer);
+//            for (size_t i = 0; i < 8; ++i)
+//                {printf("%d ", buffer_as_T[i]);}
+//            printf("\r\n");
             // Handle end-of-file. Wind down the DMA stream.
             if ((bytes_read < SD_CHUNK_SIZE) || f_eof(&fil[id]))
             {
-                printf("setting up last transfer!\r\n");
+                printf("Setting up last transfer for file %d!\r\n", id);
                 // Next transfer will be the last transfer.
                 file_bufs[id].setup_last_dma_transfer(bytes_read);
                 // Pop the fully-read file ID from the list.
+                auto next_it = std::next(it);
                 file_ids.erase(it);
+                it = next_it;
             }
-            // Start the transfer on our first read. TODO: pre-read next time.
-            if (chunk_index == 0)
-            {file_bufs[id].start_transfer();}
+            else
+                {++it;}
         }
-        // Wait for all double-buffers to switch or finish.
+        // Start the transfer on our first read. TODO: pre-read next time.
+        // FIXME: we should start all channels at once.
+        if (chunk_index == 0)
+        {
+            for (size_t i = 0; i < NUM_FILES; ++i)
+                {file_bufs[i].start_transfer();}
+        }
+        // Wait for all double-buffers to swap.
+        // Note: we skip this check when we setup the last transfer.
         for (const auto& id: file_ids)
         {while(idle_buffers[id] == file_bufs[id].get_idle_buffer()){}}
         ++chunk_index;
@@ -175,4 +210,3 @@ int main() {
     printf("All transfers complete! Goodbye, world!\r\n");
     for (;;);
 }
-
