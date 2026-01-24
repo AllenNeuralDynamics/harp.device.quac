@@ -147,6 +147,13 @@ public:
     }
 
 /**
+ * \brief get the DMA channel responsible for starting the DMA transfer
+ *  (useful if we need to start multiple channels at once).
+ */
+    int get_ctrl_channel() const
+    {return ctrl_chan_;}
+
+/**
  * \brief True if neither dma is actively transferring.
  */
     bool transfer_complete()

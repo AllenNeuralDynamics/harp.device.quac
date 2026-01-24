@@ -10,7 +10,7 @@
 #include "hw_config.h"
 #include <algorithm>
 #include <numeric>
-#include <list> // FIXME: use etl list.
+#include <list> // FIXME: use etl list long-term.
 
 using T = uint16_t;
 
@@ -94,7 +94,6 @@ int main() {
     printf("Hello, world, from a Raspberry Pi Pico!\r\n");
 
     // Setup PIO Block for DAC communication.
-    //PIO_LTC264x dac(pio2, SCK_PIN, PICO_PIN); // CS pin is <SCK pin> + 1
     std::array<PIO_LTC264x, NUM_FILES> dacs
     {{{pio2, SCK_PIN, PICO_PIN},
       {pio2, SCK_PIN1, PICO_PIN1, false, dacs[0].get_offset()},
@@ -114,12 +113,16 @@ int main() {
 
     // Create double-buffer. Note: buffer is sized in T-size, not byte size.
     // FIXME: file_bufs[] should resize based on NUM_FILES
-    // FIXME: use std::array
-    DMADoubleBuffer<T, SD_CHUNK_SIZE/sizeof(T)> file_bufs[]
-    {{pacing_signal, &pio2->txf[dacs[0].get_sm()]},
-     {pacing_signal, &pio2->txf[dacs[1].get_sm()]},
-     {pacing_signal, &pio2->txf[dacs[2].get_sm()]},
-     {pacing_signal, &pio2->txf[dacs[3].get_sm()]}};
+    std::array<DMADoubleBuffer<T, SD_CHUNK_SIZE/sizeof(T)>, NUM_FILES> file_bufs
+    {{{pacing_signal, &pio2->txf[dacs[0].get_sm()]},
+      {pacing_signal, &pio2->txf[dacs[1].get_sm()]},
+      {pacing_signal, &pio2->txf[dacs[2].get_sm()]},
+      {pacing_signal, &pio2->txf[dacs[3].get_sm()]}}};
+
+    // Create a trigger mask to start all Double Buffer DMA channels at once.
+    int multi_channel_trigger_mask = 0;
+    for (const auto& buf: file_bufs)
+        multi_channel_trigger_mask |= (1u << buf.get_ctrl_channel());
 
     // Container to store the current idle buffer name so we can track when
     // they toggle.
@@ -179,12 +182,8 @@ int main() {
                 {++it;}
         }
         // Start the transfer on our first read. TODO: pre-read next time.
-        // FIXME: we should start all channels at once.
         if (chunk_index == 0)
-        {
-            for (size_t i = 0; i < NUM_FILES; ++i)
-                {file_bufs[i].start_transfer();}
-        }
+            dma_start_channel_mask(multi_channel_trigger_mask);
         // Wait for all double-buffers to swap.
         // Note: we skip this check when we setup the last transfer.
         for (const auto& id: file_ids)
