@@ -15,6 +15,7 @@
 #include "hardware/structs/clocks.h"
 #include "hardware/irq.h"
 
+
 #ifdef DEBUG
     #include <pico/stdlib.h> // for uart printing
     #include <cstdio> // for printf
@@ -409,6 +410,7 @@ int main()
 #endif
 
 // Re init uart now that clk_peri has changed
+/*
 stdio_init_all();
 
 // --- Timer Setup ---
@@ -483,4 +485,5 @@ init_alarm(3, timer_alarm_3_handler, ALARM_3_PERIOD_US);
         // clock_sys = frequency_count_khz(CLOCKS_FC0_SRC_VALUE_CLK_SYS);
         
     }
+*/
 }

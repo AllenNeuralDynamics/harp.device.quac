@@ -107,6 +107,7 @@
         "solder_mask_bridge": "warning",
         "starved_thermal": "error",
         "text_height": "warning",
+        "text_on_edge_cuts": "error",
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
@@ -1506,7 +1507,7 @@
           "show": false
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "MPN",
           "name": "Manufacturer_Part_Number",
           "show": true
@@ -1521,13 +1522,13 @@
           "group_by": false,
           "label": "Manufacturer",
           "name": "Manufacturer",
-          "show": false
+          "show": true
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Footprint",
           "name": "Footprint",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -1566,10 +1567,10 @@
           "show": false
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Datasheet",
           "name": "Datasheet",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -1599,13 +1600,13 @@
           "group_by": false,
           "label": "Manufacturer Number",
           "name": "Manufacturer Number",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
           "label": "Link",
           "name": "Link",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -1647,6 +1648,18 @@
           "group_by": false,
           "label": "Alternate",
           "name": "Alternate",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "DC Resistance",
+          "name": "DC Resistance",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Vendor Num",
+          "name": "Vendor Num",
           "show": false
         }
       ],
@@ -1704,7 +1717,7 @@
     ],
     [
       "5973743b-c3fc-4963-acef-26c8fa426708",
-      "Core_RP2350"
+      "RP2350 Core"
     ],
     [
       "50574cb8-ffd5-42a3-a56c-0f0945fbd245",
@@ -1712,11 +1725,7 @@
     ],
     [
       "1945aa77-a929-44fd-b3b6-12787633d2f2",
-      "SC_Detection"
-    ],
-    [
-      "08506a40-9943-41e4-b528-13f6a4c7e855",
-      "Communication"
+      "Short Circuit Detection"
     ],
     [
       "8b495cef-3a6a-4801-9796-978978016448",
@@ -1724,15 +1733,11 @@
     ],
     [
       "df92df4e-37ce-471e-93c1-358fcc45baf3",
-      "Power_Supply"
+      "Power Supplies"
     ],
     [
       "1783abfe-3faf-469b-a509-8e70c13c0682",
       "Output"
-    ],
-    [
-      "0ccdaeff-cab2-4ff1-b218-5d9a4a178a6f",
-      "Block_Diagram"
     ]
   ],
   "text_variables": {}
