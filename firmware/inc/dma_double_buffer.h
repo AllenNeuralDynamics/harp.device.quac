@@ -11,14 +11,6 @@
 template<typename T>
 concept TransferType = std::integral<T> && (sizeof(T) <= 4);
 
-// Restrict Buffer to power of two due to limitations of the DMA hardware as
-// currently implemented.
-template<typename T>
-concept BufSize = std::integral<T>;// && std::has_single_bit<T>;// && requires(T t){ t <= 32768;};
-
-
-
-
 /**
  * \brief DMA-based double-buffer.
  *
@@ -45,6 +37,11 @@ public:
  */
     DMADoubleBuffer(dreq_num_t pacing_signal, volatile void* target_address)
     :ctrl_chan_{-1}, data_chan_{-1}
+    {
+        setup_transfer(pacing_signal, target_address);
+    }
+
+    void setup_transfer(dreq_num_t pacing_signal, volatile void* target_address)
     {
         ctrl_chan_ = dma_claim_unused_channel(true);
         data_chan_ = dma_claim_unused_channel(true);
@@ -137,13 +134,80 @@ public:
     bool is_transferring()
     {return dma_channel_is_busy(ctrl_chan_) || dma_channel_is_busy(data_chan_);}
 
-    //void pause_transfer();
-    //void resume_transfer();
+/**
+ * \brief pause an active transfer
+ */
+    void pause_transfer()
+    {
+        // Clear EN bit on an active transfer.
+        // Apply the pause, then validate and reapply if needed (in case the
+        // data channel was in the middle of being reconfigured).
+        if (!is_transferring())
+            return;
+        dma_channel_config cfg = dma_get_channel_config(data_chan_);
+        while (true)
+        {
+            if ((cfg.ctrl & DMA_CH0_CTRL_TRIG_EN_BITS) == 0) // is-paused
+                return; // bail when channel actually pauses.
+            channel_config_set_enable(&cfg, false); // clear enable bit.
+            dma_channel_set_config(data_chan_, &cfg, false); // trigger = false
+            // re apply if needed.
+            dma_channel_config cfg = dma_get_channel_config(data_chan_);
+        }
+    }
 
+/**
+ * \brief resume a paused transfer
+ */
+    void resume_transfer()
+    {
+        if (!is_transferring())
+            return;
+        // Set EN bit on data channel to resume transfer.
+        dma_channel_config cfg = dma_get_channel_config(data_chan_);
+        channel_config_set_enable(&cfg, true); // set enable bit.
+        dma_channel_set_config(data_chan_, &cfg, false); // trigger = false
+    }
+
+
+/**
+ * \brief true if the transfer sequence is paused.
+ */
+    bool is_paused()
+    {
+        // is-paused: BUSY == 1 while EN == 0 for data channel.
+        if (!is_transferring()) // Check (BUSY == 1) case.
+            return false;
+        dma_channel_config cfg = dma_get_channel_config(data_chan_);
+        return (cfg.ctrl & DMA_CH0_CTRL_TRIG_EN_BITS) == 0;
+    }
+
+/**
+ * \brief stop an active transfer.
+ * \note we will need to call setup_transfer() again before starting a new
+ *  transfer.
+ * \details See RP2350 Datashset pg 1108 for the correct abort procedure.
+ */
     void abort_transfer()
-    {dma_hw->abort = (1u << ctrl_chan_) | (1u << data_chan_);
-    // FIXME: we need to setup the transfer all over again but we only do this
-    // in the constructor.
+    {
+        // Clear EN bit and CHAIN_TO across all channels.
+        // Clear ctrl_chan_ first, so we don't race to reconfigure data_chan_
+        int channels[] = {ctrl_chan_, data_chan_};
+        for (size_t i = 0; i < 2; ++i)
+        {
+            auto& chan = channels[i];
+            dma_channel_config cfg = dma_get_channel_config(chan);
+            channel_config_set_chain_to(&cfg, chan); // chain-to-self disables chaining.
+            channel_config_set_enable(&cfg, false); // clear enable bit.
+            dma_channel_set_config(chan, &cfg, false); // trigger = false
+        }
+        // Old way:
+        //dma_hw->ch[data_chan_].al11_ctrl &=
+        //    ~(0x00000001 | (data_chan_ << DMA_CH0_CTRL_TRIG_CHAIN_TO_LSB));
+        //dma_hw->ch[ctrl_chan_].al1_ctrl &=
+        //    ~(0x00000001 | (ctrl_chan_ << DMA_CH0_CTRL_TRIG_CHAIN_TO_LSB));
+        dma_hw->abort = (1u << ctrl_chan_) | (1u << data_chan_);
+        // Additionally, we could poll until the bits we just set above clear.
     }
 
 /**
