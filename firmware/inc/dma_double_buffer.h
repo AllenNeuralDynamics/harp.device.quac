@@ -201,11 +201,6 @@ public:
             channel_config_set_enable(&cfg, false); // clear enable bit.
             dma_channel_set_config(chan, &cfg, false); // trigger = false
         }
-        // Old way:
-        //dma_hw->ch[data_chan_].al11_ctrl &=
-        //    ~(0x00000001 | (data_chan_ << DMA_CH0_CTRL_TRIG_CHAIN_TO_LSB));
-        //dma_hw->ch[ctrl_chan_].al1_ctrl &=
-        //    ~(0x00000001 | (ctrl_chan_ << DMA_CH0_CTRL_TRIG_CHAIN_TO_LSB));
         dma_hw->abort = (1u << ctrl_chan_) | (1u << data_chan_);
         // Additionally, we could poll until the bits we just set above clear.
     }
@@ -219,11 +214,13 @@ public:
 
 /**
  * \brief True if neither dma is actively transferring.
+ * \note that per-this-implementation, a transfer is considered complete
+ *  even if it has been aborted.
  */
     bool transfer_complete()
-    {return !(dma_channel_is_busy(ctrl_chan_) || dma_channel_is_busy(data_chan_));}
+    {return !(is_transferring());}
 
-//private:
+private:
     alignas(8*sizeof(T)) T buffers_[2][BUF_SIZE];
     int ctrl_chan_;
     dma_channel_config ctrl_chan_cfg_;

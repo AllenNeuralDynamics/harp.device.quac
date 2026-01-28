@@ -8,7 +8,6 @@
 #include "ff.h"
 #include "hw_config.h"
 
-inline constexpr uint32_t PAUSE_INTERVAL_US = 500000;
 inline constexpr uint32_t WORD_COUNT = 32768;
 
 using T = uint16_t;
@@ -41,32 +40,15 @@ int main() {
     printf("Starting transfer.\r\n");
     buf.setup_last_dma_transfer(WORD_COUNT); // only do one buffer transfer.
     buf.start_transfer();
-    uint32_t start_time_s = time_us_32();
-    uint32_t next_time_us = start_time_s + PAUSE_INTERVAL_US;
-    while (true)
-    {
-        while (int32_t(time_us_32() - next_time_us) < 0){}
-        if (buf.transfer_complete())
-            break;
-
-        next_time_us += PAUSE_INTERVAL_US;
-        buf.pause_transfer();
-        printf("Paused transfer.\r\n");
-        if (buf.is_paused())
-            printf("Transfer is now paused.\r\n");
-        else
-            printf("ERROR: Transfer not paused or not detected as paused.\r\n");
-
-        while (int32_t(time_us_32() - next_time_us) < 0){}
-
-        next_time_us += PAUSE_INTERVAL_US;
-        buf.resume_transfer();
-        printf("Resumed transfer.\r\n");
-        if (!buf.is_paused() || buf.transfer_complete())
-            printf("Transfer is now resumed.\r\n");
-        else
-            printf("ERROR: Transfer not resumed or not detected as resumed.\r\n");
-    }
+    // Wait for transfer to start. (Should be instant.)
+    printf("Waiting for transfer to start.\r\n");
+    while (!buf.is_transferring()){}
+    sleep_ms(1);
+    buf.abort_transfer();
+    if (!buf.is_transferring())
+        printf("Transfer aborted.\r\n");
+    else
+        printf("ERROR: Transfer not aborted or not detected as such.\r\n");
     printf("Transfer complete! Goodbye, world.\r\n");
     for (;;);
 }
