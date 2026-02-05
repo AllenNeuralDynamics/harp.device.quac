@@ -26,36 +26,36 @@ endif()
 include(${PICO_SDK_PATH}/pico_sdk_init.cmake)
 pico_sdk_init()
 
-# Use modern conventions like std::invoke
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
-project(harp_quad_dac)
+project(quac)
 
 
 add_compile_definitions(USE_PRINTF)
 
 add_subdirectory(lib/no-OS-FatFS-SD-SDIO-SPI-RPi-Pico/src lib_build/no_os_fatfs_sd_sdio_spi_rpi_pico)
-#add_subdirectory(lib/core.pico/firmware lib_build/pico-core)
+add_subdirectory(lib/core.pico/firmware lib_build/pico-core)
+add_subdirectory(lib/rp2040.pio-ltc264x lib_build/pio-ltc264x)
 
 add_executable(${PROJECT_NAME}
     src/main.cpp
+    src/sd_hw_config.cpp
 )
 
 include_directories(inc)
 
 target_link_libraries(${PROJECT_NAME}
-    #harp_c_app
-    #harp_sync
+    harp_c_app
+    harp_sync
     pico_stdlib
+    pio_ltc264x
     #hardware_adc
-    #hardware_dma
+    hardware_dma
     no-OS-FatFS-SD-SDIO-SPI-RPi-Pico
 
 )
 
 pico_add_extra_outputs(${PROJECT_NAME})
-
-pico_enable_stdio_usb(${PROJECT_NAME} 1)
 
 if(DEBUG)
     message(WARNING "Debug printf() messages from harp core to UART with baud \

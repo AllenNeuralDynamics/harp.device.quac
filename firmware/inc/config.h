@@ -1,20 +1,38 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#include <sd_card.h>  // from no-os* sd card library.
+#include <pio_ltc264x.h>
+#include <dma_double_buffer.h>
 #include <array>
 
 struct DACPins
 {
-    pico;
-    sck;
-    cs;
+    uint32_t pico;
+    uint32_t sck;
+    uint32_t cs;
 };
 
+using T = uint16_t; // Double Buffer Data Transfer Type.
+
 inline constexpr size_t NUM_CHANNELS = 4;
+inline constexpr std::array<const char*, NUM_CHANNELS> filenames
+{{
+    "channel_0.txt", "channel_1.txt", "channel_2.txt", "channel_3.txt"
+}};
 inline constexpr size_t SD_CHUNK_SIZE_BYTES = 32768; // must be a factor of 512
+inline constexpr size_t BUF_SIZE = SD_CHUNK_SIZE_BYTES/sizeof(T);
+
+#define DAC_PIO (pio1)
+#define SD_PIO (pio0)
+
+// Double Buffers must be accessible by both cores.
+extern const std::array<PIO_LTC264x, NUM_CHANNELS> dacs;
+extern std::array<DMADoubleBuffer<T, BUF_SIZE>, NUM_CHANNELS> file_bufs;
 
 static_assert(SD_CHUNK_SIZE_BYTES % 512 == 0,
  "SD_CHUNK_SIZE_BYTES must be a multiple of 512 (SD card block size).");
+
 
 inline constexpr std::array<DACPins, NUM_CHANNELS> DAC_PINS
 {{
@@ -23,6 +41,12 @@ inline constexpr std::array<DACPins, NUM_CHANNELS> DAC_PINS
     {.pico = 12, .sck = 13, .cs = 14},
     {.pico = 16, .sck = 17, .cs = 18}
 }};
+
+// SD pins and settings.
+inline constexpr size_t SD_CMD_PIN = 3;
+inline constexpr size_t SD_D0_PIN = 4;
+inline constexpr size_t SD_READ_SPEED_HZ = 150 * 1000 * 1000 / 5; // RP2350: 30 MHz
+
 
 inline constexpr std::array<uint32_t, NUM_CHANNELS> EXTERNAL_TRIGGERS
 {{29, 30, 31, 32}};
@@ -54,6 +78,6 @@ inline constexpr size_t FW_VERSION_MAJOR = 0;
 inline constexpr size_t FW_VERSION_MINOR = 0;
 inline constexpr size_t FW_VERSION_PATCH = 1;
 
-inline constexpr UNUSED_SERIAL_NUMBER = 0; // Deprecated in favor of R_UUID
+inline constexpr size_t UNUSED_SERIAL_NUMBER = 0; // Deprecated in favor of R_UUID
 
 #endif // CONFIG_H

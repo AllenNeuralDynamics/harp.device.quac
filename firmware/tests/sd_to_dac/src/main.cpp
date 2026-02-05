@@ -80,7 +80,7 @@ sd_card_t* sd_get_by_num(size_t num) {
 
 int main() {
     // Setup
-    const char* const filename[] = {"channel_0.txt", "channel_1.txt",
+    const char* const filenames[] = {"channel_0.txt", "channel_1.txt",
                                     "channel_2.txt", "channel_3.txt"};
     UINT bytes_read;
 
@@ -94,7 +94,7 @@ int main() {
     printf("Hello, world, from a Raspberry Pi Pico!\r\n");
 
     // Setup PIO Block for DAC communication.
-    std::array<PIO_LTC264x, NUM_FILES> dacs
+    const std::array<PIO_LTC264x, NUM_FILES> dacs
     {{{pio2, SCK_PIN, PICO_PIN},
       {pio2, SCK_PIN1, PICO_PIN1, false, dacs[0].get_offset()},
       {pio2, SCK_PIN2, PICO_PIN2, false, dacs[0].get_offset()},
@@ -137,9 +137,9 @@ int main() {
     // Open 4 files. Note: max number is set by FF_FS_LOCK in ffconf.h
     for (const auto& id: file_ids)
     {
-        fr = f_open(&fil[id], filename[id], FA_READ);
+        fr = f_open(&fil[id], filenames[id], FA_READ);
         if (fr != FR_OK)
-            {panic("Could not open: %s", filename[id]);}
+            {panic("Could not open: %s", filenames[id]);}
     }
     printf("Opened %d file(s).\r\n", NUM_FILES);
     // Read the data in chunks until we reach each file's EOF. Top off the DMA channels.
@@ -160,7 +160,7 @@ int main() {
             // Read the data to the buffer.
             fr = f_read(&fil[id], idle_buffer, SD_CHUNK_SIZE, &bytes_read);
             if (fr != FR_OK)
-                {panic("Could not read the data: %s", filename[id]);}
+                {panic("Could not read the data: %s", filenames[id]);}
 //            printf("Chunk: %d . Read %d bytes.\r\n", chunk_index, bytes_read);
 //            printf("First few uint16s per block: ");
 //            T* buffer_as_T = reinterpret_cast<T*>(idle_buffer);
@@ -197,7 +197,7 @@ int main() {
     {
         fr = f_close(&fil[id]);
         if (fr != FR_OK)
-            {panic("Could not close: %s", filename[id]);}
+            {panic("Could not close: %s", filenames[id]);}
     }
 
     // Unmount.
