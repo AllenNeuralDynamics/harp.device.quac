@@ -97,11 +97,8 @@ public:
  * \note alternatively, you can write to the idle buffer directly with
  *  \ref get_idle_buffer
  */
-    void load_buffer(T* word_source, size_t num_words)
-    {
-        memcpy(get_idle_buffer(), word_source, num_words*sizeof(T));
-    }
-
+    inline void load_buffer(T* word_source, size_t num_words)
+    {memcpy(get_idle_buffer(), word_source, num_words*sizeof(T));}
 
     //T (*get_idle_buffer())[BUF_SIZE]
     T* get_idle_buffer()
@@ -202,7 +199,10 @@ public:
             dma_channel_set_config(chan, &cfg, false); // trigger = false
         }
         dma_hw->abort = (1u << ctrl_chan_) | (1u << data_chan_);
-        // Additionally, we could poll until the bits we just set above clear.
+        // FIXME: poll abort bits until they clear (i.e: abort took effect).
+        // FIXME: we need to reconnect the data_chan chain-to signal so that i
+        //  matches the starting configuration. Alternatively, we need a
+        //  re-initialize function.
     }
 
 /**
