@@ -36,6 +36,10 @@ int main() {
     // Create double-buffer. Note: buffer is sized in T-size, not byte size.
     DMADoubleBuffer<T, WORD_COUNT> buf(pacing_signal, &pio2->txf[dac.get_sm()]);
 
+    // Sanity check.
+    if (buf.is_aborted())
+        printf("ERROR: Buffer detected as aborted before even transferring.\r\n");
+
     // Copy of the current idle buffer name so we can track when it toggles.
     printf("Starting transfer.\r\n");
     buf.setup_last_dma_transfer(WORD_COUNT); // only do one buffer transfer.
@@ -44,11 +48,23 @@ int main() {
     printf("Waiting for transfer to start.\r\n");
     while (!buf.is_transferring()){}
     sleep_ms(1);
+    printf("Aborting transfer.\r\n");
     buf.abort_transfer();
     if (!buf.is_transferring())
-        printf("Transfer aborted.\r\n");
+        printf("No longer transferring.\r\n");
+    else
+        printf("ERROR: Transfer is still transferring or detected as such.\r\n");
+    if (buf.is_aborted())
+        printf("Transfer detected as aborted.\r\n");
     else
         printf("ERROR: Transfer not aborted or not detected as such.\r\n");
-    printf("Transfer complete! Goodbye, world.\r\n");
+    printf("Resetting dma configuration.\r\n");
+    buf.reset_transfer_config();
+    if (buf.is_aborted())
+        printf("ERROR: Buffer still detected as aborted.\r\n");
+    else
+        printf("Buffer no longer detected as aborted.\r\n");
+
+    printf("Goodbye, world.\r\n");
     for (;;);
 }
