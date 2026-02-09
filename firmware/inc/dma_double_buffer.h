@@ -52,41 +52,44 @@ public:
         // Use alias3 to start the transfer in one write.
         ctrl_chan_data_[0] = &buffers_[0];
         ctrl_chan_data_[1] = &buffers_[1];
-        ctrl_chan_cfg_ = dma_channel_get_default_config(ctrl_chan_);
-        auto& cfg = ctrl_chan_cfg_;
-        channel_config_set_dreq(&cfg, DREQ_FORCE); // Go as fast as possible.
-        channel_config_set_transfer_data_size(&cfg, DMA_SIZE_32); // system address size.
-        channel_config_set_read_increment(&cfg, true);
-        channel_config_set_write_increment(&cfg, false);
-        channel_config_set_irq_quiet(&cfg, true);
-        channel_config_set_ring(&cfg, false, // wrap read ptr.
+        dma_channel_config ctrl_chan_cfg = dma_channel_get_default_config(ctrl_chan_);
+        channel_config_set_dreq(&ctrl_chan_cfg, DREQ_FORCE); // Go as fast as possible.
+        channel_config_set_transfer_data_size(&ctrl_chan_cfg, DMA_SIZE_32); // system address size.
+        channel_config_set_read_increment(&ctrl_chan_cfg, true);
+        channel_config_set_write_increment(&ctrl_chan_cfg, false);
+        channel_config_set_irq_quiet(&ctrl_chan_cfg, true);
+        channel_config_set_chain_to(&ctrl_chan_cfg, ctrl_chan_); // disable chaining.
+        // Set ctrl_chan_data_ to reset after transferring 2 words.
+        channel_config_set_ring(&ctrl_chan_cfg, false, // wrap read ptr.
                                 3); // 8-byte (i.e: 1 << 3) boundary
                                     // creates a ring-size = 2 words.
                                     // Note: addresses are 4 bytes.
         // Apply the configuration.
-        dma_channel_configure(ctrl_chan_, &cfg,
+        dma_channel_configure(ctrl_chan_, &ctrl_chan_cfg,
                               &dma_hw->ch[data_chan_].al3_read_addr_trig, // write address
                               &ctrl_chan_data_[0],      // read address.
                               1,
                               false);  // Don't start.
+        ctrl_chan_default_cfg_ = ctrl_chan_cfg;
 
         // Setup the data channel
         // By chaining-to the ctrl channel, completing a transfer will retrigger
         // the control channel.
-        data_chan_cfg_ = dma_channel_get_default_config(data_chan_);
-        cfg = data_chan_cfg_;
-        channel_config_set_dreq(&cfg, pacing_signal);
-        channel_config_set_transfer_data_size(&cfg, dma_channel_transfer_size(sizeof(T)>>1));
-        channel_config_set_read_increment(&cfg, true);
-        channel_config_set_write_increment(&cfg, false);
-        channel_config_set_irq_quiet(&cfg, true);
-        channel_config_set_chain_to(&cfg, ctrl_chan_);
+        dma_channel_config data_chan_cfg = dma_channel_get_default_config(data_chan_);
+        channel_config_set_dreq(&data_chan_cfg, pacing_signal);
+        channel_config_set_transfer_data_size(&data_chan_cfg,
+                                              dma_channel_transfer_size(sizeof(T)>>1));
+        channel_config_set_read_increment(&data_chan_cfg, true);
+        channel_config_set_write_increment(&data_chan_cfg, false);
+        channel_config_set_irq_quiet(&data_chan_cfg, true);
+        channel_config_set_chain_to(&data_chan_cfg, ctrl_chan_);
         // Apply the configuration.
-        dma_channel_configure(data_chan_, &cfg,
+        dma_channel_configure(data_chan_, &data_chan_cfg,
                               target_address,   // write address
                               nullptr,          // read address. Will be populated by ctrl_chan_
                               BUF_SIZE,
                               false);  // Don't start.
+        data_chan_default_cfg_ = data_chan_cfg;
     }
 
     ~DMADoubleBuffer()
@@ -198,11 +201,37 @@ public:
             channel_config_set_enable(&cfg, false); // clear enable bit.
             dma_channel_set_config(chan, &cfg, false); // trigger = false
         }
-        dma_hw->abort = (1u << ctrl_chan_) | (1u << data_chan_);
-        // FIXME: poll abort bits until they clear (i.e: abort took effect).
-        // FIXME: we need to reconnect the data_chan chain-to signal so that i
-        //  matches the starting configuration. Alternatively, we need a
-        //  re-initialize function.
+        uint32_t abort_mask = (1u << ctrl_chan_) | (1u << data_chan_);
+        dma_hw->abort = abort_mask;
+        // Poll set bits until they clear (i.e: abort took effect).
+        while (dma_hw->abort & abort_mask)
+            tight_loop_contents();
+        // DEBUG
+        dma_channel_config cfg = dma_get_channel_config(data_chan_);
+    }
+
+    bool is_aborted()
+    {
+        // True if data_chan_ is chained-to-self.
+        dma_channel_config cfg = dma_get_channel_config(data_chan_);
+        uint32_t chained_channel = (cfg.ctrl & DMA_CH0_CTRL_TRIG_CHAIN_TO_BITS)
+                                   >> DMA_CH0_CTRL_TRIG_CHAIN_TO_LSB;
+        return chained_channel == data_chan_;
+    }
+
+/**
+ * \brief reset both dma channels to their starting configuration (i.e:
+ *  ready to kick off a transfer sequence.)
+ */
+    void reset_transfer_config()
+    {
+        // For ctrl_chan_ we must additionally reset the idle buffer because
+        // ping-ponging between buffers is specified relative to the starting
+        // buffer address.
+        dma_channel_set_read_addr(ctrl_chan_, &ctrl_chan_data_[0], false);
+        dma_channel_set_config(ctrl_chan_, &ctrl_chan_default_cfg_, false);
+        dma_channel_set_config(data_chan_, &data_chan_default_cfg_, false);
+        dma_channel_config cfg = dma_get_channel_config(data_chan_);
     }
 
 /**
@@ -223,13 +252,10 @@ public:
 private:
     alignas(8*sizeof(T)) T buffers_[2][BUF_SIZE];
     int ctrl_chan_;
-    dma_channel_config ctrl_chan_cfg_;
+    dma_channel_config ctrl_chan_default_cfg_;
     T (*ctrl_chan_data_[2])[BUF_SIZE];
     int data_chan_;
-    dma_channel_config data_chan_cfg_;
-
-    //int dma_channels_[2];
-    dma_channel_config dma_channel_cfgs_[2];
+    dma_channel_config data_chan_default_cfg_;
 };
 #endif // DMA_DOUBLE_BUFFER
 
