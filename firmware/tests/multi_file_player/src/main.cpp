@@ -3,14 +3,19 @@
 #include <hardware/dma.h>
 #include <hardware/pio.h>
 #include <pio_ltc264x.h>
-#include "config.h"
+#include <array>
+#include <f_util.h>
+#include <ff.h>
+#include <hw_config.h>
+#include <multi_file_player.h>
 
 using T = uint16_t;
-static constexpr size_t NUM_FILES = 4;
-static constexpr size_t SD_CHUNK_SIZE = 32768;  // must be factor of 512.
+inline constexpr size_t NUM_FILES = 4;
+inline constexpr size_t SD_CHUNK_SIZE = 32768;  // must be factor of 512.
 
 FIL __not_in_flash("file_handlers") fil[NUM_FILES];
-inline constexpr std::array<const char*, NUM_FILES> filenames
+
+std::array<const char*, NUM_FILES> filenames
 {{"channel_0.txt", "channel_1.txt", "channel_2.txt", "channel_3.txt"}};
 
 struct DACPins
@@ -18,9 +23,9 @@ struct DACPins
     uint32_t pico;
     uint32_t sck;
     uint32_t cs;
-}
+};
 
-inline constexpr std::array<DACPins, NUM_FILES> DAC_PINS
+std::array<DACPins, NUM_FILES> DAC_PINS
 {{
     {.pico = 15, .sck = 16, .cs = 17},
     {.pico = 18, .sck = 19, .cs = 20},
@@ -51,9 +56,7 @@ size_t sd_get_num() { return 1; }
 
 /**
  * @brief Get a pointer to an SD card object by its number.
- *
  * @param[in] num The number of the SD card to get.
- *
  * @return A pointer to the SD card object, or @c NULL if the number is invalid.
  */
 sd_card_t* sd_get_by_num(size_t num) {
@@ -77,28 +80,17 @@ int main() {
 
     // Setup PIO Block for DAC communication.
     const std::array<PIO_LTC264x, NUM_FILES> dacs
-    {{{pio2, SCK_PIN, PICO_PIN},
-      {pio2, SCK_PIN1, PICO_PIN1, false, dacs[0].get_offset()},
-      {pio2, SCK_PIN2, PICO_PIN2, false, dacs[0].get_offset()},
-      {pio2, SCK_PIN3, PICO_PIN3, false, dacs[0].get_offset()}}};
+    {{{pio2, DAC_PINS[0].sck, DAC_PINS[0].pico},
+      {pio2, DAC_PINS[1].sck, DAC_PINS[1].pico, false, dacs[0].get_offset()},
+      {pio2, DAC_PINS[2].sck, DAC_PINS[2].pico, false, dacs[0].get_offset()},
+      {pio2, DAC_PINS[3].sck, DAC_PINS[3].pico, false, dacs[0].get_offset()}}};
     for (const auto& dac: dacs)
         dac.start();
 
-    // FIXME: should MultiFilePlayer be doing this.
-    // Setup transfer rate for 500K words-per-sec. Assume soure clock of 150MHz.
-    int dma_timer_chan = dma_claim_unused_timer(true);
-    printf("Claimed DMA Timer %d.\r\n", dma_timer_chan);
-    dma_timer_set_fraction(dma_timer_chan, 1, 300); // numerator=1, denominator=300
-    dreq_num_t pacing_signal = dreq_num_t(dma_get_timer_dreq(dma_timer_chan));
-
     // Create MultiFilePlayer
     MultiFilePlayer<T, NUM_FILES, SD_CHUNK_SIZE/sizeof(T)> player(dacs, filenames);
-    for (size_t i = 0; i < NUM_FILES; ++i)
-        player.set_frequency_hz(i, 500000);
-    // FIXME: instead of calling update in a poll loop, we should be able to do
-    // one `player.init()` instead.
-    while (!player.is_armed(0b111))
-        player.update();    // Should only be one iteration.
+    player.set_frequency_hz(500'000);
+    player.setup();
     player.start(0b1111);
     while(player.is_busy())
         player.update();
@@ -108,8 +100,9 @@ int main() {
     player.start(0b1111);
     while(player.is_busy())
         player.update();
-
     player.cleanup(); // Close files.
+    // Unmount the file system.
+    f_unmount("");
     printf("All transfers complete! Goodbye, world!\r\n");
     for (;;);
 }

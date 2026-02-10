@@ -21,7 +21,7 @@ else()
 endif()
 include(${PICO_SDK_PATH}/pico_sdk_init.cmake)
 set(CMAKE_CXX_STANDARD 20)
-project(multi_file_player)
+project(test_multi_file_player)
 
 pico_sdk_init()
 
@@ -29,6 +29,7 @@ pico_sdk_init()
 
 add_subdirectory(../../lib/no-OS-FatFS-SD-SDIO-SPI-RPi-Pico/src lib_build/no_os_fatfs_sd_sdio_spi_rpi_pico)
 add_subdirectory(../../lib/rp2040.pio-ltc264x lib_build/pio-ltc264x)
+add_subdirectory(../../lib/etl lib_build/etl)
 
 
 add_library(dma_double_buffer INTERFACE)
@@ -47,12 +48,13 @@ add_executable(${PROJECT_NAME}
 
 include_directories(../../inc)
 
-target_link_libraries(multi_file_player
+target_link_libraries(multi_file_player INTERFACE
     pico_stdlib
     pio_ltc264x
     no-OS-FatFS-SD-SDIO-SPI-RPi-Pico
     multi_file_player
     dma_double_buffer
+    etl::etl
 )
 
 target_link_libraries(${PROJECT_NAME}

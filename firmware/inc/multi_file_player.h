@@ -7,6 +7,7 @@
 #include <f_util.h>
 #include <pico/stdlib.h>
 #include <etl/vector.h>
+#include <cmath>
 
 template <typename T, size_t NUM_CHANNELS, size_t BUF_SIZE>
 class MultiFilePlayer
@@ -20,22 +21,8 @@ public:
  */
     MultiFilePlayer(std::array<PIO_LTC264x, NUM_CHANNELS>& dacs,
                     std::array<const char*, NUM_CHANNELS>& filenames)
-    : dacs_{dacs}, filenames_{filenames}, dma_timer_chan_{-1},
+    : dacs_{dacs}, filenames_{filenames}, dma_timer_chan_{-1}
     {
-
-        // TODO: migrate file system management.
-        // TODO: migrate file management (opening/closing) to another class.
-        // Setup the file system.
-        FRESULT fr = f_mount(&filesystem_, "", 1);
-        if (fr != FR_OK)
-        {panic("f_mount error: %s (%d)\r\n", FRESULT_str(fr), fr);}
-        // Open 4 files. Note: max number is set by FF_FS_LOCK in ffconf.h
-        for (const auto& id: active_channels_)
-        {
-            fr = f_open(&fils_[id], filenames[id], FA_READ);
-            if (fr != FR_OK)
-            {panic("Could not open: %s\r\n", filename[id]);}
-        }
         // Timer setup. Also initializes `timer_pacing_signal_`.
         dma_timer_chan_ = dma_claim_unused_timer(true);
         timer_pacing_signal_ = dreq_num_t(dma_get_timer_dreq(dma_timer_chan_));
@@ -43,11 +30,28 @@ public:
         // Connect buffer output to dacs; connect timer to buffers.
         for (size_t i = 0; i < NUM_CHANNELS; ++i)
         {
-            PIO& pio = dacs[i].get_pio();
-            int32_t sm = dacs[i].get_sm();
+            PIO& pio = dacs_[i].get_pio();
+            int32_t sm = dacs_[i].get_sm();
             file_bufs_.emplace_back(timer_pacing_signal_, &pio->txf[sm]);
         }
-        std::ranges::fil(idle_buffers_, nullptr);
+        std::ranges::fill(filptrs_, nullptr); // mark files as starting closed.
+        reset(); // Open files; reset the buffer loop.
+    }
+
+/**
+ * \brief setup the file reading loop
+ */
+    void setup()
+    {
+        // Open 4 files. Note: max number is set by FF_FS_LOCK in ffconf.h
+        for (size_t id = 0; id < NUM_CHANNELS; ++id)
+        {
+            if (file_is_open(id))
+                continue;
+            open_file(id);
+        }
+        // pre-read buffers.
+        update();
     }
 
 /**
@@ -56,24 +60,16 @@ public:
  */
     void reset()
     {
+        for (size_t i = 0; i < NUM_CHANNELS; ++i)
+            file_bufs_[i].abort_transfer(); // Do this first across all channels.
+        // TODO: maybe validate that the abort took place?
+        for (auto& dac: dacs_)
+            dac.write_value(OUTPUT_MIDSCALE);
         // reset all file pointers.
         for (size_t i = 0; i < NUM_CHANNELS; ++i)
-        {
-            // FIXME: calling abort currently does not reconfigure dma
-            //   channels correctly.
-            file_bufs_[i].abort_transfer();
-            f_rewind(&fils_[i]);
-            idle_buffers_[i] = nullptr;
-        }
-        // pre-read buffers.
-        update();
+            idle_buffers_[i] = nullptr; // Clear local buffer value.
+        cleanup(); // close all files.
     }
-
-/**
- * \brief alias for reset()
- */
-    inline void init()
-    {reset();}
 
 /**
  * \brief destructor
@@ -81,32 +77,57 @@ public:
     ~MultiFilePlayer()
     {cleanup();}
 
-    void cleanup()
+/**
+ * \brief
+ */
+    inline bool file_is_open(size_t file_index)
+    {return filptrs_[file_index] != nullptr;}
+
+    inline void open_file(size_t file_index)
     {
-        // TODO: manage file opening/closing elsewhere.
-        // Close all files.
-        for (size_t i = 0; i < NUM_CHANNELS; ++i)
-        {
-            fr = f_close(fils_[i]);
-            if (fr != FR_OK)
-                panic("Could not close: fils_[%s].", i);
-        }
-        // unmount the file system.
-        f_unmount("");
+        FRESULT fr = f_open(&fils_[file_index], filenames_[file_index], FA_READ);
+        if (fr != FR_OK)
+        {panic("Could not open: %s\r\n", filenames_[file_index]);}
+        filptrs_[file_index] = &fils_[file_index]; // set ptr to indicate open file.
     }
 
+    inline void close_file(size_t file_index)
+    {
+        FRESULT fr = f_close(&fils_[file_index]);
+        if (fr != FR_OK)
+            panic("Could not close: fils_[%s].", i);
+        filptrs_[file_index] = nullptr; // clear ptr to indicate closed file.
+    }
+
+/**
+ * \brief close all open files.
+ */
+    void cleanup()
+    {
+        for (size_t id = 0; id < NUM_CHANNELS; ++id)
+        {
+            if !file_is_open(id)
+                continue;
+            close_file(id);
+        }
+    }
 
 /**
  * \brief set the update frequency for the specified channel.
  * \details Assume soure clock of 150MHz.
  */
-    set_frequency_hz(size_t channel, uin32_t frequency_hz)
+    void set_frequency_hz(uint32_t frequency_hz)
     {
+        uint32_t SYS_CLOCK_HZ = SYS_CLOCK_MHZ * 1'000'000;
+        float divisor = float(SYS_CLOCK_HZ) / frequency_hz;
+        if (round(divisor) != divisor)
+        {panic("Update frequency (%f [Hz]) must be a multiple of sys clock: %d",
+                SYS_CLOCK_MHZ);}
         // TODO: enable more flexible pacing options by allocating timers
         //  on-demand and sharing timers for matching frequencies, and
         //  respecting max number of used timers.
         //  Requires re-attaching timers to buffers.
-        dma_timer_set_fraction(dma_timer_chan_, 1, 300); // numerator=1, denominator=300
+        dma_timer_set_fraction(dma_timer_chan_, 1, divisor);
     }
 
 /**
@@ -131,12 +152,18 @@ public:
         // TODO.
     }
 
-    void abort(uint32_t channel_mask);
+    void abort(uint32_t channel_mask)
     {
         // TODO.
     }
 
-
+    void abort_channel(size_t channel_index)
+    {
+        file_bufs_[channel_index].abort_transfer();
+        // interacting with the buffer object is multicore safe, but everything
+        // else is not, so cleanup must go through the update loop.
+        // FIXME: how do we delegate cleanup to the update loop?
+    }
 
 /**
  * \brief attach an interrupt
@@ -166,18 +193,18 @@ public:
  * \brief true if the channel's buffer has been filled and the underlying
  *  DMA channel can start draining it immediately.
  */
-    inline bool channel_is_armed(size_t channel)
+    inline bool channel_is_armed(size_t channel_index)
     {
         //  we can't strictly rely on an nonzero file read pointer
         //  (i.e: `f_tell(fils_[id] != 0`) because the overall file size may be
         //  less than the buffer size, so it would be constantly reset to 0.
-        return idle_buffers_[id] != nullptr;
-        // TODO: should we be checking the underlying buffer setup too
-        //  (i.e: the underlying dma configuration)?
+        return (idle_buffers_[channel_index] != nullptr) &&
+               (!file_bufs_[channel_index].is_aborted());
     }
 
 /**
- * \brief
+ * \brief true if channel is transferring data to its respective DAC.
+ *  False otherwise (paused or aborted).
  */
     void channel_is_active(size_t channel_index)
     {return file_bufs_[channel_index].is_transferring();}
@@ -195,24 +222,28 @@ public:
         return false;
     }
 
-
 /**
- * \brief iterate through multichannel read loop.
+ * \brief iterate through all channels and update underlying resources.
  * \details if the channel is active, read the next chunk of the file into
- *  the DAC buffers. If not, read only the first chunk of the file
+ *  the DAC buffer. If not, read only the first chunk of the file
  *  into the DAC buffers so that the DAC is ready to start immediately.
  */
     void update()
     {
-        // FIXME: We must reset the underlying DMA configuration after
-        //  `setup_last_dma_transfer` is called. This might be able to be part
-        //  of the arming sequence.
         // TODO: deadlne check between SD read iterations to ensure buffers are topped off.
         for (size_t id = 0; id < NUM_CHANNELS; ++id)
         {
-            if (!channel_is_active(id) && is_armed(i))
+            FRESULT fr;
+            // Skip if channel is ready but not transferring.
+            if (!channel_is_active(id) && channel_is_armed(id))
                 continue;
-            // Skip if buffer hasn't switched yet.
+            // Handle playback-finished or playback-aborted condition
+            if (!channel_is_active(id) && !channel_is_armed(id))
+            {
+                file_bufs_[id].reset_transfer_config();
+                f_rewind(&fils_[id]);
+            } // Keep going.
+            // Skip if channel is active but buffer hasn't switched yet.
             if (idle_buffers_[id] == file_bufs_[id].get_idle_buffer())
                 continue;
 
@@ -220,7 +251,7 @@ public:
             // Transfer data from card to double-buffer.
             fr = f_read(&fils_[id], idle_buffers_[id], SD_CHUNK_SIZE, &bytes_read);
             if (fr != FR_OK)
-                {panic("Could not read the data: %s", filenames[id]);}
+                {panic("Could not read the data: %s", filenames_[id]);}
             if (!f_eof(&fils_[id])) // TODO: also handle reading subset of file.
                 continue;
             // Handle end-of-file.
@@ -231,7 +262,7 @@ public:
                 // Next transfer will be the last transfer.
                 file_bufs_[id].setup_last_dma_transfer(bytes_read);
                 idle_buffers_[id] = nullptr; // Trigger a re-arm on next update.
-                f_rewind(&fils_[id]);
+                //f_rewind(&fils_[id]); // gets handled on next iteration.
                 continue;
             }
             // Handle endless/many-iteration transfer condition.
@@ -247,21 +278,20 @@ public:
         }
     }
 
-
-
 private:
     // TODO: mark all data structures as __not_in_flash
     std::array<PIO_LTC264x, NUM_CHANNELS>& dacs_;
     std::array<const char*, NUM_CHANNELS>& filenames_;
     std::array<T*, NUM_CHANNELS> idle_buffers_;
-    FATFS filesystem_;
-    std::array<FIL, NUM_CHANNELS> __not_in_flash("file_handlers") fils_;
+    std::array<FIL, NUM_CHANNELS> fils_;
+    std::array<FIL*, NUM_CHANNELS> filptrs_;
     etl::vector<DMADoubleBuffer<T, BUF_SIZE>, NUM_CHANNELS> file_bufs_;
     std::array<WaveformSettings, NUM_CHANNELS> settings_;
     int dma_timer_chan_;
     dreq_num_t timer_pacing_signal_;
 
-    inline constexpr size_t SD_CHUNK_SIZE = BUF_SIZE * sizeof(T); // in bytes.
-    inline constexpr size_t DEFAULT_FREQUENCY_HZ = 500000;
+    static inline constexpr size_t SD_CHUNK_SIZE = BUF_SIZE * sizeof(T); // in bytes.
+    static inline constexpr size_t DEFAULT_FREQUENCY_HZ = 500000;
+    static inline constexpr uint16_t OUTPUT_MIDSCALE = 32768;
 };
 #endif // MULTI_FILE_PLAYER_H
