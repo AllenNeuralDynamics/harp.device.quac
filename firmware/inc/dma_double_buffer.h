@@ -108,7 +108,10 @@ public:
     {return *((T**)(dma_channel_hw_addr(ctrl_chan_)->read_addr));}
 
 /**
- * \brief Exit the Ping-Pong Buffer endless chaining loop
+ * \brief Exit the Ping-Pong Buffer endless chaining loop by specifying that the
+ *  next buffer switch to the buffer that is currently idle will be the last
+ *  buffer transfer. Adjust transfer count if we aren't transferring a full
+ *  buffer's worth.
  */
     void setup_last_dma_transfer(size_t word_count)
     {
@@ -119,7 +122,7 @@ public:
         dma_channel_hw_addr(data_chan_)->transfer_count = word_count;
 
         // Disable chaining on the next transfer.
-        // Modifying the CTRL register updates the *next*
+        // Modifying the CTRL register updates settings for the *next* transfer.
         dma_channel_config cfg = dma_get_channel_config(data_chan_);
         channel_config_set_chain_to(&cfg, data_chan_); // chain-to-self disables chaining.
         dma_channel_set_config(data_chan_, &cfg, false); // trigger = false
@@ -161,6 +164,7 @@ public:
  */
     void resume_transfer()
     {
+        // FYI a paused channel appears to be transferring.
         if (!is_transferring())
             return;
         // Set EN bit on data channel to resume transfer.
@@ -184,14 +188,14 @@ public:
 
 /**
  * \brief stop an active transfer.
- * \note we will need to call setup_transfer() again before starting a new
- *  transfer.
+ * \note we will need to call setup_transfer() or reset_transfer_config()
+ *  before we can start a new transfer.
  * \details See RP2350 Datashset pg 1108 for the correct abort procedure.
  */
     void abort_transfer()
     {
         // Clear EN bit and CHAIN_TO across all channels.
-        // Clear ctrl_chan_ first, so we don't race to reconfigure data_chan_
+        // Clear ctrl_chan_ first, so we don't race to reconfigure data_chan_?
         int channels[] = {ctrl_chan_, data_chan_};
         for (size_t i = 0; i < 2; ++i)
         {

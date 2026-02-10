@@ -148,7 +148,6 @@ int main() {
     size_t chunk_index = 0;
     while (file_ids.size())
     {
-        //for (auto it = file_ids.begin(); it != file_ids.end(); ++it)
         auto it = file_ids.begin();
         while (it != file_ids.end())
         {
