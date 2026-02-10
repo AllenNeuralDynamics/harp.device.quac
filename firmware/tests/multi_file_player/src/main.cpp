@@ -79,7 +79,7 @@ int main() {
     printf("Hello, world, from a Raspberry Pi Pico!\r\n");
 
     // Setup PIO Block for DAC communication.
-    const std::array<PIO_LTC264x, NUM_FILES> dacs
+    std::array<PIO_LTC264x, NUM_FILES> dacs
     {{{pio2, DAC_PINS[0].sck, DAC_PINS[0].pico},
       {pio2, DAC_PINS[1].sck, DAC_PINS[1].pico, false, dacs[0].get_offset()},
       {pio2, DAC_PINS[2].sck, DAC_PINS[2].pico, false, dacs[0].get_offset()},

@@ -35,6 +35,8 @@ public:
             file_bufs_.emplace_back(timer_pacing_signal_, &pio->txf[sm]);
         }
         std::ranges::fill(filptrs_, nullptr); // mark files as starting closed.
+        std::ranges::fill(curr_iterations_, 0);
+        std::ranges::fill(iterations_, 1);
         reset(); // Open files; reset the buffer loop.
     }
 
@@ -65,9 +67,8 @@ public:
         // TODO: maybe validate that the abort took place?
         for (auto& dac: dacs_)
             dac.write_value(OUTPUT_MIDSCALE);
-        // reset all file pointers.
-        for (size_t i = 0; i < NUM_CHANNELS; ++i)
-            idle_buffers_[i] = nullptr; // Clear local buffer value.
+        std::ranges::fill(idle_buffers_, nullptr); // Clear local buffer value.
+        std::ranges::fill(curr_iterations_, 0);
         cleanup(); // close all files.
     }
 
@@ -95,7 +96,7 @@ public:
     {
         FRESULT fr = f_close(&fils_[file_index]);
         if (fr != FR_OK)
-            panic("Could not close: fils_[%s].", i);
+            panic("Could not close: %s\r\n.", filenames_[file_index]);
         filptrs_[file_index] = nullptr; // clear ptr to indicate closed file.
     }
 
@@ -106,7 +107,7 @@ public:
     {
         for (size_t id = 0; id < NUM_CHANNELS; ++id)
         {
-            if !file_is_open(id)
+            if (!file_is_open(id))
                 continue;
             close_file(id);
         }
@@ -118,17 +119,23 @@ public:
  */
     void set_frequency_hz(uint32_t frequency_hz)
     {
-        uint32_t SYS_CLOCK_HZ = SYS_CLOCK_MHZ * 1'000'000;
-        float divisor = float(SYS_CLOCK_HZ) / frequency_hz;
+        float divisor = float(SYS_CLK_HZ) / frequency_hz;
         if (round(divisor) != divisor)
         {panic("Update frequency (%f [Hz]) must be a multiple of sys clock: %d",
-                SYS_CLOCK_MHZ);}
+                SYS_CLK_HZ);}
         // TODO: enable more flexible pacing options by allocating timers
         //  on-demand and sharing timers for matching frequencies, and
         //  respecting max number of used timers.
         //  Requires re-attaching timers to buffers.
         dma_timer_set_fraction(dma_timer_chan_, 1, divisor);
     }
+
+/**
+ * \brief
+ * \warning not multicore safe.
+ */
+    void set_channel_iterations(size_t channel_index, size_t iterations)
+    {iterations_[channel_index]= iterations;}
 
 /**
  * \brief start one or more channels specified as bitfields.
@@ -138,6 +145,7 @@ public:
     {
         // TODO: maybe make this fn return a bool in case we're not ready (armed)?
         // Create a trigger mask to start all Double Buffer DMA channels at once.
+        uint32_t multi_channel_trigger_mask = 0;
         for (size_t i = 0; i < NUM_CHANNELS; ++i)
         {
             if ((channel_mask & (1u << i)) == 0)
@@ -206,7 +214,7 @@ public:
  * \brief true if channel is transferring data to its respective DAC.
  *  False otherwise (paused or aborted).
  */
-    void channel_is_active(size_t channel_index)
+    inline bool channel_is_active(size_t channel_index)
     {return file_bufs_[channel_index].is_transferring();}
 
 /**
@@ -231,9 +239,10 @@ public:
     void update()
     {
         // TODO: deadlne check between SD read iterations to ensure buffers are topped off.
+        FRESULT fr;
+        UINT bytes_read;
         for (size_t id = 0; id < NUM_CHANNELS; ++id)
         {
-            FRESULT fr;
             // Skip if channel is ready but not transferring.
             if (!channel_is_active(id) && channel_is_armed(id))
                 continue;
@@ -255,9 +264,9 @@ public:
             if (!f_eof(&fils_[id])) // TODO: also handle reading subset of file.
                 continue;
             // Handle end-of-file.
-             ++curr_iterations_[i]; // increment full file read iterations.
+             ++curr_iterations_[id]; // increment full file read iterations.
             // Handle last transfer condition.
-            if ((curr_iterations_[id] == iterations_[id]) && (iterations_[id] != 0)
+            if ((curr_iterations_[id] == iterations_[id]) && (iterations_[id] != 0))
             {
                 // Next transfer will be the last transfer.
                 file_bufs_[id].setup_last_dma_transfer(bytes_read);
@@ -285,6 +294,8 @@ private:
     std::array<T*, NUM_CHANNELS> idle_buffers_;
     std::array<FIL, NUM_CHANNELS> fils_;
     std::array<FIL*, NUM_CHANNELS> filptrs_;
+    std::array<size_t, NUM_CHANNELS> iterations_;
+    std::array<size_t, NUM_CHANNELS> curr_iterations_;
     etl::vector<DMADoubleBuffer<T, BUF_SIZE>, NUM_CHANNELS> file_bufs_;
     std::array<WaveformSettings, NUM_CHANNELS> settings_;
     int dma_timer_chan_;
