@@ -230,10 +230,9 @@ public:
     {
         // Clear EN bit and CHAIN_TO across all channels.
         // Clear ctrl_chan_ first, so we don't race to reconfigure data_chan_?
-        int channels[] = {ctrl_chan_, data_chan_};
-        for (size_t i = 0; i < 2; ++i)
+        int dma_channels[] = {ctrl_chan_, data_chan_};
+        for (auto& chan: dma_channels)
         {
-            auto& chan = channels[i];
             dma_channel_config cfg = dma_get_channel_config(chan);
             channel_config_set_chain_to(&cfg, chan); // chain-to-self disables chaining.
             channel_config_set_enable(&cfg, false); // clear enable bit.
