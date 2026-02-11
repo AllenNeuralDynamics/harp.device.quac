@@ -10,13 +10,15 @@
 #include <multi_file_player.h>
 
 using T = uint16_t;
-inline constexpr size_t NUM_FILES = 4;
+inline constexpr size_t NUM_FILES = 1;
 inline constexpr size_t SD_CHUNK_SIZE = 32768;  // must be factor of 512.
 
 FIL __not_in_flash("file_handlers") fil[NUM_FILES];
 
+//std::array<const char*, NUM_FILES> filenames
+//{{"channel_0.txt", "channel_1.txt", "channel_2.txt", "channel_3.txt"}};
 std::array<const char*, NUM_FILES> filenames
-{{"channel_0.txt", "channel_1.txt", "channel_2.txt", "channel_3.txt"}};
+{{"channel_0.txt"}};
 
 struct DACPins
 {
@@ -28,9 +30,9 @@ struct DACPins
 std::array<DACPins, NUM_FILES> DAC_PINS
 {{
     {.pico = 15, .sck = 16, .cs = 17},
-    {.pico = 18, .sck = 19, .cs = 20},
-    {.pico = 22, .sck = 23, .cs = 24},
-    {.pico = 25, .sck = 26, .cs = 27}
+//    {.pico = 18, .sck = 19, .cs = 20},
+//    {.pico = 22, .sck = 23, .cs = 24},
+//    {.pico = 25, .sck = 26, .cs = 27}
 }};
 
 /* SDIO Interface */
@@ -81,9 +83,10 @@ int main() {
     // Setup PIO Block for DAC communication.
     std::array<PIO_LTC264x, NUM_FILES> dacs
     {{{pio2, DAC_PINS[0].sck, DAC_PINS[0].pico},
-      {pio2, DAC_PINS[1].sck, DAC_PINS[1].pico, false, dacs[0].get_offset()},
-      {pio2, DAC_PINS[2].sck, DAC_PINS[2].pico, false, dacs[0].get_offset()},
-      {pio2, DAC_PINS[3].sck, DAC_PINS[3].pico, false, dacs[0].get_offset()}}};
+    //  {pio2, DAC_PINS[1].sck, DAC_PINS[1].pico, false, dacs[0].get_offset()},
+    //  {pio2, DAC_PINS[2].sck, DAC_PINS[2].pico, false, dacs[0].get_offset()},
+    //  {pio2, DAC_PINS[3].sck, DAC_PINS[3].pico, false, dacs[0].get_offset()}}};
+    }};
     for (const auto& dac: dacs)
         dac.start();
 
@@ -91,15 +94,23 @@ int main() {
     MultiFilePlayer<T, NUM_FILES, SD_CHUNK_SIZE/sizeof(T)> player(dacs, filenames);
     player.set_frequency_hz(500'000);
     player.setup();
+    printf("File Player is ready.\r\n");
+    sleep_ms(500);
+    printf("Starting.\r\n");
     player.start(0b1111);
     while(player.is_busy())
         player.update();
-    // We'll be back after a short break.
+    printf("Done playing!\r\n");
     sleep_ms(1000);
+
+    // If we did not abort, we should be able to re-trigger.
     // Retrigger all channels again.
+    printf("Restarting.\r\n");
     player.start(0b1111);
     while(player.is_busy())
         player.update();
+    printf("Done replaying! Closing files.\r\n");
+
     player.cleanup(); // Close files.
     // Unmount the file system.
     f_unmount("");

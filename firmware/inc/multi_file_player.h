@@ -37,7 +37,7 @@ public:
         std::ranges::fill(filptrs_, nullptr); // mark files as starting closed.
         std::ranges::fill(curr_iterations_, 0);
         std::ranges::fill(iterations_, 1);
-        reset(); // Open files; reset the buffer loop.
+        reset();
     }
 
 /**
@@ -218,13 +218,15 @@ public:
     {return file_bufs_[channel_index].is_transferring();}
 
 /**
- * \brief true if any channels are active.
+ * \brief true if any channel needs to be handled with periodic calls to update().
  */
     bool is_busy()
     {
-        for (size_t i = 0; i < NUM_CHANNELS; ++i)
+        for (size_t id = 0; id < NUM_CHANNELS; ++id)
         {
-            if (channel_is_active(i))
+            if (channel_is_active(id))
+                return true;
+            else if (!channel_is_armed(id))
                 return true;
         }
         return false;
@@ -244,14 +246,31 @@ public:
         for (size_t id = 0; id < NUM_CHANNELS; ++id)
         {
             // Skip if channel is ready but not transferring.
-            if (!channel_is_active(id) && channel_is_armed(id))
-                continue;
-            // Handle playback-finished or playback-aborted condition
-            if (!channel_is_active(id) && !channel_is_armed(id))
+            bool channel_active = channel_is_active(id);
+            bool channel_armed = channel_is_armed(id);
+            if (!channel_active && channel_armed)
             {
+                //printf("not active and armed!\r\n");
+                continue;
+            }
+            // Handle playback-finished or playback-aborted condition
+            if (!channel_active && !channel_armed)
+            {
+                //printf("not active but not armed! needs rewind\r\n");
                 file_bufs_[id].reset_transfer_config();
+/*
+                PIO& pio = dacs_[id].get_pio();
+                int32_t sm = dacs_[id].get_sm();
+                file_bufs_[id].setup_transfer(timer_pacing_signal_, &pio->txf[sm]);
+*/
+
                 f_rewind(&fils_[id]);
             } // Keep going.
+
+            // Skip if we setup last DMA transfer, but it hasn't finished yet.
+            if (channel_active && file_bufs_[id].dma_chain_loop_disconnected())
+                continue;
+
             // Skip if channel is active but buffer hasn't switched yet.
             if (idle_buffers_[id] == file_bufs_[id].get_idle_buffer())
                 continue;
@@ -259,8 +278,9 @@ public:
             idle_buffers_[id] = file_bufs_[id].get_idle_buffer();
             // Transfer data from card to double-buffer.
             fr = f_read(&fils_[id], idle_buffers_[id], SD_CHUNK_SIZE, &bytes_read);
+            //printf("fptr: %llu\r\n", fils_[id].fptr);
             if (fr != FR_OK)
-                {panic("Could not read the data: %s", filenames_[id]);}
+                {panic("Could not read data from: %s", filenames_[id]);}
             if (!f_eof(&fils_[id])) // TODO: also handle reading subset of file.
                 continue;
             // Handle end-of-file.
@@ -269,9 +289,10 @@ public:
             if ((curr_iterations_[id] == iterations_[id]) && (iterations_[id] != 0))
             {
                 // Next transfer will be the last transfer.
+                //printf("EOF at %llu. Setting up last transfer\r\n", fils_[id].fptr);
                 file_bufs_[id].setup_last_dma_transfer(bytes_read);
                 idle_buffers_[id] = nullptr; // Trigger a re-arm on next update.
-                //f_rewind(&fils_[id]); // gets handled on next iteration.
+                curr_iterations_[id] = 0; // reset counter for next round.
                 continue;
             }
             // Handle endless/many-iteration transfer condition.

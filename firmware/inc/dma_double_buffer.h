@@ -128,6 +128,9 @@ public:
         dma_channel_set_config(data_chan_, &cfg, false); // trigger = false
     }
 
+/**
+ * \brief start dma transfer. Note that setup() must be called first.
+ */
     void start_transfer()
     {dma_start_channel_mask(1u << ctrl_chan_);}
 
@@ -135,7 +138,38 @@ public:
  * \brief true if either channel is transferring (or paused mid-transfer).
  */
     bool is_transferring()
-    {return dma_channel_is_busy(ctrl_chan_) || dma_channel_is_busy(data_chan_);}
+    {
+        // Handle edge case where data_chan is momentarily not-busy while
+        // ctrl_chan reconfigures data_chan. Note: we can't just check if
+        // ctrl_chan is busy bc it stays busy after data_chan finishes its
+        // last transfer.
+        // Edge cases:
+        //  armed but not transferring -> false
+        //    -> data chan idle, ctrl chan idle, dma chain loop connected.
+        //  finished transferring -> false
+        //    -> data chan idle, ctrl chan busy
+        //  aborted -> false
+        //    -> data chan idle, ctrl chan idle, dma chain loop disconnected.
+        //  paused -> true
+        //    -> data chan busy, ctrl chan busy, dma chain loop connected.
+        //  transferring but mid-data-channel reconfiguration -> true
+        //    -> data chan idle, ctrl chan busy, dma chain loop connected.
+
+        // Note: we check *twice* because it's possible to read on the cycle
+        //  where both channels are idle and one is reconfiguring the other.
+        bool data_chan_is_busy = dma_channel_is_busy(data_chan_);
+        bool ctrl_chan_is_busy = dma_channel_is_busy(ctrl_chan_);
+        if (data_chan_is_busy || ctrl_chan_is_busy)
+            return true;
+        data_chan_is_busy = dma_channel_is_busy(data_chan_);
+        ctrl_chan_is_busy = dma_channel_is_busy(ctrl_chan_);
+        return data_chan_is_busy || ctrl_chan_is_busy;
+        //return data_chan_is_busy || (!dma_chain_loop_disconnected());
+/*
+        return data_chan_is_busy ||
+               (ctrl_chan_is_busy && !dma_chain_loop_disconnected());
+*/
+    }
 
 /**
  * \brief pause an active transfer
@@ -207,21 +241,19 @@ public:
         }
         uint32_t abort_mask = (1u << ctrl_chan_) | (1u << data_chan_);
         dma_hw->abort = abort_mask;
-        // Poll set bits until they clear (i.e: abort took effect).
+        // RP2350 only: poll set bits until they clear (i.e abort took effect).
         while (dma_hw->abort & abort_mask)
             tight_loop_contents();
-        // DEBUG
-        dma_channel_config cfg = dma_get_channel_config(data_chan_);
     }
 
     bool is_aborted()
     {
-        // True if data_chan_ is chained-to-self.
-        dma_channel_config cfg = dma_get_channel_config(data_chan_);
-        uint32_t chained_channel = (cfg.ctrl & DMA_CH0_CTRL_TRIG_CHAIN_TO_BITS)
-                                   >> DMA_CH0_CTRL_TRIG_CHAIN_TO_LSB;
-        return chained_channel == data_chan_;
+        bool data_chan_is_busy = dma_channel_is_busy(data_chan_);
+        bool ctrl_chan_is_busy = dma_channel_is_busy(ctrl_chan_);
+        return dma_chain_loop_disconnected()
+               && !data_chan_is_busy && !ctrl_chan_is_busy;
     }
+
 
 /**
  * \brief reset both dma channels to their starting configuration (i.e:
@@ -234,8 +266,10 @@ public:
         // buffer address.
         dma_channel_set_read_addr(ctrl_chan_, &ctrl_chan_data_[0], false);
         dma_channel_set_config(ctrl_chan_, &ctrl_chan_default_cfg_, false);
+        // For data_chan_ we must additionally reset the transfer count since
+        // it was likely altered for the last buffer transfer.
+        dma_channel_hw_addr(data_chan_)->transfer_count = BUF_SIZE;
         dma_channel_set_config(data_chan_, &data_chan_default_cfg_, false);
-        dma_channel_config cfg = dma_get_channel_config(data_chan_);
     }
 
 /**
@@ -253,7 +287,30 @@ public:
     bool transfer_complete()
     {return !(is_transferring());}
 
+/**
+ * \brief true if dma re-triggering loop has been disconnected.
+ * \details this happens if the current transfer was aborted or the next
+ *  transfer was set to be the final transfer.
+ */
+    inline bool dma_chain_loop_disconnected()
+    {
+        // True if data_chan_ is chained-to-self.
+        dma_channel_config cfg = dma_get_channel_config(data_chan_);
+        uint32_t chained_channel = get_chained_channel(cfg);
+        return chained_channel == data_chan_;
+    }
+
 private:
+/**
+ * \brief get the chained channel encoded in the given dma channel config.
+ */
+    inline uint32_t get_chained_channel(dma_channel_config cfg)
+    {
+        return ((cfg.ctrl & DMA_CH0_CTRL_TRIG_CHAIN_TO_BITS)
+                >> DMA_CH0_CTRL_TRIG_CHAIN_TO_LSB);
+    }
+
+
     alignas(8*sizeof(T)) T buffers_[2][BUF_SIZE];
     int ctrl_chan_;
     dma_channel_config ctrl_chan_default_cfg_;
