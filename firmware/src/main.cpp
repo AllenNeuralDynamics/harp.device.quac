@@ -1,489 +1,70 @@
 #include <cstring>
 #include <harp_c_app.h>
 #include <harp_synchronizer.h>
-#include <core_registers.h>
 #include <reg_types.h>
 #include <config.h>
-#include <stdio.h>
-#include <cstdio> // for printf
-#include "hardware/flash.h"
-#include "hardware/timer.h"
-#include "hardware/clocks.h"
-#include "hardware/pll.h"
-#include "hardware/clocks.h"
-#include "hardware/structs/pll.h"
-#include "hardware/structs/clocks.h"
-#include "hardware/irq.h"
-
-
+#include <pio_ltc264x.h>
 #ifdef DEBUG
     #include <pico/stdlib.h> // for uart printing
     #include <cstdio> // for printf
 #endif
 
-#define DEBUG_HARP_MSG_IN
+inline constexpr size_t NUM_APP_REGS = 0;
 
-#define FLASH_TARGET_OFFSET (256 * 1024)  // Start writing at 256KB  = 
-#define SECTOR_SIZE FLASH_SECTOR_SIZE     // 4096 bytes
-#define BUF_SIZE 64
-// Define your constants and buffers
-#define TOTAL_DATA_SIZE 102400 // This is the total number of bytes
-#define TOTAL_16BIT_WORDS (TOTAL_DATA_SIZE / 2) // Total number of 16-bit words
-// Temporary buffer for each incoming USB packet (64 bytes)
-uint8_t rx_packet_buffer[BUF_SIZE];
-// Main buffer to store the complete 16-bit data
-uint16_t rx_data_buffer[TOTAL_16BIT_WORDS];
-bool write_to_flash = false;
-// Keep track of how much data we've received
-static uint32_t bytes_received = 0;
-static uint16_t words_received = 0;
-uint32_t count;
-
-uint32_t clock_sys;
-// Buffers for data transfer
-uint8_t read_data_buffer[100];
-
-uint8_t channel_index_wave;
-// Create device name array.
-const uint16_t who_am_i = 1234;
-const uint8_t hw_version_major = 0;
-const uint8_t hw_version_minor = 0;
-const uint8_t assembly_version = 0;
-const uint8_t harp_version_major = 0;
-const uint8_t harp_version_minor = 0;
-const uint8_t fw_version_major = 0;
-const uint8_t fw_version_minor = 0;
-const uint16_t serial_number = 0xCAFE;
-
-absolute_time_t time_current;
-// Harp App Register Setup.
-const size_t reg_count = 18;
-
-void write_any_channel(msg_t& msg);
-void erase_flash_memory(msg_t& msg);
-void specific_any_waveform(msg_t& msg);
-
-// Define the initial periods for the four alarms in microseconds (µs)
-#define ALARM_0_PERIOD_US 500000 // 500 ms
-#define ALARM_1_PERIOD_US 250000 // 250 ms
-#define ALARM_2_PERIOD_US 100000 // 100 ms 
-#define ALARM_3_PERIOD_US 50000  // 50 ms
-
-// Global state tracking and periods - periods must be volatile
 
 // Define register contents.
 #pragma pack(push, 1)
 struct app_regs_t
 {
-    volatile uint8_t start_channel_1;  // app register 0
-    volatile uint8_t start_channel_2;
-    volatile uint8_t start_channel_3; 
-    volatile uint8_t start_channel_4;
-
-    volatile uint8_t stop_channel_1;
-    volatile uint8_t stop_channel_2;
-    volatile uint8_t stop_channel_3; 
-    volatile uint8_t stop_channel_4;
-
-    volatile uint8_t one_shot_continous;
-    
-    volatile uint32_t update_rate_1;
-    volatile uint32_t update_rate_2;
-    volatile uint32_t update_rate_3; 
-    volatile uint32_t update_rate_4; 
-
-    volatile uint32_t samples_wave_1;
-    volatile uint32_t samples_wave_2;
-    volatile uint32_t samples_wave_3; 
-    volatile uint32_t samples_wave_4; 
-
-    volatile uint8_t erase_flash;
+    // TODO
 } app_regs;
 #pragma pack(pop)
 
-// This array now holds the current, modifiable periods
-volatile uint32_t alarm_periods[4] = {
-    ALARM_0_PERIOD_US, ALARM_1_PERIOD_US, ALARM_2_PERIOD_US, ALARM_3_PERIOD_US
-};
-
-// Next target time for each alarm
-static uint64_t target_time[4];
-
-// --- Helper Function to Dynamically Change the Interrupt Time ---
-void set_alarm_period(int alarm_num, uint32_t new_period_us) {
-    if (alarm_num < 0 || alarm_num > 3) return;
-
-    // Disable interrupts briefly to ensure an atomic update
-    uint32_t save = save_and_disable_interrupts();
-    
-    // Update the global period variable for the specified alarm
-    alarm_periods[alarm_num] = new_period_us;
-    
-    // Re-enable interrupts
-    restore_interrupts(save);
-
-    printf("Alarm %d period changed to %u us.\n", alarm_num, new_period_us);
-}
-
-// --- Alarm Interrupt Service Routines (ISRs) ---
-
-// --- Alarm 0 Interrupt Service Routine (ISR) ---
-static void timer_alarm_0_handler(void) {
-    hw_clear_bits(&timer_hw->intr, 1u << 0);
-    time_current = get_absolute_time();
-    target_time[0] += alarm_periods[0];
-    timer_hw->alarm[0] = target_time[0];
-    if (app_regs.one_shot_continous == 1)
-    {
-        // send data one shot
-    }
-    else
-    {
-        // send data one continously
-    }
-
-}
-
-// --- Alarm 1 Interrupt Service Routine (ISR) ---
-static void timer_alarm_1_handler(void) {
-    hw_clear_bits(&timer_hw->intr, 1u << 1);
-    time_current = get_absolute_time();
-    target_time[1] += alarm_periods[1];
-    timer_hw->alarm[1] = target_time[1];
-    if (app_regs.one_shot_continous == 1)
-    {
-        // send data one shot
-    }
-    else
-    {
-        // send data one continously
-    }
-
-}
-
-// --- Alarm 2 Interrupt Service Routine (ISR) ---
-static void timer_alarm_2_handler(void) {
-    hw_clear_bits(&timer_hw->intr, 1u << 2);
-    target_time[2] += alarm_periods[2];
-    timer_hw->alarm[2] = target_time[2];
-    if (app_regs.one_shot_continous == 1)
-    {
-        // send data one shot
-    }
-    else
-    {
-        // send data one continously
-    }
-
-}
-
-// --- Alarm 3 Interrupt Service Routine (ISR) ---
-static void timer_alarm_3_handler(void) {
-    hw_clear_bits(&timer_hw->intr, 1u << 3);
-    target_time[3] += alarm_periods[3];
-    timer_hw->alarm[3] = target_time[3];
-    if (app_regs.one_shot_continous == 1)
-    {
-        // send data one shot
-    }
-    else
-    {
-        // send data one continously
-    }
-
-}
-
-
-void init_alarm(int alarm_num, void (*handler_fn)(void), uint32_t period_us) {
-    
-    // Use the value stored in the global array for initial setup
-    target_time[alarm_num] = timer_hw->timerawl + alarm_periods[alarm_num];
-    timer_hw->alarm[alarm_num] = target_time[alarm_num];
-
-    // Set the interrupt handler and enable the IRQ
-    irq_set_exclusive_handler(TIMER_IRQ_0 + alarm_num, handler_fn);
-    irq_set_enabled(TIMER_IRQ_0 + alarm_num, true);
-
-    // Tell the timer hardware to fire an interrupt (set the interrupt enable bit)
-    timer_hw->inte |= 1u << alarm_num;
-}
-
-
-
-// Function to call the flash programming
-// Note: The flash programming function still works with 8-bit bytes
-static void call_flash_range_program(void *params) {
-    uintptr_t *p = (uintptr_t *)params;
-    flash_range_program(p[0], (const uint8_t*)p[1], TOTAL_DATA_SIZE);
-}
-
 
 // Define register "specs."
-RegSpecs app_reg_specs[reg_count]
+RegSpecs app_reg_specs[NUM_APP_REGS]
 {
-    {(uint8_t*)&app_regs.start_channel_1, sizeof(app_regs.start_channel_1), U8},
-    {(uint8_t*)&app_regs.start_channel_2, sizeof(app_regs.start_channel_2), U8},
-    {(uint8_t*)&app_regs.start_channel_3, sizeof(app_regs.start_channel_3), U8},
-    {(uint8_t*)&app_regs.start_channel_4, sizeof(app_regs.start_channel_4), U8},
-    {(uint8_t*)&app_regs.stop_channel_1, sizeof(app_regs.stop_channel_1), U8},
-    {(uint8_t*)&app_regs.stop_channel_2, sizeof(app_regs.stop_channel_2), U8},
-    {(uint8_t*)&app_regs.stop_channel_3, sizeof(app_regs.stop_channel_3), U8},
-    {(uint8_t*)&app_regs.stop_channel_4, sizeof(app_regs.stop_channel_4), U8},
-    {(uint8_t*)&app_regs.one_shot_continous, sizeof(app_regs.one_shot_continous), U8},
-
-    {(uint8_t*)&app_regs.update_rate_1, sizeof(app_regs.update_rate_1), U32},
-    {(uint8_t*)&app_regs.update_rate_2, sizeof(app_regs.update_rate_2), U32},
-    {(uint8_t*)&app_regs.update_rate_3, sizeof(app_regs.update_rate_3), U32},
-    {(uint8_t*)&app_regs.update_rate_4, sizeof(app_regs.update_rate_4), U32},
-    {(uint8_t*)&app_regs.samples_wave_1, sizeof(app_regs.samples_wave_1), U32},
-    {(uint8_t*)&app_regs.samples_wave_2, sizeof(app_regs.samples_wave_2), U32},
-    {(uint8_t*)&app_regs.samples_wave_3, sizeof(app_regs.samples_wave_3), U32},
-    {(uint8_t*)&app_regs.samples_wave_4, sizeof(app_regs.samples_wave_4), U32},
-    {(uint8_t*)&app_regs.erase_flash, sizeof(app_regs.erase_flash), U8}
+    // TODO
 };
 
 // Define register read-and-write handler functions.
-RegFnPair reg_handler_fns[reg_count]
+RegFnPair reg_handler_fns[NUM_APP_REGS]
 {
-    {&HarpCore::read_reg_generic, write_any_channel},
-    {&HarpCore::read_reg_generic, write_any_channel},
-    {&HarpCore::read_reg_generic, write_any_channel},
-    {&HarpCore::read_reg_generic, write_any_channel},
-    {&HarpCore::read_reg_generic, write_any_channel},
-    {&HarpCore::read_reg_generic, write_any_channel},
-    {&HarpCore::read_reg_generic, write_any_channel},
-    {&HarpCore::read_reg_generic, write_any_channel},
-
-    {&HarpCore::read_reg_generic, write_any_channel},
-    
-    {&HarpCore::read_reg_generic, specific_any_waveform},
-    {&HarpCore::read_reg_generic, specific_any_waveform},
-    {&HarpCore::read_reg_generic, specific_any_waveform},
-    {&HarpCore::read_reg_generic, specific_any_waveform},
-    {&HarpCore::read_reg_generic, specific_any_waveform},
-    {&HarpCore::read_reg_generic, specific_any_waveform},
-    {&HarpCore::read_reg_generic, specific_any_waveform},
-    {&HarpCore::read_reg_generic, specific_any_waveform},
-
-    {&HarpCore::read_reg_generic, erase_flash_memory}
+    // TODO
 };
-
-void write_any_channel(msg_t& msg)
-{
-    HarpCore::copy_msg_payload_to_register(msg);
-    uint8_t channel_index = msg.header.address - APP_REG_START_ADDRESS;
-}
-
-void specific_any_waveform(msg_t& msg)
-{
-    HarpCore::copy_msg_payload_to_register(msg);
-    channel_index_wave = msg.header.address - APP_REG_START_ADDRESS;
-    if(channel_index_wave == 8)
-        set_alarm_period(0, app_regs.update_rate_1);
-    else if(channel_index_wave == 9)
-        set_alarm_period(1, app_regs.update_rate_2);
-    else if(channel_index_wave == 10)
-        set_alarm_period(2, app_regs.update_rate_3);
-    else if(channel_index_wave == 11)
-        set_alarm_period(3, app_regs.update_rate_4);
-    printf("Set Interrupt Time intervals for Update Rate !\r\n");
-}
-
-void erase_flash_memory(msg_t& msg)
-{
-    HarpCore::copy_msg_payload_to_register(msg);
-    if(app_regs.erase_flash == 1)
-    {
-        printf("Erasing Flash Memory !\r\n");
-        uint32_t ints = save_and_disable_interrupts();
-        // for PI PICO RP2530
-        // we need to ereas (4 Mbyte - 256 Kbyte) = 3932160 byte 
-        // (write it in term of Sector_Size as follow  960*4*1024 = 3932160 bytes = 3840 Kbyte)
-        // flash_range_erase(FLASH_TARGET_OFFSET  , 960*SECTOR_SIZE);
-        // for PI PICO RP2040
-        // we need to ereas (2 Mbyte - 256 Kbyte) = 1835008 byte 
-        // (write it in term of Sector_Size as follow  448*4*1024 = 1835008 bytes = 1792 Kbyte)
-        flash_range_erase(FLASH_TARGET_OFFSET  , 448*SECTOR_SIZE);
-        // Restore interrupts
-        restore_interrupts(ints);
-        printf("Done Erasing Flash Memory !\r\n");
-    }
-}
 
 void app_reset()
 {
-    app_regs.start_channel_1 = 0;
-    app_regs.start_channel_2 = 0;
-    app_regs.start_channel_3 = 0;
-    app_regs.start_channel_4 = 0;
-
-    app_regs.stop_channel_1 = 0;
-    app_regs.stop_channel_2 = 0;
-    app_regs.stop_channel_3 = 0;
-    app_regs.stop_channel_4 = 0;
-
-    app_regs.update_rate_1 = 0;
-    app_regs.update_rate_2 = 0;
-    app_regs.update_rate_3 = 0;
-    app_regs.update_rate_4 = 0;
-
-    app_regs.samples_wave_1 = 0;
-    app_regs.samples_wave_2 = 0;
-    app_regs.samples_wave_3 = 0;
-    app_regs.samples_wave_4 = 0;
-
-    app_regs.erase_flash = 0;
-
+    // TODO
 }
 
-void update_app_state()
+void update_app()
 {
-    // update here!
-    printf("Hello, from an Quad DAC!\r\n");
-    // If app registers update their states outside the read/write handler
-    // functions, update them here.
-    // (Called inside run() function.)
-}
-#ifndef LED_DELAY_MS
-#define LED_DELAY_MS 100
-#endif
 
-#ifndef PICO_DEFAULT_LED_PIN
-#warning blink_simple example requires a board with a regular LED
-#endif
-
-// Initialize the GPIO for the LED
-void pico_led_init(void) {
-#ifdef PICO_DEFAULT_LED_PIN
-    // A device like Pico that uses a GPIO for the LED will define PICO_DEFAULT_LED_PIN
-    // so we can use normal GPIO functionality to turn the led on and off
-    gpio_init(PICO_DEFAULT_LED_PIN);
-    gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
-#endif
 }
 
-void gpio_callback(uint gpio, uint32_t events)
-{
-    uint32_t gpio_state = gpio_get_all();
-    /*app_regs.di_state = 0;
-    app_regs.di_state |= (gpio_state & 0xC) >> 2;
-    app_regs.di_state |= (gpio_state & 0x7000) >> 10;
-    */
-    HarpCore::send_harp_reply(EVENT, APP_REG_START_ADDRESS);
-}
-
-void configure_gpio(void)
-{
-    gpio_set_irq_callback(gpio_callback);
-}
-
-// Turn the LED on or off
-void pico_set_led(bool led_on) {
-#if defined(PICO_DEFAULT_LED_PIN)
-    // Just set the GPIO on or off
-    gpio_put(PICO_DEFAULT_LED_PIN, led_on);
-#endif
-}
 // Create Harp App.
 HarpCApp& app = HarpCApp::init(HARP_DEVICE_ID,
                                HW_VERSION_MAJOR, HW_VERSION_MINOR,
                                HW_ASSEMBLY_VERSION,
                                HARP_VERSION_MAJOR, HARP_VERSION_MINOR,
                                FW_VERSION_MAJOR, FW_VERSION_MINOR,
-                               UNUSED_SERIAL_NUMBER, "Quad DAC",
+                               UNUSED_SERIAL_NUMBER,
+                               "quac",
                                (uint8_t*)GIT_HASH,
                                &app_regs, app_reg_specs,
-                               reg_handler_fns, reg_count, update_app_state,
+                               reg_handler_fns, NUM_APP_REGS, update_app,
                                app_reset);
 
 // Core0 main.
 int main()
 {
-    pico_led_init();
 // Init Synchronizer.
     HarpSynchronizer::init(uart1, HARP_SYNC_RX_PIN);
     app.set_synchronizer(&HarpSynchronizer::instance());
-    configure_gpio();
     #ifdef DEBUG
     stdio_uart_init_full(uart0, 921600, UART_TX_PIN, -1); // use uart1 tx only.
-    printf("Hello, from Quad DAC!\r\n");
+    printf("Hello, from the quac board!\r\n");
 #endif
 
-// Re init uart now that clk_peri has changed
-/*
-stdio_init_all();
-
-// --- Timer Setup ---
-// Initialize all four alarms with their initial periods
-init_alarm(0, timer_alarm_0_handler, ALARM_0_PERIOD_US);
-init_alarm(1, timer_alarm_1_handler, ALARM_1_PERIOD_US);
-init_alarm(2, timer_alarm_2_handler, ALARM_2_PERIOD_US);
-init_alarm(3, timer_alarm_3_handler, ALARM_3_PERIOD_US);
-
-    while(true)
-    {
-        // printf("Hello, from Quad DAC!\r\n");
-
-        if (tud_vendor_available()) {
-            uint32_t count = tud_vendor_read(rx_packet_buffer, sizeof(rx_packet_buffer));
-
-            // Ensure the data size is an even number for 16-bit conversion
-            if (count % 2 != 0) {
-                printf("Error: Received odd number of bytes, 16-bit data expected.\n");
-                bytes_received = 0;
-                words_received = 0;
-                continue;
-            }
-
-            // Check if we have enough space in our main buffer (in bytes)
-            if (bytes_received + count <= TOTAL_DATA_SIZE) {
-                // Manually convert 8-bit bytes into 16-bit words
-                for (uint32_t i = 0; i < count; i += 2) {
-                    // Combine two 8-bit bytes into a single 16-bit word
-                    rx_data_buffer[words_received] = (uint16_t)rx_packet_buffer[i] | ((uint16_t)rx_packet_buffer[i + 1] << 8);
-                    words_received++;
-                }
-                bytes_received += count;
-
-                if (bytes_received == TOTAL_DATA_SIZE) {
-                    write_to_flash = true;
-                    printf("Full 16-bit data array received, preparing to write to flash.\n");
-                }
-            } else {
-                printf("Error: Buffer overflow. Data dropped.\n");
-                bytes_received = 0;
-                words_received = 0;
-            }
-        }
-
-        if (write_to_flash) {
-            uintptr_t params[] = {FLASH_TARGET_OFFSET, (uintptr_t)rx_data_buffer};
-            uint32_t rc;
-
-            printf("Writing to flash... DO NOT unplug.\n");
-            // Cast the 16-bit buffer to a void pointer for the flash function
-            rc = flash_safe_execute(call_flash_range_program, params, TOTAL_DATA_SIZE);
-
-            if (rc == PICO_OK) {
-                printf("Flash write completed successfully.\n");
-                const uint8_t *flash_read_address = (const uint8_t *)(XIP_BASE + FLASH_TARGET_OFFSET);
-
-                memcpy(read_data_buffer, flash_read_address, 100);
-
-                printf("Read for 16-bit data...\n");
-            } else {
-                printf("Flash write failed with error code: %d\n", rc);
-            }
-            
-            bytes_received = 0;
-            words_received = 0;
-            write_to_flash = false;
-        }
-            app.run();
-        // time_current = get_absolute_time();
-        // time_current = get_absolute_time();
-        // clock_sys = frequency_count_khz(CLOCKS_FC0_SRC_VALUE_CLK_SYS);
-        
-    }
-*/
 }

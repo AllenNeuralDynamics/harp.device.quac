@@ -11,14 +11,6 @@
 template<typename T>
 concept TransferType = std::integral<T> && (sizeof(T) <= 4);
 
-// Restrict Buffer to power of two due to limitations of the DMA hardware as
-// currently implemented.
-template<typename T>
-concept BufSize = std::integral<T>;// && std::has_single_bit<T>;// && requires(T t){ t <= 32768;};
-
-
-
-
 /**
  * \brief DMA-based double-buffer.
  *
@@ -46,6 +38,11 @@ public:
     DMADoubleBuffer(dreq_num_t pacing_signal, volatile void* target_address)
     :ctrl_chan_{-1}, data_chan_{-1}
     {
+        setup_transfer(pacing_signal, target_address);
+    }
+
+    void setup_transfer(dreq_num_t pacing_signal, volatile void* target_address)
+    {
         ctrl_chan_ = dma_claim_unused_channel(true);
         data_chan_ = dma_claim_unused_channel(true);
         // Setup the control channel.
@@ -55,41 +52,44 @@ public:
         // Use alias3 to start the transfer in one write.
         ctrl_chan_data_[0] = &buffers_[0];
         ctrl_chan_data_[1] = &buffers_[1];
-        ctrl_chan_cfg_ = dma_channel_get_default_config(ctrl_chan_);
-        auto& cfg = ctrl_chan_cfg_;
-        channel_config_set_dreq(&cfg, DREQ_FORCE); // Go as fast as possible.
-        channel_config_set_transfer_data_size(&cfg, DMA_SIZE_32); // system address size.
-        channel_config_set_read_increment(&cfg, true);
-        channel_config_set_write_increment(&cfg, false);
-        channel_config_set_irq_quiet(&cfg, true);
-        channel_config_set_ring(&cfg, false, // wrap read ptr.
+        dma_channel_config ctrl_chan_cfg = dma_channel_get_default_config(ctrl_chan_);
+        channel_config_set_dreq(&ctrl_chan_cfg, DREQ_FORCE); // Go as fast as possible.
+        channel_config_set_transfer_data_size(&ctrl_chan_cfg, DMA_SIZE_32); // system address size.
+        channel_config_set_read_increment(&ctrl_chan_cfg, true);
+        channel_config_set_write_increment(&ctrl_chan_cfg, false);
+        channel_config_set_irq_quiet(&ctrl_chan_cfg, true);
+        channel_config_set_chain_to(&ctrl_chan_cfg, ctrl_chan_); // disable chaining.
+        // Set ctrl_chan_data_ to reset after transferring 2 words.
+        channel_config_set_ring(&ctrl_chan_cfg, false, // wrap read ptr.
                                 3); // 8-byte (i.e: 1 << 3) boundary
                                     // creates a ring-size = 2 words.
                                     // Note: addresses are 4 bytes.
         // Apply the configuration.
-        dma_channel_configure(ctrl_chan_, &cfg,
+        dma_channel_configure(ctrl_chan_, &ctrl_chan_cfg,
                               &dma_hw->ch[data_chan_].al3_read_addr_trig, // write address
                               &ctrl_chan_data_[0],      // read address.
                               1,
                               false);  // Don't start.
+        ctrl_chan_default_cfg_ = ctrl_chan_cfg;
 
         // Setup the data channel
         // By chaining-to the ctrl channel, completing a transfer will retrigger
         // the control channel.
-        data_chan_cfg_ = dma_channel_get_default_config(data_chan_);
-        cfg = data_chan_cfg_;
-        channel_config_set_dreq(&cfg, pacing_signal);
-        channel_config_set_transfer_data_size(&cfg, dma_channel_transfer_size(sizeof(T)>>1));
-        channel_config_set_read_increment(&cfg, true);
-        channel_config_set_write_increment(&cfg, false);
-        channel_config_set_irq_quiet(&cfg, true);
-        channel_config_set_chain_to(&cfg, ctrl_chan_);
+        dma_channel_config data_chan_cfg = dma_channel_get_default_config(data_chan_);
+        channel_config_set_dreq(&data_chan_cfg, pacing_signal);
+        channel_config_set_transfer_data_size(&data_chan_cfg,
+                                              dma_channel_transfer_size(sizeof(T)>>1));
+        channel_config_set_read_increment(&data_chan_cfg, true);
+        channel_config_set_write_increment(&data_chan_cfg, false);
+        channel_config_set_irq_quiet(&data_chan_cfg, true);
+        channel_config_set_chain_to(&data_chan_cfg, ctrl_chan_);
         // Apply the configuration.
-        dma_channel_configure(data_chan_, &cfg,
+        dma_channel_configure(data_chan_, &data_chan_cfg,
                               target_address,   // write address
                               nullptr,          // read address. Will be populated by ctrl_chan_
                               BUF_SIZE,
                               false);  // Don't start.
+        data_chan_default_cfg_ = data_chan_cfg;
     }
 
     ~DMADoubleBuffer()
@@ -100,18 +100,18 @@ public:
  * \note alternatively, you can write to the idle buffer directly with
  *  \ref get_idle_buffer
  */
-    void load_buffer(T* word_source, size_t num_words)
-    {
-        memcpy(get_idle_buffer(), word_source, num_words*sizeof(T));
-    }
-
+    inline void load_buffer(T* word_source, size_t num_words)
+    {memcpy(get_idle_buffer(), word_source, num_words*sizeof(T));}
 
     //T (*get_idle_buffer())[BUF_SIZE]
     T* get_idle_buffer()
     {return *((T**)(dma_channel_hw_addr(ctrl_chan_)->read_addr));}
 
 /**
- * \brief Exit the Ping-Pong Buffer endless chaining loop
+ * \brief Exit the Ping-Pong Buffer endless chaining loop by specifying that the
+ *  next buffer switch to the buffer that is currently idle will be the last
+ *  buffer transfer. Adjust transfer count if we aren't transferring a full
+ *  buffer's worth.
  */
     void setup_last_dma_transfer(size_t word_count)
     {
@@ -122,12 +122,15 @@ public:
         dma_channel_hw_addr(data_chan_)->transfer_count = word_count;
 
         // Disable chaining on the next transfer.
-        // Modifying the CTRL register updates the *next*
+        // Modifying the CTRL register updates settings for the *next* transfer.
         dma_channel_config cfg = dma_get_channel_config(data_chan_);
         channel_config_set_chain_to(&cfg, data_chan_); // chain-to-self disables chaining.
         dma_channel_set_config(data_chan_, &cfg, false); // trigger = false
     }
 
+/**
+ * \brief start dma transfer. Note that setup() must be called first.
+ */
     void start_transfer()
     {dma_start_channel_mask(1u << ctrl_chan_);}
 
@@ -135,15 +138,137 @@ public:
  * \brief true if either channel is transferring (or paused mid-transfer).
  */
     bool is_transferring()
-    {return dma_channel_is_busy(ctrl_chan_) || dma_channel_is_busy(data_chan_);}
+    {
+        // Handle edge case where data_chan is momentarily not-busy while
+        // ctrl_chan reconfigures data_chan. Note: we can't just check if
+        // ctrl_chan is busy bc it stays busy after data_chan finishes its
+        // last transfer.
+        // Edge cases:
+        //  armed but not transferring -> false
+        //    -> data chan idle, ctrl chan idle, dma chain loop connected.
+        //  finished transferring -> false
+        //    -> data chan idle, ctrl chan busy
+        //  aborted -> false
+        //    -> data chan idle, ctrl chan idle, dma chain loop disconnected.
+        //  paused -> true
+        //    -> data chan busy, ctrl chan busy, dma chain loop connected.
+        //  transferring but mid-data-channel reconfiguration -> true
+        //    -> data chan idle, ctrl chan busy, dma chain loop connected.
 
-    //void pause_transfer();
-    //void resume_transfer();
+        // Note: we check *twice* because it's possible to read on the cycle
+        //  where both channels are idle and one is reconfiguring the other.
+        bool data_chan_is_busy = dma_channel_is_busy(data_chan_);
+        bool ctrl_chan_is_busy = dma_channel_is_busy(ctrl_chan_);
+        if (data_chan_is_busy || ctrl_chan_is_busy)
+            return true;
+        data_chan_is_busy = dma_channel_is_busy(data_chan_);
+        ctrl_chan_is_busy = dma_channel_is_busy(ctrl_chan_);
+        return data_chan_is_busy || ctrl_chan_is_busy;
+        //return data_chan_is_busy || (!dma_chain_loop_disconnected());
+/*
+        return data_chan_is_busy ||
+               (ctrl_chan_is_busy && !dma_chain_loop_disconnected());
+*/
+    }
 
+/**
+ * \brief pause an active transfer
+ */
+    void pause_transfer()
+    {
+        // Clear EN bit on an active transfer.
+        // Apply the pause, then validate and reapply if needed (in case the
+        // data channel was in the middle of being reconfigured).
+        if (!is_transferring())
+            return;
+        dma_channel_config cfg = dma_get_channel_config(data_chan_);
+        while (true)
+        {
+            if ((cfg.ctrl & DMA_CH0_CTRL_TRIG_EN_BITS) == 0) // is-paused
+                return; // bail when channel actually pauses.
+            channel_config_set_enable(&cfg, false); // clear enable bit.
+            dma_channel_set_config(data_chan_, &cfg, false); // trigger = false
+            // re apply if needed.
+            dma_channel_config cfg = dma_get_channel_config(data_chan_);
+        }
+    }
+
+/**
+ * \brief resume a paused transfer
+ */
+    void resume_transfer()
+    {
+        // FYI a paused channel appears to be transferring.
+        if (!is_transferring())
+            return;
+        // Set EN bit on data channel to resume transfer.
+        dma_channel_config cfg = dma_get_channel_config(data_chan_);
+        channel_config_set_enable(&cfg, true); // set enable bit.
+        dma_channel_set_config(data_chan_, &cfg, false); // trigger = false
+    }
+
+
+/**
+ * \brief true if the transfer sequence is paused.
+ */
+    bool is_paused()
+    {
+        // is-paused: BUSY == 1 while EN == 0 for data channel.
+        if (!is_transferring()) // Check (BUSY == 1) case.
+            return false;
+        dma_channel_config cfg = dma_get_channel_config(data_chan_);
+        return (cfg.ctrl & DMA_CH0_CTRL_TRIG_EN_BITS) == 0;
+    }
+
+/**
+ * \brief stop an active transfer.
+ * \note we will need to call setup_transfer() or reset_transfer_config()
+ *  before we can start a new transfer.
+ * \details See RP2350 Datashset pg 1108 for the correct abort procedure.
+ */
     void abort_transfer()
-    {dma_hw->abort = (1u << ctrl_chan_) | (1u << data_chan_);
-    // FIXME: we need to setup the transfer all over again but we only do this
-    // in the constructor.
+    {
+        // Clear EN bit and CHAIN_TO across all channels.
+        // Clear ctrl_chan_ first, so we don't race to reconfigure data_chan_?
+        int dma_channels[] = {ctrl_chan_, data_chan_};
+        for (auto& chan: dma_channels)
+        {
+            dma_channel_config cfg = dma_get_channel_config(chan);
+            channel_config_set_chain_to(&cfg, chan); // chain-to-self disables chaining.
+            channel_config_set_enable(&cfg, false); // clear enable bit.
+            dma_channel_set_config(chan, &cfg, false); // trigger = false
+        }
+        uint32_t abort_mask = (1u << ctrl_chan_) | (1u << data_chan_);
+        dma_hw->abort = abort_mask;
+        // RP2350 only: poll set bits until they clear (i.e abort took effect).
+        while (dma_hw->abort & abort_mask)
+            tight_loop_contents();
+    }
+
+    bool is_aborted()
+    {
+        bool data_chan_is_busy = dma_channel_is_busy(data_chan_);
+        bool ctrl_chan_is_busy = dma_channel_is_busy(ctrl_chan_);
+        return dma_chain_loop_disconnected()
+               && !data_chan_is_busy && !ctrl_chan_is_busy;
+    }
+
+
+/**
+ * \brief reset both dma channels to their starting configuration (i.e:
+ *  ready to kick off a transfer sequence.)
+ */
+    void reset_transfer_config()
+    {
+        // For ctrl_chan_ we must additionally reset the idle buffer because
+        // ping-ponging between buffers is specified relative to the starting
+        // buffer address.
+        dma_channel_set_read_addr(ctrl_chan_, &ctrl_chan_data_[0], false);
+        dma_channel_set_config(ctrl_chan_, &ctrl_chan_default_cfg_, false);
+        // For data_chan_ we must additionally reset the transfer count since
+        // it was likely altered for the last buffer transfer.
+        dma_channel_hw_addr(data_chan_)->transfer_count = BUF_SIZE;
+        dma_channel_set_config(data_chan_, &data_chan_default_cfg_, false);
     }
 
 /**
@@ -155,20 +280,42 @@ public:
 
 /**
  * \brief True if neither dma is actively transferring.
+ * \note that per-this-implementation, a transfer is considered complete
+ *  even if it has been aborted.
  */
     bool transfer_complete()
-    {return !(dma_channel_is_busy(ctrl_chan_) || dma_channel_is_busy(data_chan_));}
+    {return !(is_transferring());}
 
-//private:
+/**
+ * \brief true if dma re-triggering loop has been disconnected.
+ * \details this happens if the current transfer was aborted or the next
+ *  transfer was set to be the final transfer.
+ */
+    inline bool dma_chain_loop_disconnected()
+    {
+        // True if data_chan_ is chained-to-self.
+        dma_channel_config cfg = dma_get_channel_config(data_chan_);
+        uint32_t chained_channel = get_chained_channel(cfg);
+        return chained_channel == data_chan_;
+    }
+
+private:
+/**
+ * \brief get the chained channel encoded in the given dma channel config.
+ */
+    inline uint32_t get_chained_channel(dma_channel_config cfg)
+    {
+        return ((cfg.ctrl & DMA_CH0_CTRL_TRIG_CHAIN_TO_BITS)
+                >> DMA_CH0_CTRL_TRIG_CHAIN_TO_LSB);
+    }
+
+
     alignas(8*sizeof(T)) T buffers_[2][BUF_SIZE];
     int ctrl_chan_;
-    dma_channel_config ctrl_chan_cfg_;
+    dma_channel_config ctrl_chan_default_cfg_;
     T (*ctrl_chan_data_[2])[BUF_SIZE];
     int data_chan_;
-    dma_channel_config data_chan_cfg_;
-
-    //int dma_channels_[2];
-    dma_channel_config dma_channel_cfgs_[2];
+    dma_channel_config data_chan_default_cfg_;
 };
 #endif // DMA_DOUBLE_BUFFER
 
