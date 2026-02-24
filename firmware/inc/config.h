@@ -15,20 +15,25 @@ struct DACPins
 
 using T = uint16_t; // Double Buffer Data Transfer Type.
 
+inline constexpr size_t SHA256_NUM_BYTES = 8;
+
 inline constexpr size_t NUM_CHANNELS = 4;
 inline constexpr std::array<const char*, NUM_CHANNELS> filenames
 {{
     "channel_0.txt", "channel_1.txt", "channel_2.txt", "channel_3.txt"
 }};
+
+inline constexpr size_t WAVEFORM_MAX_WORDS = 5'000'000;
+inline constexpr size_t WAVEFORM_MAX_BYTES = WAVEFORM_MAX_WORDS * sizeof(T);
+
 inline constexpr size_t SD_CHUNK_SIZE_BYTES = 32768; // must be a factor of 512
-inline constexpr size_t BUF_SIZE = SD_CHUNK_SIZE_BYTES/sizeof(T);
+inline constexpr size_t READ_BUF_SIZE = SD_CHUNK_SIZE_BYTES/sizeof(T);
 
 #define DAC_PIO (pio1)
 #define SD_PIO (pio0)
 
 // Double Buffers must be accessible by both cores.
-extern const std::array<PIO_LTC264x, NUM_CHANNELS> dacs;
-extern std::array<DMADoubleBuffer<T, BUF_SIZE>, NUM_CHANNELS> file_bufs;
+extern std::array<PIO_LTC264x, NUM_CHANNELS> dacs;
 
 static_assert(SD_CHUNK_SIZE_BYTES % 512 == 0,
  "SD_CHUNK_SIZE_BYTES must be a multiple of 512 (SD card block size).");
@@ -46,6 +51,11 @@ inline constexpr std::array<DACPins, NUM_CHANNELS> DAC_PINS
 inline constexpr size_t SD_CMD_PIN = 3;
 inline constexpr size_t SD_D0_PIN = 4;
 inline constexpr size_t SD_READ_SPEED_HZ = 150 * 1000 * 1000 / 5; // RP2350: 30 MHz
+
+inline constexpr size_t NUM_DIOS = 4;
+inline constexpr size_t DIO_PORT_BASE = 33;
+inline constexpr uint64_t DIO_PORT_MASK = 0x0000001700000000;
+
 
 
 inline constexpr std::array<uint32_t, NUM_CHANNELS> EXTERNAL_TRIGGERS

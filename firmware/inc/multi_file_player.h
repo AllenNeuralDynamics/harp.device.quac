@@ -20,7 +20,7 @@ public:
  * \param filenames
  */
     MultiFilePlayer(std::array<PIO_LTC264x, NUM_CHANNELS>& dacs,
-                    std::array<const char*, NUM_CHANNELS>& filenames)
+                    const std::array<const char*, NUM_CHANNELS>& filenames)
     : dacs_{dacs}, filenames_{filenames}, dma_timer_chan_{-1}
     {
         // Timer setup. Also initializes `timer_pacing_signal_`.
@@ -140,9 +140,11 @@ public:
 /**
  * \brief start one or more channels specified as bitfields.
  * \details multiple channels started this way will be started concurrently.
+ * \note can be called from either core.
  */
     void start(uint32_t channel_mask)
     {
+        // TODO: figure out resume-logic.
         // TODO: maybe make this fn return a bool in case we're not ready (armed)?
         // Create a trigger mask to start all Double Buffer DMA channels at once.
         uint32_t multi_channel_trigger_mask = 0;
@@ -156,6 +158,11 @@ public:
     }
 
     void pause(uint32_t channel_mask)
+    {
+        // TODO.
+    }
+
+    void resume(uint32_t channel_mask)
     {
         // TODO.
     }
@@ -311,7 +318,7 @@ public:
 private:
     // TODO: mark all data structures as __not_in_flash
     std::array<PIO_LTC264x, NUM_CHANNELS>& dacs_;
-    std::array<const char*, NUM_CHANNELS>& filenames_;
+    const std::array<const char*, NUM_CHANNELS>& filenames_;
     std::array<T*, NUM_CHANNELS> idle_buffers_;
     std::array<FIL, NUM_CHANNELS> fils_;
     std::array<FIL*, NUM_CHANNELS> filptrs_;

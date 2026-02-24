@@ -26,33 +26,51 @@ endif()
 include(${PICO_SDK_PATH}/pico_sdk_init.cmake)
 pico_sdk_init()
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 
 project(quac)
 
 
-add_compile_definitions(USE_PRINTF)
+#add_compile_definitions(USE_PRINTF) # for debuggins sd card lib.
 
 add_subdirectory(lib/no-OS-FatFS-SD-SDIO-SPI-RPi-Pico/src lib_build/no_os_fatfs_sd_sdio_spi_rpi_pico)
 add_subdirectory(lib/core.pico/firmware lib_build/pico-core)
 add_subdirectory(lib/rp2040.pio-ltc264x lib_build/pio-ltc264x)
+add_subdirectory(lib/etl lib_build/etl)
 
 add_executable(${PROJECT_NAME}
     src/main.cpp
     src/sd_hw_config.cpp
+    src/quac_app.cpp
 )
 
 include_directories(inc)
 
+add_library(dma_double_buffer INTERFACE)
+target_sources(dma_double_buffer INTERFACE
+    inc/dma_double_buffer.h
+)
+
+add_library(multi_file_player INTERFACE)
+target_sources(multi_file_player INTERFACE
+    inc/multi_file_player.h
+)
+
+target_link_libraries(multi_file_player INTERFACE
+    pico_stdlib
+    #hardware_dma
+    pio_ltc264x
+    no-OS-FatFS-SD-SDIO-SPI-RPi-Pico
+    dma_double_buffer
+    etl::etl
+)
 target_link_libraries(${PROJECT_NAME}
-    harp_c_app
-    harp_sync
     pico_stdlib
     pio_ltc264x
+    harp_c_app
+    harp_sync
     #hardware_adc
-    hardware_dma
-    no-OS-FatFS-SD-SDIO-SPI-RPi-Pico
-
+    multi_file_player
 )
 
 pico_add_extra_outputs(${PROJECT_NAME})
