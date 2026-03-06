@@ -1,47 +1,14 @@
 #include <cstring>
 #include <harp_c_app.h>
 #include <harp_synchronizer.h>
-#include <reg_types.h>
 #include <config.h>
+#include <quac_app.h>
 #include <pio_ltc264x.h>
 #ifdef DEBUG
     #include <pico/stdlib.h> // for uart printing
     #include <cstdio> // for printf
 #endif
 
-inline constexpr size_t NUM_APP_REGS = 0;
-
-
-// Define register contents.
-#pragma pack(push, 1)
-struct app_regs_t
-{
-    // TODO
-} app_regs;
-#pragma pack(pop)
-
-
-// Define register "specs."
-RegSpecs app_reg_specs[NUM_APP_REGS]
-{
-    // TODO
-};
-
-// Define register read-and-write handler functions.
-RegFnPair reg_handler_fns[NUM_APP_REGS]
-{
-    // TODO
-};
-
-void app_reset()
-{
-    // TODO
-}
-
-void update_app()
-{
-
-}
 
 // Create Harp App.
 HarpCApp& app = HarpCApp::init(HARP_DEVICE_ID,
@@ -53,8 +20,17 @@ HarpCApp& app = HarpCApp::init(HARP_DEVICE_ID,
                                "quac",
                                (uint8_t*)GIT_HASH,
                                &app_regs, app_reg_specs,
-                               reg_handler_fns, NUM_APP_REGS, update_app,
-                               app_reset);
+                               reg_handler_fns, APP_REG_COUNT, update_app,
+                               reset_app);
+
+std::array<PIO_LTC264x, NUM_CHANNELS> dacs
+{{
+    {pio2, DAC_PINS[0].sck, DAC_PINS[0].pico},
+    {pio2, DAC_PINS[1].sck, DAC_PINS[1].pico, false, dacs[0].get_offset()},
+    {pio2, DAC_PINS[2].sck, DAC_PINS[2].pico, false, dacs[0].get_offset()},
+    {pio2, DAC_PINS[3].sck, DAC_PINS[3].pico, false, dacs[0].get_offset()},
+}};
+MultiFilePlayer<T, NUM_CHANNELS, READ_BUF_SIZE> player(dacs, filenames);
 
 // Core0 main.
 int main()
@@ -66,5 +42,9 @@ int main()
     stdio_uart_init_full(uart0, 921600, UART_TX_PIN, -1); // use uart1 tx only.
     printf("Hello, from the quac board!\r\n");
 #endif
-
+    for (const auto& dac: dacs)
+        dac.start();
+    reset_app();
+    while (true)
+        app.run();
 }
