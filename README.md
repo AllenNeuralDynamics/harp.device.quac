@@ -2,7 +2,7 @@
 This repository contains the hardware, firmware, and software related to the Harp quad DAC
 
 
-## Compatible SD Cards
+## Compatible SD Cards 💾
 During normal operation, up-to-four waveforms stored on the SD card are read (interleaved) at 4MB per second.
 With the extra overhead of switching between files, the SD card must be able to support reading at no less than 8MB per second.
 In theory, any _Class 10 SD Card_ should be compatible with the _quac_ board.
@@ -14,7 +14,7 @@ But since card performacne can vary, here's a list of tested cards:
 | GIGASTONE | Industrial 8GB MLC      |
 |           |                         |
 
-## Generating Waveforms
+## Generating Waveforms ﮩ٨ـﮩﮩ٨ـ
 
 The _quac_ board reads files in 16-bit little-endian _Pulse-Code Modulation_ (PCM) format.
 There are a few options for generating waveforms in this format.
@@ -36,3 +36,11 @@ import numpy as np
 
 
 ```
+
+## Uploading Waveforms ♒︎➝♬
+Currently waveforms must be uploaded to the SD card manually.
+Waveforms must be placed at the top level (not inside a folder!) and be labeled `channel_<i>.bin` where `<i>` could be `0`, `1`, `2`, or `3` corresponding to waveform 0-3 respectively.
+
+> [!WARNING]
+> Power down the device before removing or inserting the SD card.
+
