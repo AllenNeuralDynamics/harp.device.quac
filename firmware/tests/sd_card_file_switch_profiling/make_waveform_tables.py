@@ -24,7 +24,7 @@ t = np.linspace(0, SECONDS, NUM_SAMPLES)
 x = []
 
 for i, phi in enumerate(np.linspace(0, 2*np.pi, WAVEFORM_COUNT, endpoint=False)):
-    filename = f"channel_{i}.txt"
+    filename = f"channel_{i}.bin"
     print(f"Making waveform for sin(2 * pi * {FREQ} * t + {phi:.3f})")
     # make sine wave. offset it to uint16 range: 0-65535
     x.append((np.sin(2 * np.pi * FREQ * t + phi)+1)/2 * FULL_SCALE_RANGE)
