@@ -53,10 +53,15 @@ with open(FILENAME, "wb") as file:
 
 ```
 
-## Uploading Waveforms ♒︎➝♬
+## Uploading Waveforms ♒︎➝💾
 Currently waveforms must be uploaded to the SD card manually.
 Waveforms must be placed at the top level (not inside a folder!) and be labeled `channel_<i>.bin` where `<i>` could be `0`, `1`, `2`, or `3` corresponding to waveform 0-3 respectively.
 
 > [!WARNING]
 > Power down the device before removing or inserting the SD card.
 
+## Playing Waveforms 🎶
+By default the device's power-on-reset behavior is setup to play channel data from an external trigger where trigger pins _DIO_ - _DI3_ correspond to playing _channel\_0.bin_ - _channel\_3.bin_ on output pins _A0_ - _A3_ respectively.
+
+To alter this behavior, you must use software commands through either Python or Bonsai to change this behavior.
+Using Python or Bonsai enables full control of the device's available features.
