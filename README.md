@@ -1,6 +1,7 @@
-# harp.device.quad-dac
-This repository contains the hardware, firmware, and software related to the Harp quad DAC
+# harp.device.quaq
+hardware, firmware, and software source files for a Harp-compatible 4-channel DAC
 
+![](./assets/pics/cad_mockup.png)
 
 ## Compatible SD Cards 💾
 During normal operation, up-to-four waveforms stored on the SD card are read (interleaved) at 4MB per second.
