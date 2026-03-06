@@ -1,4 +1,4 @@
-# harp.device.quaq
+# harp.device.quac
 hardware, firmware, and software source files for a Harp-compatible 4-channel DAC
 
 ![](./assets/pics/cad_mockup.png)
