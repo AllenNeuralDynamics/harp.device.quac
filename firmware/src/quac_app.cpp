@@ -15,6 +15,7 @@ RegSpecs app_reg_specs[APP_REG_COUNT]
     {(uint8_t*)&app_regs.dac_start, sizeof(app_regs.dac_start), U8},
     {(uint8_t*)&app_regs.dac_pause, sizeof(app_regs.dac_pause), U8},
     {(uint8_t*)&app_regs.dac_abort, sizeof(app_regs.dac_abort), U8},
+    {(uint8_t*)&app_regs.dac_finished, sizeof(app_regs.dac_finished), U8},
 
     {(uint8_t*)&app_regs.dac_settings[0], sizeof(WaveformSettings), U8},
     {(uint8_t*)&app_regs.dac_settings[1], sizeof(WaveformSettings), U8},
