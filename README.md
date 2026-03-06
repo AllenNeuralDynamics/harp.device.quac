@@ -32,16 +32,7 @@ For more complicated waveforms that do not derive from an existing audio file, w
 Here's an example to generate the [North American Ringing Tone](https://en.wikipedia.org/wiki/Ringing_tone#Bell_System_tones), which is the sum of a 440Hz and 480Hz sine wave.
 
 ```python
-# /// script
-# requires-python = ">=3.12"
-# dependencies = [
-#   "numpy",
-#   "matplotlib",
-# ]
-# ///
-
 import numpy as np
-import matplotlib.pyplot as plt
 
 NUM_SAMPLES = int(5e6)
 SAMPLES_PER_SECOND = 500000.
@@ -56,8 +47,7 @@ x = np.zeros(NUM_SAMPLES)
 for freq in [440, 480]:
     x += (np.sin(2 * np.pi * freq * t)+1)/2 * FULL_SCALE_RANGE/2
 
-plt.plot(t, x, label=filename)
-print(f"Writing result to file: {filename}")
+# Write result to file.
 with open(FILENAME, "wb") as file:
     x.astype("<u2").tofile(file)
 
