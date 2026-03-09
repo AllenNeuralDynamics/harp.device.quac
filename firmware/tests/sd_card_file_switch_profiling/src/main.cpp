@@ -24,8 +24,8 @@ static sd_sdio_if_t sdio_if = {
     */
 
 //  CLK_gpio = D0_gpio - 2; -> derived from D0_gpio.
-    .CMD_gpio = 3,
-    .D0_gpio = 4,
+    .CMD_gpio = 22,//3,
+    .D0_gpio = 23,//4,
 //    D1_gpio = D0_gpio + 1; -> derived from D0_gpio.
 //    D2_gpio = D0_gpio + 2; -> derived from D0_gpio.
 //    D3_gpio = D0_gpio + 3; -> derived from D0_gpio.

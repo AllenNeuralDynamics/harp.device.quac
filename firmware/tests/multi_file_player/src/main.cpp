@@ -16,9 +16,9 @@ inline constexpr size_t SD_CHUNK_SIZE = 32768;  // must be factor of 512.
 FIL __not_in_flash("file_handlers") fil[NUM_FILES];
 
 //std::array<const char*, NUM_FILES> filenames
-//{{"channel_0.txt", "channel_1.txt", "channel_2.txt", "channel_3.txt"}};
+//{{"channel_0.bin", "channel_1.bin", "channel_2.bin", "channel_3.bin"}};
 std::array<const char*, NUM_FILES> filenames
-{{"channel_0.txt"}};
+{{"channel_0.bin"}};
 
 struct DACPins
 {
