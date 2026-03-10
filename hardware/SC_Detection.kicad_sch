@@ -12,202 +12,6 @@
 		(comment 1 "Hexabitz")
 	)
 	(lib_symbols
-		(symbol "Amplifier_Current:INA181"
-			(pin_names
-				(offset 0.127)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 3.81 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "INA181"
-				(at 3.81 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
-				(at 1.27 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina181.pdf"
-				(at 3.81 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Bidirectional, Low- and High-Side Voltage Output, Current-Sense Amplifier, SOT-23-6"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "current monitor shunt sensor bidirectional"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SOT?23*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "INA181_0_1"
-				(polyline
-					(pts
-						(xy 5.08 0) (xy -5.08 5.08) (xy -5.08 -5.08) (xy 5.08 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "INA181_1_1"
-				(pin input line
-					(at -7.62 2.54 0)
-					(length 2.54)
-					(name "+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -7.62 -2.54 0)
-					(length 2.54)
-					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 7.62 270)
-					(length 3.81)
-					(name "V+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 -7.62 90)
-					(length 3.81)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 2.54 -7.62 90)
-					(length 6.35)
-					(name "REF"
-						(effects
-							(font
-								(size 0.508 0.508)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Comparator:LMV393"
 			(pin_names
 				(offset 0.127)
@@ -739,6 +543,239 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "kicad-lib:INA630"
+			(pin_names
+				(offset 0.127)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 5.842 5.588 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "INA630"
+				(at 5.842 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-8"
+				(at -1.778 22.606 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ina630.pdf"
+				(at 0.762 25.146 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Bidirectional, Instrumentation Amplifier, SOT-23-8"
+				(at -3.048 21.336 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "current monitor shunt sensor bidirectional"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "INA630_0_1"
+				(polyline
+					(pts
+						(xy 12.7 0) (xy -5.08 7.62) (xy -5.08 -7.62) (xy 12.7 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "INA630_1_1"
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "INP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "INN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.159)
+					(name "V+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.159)
+					(name "V-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 2.54 0 180)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 2.54 -7.62 90)
+					(length 3.302)
+					(name "REF"
+						(effects
+							(font
+								(size 0.508 0.508)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 -7.62 90)
+					(length 6.604)
+					(name "FB"
+						(effects
+							(font
+								(size 0.508 0.508)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 15.24 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1400,7 +1437,7 @@
 	)
 	(text "V_{out} = 20·I_{load}R_{sense} + V_{ref}"
 		(exclude_from_sim no)
-		(at 171.45 18.542 0)
+		(at 171.45 29.972 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1409,7 +1446,7 @@
 		)
 		(uuid "a1d5fc2f-a019-4338-bfcd-fbebaf578c85")
 	)
-	(text "A1_{Gain} = 20\nI_{max} = ±50mA\nR_{sense} = 0.05\nV_{ref} = 1.65V"
+	(text "I_{max} = ±50mA\nINA630_{Gain} = 20\nR_{sense} = 0.05\nV_{ref} = 1.65V"
 		(exclude_from_sim no)
 		(at 171.45 23.876 0)
 		(effects
@@ -1454,6 +1491,24 @@
 		(uuid "fdb95127-74d1-4235-acc5-b206cf1c4777")
 	)
 	(junction
+		(at 100.33 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "02389d52-7293-44ae-9460-e3f266e58b07")
+	)
+	(junction
+		(at 39.37 172.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "02bf7706-e248-40aa-9042-29f238178280")
+	)
+	(junction
+		(at 106.68 172.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "03d282b2-ebcb-4eae-95fb-e197a3d993c9")
+	)
+	(junction
 		(at 148.59 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1472,6 +1527,30 @@
 		(uuid "10e8e90e-19a8-4918-8254-f328e959b409")
 	)
 	(junction
+		(at 81.28 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "12a9f6cb-5ea8-4abb-bb5d-18e612f38897")
+	)
+	(junction
+		(at 80.01 146.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "16363ba5-531a-4cc5-ac48-980be300eb00")
+	)
+	(junction
+		(at 92.71 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "17f4754e-43bf-4352-a9bb-497ded2c3822")
+	)
+	(junction
+		(at 39.37 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "199b76e3-d1a7-4ee7-bcd1-7ccb56d014e4")
+	)
+	(junction
 		(at 114.3 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1482,6 +1561,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2505aa02-eea8-4be3-8755-7f69ded04bad")
+	)
+	(junction
+		(at 81.28 175.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "264b20d2-1152-4736-8cf7-d25b227ac72f")
+	)
+	(junction
+		(at 80.01 62.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2c3bc77c-a588-494f-8286-9140bad17871")
 	)
 	(junction
 		(at 151.13 172.72)
@@ -1502,16 +1593,46 @@
 		(uuid "2ebea752-22d8-486a-8aa6-cf9553540c28")
 	)
 	(junction
+		(at 78.74 170.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "313ced16-28fe-4ab7-90ce-380498f5b1a4")
+	)
+	(junction
+		(at 106.68 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "345af925-7d8a-4bc7-9361-88a21cd4fbd1")
+	)
+	(junction
 		(at 130.81 163.83)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3b022285-f8ef-425b-8e9f-219e6a45ffe5")
 	)
 	(junction
+		(at 106.68 46.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3f08ac41-a6ae-4ff4-bfbb-eb8fd60d8f6b")
+	)
+	(junction
 		(at 27.94 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "40fbecf9-f3f9-4c8d-8d19-df8231a43650")
+	)
+	(junction
+		(at 92.71 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "429570d5-26da-41e0-bc62-690eb5e2fa59")
+	)
+	(junction
+		(at 106.68 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "443f733d-56d1-4d3c-b705-b6d4fa878bf6")
 	)
 	(junction
 		(at 130.81 88.9)
@@ -1526,10 +1647,22 @@
 		(uuid "4d27fed3-f87f-4952-8ad7-de9ba1e5a914")
 	)
 	(junction
+		(at 92.71 181.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "514c00ea-7577-49e0-93b4-eac2982e9c92")
+	)
+	(junction
 		(at 27.94 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "51c6436a-8d86-4920-95c9-539e17cb3e1f")
+	)
+	(junction
+		(at 39.37 46.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "55c48db7-4dbc-4aa1-891e-e39ef675f8c8")
 	)
 	(junction
 		(at 130.81 38.1)
@@ -1538,10 +1671,28 @@
 		(uuid "603d5e8d-984f-4423-85f7-7f31b24c7299")
 	)
 	(junction
+		(at 80.01 187.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6235e9f3-9da4-4386-95c8-4c2b95db69a8")
+	)
+	(junction
 		(at 27.94 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6662fafe-625e-400f-91c4-4ed0abc7b060")
+	)
+	(junction
+		(at 81.28 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "66f638d3-7046-4884-8a81-e77868347c14")
+	)
+	(junction
+		(at 78.74 44.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6e745f93-bc6b-405d-92f0-ab68e6289e2c")
 	)
 	(junction
 		(at 252.73 93.98)
@@ -1568,6 +1719,24 @@
 		(uuid "7b121602-280b-48bc-a836-a210ae6c49c8")
 	)
 	(junction
+		(at 80.01 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7b3a9487-5e0b-4252-931a-fd5ea2cb12ae")
+	)
+	(junction
+		(at 78.74 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7edddc99-bf2a-4339-bb7f-dea3d82ad702")
+	)
+	(junction
+		(at 100.33 97.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7f80dccc-b3c9-4322-b497-9328ade6d842")
+	)
+	(junction
 		(at 129.54 121.92)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1592,16 +1761,40 @@
 		(uuid "98ce594b-3e73-49c6-82a0-a96ed898bcf6")
 	)
 	(junction
+		(at 100.33 181.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a6bc80b7-6550-43e2-88a6-59fa97343a68")
+	)
+	(junction
 		(at 148.59 88.9)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "adc2eb3a-386d-4a72-a1bd-264b3f9ad622")
 	)
 	(junction
+		(at 92.71 97.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b017d9b3-a012-4cdc-bfe5-c3af422bebaf")
+	)
+	(junction
 		(at 151.13 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b04960af-ec29-4ce6-af8e-54599389d91c")
+	)
+	(junction
+		(at 81.28 91.44)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b1ea2dd0-a589-40b5-8c06-3ad28ae61cf0")
+	)
+	(junction
+		(at 100.33 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b2ca5b8b-498a-4232-bda7-73adf87cd556")
 	)
 	(junction
 		(at 129.54 139.7)
@@ -1652,6 +1845,12 @@
 		(uuid "e01b5d88-8fb6-4c86-95f0-b783f3bade74")
 	)
 	(junction
+		(at 78.74 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e37bc0a0-d8fe-49f8-8b6e-83efcc8792fc")
+	)
+	(junction
 		(at 243.84 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1662,6 +1861,22 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f625b25b-51e8-4d4f-b2e4-d3069b94ee9d")
+	)
+	(junction
+		(at 39.37 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fda599a4-ed9b-4d0b-9dba-576c9441b6ea")
+	)
+	(wire
+		(pts
+			(xy 78.74 102.87) (xy 78.74 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00820915-06da-465a-bfef-6fe8c4d29370")
 	)
 	(wire
 		(pts
@@ -1705,6 +1920,26 @@
 	)
 	(wire
 		(pts
+			(xy 39.37 88.9) (xy 39.37 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03a41ffd-7e84-46b6-89a9-d401b662d9cb")
+	)
+	(wire
+		(pts
+			(xy 81.28 133.35) (xy 81.28 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0492ff31-586d-4dfa-8d8f-63064f8ebd4d")
+	)
+	(wire
+		(pts
 			(xy 148.59 166.37) (xy 148.59 172.72)
 		)
 		(stroke
@@ -1725,16 +1960,6 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 86.36) (xy 95.25 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0644e86d-2725-422b-9082-f0e16e96fbc6")
-	)
-	(wire
-		(pts
 			(xy 21.59 162.56) (xy 21.59 168.91)
 		)
 		(stroke
@@ -1745,13 +1970,13 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 138.43) (xy 105.41 140.97)
+			(xy 92.71 180.34) (xy 92.71 181.61)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "06b5c7b5-a3a1-4d10-ab7d-e4481edbc892")
+		(uuid "07829573-0413-4457-a994-98bf7099088f")
 	)
 	(wire
 		(pts
@@ -1762,6 +1987,36 @@
 			(type default)
 		)
 		(uuid "0862749e-b4c5-439a-9f3a-c3d6146ddecb")
+	)
+	(wire
+		(pts
+			(xy 77.47 91.44) (xy 81.28 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "097960d9-fb24-4a8f-928c-f9de8811ad6f")
+	)
+	(wire
+		(pts
+			(xy 39.37 139.7) (xy 39.37 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ada1766-78c7-45f9-973e-839dd9341370")
+	)
+	(wire
+		(pts
+			(xy 92.71 55.88) (xy 92.71 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b37b594-e1fa-4cae-9861-2bd1d9e999ae")
 	)
 	(wire
 		(pts
@@ -1782,6 +2037,16 @@
 			(type default)
 		)
 		(uuid "0dbab191-b1b0-4064-bb49-fd8b525baf8e")
+	)
+	(wire
+		(pts
+			(xy 100.33 181.61) (xy 106.68 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e0bc776-c922-41a9-8084-e6d5bd3dd8a0")
 	)
 	(wire
 		(pts
@@ -1825,13 +2090,23 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 46.99) (xy 114.3 46.99)
+			(xy 105.41 46.99) (xy 106.68 46.99)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "12bc7d64-e56e-49ec-bee0-852393f716a9")
+	)
+	(wire
+		(pts
+			(xy 78.74 146.05) (xy 80.01 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12cb03bb-ddc8-480f-a3fe-30e774043b50")
 	)
 	(wire
 		(pts
@@ -1885,7 +2160,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 54.61) (xy 100.33 57.15)
+			(xy 90.17 54.61) (xy 90.17 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1902,16 +2177,6 @@
 			(type default)
 		)
 		(uuid "1d435699-7ee6-4266-a13e-c794ab2bc4c1")
-	)
-	(wire
-		(pts
-			(xy 93.98 128.27) (xy 95.25 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1de75fb1-829b-4d60-a437-4114d164bf23")
 	)
 	(wire
 		(pts
@@ -1935,13 +2200,33 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 167.64) (xy 39.37 168.91)
+			(xy 78.74 44.45) (xy 82.55 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21cf61d0-074f-4b15-ba2c-6f4cb26c31ac")
+	)
+	(wire
+		(pts
+			(xy 39.37 162.56) (xy 39.37 163.83)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "227c0abd-f9a2-4e66-b54c-59b5a1f7f91f")
+	)
+	(wire
+		(pts
+			(xy 81.28 49.53) (xy 81.28 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24279bb0-b57e-46d4-8d42-babe3d4d8e4c")
 	)
 	(wire
 		(pts
@@ -1962,6 +2247,16 @@
 			(type default)
 		)
 		(uuid "2545497f-f580-4cbd-8e7c-caad42ca3f5b")
+	)
+	(wire
+		(pts
+			(xy 39.37 181.61) (xy 39.37 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25e4b9a0-c874-4ce1-8122-91fb2173f57e")
 	)
 	(wire
 		(pts
@@ -1995,6 +2290,16 @@
 	)
 	(wire
 		(pts
+			(xy 39.37 97.79) (xy 39.37 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29beb2b5-cc4b-4d07-a6c7-1d4cf50e40df")
+	)
+	(wire
+		(pts
 			(xy 114.3 88.9) (xy 130.81 88.9)
 		)
 		(stroke
@@ -2002,6 +2307,26 @@
 			(type default)
 		)
 		(uuid "29f8fcf5-dabe-4f12-ba96-a43ebcd50be4")
+	)
+	(wire
+		(pts
+			(xy 39.37 172.72) (xy 40.64 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a0d758f-34c8-425d-9c09-8e82da0b3d73")
+	)
+	(wire
+		(pts
+			(xy 90.17 180.34) (xy 90.17 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2cd6636b-e34a-4544-9fd4-988ff4e565b3")
 	)
 	(wire
 		(pts
@@ -2025,13 +2350,23 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 130.81) (xy 114.3 130.81)
+			(xy 105.41 172.72) (xy 106.68 172.72)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "30c6138f-db3a-44c7-929a-14ebe8d288bd")
+		(uuid "2f85e8cd-3f76-4e04-9415-ca04f3f1c886")
+	)
+	(wire
+		(pts
+			(xy 100.33 180.34) (xy 100.33 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30138377-c7b4-473c-81cc-2775f3992ecd")
 	)
 	(wire
 		(pts
@@ -2065,6 +2400,46 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 91.44) (xy 81.28 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32fc3e47-db19-4f5a-a236-8b65ed6d0292")
+	)
+	(wire
+		(pts
+			(xy 106.68 88.9) (xy 106.68 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33914cb0-58ec-4f3f-b530-708f62a649ec")
+	)
+	(wire
+		(pts
+			(xy 100.33 138.43) (xy 100.33 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34b4f97a-6321-4702-9100-149b7c9c06c8")
+	)
+	(wire
+		(pts
+			(xy 78.74 170.18) (xy 78.74 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3511642f-76ee-4375-9c6d-1d1c030a6804")
+	)
+	(wire
+		(pts
 			(xy 129.54 96.52) (xy 130.81 96.52)
 		)
 		(stroke
@@ -2095,17 +2470,27 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 96.52) (xy 105.41 100.33)
+			(xy 81.28 91.44) (xy 82.55 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "39b728e2-ebc7-4694-a0af-03d87cc2c98a")
+		(uuid "3908befa-5a42-4c33-8517-91634b46984b")
 	)
 	(wire
 		(pts
-			(xy 110.49 172.72) (xy 114.3 172.72)
+			(xy 78.74 186.69) (xy 78.74 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39d2d26c-8afb-4818-b830-bd3f1e35260a")
+	)
+	(wire
+		(pts
+			(xy 106.68 172.72) (xy 114.3 172.72)
 		)
 		(stroke
 			(width 0)
@@ -2175,6 +2560,16 @@
 	)
 	(wire
 		(pts
+			(xy 100.33 54.61) (xy 100.33 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43aa2179-9ac7-475d-8085-06b82819df43")
+	)
+	(wire
+		(pts
 			(xy 128.27 123.19) (xy 129.54 123.19)
 		)
 		(stroke
@@ -2235,16 +2630,6 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 80.01) (xy 100.33 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4ac46d2b-20ec-45d1-ba6b-c07889e1f244")
-	)
-	(wire
-		(pts
 			(xy 21.59 120.65) (xy 21.59 127)
 		)
 		(stroke
@@ -2255,7 +2640,17 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 44.45) (xy 95.25 44.45)
+			(xy 81.28 175.26) (xy 82.55 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c6bf29a-5eda-4185-a6b0-c69dba032e01")
+	)
+	(wire
+		(pts
+			(xy 77.47 44.45) (xy 78.74 44.45)
 		)
 		(stroke
 			(width 0)
@@ -2275,23 +2670,13 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 180.34) (xy 105.41 182.88)
+			(xy 39.37 55.88) (xy 39.37 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4eb42f98-a090-4de7-aec6-1e553c233b70")
-	)
-	(wire
-		(pts
-			(xy 93.98 91.44) (xy 95.25 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f0c1445-c13d-471c-b184-d45699b64789")
+		(uuid "502e4dfc-565d-4579-a389-8fa1ed6dd997")
 	)
 	(wire
 		(pts
@@ -2302,6 +2687,16 @@
 			(type default)
 		)
 		(uuid "53eb4d74-7a0a-421f-8c71-275b87070108")
+	)
+	(wire
+		(pts
+			(xy 106.68 172.72) (xy 106.68 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "545d4229-f9df-41b5-9432-240480ab40ce")
 	)
 	(wire
 		(pts
@@ -2325,7 +2720,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 83.82) (xy 39.37 85.09)
+			(xy 39.37 78.74) (xy 39.37 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2345,6 +2740,26 @@
 	)
 	(wire
 		(pts
+			(xy 78.74 187.96) (xy 80.01 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58a51748-cd5e-435f-ba6f-0172040dd873")
+	)
+	(wire
+		(pts
+			(xy 106.68 46.99) (xy 106.68 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "590cb54f-7033-47f3-b24a-5f42c7241ee0")
+	)
+	(wire
+		(pts
 			(xy 130.81 88.9) (xy 130.81 92.71)
 		)
 		(stroke
@@ -2352,6 +2767,16 @@
 			(type default)
 		)
 		(uuid "597f4447-122a-4002-93b3-768f57d8d502")
+	)
+	(wire
+		(pts
+			(xy 81.28 146.05) (xy 81.28 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b6fc353-98d0-40c6-be98-c32f08b7125c")
 	)
 	(wire
 		(pts
@@ -2405,17 +2830,17 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 138.43) (xy 100.33 140.97)
+			(xy 77.47 86.36) (xy 78.74 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5f3dd735-01e3-452c-bfd4-3498f52c889a")
+		(uuid "5f9ef202-f43f-4eaf-8d63-bcf94a52f4e2")
 	)
 	(wire
 		(pts
-			(xy 39.37 41.91) (xy 39.37 43.18)
+			(xy 39.37 36.83) (xy 39.37 38.1)
 		)
 		(stroke
 			(width 0)
@@ -2475,6 +2900,36 @@
 	)
 	(wire
 		(pts
+			(xy 78.74 86.36) (xy 78.74 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65d3e30c-a58a-4d46-9fba-49adb32041e0")
+	)
+	(wire
+		(pts
+			(xy 81.28 49.53) (xy 82.55 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67bec21f-b0f5-4b87-ab85-a0f06366c67c")
+	)
+	(wire
+		(pts
+			(xy 77.47 175.26) (xy 81.28 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69721afa-b4de-424f-9b24-a5e18ce67a34")
+	)
+	(wire
+		(pts
 			(xy 251.46 93.98) (xy 252.73 93.98)
 		)
 		(stroke
@@ -2495,7 +2950,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 58.42) (xy 106.68 58.42)
+			(xy 92.71 59.69) (xy 99.06 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2535,6 +2990,16 @@
 	)
 	(wire
 		(pts
+			(xy 92.71 185.42) (xy 99.06 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71dd6103-0fed-4a6a-8f61-7cc02d489272")
+	)
+	(wire
+		(pts
 			(xy 114.3 86.36) (xy 114.3 88.9)
 		)
 		(stroke
@@ -2565,6 +3030,16 @@
 	)
 	(wire
 		(pts
+			(xy 92.71 97.79) (xy 92.71 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7479f44b-4b0b-4640-b3b7-a2366b99acf5")
+	)
+	(wire
+		(pts
 			(xy 129.54 139.7) (xy 132.08 139.7)
 		)
 		(stroke
@@ -2572,16 +3047,6 @@
 			(type default)
 		)
 		(uuid "75527326-5468-4a32-abc1-9f7998e41a9f")
-	)
-	(wire
-		(pts
-			(xy 100.33 180.34) (xy 100.33 182.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "75861545-a166-45d8-90eb-54f6ea7b0fc7")
 	)
 	(wire
 		(pts
@@ -2605,7 +3070,17 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 125.73) (xy 39.37 127)
+			(xy 39.37 46.99) (xy 40.64 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78c774f1-941d-4a08-8276-3688ef139e56")
+	)
+	(wire
+		(pts
+			(xy 39.37 120.65) (xy 39.37 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2625,6 +3100,16 @@
 	)
 	(wire
 		(pts
+			(xy 78.74 170.18) (xy 82.55 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a9fc62a-42ed-42a2-a998-d7a28517cf81")
+	)
+	(wire
+		(pts
 			(xy 132.08 134.62) (xy 130.81 134.62)
 		)
 		(stroke
@@ -2632,6 +3117,26 @@
 			(type default)
 		)
 		(uuid "7d0116f2-8bc0-4638-a6a6-f1dd409ddbfd")
+	)
+	(wire
+		(pts
+			(xy 39.37 171.45) (xy 39.37 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d0f7597-3d60-4c0b-9400-04b5cbcbc898")
+	)
+	(wire
+		(pts
+			(xy 106.68 88.9) (xy 114.3 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d5081e5-be5a-4cf9-8436-74f5943d2c14")
 	)
 	(wire
 		(pts
@@ -2645,13 +3150,23 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 175.26) (xy 95.25 175.26)
+			(xy 90.17 163.83) (xy 90.17 165.1)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7ddd79b2-0477-401c-adaa-2b242ba1458f")
+		(uuid "7e31983f-644e-4106-9a67-f4dfa0433575")
+	)
+	(wire
+		(pts
+			(xy 100.33 139.7) (xy 106.68 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e920d11-c83f-4291-a84b-925b766421a5")
 	)
 	(wire
 		(pts
@@ -2685,6 +3200,16 @@
 	)
 	(wire
 		(pts
+			(xy 77.47 170.18) (xy 78.74 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8122062d-85cf-4f46-b6ab-79e824d6fed3")
+	)
+	(wire
+		(pts
 			(xy 114.3 46.99) (xy 130.81 46.99)
 		)
 		(stroke
@@ -2695,13 +3220,23 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 134.62) (xy 39.37 135.89)
+			(xy 80.01 104.14) (xy 81.28 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "85f882cf-8169-4425-858c-9b2b33c35ed0")
+		(uuid "843988e3-4901-43a5-940a-d74fe3716f83")
+	)
+	(wire
+		(pts
+			(xy 81.28 62.23) (xy 81.28 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85795c92-d21c-4441-9f45-848fc8dfe1f1")
 	)
 	(wire
 		(pts
@@ -2715,6 +3250,16 @@
 	)
 	(wire
 		(pts
+			(xy 39.37 130.81) (xy 39.37 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "878b39ba-e283-47be-8773-e4726f8c5ce6")
+	)
+	(wire
+		(pts
 			(xy 114.3 130.81) (xy 130.81 130.81)
 		)
 		(stroke
@@ -2722,16 +3267,6 @@
 			(type default)
 		)
 		(uuid "87a416c8-801d-4b80-a056-a6702e686b51")
-	)
-	(wire
-		(pts
-			(xy 100.33 121.92) (xy 100.33 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "88688917-4789-42a0-af0d-fae743323893")
 	)
 	(wire
 		(pts
@@ -2745,6 +3280,16 @@
 	)
 	(wire
 		(pts
+			(xy 39.37 46.99) (xy 39.37 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8973ed0c-ead8-45c3-81a7-529fb8a5f8b0")
+	)
+	(wire
+		(pts
 			(xy 130.81 78.74) (xy 130.81 80.01)
 		)
 		(stroke
@@ -2755,7 +3300,17 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 38.1) (xy 100.33 39.37)
+			(xy 92.71 139.7) (xy 92.71 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c34f98c-eac9-401c-ba5e-a79d29351658")
+	)
+	(wire
+		(pts
+			(xy 90.17 38.1) (xy 90.17 39.37)
 		)
 		(stroke
 			(width 0)
@@ -2772,6 +3327,26 @@
 			(type default)
 		)
 		(uuid "8cb22a92-3d9a-44f0-a3a9-e204193061a2")
+	)
+	(wire
+		(pts
+			(xy 78.74 128.27) (xy 78.74 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8db4f638-2b90-4ed1-afc1-01202f827b14")
+	)
+	(wire
+		(pts
+			(xy 92.71 143.51) (xy 99.06 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e222f52-e698-4dda-9a3e-cd2c20781948")
 	)
 	(wire
 		(pts
@@ -2802,6 +3377,26 @@
 			(type default)
 		)
 		(uuid "91e46b63-0b9b-4962-93b3-56779f3f3fff")
+	)
+	(wire
+		(pts
+			(xy 77.47 128.27) (xy 78.74 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92d2a73d-3c6a-4591-8329-0b6b8926cb7d")
+	)
+	(wire
+		(pts
+			(xy 81.28 175.26) (xy 81.28 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "932fa5be-4304-451b-85a9-45ce36c98858")
 	)
 	(wire
 		(pts
@@ -2855,6 +3450,16 @@
 	)
 	(wire
 		(pts
+			(xy 105.41 88.9) (xy 106.68 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9551d604-d29e-4e0b-ae95-f63ee85bf336")
+	)
+	(wire
+		(pts
 			(xy 114.3 172.72) (xy 130.81 172.72)
 		)
 		(stroke
@@ -2865,13 +3470,23 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 92.71) (xy 39.37 93.98)
+			(xy 92.71 138.43) (xy 92.71 139.7)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9ab77f95-479d-4054-913d-226e1d74668d")
+		(uuid "9b47b004-b092-49e4-a5fb-f8fbb87c4f8a")
+	)
+	(wire
+		(pts
+			(xy 77.47 133.35) (xy 81.28 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b5d5485-5c06-4992-901a-8e89fae0f80e")
 	)
 	(wire
 		(pts
@@ -2902,6 +3517,26 @@
 			(type default)
 		)
 		(uuid "9ec4ac68-0766-4b54-b8a6-84bda68a75c5")
+	)
+	(wire
+		(pts
+			(xy 100.33 55.88) (xy 106.68 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2e1437a-83e2-4224-9d16-95d27f573106")
+	)
+	(wire
+		(pts
+			(xy 92.71 181.61) (xy 92.71 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3c2b5c6-fa31-46c8-9062-a6220bb27978")
 	)
 	(wire
 		(pts
@@ -2945,16 +3580,6 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 176.53) (xy 39.37 177.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a73e6ba4-c71c-4afd-8a90-1f8fe2c89848")
-	)
-	(wire
-		(pts
 			(xy 128.27 140.97) (xy 129.54 140.97)
 		)
 		(stroke
@@ -2995,16 +3620,6 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 163.83) (xy 100.33 165.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a854f9ea-d4db-467a-b68f-9d8adfe0f9b9")
-	)
-	(wire
-		(pts
 			(xy 27.94 120.65) (xy 27.94 123.19)
 		)
 		(stroke
@@ -3025,6 +3640,16 @@
 	)
 	(wire
 		(pts
+			(xy 92.71 96.52) (xy 92.71 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a98e0241-1c8f-42fe-95f0-2ee2e138d8df")
+	)
+	(wire
+		(pts
 			(xy 114.3 128.27) (xy 114.3 130.81)
 		)
 		(stroke
@@ -3032,6 +3657,16 @@
 			(type default)
 		)
 		(uuid "aa5b02ca-68fc-476c-8ad4-a397b3eadd7e")
+	)
+	(wire
+		(pts
+			(xy 90.17 80.01) (xy 90.17 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac411d58-e4ec-44dd-ab8c-f8003b567a14")
 	)
 	(wire
 		(pts
@@ -3045,6 +3680,16 @@
 	)
 	(wire
 		(pts
+			(xy 39.37 45.72) (xy 39.37 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae6ed2da-f863-404f-bb04-9d11b2ff5d7b")
+	)
+	(wire
+		(pts
 			(xy 21.59 134.62) (xy 21.59 140.97)
 		)
 		(stroke
@@ -3052,6 +3697,36 @@
 			(type default)
 		)
 		(uuid "af70448d-59a3-4f19-b5e3-db1c30d6f085")
+	)
+	(wire
+		(pts
+			(xy 78.74 62.23) (xy 80.01 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "afe50700-b923-4044-a4f0-b3313ed2cd08")
+	)
+	(wire
+		(pts
+			(xy 81.28 104.14) (xy 81.28 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b100fb5f-3cb5-4c65-871a-bf2ed45c84d7")
+	)
+	(wire
+		(pts
+			(xy 105.41 130.81) (xy 106.68 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1db91a0-3612-488d-b5e7-de6cfa839991")
 	)
 	(wire
 		(pts
@@ -3065,13 +3740,23 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 100.33) (xy 106.68 100.33)
+			(xy 106.68 130.81) (xy 106.68 132.08)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b5e941a4-3a19-489d-a585-8cb94dae4107")
+		(uuid "b5023b13-e339-4fa6-b8a5-7b0428935b80")
+	)
+	(wire
+		(pts
+			(xy 80.01 146.05) (xy 81.28 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5296a0f-dc0c-46c3-b4d0-9af6934dd207")
 	)
 	(wire
 		(pts
@@ -3095,6 +3780,16 @@
 	)
 	(wire
 		(pts
+			(xy 78.74 144.78) (xy 78.74 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9472e3c-171d-4d6c-9896-a835b81a4211")
+	)
+	(wire
+		(pts
 			(xy 130.81 97.79) (xy 130.81 99.06)
 		)
 		(stroke
@@ -3102,16 +3797,6 @@
 			(type default)
 		)
 		(uuid "b94fbfd6-69f8-4179-8715-d3620eb66c0f")
-	)
-	(wire
-		(pts
-			(xy 39.37 50.8) (xy 39.37 52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bad2b12d-8e34-4ade-955a-f64af8b4c0ef")
 	)
 	(wire
 		(pts
@@ -3132,6 +3817,16 @@
 			(type default)
 		)
 		(uuid "bbfcd71b-9d72-4490-873b-d5f05ca19422")
+	)
+	(wire
+		(pts
+			(xy 81.28 133.35) (xy 82.55 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bcc62cb1-aa35-40f5-b669-b2c7ff3d25d2")
 	)
 	(wire
 		(pts
@@ -3185,6 +3880,16 @@
 	)
 	(wire
 		(pts
+			(xy 80.01 62.23) (xy 81.28 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c39dbef7-5f24-436b-9782-8ecde376d681")
+	)
+	(wire
+		(pts
 			(xy 130.81 97.79) (xy 132.08 97.79)
 		)
 		(stroke
@@ -3192,6 +3897,16 @@
 			(type default)
 		)
 		(uuid "c5b82ec4-0e4c-47d9-bf0d-426acf2d8693")
+	)
+	(wire
+		(pts
+			(xy 90.17 96.52) (xy 90.17 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c827539b-0bf6-413f-ad3b-316a0357380c")
 	)
 	(wire
 		(pts
@@ -3215,13 +3930,13 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 96.52) (xy 100.33 99.06)
+			(xy 92.71 101.6) (xy 99.06 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c9987e81-f2ba-4448-afcb-051a0df6ef9a")
+		(uuid "c9a00db1-6222-4029-b04c-0e1ef07b9e2a")
 	)
 	(wire
 		(pts
@@ -3242,6 +3957,26 @@
 			(type default)
 		)
 		(uuid "cb765443-e951-4130-8f78-fde736096f0f")
+	)
+	(wire
+		(pts
+			(xy 78.74 104.14) (xy 80.01 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb7f04b9-96ff-4af9-a82f-3e1a04f56975")
+	)
+	(wire
+		(pts
+			(xy 39.37 129.54) (xy 39.37 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc3466ae-00c7-40bd-a9fe-5da319713a2f")
 	)
 	(wire
 		(pts
@@ -3285,6 +4020,16 @@
 	)
 	(wire
 		(pts
+			(xy 78.74 86.36) (xy 82.55 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf4a713b-90da-4db2-b2be-74072c224165")
+	)
+	(wire
+		(pts
 			(xy 129.54 120.65) (xy 129.54 121.92)
 		)
 		(stroke
@@ -3305,6 +4050,16 @@
 	)
 	(wire
 		(pts
+			(xy 80.01 187.96) (xy 81.28 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d01ca1d7-a846-4aa6-a458-b6ce8498b831")
+	)
+	(wire
+		(pts
 			(xy 129.54 81.28) (xy 130.81 81.28)
 		)
 		(stroke
@@ -3312,6 +4067,16 @@
 			(type default)
 		)
 		(uuid "d191b9c7-801d-4e7f-ba52-f6a6cd0b8acc")
+	)
+	(wire
+		(pts
+			(xy 100.33 97.79) (xy 106.68 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d303ffb1-74ec-42b9-b561-c12fa8223679")
 	)
 	(wire
 		(pts
@@ -3365,6 +4130,16 @@
 	)
 	(wire
 		(pts
+			(xy 90.17 121.92) (xy 90.17 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4568f09-4c7f-40e8-b685-79ddc2ec7a05")
+	)
+	(wire
+		(pts
 			(xy 130.81 54.61) (xy 130.81 55.88)
 		)
 		(stroke
@@ -3372,6 +4147,26 @@
 			(type default)
 		)
 		(uuid "d4b25c49-8922-41ba-8d2c-e04b0611791e")
+	)
+	(wire
+		(pts
+			(xy 106.68 130.81) (xy 114.3 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d50e29c6-a919-4012-88ee-0194597cc8ca")
+	)
+	(wire
+		(pts
+			(xy 78.74 128.27) (xy 82.55 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7e0c5a1-81e2-466e-9e49-bbd0e38cc538")
 	)
 	(wire
 		(pts
@@ -3385,6 +4180,16 @@
 	)
 	(wire
 		(pts
+			(xy 100.33 96.52) (xy 100.33 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d99597ad-fff5-4fb6-b5e0-ad76ad5c8d0f")
+	)
+	(wire
+		(pts
 			(xy 130.81 38.1) (xy 130.81 39.37)
 		)
 		(stroke
@@ -3395,13 +4200,13 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 140.97) (xy 106.68 140.97)
+			(xy 81.28 187.96) (xy 81.28 186.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "df85da6d-37ee-46c5-aaa0-5b5745ed0e9b")
+		(uuid "df41eaad-bcbc-4b06-8052-81eda5725436")
 	)
 	(wire
 		(pts
@@ -3415,6 +4220,16 @@
 	)
 	(wire
 		(pts
+			(xy 39.37 130.81) (xy 40.64 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e0f7a9eb-0839-447d-a7b3-604b61aa36b6")
+	)
+	(wire
+		(pts
 			(xy 151.13 129.54) (xy 151.13 130.81)
 		)
 		(stroke
@@ -3425,13 +4240,23 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 54.61) (xy 105.41 58.42)
+			(xy 78.74 60.96) (xy 78.74 62.23)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e715d3cf-a4b8-4d5b-a65c-5b041ec5368c")
+		(uuid "e6c4a802-6c8b-4c8d-a908-a728327a5aa4")
+	)
+	(wire
+		(pts
+			(xy 92.71 54.61) (xy 92.71 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e829759d-a7e5-482a-9933-d79b2c8d0d5c")
 	)
 	(wire
 		(pts
@@ -3455,23 +4280,23 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 182.88) (xy 106.68 182.88)
+			(xy 78.74 44.45) (xy 78.74 53.34)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ec086fed-e4ed-4168-8b07-98627534d78b")
+		(uuid "eb54e556-fbb8-46f7-819f-339f70f7d1b1")
 	)
 	(wire
 		(pts
-			(xy 110.49 88.9) (xy 114.3 88.9)
+			(xy 39.37 172.72) (xy 39.37 173.99)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f14f8f1e-8def-400a-b006-191383126379")
+		(uuid "f0d71b82-60f0-4e69-a1c7-6aa38ee3e9e9")
 	)
 	(wire
 		(pts
@@ -3485,6 +4310,16 @@
 	)
 	(wire
 		(pts
+			(xy 39.37 87.63) (xy 39.37 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f242f7d4-5398-40de-b251-d92fc20e49a9")
+	)
+	(wire
+		(pts
 			(xy 129.54 57.15) (xy 130.81 57.15)
 		)
 		(stroke
@@ -3495,17 +4330,17 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 133.35) (xy 95.25 133.35)
+			(xy 39.37 88.9) (xy 40.64 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f71c41a3-8a84-476e-80ff-0c14fff5542a")
+		(uuid "f6454089-6425-460d-83a5-f4f0aa800255")
 	)
 	(wire
 		(pts
-			(xy 93.98 49.53) (xy 95.25 49.53)
+			(xy 77.47 49.53) (xy 81.28 49.53)
 		)
 		(stroke
 			(width 0)
@@ -3525,6 +4360,26 @@
 	)
 	(wire
 		(pts
+			(xy 90.17 138.43) (xy 90.17 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd876305-f39d-43b9-a746-218e417e9d24")
+	)
+	(wire
+		(pts
+			(xy 106.68 46.99) (xy 114.3 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd9ec2b0-f5eb-4ebb-8503-b92e7dd74fbd")
+	)
+	(wire
+		(pts
 			(xy 227.33 99.06) (xy 227.33 100.33)
 		)
 		(stroke
@@ -3532,16 +4387,6 @@
 			(type default)
 		)
 		(uuid "fe3ed444-337e-4bdf-8f72-1295e03e637b")
-	)
-	(wire
-		(pts
-			(xy 93.98 170.18) (xy 95.25 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "feeebb04-4f13-4e8c-942e-d3fd3877a79d")
 	)
 	(label "VREF_1.65"
 		(at 119.38 123.19 180)
@@ -3574,7 +4419,7 @@
 		(uuid "332e29fa-ad57-40b2-ad6b-712c0a70903c")
 	)
 	(label "VREF_1.65"
-		(at 106.68 58.42 0)
+		(at 99.06 59.69 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3593,26 +4438,6 @@
 		)
 		(uuid "5e46613f-9b50-4e40-8a88-d41bfbb18e0f")
 	)
-	(label "VREF_1.65"
-		(at 106.68 100.33 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6eca2907-851c-4d37-88f1-0a41acffba6e")
-	)
-	(label "VREF_1.65"
-		(at 106.68 182.88 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "780e6490-4f71-4207-b5fd-b66e77e7548b")
-	)
 	(label "VREF_3.3"
 		(at 119.38 120.65 180)
 		(effects
@@ -3622,16 +4447,6 @@
 			(justify right bottom)
 		)
 		(uuid "79b5a8de-92ff-4cca-a3d9-009a532b2cc1")
-	)
-	(label "VREF_1.65"
-		(at 106.68 140.97 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "94919201-7c20-4eb4-9165-a4222eb8cefc")
 	)
 	(label "VREF_1.65"
 		(at 120.65 81.28 180)
@@ -3704,6 +4519,16 @@
 		(uuid "cfd7bef8-b27a-4489-bd40-2cf4a0e47987")
 	)
 	(label "VREF_1.65"
+		(at 99.06 143.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d09e8a52-e761-4bcb-b7e4-cb0aef118a08")
+	)
+	(label "VREF_1.65"
 		(at 120.65 54.61 180)
 		(effects
 			(font
@@ -3722,6 +4547,26 @@
 			(justify right bottom)
 		)
 		(uuid "ddd8cef6-9409-493f-bb1c-067cf47a6431")
+	)
+	(label "VREF_1.65"
+		(at 99.06 185.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e5657035-20f6-4648-b188-6ce38c35e569")
+	)
+	(label "VREF_1.65"
+		(at 99.06 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ea0c79dc-9bf1-46db-bf8f-4bbfb620715b")
 	)
 	(global_label "SHORT_CIRCUIT_2"
 		(shape output)
@@ -3791,7 +4636,7 @@
 	)
 	(global_label "SENSE_0_B"
 		(shape input)
-		(at 93.98 49.53 180)
+		(at 77.47 44.45 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3801,7 +4646,7 @@
 		)
 		(uuid "46de0542-e181-4693-a718-057ede87e4a6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 80.5326 49.53 0)
+			(at 64.0226 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3835,7 +4680,7 @@
 	)
 	(global_label "SENSE_1_A"
 		(shape input)
-		(at 93.98 86.36 180)
+		(at 77.47 91.44 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3845,7 +4690,7 @@
 		)
 		(uuid "67fb2f93-0a2f-4c0a-b0a2-03d779ee3d4a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 80.714 86.36 0)
+			(at 64.204 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3857,7 +4702,7 @@
 	)
 	(global_label "SENSE_0_A"
 		(shape input)
-		(at 93.98 44.45 180)
+		(at 77.47 49.53 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3867,7 +4712,7 @@
 		)
 		(uuid "6f3570ee-97f1-48f5-b57a-08447bfcc803")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 80.714 44.45 0)
+			(at 64.204 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3879,7 +4724,7 @@
 	)
 	(global_label "SENSE_3_A"
 		(shape input)
-		(at 93.98 170.18 180)
+		(at 77.47 175.26 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3889,7 +4734,7 @@
 		)
 		(uuid "8b66f4ba-1e55-4ae8-8704-320cbe6d09b9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 80.714 170.18 0)
+			(at 64.204 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3901,7 +4746,7 @@
 	)
 	(global_label "SENSE_2_B"
 		(shape input)
-		(at 93.98 133.35 180)
+		(at 77.47 128.27 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3911,7 +4756,7 @@
 		)
 		(uuid "9fc691a4-ffa2-442f-9e61-9a71502f11bb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 80.5326 133.35 0)
+			(at 64.0226 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3945,7 +4790,7 @@
 	)
 	(global_label "SENSE_1_B"
 		(shape input)
-		(at 93.98 91.44 180)
+		(at 77.47 86.36 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3955,7 +4800,7 @@
 		)
 		(uuid "cad30eec-de99-487c-9e29-44f340e0fa39")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 80.5326 91.44 0)
+			(at 64.0226 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4011,7 +4856,7 @@
 	)
 	(global_label "SENSE_3_B"
 		(shape input)
-		(at 93.98 175.26 180)
+		(at 77.47 170.18 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4021,7 +4866,7 @@
 		)
 		(uuid "e3a08fc1-848a-4737-a4a9-e3ff9b33c526")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 80.5326 175.26 0)
+			(at 64.0226 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4033,7 +4878,7 @@
 	)
 	(global_label "SENSE_2_A"
 		(shape input)
-		(at 93.98 128.27 180)
+		(at 77.47 133.35 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4043,7 +4888,7 @@
 		)
 		(uuid "edaecc4a-d971-478b-8ac4-e653a2789564")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 80.714 128.27 0)
+			(at 64.204 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4076,17 +4921,16 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 100.33 121.92 0)
+		(lib_id "power:+5V")
+		(at 39.37 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "03af4f3c-297e-43ca-9056-5142c5d748bb")
-		(property "Reference" "#PWR0113"
-			(at 100.33 125.73 0)
+		(uuid "00d4630a-fd69-4077-b5e4-bdc977d8a0b7")
+		(property "Reference" "#PWR0112"
+			(at 39.37 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4094,8 +4938,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3.3V"
-			(at 100.33 116.84 0)
+		(property "Value" "+12V"
+			(at 39.37 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4103,7 +4947,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 100.33 121.92 0)
+			(at 39.37 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4112,7 +4956,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 121.92 0)
+			(at 39.37 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4120,8 +4964,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 100.33 121.92 0)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 39.37 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4130,28 +4974,46 @@
 			)
 		)
 		(pin "1"
-			(uuid "62834c75-a100-4b23-b518-a985c17fea4e")
+			(uuid "7c696c9c-ec6f-4d62-91c4-62aba4bfed16")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0113")
+					(reference "#PWR0112")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 39.37 93.98 0)
+		(lib_id "Device:R")
+		(at 78.74 182.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "06e130b8-6c68-44c6-a2ee-73de260feb65")
-		(property "Reference" "#PWR0112"
-			(at 39.37 100.33 0)
+		(uuid "028e932e-dabb-42d7-8ca0-744277d618d2")
+		(property "Reference" "R94"
+			(at 77.724 180.34 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100K"
+			(at 78.74 185.42 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 76.962 182.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4159,17 +5021,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 41.148 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 39.37 93.98 0)
+		(property "Datasheet" "https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"
+			(at 78.74 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4177,8 +5030,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 39.37 93.98 0)
+		(property "Description" ""
+			(at 78.74 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4186,8 +5039,116 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 39.37 93.98 0)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100KL/726526"
+			(at 78.74 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 78.74 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-07100KL"
+			(at 78.74 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 78.74 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 78.74 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 78.74 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 78.74 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 78.74 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 78.74 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 78.74 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 78.74 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 78.74 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 78.74 182.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4196,12 +5157,239 @@
 			)
 		)
 		(pin "1"
-			(uuid "e9200e24-a725-4d1b-a5a4-d9280499e11b")
+			(uuid "16d6a909-94bc-4144-b0fb-ad30c749cc88")
+		)
+		(pin "2"
+			(uuid "536efa04-2396-4524-931a-1d851283af83")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0112")
+					(reference "R94")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 39.37 78.74 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "033d29a0-9993-43ec-821d-f289e204716c")
+		(property "Reference" "#PWR0103"
+			(at 39.37 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 39.37 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 39.37 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9cdb8b64-af58-4a16-98de-949cb1c24998")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 106.68 177.8 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "03d94948-72d4-4921-bd41-152e1b3e2124")
+		(property "Reference" "R87"
+			(at 104.648 177.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "18K9"
+			(at 106.68 177.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 108.458 177.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RN73R.pdf"
+			(at 106.68 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 106.68 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RN73R1ETTP1892B25/10001806"
+			(at 106.68 177.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "KOA Speer Electronics, Inc."
+			(at 106.68 177.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RN73R1ETTP1892B25"
+			(at 106.68 177.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3f85a636-611b-41e9-a22f-0091ea4615c6")
+		)
+		(pin "2"
+			(uuid "41dae8c3-c835-4398-8d04-3f573a295be5")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "R87")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 39.37 140.97 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "042d2107-2906-41ad-8f7a-761e0a76b95c")
+		(property "Reference" "#PWR0114"
+			(at 39.37 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-12V"
+			(at 39.37 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 39.37 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "024f1f5a-7185-417d-adca-7a22b6105e77")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0114")
 					(unit 1)
 				)
 			)
@@ -4694,6 +5882,370 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 96.52 181.61 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1e91cab3-fa46-4bbe-8666-983a9fb54009")
+		(property "Reference" "R86"
+			(at 94.488 179.578 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1K"
+			(at 94.742 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 96.52 183.388 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+			(at 96.52 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 96.52 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+			(at 96.52 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Panasonic Electronic Components"
+			(at 96.52 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "ERJ-2RKF1001X"
+			(at 96.52 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 96.52 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 96.52 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 96.52 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 96.52 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 96.52 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 96.52 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 96.52 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 96.52 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 96.52 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "66252f91-5c76-4027-8d7d-610902c43c2c")
+		)
+		(pin "1"
+			(uuid "cf6f4817-c1df-459e-a9c7-6dbd245a5e3f")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "R86")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 39.37 135.89 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1fc1da13-122a-429d-83b2-92acb486ab5c")
+		(property "Reference" "C91"
+			(at 35.052 133.858 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 32.766 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 40.3352 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 39.37 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fd5ba7ce-7cea-4609-9c9c-ad4bf35d611d")
+		)
+		(pin "1"
+			(uuid "4d6d8b72-8eb4-4718-b13e-e6ff88febcf3")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "C91")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "kicad_component_library:REF20xx")
 		(at 243.84 95.25 0)
 		(unit 1)
@@ -4881,6 +6433,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 90.17 97.79 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "23ab6c9e-0a95-4a6c-bdba-5bee22ca35e9")
+		(property "Reference" "#PWR0118"
+			(at 90.17 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-12V"
+			(at 90.17 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 90.17 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e65f4025-cc99-4ab0-b58e-0ca18f65da6c")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0118")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Comparator:LMV393")
 		(at 30.48 46.99 0)
 		(unit 3)
@@ -4890,7 +6507,7 @@
 		(dnp no)
 		(uuid "254d8cd2-860c-409b-aa4d-5820dbdc6edc")
 		(property "Reference" "U13"
-			(at 22.352 39.624 0)
+			(at 29.464 43.18 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5076,41 +6693,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Current:INA181")
-		(at 102.87 172.72 0)
+		(lib_id "Device:R")
+		(at 96.52 139.7 270)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "28f17112-10a0-40a9-9379-f929807281e8")
-		(property "Reference" "U20"
-			(at 105.918 166.37 0)
+		(uuid "2739bb46-4045-4b3b-bb7e-eca973ab55c9")
+		(property "Reference" "R84"
+			(at 94.488 137.668 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "INA181A1"
-			(at 105.918 168.91 0)
+		(property "Value" "1K"
+			(at 94.742 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
-			(at 104.14 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina181.pdf"
-			(at 106.68 168.91 0)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 96.52 141.478 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5118,8 +6729,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Bidirectional, Low- and High-Side Voltage Output, Current-Sense Amplifier, SOT-23-6"
-			(at 102.87 172.72 0)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+			(at 96.52 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5127,8 +6738,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "INA181A1QDBVRQ1"
-			(at 102.87 172.72 0)
+		(property "Description" ""
+			(at 96.52 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5136,8 +6747,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Texas Instruments"
-			(at 102.87 172.72 0)
+		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+			(at 96.52 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5145,8 +6756,17 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/INA181A1QDBVRQ1/10434809"
-			(at 102.87 172.72 0)
+		(property "Manufacturer" "Panasonic Electronic Components"
+			(at 96.52 139.7 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "ERJ-2RKF1001X"
+			(at 96.52 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5155,7 +6775,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 102.87 172.72 0)
+			(at 96.52 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5164,7 +6784,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 102.87 172.72 0)
+			(at 96.52 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5173,7 +6793,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 102.87 172.72 0)
+			(at 96.52 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5182,7 +6802,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 102.87 172.72 0)
+			(at 96.52 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5191,7 +6811,7 @@
 			)
 		)
 		(property "Manufacturer_Name" ""
-			(at 102.87 172.72 0)
+			(at 96.52 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5200,7 +6820,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
-			(at 102.87 172.72 0)
+			(at 96.52 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5209,7 +6829,7 @@
 			)
 		)
 		(property "Mouser Part Number" ""
-			(at 102.87 172.72 0)
+			(at 96.52 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5218,7 +6838,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" ""
-			(at 102.87 172.72 0)
+			(at 96.52 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5227,7 +6847,7 @@
 			)
 		)
 		(property "Supplier Link" ""
-			(at 102.87 172.72 0)
+			(at 96.52 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5235,28 +6855,16 @@
 				(hide yes)
 			)
 		)
-		(pin "6"
-			(uuid "46e8eef0-35ca-4e8e-9745-b282c98a6c8e")
-		)
-		(pin "5"
-			(uuid "4781a8bc-b0cb-4e11-a5a8-4f47c4cadc12")
-		)
 		(pin "2"
-			(uuid "d04cca76-bcaf-461e-9f22-c498e93f4c42")
-		)
-		(pin "3"
-			(uuid "9fc159f2-393b-401d-864c-50ad8091bc04")
-		)
-		(pin "4"
-			(uuid "1b2054e7-ccc0-433c-8b42-bb551889c360")
+			(uuid "2474caf7-8672-4d51-b5d4-78b6c9a6c69e")
 		)
 		(pin "1"
-			(uuid "6f11854d-04ea-4b49-aebf-b4d8492a3907")
+			(uuid "e9aef31f-df44-414f-a3a5-b1e201b25e09")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "U20")
+					(reference "R84")
 					(unit 1)
 				)
 			)
@@ -5609,17 +7217,16 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 100.33 80.01 0)
+		(lib_id "power:+5V")
+		(at 90.17 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2e91b118-6b7b-49ba-a59f-7ebfaca4eed2")
-		(property "Reference" "#PWR0130"
-			(at 100.33 83.82 0)
+		(uuid "2b21b1a3-fbb8-4f5b-a181-5409dc0a252d")
+		(property "Reference" "#PWR0120"
+			(at 90.17 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5627,8 +7234,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3.3V"
-			(at 100.33 74.93 0)
+		(property "Value" "+12V"
+			(at 90.17 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5636,7 +7243,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 100.33 80.01 0)
+			(at 90.17 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5645,7 +7252,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 80.01 0)
+			(at 90.17 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5653,8 +7260,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 100.33 80.01 0)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 90.17 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5663,29 +7270,44 @@
 			)
 		)
 		(pin "1"
-			(uuid "3dd5d105-0fd6-4b3a-bddc-a1c53fe0435e")
+			(uuid "02cc41e8-b046-4cc0-a611-85170eae128b")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0130")
+					(reference "#PWR0120")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 100.33 163.83 0)
+		(lib_id "Device:R")
+		(at 106.68 135.89 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2f21ebad-2fed-4b58-a10f-0d326364b767")
-		(property "Reference" "#PWR0123"
-			(at 100.33 167.64 0)
+		(uuid "2c343df0-3414-4e6d-8398-f3f2a1358651")
+		(property "Reference" "R85"
+			(at 104.648 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "18K9"
+			(at 106.68 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 108.458 135.89 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5693,16 +7315,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3.3V"
-			(at 100.33 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 100.33 163.83 0)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RN73R.pdf"
+			(at 106.68 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5710,8 +7324,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 100.33 163.83 0)
+		(property "Description" "Resistor"
+			(at 106.68 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5719,8 +7333,26 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 100.33 163.83 0)
+		(property "Link" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RN73R1ETTP1892B25/10001806"
+			(at 106.68 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "KOA Speer Electronics, Inc."
+			(at 106.68 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RN73R1ETTP1892B25"
+			(at 106.68 135.89 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5729,12 +7361,201 @@
 			)
 		)
 		(pin "1"
-			(uuid "66276367-1441-44b2-8888-4ad7f0654b1a")
+			(uuid "0e0c801f-2ff2-4f9d-83a2-471a7ff30d34")
+		)
+		(pin "2"
+			(uuid "11d7a0c0-9de1-4aca-a766-f148ddcf0cf4")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0123")
+					(reference "R85")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 39.37 52.07 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2dc30b0a-7d7a-417d-b232-35729949422e")
+		(property "Reference" "C27"
+			(at 35.052 50.038 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 32.766 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 40.3352 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 39.37 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "a5486c1e-fadc-4ddb-b239-4eaf70e63399")
+		)
+		(pin "1"
+			(uuid "c49f8a55-6948-4b69-aab6-9df55f0cea9c")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "C27")
 					(unit 1)
 				)
 			)
@@ -5801,6 +7622,93 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
 					(reference "#PWR0102")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "kicad-lib:INA630")
+		(at 90.17 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "30212658-4464-4f3e-81c6-d0937121806a")
+		(property "Reference" "U18"
+			(at 94.996 82.042 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "INA630"
+			(at 94.996 84.582 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "kicad-lib:TSOT-23-8"
+			(at 88.392 66.294 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ina630.pdf"
+			(at 90.932 63.754 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Bidirectional, Instrumentation Amplifier, SOT-23-8"
+			(at 87.122 67.564 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d95d9783-2e41-4c9a-b1ec-f8d66bd96a41")
+		)
+		(pin "7"
+			(uuid "bae08123-7ffc-42de-aaad-7ffe897a6496")
+		)
+		(pin "2"
+			(uuid "8ed40b04-16e6-4247-985e-298a86b97aab")
+		)
+		(pin "6"
+			(uuid "bca651cb-2337-48f5-a765-d5844b6529bc")
+		)
+		(pin "5"
+			(uuid "7656d3b6-f067-491a-a058-9b731322c0b4")
+		)
+		(pin "4"
+			(uuid "c8aadff0-bc64-42dc-ac87-f32ee187eff5")
+		)
+		(pin "8"
+			(uuid "21c2337b-a0bb-4694-ba8b-c98d4d77b4a0")
+		)
+		(pin "3"
+			(uuid "e9cb9e52-0c51-4790-969f-97bc50131d17")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "U18")
 					(unit 1)
 				)
 			)
@@ -6163,15 +8071,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 39.37 177.8 0)
+		(at 80.01 62.23 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3a0eb7b9-36c0-4866-a0c1-2aa052583aff")
-		(property "Reference" "#PWR0116"
-			(at 39.37 184.15 0)
+		(uuid "3a9b0880-eb23-4004-b4e1-1eb04ed85a8a")
+		(property "Reference" "#PWR0215"
+			(at 80.01 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6180,73 +8088,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 41.148 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 39.37 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 39.37 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 39.37 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "23b023ac-b7a1-487d-974e-42c5ec7700b9")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0116")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 100.33 57.15 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3a66405b-2510-4486-bd05-e4de7694a139")
-		(property "Reference" "#PWR0118"
-			(at 100.33 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 98.298 60.706 0)
+			(at 77.978 65.786 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6255,7 +8097,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 100.33 57.15 0)
+			(at 80.01 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6264,7 +8106,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 57.15 0)
+			(at 80.01 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6273,7 +8115,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 100.33 57.15 0)
+			(at 80.01 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6282,12 +8124,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "b3d0ed49-aee8-49bf-88ab-0b64baa1eb2b")
+			(uuid "d32887a2-7ffb-40aa-a007-8caafc06d789")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0118")
+					(reference "#PWR0215")
 					(unit 1)
 				)
 			)
@@ -6436,7 +8278,7 @@
 		(dnp no)
 		(uuid "3c636bd3-9fa1-4d93-a570-1802e6bf791e")
 		(property "Reference" "U16"
-			(at 22.352 165.354 0)
+			(at 29.21 168.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6881,6 +8723,138 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 40.64 88.9 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "473071e0-20c0-4a67-8d87-bd9a7433274e")
+		(property "Reference" "#PWR0111"
+			(at 46.99 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 47.498 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 40.64 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 40.64 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 40.64 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "42c2b247-59ab-4abc-a194-3cc833c00309")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0111")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 80.01 146.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "48ad8f2d-150f-4082-90ce-8e6b32a5c541")
+		(property "Reference" "#PWR0217"
+			(at 80.01 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 77.978 149.606 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 80.01 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 80.01 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 80.01 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c76c0a16-2464-472a-b591-37192e4274c2")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0217")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 125.73 99.06 90)
 		(mirror x)
@@ -7116,6 +9090,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 39.37 182.88 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4d885c9c-29db-4917-acf5-b5b8459b6f88")
+		(property "Reference" "#PWR0130"
+			(at 39.37 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-12V"
+			(at 39.37 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 39.37 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "88b61f29-762c-400b-9365-35f760f01b0e")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0130")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 125.73 182.88 90)
 		(mirror x)
@@ -7279,72 +9318,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
 					(reference "R54")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 100.33 38.1 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "53071771-c490-4493-b704-4875395b2060")
-		(property "Reference" "#PWR0117"
-			(at 100.33 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 100.33 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 100.33 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 100.33 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 100.33 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2b972cdc-411f-41ed-a6a7-7ad9b859256c")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0117")
 					(unit 1)
 				)
 			)
@@ -7593,6 +9566,165 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 90.17 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "57cc36e6-bdea-4aed-a606-a72545c52e91")
+		(property "Reference" "#PWR0113"
+			(at 90.17 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 90.17 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 90.17 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "09036605-94c8-4081-9923-19165219c397")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0113")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 106.68 52.07 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "588867fb-6d90-43e4-9602-b308dac9ddbc")
+		(property "Reference" "R81"
+			(at 104.648 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "18K9"
+			(at 106.68 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 108.458 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RN73R.pdf"
+			(at 106.68 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 106.68 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RN73R1ETTP1892B25/10001806"
+			(at 106.68 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "KOA Speer Electronics, Inc."
+			(at 106.68 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RN73R1ETTP1892B25"
+			(at 106.68 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "57a740de-3196-432b-affa-2ba028c97abe")
+		)
+		(pin "2"
+			(uuid "f4b9aaed-9fea-465a-9c48-19099817072c")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "R81")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 151.13 78.74 0)
 		(unit 1)
@@ -7660,7 +9792,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 39.37 130.81 0)
+		(at 39.37 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7668,7 +9800,7 @@
 		(dnp no)
 		(uuid "5bc2f819-cc16-441c-93ac-cf5262d249f8")
 		(property "Reference" "C56"
-			(at 35.052 128.778 0)
+			(at 35.052 123.698 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7677,7 +9809,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 32.766 133.35 0)
+			(at 32.766 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7686,7 +9818,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 40.3352 134.62 0)
+			(at 40.3352 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7695,7 +9827,7 @@
 			)
 		)
 		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7704,7 +9836,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor 0.1uF 50V"
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7713,7 +9845,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7722,7 +9854,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata Electronics"
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7731,7 +9863,7 @@
 			)
 		)
 		(property "Manufacturer Number" "GRM155R71H104KE14D"
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7740,7 +9872,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X7R"
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7749,7 +9881,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7758,7 +9890,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7767,7 +9899,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7776,7 +9908,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7785,7 +9917,7 @@
 			)
 		)
 		(property "Manufacturer_Name" ""
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7794,7 +9926,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7803,7 +9935,7 @@
 			)
 		)
 		(property "Mouser Part Number" ""
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7812,7 +9944,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" ""
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7821,7 +9953,7 @@
 			)
 		)
 		(property "Supplier Link" ""
-			(at 39.37 130.81 0)
+			(at 39.37 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7845,25 +9977,16 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 100.33 99.06 0)
+		(lib_id "Device:R")
+		(at 81.28 140.97 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5da5501f-e114-4cdd-9841-49b7767e22a1")
-		(property "Reference" "#PWR0120"
-			(at 100.33 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 98.298 102.616 0)
+		(uuid "5bf5c913-9f3a-4c7d-bfea-00b44c6bee13")
+		(property "Reference" "R93"
+			(at 80.264 138.43 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7871,8 +9994,17 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 100.33 99.06 0)
+		(property "Value" "100K"
+			(at 81.28 143.51 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 79.502 140.97 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7880,8 +10012,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 100.33 99.06 0)
+		(property "Datasheet" "https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"
+			(at 81.28 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7890,7 +10022,124 @@
 			)
 		)
 		(property "Description" ""
-			(at 100.33 99.06 0)
+			(at 81.28 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100KL/726526"
+			(at 81.28 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 81.28 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-07100KL"
+			(at 81.28 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 81.28 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 81.28 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 81.28 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 81.28 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 81.28 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 81.28 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 81.28 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 81.28 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 81.28 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 81.28 140.97 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7899,12 +10148,102 @@
 			)
 		)
 		(pin "1"
-			(uuid "4cab6f50-0db0-4553-b02a-784b9dc6c716")
+			(uuid "5f05ee94-5005-4a6a-90da-3cbc7e7772f2")
+		)
+		(pin "2"
+			(uuid "441237e1-9310-4816-bcf8-507191506c8a")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0120")
+					(reference "R93")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "kicad-lib:INA630")
+		(at 90.17 130.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5dcfb24a-889d-4372-8b2f-b7ee677ad181")
+		(property "Reference" "U19"
+			(at 94.996 123.952 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "INA630"
+			(at 94.996 126.492 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "kicad-lib:TSOT-23-8"
+			(at 88.392 108.204 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ina630.pdf"
+			(at 90.932 105.664 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Bidirectional, Instrumentation Amplifier, SOT-23-8"
+			(at 87.122 109.474 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2247c6d3-37af-4269-b3de-bf3982e247a4")
+		)
+		(pin "7"
+			(uuid "5dc57674-8aae-4734-abde-78be50575357")
+		)
+		(pin "2"
+			(uuid "3b7e1a94-6e09-4ff9-885e-edd128a90f6a")
+		)
+		(pin "6"
+			(uuid "61b4532e-d7b3-4570-a11b-11daaba0bcfd")
+		)
+		(pin "5"
+			(uuid "e8d41dc1-b8a6-4d3f-984d-6428922dba4a")
+		)
+		(pin "4"
+			(uuid "26472f8f-bb8d-4aae-b2df-32e0417dd1f2")
+		)
+		(pin "8"
+			(uuid "172a5128-3d14-4a40-93ea-338f7c4ae917")
+		)
+		(pin "3"
+			(uuid "140e50d4-f6a5-4b74-b50a-b3342ae69745")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "U19")
 					(unit 1)
 				)
 			)
@@ -8080,6 +10419,192 @@
 	)
 	(symbol
 		(lib_id "Device:R")
+		(at 78.74 57.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5ec4c6b5-be11-4e4b-a2fa-123781d3b2b0")
+		(property "Reference" "R88"
+			(at 77.724 54.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100K"
+			(at 78.74 59.69 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 76.962 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"
+			(at 78.74 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100KL/726526"
+			(at 78.74 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 78.74 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-07100KL"
+			(at 78.74 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 78.74 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 78.74 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 78.74 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 78.74 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 78.74 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 78.74 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 78.74 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 78.74 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 78.74 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 78.74 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1fd27cf6-1a12-45f6-bf75-3393fbb0f8d9")
+		)
+		(pin "2"
+			(uuid "f5cd3cde-faff-417d-81f5-a2110bc53d81")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "R88")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
 		(at 124.46 120.65 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8247,32 +10772,16 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Current:INA181")
-		(at 102.87 46.99 0)
+		(lib_id "power:GND")
+		(at 40.64 172.72 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "66ede60f-9d1f-4b62-aaf4-485a04af281a")
-		(property "Reference" "U17"
-			(at 105.918 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "INA181A1"
-			(at 105.918 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
-			(at 104.14 45.72 0)
+		(uuid "634d3cc0-d377-4f16-b049-1183fd6c50ec")
+		(property "Reference" "#PWR0214"
+			(at 46.99 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8280,8 +10789,17 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina181.pdf"
-			(at 106.68 43.18 0)
+		(property "Value" "GND"
+			(at 47.498 172.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 40.64 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8289,8 +10807,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Bidirectional, Low- and High-Side Voltage Output, Current-Sense Amplifier, SOT-23-6"
-			(at 102.87 46.99 0)
+		(property "Datasheet" ""
+			(at 40.64 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8298,136 +10816,22 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "INA181A1QDBVRQ1"
-			(at 102.87 46.99 0)
+		(property "Description" ""
+			(at 40.64 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "Manufacturer" "Texas Instruments"
-			(at 102.87 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/INA181A1QDBVRQ1/10434809"
-			(at 102.87 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 102.87 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 102.87 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" ""
-			(at 102.87 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 102.87 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 102.87 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 102.87 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 102.87 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 102.87 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier Link" ""
-			(at 102.87 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "6"
-			(uuid "0e107cf3-4ba1-44fa-98b2-abbf30c6f97a")
-		)
-		(pin "5"
-			(uuid "bf248862-d0c3-47b9-a789-a2529841b8b8")
-		)
-		(pin "2"
-			(uuid "4f677328-732c-4fd1-b423-22239dcdb922")
-		)
-		(pin "3"
-			(uuid "5f396956-825b-4cca-b989-d1756e3146cc")
-		)
-		(pin "4"
-			(uuid "18c3ab06-961b-468a-9629-46e0b4fd9d7b")
 		)
 		(pin "1"
-			(uuid "fcc9d9cc-5a66-410e-a6f1-82edc4c915f0")
+			(uuid "fb47ab9d-15cb-4257-85c5-7ed5bedc66f4")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "U17")
+					(reference "#PWR0214")
 					(unit 1)
 				)
 			)
@@ -8677,6 +11081,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 90.17 139.7 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6aa1262e-9896-428c-97ff-61bff9a35d7f")
+		(property "Reference" "#PWR0122"
+			(at 90.17 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-12V"
+			(at 90.17 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 90.17 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9b7c5f5f-1b44-4e63-b240-8066b147bc2f")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0122")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Comparator:LMV393")
 		(at 139.7 82.55 0)
 		(unit 1)
@@ -8871,7 +11340,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 39.37 172.72 0)
+		(at 39.37 167.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8879,7 +11348,7 @@
 		(dnp no)
 		(uuid "6e6561f5-f13d-4ead-9868-83f7a5790dd2")
 		(property "Reference" "C57"
-			(at 35.052 170.688 0)
+			(at 35.052 165.608 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8888,7 +11357,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 32.766 175.26 0)
+			(at 32.766 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8897,7 +11366,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 40.3352 176.53 0)
+			(at 40.3352 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8906,7 +11375,7 @@
 			)
 		)
 		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8915,7 +11384,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor 0.1uF 50V"
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8924,7 +11393,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8933,7 +11402,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata Electronics"
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8942,7 +11411,7 @@
 			)
 		)
 		(property "Manufacturer Number" "GRM155R71H104KE14D"
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8951,7 +11420,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X7R"
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8960,7 +11429,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8969,7 +11438,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8978,7 +11447,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8987,7 +11456,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8996,7 +11465,7 @@
 			)
 		)
 		(property "Manufacturer_Name" ""
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9005,7 +11474,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9014,7 +11483,7 @@
 			)
 		)
 		(property "Mouser Part Number" ""
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9023,7 +11492,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" ""
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9032,7 +11501,7 @@
 			)
 		)
 		(property "Supplier Link" ""
-			(at 39.37 172.72 0)
+			(at 39.37 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9231,6 +11700,202 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 90.17 163.83 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6eb9a826-a6d7-4eb6-81c1-a37a5bc84493")
+		(property "Reference" "#PWR0123"
+			(at 90.17 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 90.17 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 90.17 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c5ab3c1a-47d2-407b-93ed-533e4b506256")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0123")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 80.01 104.14 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "730d0adf-5929-4042-a67c-2fb2db160e9c")
+		(property "Reference" "#PWR0216"
+			(at 80.01 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 77.978 107.696 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 80.01 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 80.01 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 80.01 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d0de65c5-4f87-4b1e-85b6-26cffc63a897")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0216")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 39.37 99.06 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7327e692-c42e-4e0f-b867-5e11690889a5")
+		(property "Reference" "#PWR0107"
+			(at 39.37 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-12V"
+			(at 39.37 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 39.37 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f216e603-81f8-4fab-a672-0ead1e634e48")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0107")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 27.94 78.74 0)
 		(unit 1)
@@ -9291,6 +11956,250 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
 					(reference "#PWR0105")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 96.52 97.79 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "77f7c96f-8056-4ef3-a15c-5377cef2e33c")
+		(property "Reference" "R82"
+			(at 94.488 95.758 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1K"
+			(at 94.742 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 96.52 99.568 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+			(at 96.52 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 96.52 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+			(at 96.52 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Panasonic Electronic Components"
+			(at 96.52 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "ERJ-2RKF1001X"
+			(at 96.52 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 96.52 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 96.52 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 96.52 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 96.52 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 96.52 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 96.52 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 96.52 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 96.52 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 96.52 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d30a66bb-1d75-4cca-80b3-da892211b35c")
+		)
+		(pin "1"
+			(uuid "95c58ad3-22a3-43d0-9c04-aad723f7d3b1")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "R82")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 40.64 46.99 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7842b694-25b0-4ea7-858a-534dda716d8c")
+		(property "Reference" "#PWR0117"
+			(at 46.99 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 47.498 46.99 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 40.64 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 40.64 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 40.64 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f4c10077-db33-4c18-bd1c-cceb5ec831d3")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0117")
 					(unit 1)
 				)
 			)
@@ -9735,72 +12644,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 39.37 41.91 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7cd4305e-d61e-4c9b-ac11-9808dfdf8c03")
-		(property "Reference" "#PWR0129"
-			(at 39.37 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 39.37 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 39.37 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 39.37 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 39.37 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "99e12e0b-f507-4993-9c2f-e128fea943e0")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0129")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Comparator:LMV393")
 		(at 139.7 124.46 0)
 		(unit 1)
@@ -10060,6 +12903,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 90.17 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7ef5c45b-49ac-414a-a01f-32dcde73e725")
+		(property "Reference" "#PWR044"
+			(at 90.17 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 90.17 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 90.17 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f8916d78-ff6d-4652-8f66-3dd2ad045a64")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR044")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Comparator:LMV393")
 		(at 139.7 40.64 0)
 		(unit 1)
@@ -10247,6 +13155,258 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
 					(reference "U13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 39.37 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "81ec3ce6-a645-4ed4-ac65-890e79bba2a3")
+		(property "Reference" "C90"
+			(at 35.052 91.948 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 32.766 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 40.3352 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 39.37 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "8f552f4e-7aab-4396-a2a7-3137999275ff")
+		)
+		(pin "1"
+			(uuid "fae65578-6813-4eb2-849f-5a43a16140e1")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "C90")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 80.01 187.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "82ae6615-66f5-4d9a-a504-84d18ccf1034")
+		(property "Reference" "#PWR0220"
+			(at 80.01 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 77.978 191.516 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 80.01 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 80.01 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 80.01 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a579a641-d035-428c-a26e-0a08c57c7d86")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0220")
 					(unit 1)
 				)
 			)
@@ -10602,6 +13762,201 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
 					(reference "R46")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 39.37 162.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "87acfd35-df3c-40a8-91db-cb7bc8d6d2e3")
+		(property "Reference" "#PWR0129"
+			(at 39.37 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 39.37 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 39.37 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7f4f32be-359c-475d-957f-4e1b62cecb3d")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0129")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 90.17 55.88 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "87d04233-aa8b-44cb-a18c-7f8e0a0f4084")
+		(property "Reference" "#PWR039"
+			(at 90.17 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-12V"
+			(at 90.17 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 90.17 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4fa61281-5fbf-4afd-b4c9-750e08206dac")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR039")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 39.37 36.83 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8af95d66-2b95-4770-887d-d76487d8deb1")
+		(property "Reference" "#PWR048"
+			(at 39.37 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 39.37 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 39.37 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6b2aea9a-6dc0-415e-9613-6d592254855b")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -11408,41 +14763,34 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Current:INA181")
-		(at 102.87 130.81 0)
+		(lib_id "Device:R")
+		(at 81.28 57.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "91a429a2-cc94-4958-b5c2-fcc665fcf2a0")
-		(property "Reference" "U19"
-			(at 105.918 124.46 0)
+		(uuid "90872ae4-f311-419f-b01b-345b2aeed562")
+		(property "Reference" "R89"
+			(at 80.264 54.61 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "INA181A1"
-			(at 105.918 127 0)
+		(property "Value" "100K"
+			(at 81.28 59.69 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
-			(at 104.14 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina181.pdf"
-			(at 106.68 127 0)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 79.502 57.15 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11450,8 +14798,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Bidirectional, Low- and High-Side Voltage Output, Current-Sense Amplifier, SOT-23-6"
-			(at 102.87 130.81 0)
+		(property "Datasheet" "https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"
+			(at 81.28 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11459,8 +14807,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "INA181A1QDBVRQ1"
-			(at 102.87 130.81 0)
+		(property "Description" ""
+			(at 81.28 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11468,8 +14816,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Texas Instruments"
-			(at 102.87 130.81 0)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100KL/726526"
+			(at 81.28 57.15 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11477,8 +14825,26 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/INA181A1QDBVRQ1/10434809"
-			(at 102.87 130.81 0)
+		(property "Manufacturer" "Yageo"
+			(at 81.28 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-07100KL"
+			(at 81.28 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 81.28 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11487,7 +14853,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 102.87 130.81 0)
+			(at 81.28 57.15 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11496,7 +14862,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 102.87 130.81 0)
+			(at 81.28 57.15 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11505,7 +14871,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 102.87 130.81 0)
+			(at 81.28 57.15 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11514,7 +14880,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 102.87 130.81 0)
+			(at 81.28 57.15 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11523,7 +14889,7 @@
 			)
 		)
 		(property "Manufacturer_Name" ""
-			(at 102.87 130.81 0)
+			(at 81.28 57.15 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11532,7 +14898,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
-			(at 102.87 130.81 0)
+			(at 81.28 57.15 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11541,7 +14907,7 @@
 			)
 		)
 		(property "Mouser Part Number" ""
-			(at 102.87 130.81 0)
+			(at 81.28 57.15 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11550,7 +14916,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" ""
-			(at 102.87 130.81 0)
+			(at 81.28 57.15 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11559,7 +14925,7 @@
 			)
 		)
 		(property "Supplier Link" ""
-			(at 102.87 130.81 0)
+			(at 81.28 57.15 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11567,28 +14933,81 @@
 				(hide yes)
 			)
 		)
-		(pin "6"
-			(uuid "8b6cc89a-ffea-4723-9c25-14e7381fc0e1")
-		)
-		(pin "5"
-			(uuid "b78cd6d4-c67f-4d27-b9e5-50fa62ff69ab")
+		(pin "1"
+			(uuid "51a567c8-790e-4480-8e98-62ae80778d70")
 		)
 		(pin "2"
-			(uuid "b1bacdf6-13e1-49a0-bf61-41702ce1f9a9")
-		)
-		(pin "3"
-			(uuid "abbe939f-a232-40ee-82fc-ff774d4fdff2")
-		)
-		(pin "4"
-			(uuid "ab024e53-6260-4711-9763-f59722c22a57")
-		)
-		(pin "1"
-			(uuid "f391338e-3a1b-48ed-bdde-59265c9bf136")
+			(uuid "0a856c0c-b5af-49f1-99d5-0949d12f8bf1")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "U19")
+					(reference "R89")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 39.37 57.15 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "909e3a68-5956-40b8-baf3-11f25a563774")
+		(property "Reference" "#PWR0110"
+			(at 39.37 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-12V"
+			(at 39.37 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 39.37 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a64fd8fe-f150-413f-b864-636a11b691c5")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0110")
 					(unit 1)
 				)
 			)
@@ -11772,7 +15191,7 @@
 		(dnp no)
 		(uuid "95e18b6d-d6a6-46e3-877b-168073a9ccd8")
 		(property "Reference" "U14"
-			(at 22.352 81.534 0)
+			(at 29.464 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11959,72 +15378,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 100.33 182.88 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "9d74b062-01be-42a0-8100-a5135e89726b")
-		(property "Reference" "#PWR0124"
-			(at 100.33 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 98.298 186.436 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 100.33 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 100.33 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 100.33 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "cf119863-a466-4e35-9e42-679d19a5bcb8")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0124")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 27.94 140.97 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12090,16 +15443,34 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 39.37 52.07 0)
+		(lib_id "Device:R")
+		(at 81.28 182.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a291c096-6bb9-43ba-b3c4-e49221f7732e")
-		(property "Reference" "#PWR0110"
-			(at 39.37 58.42 0)
+		(uuid "a2cfb58f-66e6-4cd4-a7dd-877bcef6afaf")
+		(property "Reference" "R95"
+			(at 80.264 180.34 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100K"
+			(at 81.28 185.42 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 79.502 182.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12107,17 +15478,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 41.148 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 39.37 52.07 0)
+		(property "Datasheet" "https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"
+			(at 81.28 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12125,8 +15487,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 39.37 52.07 0)
+		(property "Description" ""
+			(at 81.28 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12134,8 +15496,116 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 39.37 52.07 0)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100KL/726526"
+			(at 81.28 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 81.28 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-07100KL"
+			(at 81.28 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 81.28 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 81.28 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 81.28 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 81.28 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 81.28 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 81.28 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 81.28 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 81.28 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 81.28 182.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 81.28 182.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12144,78 +15614,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "01bcdd5a-65cd-427e-8346-6d1d65c6c69c")
+			(uuid "dea585ed-edbf-48bd-b7fc-2536d0018c2f")
+		)
+		(pin "2"
+			(uuid "b62a19b5-2790-4e5f-be9f-e685e4b00a1f")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0110")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 39.37 125.73 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a47229cb-8b3b-4fe7-86dc-a9b4b2349616")
-		(property "Reference" "#PWR0111"
-			(at 39.37 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 39.37 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 39.37 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 39.37 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 39.37 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1eea5b8c-52e3-40f6-9169-6c2465a9d74c")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0111")
+					(reference "R95")
 					(unit 1)
 				)
 			)
@@ -12415,17 +15822,34 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 39.37 83.82 0)
+		(lib_id "Device:R")
+		(at 81.28 99.06 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ac1f3272-1034-4031-8a9e-5bc69c012b98")
-		(property "Reference" "#PWR0103"
-			(at 39.37 87.63 0)
+		(uuid "b3363027-85df-453b-9d6c-16d8e8fb81ab")
+		(property "Reference" "R91"
+			(at 80.264 96.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100K"
+			(at 81.28 101.6 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 79.502 99.06 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12433,16 +15857,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3.3V"
-			(at 39.37 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 39.37 83.82 0)
+		(property "Datasheet" "https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"
+			(at 81.28 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12450,8 +15866,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 39.37 83.82 0)
+		(property "Description" ""
+			(at 81.28 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12459,8 +15875,116 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 39.37 83.82 0)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100KL/726526"
+			(at 81.28 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 81.28 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-07100KL"
+			(at 81.28 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 81.28 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 81.28 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 81.28 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 81.28 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 81.28 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 81.28 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 81.28 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 81.28 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 81.28 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 81.28 99.06 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12469,12 +15993,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "c511324b-4694-44ac-bf8f-1472bef1f55d")
+			(uuid "037a3fcc-45ec-4c60-af29-11733812fa0a")
+		)
+		(pin "2"
+			(uuid "c05ba381-2127-427c-9b7e-8ee4454305f0")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0103")
+					(reference "R91")
 					(unit 1)
 				)
 			)
@@ -12614,7 +16141,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 39.37 88.9 0)
+		(at 39.37 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12622,7 +16149,7 @@
 		(dnp no)
 		(uuid "b815b2a9-b55c-4896-9110-acc3460533a5")
 		(property "Reference" "C55"
-			(at 35.052 86.868 0)
+			(at 35.052 81.788 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12631,7 +16158,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 32.766 91.44 0)
+			(at 32.766 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12640,7 +16167,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 40.3352 92.71 0)
+			(at 40.3352 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12649,7 +16176,7 @@
 			)
 		)
 		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12658,7 +16185,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor 0.1uF 50V"
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12667,7 +16194,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12676,7 +16203,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata Electronics"
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12685,7 +16212,7 @@
 			)
 		)
 		(property "Manufacturer Number" "GRM155R71H104KE14D"
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12694,7 +16221,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X7R"
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12703,7 +16230,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12712,7 +16239,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12721,7 +16248,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12730,7 +16257,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12739,7 +16266,7 @@
 			)
 		)
 		(property "Manufacturer_Name" ""
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12748,7 +16275,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12757,7 +16284,7 @@
 			)
 		)
 		(property "Mouser Part Number" ""
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12766,7 +16293,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" ""
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12775,7 +16302,7 @@
 			)
 		)
 		(property "Supplier Link" ""
-			(at 39.37 88.9 0)
+			(at 39.37 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12793,6 +16320,192 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
 					(reference "C55")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 78.74 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ba53b0e4-859e-44bb-b7b7-991e5ff4204b")
+		(property "Reference" "R90"
+			(at 77.724 96.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100K"
+			(at 78.74 101.6 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 76.962 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"
+			(at 78.74 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100KL/726526"
+			(at 78.74 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 78.74 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-07100KL"
+			(at 78.74 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 78.74 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 78.74 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 78.74 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 78.74 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 78.74 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 78.74 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 78.74 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 78.74 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 78.74 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 78.74 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d3829c31-c4bb-49fb-b8f8-d1f70226559d")
+		)
+		(pin "2"
+			(uuid "092d8cbf-dfdc-4ddf-90a2-9c47445f032a")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "R90")
 					(unit 1)
 				)
 			)
@@ -12974,72 +16687,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 100.33 140.97 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ba78967c-cf4f-41d9-87d0-f952618b1c2d")
-		(property "Reference" "#PWR0122"
-			(at 100.33 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 98.298 144.526 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 100.33 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 100.33 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 100.33 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "07d85801-5306-4099-90c5-1f6fed3f86a1")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0122")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3.3V")
 		(at 27.94 162.56 0)
 		(unit 1)
@@ -13106,8 +16753,95 @@
 		)
 	)
 	(symbol
+		(lib_id "kicad-lib:INA630")
+		(at 90.17 46.99 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c822e2b6-547b-46ea-b09f-7dac98f3f111")
+		(property "Reference" "U17"
+			(at 94.996 40.132 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "INA630"
+			(at 94.996 42.672 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "kicad-lib:TSOT-23-8"
+			(at 88.392 24.384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ina630.pdf"
+			(at 90.932 21.844 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Bidirectional, Instrumentation Amplifier, SOT-23-8"
+			(at 87.122 25.654 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4f8d3b4b-fbd6-4365-9b18-5402dcf8c724")
+		)
+		(pin "7"
+			(uuid "a2179e0b-5aab-4b24-a84d-53a02105ca74")
+		)
+		(pin "2"
+			(uuid "a6e27a9d-0f41-4e44-88f7-c13f5b40e3e6")
+		)
+		(pin "6"
+			(uuid "5d174eb6-1e4b-469a-bbc4-8b70fd510c26")
+		)
+		(pin "5"
+			(uuid "6d03221d-6ae4-4c5d-a116-65f7e0a40bd0")
+		)
+		(pin "4"
+			(uuid "f046442c-3179-4130-b36a-8561f24c7de4")
+		)
+		(pin "8"
+			(uuid "70f475e9-68ea-4231-a405-e5085b66beef")
+		)
+		(pin "3"
+			(uuid "531b7789-12da-4bef-afce-6eb9bdbcec47")
+		)
+		(instances
+			(project ""
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "U17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
-		(at 39.37 46.99 0)
+		(at 39.37 41.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13115,7 +16849,7 @@
 		(dnp no)
 		(uuid "cceb01de-843f-4d20-beff-76ad07b9845a")
 		(property "Reference" "C54"
-			(at 35.052 44.958 0)
+			(at 35.052 39.878 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13124,7 +16858,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 32.766 49.53 0)
+			(at 32.766 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13133,7 +16867,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 40.3352 50.8 0)
+			(at 40.3352 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13142,7 +16876,7 @@
 			)
 		)
 		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13151,7 +16885,7 @@
 			)
 		)
 		(property "Description" "Ceramic Capacitor 0.1uF 50V"
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13160,7 +16894,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13169,7 +16903,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata Electronics"
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13178,7 +16912,7 @@
 			)
 		)
 		(property "Manufacturer Number" "GRM155R71H104KE14D"
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13187,7 +16921,7 @@
 			)
 		)
 		(property "Temperature Coefficient" "X7R"
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13196,7 +16930,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13205,7 +16939,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13214,7 +16948,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13223,7 +16957,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13232,7 +16966,7 @@
 			)
 		)
 		(property "Manufacturer_Name" ""
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13241,7 +16975,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13250,7 +16984,7 @@
 			)
 		)
 		(property "Mouser Part Number" ""
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13259,7 +16993,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" ""
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13268,7 +17002,7 @@
 			)
 		)
 		(property "Supplier Link" ""
-			(at 39.37 46.99 0)
+			(at 39.37 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13301,7 +17035,7 @@
 		(dnp no)
 		(uuid "ce7c6f12-29be-430c-813c-9a82a255e637")
 		(property "Reference" "U15"
-			(at 22.352 123.444 0)
+			(at 29.464 127 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13482,6 +17216,72 @@
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
 					(reference "U15")
 					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 40.64 130.81 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cf9708bb-3012-4401-8bf5-d1aa1b2be6de")
+		(property "Reference" "#PWR0116"
+			(at 46.99 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 47.498 130.81 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 40.64 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 40.64 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 40.64 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "14b49519-e56c-4aab-81bf-49f18b156132")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0116")
+					(unit 1)
 				)
 			)
 		)
@@ -13748,6 +17548,279 @@
 		)
 	)
 	(symbol
+		(lib_id "kicad-lib:INA630")
+		(at 90.17 172.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d1fde003-e40f-4d06-945a-729126258182")
+		(property "Reference" "U20"
+			(at 94.996 165.862 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "INA630"
+			(at 94.996 168.402 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "kicad-lib:TSOT-23-8"
+			(at 88.392 150.114 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ina630.pdf"
+			(at 90.932 147.574 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Bidirectional, Instrumentation Amplifier, SOT-23-8"
+			(at 87.122 151.384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0772d4e6-5877-4566-ad02-eefa881265e0")
+		)
+		(pin "7"
+			(uuid "fc24f984-3c2c-4e87-a3d3-ef0e84fedd5d")
+		)
+		(pin "2"
+			(uuid "7458257a-e99d-47a4-bf9c-8cae39d633c2")
+		)
+		(pin "6"
+			(uuid "24371c37-c0b0-48f6-b2be-16b4f50d5e4f")
+		)
+		(pin "5"
+			(uuid "c1f86000-ac4e-44bf-8eec-477654e4a650")
+		)
+		(pin "4"
+			(uuid "aaaaa21e-3b04-4ff1-94fc-6850b74b7ec2")
+		)
+		(pin "8"
+			(uuid "46996cdc-8927-4326-8cc4-3483fac9f093")
+		)
+		(pin "3"
+			(uuid "8a4cac58-7f90-4d62-bb9d-2ddb0801d781")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "U20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 39.37 177.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d2b5dcbd-fd5a-45e1-8bda-5e62252893d5")
+		(property "Reference" "C92"
+			(at 35.052 175.768 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 32.766 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 40.3352 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM155R71H104KE14-01.pdf"
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ceramic Capacitor 0.1uF 50V"
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71H104KE14D/4906220"
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Murata Electronics"
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "GRM155R71H104KE14D"
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Temperature Coefficient" "X7R"
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 39.37 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ca949e8b-500a-4134-acae-1956757fd463")
+		)
+		(pin "1"
+			(uuid "76740735-2a52-487f-a33d-fb4cabef624c")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "C92")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 120.65 99.06 270)
 		(unit 1)
@@ -13808,193 +17881,6 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
 					(reference "#PWR0127")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Amplifier_Current:INA181")
-		(at 102.87 88.9 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e02d3b22-9bbf-4536-be63-96806a6fb75d")
-		(property "Reference" "U18"
-			(at 105.918 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "INA181A1"
-			(at 105.918 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
-			(at 104.14 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina181.pdf"
-			(at 106.68 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Bidirectional, Low- and High-Side Voltage Output, Current-Sense Amplifier, SOT-23-6"
-			(at 102.87 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Number" "INA181A1QDBVRQ1"
-			(at 102.87 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Texas Instruments"
-			(at 102.87 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/INA181A1QDBVRQ1/10434809"
-			(at 102.87 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 102.87 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 102.87 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" ""
-			(at 102.87 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 102.87 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 102.87 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 102.87 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 102.87 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 102.87 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier Link" ""
-			(at 102.87 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "6"
-			(uuid "d15c5ebe-cb8b-41ed-b6cd-c15591b75819")
-		)
-		(pin "5"
-			(uuid "77a43ed1-423e-4cef-97e4-ebb6b12b370c")
-		)
-		(pin "2"
-			(uuid "269f7421-f691-4a7e-9324-ca924519ccb4")
-		)
-		(pin "3"
-			(uuid "fdbdb49e-2e39-46a8-8553-d9fa178e94c9")
-		)
-		(pin "4"
-			(uuid "89346a99-a167-46b5-9d96-2079e2b5bc98")
-		)
-		(pin "1"
-			(uuid "e28862f1-760e-43fe-b1b6-a475abc1f7f2")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "U18")
 					(unit 1)
 				)
 			)
@@ -14179,16 +18065,34 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 39.37 135.89 0)
+		(lib_id "Device:R")
+		(at 78.74 140.97 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e2d6a199-15a4-4c0f-96d0-c73a52563cdb")
-		(property "Reference" "#PWR0114"
-			(at 39.37 142.24 0)
+		(uuid "e9c636da-5a9a-49b4-894c-717e25d815e8")
+		(property "Reference" "R92"
+			(at 77.724 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100K"
+			(at 78.74 143.51 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 76.962 140.97 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14196,17 +18100,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 41.148 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 39.37 135.89 0)
+		(property "Datasheet" "https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"
+			(at 78.74 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14214,8 +18109,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 39.37 135.89 0)
+		(property "Description" ""
+			(at 78.74 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14223,8 +18118,116 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 39.37 135.89 0)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100KL/726526"
+			(at 78.74 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 78.74 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC0402FR-07100KL"
+			(at 78.74 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 78.74 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 78.74 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 78.74 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 78.74 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 78.74 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 78.74 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 78.74 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 78.74 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 78.74 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 78.74 140.97 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14233,78 +18236,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "95386e3b-3169-4ded-8091-1e6abbf068fb")
+			(uuid "fb1160cf-58ed-4e38-9c45-df78d93b57a5")
+		)
+		(pin "2"
+			(uuid "3032ac12-db91-47ec-affc-773b73a95d2b")
 		)
 		(instances
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0114")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 39.37 167.64 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e62a3154-c9e2-4343-aafc-9cc66fdd9bd2")
-		(property "Reference" "#PWR0107"
-			(at 39.37 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 39.37 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 39.37 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 39.37 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 39.37 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bd52626b-717f-46db-80e4-58d9327c5adc")
-		)
-		(instances
-			(project "harp.device.quad.dac"
-				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
-					(reference "#PWR0107")
+					(reference "R92")
 					(unit 1)
 				)
 			)
@@ -14371,6 +18311,343 @@
 			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
 					(reference "#PWR0136")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 106.68 93.98 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "eb7227b1-5032-446a-bb20-6c9b6ab2b733")
+		(property "Reference" "R83"
+			(at 104.648 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "18K9"
+			(at 106.68 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 108.458 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RN73R.pdf"
+			(at 106.68 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 106.68 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RN73R1ETTP1892B25/10001806"
+			(at 106.68 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "KOA Speer Electronics, Inc."
+			(at 106.68 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RN73R1ETTP1892B25"
+			(at 106.68 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a46948dd-c5c5-4c31-9f44-d1763d33c857")
+		)
+		(pin "2"
+			(uuid "d8e6f8f2-3445-4b88-8acf-32ff7d1e5357")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "R83")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 96.52 55.88 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "eecbadc3-30ad-46d0-afc4-e1692757955d")
+		(property "Reference" "R80"
+			(at 94.488 53.848 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1K"
+			(at 94.742 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 96.52 57.658 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+			(at 96.52 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 96.52 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+			(at 96.52 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Panasonic Electronic Components"
+			(at 96.52 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "ERJ-2RKF1001X"
+			(at 96.52 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 96.52 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 96.52 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 96.52 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 96.52 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 96.52 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 96.52 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 96.52 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 96.52 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 96.52 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "cf3bb973-118d-48bd-a067-82e4e64eaf17")
+		)
+		(pin "1"
+			(uuid "27ab9609-4213-49c5-b2fe-84ac52ff3fe0")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "R80")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 90.17 181.61 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f0e3283f-ee24-4b56-b4da-3f0c2f1c9f67")
+		(property "Reference" "#PWR0124"
+			(at 90.17 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-12V"
+			(at 90.17 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 90.17 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a7254a86-0381-4485-9f5a-e1708e210b01")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
+					(reference "#PWR0124")
 					(unit 1)
 				)
 			)
