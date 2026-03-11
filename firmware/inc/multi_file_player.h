@@ -208,21 +208,21 @@ public:
  * \brief true if the channel's buffer has been filled and the underlying
  *  DMA channel can start draining it immediately.
  */
-    inline bool channel_is_armed(size_t channel_index)
+    inline bool channel_is_armed(size_t channel_id)
     {
         //  we can't strictly rely on an nonzero file read pointer
         //  (i.e: `f_tell(fils_[id] != 0`) because the overall file size may be
         //  less than the buffer size, so it would be constantly reset to 0.
-        return (idle_buffers_[channel_index] != nullptr) &&
-               (!file_bufs_[channel_index].is_aborted());
+        return (idle_buffers_[channel_id] != nullptr) &&
+               (!file_bufs_[channel_id].is_aborted());
     }
 
 /**
  * \brief true if channel is transferring data to its respective DAC.
  *  False otherwise (paused or aborted).
  */
-    inline bool channel_is_active(size_t channel_index)
-    {return file_bufs_[channel_index].is_transferring();}
+    inline bool channel_is_active(size_t channel_id)
+    {return file_bufs_[channel_id].is_transferring();}
 
 /**
  * \brief true if any channel needs to be handled with periodic calls to update().
@@ -238,6 +238,16 @@ public:
         }
         return false;
     }
+
+/**
+ * \brief true if the specified channel is ready.
+ */
+    inline bool channel_is_ready(size_t channel_id)
+    {
+        // FIXME: validate that this will be multicore safe.
+        return (!channel_is_active(channel_id)) && channel_is_armed(channel_id);
+    }
+
 
 /**
  * \brief iterate through all channels and update underlying resources.

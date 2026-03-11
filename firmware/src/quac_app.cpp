@@ -160,7 +160,20 @@ void write_dac_start(msg_t& msg)
 {
     // TODO: handle paused logic.
     HarpCore::copy_msg_payload_to_register(msg);
-    player.start(uint32_t(app_regs.dac_start));
+    // Ensure specified channels are ready.
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        if (!((app_regs.dac_start >> i) & 1u))
+            continue;
+        if (!player.channel_is_ready(i))
+        {
+            HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+            return;
+        }
+    }
+    player.start(uint32_t(app_regs.dac_start)); // Can be started from core1.
+    if (!HarpCore::is_muted())
+        HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
 
 
