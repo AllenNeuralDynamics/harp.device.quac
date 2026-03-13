@@ -31,36 +31,93 @@ registers:
     maskType: DIOPort
     description: "Set digital IO specified pins in the mask to logic LOW by setting the corresponding bit."
 
-  DACReady:
+  AnalogOutputPortState:
     address: 36
+    type: U16
+    access: Write
+    length: 4
+    description: "Read/Write the analog output of all 4 AO channels.
+                  Warning: Write values only take effect if all analog output
+                  channels are not busy playing a preset waveform. Write error
+                  otherwise.
+                  Warning: Read values are only valid if all analog output
+                  channels are not busy playing a preset waveform. Read error
+                  otherwise."
+  AnalogOutputChannel0:
+    address: 37
+    type: U16
+    access: Write
+    description: "Read/Set the value of analog output channel 0.
+                  Warning: Write values only take effect if the analog output
+                  channel is not busy playing a preset waveform. Write error
+                  otherwise.
+                  Warning: Read values are only valid if the analog output
+                  channel is not busy playing a preset waveform. Read error
+                  otherwise."
+  AnalogOutputChannel1:
+    address: 38
+    type: U16
+    access: Write
+    description: "Read/Set the value of analog output channel 1.
+                  Warning: Write values only take effect if the analog output
+                  channel is not busy playing a preset waveform. Write error
+                  otherwise.
+                  Warning: Read values are only valid if the analog output
+                  channel is not busy playing a preset waveform. Read error
+                  otherwise."
+  AnalogOutputChannel2:
+    address: 39
+    type: U16
+    access: Write
+    description: "Read/Set the value of analog output channel 2.
+                  Warning: Write values only take effect if the analog output
+                  channel is not busy playing a preset waveform. Write error
+                  otherwise.
+                  Warning: Read values are only valid if the analog output
+                  channel is not busy playing a preset waveform. Read error
+                  otherwise."
+  AnalogOutputChannel3:
+    address: 40
+    type: U16
+    access: Write
+    description: "Read/Set the value of analog output channel 3.
+                  Warning: Write values only take effect if the analog output
+                  channel is not busy playing a preset waveform. Write error
+                  otherwise.
+                  Warning: Read values are only valid if the analog output
+                  channel is not busy playing a preset waveform. Read error
+                  otherwise."
+
+  DACReady:
+    address: 41
     type: U8
     access: Read
     maskType: AOPort
     description: ""
 
   DACStart:
-    address: 37
+    address: 42
     type: U8
     access: Write
     maskType: AOPort
     description: ""
 
   DACAbort:
-    address: 38
+    address: 43
     type: U8
     access: Write
     maskType: AOPort
     description: ""
 
   DACFinished:
-    address: 39
+    address: 44
     type: U8
     access: Event
     maskType: AOPort
     description: ""
 
   WaveformSettings0:
-    address: 40
+    address: 45
     type: U8
     access: Write
     length: 13
@@ -69,7 +126,7 @@ registers:
                   external_triggers (U8)"
 
   WaveformSettings1:
-    address: 41
+    address: 46
     type: U8
     access: Write
     length: 13
@@ -78,7 +135,7 @@ registers:
                   external_triggers (U8)"
 
   WaveformSettings2:
-    address: 42
+    address: 47
     type: U8
     access: Write
     length: 13
@@ -87,7 +144,7 @@ registers:
                   external_triggers (U8)"
 
   WaveformSettings3:
-    address: 43
+    address: 48
     type: U8
     access: Write
     length: 13
@@ -96,28 +153,28 @@ registers:
                   external_triggers (U8)"
 
   WaveformHash0:
-    address: 44
+    address: 49
     type: U8
     access: Read
     length: 8
     description: "Read-only SHA256 hash corresponding to AO0 Waveform."
 
   WaveformHash1:
-    address: 45
+    address: 50
     type: U8
     access: Read
     length: 8
     description: "Read-only SHA256 hash corresponding to AO1 Waveform."
 
   WaveformHash2:
-    address: 46
+    address: 51
     type: U8
     access: Read
     length: 8
     description: "Read-only SHA256 hash corresponding to AO2 Waveform."
 
   WaveformHash3:
-    address: 46
+    address: 52
     type: U8
     access: Read
     length: 8

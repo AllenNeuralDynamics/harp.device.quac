@@ -9,19 +9,27 @@
 
 using enum reg_type_t;
 
-inline constexpr size_t APP_REG_COUNT = 22;
+extern std::array<PIO_LTC264x, NUM_CHANNELS> dacs;
+
+inline constexpr size_t APP_REG_COUNT = 26;
+inline constexpr size_t AO_CHANNEL_BASE_ADDRESS = APP_REG_START_ADDRESS;
 
 #pragma pack(push, 1)
 struct app_regs_t
 {
-    // Digital IO
-    uint8_t dio_port_dir;
-    uint8_t dio_port_state;
-    uint8_t dio_port_set;
-    uint8_t dio_port_clear;
+    // Digital Output
+    uint8_t digital_output_port_state;
+    uint8_t digital_output_port_set;
+    uint8_t digital_output_port_clear;
 
     // Triggers.
     uint8_t dac_external_triggers;   // Attach Digital Input to trigger DAC
+
+    uint16_t analog_output_port_state[NUM_CHANNELS]; // group register view
+    uint16_t& analog_output_channel_0 = analog_output_port_state[0];
+    uint16_t& analog_output_channel_1 = analog_output_port_state[1];
+    uint16_t& analog_output_channel_2 = analog_output_port_state[2];
+    uint16_t& analog_output_channel_3 = analog_output_port_state[3];
 
     uint8_t dac_ready;
     uint8_t dac_start;
@@ -42,29 +50,27 @@ extern RegSpecs app_reg_specs[APP_REG_COUNT];
 extern RegFnPair reg_handler_fns[APP_REG_COUNT];
 
 
-void read_dio_port_dir(uint8_t address);
-void write_dio_port_dir(msg_t& msg);
+void read_digital_output_port_dir(uint8_t address);
+void write_digital_output_port_dir(msg_t& msg);
 
 /**
  * \brief read the state of the DIO pins.
  */
-void read_dio_port_state(uint8_t address);
-void write_dio_port_state(msg_t& msg);
+void read_digital_output_port_state(uint8_t address);
+void write_digital_output_port_state(msg_t& msg);
 
-/**
- * \brief read the last set value.
- */
-void read_dio_port_set(uint8_t address);
 void write_dio_port_set(msg_t& msg);
 
-/**
- * \brief read the last set value.
- */
-void read_dio_port_clear(uint8_t address);
 void write_dio_port_clear(msg_t& msg);
 
 void read_dac_external_triggers(uint8_t address);
 void write_dac_external_triggers(msg_t& msg);
+
+void read_analog_output_port_state(uint8_t address);
+void write_analog_output_port_state(msg_t& msg);
+
+void read_any_ao_channel(uint8_t address);
+void write_any_ao_channel(msg_t& msg);
 
 void read_dac_ready(uint8_t address);
 

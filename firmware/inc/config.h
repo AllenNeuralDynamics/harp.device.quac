@@ -47,14 +47,20 @@ inline constexpr std::array<DACPins, NUM_CHANNELS> DAC_PINS
     {.pico = 16, .sck = 17, .cs = 18}
 }};
 
+inline constexpr uint16_t DAC_MIDSCALE = 0xFFFF/2;
+
 // SD pins and settings.
 inline constexpr size_t SD_CMD_PIN = 22;
 inline constexpr size_t SD_D0_PIN = 23;
 inline constexpr size_t SD_READ_SPEED_HZ = 150 * 1000 * 1000 / 5; // RP2350: 30 MHz
 
-inline constexpr size_t NUM_DIOS = 4;
-inline constexpr size_t DIO_PORT_BASE = 33;
-inline constexpr uint64_t DIO_PORT_MASK = 0x0000001700000000;
+inline constexpr size_t NUM_DIS = 4;
+inline constexpr size_t DI_PORT_BASE = 29;
+inline constexpr uint64_t DI_PORT_MASK = uint64_t(0b1111) << DI_PORT_BASE;
+
+inline constexpr size_t NUM_DOS = 4;
+inline constexpr size_t DO_PORT_BASE = 33;
+inline constexpr uint64_t DO_PORT_MASK = uint64_t(0b1111) << DO_PORT_BASE;
 
 
 
