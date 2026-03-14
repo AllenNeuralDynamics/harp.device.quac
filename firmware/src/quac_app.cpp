@@ -352,6 +352,15 @@ void reset_app()
         dacs.write_value(DAC_MIDSCALE);
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         app_regs.analog_output_port_state[i] = DAC_MIDSCALE;
+    // Reset Waveform trigger settings.
+    for (size_t i = 0; I < NUM_CHANNELS)
+    {
+        auto& settings = dac_settings[i];
+        settings.cycles = 1; // play once: "single-shot."
+        settings.sample_count = 0; // Play everything.
+        settings.frequency_hz = MultiFilePlayer::DEFAULT_FREQUENCY_HZ; // 500KHz
+        settings.external_trigger_mask = (1u << i); // DI[i] triggers AO[i].
+    }
 
     // TODO: reset file player.
 
