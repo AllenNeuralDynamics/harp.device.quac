@@ -38,10 +38,11 @@ int main()
 // Init Synchronizer.
     HarpSynchronizer::init(uart1, HARP_SYNC_RX_PIN);
     app.set_synchronizer(&HarpSynchronizer::instance());
-    #ifdef DEBUG
+#ifdef DEBUG
     stdio_uart_init_full(uart0, 921600, UART_TX_PIN, -1); // use uart1 tx only.
     printf("Hello, from the quac board!\r\n");
 #endif
+    queue_init(&ext_trigger_event_queue, sizeof(ext_trigger_event_t), 32);
     for (const auto& dac: dacs)
         dac.start();
     reset_app();

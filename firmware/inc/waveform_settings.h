@@ -8,7 +8,7 @@ struct WaveformSettings
     uint32_t cycles; // 0 for loops-forever.
     uint32_t sample_count;
     uint32_t frequency_hz;
-    uint8_t external_triggers;
+    uint8_t external_trigger_mask;
     //uint8_t sha256[8];
 
     // TODO: default constructor should set iterations=1

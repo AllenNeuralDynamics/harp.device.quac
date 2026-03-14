@@ -98,9 +98,11 @@ registers:
   DACStart:
     address: 42
     type: U8
-    access: Write
+    access: Write, Event
     maskType: AOPort
-    description: ""
+    description: "Write to this register to start any/all ready channels.
+                  Events received from this register represent a bitmask of
+                  channels started via external trigger."
 
   DACAbort:
     address: 43
@@ -185,10 +187,10 @@ bitMasks:
     description: "Available digital IO pins on the device"
     bits:
       None: 0x0
-      DIO0: 0x1
-      DIO1: 0x2
-      DIO2: 0x4
-      DIO3: 0x8
+      DO0: 0x1
+      DO1: 0x2
+      DO2: 0x4
+      DO3: 0x8
   AOPort:
     description: "Available +/-10V analog outputs on the device"
     bits:

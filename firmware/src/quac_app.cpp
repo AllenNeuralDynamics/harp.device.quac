@@ -1,6 +1,7 @@
 #include <quac_app.h>
 
 app_regs_t app_regs;
+queue_t ext_trigger_event_queue;
 
 RegSpecs app_reg_specs[APP_REG_COUNT]
 {
@@ -135,7 +136,23 @@ void write_dac_external_triggers(msg_t& msg)
 
 void read_analog_output_port_state(uint8_t address)
 {
-    // TODO
+    if (HarpCore::is_muted())
+        return;
+    // Ensure no channels are busy.
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        if (!((app_regs.dac_start >> i) & 1u))
+            continue;
+        if (player.channel_is_busy(i))
+        {
+            HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+            return;
+        }
+    }
+    // Update register contents.
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+        app_regs.analog_output_port_state[i] = dacs[i].get_last_value();
+    HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
 
 
@@ -144,14 +161,13 @@ void write_analog_output_port_state(msg_t& msg)
     // Ensure no channels are busy.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (!((app_regs.dac_start >> i) & 1u))
-            continue;
-        if (!player.channel_is_ready(i))
+        if (player.channel_is_busy(i))
         {
             HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
             return;
         }
     }
+    HarpCore::copy_msg_payload_to_register(msg);
     // Apply the write.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         dacs[i].write_value(app_regs.analog_output_port_state[i]);
@@ -162,16 +178,16 @@ void write_analog_output_port_state(msg_t& msg)
 
 void read_any_analog_output_channel(uint8_t address)
 {
+    if (HarpCore::is_muted())
+        return;
     // Convert address to output channel.
     uint32_t channel = address - AO_CHANNEL_BASE_ADDRESS;
     if (player.channel_is_busy(channel))
     {
-        HarCore::send_harp_reply(READ_ERROR, address);
+        HarpCore::send_harp_reply(READ_ERROR, address);
         return;
     }
     app_regs.analog_output_port_state[channel] = dacs[channel].get_last_value();
-    if (!HarpCore::is_muted())
-        HarCore::send_harp_reply(READ, address);
 }
 
 
@@ -181,7 +197,8 @@ void write_any_analog_output_channel(msg_t& msg)
     uint32_t channel = msg.header.address - AO_CHANNEL_BASE_ADDRESS;
     if (player.channel_is_busy(channel))
     {
-        HarCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+        if (!HarpCore::is_muted());
+            HarCore::send_harp_reply(WRITE_ERROR, msg.header.address);
         return;
     }
     HarpCore::copy_msg_payload_to_register(msg);
@@ -255,7 +272,20 @@ void read_any_dac_settings(uint8_t address)
 
 void write_any_dac_settings(msg_t& msg)
 {
-    // TODO: implement this.
+    // WriteError if we try to change the specified channel while it's busy.
+    // Convert address to output channel.
+    uint32_t channel = address - AO_CHANNEL_BASE_ADDRESS;
+    if (player.channel_is_busy(channel)
+    {
+        HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+        return;
+    }
+    HarpCore::copy_msg_payload_to_register();
+    // TODO: Send waveform settings to core1.
+    // ...
+    // ...
+    if (!HarpCore::is_muted())
+        HarpCore::send_harp_reply(msg.header.address);
 }
 
 
@@ -269,13 +299,32 @@ void read_any_waveform_hash(uint8_t address)
 
 void write_any_waveform_data(msg_t& msg)
 {
-    // TODO: will need a custom implementation.
+    irq_set_enabled(IO_IRQ_BANK0, false); // disable external triggers.
+    // TODO: implement this. Will need to be pseudo-Harp spec.
+    // ...
+    // also update waveform hash.
+    // ...
+    irq_set_enabled(IO_IRQ_BANK0, true); // reenable external triggers.
 }
 
 void update_app()
 {
     // TODO: poll external triggers.
     // Start any externally triggered DACs if they are armed.
+
+    // Send Harp replies for externally-triggered events.
+    ext_trigger_event_t trigger_event;
+    if (HarpCore::is_muted()) // Drain the queue and exit.
+    {
+        while (queue_try_remove(&ext_trigger_event_queue, &trigger_event)){}
+        return;
+    }
+    while (queue_try_remove(&ext_trigger_event_queue, &trigger_event))
+    {
+        app_regs.dac_start = trigger_event.start_mask;
+        HarpCore::send_harp_reply(EVENT, DAC_START_ADDRESS,
+                                  system_to_harp_us_64(trigger_event.timestamp));
+    }
 }
 
 void reset_app()
@@ -305,4 +354,37 @@ void reset_app()
         app_regs.analog_output_port_state[i] = DAC_MIDSCALE;
 
     // TODO: reset file player.
+
+    // Setup External Trigger Callback
+    // Enable all External Trigger GPIOS to trigger the callback.
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+        gpio_set_irq_enabled(i + DI_PORT_BASE, GPIO_IRQ_EDGE_RISE, true);
+    irq_add_shared_handler(IO_IRQ_BANK0, handle_external_trigger,
+                           GPIO_IRQ_CALLBACK_ORDER_PRIORITY);
+    irq_set_enabled(IO_IRQ_BANK0, true);
+}
+
+void handle_external_trigger()
+{
+    // Start the waveform per the 1s in the channel.
+    // Filter out the busy channels first.
+    // TODO: consider an app_regs.IgnoredTriggers register?
+    uint32_t trigger_mask = ((gpio_get_all64() & DI_PORT_MASK) >> DI_PORT_BASE);
+    // Combine waveform settings external triggers to the final mask.
+    start_mask = 0;
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        if (player.channel_is_busy(i))
+            continue;
+        // Check if any currently HIGH pins would trigger this channel.
+        if (trigger_mask & app_regs.dac_settings[i].external_trigger_mask)
+            start_mask |= (1u << i);
+    }
+    start_mask &= composite_mask;
+    ext_trigger_event_t trigger_event;
+    player.start(start_mask); // Can be started from core1.
+    trigger_event.channel_mask = start_mask;
+    trigger_event.timestamp = time_us_64();
+    queue_try_add(&ext_trigger_event_queue, &trigger_event);
+    // Push harp message
 }
