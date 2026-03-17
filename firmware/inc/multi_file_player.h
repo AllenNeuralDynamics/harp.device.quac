@@ -8,11 +8,14 @@
 #include <pico/stdlib.h>
 #include <etl/vector.h>
 #include <cmath>
+#include <limits>
 
 template <typename T, size_t NUM_CHANNELS, size_t BUF_SIZE>
 class MultiFilePlayer
 {
 public:
+    static inline constexpr size_t DEFAULT_FREQUENCY_HZ = 500000;
+    static inline constexpr T OUTPUT_MIDSCALE = std::numeric_limits<T>::max()/2;
 
 /**
  * \brief constructor.
@@ -231,11 +234,22 @@ public:
     {
         for (size_t id = 0; id < NUM_CHANNELS; ++id)
         {
-            if (channel_is_active(id))
-                return true;
-            else if (!channel_is_armed(id))
+            if (channel_is_busy(id))
                 return true;
         }
+        return false;
+    }
+
+/**
+ * \brief true if the specified channel needs to be handled with periodic calls
+ *  to update().
+ */
+    inline bool channel_is_busy(size_t channel_id)
+    {
+        if (channel_is_active(channel_id))
+            return true;
+        else if (!channel_is_armed(channel_id))
+            return true;
         return false;
     }
 
@@ -340,7 +354,5 @@ private:
     dreq_num_t timer_pacing_signal_;
 
     static inline constexpr size_t SD_CHUNK_SIZE = BUF_SIZE * sizeof(T); // in bytes.
-    static inline constexpr size_t DEFAULT_FREQUENCY_HZ = 500000;
-    static inline constexpr uint16_t OUTPUT_MIDSCALE = 32768;
 };
 #endif // MULTI_FILE_PLAYER_H

@@ -71,6 +71,7 @@ target_link_libraries(${PROJECT_NAME}
     harp_sync
     #hardware_adc
     multi_file_player
+    pico_multicore
 )
 
 pico_add_extra_outputs(${PROJECT_NAME})

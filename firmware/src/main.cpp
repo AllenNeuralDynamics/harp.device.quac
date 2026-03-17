@@ -43,6 +43,7 @@ int main()
     printf("Hello, from the quac board!\r\n");
 #endif
     queue_init(&ext_trigger_event_queue, sizeof(ext_trigger_event_t), 32);
+    // Setup DACs first.
     for (const auto& dac: dacs)
         dac.start();
     reset_app();

@@ -47,8 +47,6 @@ inline constexpr std::array<DACPins, NUM_CHANNELS> DAC_PINS
     {.pico = 16, .sck = 17, .cs = 18}
 }};
 
-inline constexpr uint16_t DAC_MIDSCALE = 0xFFFF/2;
-
 // SD pins and settings.
 inline constexpr size_t SD_CMD_PIN = 22;
 inline constexpr size_t SD_D0_PIN = 23;
@@ -62,6 +60,9 @@ inline constexpr size_t NUM_DOS = 4;
 inline constexpr size_t DO_PORT_BASE = 33;
 inline constexpr uint64_t DO_PORT_MASK = uint64_t(0b1111) << DO_PORT_BASE;
 
+inline constexpr size_t NUM_EXT_TRIGGERS = 4;
+inline constexpr size_t EXT_TRIGGER_BASE = 29;
+inline constexpr uint64_t EXT_TRIGGER_MASK = uint64_t(0b1111) << EXT_TRIGGER_BASE;
 
 
 inline constexpr std::array<uint32_t, NUM_CHANNELS> EXTERNAL_TRIGGERS

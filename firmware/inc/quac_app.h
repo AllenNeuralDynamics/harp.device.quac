@@ -6,17 +6,24 @@
 #include <array>
 #include <config.h>
 #include <multi_file_player.h>
-#include <pico/multicore.h>
+#include <pico/util/queue.h>
 
 using enum reg_type_t;
 
 extern std::array<PIO_LTC264x, NUM_CHANNELS> dacs;
-queue_t ext_trigger_event_queue;
+extern queue_t ext_trigger_event_queue;
 
 
 inline constexpr size_t APP_REG_COUNT = 26;
 inline constexpr size_t AO_CHANNEL_BASE_ADDRESS = APP_REG_START_ADDRESS + 5;
 inline constexpr size_t DAC_START_ADDRESS = APP_REG_START_ADDRESS + 10;
+
+
+struct ext_trigger_event_t
+{
+    uint32_t channel_start_mask;
+    uint64_t timestamp;
+};
 
 #pragma pack(push, 1)
 struct app_regs_t
@@ -27,7 +34,7 @@ struct app_regs_t
     uint8_t digital_output_port_clear;
 
     // Triggers.
-    uint8_t waveform_triggered;
+    uint8_t ext_trigger_state;
 
     uint16_t analog_output_port_state[NUM_CHANNELS]; // group register view
     uint16_t& analog_output_channel_0 = analog_output_port_state[0];
@@ -54,24 +61,20 @@ extern RegSpecs app_reg_specs[APP_REG_COUNT];
 extern RegFnPair reg_handler_fns[APP_REG_COUNT];
 
 
-void read_digital_output_port_dir(uint8_t address);
-void write_digital_output_port_dir(msg_t& msg);
-
-/**
- * \brief read the state of the DIO pins.
- */
 void read_digital_output_port_state(uint8_t address);
 void write_digital_output_port_state(msg_t& msg);
 
-void write_dio_port_set(msg_t& msg);
+void write_digital_output_port_set(msg_t& msg);
 
-void write_dio_port_clear(msg_t& msg);
+void write_digital_output_port_clear(msg_t& msg);
+
+void read_ext_trigger_state(uint8_t address);
 
 void read_analog_output_port_state(uint8_t address);
 void write_analog_output_port_state(msg_t& msg);
 
-void read_any_ao_channel(uint8_t address);
-void write_any_ao_channel(msg_t& msg);
+void read_any_analog_output_channel(uint8_t address);
+void write_any_analog_output_channel(msg_t& msg);
 
 void read_dac_ready(uint8_t address);
 
