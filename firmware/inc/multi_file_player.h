@@ -19,6 +19,16 @@ public:
     static inline constexpr T OUTPUT_MIDSCALE = std::numeric_limits<T>::max()/2;
 
 /**
+ * \brief represents an event when one or more channels finished transferring
+ *  and when they finished.
+ */
+    struct end_of_transfer_event_t
+    {
+        uint32_t finished_channels_mask;
+        uint64_t timestamp_us;
+    };
+
+/**
  * \brief constructor.
  * \param dacs
  * \param filenames
@@ -117,26 +127,33 @@ public:
     }
 
 /**
- * \brief
+ * \brief Enable a finished transfer to trigger an interrupt.
+ *  Interrupt can be specified explicitly. Otherwise, the default will be used.
+ *  For more details on the default interrupt behavior, see
+ *  handle_end_of_transfer()
  */
-    void enable_record_finished_transfer(size_t irq_index)
+    void enable_end_of_transfer_interrupt(size_t dma_irq_index,
+                                          void* fn_ptr = nullptr)
     {
+        irq_ = DMA_IRQ_0 + dma_irq_index; // get associated IRQ number
+        // For the default interrupt callback fn,
         // Create a wrapper ("trampoline") function so that we can pass a
         // pointer-to-function to the IRQ (cannot be pointer-to-member).
-        irq_ = DMA_IRQ_0 + irq_index;
         // Connect IRQ to handler function.
-        irq_set_exclusive_handler(irq_, static_record_finished_transfer<this>);
+        if (fn_ptr == nullptr)
+            fn_ptr = static_handle_end_of_transfer<this>;
+        irq_set_exclusive_handler(irq_, fn_ptr);
         // Enable
         for (auto& file_buf: file_bufs_)
-            file_buf.enable_end_of_transfer_irq(irq_index);
+            file_buf.enable_end_of_transfer_irq(dma_irq_index);
         // Enable the interrupt.
         irq_set_enabled(irq_, true);
     }
 
 /**
- * \brief
+ * \brief 
  */
-    void disable_record_finished_transfer()
+    void disable_end_of_transfer_interrupt()
     {
         // Disconnect irq handler function.
         irq_set_exclusive_handler(irq_, nullptr);
@@ -148,18 +165,31 @@ public:
     }
 
 /**
- * \brief static trampoline function to pass to the ISR.
+ * \brief static trampoline function to pass to the ISR. ISRs cannot invoke
+ *  a pointer-to-member function, so we use this wrapper function instead.
  * \note Because the callback function is implemented as static trampoline
     function using templates, the address of this class instance needs to be
     known at compile time.
  */
     template <MultiFilePlayer<T, NUM_CHANNELS, BUF_SIZE>& that>
-    static void static_record_finished_transfer()
-    {that.record_finished_transfer();}
+    static void static_handle_end_of_transfer()
+    {that.handle_end_of_transfer();}
 
-    inline void record_finished_transfer()
+/**
+ * \brief The ISR callback function to handle the end of any (or multiple)
+ *  file buffer(s) finishing a transfer. Specifically,
+ *  - record which channels finished and when (bitmask, timestamp). Push the
+ *    result to a queue for later collection in a superloop, etc.
+ *  - set the corresponding DAC in \ref dacs_ to midscale, i.e: the "idle"
+ *    value.
+ * \note implemented as `inline` such that the contents of this function are
+ *  splatted into the static wrapper function.
+ */
+    inline void handle_end_of_transfer()
     {
-        // FIXME: do not assume DMA_IRQ_0
+        end_of_transfer_event_t end_of_transfer_event;
+        end_of_transfer_event.timestamp_us = time_us_64(); // record time asap.
+
         // Identify which channel(s) triggered the handler.
         uint32_t irq_index = irq_ - DMA_IRQ_0;
         uint32_t int_status = dma_hw->irq_ctrl[irq_index].ints;
@@ -168,11 +198,22 @@ public:
         // Disconnect already-fired DMA channels from interrupt
         // (since we only fire once at end of buffer transfer).
         dma_irqn_set_channel_mask_enabled(irq_index, int_status, false);
-        // Push a timestamp bitmask to a queue.
-        // ...
-        // TODO
-        // ...
-        // TODO: dac.write_value(OUTPUT_MIDSCALE) for finished channels.
+        // Figure out which DMA channels finished.
+        for (size_t i = 0; i < NUM_CHANNELS; ++i)
+        {
+            if (file_bufs_[i].get_dma_channel_mask() & int_status)
+            {
+                end_of_transfer_event.finished_channels_mask |= 1u << i;
+                dacs_[i].write_value(OUTPUT_MIDSCALE);
+            }
+        }
+        // TODO: Push a timestamp bitmask to a queue.
+        //queue_try_add(queue_name, &end_of_transfer_event);
+    }
+
+    void get_finished_transfers(end_of_transfer_event_t* record)
+    {
+        //TODO: queue_try_remove(queue_name, record);
     }
 
 /**
