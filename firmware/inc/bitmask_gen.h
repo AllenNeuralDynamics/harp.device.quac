@@ -14,5 +14,4 @@ consteval T nwide_mask(size_t n)
     return T{(1ull << n) - 1ull};
 }
 
-
 #endif // BITMASK_GEN_H

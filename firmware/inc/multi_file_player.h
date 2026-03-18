@@ -10,6 +10,7 @@
 #include <cmath>
 #include <limits>
 
+
 template <typename T, size_t NUM_CHANNELS, size_t BUF_SIZE>
 class MultiFilePlayer
 {
@@ -24,7 +25,7 @@ public:
  */
     MultiFilePlayer(std::array<PIO_LTC264x, NUM_CHANNELS>& dacs,
                     const std::array<const char*, NUM_CHANNELS>& filenames)
-    : dacs_{dacs}, filenames_{filenames}, dma_timer_chan_{-1}
+    : dacs_{dacs}, filenames_{filenames}, dma_timer_chan_{-1}, irq_{-1}
     {
         // Timer setup. Also initializes `timer_pacing_signal_`.
         dma_timer_chan_ = dma_claim_unused_timer(true);
@@ -37,9 +38,6 @@ public:
             int32_t sm = dacs_[i].get_sm();
             file_bufs_.emplace_back(timer_pacing_signal_, &pio->txf[sm]);
         }
-        std::ranges::fill(filptrs_, nullptr); // mark files as starting closed.
-        std::ranges::fill(curr_iterations_, 0);
-        std::ranges::fill(iterations_, 1);
         reset();
     }
 
@@ -48,19 +46,20 @@ public:
  */
     void setup()
     {
+        // TODO: could use some extra protection to make this func idempotent.
         // Open 4 files. Note: max number is set by FF_FS_LOCK in ffconf.h
         for (size_t id = 0; id < NUM_CHANNELS; ++id)
         {
-            if (file_is_open(id))
-                continue;
-            open_file(id);
+            if (!file_is_open(id))
+                open_file(id);
         }
         // pre-read buffers.
         update();
     }
 
 /**
- * \brief
+ * \brief Reset internal variables and close all files.
+ * \note must call setup() before the class is ready for general usage.
  * \warning not multicore safe.
  */
     void reset()
@@ -68,10 +67,12 @@ public:
         for (size_t i = 0; i < NUM_CHANNELS; ++i)
             file_bufs_[i].abort_transfer(); // Do this first across all channels.
         // TODO: maybe validate that the abort took place?
+        std::ranges::fill(idle_buffers_, nullptr); // Clear local buffer value.
+        std::ranges::fill(filptrs_, nullptr); // mark files as starting closed.
+        std::ranges::fill(curr_iterations_, 0);
+        std::ranges::fill(iterations_, 1);
         for (auto& dac: dacs_)
             dac.write_value(OUTPUT_MIDSCALE);
-        std::ranges::fill(idle_buffers_, nullptr); // Clear local buffer value.
-        std::ranges::fill(curr_iterations_, 0);
         cleanup(); // close all files.
     }
 
@@ -110,10 +111,68 @@ public:
     {
         for (size_t id = 0; id < NUM_CHANNELS; ++id)
         {
-            if (!file_is_open(id))
-                continue;
-            close_file(id);
+            if (file_is_open(id))
+                close_file(id);
         }
+    }
+
+/**
+ * \brief
+ */
+    void enable_record_finished_transfer(size_t irq_index)
+    {
+        // Create a wrapper ("trampoline") function so that we can pass a
+        // pointer-to-function to the IRQ (cannot be pointer-to-member).
+        irq_ = DMA_IRQ_0 + irq_index;
+        // Connect IRQ to handler function.
+        irq_set_exclusive_handler(irq_, static_record_finished_transfer<this>);
+        // Enable
+        for (auto& file_buf: file_bufs_)
+            file_buf.enable_end_of_transfer_irq(irq_index);
+        // Enable the interrupt.
+        irq_set_enabled(irq_, true);
+    }
+
+/**
+ * \brief
+ */
+    void disable_record_finished_transfer()
+    {
+        // Disconnect irq handler function.
+        irq_set_exclusive_handler(irq_, nullptr);
+        irq_ = -1;
+        // Disable the interrupt.
+        for (auto& file_buf: file_bufs_)
+            file_buf.disable_end_of_transfer_irq();
+        // TODO: clear queue?
+    }
+
+/**
+ * \brief static trampoline function to pass to the ISR.
+ * \note Because the callback function is implemented as static trampoline
+    function using templates, the address of this class instance needs to be
+    known at compile time.
+ */
+    template <MultiFilePlayer<T, NUM_CHANNELS, BUF_SIZE>& that>
+    static void static_record_finished_transfer()
+    {that.record_finished_transfer();}
+
+    inline void record_finished_transfer()
+    {
+        // FIXME: do not assume DMA_IRQ_0
+        // Identify which channel(s) triggered the handler.
+        uint32_t irq_index = irq_ - DMA_IRQ_0;
+        uint32_t int_status = dma_hw->irq_ctrl[irq_index].ints;
+        // Clear the interrupt(s).
+        dma_hw->irq_ctrl[irq_index].ints = int_status;
+        // Disconnect already-fired DMA channels from interrupt
+        // (since we only fire once at end of buffer transfer).
+        dma_irqn_set_channel_mask_enabled(irq_index, int_status, false);
+        // Push a timestamp bitmask to a queue.
+        // ...
+        // TODO
+        // ...
+        // TODO: dac.write_value(OUTPUT_MIDSCALE) for finished channels.
     }
 
 /**
@@ -352,6 +411,8 @@ private:
     std::array<WaveformSettings, NUM_CHANNELS> settings_;
     int dma_timer_chan_;
     dreq_num_t timer_pacing_signal_;
+
+    int irq_;
 
     static inline constexpr size_t SD_CHUNK_SIZE = BUF_SIZE * sizeof(T); // in bytes.
 };

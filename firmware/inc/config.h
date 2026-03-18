@@ -1,10 +1,10 @@
 #ifndef CONFIG_H
 #define CONFIG_H
-
 #include <sd_card.h>  // from no-os* sd card library.
 #include <pio_ltc264x.h>
 #include <dma_double_buffer.h>
 #include <array>
+#include <bitmask_gen.h>
 
 struct DACPins
 {
@@ -54,15 +54,18 @@ inline constexpr size_t SD_READ_SPEED_HZ = 150 * 1000 * 1000 / 5; // RP2350: 30 
 
 inline constexpr size_t NUM_DIS = 4;
 inline constexpr size_t DI_PORT_BASE = 29;
-inline constexpr uint64_t DI_PORT_MASK = uint64_t(0b1111) << DI_PORT_BASE;
+inline constexpr uint64_t DI_PORT_MASK =
+    nwide_mask<uint64_t>(NUM_DIS) << DI_PORT_BASE;
 
 inline constexpr size_t NUM_DOS = 4;
 inline constexpr size_t DO_PORT_BASE = 33;
-inline constexpr uint64_t DO_PORT_MASK = uint64_t(0b1111) << DO_PORT_BASE;
+inline constexpr uint64_t DO_PORT_MASK =
+    nwide_mask<uint64_t>(NUM_DOS) << DO_PORT_BASE;
 
 inline constexpr size_t NUM_EXT_TRIGGERS = 4;
 inline constexpr size_t EXT_TRIGGER_BASE = 29;
-inline constexpr uint64_t EXT_TRIGGER_MASK = uint64_t(0b1111) << EXT_TRIGGER_BASE;
+inline constexpr uint64_t EXT_TRIGGER_MASK =
+    nwide_mask<uint64_t>(NUM_EXT_TRIGGERS) << EXT_TRIGGER_BASE;
 
 
 inline constexpr std::array<uint32_t, NUM_CHANNELS> EXTERNAL_TRIGGERS
