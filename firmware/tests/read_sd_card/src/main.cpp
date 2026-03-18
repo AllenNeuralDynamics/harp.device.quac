@@ -42,12 +42,12 @@ static sd_sdio_if_t sdio_if = {
     */
 
 //   CLK_gpio = D0_gpio - 2; -> derived from D0_gpio.
-    .CMD_gpio = 3,  // DO_gpio - 1 -> derived from D0_gpio.
-    .D0_gpio = 4,
+    .CMD_gpio = 22,  // DO_gpio - 1 -> derived from D0_gpio.
+    .D0_gpio = 23,
 //    D1_gpio = D0_gpio + 1; -> derived from D0_gpio.
 //    D2_gpio = D0_gpio + 2; -> derived from D0_gpio.
 //    D3_gpio = D0_gpio + 3; -> derived from D0_gpio.
-    .baud_rate = 150 * 1000 * 1000 / 8  // */6 -> 18750000 Hz.  */6 -> 20833333 Hz
+    .baud_rate = 150 * 1000 * 1000 / 6  // RP2350: */6 -> 25 MHz
 };
 
 /* Hardware Configuration of the SD Card socket "object" */
@@ -102,7 +102,7 @@ int main() {
     FIL fil;
     char buffer[100]; /* File read buffer */
     UINT bytes_read;        /* Bytes read */
-    const char* const filename = "filename.txt";
+    const char* const filename = "channel_0.bin";
 
     // Open a file
     fr = f_open(&fil, filename, FA_READ);
