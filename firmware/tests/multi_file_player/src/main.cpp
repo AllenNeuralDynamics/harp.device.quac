@@ -10,15 +10,13 @@
 #include <multi_file_player.h>
 
 using T = uint16_t;
-inline constexpr size_t NUM_FILES = 1;
+inline constexpr size_t NUM_FILES = 4;
 inline constexpr size_t SD_CHUNK_SIZE = 32768;  // must be factor of 512.
 
 FIL __not_in_flash("file_handlers") fil[NUM_FILES];
 
-//std::array<const char*, NUM_FILES> filenames
-//{{"channel_0.bin", "channel_1.bin", "channel_2.bin", "channel_3.bin"}};
 std::array<const char*, NUM_FILES> filenames
-{{"channel_0.bin"}};
+{{"channel_0.bin", "channel_1.bin", "channel_2.bin", "channel_3.bin"}};
 
 struct DACPins
 {
@@ -29,22 +27,23 @@ struct DACPins
 
 std::array<DACPins, NUM_FILES> DAC_PINS
 {{
-    {.pico = 15, .sck = 16, .cs = 17},
-//    {.pico = 18, .sck = 19, .cs = 20},
-//    {.pico = 22, .sck = 23, .cs = 24},
-//    {.pico = 25, .sck = 26, .cs = 27}
+    {.pico = 4, .sck = 5, .cs = 6},
+    {.pico = 8, .sck = 9, .cs = 10},
+    {.pico = 12, .sck = 13, .cs = 14},
+    {.pico = 16, .sck = 17, .cs = 18}
 }};
 
 /* SDIO Interface */
 static sd_sdio_if_t sdio_if = {
 //  CLK_gpio = D0_gpio - 2; -> derived from D0_gpio.
-    .CMD_gpio = 3,
-    .D0_gpio = 4,
+    .CMD_gpio = 22,
+    .D0_gpio = 23,
 //    D1_gpio = D0_gpio + 1; -> derived from D0_gpio.
 //    D2_gpio = D0_gpio + 2; -> derived from D0_gpio.
 //    D3_gpio = D0_gpio + 3; -> derived from D0_gpio.
     .SDIO_PIO = pio0,
-    .baud_rate = 150 * 1000 * 1000 / 5, // RP2350: */5 -> 30000000 Hz
+    .baud_rate = 150 * 1000 * 1000 / 6, // RP2350: */5 -> 30000000 Hz
+                                        // RP2350: */6 -> 25000000 Hz
 };
 
 /* Hardware Configuration of the SD Card socket "object" */
@@ -83,9 +82,9 @@ int main() {
     // Setup PIO Block for DAC communication.
     std::array<PIO_LTC264x, NUM_FILES> dacs
     {{{pio2, DAC_PINS[0].sck, DAC_PINS[0].pico},
-    //  {pio2, DAC_PINS[1].sck, DAC_PINS[1].pico, false, dacs[0].get_offset()},
-    //  {pio2, DAC_PINS[2].sck, DAC_PINS[2].pico, false, dacs[0].get_offset()},
-    //  {pio2, DAC_PINS[3].sck, DAC_PINS[3].pico, false, dacs[0].get_offset()}}};
+      {pio2, DAC_PINS[1].sck, DAC_PINS[1].pico, false, dacs[0].get_offset()},
+      {pio2, DAC_PINS[2].sck, DAC_PINS[2].pico, false, dacs[0].get_offset()},
+      {pio2, DAC_PINS[3].sck, DAC_PINS[3].pico, false, dacs[0].get_offset()}
     }};
     for (const auto& dac: dacs)
         dac.start();
