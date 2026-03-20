@@ -313,11 +313,20 @@ void update_app()
         while (queue_try_remove(&ext_trigger_event_queue, &trigger_event)){}
         return;
     }
+    // Dispatch any transfer-started events.
     while (queue_try_remove(&ext_trigger_event_queue, &trigger_event))
     {
         app_regs.dac_start = trigger_event.channel_start_mask;
         HarpCore::send_harp_reply(EVENT, DAC_START_ADDRESS,
             HarpCore::system_to_harp_us_64(trigger_event.timestamp));
+    }
+    // Dispatch any transfer-finished events.
+    end_of_transfer_event_t transfer_done_event;
+    while (player.get_finished_transfers(&event))
+    {
+        app_regs.dac_finished = uint8_t(transfer_done_event.finished_channels_mask);
+        HarpCore::send_harp_reply(EVENT, DAC_FINISHED_ADDRESS,
+            HarpCore::system_to_harp_us_64(event.timestamp_us));
     }
 }
 

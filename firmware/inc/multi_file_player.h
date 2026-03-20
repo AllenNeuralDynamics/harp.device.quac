@@ -6,27 +6,33 @@
 #include <ff.h>
 #include <f_util.h>
 #include <pico/stdlib.h>
+#include <pico/util/queue.h>
 #include <etl/vector.h>
 #include <cmath>
 #include <limits>
 
+/**
+ * \brief represents an event when one or more channels finished transferring
+ *  and when they finished.
+ */
+struct end_of_transfer_event_t
+{
+    uint32_t finished_channels_mask;
+    uint64_t timestamp_us;
+};
 
+
+/**
+ * \brief class for playing multiple files to multiple DACs concurrently.
+ */
 template <typename T, size_t NUM_CHANNELS, size_t BUF_SIZE>
 class MultiFilePlayer
 {
 public:
     static inline constexpr size_t DEFAULT_FREQUENCY_HZ = 500000;
     static inline constexpr T OUTPUT_MIDSCALE = std::numeric_limits<T>::max()/2;
+    static inline constexpr size_t DEFAULT_QUEUE_SIZE = 32;
 
-/**
- * \brief represents an event when one or more channels finished transferring
- *  and when they finished.
- */
-    struct end_of_transfer_event_t
-    {
-        uint32_t finished_channels_mask;
-        uint64_t timestamp_us;
-    };
 
 /**
  * \brief constructor.
@@ -48,6 +54,8 @@ public:
             int32_t sm = dacs_[i].get_sm();
             file_bufs_.emplace_back(timer_pacing_signal_, &pio->txf[sm]);
         }
+        queue_init(&end_of_transfer_event_queue_,
+                   sizeof(end_of_transfer_event_t), DEFAULT_QUEUE_SIZE);
         reset();
     }
 
@@ -84,13 +92,19 @@ public:
         for (auto& dac: dacs_)
             dac.write_value(OUTPUT_MIDSCALE);
         cleanup(); // close all files.
+        // Drain queue.
+        end_of_transfer_event_t dummy_event;
+        while (queue_try_remove(&end_of_transfer_event_queue_, &dummy_event)){}
     }
 
 /**
  * \brief destructor
  */
     ~MultiFilePlayer()
-    {cleanup();}
+    {
+        cleanup();
+        queue_free(&end_of_transfer_event_queue_);
+    }
 
 /**
  * \brief
@@ -131,9 +145,12 @@ public:
  *  Interrupt can be specified explicitly. Otherwise, the default will be used.
  *  For more details on the default interrupt behavior, see
  *  handle_end_of_transfer()
+ * \warning Per current implementation, only one `MultiFilePlayer` instance can
+ *  use the default interrupt handler, because its functionality is tied to a
+ *  static class member.
  */
     void enable_end_of_transfer_interrupt(size_t dma_irq_index,
-                                          void* fn_ptr = nullptr)
+                                          void (*fn_ptr)(void) = nullptr)
     {
         irq_ = DMA_IRQ_0 + dma_irq_index; // get associated IRQ number
         // For the default interrupt callback fn,
@@ -141,11 +158,14 @@ public:
         // pointer-to-function to the IRQ (cannot be pointer-to-member).
         // Connect IRQ to handler function.
         if (fn_ptr == nullptr)
-            fn_ptr = static_handle_end_of_transfer<this>;
+        {
+            fn_ptr = static_handle_end_of_transfer;
+            isr_instance_ = this;
+        }
         irq_set_exclusive_handler(irq_, fn_ptr);
-        // Enable
+        // Enable underlying dma channels to trigger IRQ.
         for (auto& file_buf: file_bufs_)
-            file_buf.enable_end_of_transfer_irq(dma_irq_index);
+            file_buf.enable_end_of_transfer_irq(dma_irq_index); // from 0.
         // Enable the interrupt.
         irq_set_enabled(irq_, true);
     }
@@ -161,19 +181,17 @@ public:
         // Disable the interrupt.
         for (auto& file_buf: file_bufs_)
             file_buf.disable_end_of_transfer_irq();
+        // Enable the interrupt.
+        irq_set_enabled(irq_, false);
         // TODO: clear queue?
     }
 
 /**
  * \brief static trampoline function to pass to the ISR. ISRs cannot invoke
  *  a pointer-to-member function, so we use this wrapper function instead.
- * \note Because the callback function is implemented as static trampoline
-    function using templates, the address of this class instance needs to be
-    known at compile time.
  */
-    template <MultiFilePlayer<T, NUM_CHANNELS, BUF_SIZE>& that>
     static void static_handle_end_of_transfer()
-    {that.handle_end_of_transfer();}
+    {isr_instance_->handle_end_of_transfer();}
 
 /**
  * \brief The ISR callback function to handle the end of any (or multiple)
@@ -183,10 +201,14 @@ public:
  *  - set the corresponding DAC in \ref dacs_ to midscale, i.e: the "idle"
  *    value.
  * \note implemented as `inline` such that the contents of this function are
- *  splatted into the static wrapper function.
+ *  (ideally) splatted into the static wrapper function.
  */
     inline void handle_end_of_transfer()
     {
+        // Do this first.
+        for (auto& dac: dacs_)
+            dac.write_value(OUTPUT_MIDSCALE);
+
         end_of_transfer_event_t end_of_transfer_event;
         end_of_transfer_event.timestamp_us = time_us_64(); // record time asap.
 
@@ -197,23 +219,25 @@ public:
         dma_hw->irq_ctrl[irq_index].ints = int_status;
         // Disconnect already-fired DMA channels from interrupt
         // (since we only fire once at end of buffer transfer).
-        dma_irqn_set_channel_mask_enabled(irq_index, int_status, false);
         // Figure out which DMA channels finished.
         for (size_t i = 0; i < NUM_CHANNELS; ++i)
         {
             if (file_bufs_[i].get_dma_channel_mask() & int_status)
-            {
                 end_of_transfer_event.finished_channels_mask |= 1u << i;
-                dacs_[i].write_value(OUTPUT_MIDSCALE);
-            }
         }
-        // TODO: Push a timestamp bitmask to a queue.
-        //queue_try_add(queue_name, &end_of_transfer_event);
+        // Push a timestamp bitmask to a queue.
+        queue_try_add(&end_of_transfer_event_queue_, &end_of_transfer_event);
     }
 
-    void get_finished_transfers(end_of_transfer_event_t* record)
+/**
+ * \brief receive a record of any finished transfers from a queue and put
+ *  the contents in \p event_ptr.
+ * \return `true`, if a record was successfully remove from the queue;
+ *  `false` otherwise.
+ */
+    inline bool get_finished_transfers(end_of_transfer_event_t* event_ptr)
     {
-        //TODO: queue_try_remove(queue_name, record);
+        return queue_try_remove(&end_of_transfer_event_queue_, event_ptr);
     }
 
 /**
@@ -453,7 +477,11 @@ private:
     int dma_timer_chan_;
     dreq_num_t timer_pacing_signal_;
 
+    queue_t end_of_transfer_event_queue_;
+
     int irq_;
+
+    static inline MultiFilePlayer<T, NUM_CHANNELS, BUF_SIZE>* isr_instance_ = nullptr;
 
     static inline constexpr size_t SD_CHUNK_SIZE = BUF_SIZE * sizeof(T); // in bytes.
 };

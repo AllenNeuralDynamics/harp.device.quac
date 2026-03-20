@@ -146,13 +146,13 @@ public:
         //TODO: uint32_t encoded_transfer_count = dma_encode_transfer_count(word_count);
         dma_channel_hw_addr(data_chan_)->transfer_count = word_count;
         // Attach channel to IRQ if configured to do so:
-         dma_irqn_set_channel_enabled(end_of_transfer_irq_num_, data_chan_,
-                                      trigger_isr_);
-
+        dma_irqn_set_channel_enabled(end_of_transfer_irq_num_, data_chan_,
+                                     trigger_isr_);
         // Disable chaining on the next transfer.
         // Modifying the CTRL register updates settings for the *next* transfer.
         dma_channel_config cfg = dma_get_channel_config(data_chan_);
         channel_config_set_chain_to(&cfg, data_chan_); // chain-to-self disables chaining.
+        channel_config_set_irq_quiet(&cfg, false); // Enable end of transfer irq
         dma_channel_set_config(data_chan_, &cfg, false); // trigger = false
     }
 
@@ -305,6 +305,9 @@ public:
  */
     int get_ctrl_channel() const
     {return ctrl_chan_;}
+
+    int get_data_channel() const
+    {return data_chan_;}
 
 /**
  * \brief get all dma channels used in this class as a single bitmask.
