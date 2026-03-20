@@ -13,7 +13,7 @@ class AppRegs(IntEnum):
     AOChannel0 = 37
     AOChannel1 = 38
     AOChannel2 = 39
-    AOChannel0 = 40
+    AOChannel3 = 40
 
     DACReady = 41
     DACStart = 42

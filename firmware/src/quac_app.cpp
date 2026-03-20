@@ -301,16 +301,21 @@ void write_any_waveform_data(msg_t& msg)
     irq_set_enabled(IO_IRQ_BANK0, true); // reenable external triggers.
 }
 
+
 void update_app()
 {
-    // TODO: poll external triggers.
-    // Start any externally triggered DACs if they are armed.
+    // FYI: external triggers are handled via interrupts on this core,
+    // But events capturing when they started (or if they errored out)
+    // are collected and dispatched over USB in this loop.
 
     // Send Harp replies for externally-triggered events.
     ext_trigger_event_t trigger_event;
-    if (HarpCore::is_muted()) // Drain the queue and exit.
+    end_of_transfer_event_t transfer_done_event;
+    // Bail early if we're muted. Drain all queues and exit.
+    if (HarpCore::is_muted())
     {
         while (queue_try_remove(&ext_trigger_event_queue, &trigger_event)){}
+        while (player.get_finished_transfers(&transfer_done_event)){}
         return;
     }
     // Dispatch any transfer-started events.
@@ -321,12 +326,11 @@ void update_app()
             HarpCore::system_to_harp_us_64(trigger_event.timestamp));
     }
     // Dispatch any transfer-finished events.
-    end_of_transfer_event_t transfer_done_event;
-    while (player.get_finished_transfers(&event))
+    while (player.get_finished_transfers(&transfer_done_event))
     {
         app_regs.dac_finished = uint8_t(transfer_done_event.finished_channels_mask);
         HarpCore::send_harp_reply(EVENT, DAC_FINISHED_ADDRESS,
-            HarpCore::system_to_harp_us_64(event.timestamp_us));
+            HarpCore::system_to_harp_us_64(transfer_done_event.timestamp_us));
     }
 }
 
@@ -381,11 +385,13 @@ void reset_app()
     irq_set_enabled(IO_IRQ_BANK0, true);
 }
 
-void handle_external_trigger()
+void __not_in_flash_func(handle_external_trigger)()
 {
+    // Note: we must read gpios here directly because we are not on a clean
+    // multiple of 8-boundary, so it's cumbersome to assemble the interrupt
+    // state from multiple reads.
     // Start the waveform per the 1s in the channel.
     // Filter out the busy channels first.
-    // TODO: consider an app_regs.IgnoredTriggers register?
     uint64_t trigger_mask = ((gpio_get_all64() & DI_PORT_MASK) >> DI_PORT_BASE);
     // Combine waveform settings external triggers to the final mask.
     uint32_t start_mask = 0;
@@ -401,6 +407,12 @@ void handle_external_trigger()
     player.start(start_mask); // Can be started from core1.
     trigger_event.channel_start_mask = start_mask;
     trigger_event.timestamp = time_us_64();
-    queue_try_add(&ext_trigger_event_queue, &trigger_event);
     // Push harp message
+    queue_try_add(&ext_trigger_event_queue, &trigger_event);
+    // Acknowledge the interrupt. Assume nothing else is setting these pins.
+    // Clear the INTR[n] state since we dealt with all pin changes.
+    // Clear by "writing a 1" to the set bits.
+    io_bank0_hw->intr[DI_PORT_BASE >> 3] = 0xFFFFFFFF; // >> 3: floor-divide by 8
+    // Do it twice since we are not on a clean multiple of 8 boundary.
+    io_bank0_hw->intr[(DI_PORT_BASE + NUM_CHANNELS) >> 3] = 0xFFFFFFFF;
 }

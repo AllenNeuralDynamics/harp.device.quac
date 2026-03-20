@@ -6,7 +6,7 @@ from pyharp.messages import CommonRegisters as Regs
 from struct import pack, unpack
 import logging
 import os
-from time import sleep, perf_counter
+from time import sleep
 from app_registers import AppRegs
 
 #logging.basicConfig(level=logging.DEBUG)
@@ -22,5 +22,8 @@ else: # assume Windows.
 for i in range(4):
     value = int(1) << i
     print("Writing: 0x{value:02x}", end = " ")
-    reply = device.send(WriteU8HarpMessage(AppRegs.DOPortState, i).frame)
+    reply = device.send(WriteU8HarpMessage(AppRegs.DOPortState, value).frame)
     print(f" Read back: 0x{reply.payload[0]:02x}")
+    sleep(0.5)
+print("Setting all Digital outputs to 0.")
+reply = device.send(WriteU8HarpMessage(AppRegs.DOPortState, 0).frame)

@@ -190,7 +190,7 @@ public:
  * \brief static trampoline function to pass to the ISR. ISRs cannot invoke
  *  a pointer-to-member function, so we use this wrapper function instead.
  */
-    static void static_handle_end_of_transfer()
+    static void __not_in_flash_func(static_handle_end_of_transfer)()
     {isr_instance_->handle_end_of_transfer();}
 
 /**
@@ -203,7 +203,7 @@ public:
  * \note implemented as `inline` such that the contents of this function are
  *  (ideally) splatted into the static wrapper function.
  */
-    inline void handle_end_of_transfer()
+    inline void __not_in_flash_func(handle_end_of_transfer)()
     {
         // Do this first.
         for (auto& dac: dacs_)
@@ -481,6 +481,7 @@ private:
 
     int irq_;
 
+    // TODO: annotate as __not_in_flash_func("mfp_static_members")
     static inline MultiFilePlayer<T, NUM_CHANNELS, BUF_SIZE>* isr_instance_ = nullptr;
 
     static inline constexpr size_t SD_CHUNK_SIZE = BUF_SIZE * sizeof(T); // in bytes.
