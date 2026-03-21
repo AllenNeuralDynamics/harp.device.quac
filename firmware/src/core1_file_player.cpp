@@ -2,16 +2,7 @@
 
 void setup_file_player()
 {
-    // Setup DACs. First PIO_LTC264x loads the program; the others share it.
-    const std::array<PIO_LTC264x, NUM_CHANNELS> dacs
-    {{{pio2, DAC_PINS[0].sck, DAC_PINS[0].pico},
-      {pio2, DAC_PINS[1].sck, DAC_PINS[1].pico, false, dacs[0].get_offset()},
-      {pio2, DAC_PINS[2].sck, DAC_PINS[2].pico, false, dacs[0].get_offset()},
-      {pio2, DAC_PINS[3].sck, DAC_PINS[3].pico, false, dacs[0].get_offset()}}};
-    for (const auto& dac: dacs)
-        dac.start();
-
-    MultiFilePlayer player(dacs, filenames);
+    //MultiFilePlayer player(dacs, filenames);
 }
 
 

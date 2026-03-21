@@ -12,7 +12,9 @@ static sd_sdio_if_t SD_SDIO_INTERFACE
 //    D2_gpio = D0_gpio + 2; -> derived from D0_gpio.
 //    D3_gpio = D0_gpio + 3; -> derived from D0_gpio.
     .SDIO_PIO = SD_PIO,
-    .baud_rate = SD_READ_SPEED_HZ
+    .DMA_IRQ_num = DMA_IRQ_0,
+    .use_exclusive_DMA_IRQ_handler = true,
+    .baud_rate = SD_READ_SPEED_HZ,
                                         // RP2040: */6 -> 20833333 Hz
 };
 

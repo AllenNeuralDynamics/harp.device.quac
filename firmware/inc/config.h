@@ -20,7 +20,7 @@ inline constexpr size_t SHA256_NUM_BYTES = 8;
 inline constexpr size_t NUM_CHANNELS = 4;
 inline constexpr std::array<const char*, NUM_CHANNELS> filenames
 {{
-    "channel_0.txt", "channel_1.txt", "channel_2.txt", "channel_3.txt"
+    "channel_0.bin", "channel_1.bin", "channel_2.bin", "channel_3.bin"
 }};
 
 inline constexpr size_t WAVEFORM_MAX_WORDS = 5'000'000;
@@ -50,7 +50,7 @@ inline constexpr std::array<DACPins, NUM_CHANNELS> DAC_PINS
 // SD pins and settings.
 inline constexpr size_t SD_CMD_PIN = 22;
 inline constexpr size_t SD_D0_PIN = 23;
-inline constexpr size_t SD_READ_SPEED_HZ = 150 * 1000 * 1000 / 5; // RP2350: 30 MHz
+inline constexpr size_t SD_READ_SPEED_HZ = 150 * 1000 * 1000 / 6; // RP2350: 25 MHz
 
 inline constexpr size_t NUM_DIS = 4;
 inline constexpr size_t DI_PORT_BASE = 29;

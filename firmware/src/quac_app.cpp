@@ -12,10 +12,10 @@ RegSpecs app_reg_specs[APP_REG_COUNT]
     {(uint8_t*)&app_regs.ext_trigger_state, sizeof(app_regs.ext_trigger_state), U8},
 
     {(uint8_t*)&app_regs.analog_output_port_state, sizeof(app_regs.analog_output_port_state), U16},
-    {(uint8_t*)&app_regs.analog_output_channel_0, sizeof(app_regs.analog_output_channel_0), U16},
-    {(uint8_t*)&app_regs.analog_output_channel_1, sizeof(app_regs.analog_output_channel_1), U16},
-    {(uint8_t*)&app_regs.analog_output_channel_2, sizeof(app_regs.analog_output_channel_2), U16},
-    {(uint8_t*)&app_regs.analog_output_channel_3, sizeof(app_regs.analog_output_channel_3), U16},
+    {(uint8_t*)&app_regs.analog_output_port_state[0], sizeof(T), U16},
+    {(uint8_t*)&app_regs.analog_output_port_state[1], sizeof(T), U16},
+    {(uint8_t*)&app_regs.analog_output_port_state[2], sizeof(T), U16},
+    {(uint8_t*)&app_regs.analog_output_port_state[3], sizeof(T), U16},
 
     {(uint8_t*)&app_regs.dac_ready, sizeof(app_regs.dac_ready), U8},
     {(uint8_t*)&app_regs.dac_start, sizeof(app_regs.dac_start), U8},
@@ -174,13 +174,13 @@ void read_any_analog_output_channel(uint8_t address)
     if (HarpCore::is_muted())
         return;
     // Convert address to output channel.
-    uint32_t channel = address - AO_CHANNEL_BASE_ADDRESS;
+    size_t channel = address - AO_CHANNEL_BASE_ADDRESS;
     if (player.channel_is_busy(channel))
     {
         HarpCore::send_harp_reply(READ_ERROR, address);
         return;
     }
-    app_regs.analog_output_port_state[channel] = dacs[channel].get_last_value();
+    app_regs.analog_output_port_state[channel] = 0xBEEF;//dacs[channel].get_last_value();
     HarpCore::send_harp_reply(READ, address);
 }
 
@@ -188,8 +188,8 @@ void read_any_analog_output_channel(uint8_t address)
 void write_any_analog_output_channel(msg_t& msg)
 {
     // Convert address to output channel.
-    uint32_t channel = msg.header.address - AO_CHANNEL_BASE_ADDRESS;
-    if (player.channel_is_busy(channel))
+    size_t channel = msg.header.address - AO_CHANNEL_BASE_ADDRESS;
+    if (player.channel_is_busy(channel)) // FIXME: launch core1
     {
         if (!HarpCore::is_muted());
             HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
@@ -378,11 +378,14 @@ void reset_app()
 
     // Setup External Trigger Callback
     // Enable all External Trigger GPIOS to trigger the callback.
+    // FIXME: Get this working to launch from files.
+/*
+    irq_set_exclusive_handler(IO_IRQ_BANK0, handle_external_trigger);
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         gpio_set_irq_enabled(i + DI_PORT_BASE, GPIO_IRQ_EDGE_RISE, true);
-    irq_add_shared_handler(IO_IRQ_BANK0, handle_external_trigger,
-                           GPIO_IRQ_CALLBACK_ORDER_PRIORITY);
     irq_set_enabled(IO_IRQ_BANK0, true);
+*/
+    // FIXME: how to reset core1.
 }
 
 void __not_in_flash_func(handle_external_trigger)()

@@ -38,10 +38,10 @@ struct app_regs_t
     uint8_t ext_trigger_state;
 
     uint16_t analog_output_port_state[NUM_CHANNELS]; // group register view
-    uint16_t& analog_output_channel_0 = analog_output_port_state[0];
-    uint16_t& analog_output_channel_1 = analog_output_port_state[1];
-    uint16_t& analog_output_channel_2 = analog_output_port_state[2];
-    uint16_t& analog_output_channel_3 = analog_output_port_state[3];
+    //uint16_t analog_output_channel_0 <- these virtual registers exist.
+    //uint16_t analog_output_channel_1
+    //uint16_t analog_output_channel_2
+    //uint16_t analog_output_channel_3
 
     uint8_t dac_ready;
     uint8_t dac_start;
