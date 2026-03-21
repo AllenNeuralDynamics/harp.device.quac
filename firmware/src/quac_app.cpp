@@ -374,20 +374,24 @@ void reset_app()
         settings.external_trigger_mask = (1u << i); // DI[i] triggers AO[i].
     }
 
-    // TODO: reset file player.
+    player.reset();
+    player.set_frequency_hz(500'000);
+    player.setup(); // FIXME: Locks up if the files don't exist.
+    // Launch core1.
+    multicore_reset_core1();
+    (void)multicore_fifo_pop_blocking(); // Wait until core1 is ready.
+    multicore_launch_core1(core1main);
 
     // Setup External Trigger Callback
     // Enable all External Trigger GPIOS to trigger the callback.
-    // FIXME: Get this working to launch from files.
-/*
     irq_set_exclusive_handler(IO_IRQ_BANK0, handle_external_trigger);
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         gpio_set_irq_enabled(i + DI_PORT_BASE, GPIO_IRQ_EDGE_RISE, true);
     irq_set_enabled(IO_IRQ_BANK0, true);
-*/
-    // FIXME: how to reset core1.
 }
 
+// FIXME: this ISR will fire for every rising edge event on said pins--event if
+// all channels are busy.
 void __not_in_flash_func(handle_external_trigger)()
 {
     // Note: we must read gpios here directly because we are not on a clean
@@ -395,23 +399,26 @@ void __not_in_flash_func(handle_external_trigger)()
     // state from multiple reads.
     // Start the waveform per the 1s in the channel.
     // Filter out the busy channels first.
-    uint64_t trigger_mask = ((gpio_get_all64() & DI_PORT_MASK) >> DI_PORT_BASE);
+    uint32_t trigger_mask = ((gpio_get_all64() & DI_PORT_MASK) >> DI_PORT_BASE);
     // Combine waveform settings external triggers to the final mask.
     uint32_t start_mask = 0;
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (player.channel_is_busy(i))
+        if (player.channel_is_busy(i)) // Skip re-triggering busy channels.
             continue;
         // Check if any currently HIGH pins would trigger this channel.
         if (trigger_mask & app_regs.dac_settings[i].external_trigger_mask)
             start_mask |= (1u << i);
     }
-    ext_trigger_event_t trigger_event;
-    player.start(start_mask); // Can be started from core1.
-    trigger_event.channel_start_mask = start_mask;
-    trigger_event.timestamp = time_us_64();
-    // Push harp message
-    queue_try_add(&ext_trigger_event_queue, &trigger_event);
+    if (start_mask != 0)
+    {
+        ext_trigger_event_t trigger_event;
+        player.start(start_mask); // Can be started from core1.
+        trigger_event.channel_start_mask = start_mask;
+        trigger_event.timestamp = time_us_64();
+        // Push harp message
+        queue_try_add(&ext_trigger_event_queue, &trigger_event);
+    }
     // Acknowledge the interrupt. Assume nothing else is setting these pins.
     // Clear the INTR[n] state since we dealt with all pin changes.
     // Clear by "writing a 1" to the set bits.

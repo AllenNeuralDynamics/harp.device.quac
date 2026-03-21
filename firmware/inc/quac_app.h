@@ -7,6 +7,8 @@
 #include <config.h>
 #include <multi_file_player.h>
 #include <pico/util/queue.h>
+#include <pico/multicore.h>
+#include <core1_file_player.h>
 
 using enum reg_type_t;
 

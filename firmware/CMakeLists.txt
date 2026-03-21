@@ -42,6 +42,7 @@ add_executable(${PROJECT_NAME}
     src/main.cpp
     src/sd_hw_config.cpp
     src/quac_app.cpp
+    src/core1_file_player.cpp
 )
 
 include_directories(inc)

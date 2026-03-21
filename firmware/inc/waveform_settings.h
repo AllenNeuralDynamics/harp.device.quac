@@ -1,5 +1,6 @@
 #ifndef WAVEFORM_SETTINGS_H
 #define WAVEFORM_SETTINGS_H
+#include <cstdint>
 
 
 #pragma pack(push, 1)

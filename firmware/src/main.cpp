@@ -50,14 +50,8 @@ int main()
 
     // Launch the file player.
     player.enable_end_of_transfer_interrupt(1); // DMA // FIXME: should be on core1
-    player.set_frequency_hz(500'000);
-    player.setup(); // FIXME: Locks up if the files don't exist.
-    // Launch core1.
-/*
-    multicore_reset_core1();
-    (void)multicore_fifo_pop_blocking(); // Wait until core1 is ready.
-    multicore_launch_core1(core1main);
-*/
+    //player.set_frequency_hz(500'000);
+    //player.setup(); // FIXME: Locks up if the files don't exist.
     // Setup DACs first.
     for (const auto& dac: dacs)
         dac.start();
