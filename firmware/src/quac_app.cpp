@@ -296,8 +296,8 @@ void write_any_waveform_data(msg_t& msg)
 {
     irq_set_enabled(IO_IRQ_BANK0, false); // disable external triggers.
 
-    // waveform_data registers occupy app reg indices 18-21 (one per channel).
-    constexpr uint8_t WAVEFORM_DATA_BASE_ADDR = APP_REG_START_ADDRESS + 18;
+    // waveform_data registers occupy app reg indices 22-25 (one per channel).
+    constexpr uint8_t WAVEFORM_DATA_BASE_ADDR = APP_REG_START_ADDRESS + 22;
     uint8_t channel = msg.header.address - WAVEFORM_DATA_BASE_ADDR;
     if (channel >= NUM_CHANNELS)
         return;
