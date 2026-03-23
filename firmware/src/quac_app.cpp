@@ -42,12 +42,13 @@ RegSpecs app_reg_specs[APP_REG_COUNT]
     {(uint8_t*)&app_regs.waveform_hashes[2], SHA256_NUM_BYTES, U8},
     {(uint8_t*)&app_regs.waveform_hashes[3], SHA256_NUM_BYTES, U8},
 
-    // Note: WAVEFORM_MAX_BYTES cannot be coerced into RegSpecs type.
-    // num_bytes should be WAVEFORM_MAX_BYTES
-    {(uint8_t*)&app_regs.waveform_hashes[0], 1, U8},
-    {(uint8_t*)&app_regs.waveform_hashes[0], 1, U8},
-    {(uint8_t*)&app_regs.waveform_hashes[0], 1, U8},
-    {(uint8_t*)&app_regs.waveform_hashes[0], 1, U8},
+    // RegSpecs::num_bytes is uint8_t so WAVEFORM_MAX_BYTES cannot be expressed
+    // here. The write handler streams the full payload directly; this spec
+    // only needs to identify the register and its element type.
+    {(uint8_t*)&app_regs.waveform_data[0], sizeof(T), U16},
+    {(uint8_t*)&app_regs.waveform_data[1], sizeof(T), U16},
+    {(uint8_t*)&app_regs.waveform_data[2], sizeof(T), U16},
+    {(uint8_t*)&app_regs.waveform_data[3], sizeof(T), U16},
 };
 
 
