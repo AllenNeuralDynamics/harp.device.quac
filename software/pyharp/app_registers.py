@@ -26,7 +26,7 @@ class AppRegs(IntEnum):
     DACSettings2 = 48
     DACSettings3 = 49
 
-    WaveformHashes0 = 40
+    WaveformHashes0 = 50
     WaveformHashes1 = 51
     WaveformHashes2 = 52
     WaveformHashes3 = 53
