@@ -12,10 +12,10 @@ RegSpecs app_reg_specs[APP_REG_COUNT]
     {(uint8_t*)&app_regs.ext_trigger_state, sizeof(app_regs.ext_trigger_state), U8},
 
     {(uint8_t*)&app_regs.analog_output_port_state, sizeof(app_regs.analog_output_port_state), U16},
-    {(uint8_t*)&app_regs.analog_output_port_state[0], sizeof(T), U16},
-    {(uint8_t*)&app_regs.analog_output_port_state[1], sizeof(T), U16},
-    {(uint8_t*)&app_regs.analog_output_port_state[2], sizeof(T), U16},
-    {(uint8_t*)&app_regs.analog_output_port_state[3], sizeof(T), U16},
+    {(uint8_t*)&app_regs.analog_output_channel_0, sizeof(T), U16},
+    {(uint8_t*)&app_regs.analog_output_channel_1, sizeof(T), U16},
+    {(uint8_t*)&app_regs.analog_output_channel_2, sizeof(T), U16},
+    {(uint8_t*)&app_regs.analog_output_channel_3, sizeof(T), U16},
 
     {(uint8_t*)&app_regs.dac_ready, sizeof(app_regs.dac_ready), U8},
     {(uint8_t*)&app_regs.dac_start, sizeof(app_regs.dac_start), U8},
@@ -180,7 +180,7 @@ void read_any_analog_output_channel(uint8_t address)
         HarpCore::send_harp_reply(READ_ERROR, address);
         return;
     }
-    app_regs.analog_output_port_state[channel] = 0xBEEF;//dacs[channel].get_last_value();
+    app_regs.analog_output_port_state[channel] = dacs[channel].get_last_value();
     HarpCore::send_harp_reply(READ, address);
 }
 
@@ -373,12 +373,11 @@ void reset_app()
         settings.frequency_hz = DEFAULT_FREQUENCY_HZ;
         settings.external_trigger_mask = (1u << i); // DI[i] triggers AO[i].
     }
-
+    multicore_reset_core1(); // Ensure core1 is not updating the player first.
     player.reset();
     player.set_frequency_hz(500'000);
     player.setup(); // FIXME: Locks up if the files don't exist.
     // Launch core1.
-    multicore_reset_core1();
     (void)multicore_fifo_pop_blocking(); // Wait until core1 is ready.
     multicore_launch_core1(core1main);
 

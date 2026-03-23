@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from pyharp.device import Device, DeviceMode
-from pyharp.messages import WriteU16HarpMessage, WriteU16ArrayMessage
+from pyharp.messages import WriteU16HarpMessage, WriteU16ArrayMessage, ReadU16HarpMessage
 from pyharp.messages import MessageType
 from pyharp.messages import CommonRegisters as Regs
 from struct import pack, unpack
@@ -23,10 +23,12 @@ else: # assume Windows.
 
 for i in range(4):
     ao_value = random.randint(0, 65535)
-    print(f"Writing: 0x{ao_value:02x}", end = " ")
+    reply = device.send(ReadU16HarpMessage(AppRegs.AOChannel0 + i).frame)
+    print(f" AO[{i}] initial value: 0x{reply.payload[0]:04x}")
+    print(f"Writing: 0x{ao_value:04x}", end = " ")
     reply = device.send(WriteU16HarpMessage(AppRegs.AOChannel0 + i, ao_value).frame)
-    #print(f" Read back: 0x{reply.payload[0]:02x}")
-    print(reply)
+    print(f" | result: 0x{reply.payload[0]:04x}")
+    print()
     sleep(1.0)
 # Reset everything to midscale
 print(f"Resetting all Analog Output Waveforms to midscale.")

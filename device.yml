@@ -6,43 +6,45 @@ whoAmI: 1406
 firmwareVersion: "0.1"
 hardwareTargets: "0.0"
 registers:
-  DIOPortDir:
+  DOPortState:
     address: 32
     type: U8
     access: Write
     maskType: DIOPort
-    description: "Set the direction of the digial IO pins. 0 = input; 1 = output"
-  DIOPortState:
+    description: "Read or write the state of the digital IO pins."
+  DOPortSet:
     address: 33
     type: U8
     access: Write
     maskType: DIOPort
-    description: "Read or write the state of the digital IO pins."
-  DIOPortSet:
+    description: "Set digital IO pins specified in the mask to logic HIGH by setting the corresponding bit."
+  DOPortClear:
     address: 34
     type: U8
     access: Write
     maskType: DIOPort
-    description: "Set digital IO pins specified in the mask to logic HIGH by setting the corresponding bit."
-  DIOPortClear:
+    description: "Set digital IO specified pins in the mask to logic LOW by setting the corresponding bit."
+
+  ExtTriggerState:
     address: 35
     type: U8
-    access: Write
+    access: Read
     maskType: DIOPort
-    description: "Set digital IO specified pins in the mask to logic LOW by setting the corresponding bit."
+    description: "Read the raw state of the external trigger pins."
 
   AnalogOutputPortState:
     address: 36
     type: U16
     access: Write
     length: 4
-    description: "Read/Write the analog output of all 4 AO channels.
+    description: "Read/Write the analog output of all 4 Analog output channels.
                   Warning: Write values only take effect if all analog output
                   channels are not busy playing a preset waveform. Write error
                   otherwise.
                   Warning: Read values are only valid if all analog output
                   channels are not busy playing a preset waveform. Read error
                   otherwise."
+
   AnalogOutputChannel0:
     address: 37
     type: U16
@@ -51,42 +53,38 @@ registers:
                   Warning: Write values only take effect if the analog output
                   channel is not busy playing a preset waveform. Write error
                   otherwise.
-                  Warning: Read values are only valid if the analog output
-                  channel is not busy playing a preset waveform. Read error
-                  otherwise."
+                  Warning: Returns a READ_ERROR if any AO channel is currently
+                  busy playing a preset waveform."
+
   AnalogOutputChannel1:
     address: 38
     type: U16
     access: Write
     description: "Read/Set the value of analog output channel 1.
-                  Warning: Write values only take effect if the analog output
-                  channel is not busy playing a preset waveform. Write error
-                  otherwise.
-                  Warning: Read values are only valid if the analog output
-                  channel is not busy playing a preset waveform. Read error
-                  otherwise."
+                  Warning: Write values only take effect if this channel is not
+                  busy playing a preset waveform. Write error otherwise.
+                  Warning: Returns a READ_ERROR if any AO channel is currently
+                  busy playing a preset waveform."
+
   AnalogOutputChannel2:
     address: 39
     type: U16
     access: Write
     description: "Read/Set the value of analog output channel 2.
-                  Warning: Write values only take effect if the analog output
-                  channel is not busy playing a preset waveform. Write error
-                  otherwise.
-                  Warning: Read values are only valid if the analog output
-                  channel is not busy playing a preset waveform. Read error
-                  otherwise."
+                  Warning: Write values only take effect if this channel is not
+                  busy playing a preset waveform. Write error otherwise.
+                  Warning: Returns a READ_ERROR if any AO channel is currently
+                  busy playing a preset waveform."
+
   AnalogOutputChannel3:
     address: 40
     type: U16
     access: Write
     description: "Read/Set the value of analog output channel 3.
-                  Warning: Write values only take effect if the analog output
-                  channel is not busy playing a preset waveform. Write error
-                  otherwise.
-                  Warning: Read values are only valid if the analog output
-                  channel is not busy playing a preset waveform. Read error
-                  otherwise."
+                  Warning: Write values only take effect if this channel is not
+                  busy playing a preset waveform. Write error otherwise.
+                  Warning: Returns a READ_ERROR if any AO channel is currently
+                  busy playing a preset waveform."
 
   DACReady:
     address: 41
@@ -182,8 +180,36 @@ registers:
     length: 8
     description: "Read-only SHA256 hash corresponding to AO3 Waveform."
 
+  Waveform0:
+    address: 53
+    type: U16
+    access: Write
+    length: 5000000
+    description: "AO0 Waveform."
+
+  Waveform1:
+    address: 54
+    type: U16
+    access: Write
+    length: 5000000
+    description: "AO1 Waveform."
+
+  Waveform2:
+    address: 55
+    type: U16
+    access: Write
+    length: 5000000
+    description: "AO2 Waveform."
+
+  Waveform3:
+    address: 56
+    type: U16
+    access: Write
+    length: 5000000
+    description: "AO3 Waveform."
+
 bitMasks:
-  DIOPort:
+  DOPort:
     description: "Available digital IO pins on the device"
     bits:
       None: 0x0

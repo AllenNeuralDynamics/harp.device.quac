@@ -39,11 +39,11 @@ struct app_regs_t
     // Triggers.
     uint8_t ext_trigger_state;
 
-    uint16_t analog_output_port_state[NUM_CHANNELS]; // group register view
-    //uint16_t analog_output_channel_0 <- these virtual registers exist.
-    //uint16_t analog_output_channel_1
-    //uint16_t analog_output_channel_2
-    //uint16_t analog_output_channel_3
+    uint16_t analog_output_port_state[NUM_CHANNELS];
+    uint16_t& analog_output_channel_0  = analog_output_port_state[0];
+    uint16_t& analog_output_channel_1  = analog_output_port_state[1];
+    uint16_t& analog_output_channel_2  = analog_output_port_state[2];
+    uint16_t& analog_output_channel_3  = analog_output_port_state[3];
 
     uint8_t dac_ready;
     uint8_t dac_start;
@@ -51,9 +51,12 @@ struct app_regs_t
     uint8_t dac_abort;
     uint8_t dac_finished;
 
+    // WaveformSettings are only exposed for read/write as individual registers.
     WaveformSettings dac_settings[NUM_CHANNELS];
 
+    // waveform_hashes are only exposed for read as individual registers.
     uint8_t waveform_hashes[NUM_CHANNELS][SHA256_NUM_BYTES];
+    // waveform_data are only exposed for write as individual registers.
     T waveform_data[NUM_CHANNELS]; // treat like a pointer. Data is stored on SD card.
 };
 #pragma pack(pop)
