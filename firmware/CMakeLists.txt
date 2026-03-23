@@ -73,6 +73,7 @@ target_link_libraries(${PROJECT_NAME}
     #hardware_adc
     multi_file_player
     pico_multicore
+    pico_sha256
 )
 
 pico_add_extra_outputs(${PROJECT_NAME})

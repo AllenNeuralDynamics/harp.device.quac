@@ -26,6 +26,12 @@ inline constexpr std::array<const char*, NUM_CHANNELS> filenames
 inline constexpr size_t WAVEFORM_MAX_WORDS = 5'000'000;
 inline constexpr size_t WAVEFORM_MAX_BYTES = WAVEFORM_MAX_WORDS * sizeof(T);
 
+inline constexpr std::array<const char*, NUM_CHANNELS> sha256_filenames
+{{
+    "channel_0_sha256.bin", "channel_1_sha256.bin",
+    "channel_2_sha256.bin", "channel_3_sha256.bin"
+}};
+
 inline constexpr size_t SD_CHUNK_SIZE_BYTES = 32768; // must be a factor of 512
 inline constexpr size_t READ_BUF_SIZE = SD_CHUNK_SIZE_BYTES/sizeof(T);
 

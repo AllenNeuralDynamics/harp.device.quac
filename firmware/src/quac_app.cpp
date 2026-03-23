@@ -1,7 +1,16 @@
 #include <quac_app.h>
+#include <sd_write_buffer.h>
+#include <hardware/sha256.h>
+#include <cstring>
 
 app_regs_t app_regs;
 queue_t ext_trigger_event_queue;
+
+// File-scoped state for the active SD write session (one channel at a time).
+static SdWriteBuffer sd_writer;
+static FIL write_file;
+static int active_channel = -1;
+static size_t bytes_written = 0;
 
 RegSpecs app_reg_specs[APP_REG_COUNT]
 {
@@ -286,10 +295,80 @@ void read_any_waveform_hash(uint8_t address)
 void write_any_waveform_data(msg_t& msg)
 {
     irq_set_enabled(IO_IRQ_BANK0, false); // disable external triggers.
-    // TODO: implement this. Will need to be pseudo-Harp spec.
-    // ...
-    // also update waveform hash.
-    // ...
+
+    // waveform_data registers occupy app reg indices 18-21 (one per channel).
+    constexpr uint8_t WAVEFORM_DATA_BASE_ADDR = APP_REG_START_ADDRESS + 18;
+    uint8_t channel = msg.header.address - WAVEFORM_DATA_BASE_ADDR;
+    if (channel >= NUM_CHANNELS)
+        return;
+
+    const uint8_t* data = static_cast<const uint8_t*>(msg.payload);
+    size_t len = msg.payload_length();
+    size_t expected_bytes =
+        static_cast<size_t>(app_regs.dac_settings[channel].sample_count) * sizeof(T);
+
+    // Cannot write without a valid sample count.
+    if (expected_bytes == 0)
+        return;
+
+    // Begin a new write session when none is active.
+    if (!sd_writer.is_active())
+    {
+        FRESULT fr = f_open(&write_file, filenames[channel],
+                            FA_WRITE | FA_CREATE_ALWAYS);
+        if (fr != FR_OK)
+            return;
+        sd_writer.begin(&write_file);
+        active_channel = static_cast<int>(channel);
+        bytes_written = 0;
+    }
+    else if (active_channel != static_cast<int>(channel))
+    {
+        // A different channel is already being written; reject.
+        return;
+    }
+
+    // Clamp to remaining expected bytes so we never over-write.
+    size_t remaining = expected_bytes - bytes_written;
+    if (len > remaining)
+        len = remaining;
+
+    if (!sd_writer.write(data, len))
+    {
+        sd_writer.abort();
+        f_close(&write_file);
+        active_channel = -1;
+        return;
+    }
+    bytes_written += len;
+
+    // Finalize once all expected samples have arrived.
+    if (bytes_written >= expected_bytes)
+    {
+        sha256_result_t result;
+        if (sd_writer.finalize(result))
+        {
+            // Store the first SHA256_NUM_BYTES bytes in the app register.
+            memcpy(app_regs.waveform_hashes[channel], result.bytes, SHA256_NUM_BYTES);
+
+            // Persist the full 32-byte hash to its own file on the SD card.
+            FIL hash_file;
+            FRESULT fr = f_open(&hash_file, sha256_filenames[channel],
+                                FA_WRITE | FA_CREATE_ALWAYS);
+            if (fr == FR_OK)
+            {
+                UINT written_bytes;
+                f_write(&hash_file, result.bytes, SHA256_RESULT_BYTES, &written_bytes);
+                f_close(&hash_file);
+            }
+        }
+        f_close(&write_file);
+        active_channel = -1;
+    }
+
+    if (!HarpCore::is_muted())
+        HarpCore::send_harp_reply(WRITE, msg.header.address);
+
     irq_set_enabled(IO_IRQ_BANK0, true); // reenable external triggers.
 }
 
