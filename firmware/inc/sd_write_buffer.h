@@ -85,11 +85,16 @@ public:
      */
     bool finalize(sha256_result_t& result)
     {
+        bool ok = true;
         if (fill_level_ > 0 && !flush_sector(fill_level_))
-            return false;
-        pico_sha256_finish(&sha256_state_, &result);
-        file_ = nullptr;
-        return true;
+            ok = false;
+        if (ok)
+            pico_sha256_finish(&sha256_state_, &result);
+        else
+            pico_sha256_cleanup(&sha256_state_);
+        file_ = nullptr;  // always invalidate so is_active() returns false
+        fill_level_ = 0;
+        return ok;
     }
 
     bool is_active() const { return file_ != nullptr; }
