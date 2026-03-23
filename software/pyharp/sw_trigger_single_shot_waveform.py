@@ -21,12 +21,12 @@ else: # assume Windows.
 
 for i in range(4):
     value = int(1) << i
-    print("Writing: 0x{value:02x}", end = " ")
-    reply = device.send(WriteU8HarpMessage(AppRegs.DACStart, i).frame)
-    print(f" Read back: 0x{reply.payload[0]:02x}")
-    sleep(1.0)
+    print(f"Writing: 0x{value:02x}", end = " ")
+    reply = device.send(WriteU8HarpMessage(AppRegs.DACStart, value).frame)
+    print(f" Read back: 0x{reply.payload[0]:02x} ({reply.message_type.name}), time: {reply.timestamp}")
+    sleep(0.5)
 
-printf("Waiting for end-of-message replies")
+print("Waiting for end-of-message replies")
 waveform_replies_left = 4
 while (waveform_replies_left):
     events = device.get_events()

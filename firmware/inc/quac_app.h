@@ -93,8 +93,6 @@ void write_dac_pause(msg_t& msg);
 void read_dac_abort(uint8_t address);
 void write_dac_abort(msg_t& msg);
 
-void read_dac_finished(uint8_t address);
-
 void read_any_dac_settings(uint8_t address);
 void write_any_dac_settings(msg_t& msg);
 

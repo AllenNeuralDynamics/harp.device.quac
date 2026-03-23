@@ -57,10 +57,10 @@ RegFnPair reg_handler_fns[APP_REG_COUNT]
     {read_any_analog_output_channel, write_any_analog_output_channel},
 
     {read_dac_ready, HarpCore::write_to_read_only_reg_error},
-    {read_dac_start, write_dac_start},
+    {HarpCore::read_from_write_only_reg_error, write_dac_start},
     {read_dac_pause, write_dac_pause},
     {read_dac_abort, write_dac_abort},
-    {read_dac_finished, HarpCore::write_to_read_only_reg_error},
+    {HarpCore::read_from_write_only_reg_error, HarpCore::write_to_read_only_reg_error},
 
     {read_any_dac_settings, write_any_dac_settings},
     {read_any_dac_settings, write_any_dac_settings},
@@ -134,8 +134,6 @@ void read_analog_output_port_state(uint8_t address)
     // Ensure no channels are busy.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (!((app_regs.dac_start >> i) & 1u))
-            continue;
         if (player.channel_is_busy(i))
         {
             HarpCore::send_harp_reply(READ_ERROR, address);
@@ -209,10 +207,6 @@ void read_dac_ready(uint8_t address)
 }
 
 
-void read_dac_start(uint8_t address)
-{HarpCore::read_reg_generic(address);}
-
-
 void write_dac_start(msg_t& msg)
 {
     // TODO: handle paused logic.
@@ -220,15 +214,16 @@ void write_dac_start(msg_t& msg)
     // Ensure specified channels are ready.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (!((app_regs.dac_start >> i) & 1u))
+        if (!((app_regs.dac_start >> i) & 1u)) // Skip untriggered channels.
             continue;
+        // Error if any specified channel is not ready.
         if (!player.channel_is_ready(i))
         {
             HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
             return;
         }
     }
-    player.start(uint32_t(app_regs.dac_start)); // Can be started from core1.
+    player.start(uint32_t(app_regs.dac_start)); // Can be started from core0.
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -249,12 +244,6 @@ void read_dac_abort(uint8_t address)
 
 
 void write_dac_abort(msg_t& msg)
-{
-    // TODO: implement this.
-}
-
-
-void read_dac_finished(uint8_t address)
 {
     // TODO: implement this.
 }
@@ -318,7 +307,7 @@ void update_app()
         while (player.get_finished_transfers(&transfer_done_event)){}
         return;
     }
-    // Dispatch any transfer-started events.
+    // Dispatch any externally-triggered transfer-started events.
     while (queue_try_remove(&ext_trigger_event_queue, &trigger_event))
     {
         app_regs.dac_start = trigger_event.channel_start_mask;
@@ -387,12 +376,20 @@ void reset_app()
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         gpio_set_irq_enabled(i + DI_PORT_BASE, GPIO_IRQ_EDGE_RISE, true);
     irq_set_enabled(IO_IRQ_BANK0, true);
+
+    uint32_t LED_MASK = (1u << DEBUG_LEDS[0]) | (1u << DEBUG_LEDS[1]);
+    gpio_init_mask(LED_MASK);
+    gpio_set_dir_masked(LED_MASK, 0xFFFFFFFF); // 1: output.
+    gpio_put_masked(LED_MASK, 0);
 }
 
 // FIXME: this ISR will fire for every rising edge event on said pins--event if
 // all channels are busy.
 void __not_in_flash_func(handle_external_trigger)()
 {
+    uint32_t LED_MASK = (1u << DEBUG_LEDS[0]) | (1u << DEBUG_LEDS[1]);
+    gpio_put_masked(LED_MASK, ~gpio_get_all()); // Toggle LEDs.
+
     // Note: we must read gpios here directly because we are not on a clean
     // multiple of 8-boundary, so it's cumbersome to assemble the interrupt
     // state from multiple reads.

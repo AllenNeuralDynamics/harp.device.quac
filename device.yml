@@ -101,23 +101,31 @@ registers:
     description: "Write to this register to start any/all ready channels.
                   Events received from this register represent a bitmask of
                   channels started via external trigger."
+  DACPause:
+    address: 43
+    type: U8
+    access: Write
+    maskType: AOPort
+    description: "Write to this register to pause/resume any/all busy channels.
+                  Writing a 1 pauses the corresponding channel. Writing a 0
+                  resumes the corresponding channel."
 
   DACAbort:
-    address: 43
+    address: 44
     type: U8
     access: Write
     maskType: AOPort
     description: ""
 
   DACFinished:
-    address: 44
+    address: 45
     type: U8
     access: Event
     maskType: AOPort
     description: ""
 
   WaveformSettings0:
-    address: 45
+    address: 46
     type: U8
     access: Write
     length: 13
@@ -126,7 +134,7 @@ registers:
                   external_triggers (U8)"
 
   WaveformSettings1:
-    address: 46
+    address: 47
     type: U8
     access: Write
     length: 13
@@ -135,7 +143,7 @@ registers:
                   external_triggers (U8)"
 
   WaveformSettings2:
-    address: 47
+    address: 48
     type: U8
     access: Write
     length: 13
@@ -144,7 +152,7 @@ registers:
                   external_triggers (U8)"
 
   WaveformSettings3:
-    address: 48
+    address: 49
     type: U8
     access: Write
     length: 13
@@ -153,42 +161,42 @@ registers:
                   external_triggers (U8)"
 
   WaveformHash0:
-    address: 49
+    address: 50
     type: U8
     access: Read
     length: 8
     description: "Read-only SHA256 hash corresponding to AO0 Waveform."
 
   WaveformHash1:
-    address: 50
+    address: 51
     type: U8
     access: Read
     length: 8
     description: "Read-only SHA256 hash corresponding to AO1 Waveform."
 
   WaveformHash2:
-    address: 51
+    address: 52
     type: U8
     access: Read
     length: 8
     description: "Read-only SHA256 hash corresponding to AO2 Waveform."
 
   WaveformHash3:
-    address: 52
+    address: 53
     type: U8
     access: Read
     length: 8
     description: "Read-only SHA256 hash corresponding to AO3 Waveform."
 
   Waveform0:
-    address: 53
+    address: 54
     type: U16
     access: Write
     length: 5000000
     description: "AO0 Waveform."
 
   Waveform1:
-    address: 54
+    address: 55
     type: U16
     access: Write
     length: 5000000

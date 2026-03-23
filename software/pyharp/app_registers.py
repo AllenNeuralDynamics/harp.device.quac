@@ -18,20 +18,21 @@ class AppRegs(IntEnum):
     DACReady = 41
     DACStart = 42
     DACPause = 43
-    DACFinished = 44
+    DACAbort = 44
+    DACFinished = 45
 
-    DACSettings0 = 45
-    DACSettings1 = 46
-    DACSettings2 = 47
-    DACSettings3 = 48
+    DACSettings0 = 46
+    DACSettings1 = 47
+    DACSettings2 = 48
+    DACSettings3 = 49
 
-    WaveformHashes0 = 49
-    WaveformHashes1 = 50
-    WaveformHashes2 = 51
-    WaveformHashes3 = 52
+    WaveformHashes0 = 40
+    WaveformHashes1 = 51
+    WaveformHashes2 = 52
+    WaveformHashes3 = 53
 
-    WaveformData0 = 53
-    WaveformData1 = 52
-    WaveformData2 = 54
-    WaveformData3 = 55
+    WaveformData0 = 54
+    WaveformData1 = 55
+    WaveformData2 = 56
+    WaveformData3 = 57
 

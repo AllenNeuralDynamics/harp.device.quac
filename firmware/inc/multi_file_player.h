@@ -205,12 +205,9 @@ public:
  */
     inline void __not_in_flash_func(handle_end_of_transfer)()
     {
-        // Do this first.
-        for (auto& dac: dacs_)
-            dac.write_value(OUTPUT_MIDSCALE);
-
         end_of_transfer_event_t end_of_transfer_event;
         end_of_transfer_event.timestamp_us = time_us_64(); // record time asap.
+        end_of_transfer_event.finished_channels_mask = 0;
 
         // Identify which channel(s) triggered the handler.
         uint32_t irq_index = irq_ - DMA_IRQ_0;
@@ -222,8 +219,11 @@ public:
         // Figure out which DMA channels finished.
         for (size_t i = 0; i < NUM_CHANNELS; ++i)
         {
-            if (file_bufs_[i].get_dma_channel_mask() & int_status)
-                end_of_transfer_event.finished_channels_mask |= 1u << i;
+            // Identify which AO channel triggered the interrupt.
+            if (!((1u << file_bufs_[i].get_data_channel()) & int_status))
+                continue; // Skip channels that did not trigger the interrupt.
+            dacs_[i].write_value(OUTPUT_MIDSCALE);
+            end_of_transfer_event.finished_channels_mask |= 1u << i;
         }
         // Push a timestamp bitmask to a queue.
         queue_try_add(&end_of_transfer_event_queue_, &end_of_transfer_event);
