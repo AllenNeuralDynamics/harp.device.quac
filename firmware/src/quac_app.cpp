@@ -301,7 +301,10 @@ void write_any_waveform_data(msg_t& msg)
     constexpr uint8_t WAVEFORM_DATA_BASE_ADDR = APP_REG_START_ADDRESS + 22;
     uint8_t channel = msg.header.address - WAVEFORM_DATA_BASE_ADDR;
     if (channel >= NUM_CHANNELS)
+    {
+        irq_set_enabled(IO_IRQ_BANK0, true);
         return;
+    }
 
     const uint8_t* data = static_cast<const uint8_t*>(msg.payload);
     size_t len = msg.payload_length();
@@ -310,7 +313,10 @@ void write_any_waveform_data(msg_t& msg)
 
     // Cannot write without a valid sample count.
     if (expected_bytes == 0)
+    {
+        irq_set_enabled(IO_IRQ_BANK0, true);
         return;
+    }
 
     // Begin a new write session when none is active.
     if (!sd_writer.is_active())
@@ -318,7 +324,10 @@ void write_any_waveform_data(msg_t& msg)
         FRESULT fr = f_open(&write_file, filenames[channel],
                             FA_WRITE | FA_CREATE_ALWAYS);
         if (fr != FR_OK)
+        {
+            irq_set_enabled(IO_IRQ_BANK0, true);
             return;
+        }
         sd_writer.begin(&write_file);
         active_channel = static_cast<int>(channel);
         bytes_written = 0;
@@ -326,6 +335,7 @@ void write_any_waveform_data(msg_t& msg)
     else if (active_channel != static_cast<int>(channel))
     {
         // A different channel is already being written; reject.
+        irq_set_enabled(IO_IRQ_BANK0, true);
         return;
     }
 
@@ -339,6 +349,7 @@ void write_any_waveform_data(msg_t& msg)
         sd_writer.abort();
         f_close(&write_file);
         active_channel = -1;
+        irq_set_enabled(IO_IRQ_BANK0, true);
         return;
     }
     bytes_written += len;
