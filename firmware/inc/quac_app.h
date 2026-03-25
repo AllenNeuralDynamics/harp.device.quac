@@ -17,7 +17,6 @@ extern queue_t ext_trigger_event_queue;
 
 
 inline constexpr size_t APP_REG_COUNT = 26;
-inline constexpr size_t AO_CHANNEL_BASE_ADDRESS = APP_REG_START_ADDRESS + 5;
 inline constexpr size_t DAC_START_ADDRESS = APP_REG_START_ADDRESS + 10;
 inline constexpr size_t DAC_FINISHED_ADDRESS = APP_REG_START_ADDRESS + 13;
 

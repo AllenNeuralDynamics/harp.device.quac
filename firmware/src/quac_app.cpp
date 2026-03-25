@@ -171,8 +171,9 @@ void read_any_analog_output_channel(uint8_t address)
 {
     if (HarpCore::is_muted())
         return;
-    // Convert address to output channel.
-    size_t channel = address - AO_CHANNEL_BASE_ADDRESS;
+    // Convert address to output channel with pointer arithmetic.
+    const RegSpecs& specs = HarpCore::reg_address_to_specs(address);
+    size_t channel = ((uint16_t*)specs.base_ptr - app_regs.analog_output_port_state);
     if (player.channel_is_busy(channel))
     {
         HarpCore::send_harp_reply(READ_ERROR, address);
@@ -185,8 +186,9 @@ void read_any_analog_output_channel(uint8_t address)
 
 void write_any_analog_output_channel(msg_t& msg)
 {
-    // Convert address to output channel.
-    size_t channel = msg.header.address - AO_CHANNEL_BASE_ADDRESS;
+    // Convert address to output channel with pointer arithmetic.
+    const RegSpecs& specs = HarpCore::reg_address_to_specs(msg.header.address);
+    size_t channel = ((uint16_t*)specs.base_ptr - app_regs.analog_output_port_state);
     if (player.channel_is_busy(channel)) // FIXME: launch core1
     {
         if (!HarpCore::is_muted());
@@ -256,8 +258,9 @@ void read_any_dac_settings(uint8_t address)
 void write_any_dac_settings(msg_t& msg)
 {
     // WriteError if we try to change the specified channel while it's busy.
-    // Convert address to output channel.
-    uint32_t channel = msg.header.address - AO_CHANNEL_BASE_ADDRESS;
+    // Convert address to output channel with pointer arithmetic.
+    const RegSpecs& specs = HarpCore::reg_address_to_specs(msg.header.address);
+    size_t channel = ((uint16_t*)specs.base_ptr - app_regs.analog_output_port_state);
     if (player.channel_is_busy(channel))
     {
         HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
