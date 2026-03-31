@@ -6,13 +6,33 @@
 #include <ff.h>
 #include <f_util.h>
 #include <pico/stdlib.h>
+#include <pico/util/queue.h>
 #include <etl/vector.h>
 #include <cmath>
+#include <limits>
 
+/**
+ * \brief represents an event when one or more channels finished transferring
+ *  and when they finished.
+ */
+struct end_of_transfer_event_t
+{
+    uint32_t finished_channels_mask;
+    uint64_t timestamp_us;
+};
+
+
+/**
+ * \brief class for playing multiple files to multiple DACs concurrently.
+ */
 template <typename T, size_t NUM_CHANNELS, size_t BUF_SIZE>
 class MultiFilePlayer
 {
 public:
+    static inline constexpr size_t DEFAULT_FREQUENCY_HZ = 500000;
+    static inline constexpr T OUTPUT_MIDSCALE = std::numeric_limits<T>::max()/2;
+    static inline constexpr size_t DEFAULT_QUEUE_SIZE = 32;
+
 
 /**
  * \brief constructor.
@@ -21,7 +41,7 @@ public:
  */
     MultiFilePlayer(std::array<PIO_LTC264x, NUM_CHANNELS>& dacs,
                     const std::array<const char*, NUM_CHANNELS>& filenames)
-    : dacs_{dacs}, filenames_{filenames}, dma_timer_chan_{-1}
+    : dacs_{dacs}, filenames_{filenames}, dma_timer_chan_{-1}, irq_{-1}
     {
         // Timer setup. Also initializes `timer_pacing_signal_`.
         dma_timer_chan_ = dma_claim_unused_timer(true);
@@ -34,9 +54,8 @@ public:
             int32_t sm = dacs_[i].get_sm();
             file_bufs_.emplace_back(timer_pacing_signal_, &pio->txf[sm]);
         }
-        std::ranges::fill(filptrs_, nullptr); // mark files as starting closed.
-        std::ranges::fill(curr_iterations_, 0);
-        std::ranges::fill(iterations_, 1);
+        queue_init(&end_of_transfer_event_queue_,
+                   sizeof(end_of_transfer_event_t), DEFAULT_QUEUE_SIZE);
         reset();
     }
 
@@ -45,19 +64,20 @@ public:
  */
     void setup()
     {
+        // TODO: could use some extra protection to make this func idempotent.
         // Open 4 files. Note: max number is set by FF_FS_LOCK in ffconf.h
         for (size_t id = 0; id < NUM_CHANNELS; ++id)
         {
-            if (file_is_open(id))
-                continue;
-            open_file(id);
+            if (!file_is_open(id))
+                open_file(id);
         }
         // pre-read buffers.
         update();
     }
 
 /**
- * \brief
+ * \brief Reset internal variables and close all files.
+ * \note must call setup() before the class is ready for general usage.
  * \warning not multicore safe.
  */
     void reset()
@@ -65,18 +85,26 @@ public:
         for (size_t i = 0; i < NUM_CHANNELS; ++i)
             file_bufs_[i].abort_transfer(); // Do this first across all channels.
         // TODO: maybe validate that the abort took place?
+        std::ranges::fill(idle_buffers_, nullptr); // Clear local buffer value.
+        std::ranges::fill(filptrs_, nullptr); // mark files as starting closed.
+        std::ranges::fill(curr_iterations_, 0);
+        std::ranges::fill(iterations_, 1);
         for (auto& dac: dacs_)
             dac.write_value(OUTPUT_MIDSCALE);
-        std::ranges::fill(idle_buffers_, nullptr); // Clear local buffer value.
-        std::ranges::fill(curr_iterations_, 0);
         cleanup(); // close all files.
+        // Drain queue.
+        end_of_transfer_event_t dummy_event;
+        while (queue_try_remove(&end_of_transfer_event_queue_, &dummy_event)){}
     }
 
 /**
  * \brief destructor
  */
     ~MultiFilePlayer()
-    {cleanup();}
+    {
+        cleanup();
+        queue_free(&end_of_transfer_event_queue_);
+    }
 
 /**
  * \brief
@@ -107,10 +135,109 @@ public:
     {
         for (size_t id = 0; id < NUM_CHANNELS; ++id)
         {
-            if (!file_is_open(id))
-                continue;
-            close_file(id);
+            if (file_is_open(id))
+                close_file(id);
         }
+    }
+
+/**
+ * \brief Enable a finished transfer to trigger an interrupt.
+ *  Interrupt can be specified explicitly. Otherwise, the default will be used.
+ *  For more details on the default interrupt behavior, see
+ *  handle_end_of_transfer()
+ * \warning Per current implementation, only one `MultiFilePlayer` instance can
+ *  use the default interrupt handler, because its functionality is tied to a
+ *  static class member.
+ */
+    void enable_end_of_transfer_interrupt(size_t dma_irq_index,
+                                          void (*fn_ptr)(void) = nullptr)
+    {
+        irq_ = DMA_IRQ_0 + dma_irq_index; // get associated IRQ number
+        // For the default interrupt callback fn,
+        // Create a wrapper ("trampoline") function so that we can pass a
+        // pointer-to-function to the IRQ (cannot be pointer-to-member).
+        // Connect IRQ to handler function.
+        if (fn_ptr == nullptr)
+        {
+            fn_ptr = static_handle_end_of_transfer;
+            isr_instance_ = this;
+        }
+        irq_set_exclusive_handler(irq_, fn_ptr);
+        // Enable underlying dma channels to trigger IRQ.
+        for (auto& file_buf: file_bufs_)
+            file_buf.enable_end_of_transfer_irq(dma_irq_index); // from 0.
+        // Enable the interrupt.
+        irq_set_enabled(irq_, true);
+    }
+
+/**
+ * \brief 
+ */
+    void disable_end_of_transfer_interrupt()
+    {
+        // Disconnect irq handler function.
+        irq_set_exclusive_handler(irq_, nullptr);
+        irq_ = -1;
+        // Disable the interrupt.
+        for (auto& file_buf: file_bufs_)
+            file_buf.disable_end_of_transfer_irq();
+        // Enable the interrupt.
+        irq_set_enabled(irq_, false);
+        // TODO: clear queue?
+    }
+
+/**
+ * \brief static trampoline function to pass to the ISR. ISRs cannot invoke
+ *  a pointer-to-member function, so we use this wrapper function instead.
+ */
+    static void __not_in_flash_func(static_handle_end_of_transfer)()
+    {isr_instance_->handle_end_of_transfer();}
+
+/**
+ * \brief The ISR callback function to handle the end of any (or multiple)
+ *  file buffer(s) finishing a transfer. Specifically,
+ *  - record which channels finished and when (bitmask, timestamp). Push the
+ *    result to a queue for later collection in a superloop, etc.
+ *  - set the corresponding DAC in \ref dacs_ to midscale, i.e: the "idle"
+ *    value.
+ * \note implemented as `inline` such that the contents of this function are
+ *  (ideally) splatted into the static wrapper function.
+ */
+    inline void __not_in_flash_func(handle_end_of_transfer)()
+    {
+        end_of_transfer_event_t end_of_transfer_event;
+        end_of_transfer_event.timestamp_us = time_us_64(); // record time asap.
+        end_of_transfer_event.finished_channels_mask = 0;
+
+        // Identify which channel(s) triggered the handler.
+        uint32_t irq_index = irq_ - DMA_IRQ_0;
+        uint32_t int_status = dma_hw->irq_ctrl[irq_index].ints;
+        // Clear the interrupt(s).
+        dma_hw->irq_ctrl[irq_index].ints = int_status;
+        // Disconnect already-fired DMA channels from interrupt
+        // (since we only fire once at end of buffer transfer).
+        // Figure out which DMA channels finished.
+        for (size_t i = 0; i < NUM_CHANNELS; ++i)
+        {
+            // Identify which AO channel triggered the interrupt.
+            if (!((1u << file_bufs_[i].get_data_channel()) & int_status))
+                continue; // Skip channels that did not trigger the interrupt.
+            dacs_[i].write_value(OUTPUT_MIDSCALE);
+            end_of_transfer_event.finished_channels_mask |= 1u << i;
+        }
+        // Push a timestamp bitmask to a queue.
+        queue_try_add(&end_of_transfer_event_queue_, &end_of_transfer_event);
+    }
+
+/**
+ * \brief receive a record of any finished transfers from a queue and put
+ *  the contents in \p event_ptr.
+ * \return `true`, if a record was successfully remove from the queue;
+ *  `false` otherwise.
+ */
+    inline bool get_finished_transfers(end_of_transfer_event_t* event_ptr)
+    {
+        return queue_try_remove(&end_of_transfer_event_queue_, event_ptr);
     }
 
 /**
@@ -208,21 +335,21 @@ public:
  * \brief true if the channel's buffer has been filled and the underlying
  *  DMA channel can start draining it immediately.
  */
-    inline bool channel_is_armed(size_t channel_index)
+    inline bool channel_is_armed(size_t channel_id)
     {
         //  we can't strictly rely on an nonzero file read pointer
         //  (i.e: `f_tell(fils_[id] != 0`) because the overall file size may be
         //  less than the buffer size, so it would be constantly reset to 0.
-        return (idle_buffers_[channel_index] != nullptr) &&
-               (!file_bufs_[channel_index].is_aborted());
+        return (idle_buffers_[channel_id] != nullptr) &&
+               (!file_bufs_[channel_id].is_aborted());
     }
 
 /**
  * \brief true if channel is transferring data to its respective DAC.
  *  False otherwise (paused or aborted).
  */
-    inline bool channel_is_active(size_t channel_index)
-    {return file_bufs_[channel_index].is_transferring();}
+    inline bool channel_is_active(size_t channel_id)
+    {return file_bufs_[channel_id].is_transferring();}
 
 /**
  * \brief true if any channel needs to be handled with periodic calls to update().
@@ -231,13 +358,34 @@ public:
     {
         for (size_t id = 0; id < NUM_CHANNELS; ++id)
         {
-            if (channel_is_active(id))
-                return true;
-            else if (!channel_is_armed(id))
+            if (channel_is_busy(id))
                 return true;
         }
         return false;
     }
+
+/**
+ * \brief true if the specified channel needs to be handled with periodic calls
+ *  to update().
+ */
+    inline bool channel_is_busy(size_t channel_id)
+    {
+        if (channel_is_active(channel_id))
+            return true;
+        else if (!channel_is_armed(channel_id))
+            return true;
+        return false;
+    }
+
+/**
+ * \brief true if the specified channel is ready.
+ */
+    inline bool channel_is_ready(size_t channel_id)
+    {
+        // FIXME: validate that this will be multicore safe.
+        return (!channel_is_active(channel_id)) && channel_is_armed(channel_id);
+    }
+
 
 /**
  * \brief iterate through all channels and update underlying resources.
@@ -329,8 +477,13 @@ private:
     int dma_timer_chan_;
     dreq_num_t timer_pacing_signal_;
 
+    queue_t end_of_transfer_event_queue_;
+
+    int irq_;
+
+    // TODO: annotate as __not_in_flash_func("mfp_static_members")
+    static inline MultiFilePlayer<T, NUM_CHANNELS, BUF_SIZE>* isr_instance_ = nullptr;
+
     static inline constexpr size_t SD_CHUNK_SIZE = BUF_SIZE * sizeof(T); // in bytes.
-    static inline constexpr size_t DEFAULT_FREQUENCY_HZ = 500000;
-    static inline constexpr uint16_t OUTPUT_MIDSCALE = 32768;
 };
 #endif // MULTI_FILE_PLAYER_H

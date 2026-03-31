@@ -6,22 +6,43 @@
 #include <array>
 #include <config.h>
 #include <multi_file_player.h>
+#include <pico/util/queue.h>
+#include <pico/multicore.h>
+#include <core1_file_player.h>
 
 using enum reg_type_t;
 
-inline constexpr size_t APP_REG_COUNT = 22;
+extern std::array<PIO_LTC264x, NUM_CHANNELS> dacs;
+extern queue_t ext_trigger_event_queue;
+
+
+inline constexpr size_t APP_REG_COUNT = 26;
+inline constexpr size_t DAC_START_ADDRESS = APP_REG_START_ADDRESS + 10;
+inline constexpr size_t DAC_FINISHED_ADDRESS = APP_REG_START_ADDRESS + 13;
+
+
+struct ext_trigger_event_t
+{
+    uint32_t channel_start_mask;
+    uint64_t timestamp;
+};
 
 #pragma pack(push, 1)
 struct app_regs_t
 {
-    // Digital IO
-    uint8_t dio_port_dir;
-    uint8_t dio_port_state;
-    uint8_t dio_port_set;
-    uint8_t dio_port_clear;
+    // Digital Output
+    uint8_t digital_output_port_state;
+    uint8_t digital_output_port_set;
+    uint8_t digital_output_port_clear;
 
     // Triggers.
-    uint8_t dac_external_triggers;   // Attach Digital Input to trigger DAC
+    uint8_t ext_trigger_state;
+
+    uint16_t analog_output_port_state[NUM_CHANNELS];
+    uint16_t& analog_output_channel_0  = analog_output_port_state[0];
+    uint16_t& analog_output_channel_1  = analog_output_port_state[1];
+    uint16_t& analog_output_channel_2  = analog_output_port_state[2];
+    uint16_t& analog_output_channel_3  = analog_output_port_state[3];
 
     uint8_t dac_ready;
     uint8_t dac_start;
@@ -29,9 +50,12 @@ struct app_regs_t
     uint8_t dac_abort;
     uint8_t dac_finished;
 
+    // WaveformSettings are only exposed for read/write as individual registers.
     WaveformSettings dac_settings[NUM_CHANNELS];
 
+    // waveform_hashes are only exposed for read as individual registers.
     uint8_t waveform_hashes[NUM_CHANNELS][SHA256_NUM_BYTES];
+    // waveform_data are only exposed for write as individual registers.
     T waveform_data[NUM_CHANNELS]; // treat like a pointer. Data is stored on SD card.
 };
 #pragma pack(pop)
@@ -42,29 +66,20 @@ extern RegSpecs app_reg_specs[APP_REG_COUNT];
 extern RegFnPair reg_handler_fns[APP_REG_COUNT];
 
 
-void read_dio_port_dir(uint8_t address);
-void write_dio_port_dir(msg_t& msg);
+void read_digital_output_port_state(uint8_t address);
+void write_digital_output_port_state(msg_t& msg);
 
-/**
- * \brief read the state of the DIO pins.
- */
-void read_dio_port_state(uint8_t address);
-void write_dio_port_state(msg_t& msg);
+void write_digital_output_port_set(msg_t& msg);
 
-/**
- * \brief read the last set value.
- */
-void read_dio_port_set(uint8_t address);
-void write_dio_port_set(msg_t& msg);
+void write_digital_output_port_clear(msg_t& msg);
 
-/**
- * \brief read the last set value.
- */
-void read_dio_port_clear(uint8_t address);
-void write_dio_port_clear(msg_t& msg);
+void read_ext_trigger_state(uint8_t address);
 
-void read_dac_external_triggers(uint8_t address);
-void write_dac_external_triggers(msg_t& msg);
+void read_analog_output_port_state(uint8_t address);
+void write_analog_output_port_state(msg_t& msg);
+
+void read_any_analog_output_channel(uint8_t address);
+void write_any_analog_output_channel(msg_t& msg);
 
 void read_dac_ready(uint8_t address);
 
@@ -77,8 +92,6 @@ void write_dac_pause(msg_t& msg);
 void read_dac_abort(uint8_t address);
 void write_dac_abort(msg_t& msg);
 
-void read_dac_finished(uint8_t address);
-
 void read_any_dac_settings(uint8_t address);
 void write_any_dac_settings(msg_t& msg);
 
@@ -89,6 +102,11 @@ void write_any_waveform_data(msg_t& msg);
 void reset_app();
 
 void update_app();
+
+
+/// Callbacks
+void handle_external_trigger();
+
 
 
 #endif // QUAC_H

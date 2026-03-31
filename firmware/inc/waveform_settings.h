@@ -1,17 +1,20 @@
 #ifndef WAVEFORM_SETTINGS_H
 #define WAVEFORM_SETTINGS_H
+#include <cstdint>
 
 
+#pragma pack(push, 1)
 struct WaveformSettings
 {
-    uint32_t iterations; // 0 for loops-forever.
+    uint32_t cycles; // 0 for loops-forever.
     uint32_t sample_count;
     uint32_t frequency_hz;
-    uint8_t external_triggers;
+    uint8_t external_trigger_mask;
     //uint8_t sha256[8];
 
     // TODO: default constructor should set iterations=1
 };
+#pragma pack(pop)
 
 // TODO: should commands be enums, and the actual command is a struct of
 //  {cmd, mask}?

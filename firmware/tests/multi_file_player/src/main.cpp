@@ -42,6 +42,8 @@ static sd_sdio_if_t sdio_if = {
 //    D2_gpio = D0_gpio + 2; -> derived from D0_gpio.
 //    D3_gpio = D0_gpio + 3; -> derived from D0_gpio.
     .SDIO_PIO = pio0,
+    .DMA_IRQ_num = DMA_IRQ_0,
+    .use_exclusive_DMA_IRQ_handler = true,
     .baud_rate = 150 * 1000 * 1000 / 6, // RP2350: */5 -> 30000000 Hz
                                         // RP2350: */6 -> 25000000 Hz
 };
@@ -55,6 +57,7 @@ static sd_card_t sd_card = {.type = SD_IF_SDIO, .sdio_if_p = &sdio_if};
  */
 size_t sd_get_num() { return 1; }
 
+
 /**
  * @brief Get a pointer to an SD card object by its number.
  * @param[in] num The number of the SD card to get.
@@ -66,6 +69,8 @@ sd_card_t* sd_get_by_num(size_t num) {
     else
     {return NULL;}
 }
+
+    extern MultiFilePlayer<T, NUM_FILES, SD_CHUNK_SIZE/sizeof(T)> player;
 
 int main() {
     UINT bytes_read;
@@ -91,6 +96,8 @@ int main() {
 
     // Create MultiFilePlayer
     MultiFilePlayer<T, NUM_FILES, SD_CHUNK_SIZE/sizeof(T)> player(dacs, filenames);
+    // 1: DMA_IRQ_1 (FYI: sd card setup to use DMA_IRQ_0)
+    player.enable_end_of_transfer_interrupt(1);//, local_dma_handler);
     player.set_frequency_hz(500'000);
     player.setup();
     printf("File Player is ready.\r\n");
@@ -100,6 +107,12 @@ int main() {
     while(player.is_busy())
         player.update();
     printf("Done playing!\r\n");
+    end_of_transfer_event_t event;
+    while (player.get_finished_transfers(&event))
+    {
+        printf("Got end-of-transfer-event: (0b%032b, %llu [us])\r\n",
+               event.finished_channels_mask, event.timestamp_us);
+    }
     sleep_ms(1000);
 
     // If we did not abort, we should be able to re-trigger.
@@ -109,6 +122,11 @@ int main() {
     while(player.is_busy())
         player.update();
     printf("Done replaying! Closing files.\r\n");
+    while (player.get_finished_transfers(&event))
+    {
+        printf("Got end-of-transfer-event: (0b%032b, %llu [us])\r\n",
+               event.finished_channels_mask, event.timestamp_us);
+    }
 
     player.cleanup(); // Close files.
     // Unmount the file system.

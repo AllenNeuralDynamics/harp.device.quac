@@ -10,13 +10,27 @@
 #define SCK_PIN (5)
 #define CS_PIN (6)
 
+inline constexpr size_t LED0_PIN = 2;
+inline constexpr size_t LED1_PIN = 3;
+inline constexpr uint32_t LED_MASK = (1u << LED0_PIN) | (1u << LED1_PIN);
 
-static constexpr size_t BUFFER_SIZE = 512*32;
+inline constexpr size_t BUFFER_SIZE = 512*32;
+
+void irq_handler()
+{
+    dma_hw->ints0 = dma_hw->ints0; // Clear interrupt status.
+    gpio_put_masked(LED_MASK, 0xFFFFFFFF);
+}
 
 int main() {
     stdio_init_all();
     while (!stdio_usb_connected()){ sleep_ms(100);} // Wait for user to open com port.
     printf("Hello, world, from a Raspberry Pi Pico!\r\n");
+
+    gpio_init_mask(LED_MASK);
+    gpio_set_dir_masked(LED_MASK, 0xFFFFFFFF);
+    gpio_put_masked(LED_MASK, 0);
+
     PIO_LTC264x dac(pio0, SCK_PIN, PICO_PIN); // CS pin is <SCK pin> + 1
     dac.start();
 
@@ -26,17 +40,23 @@ int main() {
     dma_timer_set_fraction(dma_timer_chan, 1, 300); // numerator=1, denominator=300
     dreq_num_t pacing_signal = dreq_num_t(dma_get_timer_dreq(dma_timer_chan));
 
+    int irq_index = 0;
+
     // Create double-buffer.
     using T = uint16_t;
-    DMADoubleBuffer<T, BUFFER_SIZE> file_buf(pacing_signal, &pio0->txf[dac.sm_]);
+    DMADoubleBuffer<T, BUFFER_SIZE> file_buf(pacing_signal, &pio0->txf[dac.get_sm()]);
+    file_buf.enable_end_of_transfer_irq(irq_index);
     //In practice it will be: &pio0->txf[<state_machine_number]);
     // FIXME: we need to deal with 16-bit transfers, but the library accepts 32-bit-wide inputs.
 
-    printf("double buffer[0][]: %p\r\n", file_buf.buffers_[0]);
-    printf("double buffer[1][]: %p\r\n", file_buf.buffers_[1]);
-    printf("ctrl_chan_data_[0]: %p\r\n", file_buf.ctrl_chan_data_[0]);
-    printf("ctrl_chan_data_[1]: %p\r\n", file_buf.ctrl_chan_data_[1]);
-    printf("ctrl_chan read addr (as pointer): %p\r\n", dma_channel_hw_addr(file_buf.ctrl_chan_)->read_addr);
+    irq_set_exclusive_handler(DMA_IRQ_0 + irq_index, irq_handler);
+    irq_set_enabled(DMA_IRQ_0 + irq_index, true);
+
+    //printf("double buffer[0][]: %p\r\n", file_buf.buffers_[0]);
+    //printf("double buffer[1][]: %p\r\n", file_buf.buffers_[1]);
+    //printf("ctrl_chan_data_[0]: %p\r\n", file_buf.ctrl_chan_data_[0]);
+    //printf("ctrl_chan_data_[1]: %p\r\n", file_buf.ctrl_chan_data_[1]);
+    //printf("ctrl_chan read addr (as pointer): %p\r\n", dma_channel_hw_addr(file_buf.ctrl_chan_)->read_addr);
 
     // Load starting buffer with data.
     T* idle_buffer = file_buf.get_idle_buffer();

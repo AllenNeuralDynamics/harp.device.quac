@@ -1,10 +1,10 @@
 #ifndef CONFIG_H
 #define CONFIG_H
-
 #include <sd_card.h>  // from no-os* sd card library.
 #include <pio_ltc264x.h>
 #include <dma_double_buffer.h>
 #include <array>
+#include <bitmask_gen.h>
 
 struct DACPins
 {
@@ -20,7 +20,7 @@ inline constexpr size_t SHA256_NUM_BYTES = 8;
 inline constexpr size_t NUM_CHANNELS = 4;
 inline constexpr std::array<const char*, NUM_CHANNELS> filenames
 {{
-    "channel_0.txt", "channel_1.txt", "channel_2.txt", "channel_3.txt"
+    "channel_0.bin", "channel_1.bin", "channel_2.bin", "channel_3.bin"
 }};
 
 inline constexpr size_t WAVEFORM_MAX_WORDS = 5'000'000;
@@ -50,12 +50,22 @@ inline constexpr std::array<DACPins, NUM_CHANNELS> DAC_PINS
 // SD pins and settings.
 inline constexpr size_t SD_CMD_PIN = 22;
 inline constexpr size_t SD_D0_PIN = 23;
-inline constexpr size_t SD_READ_SPEED_HZ = 150 * 1000 * 1000 / 5; // RP2350: 30 MHz
+inline constexpr size_t SD_READ_SPEED_HZ = 150 * 1000 * 1000 / 6; // RP2350: 25 MHz
 
-inline constexpr size_t NUM_DIOS = 4;
-inline constexpr size_t DIO_PORT_BASE = 33;
-inline constexpr uint64_t DIO_PORT_MASK = 0x0000001700000000;
+inline constexpr size_t NUM_DIS = 4;
+inline constexpr size_t DI_PORT_BASE = 29;
+inline constexpr uint64_t DI_PORT_MASK =
+    nwide_mask<uint64_t>(NUM_DIS) << DI_PORT_BASE;
 
+inline constexpr size_t NUM_DOS = 4;
+inline constexpr size_t DO_PORT_BASE = 33;
+inline constexpr uint64_t DO_PORT_MASK =
+    nwide_mask<uint64_t>(NUM_DOS) << DO_PORT_BASE;
+
+inline constexpr size_t NUM_EXT_TRIGGERS = 4;
+inline constexpr size_t EXT_TRIGGER_BASE = 29;
+inline constexpr uint64_t EXT_TRIGGER_MASK =
+    nwide_mask<uint64_t>(NUM_EXT_TRIGGERS) << EXT_TRIGGER_BASE;
 
 
 inline constexpr std::array<uint32_t, NUM_CHANNELS> EXTERNAL_TRIGGERS

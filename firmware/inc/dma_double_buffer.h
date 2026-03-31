@@ -36,7 +36,8 @@ public:
  * (likely a peripheral).
  */
     DMADoubleBuffer(dreq_num_t pacing_signal, volatile void* target_address)
-    :ctrl_chan_{-1}, data_chan_{-1}
+    :ctrl_chan_{-1}, data_chan_{-1},
+     end_of_transfer_irq_num_{-1}, trigger_isr_{false}
     {
         setup_transfer(pacing_signal, target_address);
     }
@@ -108,6 +109,30 @@ public:
     {return *((T**)(dma_channel_hw_addr(ctrl_chan_)->read_addr));}
 
 /**
+ * \brief Enable the last completed dma transfer to trigger an interrupt
+ *  request, i.e: connect DMA channel to IRQ.
+ * \note an interrupt handler function must be attached separately, and the IRQ
+ *  itself must be enabled separately.
+ */
+    void enable_end_of_transfer_irq(uint32_t irq_index)
+    {
+        end_of_transfer_irq_num_ = irq_index;
+        trigger_isr_ = true; // only gets applied in setup_last_dma_transfer()
+    }
+
+/**
+ * \brief Disable the last completed dma transfer to trigger an interrupt.
+ */
+    void disable_end_of_transfer_irq()
+    {
+        trigger_isr_ = false;
+        if (end_of_transfer_irq_num_ < 0) // unspecified. Bail early.
+            return;
+        // Detach it at the hardware level, so the effect is immediate.
+        dma_irqn_set_channel_enabled(end_of_transfer_irq_num_, data_chan_, false);
+    }
+
+/**
  * \brief Exit the Ping-Pong Buffer endless chaining loop by specifying that the
  *  next buffer switch to the buffer that is currently idle will be the last
  *  buffer transfer. Adjust transfer count if we aren't transferring a full
@@ -120,11 +145,14 @@ public:
         // ref: RP2350 pg 1126
         //TODO: uint32_t encoded_transfer_count = dma_encode_transfer_count(word_count);
         dma_channel_hw_addr(data_chan_)->transfer_count = word_count;
-
+        // Attach channel to IRQ if configured to do so:
+        dma_irqn_set_channel_enabled(end_of_transfer_irq_num_, data_chan_,
+                                     trigger_isr_);
         // Disable chaining on the next transfer.
         // Modifying the CTRL register updates settings for the *next* transfer.
         dma_channel_config cfg = dma_get_channel_config(data_chan_);
         channel_config_set_chain_to(&cfg, data_chan_); // chain-to-self disables chaining.
+        channel_config_set_irq_quiet(&cfg, false); // Enable end of transfer irq
         dma_channel_set_config(data_chan_, &cfg, false); // trigger = false
     }
 
@@ -278,6 +306,16 @@ public:
     int get_ctrl_channel() const
     {return ctrl_chan_;}
 
+    int get_data_channel() const
+    {return data_chan_;}
+
+/**
+ * \brief get all dma channels used in this class as a single bitmask.
+ */
+    inline uint32_t get_dma_channel_mask() const
+    {return (1u << ctrl_chan_) | (1u << data_chan_);}
+
+
 /**
  * \brief True if neither dma is actively transferring.
  * \note that per-this-implementation, a transfer is considered complete
@@ -316,6 +354,9 @@ private:
     T (*ctrl_chan_data_[2])[BUF_SIZE];
     int data_chan_;
     dma_channel_config data_chan_default_cfg_;
+
+    int end_of_transfer_irq_num_;
+    bool trigger_isr_;
 };
 #endif // DMA_DOUBLE_BUFFER
 
