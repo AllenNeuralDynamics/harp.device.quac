@@ -48,8 +48,8 @@ inline constexpr std::array<DACPins, NUM_CHANNELS> DAC_PINS
 }};
 
 // SD pins and settings.
-inline constexpr size_t SD_CMD_PIN = 3;
-inline constexpr size_t SD_D0_PIN = 4;
+inline constexpr size_t SD_CMD_PIN = 22;
+inline constexpr size_t SD_D0_PIN = 23;
 inline constexpr size_t SD_READ_SPEED_HZ = 150 * 1000 * 1000 / 5; // RP2350: 30 MHz
 
 inline constexpr size_t NUM_DIOS = 4;

@@ -12,9 +12,9 @@ inline constexpr uint32_t WORD_COUNT = 32768;
 
 using T = uint16_t;
 
-#define PICO_PIN (15)
-#define SCK_PIN (16)
-#define CS_PIN (17)
+#define PICO_PIN (4)
+#define SCK_PIN (5)
+#define CS_PIN (6)
 
 int main() {
     UINT bytes_read;

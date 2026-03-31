@@ -6,9 +6,9 @@
 #include <hardware/pio.h>
 #include <pio_ltc264x.h>
 
-#define PICO_PIN (15)
-#define SCK_PIN (16)
-#define CS_PIN (17)
+#define PICO_PIN (4)
+#define SCK_PIN (5)
+#define CS_PIN (6)
 
 
 static constexpr size_t BUFFER_SIZE = 512*32;
