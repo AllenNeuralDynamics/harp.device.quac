@@ -23,34 +23,34 @@ static constexpr size_t SD_CHUNK_SIZE = 32768;  // must be factor of 512.
 
 FIL __not_in_flash("file_handlers") fil[NUM_FILES];
 
-#define PICO_PIN (15)
-#define SCK_PIN (16)
-#define CS_PIN (17)
+struct DACPins
+{
+    uint32_t pico;
+    uint32_t sck;
+    uint32_t cs;
+};
 
-#define PICO_PIN1 (18)
-#define SCK_PIN1 (19)
-#define CS_PIN1 (20)
+std::array<DACPins, NUM_FILES> DAC_PINS
+{{
+    {.pico = 4, .sck = 5, .cs = 6},
+    {.pico = 8, .sck = 9, .cs = 10},
+    {.pico = 12, .sck = 13, .cs = 14},
+    {.pico = 16, .sck = 17, .cs = 18}
+}};
 
-#define PICO_PIN2 (22)
-#define SCK_PIN2 (23)
-#define CS_PIN2 (24)
-
-#define PICO_PIN3 (25)
-#define SCK_PIN3 (26)
-#define CS_PIN3 (27)
 
 /* SDIO Interface */
 static sd_sdio_if_t sdio_if = {
 // Pins CLK_gpio, D1_gpio, D2_gpio, and D3_gpio are at offsets from pin D0_gpio.
 
 //  CLK_gpio = D0_gpio - 2; -> derived from D0_gpio.
-    .CMD_gpio = 3,
-    .D0_gpio = 4,
+    .CMD_gpio = 22, //3,
+    .D0_gpio = 23, //4,
 //    D1_gpio = D0_gpio + 1; -> derived from D0_gpio.
 //    D2_gpio = D0_gpio + 2; -> derived from D0_gpio.
 //    D3_gpio = D0_gpio + 3; -> derived from D0_gpio.
     .SDIO_PIO = pio0,
-    .baud_rate = 150 * 1000 * 1000 / 5, // RP2350: */8 -> 18750000 Hz.
+    .baud_rate = 150 * 1000 * 1000 / 6, // RP2350: */8 -> 18750000 Hz.
                                         // RP2350: */5 -> 30000000 Hz
                                         // RP2040: */6 -> 20833333 Hz
 };
@@ -80,8 +80,8 @@ sd_card_t* sd_get_by_num(size_t num) {
 
 int main() {
     // Setup
-    const char* const filenames[] = {"channel_0.txt", "channel_1.txt",
-                                    "channel_2.txt", "channel_3.txt"};
+    const char* const filenames[] = {"channel_0.bin", "channel_1.bin",
+                                    "channel_2.bin", "channel_3.bin"};
     UINT bytes_read;
 
     stdio_init_all();
@@ -94,11 +94,18 @@ int main() {
     printf("Hello, world, from a Raspberry Pi Pico!\r\n");
 
     // Setup PIO Block for DAC communication.
-    const std::array<PIO_LTC264x, NUM_FILES> dacs
-    {{{pio2, SCK_PIN, PICO_PIN},
-      {pio2, SCK_PIN1, PICO_PIN1, false, dacs[0].get_offset()},
-      {pio2, SCK_PIN2, PICO_PIN2, false, dacs[0].get_offset()},
-      {pio2, SCK_PIN3, PICO_PIN3, false, dacs[0].get_offset()}}};
+    std::array<PIO_LTC264x, NUM_FILES> dacs
+    {{{pio2, DAC_PINS[0].sck, DAC_PINS[0].pico},
+      {pio2, DAC_PINS[1].sck, DAC_PINS[1].pico, false, dacs[0].get_offset()},
+      {pio2, DAC_PINS[2].sck, DAC_PINS[2].pico, false, dacs[0].get_offset()},
+      {pio2, DAC_PINS[3].sck, DAC_PINS[3].pico, false, dacs[0].get_offset()}
+    }};
+
+//    const std::array<PIO_LTC264x, NUM_FILES> dacs
+//    {{{pio2, SCK_PIN, PICO_PIN},
+//      {pio2, SCK_PIN1, PICO_PIN1, false, dacs[0].get_offset()},
+//      {pio2, SCK_PIN2, PICO_PIN2, false, dacs[0].get_offset()},
+//      {pio2, SCK_PIN3, PICO_PIN3, false, dacs[0].get_offset()}}};
     for (size_t i = 0; i < NUM_FILES; ++i)
         printf("dacs[%d]: offset_ = %d, sm = %d \r\n", i, dacs[i].get_offset(),
                dacs[i].get_sm());

@@ -13,9 +13,9 @@ inline constexpr uint32_t WORD_COUNT = 32768;
 
 using T = uint16_t;
 
-#define PICO_PIN (15)
-#define SCK_PIN (16)
-#define CS_PIN (17)
+#define PICO_PIN (4)
+#define SCK_PIN (5)
+#define CS_PIN (6)
 
 int main() {
     UINT bytes_read;
@@ -28,7 +28,7 @@ int main() {
     PIO_LTC264x dac(pio2, SCK_PIN, PICO_PIN);
     dac.start();
 
-    // Setup transfer rate for 500K words-per-sec. Assume soure clock of 150MHz.
+    // Setup transfer rate for 5K words-per-sec. Assume soure clock of 150MHz.
     int dma_timer_chan = dma_claim_unused_timer(true);
     printf("Claimed DMA Timer %d.\r\n", dma_timer_chan);
     dma_timer_set_fraction(dma_timer_chan, 1, 30000); // 5 KHz
