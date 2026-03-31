@@ -218,13 +218,21 @@ registers:
 
 bitMasks:
   DOPort:
-    description: "Available digital IO pins on the device"
+    description: "Available digital output pins on the device"
     bits:
       None: 0x0
       DO0: 0x1
       DO1: 0x2
       DO2: 0x4
       DO3: 0x8
+  DIPort:
+    description: "Available digital input pins on the device"
+    bits:
+      None: 0x0
+      DI0: 0x1
+      DI1: 0x2
+      DI2: 0x4
+      DI3: 0x8
   AOPort:
     description: "Available +/-10V analog outputs on the device"
     bits:
