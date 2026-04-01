@@ -10,26 +10,26 @@ registers:
     address: 32
     type: U8
     access: Write
-    maskType: DIOPort
+    maskType: DOPort
     description: "Read or write the state of the digital IO pins."
   DOPortSet:
     address: 33
     type: U8
     access: Write
-    maskType: DIOPort
+    maskType: DOPort
     description: "Set digital IO pins specified in the mask to logic HIGH by setting the corresponding bit."
   DOPortClear:
     address: 34
     type: U8
     access: Write
-    maskType: DIOPort
+    maskType: DOPort
     description: "Set digital IO specified pins in the mask to logic LOW by setting the corresponding bit."
 
   ExtTriggerState:
     address: 35
     type: U8
     access: Read
-    maskType: DIOPort
+    maskType: DOPort
     description: "Read the raw state of the external trigger pins."
 
   AnalogOutputPortState:
@@ -225,14 +225,6 @@ bitMasks:
       DO1: 0x2
       DO2: 0x4
       DO3: 0x8
-  DIPort:
-    description: "Available digital input pins on the device"
-    bits:
-      None: 0x0
-      DI0: 0x1
-      DI1: 0x2
-      DI2: 0x4
-      DI3: 0x8
   AOPort:
     description: "Available +/-10V analog outputs on the device"
     bits:
