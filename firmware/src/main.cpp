@@ -15,14 +15,12 @@
 HarpCApp& app = HarpCApp::init(HARP_DEVICE_ID,
                                HW_VERSION_MAJOR, HW_VERSION_MINOR,
                                HW_ASSEMBLY_VERSION,
-                               HARP_VERSION_MAJOR, HARP_VERSION_MINOR,
                                FW_VERSION_MAJOR, FW_VERSION_MINOR,
                                UNUSED_SERIAL_NUMBER,
                                "quac",
                                (uint8_t*)GIT_HASH,
-                               &app_regs, app_reg_specs,
-                               reg_handler_fns, APP_REG_COUNT, update_app,
-                               reset_app);
+                               app_reg_specs, APP_REG_COUNT,
+                               update_app, reset_app);
 
 std::array<PIO_LTC264x, NUM_CHANNELS> dacs
 {{

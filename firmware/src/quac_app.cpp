@@ -3,81 +3,70 @@
 app_regs_t app_regs;
 queue_t ext_trigger_event_queue;
 
-RegSpecs app_reg_specs[APP_REG_COUNT]
+
+RegSpec app_reg_specs[]
 {
-    {(uint8_t*)&app_regs.digital_output_port_state, sizeof(app_regs.digital_output_port_state), U8},
-    {(uint8_t*)&app_regs.digital_output_port_set, sizeof(app_regs.digital_output_port_set), U8},
-    {(uint8_t*)&app_regs.digital_output_port_clear, sizeof(app_regs.digital_output_port_clear), U8},
+    RegSpec::U8(&app_regs.digital_output_port_state,
+        read_digital_output_port_state, write_digital_output_port_state),
+    RegSpec::U8(&app_regs.digital_output_port_set,
+        HarpCore::read_reg_error, write_digital_output_port_set),
+    RegSpec::U8(&app_regs.digital_output_port_clear,
+        HarpCore::read_reg_error, write_digital_output_port_clear),
+    RegSpec::U8(&app_regs.ext_trigger_state,
+        read_ext_trigger_state, HarpCore::write_reg_error),
 
-    {(uint8_t*)&app_regs.ext_trigger_state, sizeof(app_regs.ext_trigger_state), U8},
+    RegSpec::U16(&app_regs.analog_output_port_state,
+        read_analog_output_port_state, write_analog_output_port_state),
+    RegSpec::U16(&app_regs.analog_output_channel_0,
+        read_any_analog_output_channel, write_any_analog_output_channel),
+    RegSpec::U16(&app_regs.analog_output_channel_1,
+        read_any_analog_output_channel, write_any_analog_output_channel),
+    RegSpec::U16(&app_regs.analog_output_channel_2,
+        read_any_analog_output_channel, write_any_analog_output_channel),
+    RegSpec::U16(&app_regs.analog_output_channel_3,
+        read_any_analog_output_channel, write_any_analog_output_channel),
 
-    {(uint8_t*)&app_regs.analog_output_port_state, sizeof(app_regs.analog_output_port_state), U16},
-    {(uint8_t*)&app_regs.analog_output_channel_0, sizeof(T), U16},
-    {(uint8_t*)&app_regs.analog_output_channel_1, sizeof(T), U16},
-    {(uint8_t*)&app_regs.analog_output_channel_2, sizeof(T), U16},
-    {(uint8_t*)&app_regs.analog_output_channel_3, sizeof(T), U16},
+    RegSpec::U8(&app_regs.dac_ready,
+        read_dac_ready, HarpCore::write_reg_error),
+    RegSpec::U8(&app_regs.dac_start,
+        HarpCore::read_reg_error, write_dac_start),
+    RegSpec::U8(&app_regs.dac_pause,
+        read_dac_pause, write_dac_pause),
+    RegSpec::U8(&app_regs.dac_abort,
+        read_dac_abort, write_dac_abort),
+    RegSpec::U8(&app_regs.dac_finished,
+        HarpCore::read_reg_error, HarpCore::write_reg_error),
 
-    {(uint8_t*)&app_regs.dac_ready, sizeof(app_regs.dac_ready), U8},
-    {(uint8_t*)&app_regs.dac_start, sizeof(app_regs.dac_start), U8},
-    {(uint8_t*)&app_regs.dac_pause, sizeof(app_regs.dac_pause), U8},
-    {(uint8_t*)&app_regs.dac_abort, sizeof(app_regs.dac_abort), U8},
-    {(uint8_t*)&app_regs.dac_finished, sizeof(app_regs.dac_finished), U8},
+    RegSpec::U8Array(&app_regs.dac_settings[0], sizeof(WaveformSettings),
+        read_any_dac_settings, write_any_dac_settings),
+    RegSpec::U8Array(&app_regs.dac_settings[1], sizeof(WaveformSettings),
+        read_any_dac_settings, write_any_dac_settings),
+    RegSpec::U8Array(&app_regs.dac_settings[2], sizeof(WaveformSettings),
+        read_any_dac_settings, write_any_dac_settings),
+    RegSpec::U8Array(&app_regs.dac_settings[3], sizeof(WaveformSettings),
+        read_any_dac_settings, write_any_dac_settings),
 
-    {(uint8_t*)&app_regs.dac_settings[0], sizeof(WaveformSettings), U8},
-    {(uint8_t*)&app_regs.dac_settings[1], sizeof(WaveformSettings), U8},
-    {(uint8_t*)&app_regs.dac_settings[2], sizeof(WaveformSettings), U8},
-    {(uint8_t*)&app_regs.dac_settings[3], sizeof(WaveformSettings), U8},
-
-    {(uint8_t*)&app_regs.waveform_hashes[0], SHA256_NUM_BYTES, U8},
-    {(uint8_t*)&app_regs.waveform_hashes[1], SHA256_NUM_BYTES, U8},
-    {(uint8_t*)&app_regs.waveform_hashes[2], SHA256_NUM_BYTES, U8},
-    {(uint8_t*)&app_regs.waveform_hashes[3], SHA256_NUM_BYTES, U8},
-
-    // Note: WAVEFORM_MAX_BYTES cannot be coerced into RegSpecs type.
+    RegSpec::U8Array(&app_regs.waveform_hashes[0], SHA256_NUM_BYTES,
+        read_any_waveform_hash, HarpCore::write_reg_error),
+    RegSpec::U8Array(&app_regs.waveform_hashes[1], SHA256_NUM_BYTES,
+        read_any_waveform_hash, HarpCore::write_reg_error),
+    RegSpec::U8Array(&app_regs.waveform_hashes[2], SHA256_NUM_BYTES,
+        read_any_waveform_hash, HarpCore::write_reg_error),
+    RegSpec::U8Array(&app_regs.waveform_hashes[3], SHA256_NUM_BYTES,
+        read_any_waveform_hash, HarpCore::write_reg_error),
+    // Note: WAVEFORM_MAX_BYTES cannot be coerced into RegSpec type.
     // num_bytes should be WAVEFORM_MAX_BYTES
-    {(uint8_t*)&app_regs.waveform_hashes[0], 1, U8},
-    {(uint8_t*)&app_regs.waveform_hashes[0], 1, U8},
-    {(uint8_t*)&app_regs.waveform_hashes[0], 1, U8},
-    {(uint8_t*)&app_regs.waveform_hashes[0], 1, U8},
+    RegSpec::U8Array(&app_regs.waveform_hashes[0], 1,
+        HarpCore::read_reg_error, write_any_waveform_data),
+    RegSpec::U8Array(&app_regs.waveform_hashes[0], 1,
+        HarpCore::read_reg_error, write_any_waveform_data),
+    RegSpec::U8Array(&app_regs.waveform_hashes[0], 1,
+        HarpCore::read_reg_error, write_any_waveform_data),
+    RegSpec::U8Array(&app_regs.waveform_hashes[0], 1,
+    HarpCore::read_reg_error, write_any_waveform_data)
 };
 
-
-RegFnPair reg_handler_fns[APP_REG_COUNT]
-{
-    {read_digital_output_port_state, write_digital_output_port_state},
-    {HarpCore::read_from_write_only_reg_error, write_digital_output_port_set},
-    {HarpCore::read_from_write_only_reg_error, write_digital_output_port_clear},
-
-    {read_ext_trigger_state, HarpCore::write_to_read_only_reg_error},
-
-    {read_analog_output_port_state, write_analog_output_port_state},
-    {read_any_analog_output_channel, write_any_analog_output_channel},
-    {read_any_analog_output_channel, write_any_analog_output_channel},
-    {read_any_analog_output_channel, write_any_analog_output_channel},
-    {read_any_analog_output_channel, write_any_analog_output_channel},
-
-    {read_dac_ready, HarpCore::write_to_read_only_reg_error},
-    {HarpCore::read_from_write_only_reg_error, write_dac_start},
-    {read_dac_pause, write_dac_pause},
-    {read_dac_abort, write_dac_abort},
-    {HarpCore::read_from_write_only_reg_error, HarpCore::write_to_read_only_reg_error},
-
-    {read_any_dac_settings, write_any_dac_settings},
-    {read_any_dac_settings, write_any_dac_settings},
-    {read_any_dac_settings, write_any_dac_settings},
-    {read_any_dac_settings, write_any_dac_settings},
-
-    {read_any_waveform_hash, HarpCore::write_to_read_only_reg_error},
-    {read_any_waveform_hash, HarpCore::write_to_read_only_reg_error},
-    {read_any_waveform_hash, HarpCore::write_to_read_only_reg_error},
-    {read_any_waveform_hash, HarpCore::write_to_read_only_reg_error},
-
-    {HarpCore::read_from_write_only_reg_error, write_any_waveform_data},
-    {HarpCore::read_from_write_only_reg_error, write_any_waveform_data},
-    {HarpCore::read_from_write_only_reg_error, write_any_waveform_data},
-    {HarpCore::read_from_write_only_reg_error, write_any_waveform_data},
-};
-
+const size_t APP_REG_COUNT = sizeof(app_reg_specs);
 
 void read_digital_output_port_state(uint8_t address)
 {
@@ -172,7 +161,7 @@ void read_any_analog_output_channel(uint8_t address)
     if (HarpCore::is_muted())
         return;
     // Convert address to output channel with pointer arithmetic.
-    const RegSpecs& specs = HarpCore::reg_address_to_specs(address);
+    const RegSpec& specs = HarpCore::reg_address_to_spec(address);
     size_t channel = ((uint16_t*)specs.base_ptr - app_regs.analog_output_port_state);
     if (player.channel_is_busy(channel))
     {
@@ -187,7 +176,7 @@ void read_any_analog_output_channel(uint8_t address)
 void write_any_analog_output_channel(msg_t& msg)
 {
     // Convert address to output channel with pointer arithmetic.
-    const RegSpecs& specs = HarpCore::reg_address_to_specs(msg.header.address);
+    const RegSpec& specs = HarpCore::reg_address_to_spec(msg.header.address);
     size_t channel = ((uint16_t*)specs.base_ptr - app_regs.analog_output_port_state);
     if (player.channel_is_busy(channel)) // FIXME: launch core1
     {
@@ -259,8 +248,8 @@ void write_any_dac_settings(msg_t& msg)
 {
     // WriteError if we try to change the specified channel while it's busy.
     // Convert address to output channel with pointer arithmetic.
-    const RegSpecs& specs = HarpCore::reg_address_to_specs(msg.header.address);
-    size_t channel = ((uint16_t*)specs.base_ptr - app_regs.analog_output_port_state);
+    const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
+    size_t channel = ((uint16_t*)spec.base_ptr - app_regs.analog_output_port_state);
     if (player.channel_is_busy(channel))
     {
         HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);

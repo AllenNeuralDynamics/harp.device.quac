@@ -9,16 +9,18 @@
 #include <pico/util/queue.h>
 #include <pico/multicore.h>
 #include <core1_file_player.h>
+#include <reg_spec.h>
 
 using enum reg_type_t;
 
 extern std::array<PIO_LTC264x, NUM_CHANNELS> dacs;
 extern queue_t ext_trigger_event_queue;
+extern MultiFilePlayer<T, NUM_CHANNELS, READ_BUF_SIZE> player;
+extern RegSpec app_reg_specs[];
 
-
-inline constexpr size_t APP_REG_COUNT = 26;
-inline constexpr size_t DAC_START_ADDRESS = APP_REG_START_ADDRESS + 10;
-inline constexpr size_t DAC_FINISHED_ADDRESS = APP_REG_START_ADDRESS + 13;
+extern const size_t APP_REG_COUNT;
+inline constexpr size_t DAC_START_ADDRESS = HarpCore::APP_REG_START_ADDRESS + 10;
+inline constexpr size_t DAC_FINISHED_ADDRESS = HarpCore::APP_REG_START_ADDRESS + 13;
 
 
 struct ext_trigger_event_t
@@ -60,11 +62,7 @@ struct app_regs_t
 };
 #pragma pack(pop)
 
-extern MultiFilePlayer<T, NUM_CHANNELS, READ_BUF_SIZE> player;
 extern app_regs_t app_regs;
-extern RegSpecs app_reg_specs[APP_REG_COUNT];
-extern RegFnPair reg_handler_fns[APP_REG_COUNT];
-
 
 void read_digital_output_port_state(uint8_t address);
 void write_digital_output_port_state(msg_t& msg);
