@@ -7091,7 +7091,7 @@
 				)
 			)
 		)
-		(property "Footprint" "kicad_component_library:L_Bourns-SRP4030FA"
+		(property "Footprint" "kicad-lib:L_Bourns-SRP4030FA"
 			(at 210.82 33.02 0)
 			(effects
 				(font
@@ -16783,7 +16783,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicad-lib:BarrelJack_CUI_PJ-102AH_Horizontal"
+		(property "Footprint" "Connector_BarrelJack:BarrelJack_CUI_PJ-102AH_Horizontal"
 			(at 22.86 34.036 0)
 			(effects
 				(font
