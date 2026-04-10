@@ -9,11 +9,11 @@ RegSpec app_reg_specs[]
     RegSpec::U8(&app_regs.digital_output_port_state,
         read_digital_output_port_state, write_digital_output_port_state),
     RegSpec::U8(&app_regs.digital_output_port_set,
-        HarpCore::read_from_write_only_reg_error, write_digital_output_port_set),
+        HarpCore::read_reg_error, write_digital_output_port_set),
     RegSpec::U8(&app_regs.digital_output_port_clear,
-        HarpCore::read_from_write_only_reg_error, write_digital_output_port_clear),
+        HarpCore::read_reg_error, write_digital_output_port_clear),
     RegSpec::U8(&app_regs.ext_trigger_state,
-        read_ext_trigger_state, HarpCore::write_to_read_only_reg_error),
+        read_ext_trigger_state, HarpCore::write_reg_error),
 
     RegSpec::U16(&app_regs.analog_output_port_state,
         read_analog_output_port_state, write_analog_output_port_state),
@@ -27,15 +27,15 @@ RegSpec app_reg_specs[]
         read_any_analog_output_channel, write_any_analog_output_channel),
 
     RegSpec::U8(&app_regs.dac_ready,
-        read_dac_ready, HarpCore::write_to_read_only_reg_error),
+        read_dac_ready, HarpCore::write_reg_error),
     RegSpec::U8(&app_regs.dac_start,
-        HarpCore::read_from_write_only_reg_error, write_dac_start),
+        HarpCore::read_reg_error, write_dac_start),
     RegSpec::U8(&app_regs.dac_pause,
         read_dac_pause, write_dac_pause),
     RegSpec::U8(&app_regs.dac_abort,
         read_dac_abort, write_dac_abort),
     RegSpec::U8(&app_regs.dac_finished,
-        HarpCore::read_from_write_only_reg_error, HarpCore::write_to_read_only_reg_error),
+        HarpCore::read_reg_error, HarpCore::write_reg_error),
 
     RegSpec::U8Array(&app_regs.dac_settings[0], sizeof(WaveformSettings),
         read_any_dac_settings, write_any_dac_settings),
@@ -47,23 +47,23 @@ RegSpec app_reg_specs[]
         read_any_dac_settings, write_any_dac_settings),
 
     RegSpec::U8Array(&app_regs.waveform_hashes[0], SHA256_NUM_BYTES,
-        read_any_waveform_hash, HarpCore::write_to_read_only_reg_error),
+        read_any_waveform_hash, HarpCore::write_reg_error),
     RegSpec::U8Array(&app_regs.waveform_hashes[1], SHA256_NUM_BYTES,
-        read_any_waveform_hash, HarpCore::write_to_read_only_reg_error),
+        read_any_waveform_hash, HarpCore::write_reg_error),
     RegSpec::U8Array(&app_regs.waveform_hashes[2], SHA256_NUM_BYTES,
-        read_any_waveform_hash, HarpCore::write_to_read_only_reg_error),
+        read_any_waveform_hash, HarpCore::write_reg_error),
     RegSpec::U8Array(&app_regs.waveform_hashes[3], SHA256_NUM_BYTES,
-        read_any_waveform_hash, HarpCore::write_to_read_only_reg_error),
+        read_any_waveform_hash, HarpCore::write_reg_error),
     // Note: WAVEFORM_MAX_BYTES cannot be coerced into RegSpec type.
     // num_bytes should be WAVEFORM_MAX_BYTES
     RegSpec::U8Array(&app_regs.waveform_hashes[0], 1,
-        HarpCore::read_from_write_only_reg_error, write_any_waveform_data),
+        HarpCore::read_reg_error, write_any_waveform_data),
     RegSpec::U8Array(&app_regs.waveform_hashes[0], 1,
-        HarpCore::read_from_write_only_reg_error, write_any_waveform_data),
+        HarpCore::read_reg_error, write_any_waveform_data),
     RegSpec::U8Array(&app_regs.waveform_hashes[0], 1,
-        HarpCore::read_from_write_only_reg_error, write_any_waveform_data),
+        HarpCore::read_reg_error, write_any_waveform_data),
     RegSpec::U8Array(&app_regs.waveform_hashes[0], 1,
-    HarpCore::read_from_write_only_reg_error, write_any_waveform_data)
+    HarpCore::read_reg_error, write_any_waveform_data)
 };
 
 const size_t APP_REG_COUNT = sizeof(app_reg_specs);

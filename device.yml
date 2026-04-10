@@ -17,13 +17,15 @@ registers:
     type: U8
     access: Write
     maskType: DOPort
-    description: "Set digital IO pins specified in the mask to logic HIGH by setting the corresponding bit."
+    description: "Set digital IO pins specified in the mask to logic HIGH by
+                  setting the corresponding bit."
   DOPortClear:
     address: 34
     type: U8
     access: Write
     maskType: DOPort
-    description: "Set digital IO specified pins in the mask to logic LOW by setting the corresponding bit."
+    description: "Set digital IO specified pins in the mask to logic LOW by
+                  setting the corresponding bit."
 
   ExtTriggerState:
     address: 35

@@ -15,7 +15,6 @@
 HarpCApp& app = HarpCApp::init(HARP_DEVICE_ID,
                                HW_VERSION_MAJOR, HW_VERSION_MINOR,
                                HW_ASSEMBLY_VERSION,
-                               HARP_VERSION_MAJOR, HARP_VERSION_MINOR,
                                FW_VERSION_MAJOR, FW_VERSION_MINOR,
                                UNUSED_SERIAL_NUMBER,
                                "quac",
