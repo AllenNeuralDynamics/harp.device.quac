@@ -88,10 +88,6 @@
           ""
         ],
         [
-          "silk_over_copper|152557968|126972836|2ff1ffe5-5564-47f8-bb01-5b349c830a27|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
           "silk_over_copper|155888032|127227164|ad111a5c-ed1c-468e-9522-aedc4478c2dc|00000000-0000-0000-0000-000000000000",
           ""
         ],
@@ -1549,18 +1545,12 @@
           "group_by": false,
           "label": "Value",
           "name": "Value",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "MPN",
-          "name": "Manufacturer_Part_Number",
           "show": true
         },
         {
           "group_by": false,
-          "label": "MFN",
-          "name": "Manufacturer_Name",
+          "label": "Manufacturer Number",
+          "name": "Manufacturer Number",
           "show": true
         },
         {
@@ -1643,27 +1633,9 @@
         },
         {
           "group_by": false,
-          "label": "Manufacturer Number",
-          "name": "Manufacturer Number",
-          "show": true
-        },
-        {
-          "group_by": false,
           "label": "Link",
           "name": "Link",
           "show": true
-        },
-        {
-          "group_by": false,
-          "label": "Mouser Part Number",
-          "name": "Mouser Part Number",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Mouser Price/Stock",
-          "name": "Mouser Price/Stock",
-          "show": false
         },
         {
           "group_by": false,
@@ -1713,7 +1685,7 @@
       "include_excluded_from_bom": false,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Reference"
+      "sort_field": "Value"
     },
     "connection_grid_size": 50.0,
     "drawing": {

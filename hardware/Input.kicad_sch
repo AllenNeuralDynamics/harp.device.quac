@@ -12,6 +12,130 @@
 		(comment 1 "Hexabitz")
 	)
 	(lib_symbols
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "harp.device.quad.dac:74LVCH2T45DC"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1245,10 +1369,28 @@
 		(uuid "fe6a78df-95fe-479a-809f-1bd22373e5e2")
 	)
 	(junction
-		(at 125.73 138.43)
+		(at 124.46 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "08e9c4d0-0ddb-45cc-90b6-cb66b79d5be7")
+		(uuid "00666e8b-014c-4b67-9823-6c15e36d59d6")
+	)
+	(junction
+		(at 129.54 116.84)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "20974c57-6aff-432c-af06-319a30a9e942")
+	)
+	(junction
+		(at 129.54 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "25e15ffe-1ee4-4a82-bae1-e9422d42735c")
+	)
+	(junction
+		(at 124.46 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2e9334b0-1c15-46c1-a526-8b7c6df21cec")
 	)
 	(junction
 		(at 149.86 116.84)
@@ -1257,16 +1399,28 @@
 		(uuid "3a99747e-ab94-4b0f-a74d-c9bfdd5de994")
 	)
 	(junction
-		(at 125.73 80.01)
+		(at 124.46 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "3fce4a29-a222-4df5-9edc-22d8533e9014")
+		(uuid "42173208-2eac-402b-9ffa-ec25e008cb29")
 	)
 	(junction
-		(at 125.73 116.84)
+		(at 129.54 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6b4e080e-817f-46cc-aa39-46b9d8cfd441")
+		(uuid "6bddd449-7c2b-4434-9ef9-19df823824d5")
+	)
+	(junction
+		(at 124.46 148.59)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "71e72cfe-3e08-4333-baf2-e8e10bc1f878")
+	)
+	(junction
+		(at 124.46 127)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "76f18ee8-952a-4f95-826a-9c33d9c4b1a9")
 	)
 	(junction
 		(at 149.86 58.42)
@@ -1275,16 +1429,34 @@
 		(uuid "7f54e6bf-3a72-499e-a7b3-4f6bdcd90a5d")
 	)
 	(junction
+		(at 124.46 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "840e39a3-b0cf-48b5-bd28-3e1ab68a82f2")
+	)
+	(junction
+		(at 124.46 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "94a4411c-7626-4e25-99b7-485cdc78c6b4")
+	)
+	(junction
 		(at 154.94 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "96fc98ef-cb1e-467d-ad76-67dd847b4556")
 	)
 	(junction
-		(at 125.73 59.69)
+		(at 124.46 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a175fc04-ebe3-45f2-ba42-176c646a56da")
+		(uuid "b4193cef-f296-4d11-a7ea-90e94c71fdad")
+	)
+	(junction
+		(at 129.54 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bcc31c1e-2d6f-4618-9d01-185123be3c9b")
 	)
 	(junction
 		(at 154.94 116.84)
@@ -1294,7 +1466,17 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 127) (xy 125.73 125.73)
+			(xy 124.46 148.59) (xy 129.54 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02981fb6-8da3-49a3-9823-29bc0dbf529d")
+	)
+	(wire
+		(pts
+			(xy 124.46 127) (xy 124.46 125.73)
 		)
 		(stroke
 			(width 0)
@@ -1354,13 +1536,13 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 116.84) (xy 132.08 116.84)
+			(xy 129.54 116.84) (xy 132.08 116.84)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1a8c86a9-a904-4c20-8aa6-b090fc97dd17")
+		(uuid "24b974f0-967c-48d6-9dc9-c2935cc982b5")
 	)
 	(wire
 		(pts
@@ -1371,6 +1553,16 @@
 			(type default)
 		)
 		(uuid "269261ed-ce2a-429a-8708-93bebfd77449")
+	)
+	(wire
+		(pts
+			(xy 124.46 149.86) (xy 124.46 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26df67f9-2f1a-4044-a221-8c4e79d4a7ad")
 	)
 	(wire
 		(pts
@@ -1424,7 +1616,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 80.01) (xy 125.73 80.01)
+			(xy 123.19 80.01) (xy 124.46 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1444,7 +1636,37 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 68.58) (xy 125.73 69.85)
+			(xy 129.54 138.43) (xy 129.54 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f039004-85df-4f2c-ae92-7228e1e43fe5")
+	)
+	(wire
+		(pts
+			(xy 129.54 116.84) (xy 129.54 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a7dbd7e-c545-4a3d-8406-1a1dd8dfa319")
+	)
+	(wire
+		(pts
+			(xy 129.54 69.85) (xy 129.54 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f08e91a-1100-4e9c-92a7-c9849ce7560d")
+	)
+	(wire
+		(pts
+			(xy 124.46 68.58) (xy 124.46 69.85)
 		)
 		(stroke
 			(width 0)
@@ -1454,7 +1676,27 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 138.43) (xy 125.73 138.43)
+			(xy 129.54 59.69) (xy 129.54 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6846fa8e-75d0-4f00-b682-1d2e7861bd83")
+	)
+	(wire
+		(pts
+			(xy 124.46 59.69) (xy 129.54 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b1ddd08-bc0d-4120-840a-08f6b8dd4430")
+	)
+	(wire
+		(pts
+			(xy 123.19 138.43) (xy 124.46 138.43)
 		)
 		(stroke
 			(width 0)
@@ -1471,6 +1713,16 @@
 			(type default)
 		)
 		(uuid "71c01c60-5ae0-4d59-b5c9-c42f3476ccaf")
+	)
+	(wire
+		(pts
+			(xy 124.46 116.84) (xy 129.54 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76b1f424-3368-4e88-83d9-25f79940edc0")
 	)
 	(wire
 		(pts
@@ -1524,6 +1776,16 @@
 	)
 	(wire
 		(pts
+			(xy 124.46 91.44) (xy 124.46 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86f2f33a-04bb-46ad-82c3-27c15b819aa6")
+	)
+	(wire
+		(pts
 			(xy 162.56 74.93) (xy 163.83 74.93)
 		)
 		(stroke
@@ -1534,7 +1796,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 139.7) (xy 125.73 138.43)
+			(xy 124.46 139.7) (xy 124.46 138.43)
 		)
 		(stroke
 			(width 0)
@@ -1551,6 +1813,16 @@
 			(type default)
 		)
 		(uuid "8a1ccff7-6202-4dc0-b03b-615d0a7bbb43")
+	)
+	(wire
+		(pts
+			(xy 124.46 138.43) (xy 129.54 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e8f25b9-28ff-4857-9ecc-18bfa77b047d")
 	)
 	(wire
 		(pts
@@ -1574,6 +1846,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 147.32) (xy 129.54 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "910646eb-e3f9-4fab-b6d8-7667ba642854")
+	)
+	(wire
+		(pts
 			(xy 146.05 116.84) (xy 149.86 116.84)
 		)
 		(stroke
@@ -1594,7 +1876,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 118.11) (xy 125.73 116.84)
+			(xy 124.46 118.11) (xy 124.46 116.84)
 		)
 		(stroke
 			(width 0)
@@ -1624,6 +1906,26 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 88.9) (xy 129.54 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae261a14-4a01-4f2a-b7ae-a43afafe182e")
+	)
+	(wire
+		(pts
+			(xy 129.54 80.01) (xy 129.54 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b01d7a0c-9acb-4bb7-b5d0-cf07c36312bd")
+	)
+	(wire
+		(pts
 			(xy 152.4 85.09) (xy 152.4 86.36)
 		)
 		(stroke
@@ -1631,6 +1933,16 @@
 			(type default)
 		)
 		(uuid "b22a0257-d312-4244-a6f4-332a9442bb0d")
+	)
+	(wire
+		(pts
+			(xy 124.46 90.17) (xy 129.54 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2a1e4ee-711f-4488-a1c3-2e399298f0f4")
 	)
 	(wire
 		(pts
@@ -1644,6 +1956,26 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 80.01) (xy 132.08 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "beeea250-53a3-4da6-bbd6-1074d95434a9")
+	)
+	(wire
+		(pts
+			(xy 124.46 80.01) (xy 129.54 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4abdf2a-fa84-4a2b-b42c-c827e1eb199a")
+	)
+	(wire
+		(pts
 			(xy 132.08 133.35) (xy 132.08 138.43)
 		)
 		(stroke
@@ -1654,13 +1986,43 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 81.28) (xy 125.73 80.01)
+			(xy 124.46 81.28) (xy 124.46 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "cbc58a2e-1407-48de-8e20-f7e443befc01")
+	)
+	(wire
+		(pts
+			(xy 129.54 138.43) (xy 132.08 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc955d0d-20ce-4d62-8c43-f82da70a1a63")
+	)
+	(wire
+		(pts
+			(xy 124.46 69.85) (xy 124.46 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf28f154-ce9c-4b08-81c0-ccf96034526f")
+	)
+	(wire
+		(pts
+			(xy 129.54 59.69) (xy 132.08 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0422b7c-6e2b-4940-94be-3340814dec5d")
 	)
 	(wire
 		(pts
@@ -1671,16 +2033,6 @@
 			(type default)
 		)
 		(uuid "d0789cd5-405f-4ba3-aebf-2abc5318ac0f")
-	)
-	(wire
-		(pts
-			(xy 125.73 80.01) (xy 132.08 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d6f20d9d-69c6-4d66-8a92-a27c0de3f040")
 	)
 	(wire
 		(pts
@@ -1704,7 +2056,17 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 116.84) (xy 125.73 116.84)
+			(xy 129.54 125.73) (xy 129.54 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d842d050-fe80-4a4c-91c2-2824fa631861")
+	)
+	(wire
+		(pts
+			(xy 123.19 116.84) (xy 124.46 116.84)
 		)
 		(stroke
 			(width 0)
@@ -1714,13 +2076,13 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 138.43) (xy 132.08 138.43)
+			(xy 124.46 128.27) (xy 124.46 127)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "da42c57c-6c11-4c71-8272-b05e8d35785b")
+		(uuid "df458b89-2635-49dd-be56-ff76660b65bd")
 	)
 	(wire
 		(pts
@@ -1734,17 +2096,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 59.69) (xy 132.08 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e0c3ce57-1f48-44f8-bef5-f204f7e68233")
-	)
-	(wire
-		(pts
-			(xy 125.73 148.59) (xy 125.73 147.32)
+			(xy 124.46 148.59) (xy 124.46 147.32)
 		)
 		(stroke
 			(width 0)
@@ -1754,7 +2106,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 60.96) (xy 125.73 59.69)
+			(xy 124.46 60.96) (xy 124.46 59.69)
 		)
 		(stroke
 			(width 0)
@@ -1764,7 +2116,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 59.69) (xy 125.73 59.69)
+			(xy 123.19 59.69) (xy 124.46 59.69)
 		)
 		(stroke
 			(width 0)
@@ -1814,6 +2166,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 69.85) (xy 124.46 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "faf458be-3421-4c42-8d58-13bea33e38f9")
+	)
+	(wire
+		(pts
 			(xy 154.94 55.88) (xy 154.94 58.42)
 		)
 		(stroke
@@ -1824,7 +2186,17 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 90.17) (xy 125.73 88.9)
+			(xy 124.46 127) (xy 129.54 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd01337c-c139-4ea6-aec2-9cc9efb7601f")
+	)
+	(wire
+		(pts
+			(xy 124.46 90.17) (xy 124.46 88.9)
 		)
 		(stroke
 			(width 0)
@@ -1922,7 +2294,7 @@
 	)
 	(symbol
 		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
-		(at 125.73 143.51 270)
+		(at 124.46 143.51 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1930,7 +2302,7 @@
 		(dnp no)
 		(uuid "03af9d4b-b088-432f-aad5-490e272b272e")
 		(property "Reference" "D14"
-			(at 127.762 141.224 90)
+			(at 122.428 141.224 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1938,7 +2310,7 @@
 			)
 		)
 		(property "Value" "VBUS05N1-HD1-G3-08"
-			(at 129.54 143.51 0)
+			(at 128.27 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1947,7 +2319,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-882"
-			(at 120.65 143.51 0)
+			(at 119.38 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1956,7 +2328,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/86201/vbus05n1-hd1.pdf"
-			(at 134.62 142.494 0)
+			(at 133.35 142.494 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1965,7 +2337,7 @@
 			)
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
-			(at 131.572 143.002 0)
+			(at 130.302 143.002 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1974,7 +2346,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/vishay-general-semiconductor-diodes-division/VBUS05N1-HD1-G3-08/16028335"
-			(at 125.73 143.51 90)
+			(at 124.46 143.51 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1983,7 +2355,7 @@
 			)
 		)
 		(property "Manufacturer" "Vishay General Semiconductor - Diodes Division"
-			(at 125.73 143.51 90)
+			(at 124.46 143.51 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1992,7 +2364,7 @@
 			)
 		)
 		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
-			(at 125.73 143.51 90)
+			(at 124.46 143.51 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2001,7 +2373,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 125.73 143.51 90)
+			(at 124.46 143.51 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2010,7 +2382,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 125.73 143.51 90)
+			(at 124.46 143.51 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2019,7 +2391,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 125.73 143.51 90)
+			(at 124.46 143.51 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2028,43 +2400,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 125.73 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 125.73 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 125.73 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 125.73 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 125.73 143.51 90)
+			(at 124.46 143.51 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2073,7 +2409,7 @@
 			)
 		)
 		(property "Supplier Link" ""
-			(at 125.73 143.51 90)
+			(at 124.46 143.51 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2213,42 +2549,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 152.4 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 152.4 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 152.4 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 152.4 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
 			(at 152.4 72.39 0)
 			(effects
@@ -2299,7 +2599,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 125.73 90.17 0)
+		(at 124.46 91.44 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2307,7 +2607,7 @@
 		(dnp no)
 		(uuid "19ae5ab3-2da7-4b13-8fbc-0be923d03dce")
 		(property "Reference" "#PWR0142"
-			(at 125.73 96.52 0)
+			(at 124.46 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2316,7 +2616,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 123.825 93.98 0)
+			(at 122.555 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2325,7 +2625,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 125.73 90.17 0)
+			(at 124.46 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2334,7 +2634,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 90.17 0)
+			(at 124.46 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2343,7 +2643,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 125.73 90.17 0)
+			(at 124.46 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2701,42 +3001,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 118.11 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 118.11 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 118.11 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 118.11 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
 			(at 118.11 138.43 0)
 			(effects
@@ -2957,42 +3221,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 118.11 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 118.11 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 118.11 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 118.11 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
 			(at 118.11 80.01 0)
 			(effects
@@ -3134,42 +3362,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 118.11 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 118.11 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 118.11 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 118.11 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 118.11 116.84 0)
 			(effects
 				(font
@@ -3424,42 +3616,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 142.24 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 142.24 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 142.24 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 142.24 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
 			(at 142.24 58.42 90)
 			(effects
@@ -3643,42 +3799,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 181.61 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 181.61 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 181.61 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 181.61 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
 			(at 181.61 95.25 0)
 			(effects
@@ -3845,42 +3965,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 162.56 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 162.56 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 162.56 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 162.56 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 162.56 58.42 90)
 			(effects
 				(font
@@ -4107,42 +4191,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 152.4 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 152.4 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 152.4 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 152.4 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
 			(at 152.4 130.81 0)
 			(effects
@@ -4263,6 +4311,145 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 129.54 121.92 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8f7d7071-dec7-4f9b-9eef-a100fea38d4b")
+		(property "Reference" "R98"
+			(at 127.254 118.364 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 129.54 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 131.318 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+			(at 129.54 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 129.54 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 129.54 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC1005F103CS"
+			(at 129.54 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+			(at 129.54 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 129.54 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 129.54 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 129.54 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 129.54 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 129.54 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6cbae450-6fa5-4285-88b7-6287d112b1db")
+		)
+		(pin "2"
+			(uuid "33be4674-4697-4a90-9e79-c3f06773ff10")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
+					(reference "R98")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 154.94 55.88 0)
 		(unit 1)
@@ -4335,7 +4522,7 @@
 	)
 	(symbol
 		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
-		(at 125.73 85.09 270)
+		(at 124.46 85.09 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4343,7 +4530,7 @@
 		(dnp no)
 		(uuid "927a52b9-067a-42ba-9f1b-0043e51c0efa")
 		(property "Reference" "D12"
-			(at 127.762 82.804 90)
+			(at 122.174 82.804 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4351,7 +4538,7 @@
 			)
 		)
 		(property "Value" "VBUS05N1-HD1-G3-08"
-			(at 129.54 85.09 0)
+			(at 128.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4360,7 +4547,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-882"
-			(at 120.65 85.09 0)
+			(at 119.38 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4369,7 +4556,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/86201/vbus05n1-hd1.pdf"
-			(at 134.62 84.074 0)
+			(at 133.35 84.074 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4378,7 +4565,7 @@
 			)
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
-			(at 131.572 84.582 0)
+			(at 130.302 84.582 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4387,7 +4574,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/vishay-general-semiconductor-diodes-division/VBUS05N1-HD1-G3-08/16028335"
-			(at 125.73 85.09 90)
+			(at 124.46 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4396,7 +4583,7 @@
 			)
 		)
 		(property "Manufacturer" "Vishay General Semiconductor - Diodes Division"
-			(at 125.73 85.09 90)
+			(at 124.46 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4405,7 +4592,7 @@
 			)
 		)
 		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
-			(at 125.73 85.09 90)
+			(at 124.46 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4414,7 +4601,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 125.73 85.09 90)
+			(at 124.46 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4423,7 +4610,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 125.73 85.09 90)
+			(at 124.46 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4432,7 +4619,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 125.73 85.09 90)
+			(at 124.46 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4441,43 +4628,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 125.73 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 125.73 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 125.73 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 125.73 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 125.73 85.09 90)
+			(at 124.46 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4486,7 +4637,7 @@
 			)
 		)
 		(property "Supplier Link" ""
-			(at 125.73 85.09 90)
+			(at 124.46 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4725,42 +4876,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 162.56 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 162.56 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 162.56 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 162.56 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
 			(at 162.56 116.84 90)
 			(effects
@@ -4864,7 +4979,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 125.73 127 0)
+		(at 124.46 128.27 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4872,7 +4987,7 @@
 		(dnp no)
 		(uuid "9d0bfd97-bec5-41c1-a008-69efe03ac784")
 		(property "Reference" "#PWR0143"
-			(at 125.73 133.35 0)
+			(at 124.46 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4881,7 +4996,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 123.825 130.81 0)
+			(at 122.555 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4890,7 +5005,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 125.73 127 0)
+			(at 124.46 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4899,7 +5014,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 127 0)
+			(at 124.46 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4908,7 +5023,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 125.73 127 0)
+			(at 124.46 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4936,7 +5051,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 125.73 148.59 0)
+		(at 124.46 149.86 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4944,7 +5059,7 @@
 		(dnp no)
 		(uuid "9f83c682-b585-4f9b-a196-34615e5ad2e0")
 		(property "Reference" "#PWR0144"
-			(at 125.73 154.94 0)
+			(at 124.46 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4953,7 +5068,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 123.825 152.4 0)
+			(at 122.555 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4962,7 +5077,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 125.73 148.59 0)
+			(at 124.46 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4971,7 +5086,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 148.59 0)
+			(at 124.46 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4980,7 +5095,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 125.73 148.59 0)
+			(at 124.46 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5008,7 +5123,7 @@
 	)
 	(symbol
 		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
-		(at 125.73 121.92 270)
+		(at 124.46 121.92 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5016,7 +5131,7 @@
 		(dnp no)
 		(uuid "a2932560-2525-4a54-ba93-ef10e07ba59f")
 		(property "Reference" "D13"
-			(at 127.762 119.634 90)
+			(at 122.428 119.634 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5024,7 +5139,7 @@
 			)
 		)
 		(property "Value" "VBUS05N1-HD1-G3-08"
-			(at 129.54 121.92 0)
+			(at 128.27 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5033,7 +5148,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-882"
-			(at 120.65 121.92 0)
+			(at 119.38 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5042,7 +5157,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/86201/vbus05n1-hd1.pdf"
-			(at 134.62 120.904 0)
+			(at 133.35 120.904 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5051,7 +5166,7 @@
 			)
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
-			(at 131.572 121.412 0)
+			(at 130.302 121.412 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5060,7 +5175,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/vishay-general-semiconductor-diodes-division/VBUS05N1-HD1-G3-08/16028335"
-			(at 125.73 121.92 90)
+			(at 124.46 121.92 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5069,7 +5184,7 @@
 			)
 		)
 		(property "Manufacturer" "Vishay General Semiconductor - Diodes Division"
-			(at 125.73 121.92 90)
+			(at 124.46 121.92 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5078,7 +5193,7 @@
 			)
 		)
 		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
-			(at 125.73 121.92 90)
+			(at 124.46 121.92 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5087,7 +5202,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 125.73 121.92 90)
+			(at 124.46 121.92 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5096,7 +5211,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 125.73 121.92 90)
+			(at 124.46 121.92 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5105,7 +5220,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 125.73 121.92 90)
+			(at 124.46 121.92 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5114,43 +5229,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 125.73 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 125.73 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 125.73 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 125.73 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 125.73 121.92 90)
+			(at 124.46 121.92 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5159,7 +5238,7 @@
 			)
 		)
 		(property "Supplier Link" ""
-			(at 125.73 121.92 90)
+			(at 124.46 121.92 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5248,6 +5327,284 @@
 			(project "multi_ch_harp_dac"
 				(path "/bcebacf6-3a3d-4b86-825a-a573788c489f/3d5c816b-acda-40a0-af6b-bbc77a846000"
 					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 129.54 143.51 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a7c3708a-e640-4d12-b5ed-b33a537db673")
+		(property "Reference" "R99"
+			(at 127.254 139.954 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 129.54 143.51 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 131.318 143.51 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+			(at 129.54 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 129.54 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 129.54 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC1005F103CS"
+			(at 129.54 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+			(at 129.54 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 129.54 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 129.54 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 129.54 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 129.54 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 129.54 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "771758ba-6bbf-4cc4-bc34-a4835a9fb728")
+		)
+		(pin "2"
+			(uuid "3b468cf0-57ff-4205-aded-678950d816f2")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
+					(reference "R99")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 129.54 85.09 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ad1f642b-7bd8-4934-ba3a-462846b0913f")
+		(property "Reference" "R97"
+			(at 127.254 81.534 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 129.54 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 131.318 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+			(at 129.54 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 129.54 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 129.54 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC1005F103CS"
+			(at 129.54 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+			(at 129.54 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 129.54 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 129.54 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 129.54 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 129.54 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 129.54 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6bbd0c15-2efa-4d94-a5cd-da031159f7bd")
+		)
+		(pin "2"
+			(uuid "27d1dde7-720b-487c-ab34-73ea7f4c9b7e")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
+					(reference "R97")
 					(unit 1)
 				)
 			)
@@ -5611,42 +5968,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 142.24 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 142.24 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 142.24 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 142.24 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
 			(at 142.24 116.84 90)
 			(effects
@@ -5796,42 +6117,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 118.11 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 118.11 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 118.11 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 118.11 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
 			(at 118.11 59.69 0)
 			(effects
@@ -5935,7 +6220,7 @@
 	)
 	(symbol
 		(lib_id "kicad_component_library:VBUS05N1-HD1-G3-08")
-		(at 125.73 64.77 270)
+		(at 124.46 64.77 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5943,7 +6228,7 @@
 		(dnp no)
 		(uuid "e135193c-f31c-49f7-a9f3-ed4b355df8dc")
 		(property "Reference" "D11"
-			(at 127.762 62.484 90)
+			(at 122.428 62.484 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5951,7 +6236,7 @@
 			)
 		)
 		(property "Value" "VBUS05N1-HD1-G3-08"
-			(at 129.54 64.77 0)
+			(at 128.27 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5960,7 +6245,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-882"
-			(at 120.65 64.77 0)
+			(at 119.38 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5969,7 +6254,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/86201/vbus05n1-hd1.pdf"
-			(at 134.62 63.754 0)
+			(at 133.35 63.754 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5978,7 +6263,7 @@
 			)
 		)
 		(property "Description" "unidirectional Transient Voltage Suppressor, 5.5Vrwm, DFN1006-2A, 0.5pF Capacitance"
-			(at 131.572 64.262 0)
+			(at 130.302 64.262 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5987,7 +6272,7 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/vishay-general-semiconductor-diodes-division/VBUS05N1-HD1-G3-08/16028335"
-			(at 125.73 64.77 90)
+			(at 124.46 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5996,7 +6281,7 @@
 			)
 		)
 		(property "Manufacturer" "Vishay General Semiconductor - Diodes Division"
-			(at 125.73 64.77 90)
+			(at 124.46 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6005,7 +6290,7 @@
 			)
 		)
 		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
-			(at 125.73 64.77 90)
+			(at 124.46 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6014,7 +6299,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 125.73 64.77 90)
+			(at 124.46 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6023,7 +6308,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 125.73 64.77 90)
+			(at 124.46 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6032,7 +6317,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 125.73 64.77 90)
+			(at 124.46 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6041,43 +6326,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 125.73 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 125.73 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 125.73 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 125.73 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 125.73 64.77 90)
+			(at 124.46 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6086,7 +6335,7 @@
 			)
 		)
 		(property "Supplier Link" ""
-			(at 125.73 64.77 90)
+			(at 124.46 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6252,6 +6501,145 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 129.54 64.77 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f2c1bd26-18d1-49c1-afdd-68848b83c81c")
+		(property "Reference" "R96"
+			(at 127.508 61.214 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 129.54 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 131.318 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+			(at 129.54 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 129.54 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 129.54 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "RC1005F103CS"
+			(at 129.54 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+			(at 129.54 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 129.54 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 129.54 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 129.54 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 129.54 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier Link" ""
+			(at 129.54 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d7ac55ce-d2ee-4028-bc01-9000561b8c87")
+		)
+		(pin "2"
+			(uuid "f99f5fee-cdb6-425a-a093-34b6f88a9946")
+		)
+		(instances
+			(project "harp.device.quad.dac"
+				(path "/6b47c519-21c4-43bd-9777-b273999e4447/8b495cef-3a6a-4801-9796-978978016448"
+					(reference "R96")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 118.11 86.36 0)
 		(unit 1)
@@ -6325,7 +6713,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 125.73 69.85 0)
+		(at 124.46 71.12 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6333,7 +6721,7 @@
 		(dnp no)
 		(uuid "f948bdbc-3ce2-410e-8a56-12cc9912b160")
 		(property "Reference" "#PWR0141"
-			(at 125.73 76.2 0)
+			(at 124.46 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6342,7 +6730,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 123.825 73.66 0)
+			(at 122.555 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6351,7 +6739,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 125.73 69.85 0)
+			(at 124.46 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6360,7 +6748,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 69.85 0)
+			(at 124.46 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6369,7 +6757,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 125.73 69.85 0)
+			(at 124.46 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
