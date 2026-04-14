@@ -8194,7 +8194,7 @@
 			(uuid "5eaa6bf2-c3bb-46fb-96d3-5b05b80b840b")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
 					(reference "#FLG08")
 					(unit 1)
@@ -10894,7 +10894,7 @@
 			(uuid "0eba6a59-d5a1-49ab-94e9-6da62b49ebea")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
 					(reference "#PWR0135")
 					(unit 1)
@@ -16831,7 +16831,7 @@
 			(uuid "531b7789-12da-4bef-afce-6eb9bdbcec47")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
 					(reference "U17")
 					(unit 1)
@@ -17345,7 +17345,7 @@
 			(uuid "8372fbf3-ec4f-4778-9077-67b70de666f2")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/1945aa77-a929-44fd-b3b6-12787633d2f2"
 					(reference "#FLG07")
 					(unit 1)

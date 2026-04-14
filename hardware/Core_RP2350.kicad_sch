@@ -8235,8 +8235,8 @@
 		(uuid "734f31a7-7571-4273-82fb-3c6b885358eb")
 	)
 	(no_connect
-		(at 134.62 113.03)
-		(uuid "7cd76ffc-2ff0-4526-bc10-fe34a790c228")
+		(at 134.62 123.19)
+		(uuid "9879291a-5266-404a-9969-ea5198cec8f7")
 	)
 	(no_connect
 		(at 195.58 62.23)
@@ -9100,7 +9100,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 120.65) (xy 135.89 120.65)
+			(xy 134.62 118.11) (xy 135.89 118.11)
 		)
 		(stroke
 			(width 0)
@@ -9600,7 +9600,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 123.19) (xy 135.89 123.19)
+			(xy 134.62 120.65) (xy 135.89 120.65)
 		)
 		(stroke
 			(width 0)
@@ -10540,7 +10540,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 115.57) (xy 135.89 115.57)
+			(xy 134.62 113.03) (xy 135.89 113.03)
 		)
 		(stroke
 			(width 0)
@@ -11450,7 +11450,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 118.11) (xy 135.89 118.11)
+			(xy 134.62 115.57) (xy 135.89 115.57)
 		)
 		(stroke
 			(width 0)
@@ -12634,7 +12634,7 @@
 	)
 	(global_label "ExtTrigCh2"
 		(shape input)
-		(at 135.89 120.65 0)
+		(at 135.89 118.11 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12644,7 +12644,7 @@
 		)
 		(uuid "15305a44-3cde-4d92-9f2c-ac65aa79cbcc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 148.9141 120.65 0)
+			(at 148.9141 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12700,7 +12700,7 @@
 	)
 	(global_label "ExtTrigCh3"
 		(shape input)
-		(at 135.89 123.19 0)
+		(at 135.89 120.65 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12710,7 +12710,7 @@
 		)
 		(uuid "2c6b4ed8-aaec-4ebf-9606-79933acb8863")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 148.9141 123.19 0)
+			(at 148.9141 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12876,7 +12876,7 @@
 	)
 	(global_label "ExtTrigCh1"
 		(shape input)
-		(at 135.89 118.11 0)
+		(at 135.89 115.57 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12886,7 +12886,7 @@
 		)
 		(uuid "7605d018-1621-4ab3-893e-e5b4f589a97a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 148.9141 118.11 0)
+			(at 148.9141 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13140,7 +13140,7 @@
 	)
 	(global_label "ExtTrigCh0"
 		(shape input)
-		(at 135.89 115.57 0)
+		(at 135.89 113.03 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13150,7 +13150,7 @@
 		)
 		(uuid "d3035342-7f75-4911-98d7-e6f62adc2ea3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 148.9141 115.57 0)
+			(at 148.9141 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18827,7 +18827,7 @@
 			(uuid "8c22eb6d-f90c-47db-9264-c3228dfbfc9e")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "D29")
 					(unit 1)
@@ -25039,7 +25039,7 @@
 			(uuid "2e767715-4cfe-457f-8906-ff50a11fb5bb")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "D5")
 					(unit 1)
@@ -28115,7 +28115,7 @@
 			(uuid "5c735371-34a3-4f7c-bdcd-587aa4183efa")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "U32")
 					(unit 1)
@@ -29272,7 +29272,7 @@
 			(uuid "9ef78edd-5932-4bce-b348-ea7f1c519f96")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/5973743b-c3fc-4963-acef-26c8fa426708"
 					(reference "J5")
 					(unit 1)

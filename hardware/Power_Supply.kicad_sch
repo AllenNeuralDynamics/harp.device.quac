@@ -7865,7 +7865,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized")
-		(at 127 162.56 0)
+		(at 127 162.56 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7873,7 +7873,7 @@
 		(dnp no)
 		(uuid "147c3924-0881-447f-82cc-dc1613ee1d0a")
 		(property "Reference" "C12"
-			(at 127.254 160.528 0)
+			(at 126.746 164.592 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7882,7 +7882,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 127.254 164.846 0)
+			(at 126.746 160.274 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7891,7 +7891,7 @@
 			)
 		)
 		(property "Footprint" "kicad-lib:C_Polarized_0805_2012Metric"
-			(at 127.9652 166.37 0)
+			(at 126.0348 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10052,7 +10052,7 @@
 			(uuid "efa4eed1-a191-4ad3-a662-e957d75c3b8e")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/df92df4e-37ce-471e-93c1-358fcc45baf3"
 					(reference "C72")
 					(unit 1)
@@ -12641,7 +12641,7 @@
 			(uuid "7e701fd5-2bc3-4865-8678-98a5557cf6ea")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/df92df4e-37ce-471e-93c1-358fcc45baf3"
 					(reference "R78")
 					(unit 1)
@@ -14434,7 +14434,7 @@
 			(uuid "ff723c43-3fc4-491a-8560-3e0d7f425361")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/df92df4e-37ce-471e-93c1-358fcc45baf3"
 					(reference "R64")
 					(unit 1)
@@ -15030,7 +15030,7 @@
 			(uuid "0f3dcccf-0624-4ab0-b33b-a7d354ff0893")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/df92df4e-37ce-471e-93c1-358fcc45baf3"
 					(reference "R60")
 					(unit 1)
@@ -15417,7 +15417,7 @@
 			(uuid "9c664297-a22d-4025-b540-511661690901")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/df92df4e-37ce-471e-93c1-358fcc45baf3"
 					(reference "Q2")
 					(unit 1)
@@ -15778,7 +15778,7 @@
 			(uuid "9daf502e-13c3-4b7a-bf5d-0d0c20fe0f13")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/df92df4e-37ce-471e-93c1-358fcc45baf3"
 					(reference "C69")
 					(unit 1)
@@ -16087,7 +16087,7 @@
 			(uuid "c0d8a854-fe8b-4122-b9d0-6bbde41e64f9")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/df92df4e-37ce-471e-93c1-358fcc45baf3"
 					(reference "U25")
 					(unit 1)
@@ -18079,7 +18079,7 @@
 			(uuid "48a2c027-72a6-4790-a2bf-d0e8a1c7db95")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/df92df4e-37ce-471e-93c1-358fcc45baf3"
 					(reference "C3")
 					(unit 1)
@@ -18724,7 +18724,7 @@
 			(uuid "3ddc1ced-5540-4725-affc-2c54faac6cab")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/df92df4e-37ce-471e-93c1-358fcc45baf3"
 					(reference "R65")
 					(unit 1)
@@ -18895,7 +18895,7 @@
 			(uuid "62557e31-607e-4c0f-af73-d1958fb27030")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/df92df4e-37ce-471e-93c1-358fcc45baf3"
 					(reference "U1")
 					(unit 1)

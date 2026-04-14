@@ -6445,7 +6445,7 @@
 			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc05")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "U4")
 					(unit 3)
@@ -9615,7 +9615,7 @@
 			(uuid "74ab6ee4-3ab2-49f1-a97e-6b073225527e")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "#PWR057")
 					(unit 1)
@@ -11286,7 +11286,7 @@
 			(uuid "96bd3ed6-f937-4e09-856c-94ff6acca51f")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "C43")
 					(unit 1)
@@ -11461,7 +11461,7 @@
 			(uuid "0de77a12-9de3-42c9-a6fd-70936e0fe0cc")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "R27")
 					(unit 1)
@@ -17076,7 +17076,7 @@
 			(uuid "e89cc462-4712-4422-9e02-e5d312477512")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "#PWR056")
 					(unit 1)
@@ -17331,7 +17331,7 @@
 			(uuid "faf285c8-88ca-4e88-ae71-281b7dada762")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "U12")
 					(unit 1)
@@ -19487,7 +19487,7 @@
 			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc0c")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "U4")
 					(unit 1)
@@ -19858,7 +19858,7 @@
 			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc0d")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "U4")
 					(unit 2)
@@ -20929,7 +20929,7 @@
 			(uuid "3aaa89e3-4081-45ff-89cd-11d4d443f612")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "U8")
 					(unit 1)
