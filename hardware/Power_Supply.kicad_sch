@@ -6969,24 +6969,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 85.09 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 85.09 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 85.09 175.26 0)
 			(effects
@@ -7102,24 +7084,6 @@
 		)
 		(property "Manufacturer" "Bourns Inc."
 			(at 210.82 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 210.82 33.02 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 210.82 33.02 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7257,24 +7221,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 93.98 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 93.98 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 93.98 134.62 0)
 			(effects
@@ -7388,24 +7334,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RC0402FR-071K07L/5280891"
-			(at 142.24 146.05 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 142.24 146.05 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 142.24 146.05 90)
 			(effects
 				(font
@@ -7800,24 +7728,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 127 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 127 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 127 162.56 0)
 			(effects
@@ -7943,24 +7853,6 @@
 		)
 		(property "Tolerance" "1%"
 			(at 59.69 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 59.69 87.63 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 59.69 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8231,24 +8123,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 166.37 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 166.37 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 166.37 35.56 90)
 			(effects
@@ -8382,24 +8256,6 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
-			(at 52.07 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 52.07 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 52.07 134.62 0)
 			(effects
 				(font
@@ -8803,24 +8659,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 48.26 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 48.26 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 48.26 87.63 0)
 			(effects
@@ -9018,24 +8856,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 111.76 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 111.76 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 111.76 134.62 0)
 			(effects
@@ -9160,24 +8980,6 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
-			(at 118.11 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 118.11 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 118.11 175.26 0)
 			(effects
 				(font
@@ -9384,24 +9186,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 59.69 90.17 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 59.69 90.17 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 59.69 90.17 90)
 			(effects
@@ -9524,24 +9308,6 @@
 			)
 		)
 		(property "Temperature Coefficient" "X7R or better"
-			(at 96.52 151.13 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 96.52 151.13 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 96.52 151.13 90)
 			(effects
 				(font
@@ -9683,24 +9449,6 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
-			(at 99.06 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 99.06 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 99.06 87.63 0)
 			(effects
 				(font
@@ -9868,24 +9616,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 44.45 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 44.45 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 44.45 160.02 0)
 			(effects
@@ -10010,24 +9740,6 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
-			(at 111.76 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 111.76 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 111.76 175.26 0)
 			(effects
 				(font
@@ -10242,24 +9954,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 236.22 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 236.22 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 236.22 38.1 0)
 			(effects
@@ -10376,24 +10070,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/CUS10S30-H3F/5114299"
-			(at 106.68 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 106.68 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 106.68 162.56 0)
 			(effects
 				(font
@@ -10597,24 +10273,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 101.6 175.26 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 101.6 175.26 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 101.6 175.26 90)
 			(effects
@@ -10805,24 +10463,6 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
-			(at 151.13 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 151.13 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 151.13 35.56 0)
 			(effects
 				(font
@@ -11154,24 +10794,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 86.36 33.02 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 86.36 33.02 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 86.36 33.02 90)
 			(effects
@@ -11438,24 +11060,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 215.9 38.1 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 215.9 38.1 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 215.9 38.1 90)
 			(effects
@@ -11573,24 +11177,6 @@
 			)
 		)
 		(property "Manufacturer Number" "SI2369DS-T1-BE3"
-			(at 44.45 33.02 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 44.45 33.02 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 44.45 33.02 90)
 			(effects
 				(font
@@ -11725,24 +11311,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 146.05 152.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 146.05 152.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 146.05 152.4 90)
 			(effects
@@ -11867,24 +11435,6 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
-			(at 118.11 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 118.11 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 118.11 134.62 0)
 			(effects
 				(font
@@ -12109,24 +11659,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 54.61 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 54.61 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 54.61 160.02 0)
 			(effects
@@ -12324,24 +11856,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 74.93 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 74.93 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 74.93 45.72 0)
 			(effects
@@ -12478,24 +11992,6 @@
 			)
 		)
 		(property "Tolerance" "1%"
-			(at 171.45 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 171.45 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 171.45 40.64 0)
 			(effects
 				(font
@@ -12777,24 +12273,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 220.98 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 220.98 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 220.98 38.1 0)
 			(effects
@@ -12985,24 +12463,6 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
-			(at 156.21 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 156.21 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 156.21 149.86 0)
 			(effects
 				(font
@@ -13266,24 +12726,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 87.63 149.86 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 87.63 149.86 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 87.63 149.86 90)
 			(effects
@@ -13474,24 +12916,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 73.66 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 73.66 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 73.66 129.54 0)
 			(effects
@@ -13615,24 +13039,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 127 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 127 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 127 134.62 0)
 			(effects
@@ -13746,24 +13152,6 @@
 			)
 		)
 		(property "Manufacturer Number" "SG73P1JTTD1000F"
-			(at 49.53 154.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 49.53 154.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 49.53 154.94 90)
 			(effects
 				(font
@@ -13922,24 +13310,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 200.66 27.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 200.66 27.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 200.66 27.94 90)
 			(effects
@@ -14058,24 +13428,6 @@
 			)
 		)
 		(property "Manufacturer Number" "SI2369DS-T1-BE3"
-			(at 45.72 132.08 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 45.72 132.08 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 45.72 132.08 90)
 			(effects
 				(font
@@ -14217,24 +13569,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 96.52 146.05 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 96.52 146.05 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 96.52 146.05 90)
 			(effects
@@ -14350,24 +13684,6 @@
 			)
 		)
 		(property "Temperature Coefficient" "C0G/NP0"
-			(at 92.71 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 92.71 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 92.71 175.26 0)
 			(effects
 				(font
@@ -14562,24 +13878,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 73.66 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 73.66 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 73.66 157.48 0)
 			(effects
@@ -14766,24 +14064,6 @@
 			)
 		)
 		(property "Manufacturer Number" "7792"
-			(at 269.24 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 269.24 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 269.24 151.13 0)
 			(effects
 				(font
@@ -15044,24 +14324,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 52.07 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 52.07 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 52.07 35.56 90)
 			(effects
@@ -15185,24 +14447,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 151.13 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 151.13 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 151.13 149.86 0)
 			(effects
@@ -15316,15 +14560,6 @@
 				(hide yes)
 			)
 		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/PJ102AH/484087/"
-			(at 21.59 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer" "CUI Devices"
 			(at 21.59 33.02 0)
 			(effects
@@ -15335,24 +14570,6 @@
 			)
 		)
 		(property "Vendor Num" ""
-			(at 21.59 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 21.59 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 21.59 33.02 0)
 			(effects
 				(font
@@ -15496,24 +14713,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 215.9 48.26 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 215.9 48.26 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 215.9 48.26 90)
 			(effects
@@ -15628,24 +14827,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/richtek-usa-inc/RT6150B-33GQW/6676709"
-			(at 74.93 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 74.93 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 74.93 85.09 0)
 			(effects
 				(font
@@ -15822,24 +15003,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 228.6 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 228.6 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 228.6 38.1 0)
 			(effects
@@ -15964,24 +15127,6 @@
 			)
 		)
 		(property "Tolerance" "1%"
-			(at 44.45 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 44.45 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 44.45 44.45 0)
 			(effects
 				(font
@@ -16122,24 +15267,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 62.23 36.83 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 62.23 36.83 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 62.23 36.83 90)
 			(effects
@@ -16255,24 +15382,6 @@
 			)
 		)
 		(property "Manufacturer Number" "TMCP1E105MTRF"
-			(at 151.13 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 151.13 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 151.13 137.16 0)
 			(effects
 				(font
@@ -16406,24 +15515,6 @@
 			)
 		)
 		(property "Notes" "PFM version, 1.1MHz switching frequency"
-			(at 184.15 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 184.15 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 184.15 33.02 0)
 			(effects
 				(font
@@ -16586,24 +15677,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 143.51 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 143.51 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 143.51 35.56 0)
 			(effects
 				(font
@@ -16800,24 +15873,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 88.9 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 88.9 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 88.9 134.62 0)
 			(effects
@@ -16924,24 +15979,6 @@
 			)
 		)
 		(property "Manufacturer Number" "LM337IMPX/NOPB"
-			(at 137.16 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 137.16 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 137.16 157.48 0)
 			(effects
 				(font
@@ -17149,24 +16186,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 90.17 87.63 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 90.17 87.63 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 90.17 87.63 90)
 			(effects
@@ -17354,24 +16373,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 99.06 139.7 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 99.06 139.7 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 99.06 139.7 90)
 			(effects
@@ -17543,24 +16544,6 @@
 			)
 		)
 		(property "Manufacturer Number" "LM2940IMPX-12/NOPB"
-			(at 137.16 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 137.16 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 137.16 129.54 0)
 			(effects
 				(font
@@ -17767,24 +16750,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 57.15 129.54 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 57.15 129.54 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 57.15 129.54 90)
 			(effects
@@ -17909,24 +16874,6 @@
 			)
 		)
 		(property "Temperature Coefficient" "X5R"
-			(at 156.21 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 156.21 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 156.21 137.16 0)
 			(effects
 				(font
@@ -18116,24 +17063,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0402FT1M15/1714320"
-			(at 96.52 154.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 96.52 154.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 96.52 154.94 90)
 			(effects
 				(font

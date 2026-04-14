@@ -13292,33 +13292,6 @@
 				(hide yes)
 			)
 		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/RC0402FR0727RL/656670/"
-			(at 139.7 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 139.7 34.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 139.7 34.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 139.7 34.29 90)
 			(effects
@@ -13469,24 +13442,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 274.32 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 274.32 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 274.32 33.02 0)
 			(effects
@@ -13611,24 +13566,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 162.56 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 162.56 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 162.56 195.58 0)
 			(effects
@@ -13744,24 +13681,6 @@
 			)
 		)
 		(property "Manufacturer Number" "RC0402FR-0747KL"
-			(at 222.25 137.16 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 222.25 137.16 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 222.25 137.16 90)
 			(effects
 				(font
@@ -14059,24 +13978,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 205.74 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 205.74 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 205.74 31.75 0)
 			(effects
@@ -14228,24 +14129,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 39.37 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 39.37 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 39.37 172.72 0)
 			(effects
 				(font
@@ -14476,24 +14359,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 213.36 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 213.36 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 213.36 31.75 0)
 			(effects
@@ -14617,24 +14482,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 222.25 154.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 222.25 154.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 222.25 154.94 90)
 			(effects
@@ -14750,24 +14597,6 @@
 			)
 		)
 		(property "Manufacturer Number" "435451019820"
-			(at 30.48 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 30.48 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 30.48 115.57 0)
 			(effects
 				(font
@@ -14907,24 +14736,6 @@
 			)
 		)
 		(property "Manufacturer Number" "n/a"
-			(at 167.64 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 167.64 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 167.64 195.58 0)
 			(effects
 				(font
@@ -15132,24 +14943,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 264.16 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 264.16 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 264.16 81.28 0)
 			(effects
@@ -15271,24 +15064,6 @@
 			)
 		)
 		(property "Manufacturer Number" "RC0402FR-0747KL"
-			(at 222.25 152.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 222.25 152.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 222.25 152.4 90)
 			(effects
 				(font
@@ -15447,24 +15222,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 120.65 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 120.65 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 120.65 185.42 0)
 			(effects
@@ -15585,24 +15342,6 @@
 			)
 		)
 		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
-			(at 36.83 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 36.83 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 36.83 138.43 0)
 			(effects
 				(font
@@ -15863,24 +15602,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 222.25 30.48 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 222.25 30.48 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 222.25 30.48 90)
 			(effects
@@ -15948,7 +15669,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 223.52 51.308 90)
 			(effects
 				(font
@@ -15966,7 +15687,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Res Thick Film 0603 24 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD Automotive T/R"
+		(property "Description" "24 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD Automotive T/R"
 			(at 223.52 49.53 0)
 			(effects
 				(font
@@ -16004,24 +15725,6 @@
 		)
 		(property "Tolerance" "1%"
 			(at 223.52 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 223.52 49.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 223.52 49.53 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16188,24 +15891,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 267.97 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 267.97 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 267.97 33.02 0)
 			(effects
@@ -16320,24 +16005,6 @@
 			)
 		)
 		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
-			(at 36.83 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 36.83 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 36.83 142.24 0)
 			(effects
 				(font
@@ -16777,24 +16444,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 59.69 30.48 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 59.69 30.48 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 59.69 30.48 90)
 			(effects
@@ -16916,24 +16565,6 @@
 			)
 		)
 		(property "Manufacturer Number" "W25Q16JVUXIQ TR"
-			(at 219.71 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 219.71 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 219.71 100.33 0)
 			(effects
 				(font
@@ -17181,24 +16812,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 105.41 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 105.41 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 105.41 185.42 0)
 			(effects
@@ -17320,24 +16933,6 @@
 			)
 		)
 		(property "Manufacturer Number" "ERJ-2RKF1001X"
-			(at 255.27 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 255.27 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 255.27 85.09 90)
 			(effects
 				(font
@@ -17496,24 +17091,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 128.27 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 128.27 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 128.27 185.42 0)
 			(effects
@@ -17652,7 +17229,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 266.7 51.308 90)
 			(effects
 				(font
@@ -17670,7 +17247,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Res Thick Film 0603 24 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD Automotive T/R"
+		(property "Description" "24 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD Automotive T/R"
 			(at 266.7 49.53 0)
 			(effects
 				(font
@@ -17708,24 +17285,6 @@
 		)
 		(property "Tolerance" "1%"
 			(at 266.7 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 266.7 49.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 266.7 49.53 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17849,24 +17408,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/TPD6E004RSER/1907464"
-			(at 184.15 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 184.15 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 184.15 146.05 0)
 			(effects
 				(font
@@ -18035,24 +17576,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 30.48 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 30.48 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 30.48 30.48 0)
 			(effects
 				(font
@@ -18347,24 +17870,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 135.89 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 135.89 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 135.89 185.42 0)
 			(effects
@@ -18578,24 +18083,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 90.17 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 90.17 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 90.17 185.42 0)
 			(effects
 				(font
@@ -18896,24 +18383,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 170.18 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 170.18 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 170.18 144.78 0)
 			(effects
@@ -19029,24 +18498,6 @@
 			)
 		)
 		(property "Manufacturer" "Analog Devices"
-			(at 246.38 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 246.38 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 246.38 49.53 0)
 			(effects
 				(font
@@ -19506,24 +18957,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 264.16 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 264.16 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 264.16 85.09 0)
 			(effects
@@ -19645,24 +19078,6 @@
 			)
 		)
 		(property "Manufacturer Number" "RC0402FR-0747KL"
-			(at 222.25 134.62 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 222.25 134.62 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 222.25 134.62 90)
 			(effects
 				(font
@@ -19932,24 +19347,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 222.25 144.78 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 222.25 144.78 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 222.25 144.78 90)
 			(effects
@@ -20072,24 +19469,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 180.34 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 180.34 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 180.34 49.53 0)
 			(effects
@@ -20202,7 +19581,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 59.69 27.178 90)
 			(effects
 				(font
@@ -20220,7 +19599,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Res Thick Film 0603 24 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD Automotive T/R"
+		(property "Description" "24 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD Automotive T/R"
 			(at 59.69 25.4 0)
 			(effects
 				(font
@@ -20258,51 +19637,6 @@
 		)
 		(property "Tolerance" "1%"
 			(at 59.69 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 59.69 25.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 59.69 25.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description_1" ""
-			(at 59.69 25.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 59.69 25.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier Link" ""
-			(at 59.69 25.4 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20406,33 +19740,6 @@
 		)
 		(property "Tolerance" "1%"
 			(at 139.7 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PCBWay Link" "https://www.pcbway.com/components/detail/RC0402FR0727RL/656670/"
-			(at 139.7 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 139.7 31.75 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 139.7 31.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20555,24 +19862,6 @@
 			)
 		)
 		(property "Manufacturer Number" "ERJ-2RKF1001X"
-			(at 255.27 81.28 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 255.27 81.28 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 255.27 81.28 90)
 			(effects
 				(font
@@ -20848,24 +20137,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 200.66 41.91 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 200.66 41.91 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 200.66 41.91 90)
 			(effects
@@ -20998,7 +20269,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 223.52 48.768 90)
 			(effects
 				(font
@@ -21016,7 +20287,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Res Thick Film 0603 24 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD Automotive T/R"
+		(property "Description" "24 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD Automotive T/R"
 			(at 223.52 46.99 0)
 			(effects
 				(font
@@ -21054,24 +20325,6 @@
 		)
 		(property "Tolerance" "1%"
 			(at 223.52 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 223.52 46.99 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 223.52 46.99 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21258,24 +20511,6 @@
 			)
 		)
 		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
-			(at 36.83 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 36.83 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 36.83 156.21 0)
 			(effects
 				(font
@@ -21479,24 +20714,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 200.66 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 200.66 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 200.66 39.37 90)
 			(effects
@@ -21630,24 +20847,6 @@
 			)
 		)
 		(property "Manufacturer Number" "5-146281-3"
-			(at 21.59 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 21.59 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 21.59 134.62 0)
 			(effects
 				(font
@@ -21809,24 +21008,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 97.79 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 97.79 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 97.79 185.42 0)
 			(effects
@@ -21949,24 +21130,6 @@
 			)
 		)
 		(property "Manufacturer Number" "n/a"
-			(at 172.72 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 172.72 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 172.72 195.58 0)
 			(effects
 				(font
@@ -22235,24 +21398,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 208.28 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 208.28 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 208.28 59.69 0)
 			(effects
@@ -22407,24 +21552,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 67.31 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 67.31 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 67.31 185.42 0)
 			(effects
 				(font
@@ -22654,24 +21781,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 82.55 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 82.55 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 82.55 185.42 0)
 			(effects
@@ -22828,24 +21937,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 38.1 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 38.1 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 38.1 77.47 0)
 			(effects
@@ -22975,24 +22066,6 @@
 		)
 		(property "Tolerance" "0.1%"
 			(at 41.91 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 41.91 115.57 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 41.91 115.57 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23187,24 +22260,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 40.64 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 40.64 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 40.64 182.88 0)
 			(effects
@@ -23327,24 +22382,6 @@
 			)
 		)
 		(property "DC Resistance" "140mOhm"
-			(at 58.42 43.18 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 58.42 43.18 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 58.42 43.18 90)
 			(effects
 				(font
@@ -23539,24 +22576,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 29.21 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 29.21 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 29.21 177.8 0)
 			(effects
@@ -23719,24 +22738,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 40.64 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 40.64 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 40.64 48.26 0)
 			(effects
@@ -23879,24 +22880,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 233.68 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 233.68 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 233.68 100.33 0)
 			(effects
 				(font
@@ -24053,24 +23036,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 276.86 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 276.86 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 276.86 143.51 0)
 			(effects
 				(font
@@ -24439,24 +23404,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 24.13 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 24.13 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 24.13 30.48 0)
 			(effects
@@ -24571,24 +23518,6 @@
 			)
 		)
 		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
-			(at 36.83 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 36.83 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 36.83 160.02 0)
 			(effects
 				(font
@@ -24806,7 +23735,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 266.7 48.768 90)
 			(effects
 				(font
@@ -24824,7 +23753,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Res Thick Film 0603 24 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD Automotive T/R"
+		(property "Description" "24 Ohm 1% 0.1W(1/10W) ±100ppm/C Pad SMD Automotive T/R"
 			(at 266.7 46.99 0)
 			(effects
 				(font
@@ -24862,24 +23791,6 @@
 		)
 		(property "Tolerance" "1%"
 			(at 266.7 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 266.7 46.99 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 266.7 46.99 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25029,24 +23940,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 113.03 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 113.03 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 113.03 185.42 0)
 			(effects
 				(font
@@ -25220,24 +24113,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 48.26 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 48.26 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 48.26 48.26 0)
 			(effects
@@ -25380,24 +24255,6 @@
 			)
 		)
 		(property "Tolerance" "10%"
-			(at 45.72 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 45.72 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 45.72 172.72 0)
 			(effects
 				(font
@@ -25586,24 +24443,6 @@
 			)
 		)
 		(property "Manufacturer Number" "SC1510-A4"
-			(at 97.79 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 97.79 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 97.79 74.93 0)
 			(effects
 				(font
@@ -26320,24 +25159,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 53.34 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 53.34 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 53.34 77.47 0)
 			(effects
@@ -26483,24 +25304,6 @@
 			)
 		)
 		(property "Manufacturer Number" "5-146281-3"
-			(at 21.59 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 21.59 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 21.59 153.67 0)
 			(effects
 				(font
@@ -26671,24 +25474,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 74.93 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 74.93 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 74.93 185.42 0)
 			(effects
@@ -26809,24 +25594,6 @@
 			)
 		)
 		(property "Manufacturer Number" "DM3AT-SF-PEJM5"
-			(at 252.73 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 252.73 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 252.73 146.05 0)
 			(effects
 				(font
@@ -27042,24 +25809,6 @@
 			)
 		)
 		(property "Manufacturer Number" "RC0402FR-0747KL"
-			(at 222.25 139.7 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 222.25 139.7 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 222.25 139.7 90)
 			(effects
 				(font
@@ -27465,24 +26214,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 208.28 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 208.28 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 208.28 87.63 0)
 			(effects
@@ -27669,24 +26400,6 @@
 			)
 		)
 		(property "Manufacturer Number" "RC0402FR-0747KL"
-			(at 222.25 149.86 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 222.25 149.86 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 222.25 149.86 90)
 			(effects
 				(font

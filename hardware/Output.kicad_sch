@@ -2398,24 +2398,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 171.45 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 171.45 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 171.45 130.81 0)
 			(effects
@@ -2555,24 +2537,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 142.24 120.65 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 142.24 120.65 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 142.24 120.65 90)
 			(effects
@@ -2687,24 +2651,6 @@
 			)
 		)
 		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
-			(at 162.56 88.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 162.56 88.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 162.56 88.9 90)
 			(effects
 				(font
@@ -2900,24 +2846,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 162.56 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 162.56 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 162.56 119.38 90)
 			(effects
@@ -3057,24 +2985,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 142.24 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 142.24 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 142.24 125.73 90)
 			(effects
@@ -3189,24 +3099,6 @@
 			)
 		)
 		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
-			(at 163.83 72.39 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 163.83 72.39 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 163.83 72.39 90)
 			(effects
 				(font
@@ -3535,24 +3427,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 171.45 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 171.45 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 171.45 83.82 0)
 			(effects
@@ -3670,24 +3544,6 @@
 			)
 		)
 		(property "Manufacturer Number" "CONBNC001"
-			(at 171.45 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 171.45 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 171.45 114.3 0)
 			(effects
 				(font
@@ -4041,24 +3897,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 137.16 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 137.16 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 137.16 62.23 90)
 			(effects
@@ -4249,24 +4087,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 172.72 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 172.72 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 172.72 67.31 0)
 			(effects
@@ -4382,24 +4202,6 @@
 			)
 		)
 		(property "Manufacturer Number" "SN74LVC2T45DCUR"
-			(at 127 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 127 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 127 123.19 0)
 			(effects
 				(font
@@ -4576,24 +4378,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 118.11 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 118.11 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 118.11 62.23 90)
 			(effects
@@ -4708,24 +4492,6 @@
 			)
 		)
 		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
-			(at 162.56 135.89 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 162.56 135.89 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 162.56 135.89 90)
 			(effects
 				(font
@@ -4849,24 +4615,6 @@
 			)
 		)
 		(property "Manufacturer Number" "SN74LVC2T45DCUR"
-			(at 127 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 127 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 127 76.2 0)
 			(effects
 				(font
@@ -5433,24 +5181,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 118.11 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 118.11 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 118.11 109.22 90)
 			(effects
@@ -5590,24 +5320,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 142.24 78.74 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 142.24 78.74 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 142.24 78.74 90)
 			(effects
@@ -5740,24 +5452,6 @@
 		)
 		(property "Tolerance" "1%"
 			(at 142.24 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 142.24 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 142.24 73.66 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5973,24 +5667,6 @@
 		)
 		(property "Tolerance" "10%"
 			(at 137.16 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 137.16 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 137.16 109.22 90)
 			(effects
 				(font
 					(size 1.27 1.27)

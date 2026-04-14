@@ -2372,24 +2372,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 124.46 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 124.46 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 124.46 143.51 90)
 			(effects
@@ -2505,24 +2487,6 @@
 			)
 		)
 		(property "Manufacturer Number" "SN74LVC2T45DCUR"
-			(at 152.4 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 152.4 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 152.4 72.39 0)
 			(effects
 				(font
@@ -2965,24 +2929,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 118.11 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 118.11 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 118.11 138.43 0)
 			(effects
@@ -3185,24 +3131,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 118.11 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 118.11 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 118.11 80.01 0)
 			(effects
@@ -3326,24 +3254,6 @@
 			)
 		)
 		(property "Manufacturer Number" "CONBNC001"
-			(at 118.11 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 118.11 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 118.11 116.84 0)
 			(effects
 				(font
@@ -3580,24 +3490,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 142.24 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 142.24 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 142.24 58.42 90)
 			(effects
@@ -3763,24 +3655,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 181.61 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 181.61 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 181.61 95.25 0)
 			(effects
@@ -3930,24 +3804,6 @@
 		)
 		(property "Tolerance" "10%"
 			(at 162.56 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 162.56 58.42 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 162.56 58.42 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4147,24 +4003,6 @@
 			)
 		)
 		(property "Manufacturer Number" "SN74LVC2T45DCUR"
-			(at 152.4 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 152.4 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 152.4 130.81 0)
 			(effects
 				(font
@@ -4389,24 +4227,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 129.54 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 129.54 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 129.54 121.92 0)
 			(effects
@@ -4592,24 +4412,6 @@
 			)
 		)
 		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
-			(at 124.46 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 124.46 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 124.46 85.09 90)
 			(effects
 				(font
@@ -4833,24 +4635,6 @@
 		)
 		(property "Tolerance" "10%"
 			(at 162.56 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 162.56 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 162.56 116.84 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5201,24 +4985,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 124.46 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 124.46 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 124.46 121.92 90)
 			(effects
@@ -5411,24 +5177,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 129.54 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 129.54 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 129.54 143.51 0)
 			(effects
@@ -5542,24 +5290,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
-			(at 129.54 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 129.54 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 129.54 85.09 0)
 			(effects
 				(font
@@ -5932,24 +5662,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 142.24 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 142.24 116.84 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 142.24 116.84 90)
 			(effects
@@ -6073,24 +5785,6 @@
 			)
 		)
 		(property "Manufacturer Number" "CONBNC001"
-			(at 118.11 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 118.11 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 118.11 59.69 0)
 			(effects
 				(font
@@ -6290,24 +5984,6 @@
 			)
 		)
 		(property "Manufacturer Number" "VBUS05N1-HD1-G3-08"
-			(at 124.46 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 124.46 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 124.46 64.77 90)
 			(effects
 				(font
@@ -6571,24 +6247,6 @@
 			)
 		)
 		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
-			(at 129.54 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 129.54 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 129.54 64.77 0)
 			(effects
 				(font
