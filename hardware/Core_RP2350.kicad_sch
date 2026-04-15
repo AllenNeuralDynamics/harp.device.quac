@@ -16896,7 +16896,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 255.27 85.09 0)
 			(effects
 				(font
@@ -16914,7 +16914,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 255.27 85.09 90)
 			(effects
 				(font
@@ -16923,7 +16923,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 255.27 85.09 90)
 			(effects
 				(font
@@ -16932,7 +16932,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 255.27 85.09 90)
 			(effects
 				(font
@@ -16960,6 +16960,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 255.27 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 255.27 85.09 90)
 			(effects
 				(font
@@ -19825,7 +19834,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 255.27 81.28 0)
 			(effects
 				(font
@@ -19843,7 +19852,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 255.27 81.28 90)
 			(effects
 				(font
@@ -19852,7 +19861,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 255.27 81.28 90)
 			(effects
 				(font
@@ -19861,7 +19870,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 255.27 81.28 90)
 			(effects
 				(font
@@ -19889,6 +19898,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 255.27 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 255.27 81.28 90)
 			(effects
 				(font
@@ -22019,7 +22037,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 41.91 115.57 0)
 			(effects
 				(font
@@ -22037,7 +22055,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 41.91 115.57 90)
 			(effects
 				(font
@@ -22046,7 +22064,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 41.91 115.57 0)
 			(effects
 				(font
@@ -22055,7 +22073,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 41.91 115.57 0)
 			(effects
 				(font
@@ -26169,7 +26187,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 208.28 87.63 0)
 			(effects
 				(font
@@ -26187,7 +26205,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 208.28 87.63 90)
 			(effects
 				(font
@@ -26196,7 +26214,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 208.28 87.63 0)
 			(effects
 				(font
@@ -26205,7 +26223,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 208.28 87.63 0)
 			(effects
 				(font
@@ -26233,6 +26251,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 208.28 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 208.28 87.63 0)
 			(effects
 				(font

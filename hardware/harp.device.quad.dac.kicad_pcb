@@ -364,7 +364,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -414,7 +414,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC0402FR-0731K6L"
+		(property "Manufacturer Number" "RT0402BRD0731K6L"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -524,6 +524,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c9c6c5a8-9120-4140-a4cc-e35308aeb3b8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0731K6L/1069209"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4f21bc8f-5960-4965-9bd2-206ae54942f8")
 			(effects
 				(font
 					(size 1 1)
@@ -648,7 +661,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -685,7 +698,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -698,7 +711,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -711,7 +724,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -821,6 +834,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "90ec9dc6-d15f-4361-b91e-262a5da922bf")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "caeb487d-7ed8-450b-a7b6-7ce18f95501b")
 			(effects
 				(font
 					(size 1 1)
@@ -1437,7 +1463,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1487,7 +1513,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC0402FR-0731K6L"
+		(property "Manufacturer Number" "RT0402BRD0731K6L"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1597,6 +1623,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c09633fb-07a9-4cfd-b5fb-19cdc38659cd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0731K6L/1069209"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "db01f7ac-f013-4a9d-b509-d5a161e21f4b")
 			(effects
 				(font
 					(size 1 1)
@@ -3896,7 +3935,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -3933,7 +3972,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3946,7 +3985,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3959,7 +3998,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4069,6 +4108,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e94f7245-8eb1-4ae0-887e-731735ed8366")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2e4f6cba-be3c-4d21-98cc-27c20060d157")
 			(effects
 				(font
 					(size 1 1)
@@ -6913,7 +6965,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -6963,7 +7015,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC0402FR-0731K6L"
+		(property "Manufacturer Number" "RT0402BRD0731K6L"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7073,6 +7125,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f3780b75-e412-4d5a-81f5-28c0eb06b7fc")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0731K6L/1069209"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1ea9bfc9-a204-47d2-ae47-2adc8b4dc4f7")
 			(effects
 				(font
 					(size 1 1)
@@ -10524,7 +10589,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -10561,7 +10626,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10574,7 +10639,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10587,7 +10652,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10697,6 +10762,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7e3635f4-7f4c-41e3-979d-5a10abc24e41")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9ec30b6d-638f-427e-8374-9fa205c5255c")
 			(effects
 				(font
 					(size 1 1)
@@ -12224,7 +12302,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -12248,7 +12326,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12261,7 +12339,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12274,7 +12352,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12404,6 +12482,19 @@
 				)
 			)
 		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9560f161-b18b-4952-bf5d-d01db5dfab2f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/1945aa77-a929-44fd-b3b6-12787633d2f2/77f7c96f-8056-4ef3-a15c-5377cef2e33c")
 		(sheetname "/Short Circuit Detection/")
@@ -12521,7 +12612,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -12558,7 +12649,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12571,7 +12662,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12584,7 +12675,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -15661,7 +15752,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -15685,7 +15776,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -15698,7 +15789,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -15711,7 +15802,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -15834,6 +15925,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9724163f-7f7c-43cc-a970-861a8eaff614")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8ec18122-db00-4952-af61-d117d3bb5e48")
 			(effects
 				(font
 					(size 1 1)
@@ -18139,7 +18243,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -18163,7 +18267,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -18176,7 +18280,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -18189,7 +18293,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -18260,6 +18364,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b37d98f1-6227-404b-9b11-363057bd57a8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7bbc5eee-b0a0-4749-a684-3bbe1a0e356d")
 			(effects
 				(font
 					(size 1 1)
@@ -19790,7 +19907,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -19827,7 +19944,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -19840,7 +19957,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -19853,7 +19970,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -19963,6 +20080,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "30c922be-329d-427c-83f5-a58d5a7d3bc1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "83cfc66f-7ef0-4a09-a3d6-c3024d0b3827")
 			(effects
 				(font
 					(size 1 1)
@@ -20087,7 +20217,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -20124,7 +20254,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20137,7 +20267,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20150,7 +20280,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20260,6 +20390,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4174ee96-8d55-49d6-8aa4-9709b6afa967")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a2071b4f-86ca-47d9-bf1d-0021172000cc")
 			(effects
 				(font
 					(size 1 1)
@@ -23925,7 +24068,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -23962,7 +24105,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -23975,7 +24118,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -23988,7 +24131,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -24098,6 +24241,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "db02105a-48fb-4c68-8a9f-9d0332960691")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c7fb6739-6385-4a88-a143-b768a415a24f")
 			(effects
 				(font
 					(size 1 1)
@@ -24222,7 +24378,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -24246,7 +24402,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -24259,7 +24415,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -24272,7 +24428,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -24343,6 +24499,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b72b60ea-079a-4b45-820a-6728175abb84")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ed9b3955-3065-4cc2-be0c-17ed740276cd")
 			(effects
 				(font
 					(size 1 1)
@@ -25295,7 +25464,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -25345,7 +25514,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC0402FR-0731K6L"
+		(property "Manufacturer Number" "RT0402BRD0731K6L"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -25455,6 +25624,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "efaf23a9-01e9-4dff-8367-49caac18a400")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0731K6L/1069209"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ec99552b-f27a-48b3-8adc-627fad4d7b88")
 			(effects
 				(font
 					(size 1 1)
@@ -27221,7 +27403,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -27258,7 +27440,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -27271,7 +27453,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -27284,7 +27466,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -27394,6 +27576,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "735f7f40-e62a-40a9-89b7-26fe14204b3d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "62140ea3-3147-4095-91c2-c29bc797872c")
 			(effects
 				(font
 					(size 1 1)
@@ -29605,7 +29800,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -29642,7 +29837,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -29655,7 +29850,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -29668,7 +29863,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -29778,6 +29973,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "453ea83d-b91a-40aa-9f50-81ba879c0b86")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4108ba4d-7420-49dd-990f-7e75fac7108d")
 			(effects
 				(font
 					(size 1 1)
@@ -31759,7 +31967,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -31796,7 +32004,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -31809,7 +32017,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -31822,7 +32030,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -31932,6 +32140,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1742924b-7c1e-4649-8812-80fbcebe4653")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b018e2a9-31ae-4754-a56f-49e07ccdfb83")
 			(effects
 				(font
 					(size 1 1)
@@ -32913,7 +33134,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -32950,7 +33171,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -32963,7 +33184,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -32976,7 +33197,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -33086,6 +33307,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ce9ca1c7-6cb9-4944-8608-7dc5fbb3e9a9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0503f224-b540-4488-99cc-66ae8f9a3701")
 			(effects
 				(font
 					(size 1 1)
@@ -39198,7 +39432,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -39235,7 +39469,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -39248,7 +39482,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -39261,7 +39495,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -39371,6 +39605,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2a8110f6-9161-4e90-b202-f9ef13bcc621")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2924f281-f22a-4b87-87d5-f83d3d47e5a8")
 			(effects
 				(font
 					(size 1 1)
@@ -40166,7 +40413,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -40203,7 +40450,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -40216,7 +40463,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -40229,7 +40476,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -40339,6 +40586,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7f807639-717f-41ed-8ea5-c3f16a630617")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "386c4f47-3ca8-45e4-a458-b6d7a7af4e49")
 			(effects
 				(font
 					(size 1 1)
@@ -41207,7 +41467,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -41244,7 +41504,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -41257,7 +41517,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -41270,7 +41530,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -41380,6 +41640,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a81feedb-d5ed-4a56-a59e-c3e23e90ed05")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9f8d381b-ada1-4762-bec9-f7f627486ead")
 			(effects
 				(font
 					(size 1 1)
@@ -44340,7 +44613,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -44377,7 +44650,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -44390,7 +44663,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -44403,7 +44676,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -44513,6 +44786,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9fe40cf9-e58f-46c3-8d8b-18befebc90af")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5d7a580b-254b-43ab-8962-82a4e80e2de4")
 			(effects
 				(font
 					(size 1 1)
@@ -44637,7 +44923,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -44674,7 +44960,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -44687,7 +44973,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -44700,7 +44986,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -44810,6 +45096,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e8007a46-a5e2-4f82-be32-95db4ac7453a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ca597692-673d-49c1-b617-9080039d697f")
 			(effects
 				(font
 					(size 1 1)
@@ -45244,7 +45543,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -45294,7 +45593,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC0402FR-0731K6L"
+		(property "Manufacturer Number" "RT0402BRD0731K6L"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -45404,6 +45703,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5711dd37-6b04-4f65-b16d-49981db48bce")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0731K6L/1069209"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7ab87246-6546-49d3-8bbb-c46c9bbdb8d8")
 			(effects
 				(font
 					(size 1 1)
@@ -47925,7 +48237,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -47962,7 +48274,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -47975,7 +48287,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -47988,7 +48300,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -48098,6 +48410,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d60feb3d-fc66-4b47-8dca-78286f6e93cb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e9ff7336-a614-4dd1-8edf-cd116b2d6287")
 			(effects
 				(font
 					(size 1 1)
@@ -48704,7 +49029,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -48728,7 +49053,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -48741,7 +49066,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -48754,7 +49079,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -48877,6 +49202,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "be74b3c6-2cee-49a2-b342-90a24d98125a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fd87d6c3-461d-4345-9671-7f3ba446b6b5")
 			(effects
 				(font
 					(size 1 1)
@@ -50576,7 +50914,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -50600,7 +50938,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -50613,7 +50951,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -50626,7 +50964,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -50697,6 +51035,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "965c210f-9846-474a-9dec-75460a11734d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8b5548c6-563e-4b70-9e99-9cb6bae0cf4f")
 			(effects
 				(font
 					(size 1 1)
@@ -54207,7 +54558,7 @@
 				)
 			)
 		)
-		(property "Tolerance" "1%"
+		(property "Tolerance" ""
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -57913,7 +58264,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -57963,7 +58314,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC0402FR-0731K6L"
+		(property "Manufacturer Number" "RT0402BRD0731K6L"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -58073,6 +58424,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1a031391-8de2-4669-9902-5920c7952356")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0731K6L/1069209"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c1d8244b-e7fd-4cfd-807a-8f49bed7a92b")
 			(effects
 				(font
 					(size 1 1)
@@ -58533,7 +58897,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -58570,7 +58934,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -58583,7 +58947,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -58596,7 +58960,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -58706,6 +59070,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0e4b7dfa-80f0-4830-ae22-97fce5d00fc5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d41e9996-58c6-4725-9297-771b3948cf65")
 			(effects
 				(font
 					(size 1 1)
@@ -59539,7 +59916,7 @@
 				)
 			)
 		)
-		(property "Tolerance" "1%"
+		(property "Tolerance" ""
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -61826,7 +62203,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -61863,7 +62240,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -61876,7 +62253,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -61889,7 +62266,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -61999,6 +62376,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ef34d083-288d-4f8c-ab03-87faae8077fb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "12e78f78-fc9f-4df7-a794-de1e8844b42c")
 			(effects
 				(font
 					(size 1 1)
@@ -65408,7 +65798,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -65458,7 +65848,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC0402FR-0731K6L"
+		(property "Manufacturer Number" "RT0402BRD0731K6L"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -65568,6 +65958,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ee36d8bc-085a-4808-b0c7-061e37b79a26")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0731K6L/1069209"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cfb9d06e-cf91-4a6f-990d-8920449e1aba")
 			(effects
 				(font
 					(size 1 1)
@@ -73837,7 +74240,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -73874,7 +74277,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -73887,7 +74290,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -73900,7 +74303,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -74010,6 +74413,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ee34eb2d-ac0d-4538-b0ab-aee0d0c11ffc")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5f41a1cf-0aa5-4acd-85e8-a09b436dbe52")
 			(effects
 				(font
 					(size 1 1)
@@ -74470,7 +74886,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -74507,7 +74923,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -74520,7 +74936,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -74533,7 +74949,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -74643,6 +75059,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5b90a215-ec7d-4e17-9220-acb6bc2ad0ca")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fc5278a5-2ef2-4859-b64f-98a472a1c17b")
 			(effects
 				(font
 					(size 1 1)
@@ -76970,7 +77399,7 @@
 				)
 			)
 		)
-		(property "Tolerance" "1%"
+		(property "Tolerance" ""
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -78411,7 +78840,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -78435,7 +78864,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -78448,7 +78877,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -78461,7 +78890,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -80523,7 +80952,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -80547,7 +80976,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -80560,7 +80989,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -80573,7 +81002,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -80696,6 +81125,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3ab56135-bc0d-40f2-8421-0a501980ac34")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "84e53122-b160-47a3-b598-5808ee1c3fda")
 			(effects
 				(font
 					(size 1 1)
@@ -86335,7 +86777,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -86359,7 +86801,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -86372,7 +86814,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -86385,7 +86827,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -86456,6 +86898,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "26289ff6-18bd-4733-841d-c46aab48cdac")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2632c3f5-a1c0-4a4c-b07a-092fd436a123")
 			(effects
 				(font
 					(size 1 1)
@@ -86929,7 +87384,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -86966,7 +87421,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -86979,7 +87434,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -86992,7 +87447,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -87102,6 +87557,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "52677afb-b06a-4d3f-9943-d42ff6a915e9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dfe35c31-6c8f-4dd3-bb30-687112aa4062")
 			(effects
 				(font
 					(size 1 1)
@@ -87575,7 +88043,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -87612,7 +88080,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -87625,7 +88093,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -87638,7 +88106,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -87748,6 +88216,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9c802d5f-8bf9-4b7d-bae9-6d691264fbd2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7e2080eb-d77f-427b-a3dd-e6962e8a8ad3")
 			(effects
 				(font
 					(size 1 1)
@@ -87872,7 +88353,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -87909,7 +88390,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -87922,7 +88403,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -87935,7 +88416,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -88045,6 +88526,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "83838908-45a1-4ac1-9f7a-9b2b3baaca11")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d8463e85-78e8-4c64-886f-fa06f904013e")
 			(effects
 				(font
 					(size 1 1)
@@ -89262,7 +89756,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -89312,7 +89806,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC0402FR-0731K6L"
+		(property "Manufacturer Number" "RT0402BRD0731K6L"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -89422,6 +89916,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "25af7fe6-bdc7-479f-90d2-27f6f75575ac")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0731K6L/1069209"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d9405338-4adf-4185-8695-f0da625e59ba")
 			(effects
 				(font
 					(size 1 1)
@@ -93840,7 +94347,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -93877,7 +94384,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -93890,7 +94397,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -93903,7 +94410,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -94013,6 +94520,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4904607e-4a22-4780-bf2e-d7d7e048d289")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "da93f3df-7b9f-4ccf-bb29-0f524698cadc")
 			(effects
 				(font
 					(size 1 1)
@@ -95770,7 +96290,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -95807,7 +96327,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-2RKF1001X/79729"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRE071KL/1069571"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -95820,7 +96340,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -95833,7 +96353,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "ERJ-2RKF1001X"
+		(property "Manufacturer Number" "RT0402BRE071KL"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -95943,6 +96463,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "981f9072-e0b4-476f-be39-8de6924f11f0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "13918177-6d1c-4e7b-8674-a5c9fe9a8082")
 			(effects
 				(font
 					(size 1 1)
@@ -97023,7 +97556,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -97060,7 +97593,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -97073,7 +97606,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -97086,7 +97619,7 @@
 				)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -97196,6 +97729,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4c6ce2a3-444c-45e1-9e3e-adb0ef0d3318")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Tolerance" "0.1%"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4a017a02-c2c7-4c28-97aa-5110c014b680")
 			(effects
 				(font
 					(size 1 1)
@@ -98532,7 +99078,7 @@
 				)
 			)
 		)
-		(property "Tolerance" "1%"
+		(property "Tolerance" ""
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -102095,7 +102641,7 @@
 			(justify right bottom)
 		)
 	)
-	(gr_text "0364-001.000.000"
+	(gr_text "0364-001.001.000"
 		(at 184.873 51.3 90)
 		(layer "F.SilkS")
 		(uuid "6be92b9e-2a61-4789-8751-6c2c07ce6c59")
@@ -102107,7 +102653,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "Sonya Vasquez\nJan 1, 2026"
+	(gr_text "Sonya Vasquez\nApril 15, 2026"
 		(at 96.473 36.5 270)
 		(layer "F.SilkS")
 		(uuid "914e78b5-ea59-430a-9b9a-7129a8705613")
