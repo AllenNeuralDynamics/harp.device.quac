@@ -9435,7 +9435,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
+		(property "Footprint" "kicad-lib:BNC_AmphenolRF_031-5329-52RFX_Vertical"
 			(at 158.75 77.47 0)
 			(effects
 				(font
@@ -9444,7 +9444,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
+		(property "Datasheet" "https://www.amphenolrf.com/en-us/assets/file/4065788070/"
 			(at 158.75 77.47 0)
 			(effects
 				(font
@@ -9462,7 +9462,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
+		(property "Link" "https://www.digikey.com/en/products/detail/amphenol-rf/031-5329-52RFX/2041814"
 			(at 158.75 77.47 0)
 			(effects
 				(font
@@ -9471,7 +9471,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity Linx"
+		(property "Manufacturer" "Amphenol RF"
 			(at 158.75 77.47 0)
 			(effects
 				(font
@@ -10370,7 +10370,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
+		(property "Footprint" "kicad-lib:BNC_AmphenolRF_031-5329-52RFX_Vertical"
 			(at 158.75 161.29 0)
 			(effects
 				(font
@@ -10379,7 +10379,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
+		(property "Datasheet" "https://www.amphenolrf.com/en-us/assets/file/4065788070/"
 			(at 158.75 161.29 0)
 			(effects
 				(font
@@ -10397,7 +10397,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
+		(property "Link" "https://www.digikey.com/en/products/detail/amphenol-rf/031-5329-52RFX/2041814"
 			(at 158.75 161.29 0)
 			(effects
 				(font
@@ -10406,7 +10406,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity Linx"
+		(property "Manufacturer" "Amphenol RF"
 			(at 158.75 161.29 0)
 			(effects
 				(font
@@ -11802,7 +11802,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
+		(property "Footprint" "kicad-lib:BNC_AmphenolRF_031-5329-52RFX_Vertical"
 			(at 158.75 119.38 0)
 			(effects
 				(font
@@ -11811,7 +11811,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
+		(property "Datasheet" "https://www.amphenolrf.com/en-us/assets/file/4065788070/"
 			(at 158.75 119.38 0)
 			(effects
 				(font
@@ -11829,7 +11829,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
+		(property "Link" "https://www.digikey.com/en/products/detail/amphenol-rf/031-5329-52RFX/2041814"
 			(at 158.75 119.38 0)
 			(effects
 				(font
@@ -11838,7 +11838,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity Linx"
+		(property "Manufacturer" "Amphenol RF"
 			(at 158.75 119.38 0)
 			(effects
 				(font
@@ -13805,7 +13805,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
+		(property "Footprint" "kicad-lib:BNC_AmphenolRF_031-5329-52RFX_Vertical"
 			(at 158.75 35.56 0)
 			(effects
 				(font
@@ -13814,7 +13814,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
+		(property "Datasheet" "https://www.amphenolrf.com/en-us/assets/file/4065788070/"
 			(at 158.75 35.56 0)
 			(effects
 				(font
@@ -13832,7 +13832,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
+		(property "Link" "https://www.digikey.com/en/products/detail/amphenol-rf/031-5329-52RFX/2041814"
 			(at 158.75 35.56 0)
 			(effects
 				(font
@@ -13841,7 +13841,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity Linx"
+		(property "Manufacturer" "Amphenol RF"
 			(at 158.75 35.56 0)
 			(effects
 				(font
