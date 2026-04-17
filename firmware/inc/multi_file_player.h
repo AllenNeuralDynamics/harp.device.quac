@@ -61,6 +61,11 @@ public:
 
 /**
  * \brief setup the file reading loop
+ * \details opens each expected file on the SD card. Missing files are
+ *  tolerated: the corresponding channel stays in a "not file-backed" state
+ *  and `channel_is_busy()`/`channel_is_ready()` report false for it, so the
+ *  file player is a no-op for that channel. This lets the waveform player
+ *  drive channels even with no SD card inserted.
  */
     void setup()
     {
@@ -69,7 +74,8 @@ public:
         for (size_t id = 0; id < NUM_CHANNELS; ++id)
         {
             if (!file_is_open(id))
-                open_file(id);
+                (void)open_file(id);
+            is_file_mode_[id] = file_is_open(id);
         }
         // pre-read buffers.
         update();
@@ -89,6 +95,7 @@ public:
         std::ranges::fill(filptrs_, nullptr); // mark files as starting closed.
         std::ranges::fill(curr_iterations_, 0);
         std::ranges::fill(iterations_, 1);
+        std::ranges::fill(is_file_mode_, false); // no channel is file-backed yet.
         for (auto& dac: dacs_)
             dac.write_value(OUTPUT_MIDSCALE);
         cleanup(); // close all files.
@@ -112,21 +119,91 @@ public:
     inline bool file_is_open(size_t file_index)
     {return filptrs_[file_index] != nullptr;}
 
-    inline void open_file(size_t file_index)
+/**
+ * \brief attempt to open the given channel's file for reading.
+ * \return true on success, false if the file is missing or the SD card is
+ *  unavailable. Non-fatal so the device remains usable with no SD card.
+ */
+    inline bool open_file(size_t file_index)
     {
         FRESULT fr = f_open(&fils_[file_index], filenames_[file_index], FA_READ);
         if (fr != FR_OK)
-        {panic("Could not open: %s\r\n", filenames_[file_index]);}
+            return false;
         filptrs_[file_index] = &fils_[file_index]; // set ptr to indicate open file.
+        return true;
     }
 
     inline void close_file(size_t file_index)
     {
-        FRESULT fr = f_close(&fils_[file_index]);
-        if (fr != FR_OK)
-            panic("Could not close: %s\r\n.", filenames_[file_index]);
+        if (!file_is_open(file_index))
+            return;
+        (void)f_close(&fils_[file_index]);
         filptrs_[file_index] = nullptr; // clear ptr to indicate closed file.
     }
+
+/**
+ * \brief accessor for the underlying DMA double-buffer for a given channel.
+ * \note only intended to be called by a cooperating waveform generator that
+ *  wants to borrow the same DMA transport while the file player is idle on
+ *  that channel. See `abandon_files` / `reclaim_files`.
+ */
+    inline DMADoubleBuffer<T, BUF_SIZE>& get_file_buf(size_t channel_id)
+    {return file_bufs_[channel_id];}
+
+/**
+ * \brief release ownership of the specified channels so a cooperating
+ *  waveform generator can drive the DAC via the same DMA transport.
+ * \details aborts any in-flight transfer, closes the file (if open), and
+ *  marks the channel as not file-backed so `update()` skips it and the
+ *  busy checks return false for it.
+ */
+    void abandon_files(uint32_t mask)
+    {
+        for (size_t ch = 0; ch < NUM_CHANNELS; ++ch)
+        {
+            if (!(mask & (1u << ch)))
+                continue;
+            if (file_bufs_[ch].is_transferring())
+                file_bufs_[ch].abort_transfer();
+            if (file_is_open(ch))
+                close_file(ch);
+            is_file_mode_[ch] = false;
+            idle_buffers_[ch] = nullptr;
+            curr_iterations_[ch] = 0;
+        }
+    }
+
+/**
+ * \brief reclaim ownership of the specified channels, reopen their files
+ *  (if available), and re-prime their buffers.
+ * \note if a file cannot be opened, the channel stays in the not-file-backed
+ *  state. This is the symmetric operation for `abandon_files`.
+ */
+    void reclaim_files(uint32_t mask)
+    {
+        for (size_t ch = 0; ch < NUM_CHANNELS; ++ch)
+        {
+            if (!(mask & (1u << ch)))
+                continue;
+            file_bufs_[ch].abort_transfer();
+            file_bufs_[ch].reset_transfer_config();
+            if (!file_is_open(ch))
+                (void)open_file(ch);
+            is_file_mode_[ch] = file_is_open(ch);
+            idle_buffers_[ch] = nullptr;
+            curr_iterations_[ch] = 0;
+            if (is_file_mode_[ch])
+                f_rewind(&fils_[ch]);
+        }
+        // Prime buffers for the reclaimed channels.
+        update();
+    }
+
+/**
+ * \brief true if the specified channel is currently backed by an open file.
+ */
+    inline bool is_file_mode(size_t channel_id) const
+    {return is_file_mode_[channel_id];}
 
 /**
  * \brief close all open files.
@@ -367,9 +444,13 @@ public:
 /**
  * \brief true if the specified channel needs to be handled with periodic calls
  *  to update().
+ * \note a channel that has been abandoned (not file-backed) is not busy from
+ *  this player's perspective — some other cooperating player may own it.
  */
     inline bool channel_is_busy(size_t channel_id)
     {
+        if (!is_file_mode_[channel_id])
+            return false;
         if (channel_is_active(channel_id))
             return true;
         else if (!channel_is_armed(channel_id))
@@ -383,6 +464,8 @@ public:
     inline bool channel_is_ready(size_t channel_id)
     {
         // FIXME: validate that this will be multicore safe.
+        if (!is_file_mode_[channel_id])
+            return false;
         return (!channel_is_active(channel_id)) && channel_is_armed(channel_id);
     }
 
@@ -400,6 +483,10 @@ public:
         UINT bytes_read;
         for (size_t id = 0; id < NUM_CHANNELS; ++id)
         {
+            // Skip channels not owned by the file player (either never
+            // opened or explicitly abandoned to another source).
+            if (!is_file_mode_[id])
+                continue;
             // Skip if channel is ready but not transferring.
             bool channel_active = channel_is_active(id);
             bool channel_armed = channel_is_armed(id);
@@ -472,6 +559,7 @@ private:
     std::array<FIL*, NUM_CHANNELS> filptrs_;
     std::array<size_t, NUM_CHANNELS> iterations_;
     std::array<size_t, NUM_CHANNELS> curr_iterations_;
+    std::array<bool, NUM_CHANNELS> is_file_mode_{};
     etl::vector<DMADoubleBuffer<T, BUF_SIZE>, NUM_CHANNELS> file_bufs_;
     std::array<WaveformSettings, NUM_CHANNELS> settings_;
     int dma_timer_chan_;

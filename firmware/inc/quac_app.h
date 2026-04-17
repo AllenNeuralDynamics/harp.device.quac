@@ -3,9 +3,12 @@
 #include <harp_core.h>
 #include <harp_c_app.h>
 #include <waveform_settings.h>
+#include <sine_wave_settings.h>
+#include <pulse_train_settings.h>
 #include <array>
 #include <config.h>
 #include <multi_file_player.h>
+#include <multi_waveform_player.h>
 #include <pico/util/queue.h>
 #include <pico/multicore.h>
 #include <core1_file_player.h>
@@ -16,11 +19,21 @@ using enum reg_type_t;
 extern std::array<PIO_LTC264x, NUM_CHANNELS> dacs;
 extern queue_t ext_trigger_event_queue;
 extern MultiFilePlayer<T, NUM_CHANNELS, READ_BUF_SIZE> player;
+extern MultiWaveformPlayer<T, NUM_CHANNELS, READ_BUF_SIZE> waveform_player;
 extern RegSpec app_reg_specs[];
 
 extern const size_t APP_REG_COUNT;
 inline constexpr size_t DAC_START_ADDRESS = HarpCore::APP_REG_START_ADDRESS + 10;
 inline constexpr size_t DAC_FINISHED_ADDRESS = HarpCore::APP_REG_START_ADDRESS + 13;
+// Offsets into the app-register table below DAC_FINISHED_ADDRESS's entry.
+// See app_reg_specs[] layout in quac_app.cpp for the authoritative order.
+inline constexpr size_t WAVEFORM_TYPE_BASE_ADDRESS    = HarpCore::APP_REG_START_ADDRESS + 26;
+inline constexpr size_t SINE_SETTINGS_BASE_ADDRESS    = HarpCore::APP_REG_START_ADDRESS + 30;
+inline constexpr size_t PULSE_SETTINGS_BASE_ADDRESS   = HarpCore::APP_REG_START_ADDRESS + 34;
+inline constexpr size_t WAVEFORM_START_ADDRESS        = HarpCore::APP_REG_START_ADDRESS + 38;
+inline constexpr size_t WAVEFORM_ABORT_ADDRESS        = HarpCore::APP_REG_START_ADDRESS + 39;
+inline constexpr size_t WAVEFORM_FINISHED_ADDRESS     = HarpCore::APP_REG_START_ADDRESS + 40;
+inline constexpr size_t SAMPLE_RATE_HZ_ADDRESS        = HarpCore::APP_REG_START_ADDRESS + 41;
 
 
 struct ext_trigger_event_t
@@ -59,6 +72,15 @@ struct app_regs_t
     uint8_t waveform_hashes[NUM_CHANNELS][SHA256_NUM_BYTES];
     // waveform_data are only exposed for write as individual registers.
     T waveform_data[NUM_CHANNELS]; // treat like a pointer. Data is stored on SD card.
+
+    // Waveform generator registers (MultiWaveformPlayer).
+    uint8_t waveform_type[NUM_CHANNELS];             // 0=Sine, 1=PulseTrain
+    SineWaveSettings sine_settings[NUM_CHANNELS];
+    PulseTrainSettings pulse_settings[NUM_CHANNELS];
+    uint8_t waveform_start;                          // write-only bitmask
+    uint8_t waveform_abort;                          // write-only bitmask
+    uint8_t waveform_finished;                       // EVENT payload
+    uint32_t sample_rate_hz;                         // shared DMA pacing rate
 };
 #pragma pack(pop)
 
@@ -96,6 +118,21 @@ void write_any_dac_settings(msg_t& msg);
 void read_any_waveform_hash(uint8_t address);
 
 void write_any_waveform_data(msg_t& msg);
+
+void read_any_waveform_type(uint8_t address);
+void write_any_waveform_type(msg_t& msg);
+
+void read_any_sine_settings(uint8_t address);
+void write_any_sine_settings(msg_t& msg);
+
+void read_any_pulse_settings(uint8_t address);
+void write_any_pulse_settings(msg_t& msg);
+
+void write_waveform_start(msg_t& msg);
+void write_waveform_abort(msg_t& msg);
+
+void read_sample_rate_hz(uint8_t address);
+void write_sample_rate_hz(msg_t& msg);
 
 void reset_app();
 
