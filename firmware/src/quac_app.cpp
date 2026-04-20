@@ -63,10 +63,51 @@ RegSpec app_reg_specs[]
     RegSpec::U8Array(&app_regs.waveform_hashes[0], 1,
         HarpCore::read_reg_error, write_any_waveform_data),
     RegSpec::U8Array(&app_regs.waveform_hashes[0], 1,
-    HarpCore::read_reg_error, write_any_waveform_data)
+    HarpCore::read_reg_error, write_any_waveform_data),
+
+    // --- MultiWaveformPlayer registers (indices 26 onward). ---
+    RegSpec::U8(&app_regs.waveform_type[0],
+        read_any_waveform_type, write_any_waveform_type),
+    RegSpec::U8(&app_regs.waveform_type[1],
+        read_any_waveform_type, write_any_waveform_type),
+    RegSpec::U8(&app_regs.waveform_type[2],
+        read_any_waveform_type, write_any_waveform_type),
+    RegSpec::U8(&app_regs.waveform_type[3],
+        read_any_waveform_type, write_any_waveform_type),
+
+    RegSpec::U8Array(&app_regs.sine_settings[0], sizeof(SineWaveSettings),
+        read_any_sine_settings, write_any_sine_settings),
+    RegSpec::U8Array(&app_regs.sine_settings[1], sizeof(SineWaveSettings),
+        read_any_sine_settings, write_any_sine_settings),
+    RegSpec::U8Array(&app_regs.sine_settings[2], sizeof(SineWaveSettings),
+        read_any_sine_settings, write_any_sine_settings),
+    RegSpec::U8Array(&app_regs.sine_settings[3], sizeof(SineWaveSettings),
+        read_any_sine_settings, write_any_sine_settings),
+
+    RegSpec::U8Array(&app_regs.pulse_settings[0], sizeof(PulseTrainSettings),
+        read_any_pulse_settings, write_any_pulse_settings),
+    RegSpec::U8Array(&app_regs.pulse_settings[1], sizeof(PulseTrainSettings),
+        read_any_pulse_settings, write_any_pulse_settings),
+    RegSpec::U8Array(&app_regs.pulse_settings[2], sizeof(PulseTrainSettings),
+        read_any_pulse_settings, write_any_pulse_settings),
+    RegSpec::U8Array(&app_regs.pulse_settings[3], sizeof(PulseTrainSettings),
+        read_any_pulse_settings, write_any_pulse_settings),
+
+    RegSpec::U8(&app_regs.waveform_start,
+        HarpCore::read_reg_error, write_waveform_start),
+    RegSpec::U8(&app_regs.waveform_abort,
+        HarpCore::read_reg_error, write_waveform_abort),
+    RegSpec::U8(&app_regs.waveform_finished,
+        HarpCore::read_reg_error, HarpCore::write_reg_error),
+    RegSpec::U32(&app_regs.sample_rate_hz,
+        read_sample_rate_hz, write_sample_rate_hz)
 };
 
 const size_t APP_REG_COUNT = sizeof(app_reg_specs);
+
+// Helper: true if the channel is owned by either player.
+static inline bool any_player_busy(size_t ch)
+{return player.channel_is_busy(ch) || waveform_player.channel_is_busy(ch);}
 
 void read_digital_output_port_state(uint8_t address)
 {
@@ -120,10 +161,10 @@ void read_analog_output_port_state(uint8_t address)
 {
     if (HarpCore::is_muted())
         return;
-    // Ensure no channels are busy.
+    // Ensure no channels are busy in either player.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (player.channel_is_busy(i))
+        if (any_player_busy(i))
         {
             HarpCore::send_harp_reply(READ_ERROR, address);
             return;
@@ -138,10 +179,10 @@ void read_analog_output_port_state(uint8_t address)
 
 void write_analog_output_port_state(msg_t& msg)
 {
-    // Ensure no channels are busy.
+    // Ensure no channels are busy in either player.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (player.channel_is_busy(i))
+        if (any_player_busy(i))
         {
             HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
             return;
@@ -163,7 +204,7 @@ void read_any_analog_output_channel(uint8_t address)
     // Convert address to output channel with pointer arithmetic.
     const RegSpec& specs = HarpCore::reg_address_to_spec(address);
     size_t channel = ((uint16_t*)specs.base_ptr - app_regs.analog_output_port_state);
-    if (player.channel_is_busy(channel))
+    if (any_player_busy(channel))
     {
         HarpCore::send_harp_reply(READ_ERROR, address);
         return;
@@ -178,7 +219,7 @@ void write_any_analog_output_channel(msg_t& msg)
     // Convert address to output channel with pointer arithmetic.
     const RegSpec& specs = HarpCore::reg_address_to_spec(msg.header.address);
     size_t channel = ((uint16_t*)specs.base_ptr - app_regs.analog_output_port_state);
-    if (player.channel_is_busy(channel)) // FIXME: launch core1
+    if (any_player_busy(channel)) // FIXME: launch core1
     {
         if (!HarpCore::is_muted());
             HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
@@ -202,19 +243,19 @@ void write_dac_start(msg_t& msg)
 {
     // TODO: handle paused logic.
     HarpCore::copy_msg_payload_to_register(msg);
-    // Ensure specified channels are ready.
+    const uint32_t mask = uint32_t(app_regs.dac_start);
+    // Ensure specified channels are ready and not owned by the waveform player.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (!((app_regs.dac_start >> i) & 1u)) // Skip untriggered channels.
+        if (!((mask >> i) & 1u))
             continue;
-        // Error if any specified channel is not ready.
-        if (!player.channel_is_ready(i))
+        if (waveform_player.channel_is_busy(i) || !player.channel_is_ready(i))
         {
             HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
             return;
         }
     }
-    player.start(uint32_t(app_regs.dac_start)); // Can be started from core0.
+    player.start(mask); // Can be started from core0.
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -247,18 +288,17 @@ void read_any_dac_settings(uint8_t address)
 void write_any_dac_settings(msg_t& msg)
 {
     // WriteError if we try to change the specified channel while it's busy.
-    // Convert address to output channel with pointer arithmetic.
+    // Recover the channel index from this spec's base pointer.
     const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
-    size_t channel = ((uint16_t*)spec.base_ptr - app_regs.analog_output_port_state);
-    if (player.channel_is_busy(channel))
+    size_t channel = (static_cast<WaveformSettings*>(const_cast<void*>(spec.base_ptr))
+                      - &app_regs.dac_settings[0]);
+    if (any_player_busy(channel))
     {
         HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
         return;
     }
     HarpCore::copy_msg_payload_to_register(msg);
     // TODO: Send waveform settings to core1.
-    // ...
-    // ...
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -283,6 +323,141 @@ void write_any_waveform_data(msg_t& msg)
 }
 
 
+// --- MultiWaveformPlayer register callbacks. ---
+
+static inline size_t waveform_type_channel_from_spec(const RegSpec& spec)
+{
+    return (static_cast<uint8_t*>(const_cast<void*>(spec.base_ptr))
+            - &app_regs.waveform_type[0]);
+}
+
+
+void read_any_waveform_type(uint8_t address)
+{HarpCore::read_reg_generic(address);}
+
+
+void write_any_waveform_type(msg_t& msg)
+{
+    const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
+    size_t channel = waveform_type_channel_from_spec(spec);
+    if (any_player_busy(channel))
+    {
+        HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+        return;
+    }
+    HarpCore::copy_msg_payload_to_register(msg);
+    const uint8_t raw = app_regs.waveform_type[channel];
+    // Clamp unknown values to Sine.
+    WaveformType t = (raw == uint8_t(WaveformType::PulseTrain))
+        ? WaveformType::PulseTrain
+        : WaveformType::Sine;
+    app_regs.waveform_type[channel] = uint8_t(t);
+    waveform_player.set_waveform_type(channel, t);
+    if (!HarpCore::is_muted())
+        HarpCore::send_harp_reply(WRITE, msg.header.address);
+}
+
+
+void read_any_sine_settings(uint8_t address)
+{HarpCore::read_reg_generic(address);}
+
+
+void write_any_sine_settings(msg_t& msg)
+{
+    const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
+    size_t channel = (static_cast<SineWaveSettings*>(const_cast<void*>(spec.base_ptr))
+                      - &app_regs.sine_settings[0]);
+    if (any_player_busy(channel))
+    {
+        HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+        return;
+    }
+    HarpCore::copy_msg_payload_to_register(msg);
+    waveform_player.set_sine_settings(channel, app_regs.sine_settings[channel]);
+    if (!HarpCore::is_muted())
+        HarpCore::send_harp_reply(WRITE, msg.header.address);
+}
+
+
+void read_any_pulse_settings(uint8_t address)
+{HarpCore::read_reg_generic(address);}
+
+
+void write_any_pulse_settings(msg_t& msg)
+{
+    const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
+    size_t channel = (static_cast<PulseTrainSettings*>(const_cast<void*>(spec.base_ptr))
+                      - &app_regs.pulse_settings[0]);
+    if (any_player_busy(channel))
+    {
+        HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+        return;
+    }
+    HarpCore::copy_msg_payload_to_register(msg);
+    waveform_player.set_pulse_settings(channel, app_regs.pulse_settings[channel]);
+    if (!HarpCore::is_muted())
+        HarpCore::send_harp_reply(WRITE, msg.header.address);
+}
+
+
+void write_waveform_start(msg_t& msg)
+{
+    HarpCore::copy_msg_payload_to_register(msg);
+    const uint32_t mask = uint32_t(app_regs.waveform_start);
+    // Every requested channel must be idle in both players.
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        if (!((mask >> i) & 1u))
+            continue;
+        if (any_player_busy(i))
+        {
+            HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+            return;
+        }
+    }
+    waveform_player.start(mask);
+    if (!HarpCore::is_muted())
+        HarpCore::send_harp_reply(WRITE, msg.header.address);
+}
+
+
+void write_waveform_abort(msg_t& msg)
+{
+    HarpCore::copy_msg_payload_to_register(msg);
+    waveform_player.abort(uint32_t(app_regs.waveform_abort));
+    if (!HarpCore::is_muted())
+        HarpCore::send_harp_reply(WRITE, msg.header.address);
+}
+
+
+void read_sample_rate_hz(uint8_t address)
+{HarpCore::read_reg_generic(address);}
+
+
+void write_sample_rate_hz(msg_t& msg)
+{
+    // Reject if any channel is active — changing the shared DMA timer under
+    // an in-flight transfer is unsafe.
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        if (any_player_busy(i))
+        {
+            HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+            return;
+        }
+    }
+    HarpCore::copy_msg_payload_to_register(msg);
+    uint32_t hz = app_regs.sample_rate_hz;
+    if (hz == 0)
+        hz = MultiWaveformPlayer<T, NUM_CHANNELS, READ_BUF_SIZE>::DEFAULT_SAMPLE_RATE_HZ;
+    player.set_frequency_hz(hz);
+    waveform_player.set_sample_rate_hz(hz);
+    app_regs.sample_rate_hz = hz;
+    if (!HarpCore::is_muted())
+        HarpCore::send_harp_reply(WRITE, msg.header.address);
+}
+
+
 void update_app()
 {
     // FYI: external triggers are handled via interrupts on this core,
@@ -296,22 +471,40 @@ void update_app()
     if (HarpCore::is_muted())
     {
         while (queue_try_remove(&ext_trigger_event_queue, &trigger_event)){}
-        while (player.get_finished_transfers(&transfer_done_event)){}
+        while (player.get_finished_transfers(&transfer_done_event))
+            waveform_player.note_finished(transfer_done_event.finished_channels_mask
+                & waveform_player.active_channels_mask());
         return;
     }
     // Dispatch any externally-triggered transfer-started events.
     while (queue_try_remove(&ext_trigger_event_queue, &trigger_event))
     {
+        // FYI: the trigger event records the raw start mask; waveform-mode
+        // starts are currently USB-triggered only, so file-mode is implied.
         app_regs.dac_start = trigger_event.channel_start_mask;
         HarpCore::send_harp_reply(EVENT, DAC_START_ADDRESS,
             HarpCore::system_to_harp_us_64(trigger_event.timestamp));
     }
-    // Dispatch any transfer-finished events.
+    // Dispatch any transfer-finished events. Split the mask between file- and
+    // waveform-mode owners so each source gets the correct Harp event address.
     while (player.get_finished_transfers(&transfer_done_event))
     {
-        app_regs.dac_finished = uint8_t(transfer_done_event.finished_channels_mask);
-        HarpCore::send_harp_reply(EVENT, DAC_FINISHED_ADDRESS,
-            HarpCore::system_to_harp_us_64(transfer_done_event.timestamp_us));
+        const uint32_t finished = transfer_done_event.finished_channels_mask;
+        const uint32_t wv_mask  = finished & waveform_player.active_channels_mask();
+        const uint32_t fp_mask  = finished & ~wv_mask;
+        if (fp_mask)
+        {
+            app_regs.dac_finished = uint8_t(fp_mask);
+            HarpCore::send_harp_reply(EVENT, DAC_FINISHED_ADDRESS,
+                HarpCore::system_to_harp_us_64(transfer_done_event.timestamp_us));
+        }
+        if (wv_mask)
+        {
+            app_regs.waveform_finished = uint8_t(wv_mask);
+            HarpCore::send_harp_reply(EVENT, WAVEFORM_FINISHED_ADDRESS,
+                HarpCore::system_to_harp_us_64(transfer_done_event.timestamp_us));
+            waveform_player.note_finished(wv_mask);
+        }
     }
 }
 
@@ -338,26 +531,60 @@ void reset_app()
     // FYI: PIO_LTC264x instances manage GPIO pin function.
     const T& DAC_MIDSCALE =
         MultiFilePlayer<T, NUM_CHANNELS, READ_BUF_SIZE>::OUTPUT_MIDSCALE;
-    const size_t DEFAULT_FREQUENCY_HZ =
-        MultiFilePlayer<T, NUM_CHANNELS, READ_BUF_SIZE>::DEFAULT_FREQUENCY_HZ;
+    constexpr uint32_t DEFAULT_WAVEFORM_SAMPLE_RATE_HZ =
+        MultiWaveformPlayer<T, NUM_CHANNELS, READ_BUF_SIZE>::DEFAULT_SAMPLE_RATE_HZ;
 
     for (auto& dac: dacs)
         dac.write_value(DAC_MIDSCALE);
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         app_regs.analog_output_port_state[i] = DAC_MIDSCALE;
-    // Reset Waveform trigger settings.
+    // Reset file-player WaveformSettings (file-mode external triggers).
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
         auto& settings = app_regs.dac_settings[i];
         settings.cycles = 1; // play once: "single-shot."
         settings.sample_count = 0; // Play everything.
-        settings.frequency_hz = DEFAULT_FREQUENCY_HZ;
+        settings.frequency_hz = DEFAULT_WAVEFORM_SAMPLE_RATE_HZ;
         settings.external_trigger_mask = (1u << i); // DI[i] triggers AO[i].
     }
+    // Reset waveform-player registers to sensible defaults.
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        app_regs.waveform_type[i] = uint8_t(WaveformType::Sine);
+        app_regs.sine_settings[i] = SineWaveSettings{
+            .frequency_hz = 1000,         // 1 kHz default.
+            .duration_us = 1'000'000,     // 1 s default.
+            .amplitude = DAC_MIDSCALE / 2,
+            .external_trigger_mask = uint8_t(1u << i),
+        };
+        app_regs.pulse_settings[i] = PulseTrainSettings{
+            .pulse_width_us = 1000,
+            .pulse_interval_us = 10'000,
+            .pulse_amplitude = DAC_MIDSCALE / 2,
+            .ramp_on_duration_us = 0,
+            .ramp_off_duration_us = 0,
+            .total_duration_us = 1'000'000,
+            .external_trigger_mask = uint8_t(1u << i),
+        };
+    }
+    app_regs.waveform_start = 0;
+    app_regs.waveform_abort = 0;
+    app_regs.waveform_finished = 0;
+    app_regs.sample_rate_hz = DEFAULT_WAVEFORM_SAMPLE_RATE_HZ;
+
     multicore_reset_core1(); // Ensure core1 is not updating the player first.
     player.reset();
-    player.set_frequency_hz(500'000);
-    player.setup(); // FIXME: Locks up if the files don't exist.
+    player.set_frequency_hz(DEFAULT_WAVEFORM_SAMPLE_RATE_HZ);
+    player.setup(); // Non-fatal if channel_N.bin files are missing.
+    waveform_player.reset();
+    waveform_player.set_sample_rate_hz(DEFAULT_WAVEFORM_SAMPLE_RATE_HZ);
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        waveform_player.set_waveform_type(i,
+            WaveformType(app_regs.waveform_type[i]));
+        waveform_player.set_sine_settings(i, app_regs.sine_settings[i]);
+        waveform_player.set_pulse_settings(i, app_regs.pulse_settings[i]);
+    }
     // Launch core1.
     (void)multicore_fifo_pop_blocking(); // Wait until core1 is ready.
     multicore_launch_core1(core1main);
@@ -388,23 +615,41 @@ void __not_in_flash_func(handle_external_trigger)()
     // Start the waveform per the 1s in the channel.
     // Filter out the busy channels first.
     uint32_t trigger_mask = ((gpio_get_all64() & DI_PORT_MASK) >> DI_PORT_BASE);
-    // Combine waveform settings external triggers to the final mask.
-    uint32_t start_mask = 0;
+    // Route each matched channel to either the waveform player (if its
+    // waveform-mode trigger mask matches) or the file player. Busy channels
+    // in either player are skipped.
+    uint32_t file_start_mask = 0;
+    uint32_t waveform_start_mask = 0;
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (player.channel_is_busy(i)) // Skip re-triggering busy channels.
+        if (any_player_busy(i))
             continue;
-        // Check if any currently HIGH pins would trigger this channel.
+        const uint8_t wv_trig =
+            waveform_player.get_external_trigger_mask(i);
+        if (wv_trig != 0 && (trigger_mask & wv_trig))
+        {
+            waveform_start_mask |= (1u << i);
+            continue;
+        }
         if (trigger_mask & app_regs.dac_settings[i].external_trigger_mask)
-            start_mask |= (1u << i);
+            file_start_mask |= (1u << i);
     }
-    if (start_mask != 0)
+    if (waveform_start_mask != 0)
+    {
+        waveform_player.start(waveform_start_mask);
+        // Dispatched as a dac_start event; a dedicated waveform_start event
+        // can be added later if the distinction matters to the host.
+        ext_trigger_event_t trigger_event;
+        trigger_event.channel_start_mask = waveform_start_mask;
+        trigger_event.timestamp = time_us_64();
+        queue_try_add(&ext_trigger_event_queue, &trigger_event);
+    }
+    if (file_start_mask != 0)
     {
         ext_trigger_event_t trigger_event;
-        player.start(start_mask); // Can be started from core1.
-        trigger_event.channel_start_mask = start_mask;
+        player.start(file_start_mask); // Can be started from core1.
+        trigger_event.channel_start_mask = file_start_mask;
         trigger_event.timestamp = time_us_64();
-        // Push harp message
         queue_try_add(&ext_trigger_event_queue, &trigger_event);
     }
     // Acknowledge the interrupt. Assume nothing else is setting these pins.

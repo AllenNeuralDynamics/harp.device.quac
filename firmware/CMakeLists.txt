@@ -1,3 +1,17 @@
+# == DO NOT EDIT THE FOLLOWING LINES for the Raspberry Pi Pico VS Code Extension to work ==
+if(WIN32)
+    set(USERHOME $ENV{USERPROFILE})
+else()
+    set(USERHOME $ENV{HOME})
+endif()
+set(sdkVersion 2.2.0)
+set(toolchainVersion 14_2_Rel1)
+set(picotoolVersion 2.2.0-a4)
+set(picoVscode ${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
+if (EXISTS ${picoVscode})
+    include(${picoVscode})
+endif()
+# ====================================================================================
 cmake_minimum_required(VERSION 3.13)
 find_package(Git REQUIRED)
 execute_process(COMMAND "${GIT_EXECUTABLE}" rev-parse --short HEAD OUTPUT_VARIABLE COMMIT_ID OUTPUT_STRIP_TRAILING_WHITESPACE)
@@ -65,6 +79,21 @@ target_link_libraries(multi_file_player INTERFACE
     dma_double_buffer
     etl::etl
 )
+
+add_library(multi_waveform_player INTERFACE)
+target_sources(multi_waveform_player INTERFACE
+    inc/multi_waveform_player.h
+    inc/sine_wave_settings.h
+    inc/pulse_train_settings.h
+    inc/raised_cosine_lut.h
+)
+target_link_libraries(multi_waveform_player INTERFACE
+    pico_stdlib
+    pio_ltc264x
+    dma_double_buffer
+    multi_file_player
+)
+
 target_link_libraries(${PROJECT_NAME}
     pico_stdlib
     pio_ltc264x
@@ -72,6 +101,7 @@ target_link_libraries(${PROJECT_NAME}
     harp_sync
     #hardware_adc
     multi_file_player
+    multi_waveform_player
     pico_multicore
 )
 

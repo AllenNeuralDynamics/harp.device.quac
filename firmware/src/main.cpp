@@ -30,6 +30,7 @@ std::array<PIO_LTC264x, NUM_CHANNELS> dacs
     {pio2, DAC_PINS[3].sck, DAC_PINS[3].pico, false, dacs[0].get_offset()},
 }};
 MultiFilePlayer<T, NUM_CHANNELS, READ_BUF_SIZE> player(dacs, filenames);
+MultiWaveformPlayer<T, NUM_CHANNELS, READ_BUF_SIZE> waveform_player(player);
 
 // Core0 main.
 int main()
