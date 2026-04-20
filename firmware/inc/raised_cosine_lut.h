@@ -14,7 +14,7 @@
  * is enough for sub-Hz sinusoids at a 10 kHz sample rate (10k samples/cycle).
  */
 
-inline constexpr size_t RAISED_COSINE_LUT_SIZE = 1024;
+inline constexpr size_t RAISED_COSINE_LUT_SIZE = 1024;  // must be a power of 2
 inline constexpr size_t RAISED_COSINE_LUT_MASK = RAISED_COSINE_LUT_SIZE - 1;
 
 namespace quac_detail

@@ -336,9 +336,9 @@ private:
         const uint32_t amp = sine_settings_[ch].amplitude;
         for (size_t i = 0; i < n; ++i)
         {
-            const uint32_t idx  = phase >> 22;            // top 10 bits
+            const uint32_t idx  = phase >> 22;            // top 10 bits from 32-bit integer
             const uint32_t next = (idx + 1) & RAISED_COSINE_LUT_MASK;
-            const uint32_t frac = phase & 0x003FFFFFu;    // low 22 bits
+            const uint32_t frac = phase & 0x003FFFFFu;    // low 22 bits from 32-bit integer
             const int64_t a = static_cast<int64_t>(RAISED_COSINE_LUT[idx]);
             const int64_t b = static_cast<int64_t>(RAISED_COSINE_LUT[next]);
             // Linear interpolation in [0, 65535].

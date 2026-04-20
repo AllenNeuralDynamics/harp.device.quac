@@ -247,7 +247,7 @@ void write_dac_start(msg_t& msg)
     // Ensure specified channels are ready and not owned by the waveform player.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (!((mask >> i) & 1u))
+        if (!((mask >> i) & 1u)) // Skip untriggered channels.
             continue;
         if (waveform_player.channel_is_busy(i) || !player.channel_is_ready(i))
         {
