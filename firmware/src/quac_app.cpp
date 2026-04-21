@@ -66,7 +66,7 @@ RegSpec app_reg_specs[]
     HarpCore::read_reg_error, write_any_waveform_data)
 };
 
-const size_t APP_REG_COUNT = sizeof(app_reg_specs);
+const size_t APP_REG_COUNT = sizeof(app_reg_specs)/sizeof(RegSpec);
 
 void read_digital_output_port_state(uint8_t address)
 {
