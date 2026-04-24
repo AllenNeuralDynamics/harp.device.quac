@@ -76,7 +76,7 @@ int main() {
     int32_t sm = dac.get_sm();
     TimerPacedDMADoubleBuffer<T, BUF_SIZE> buf(&pio->txf[sm]);
     // Create FilePlayer
-    FilePlayer<T, BUF_SIZE> player(dac);
+    FilePlayer<T, BUF_SIZE> player;
     player.claim_buffer(&buf);
     player.open_file("channel_0.bin");
     buf.set_frequency_hz(500'000);
@@ -95,7 +95,7 @@ int main() {
     while(player.is_busy())
         player.update();
     printf("Done replaying! Closing files.\r\n");
-    player.cleanup(); // Close file. Release resources.
+    player.cleanup(); // Close file. Release buffer.
     // Unmount the file system.
     f_unmount("");
     printf("All transfers complete! Goodbye, world!\r\n");

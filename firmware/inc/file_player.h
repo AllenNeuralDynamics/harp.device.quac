@@ -1,14 +1,10 @@
 #ifndef FILE_PLAYER_H
 #define FILE_PLAYER_H
-#include <waveform_settings.h>
-#include <pio_ltc264x.h>
-#include <dma_double_buffer.h>
-#include <ff.h>
-#include <f_util.h>
-#include <pico/stdlib.h>
-#include <pico/util/queue.h>
-#include <etl/vector.h>
-#include <limits>
+#include "waveform_settings.h"
+#include "pio_ltc264x.h"
+#include "dma_double_buffer.h"
+#include "ff.h"
+#include "f_util.h"
 
 /**
  * \brief class for streaming a single waveform file a DAC via DMADoubleBuffer.
@@ -17,16 +13,12 @@ template <typename T, size_t BUF_SIZE>
 class FilePlayer
 {
 public:
-    static inline constexpr size_t DEFAULT_FREQUENCY_HZ = 500000;
-    static inline constexpr T OUTPUT_MIDSCALE = std::numeric_limits<T>::max()/2;
-    static inline constexpr size_t DEFAULT_QUEUE_SIZE = 32;
-
 /**
  * \brief constructor.
  * \param dac
  */
-    FilePlayer(PIO_LTC264x& dac, DMADoubleBuffer<T, BUF_SIZE>* buf_ptr = nullptr)
-    : dac_{dac}, dma_timer_chan_{-1}, filptr_{nullptr},
+    FilePlayer(DMADoubleBuffer<T, BUF_SIZE>* buf_ptr = nullptr)
+    : dma_timer_chan_{-1}, filptr_{nullptr},
     idle_buffer_{nullptr}, curr_iterations_{0}, iterations_{1}, buf_ptr_{buf_ptr}
     {
         // FIXME: Connect buffer address.
@@ -55,6 +47,9 @@ public:
         return true;
     }
 
+    inline bool output_buffer_unspecified()
+    {return buf_ptr_ == nullptr;}
+
 /**
  * \brief Reset internal variables and close file if opened.
  * \warning not multicore safe.
@@ -62,7 +57,6 @@ public:
     void reset()
     {
         cleanup(); // close all files.
-        dac_.write_value(OUTPUT_MIDSCALE);
     }
 
 /**
@@ -175,6 +169,7 @@ public:
         return (!is_active()) && is_armed();
     }
 
+
 /**
  * \brief tick the file reading process.
  * \details if active, read the next chunk of the file into
@@ -188,8 +183,7 @@ public:
         // TODO: deadlne check between SD read iterations to ensure buffers are topped off.
         FRESULT fr;
         UINT bytes_read;
-        // Skip if buffer is not specified.
-        if (buf_ptr_ == nullptr)
+        if (output_buffer_unspecified())
             return;
         // Skip if channel is ready but not transferring.
         bool active = is_active();
@@ -241,7 +235,6 @@ public:
     }
 
 private:
-    PIO_LTC264x& dac_;
     T* idle_buffer_;
     FIL fil_;
     FIL* filptr_;

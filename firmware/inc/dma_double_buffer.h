@@ -365,16 +365,18 @@ private:
 
 
 /**
- * \brief Identical to DMADoubleBuffer except this child class assumes timer
- * pacing where the timer is either claimed internally (new timer every time) or
- * externally (shared timer) and passed in.
+ * \brief Identical to DMADoubleBuffer except this child class assumes
+ * timer-based pacing where the hardware timer is either claimed internally
+ * (new timer every time) or externally (shared timer) and passed in.
  */
 template <TransferType T, size_t BUF_SIZE>
 class TimerPacedDMADoubleBuffer: public DMADoubleBuffer<T, BUF_SIZE>
 {
 public:
+    static inline constexpr size_t DEFAULT_FREQUENCY_HZ = 500000;
+
 /**
- * \brief constructor. Auto-claim a timer.
+ * \brief constructor. Auto-claim a hardware timer.
  * \param target_address destination address for the buffer to output to.
  */
     TimerPacedDMADoubleBuffer(volatile void* target_address)
