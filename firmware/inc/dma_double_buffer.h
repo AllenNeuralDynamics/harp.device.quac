@@ -4,6 +4,7 @@
 #include <type_traits>
 #include <concepts>
 #include <bit>
+#include <cmath>
 #include <functional>
 
 
@@ -21,8 +22,17 @@ concept TransferType = std::integral<T> && (sizeof(T) <= 4);
 template <TransferType T, size_t BUF_SIZE>
 class DMADoubleBuffer
 {
-public:
+protected:
+/**
+ * \brief private constructor to setup the bare minimum data members. All other
+ * class constructors (including those of derived classes) must still call
+ * setup_transfer() in their constructor body.
+ */
+    DMADoubleBuffer()
+    :ctrl_chan_{-1}, data_chan_{-1}, end_of_transfer_irq_num_{-1},
+    trigger_isr_{false}{}
 
+public:
 /**
  * \brief constructor. Setup 2 DMA channels in chained configuration.
  * \param pacing_signal the data-request pacing signal of the DMA transfer.
@@ -36,8 +46,7 @@ public:
  * (likely a peripheral).
  */
     DMADoubleBuffer(dreq_num_t pacing_signal, volatile void* target_address)
-    :ctrl_chan_{-1}, data_chan_{-1},
-     end_of_transfer_irq_num_{-1}, trigger_isr_{false}
+    :DMADoubleBuffer()
     {
         setup_transfer(pacing_signal, target_address);
     }
@@ -157,7 +166,7 @@ public:
     }
 
 /**
- * \brief start dma transfer. Note that setup() must be called first.
+ * \brief start dma transfer. Note that setup_transfer() must be called first.
  */
     void start_transfer()
     {dma_start_channel_mask(1u << ctrl_chan_);}
@@ -192,11 +201,6 @@ public:
         data_chan_is_busy = dma_channel_is_busy(data_chan_);
         ctrl_chan_is_busy = dma_channel_is_busy(ctrl_chan_);
         return data_chan_is_busy || ctrl_chan_is_busy;
-        //return data_chan_is_busy || (!dma_chain_loop_disconnected());
-/*
-        return data_chan_is_busy ||
-               (ctrl_chan_is_busy && !dma_chain_loop_disconnected());
-*/
     }
 
 /**
@@ -358,5 +362,73 @@ private:
     int end_of_transfer_irq_num_;
     bool trigger_isr_;
 };
-#endif // DMA_DOUBLE_BUFFER
 
+
+/**
+ * \brief Identical to DMADoubleBuffer except this child class assumes timer
+ * pacing where the timer is either claimed internally (new timer every time) or
+ * externally (shared timer) and passed in.
+ */
+template <TransferType T, size_t BUF_SIZE>
+class TimerPacedDMADoubleBuffer: public DMADoubleBuffer<T, BUF_SIZE>
+{
+public:
+/**
+ * \brief constructor. Auto-claim a timer.
+ * \param target_address destination address for the buffer to output to.
+ */
+    TimerPacedDMADoubleBuffer(volatile void* target_address)
+    : DMADoubleBuffer<T, BUF_SIZE>(), dma_timer_chan_{-1},
+    claimed_timer_chan_{true}
+    {
+        dma_timer_chan_ = dma_claim_unused_timer(true);
+        // Get associated pacing signal for this timer.
+        dreq_num_t pacing_signal = dreq_num_t(dma_get_timer_dreq(dma_timer_chan_));
+        DMADoubleBuffer<T, BUF_SIZE>::setup_transfer(pacing_signal, target_address);
+    }
+
+/**
+ * \brief constructor. Pass in an an already-claimed timer.
+ * \param dma_timer_chan
+ * \param target_address destination address for the buffer to output to.
+ */
+    TimerPacedDMADoubleBuffer(int dma_timer_chan, volatile void* target_address)
+    : DMADoubleBuffer<T, BUF_SIZE>(), dma_timer_chan_{dma_timer_chan},
+    claimed_timer_chan_{false}
+    {
+        // Get associated pacing signal for this timer.
+        dreq_num_t pacing_signal = dreq_num_t(dma_get_timer_dreq(dma_timer_chan_));
+        DMADoubleBuffer<T, BUF_SIZE>::setup_transfer(pacing_signal, target_address);
+    }
+
+    ~TimerPacedDMADoubleBuffer()
+    {
+        if (claimed_timer_chan_)
+            dma_timer_unclaim(dma_timer_chan_);
+    }
+
+/**
+ *  \brief set frequency (in Hz) at which the buffer sends new data to the
+ * target address specified in the constructor.
+ * \warning frequency must be a multiple of sys clock (150MHz).
+ * \warning if timer is shared, this value will also apply to other resources
+ * using the timer.
+ */
+    void set_frequency_hz(uint32_t hz)
+    {
+        float divisor = float(SYS_CLK_HZ) / hz;
+        if (round(divisor) != divisor)
+        {panic("Update frequency (%f [Hz]) must be a multiple of sys clock: %d",
+                SYS_CLK_HZ);}
+        dma_timer_set_fraction(dma_timer_chan_, 1, divisor);
+        // TODO: enable more flexible pacing options by allocating timers
+        //  on-demand and sharing timers for matching frequencies, and
+        //  respecting max number of used timers.
+        //  Requires re-attaching timers to buffers.
+    }
+
+private:
+    bool claimed_timer_chan_;
+    int dma_timer_chan_;
+};
+#endif // DMA_DOUBLE_BUFFER

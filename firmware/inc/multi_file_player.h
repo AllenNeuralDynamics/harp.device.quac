@@ -171,7 +171,7 @@ public:
     }
 
 /**
- * \brief 
+ * \brief
  */
     void disable_end_of_transfer_interrupt()
     {
