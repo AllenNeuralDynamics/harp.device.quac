@@ -103,7 +103,16 @@ public:
     }
 
     ~DMADoubleBuffer()
-    {dma_unclaim_mask((1u << ctrl_chan_) | (1u << data_chan_));}
+    {
+        abort_transfer();
+        dma_unclaim_mask((1u << ctrl_chan_) | (1u << data_chan_));
+    }
+
+    void reset()
+    {
+        abort_transfer();
+        reset_transfer_config();
+    }
 
 /**
  * \brief load the buffer with \p num_words words of data from \p word_source.
@@ -288,7 +297,8 @@ public:
 
 /**
  * \brief reset both dma channels to their starting configuration (i.e:
- *  ready to kick off a transfer sequence.)
+ *  ready to kick off a transfer sequence) set by the most recent call to
+ * setup_transfer().
  */
     void reset_transfer_config()
     {
@@ -407,6 +417,16 @@ public:
     {
         if (claimed_timer_chan_)
             dma_timer_unclaim(dma_timer_chan_);
+    }
+
+/**
+ * \brief reset the buffer and additionally reset the pacing timer to the
+ *  default frequency
+ */
+    void reset()
+    {
+        DMADoubleBuffer<T, BUF_SIZE>::reset();
+        set_frequency_hz(DEFAULT_FREQUENCY_HZ);
     }
 
 /**

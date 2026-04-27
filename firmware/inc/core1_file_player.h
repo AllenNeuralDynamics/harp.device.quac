@@ -2,13 +2,13 @@
 #define CORE1_FILE_PLAYER_H
 #include <config.h>
 #include <waveform_settings.h>
-#include <multi_file_player.h>
+#include "file_player.h"
 #include <pico/util/queue.h>
 
 //extern queue_t waveform_settings_queue;
 //extern queue_t bulk_waveform_states_queue;
 
-extern MultiFilePlayer<T, NUM_CHANNELS, READ_BUF_SIZE> player;
+extern std::array<FilePlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> file_players;
 
 void core1main();
 

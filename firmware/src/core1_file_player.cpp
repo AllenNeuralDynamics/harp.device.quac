@@ -4,5 +4,8 @@ void core1main()
 {
     // Note: Commands like Pause/Resume/Stop are handled by core0.
     while (true)
-        player.update();
+    {
+        for (auto& file_player: file_players)
+            file_player.update();
+    }
 }

@@ -40,7 +40,7 @@ public:
     MultiTransferManager(
         std::array<DMADoubleBuffer<T, BUF_SIZE>*, NUM_CHANNELS>& buf_ptrs,
         std::array<PIO_LTC264x, NUM_CHANNELS>& dacs)
-    : buf_ptrs_{buf_ptrs}, dacs_{dacs}
+    : buf_ptrs_{buf_ptrs}, dacs_{dacs}, irq_{-1}
     {
         queue_init(&end_of_transfer_event_queue_,
                    sizeof(end_of_transfer_event_t), DEFAULT_QUEUE_SIZE);
@@ -48,7 +48,21 @@ public:
 
     ~MultiTransferManager()
     {
+        reset();
         queue_free(&end_of_transfer_event_queue_);
+    }
+
+/**
+ *  \brief undo object state changes since instantiation.
+ */
+    void reset()
+    {
+        // Drain queue.
+        end_of_transfer_event_t transfer_done_event;
+        while (queue_try_remove(&end_of_transfer_event_queue_,
+                                &transfer_done_event)){}
+        // Detach interrupt.
+        disable_end_of_transfer_interrupt();
     }
 
 
@@ -72,13 +86,17 @@ public:
  *  Interrupt can be specified explicitly. Otherwise, the default will be used.
  *  For more details on the default interrupt behavior, see
  *  handle_end_of_transfer()
- * \warning Per current implementation, only one `MultiFilePlayer` instance can
- *  use the default interrupt handler, because its functionality is tied to a
- *  static class member.
+ * \warning Per hardware limits, only two `MultiTransferManager` instances max
+ *  can use the two separate DMA irq interrupt lines (DMA_IRQ_0 and DMA_IRQ_1).
+ * \param dma_irq_index 0 or 1 corresponding to DMA_IRQ_0 or DMA_IRQ_1
+ * \param fn_ptr optional callback function to call instead of the default.
  */
     void enable_end_of_transfer_interrupt(size_t dma_irq_index,
                                           void (*fn_ptr)(void) = nullptr)
     {
+        // Limit one DMA IRQ line per class instance.
+        if (irq_ >= 0) // Bail early if already specified
+            return;
         irq_ = DMA_IRQ_0 + dma_irq_index; // get associated IRQ number
         // For the default interrupt callback fn,
         // use the wrapper ("trampoline") function so that we can pass a
@@ -102,7 +120,9 @@ public:
  */
     void disable_end_of_transfer_interrupt()
     {
-        // Disconnect irq handler function.
+        // Disconnect irq handler function if it was set.
+        if (irq_ < 0)
+            return;
         irq_set_exclusive_handler(irq_, nullptr);
         irq_ = -1;
         // Disable the interrupt.
@@ -110,6 +130,17 @@ public:
             buf_ptr->disable_end_of_transfer_irq();
         // Enable the interrupt.
         irq_set_enabled(irq_, false);
+    }
+
+/**
+ * \brief receive a record of any finished transfers from a queue and put
+ *  the contents in \p event_ptr.
+ * \return `true`, if a record was successfully remove from the queue;
+ *  `false` otherwise.
+ */
+    inline bool get_finished_transfers(end_of_transfer_event_t* event_ptr)
+    {
+        return queue_try_remove(&end_of_transfer_event_queue_, event_ptr);
     }
 
 /**

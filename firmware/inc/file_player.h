@@ -31,7 +31,7 @@ public:
 
     bool claim_buffer(DMADoubleBuffer<T, BUF_SIZE>* buf)
     {
-        // FIXME: make is so buffer is claimable.
+        // FIXME: make it so buffer is claimable.
         //if (!buf->claim(this))
         //    return false;
         buf_ptr_ = buf;
@@ -47,6 +47,7 @@ public:
         return true;
     }
 
+    // FIXME: consider reading from dma double buffer directly.
     inline bool output_buffer_unspecified()
     {return buf_ptr_ == nullptr;}
 
@@ -76,7 +77,7 @@ public:
         if (f_open(&fil_, filename, FA_READ) != FR_OK)
         {panic("Could not open: %s\r\n", filename);}
         filptr_ = &fil_; // set ptr to indicate open file.
-        // pre-read buffers.
+        // pre-read buffers (if buffer is claimed).
         update();
     }
 
@@ -161,9 +162,9 @@ public:
     }
 
 /**
- * \brief true if the specified channel is ready.
+ * \brief true if the player is ready to start transferring immediately.
  */
-    inline bool is_ready(size_t channel_id)
+    inline bool is_ready()
     {
         // FIXME: validate that this will be multicore safe.
         return (!is_active()) && is_armed();
