@@ -7332,7 +7332,7 @@
 	)
 	(text "PIO1 SM0"
 		(exclude_from_sim no)
-		(at 114.046 108.966 0)
+		(at 114.046 111.506 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7420,7 +7420,7 @@
 	)
 	(text "PIO1 SM0"
 		(exclude_from_sim no)
-		(at 114.046 96.266 0)
+		(at 114.046 98.806 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7464,7 +7464,7 @@
 	)
 	(text "PIO1 SM0"
 		(exclude_from_sim no)
-		(at 114.046 93.726 0)
+		(at 114.046 96.266 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7508,7 +7508,7 @@
 	)
 	(text "PIO1 SM0"
 		(exclude_from_sim no)
-		(at 114.046 106.426 0)
+		(at 114.046 108.966 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7541,7 +7541,7 @@
 	)
 	(text "PIO1 SM0"
 		(exclude_from_sim no)
-		(at 114.046 101.346 0)
+		(at 114.046 103.886 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7640,7 +7640,7 @@
 	)
 	(text "PIO1 SM0"
 		(exclude_from_sim no)
-		(at 114.046 98.806 0)
+		(at 114.046 101.346 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7684,7 +7684,7 @@
 	)
 	(text "PIO1 SM0"
 		(exclude_from_sim no)
-		(at 114.046 103.886 0)
+		(at 114.046 106.426 0)
 		(effects
 			(font
 				(size 1.27 1.27)
