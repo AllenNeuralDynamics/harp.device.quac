@@ -3,6 +3,8 @@
 #include <harp_core.h>
 #include <harp_c_app.h>
 #include <waveform_settings.h>
+#include "sine_wave_settings.h"
+#include "pulse_train_settings.h"
 #include <array>
 #include <config.h>
 #include "multi_transfer_manager.h"
@@ -63,6 +65,15 @@ struct app_regs_t
     uint8_t waveform_hashes[NUM_CHANNELS][SHA256_NUM_BYTES];
     // waveform_data are only exposed for write as individual registers.
     T waveform_data[NUM_CHANNELS]; // treat like a pointer. Data is stored on SD card.
+
+    // Waveform generator registers (MultiWaveformPlayer).
+    uint8_t waveform_type[NUM_CHANNELS];             // 0=Sine, 1=PulseTrain
+    SineWaveSettings sine_settings[NUM_CHANNELS];
+    PulseTrainSettings pulse_settings[NUM_CHANNELS];
+    uint8_t waveform_start;                          // write-only bitmask
+    uint8_t waveform_abort;                          // write-only bitmask
+    uint8_t waveform_finished;                       // EVENT payload
+    uint32_t sample_rate_hz;                         // shared DMA pacing rate
 };
 #pragma pack(pop)
 
@@ -100,6 +111,21 @@ void write_any_dac_settings(msg_t& msg);
 void read_any_waveform_hash(uint8_t address);
 
 void write_any_waveform_data(msg_t& msg);
+
+void read_any_waveform_type(uint8_t address);
+void write_any_waveform_type(msg_t& msg);
+
+void read_any_sine_settings(uint8_t address);
+void write_any_sine_settings(msg_t& msg);
+
+void read_any_pulse_settings(uint8_t address);
+void write_any_pulse_settings(msg_t& msg);
+
+void write_waveform_start(msg_t& msg);
+void write_waveform_abort(msg_t& msg);
+
+void read_sample_rate_hz(uint8_t address);
+void write_sample_rate_hz(msg_t& msg);
 
 void reset_app();
 
