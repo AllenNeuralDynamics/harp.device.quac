@@ -6,10 +6,10 @@
 	(paper "A4")
 	(title_block
 		(title "harp device quad dac")
-		(date "2025-07-15")
+		(date "2026-04-28")
 		(rev "1.1")
 		(company "The Allen Institute")
-		(comment 1 "Hexabitz")
+		(comment 1 "Sonya Vasquez")
 	)
 	(lib_symbols
 		(symbol "harp.device.quad.dac:74LVCH2T45DC"
@@ -2344,7 +2344,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
+		(property "Footprint" "kicad-lib:BNC_AmphenolRF_031-5329-52RFX_Vertical"
 			(at 171.45 130.81 0)
 			(effects
 				(font
@@ -2353,7 +2353,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
+		(property "Datasheet" "https://www.amphenolrf.com/en-us/assets/file/4065788070/"
 			(at 171.45 130.81 0)
 			(effects
 				(font
@@ -2371,7 +2371,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
+		(property "Link" "https://www.digikey.com/en/products/detail/amphenol-rf/031-5329-52RFX/2041814"
 			(at 171.45 130.81 0)
 			(effects
 				(font
@@ -2380,7 +2380,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity Linx"
+		(property "Manufacturer" "Amphenol RF"
 			(at 171.45 130.81 0)
 			(effects
 				(font
@@ -2390,24 +2390,6 @@
 			)
 		)
 		(property "Manufacturer Number" "CONBNC001"
-			(at 171.45 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 171.45 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 171.45 130.81 0)
 			(effects
 				(font
@@ -2426,42 +2408,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 171.45 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 171.45 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 171.45 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 171.45 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 171.45 130.81 0)
 			(effects
 				(font
@@ -2582,26 +2528,8 @@
 				(hide yes)
 			)
 		)
-		(property "Tolerance" "1%"
+		(property "Tolerance" ""
 			(at 142.24 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 142.24 120.65 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 142.24 120.65 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2619,42 +2547,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 142.24 120.65 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 142.24 120.65 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 142.24 120.65 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 142.24 120.65 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 142.24 120.65 90)
 			(effects
 				(font
@@ -2767,24 +2659,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 162.56 88.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 162.56 88.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 162.56 88.9 90)
 			(effects
@@ -2795,42 +2669,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 162.56 88.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 162.56 88.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 162.56 88.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 162.56 88.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 162.56 88.9 90)
 			(effects
 				(font
@@ -3008,24 +2846,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 162.56 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 162.56 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 162.56 119.38 90)
 			(effects
@@ -3036,42 +2856,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 162.56 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 162.56 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 162.56 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 162.56 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 162.56 119.38 90)
 			(effects
 				(font
@@ -3192,26 +2976,8 @@
 				(hide yes)
 			)
 		)
-		(property "Tolerance" "1%"
+		(property "Tolerance" ""
 			(at 142.24 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 142.24 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 142.24 125.73 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3229,42 +2995,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 142.24 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 142.24 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 142.24 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 142.24 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 142.24 125.73 90)
 			(effects
 				(font
@@ -3377,24 +3107,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 163.83 72.39 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 163.83 72.39 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 163.83 72.39 90)
 			(effects
@@ -3405,42 +3117,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 163.83 72.39 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 163.83 72.39 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 163.83 72.39 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 163.83 72.39 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 163.83 72.39 90)
 			(effects
 				(font
@@ -3697,7 +3373,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
+		(property "Footprint" "kicad-lib:BNC_AmphenolRF_031-5329-52RFX_Vertical"
 			(at 171.45 83.82 0)
 			(effects
 				(font
@@ -3706,7 +3382,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
+		(property "Datasheet" "https://www.amphenolrf.com/en-us/assets/file/4065788070/"
 			(at 171.45 83.82 0)
 			(effects
 				(font
@@ -3724,7 +3400,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
+		(property "Link" "https://www.digikey.com/en/products/detail/amphenol-rf/031-5329-52RFX/2041814"
 			(at 171.45 83.82 0)
 			(effects
 				(font
@@ -3733,7 +3409,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity Linx"
+		(property "Manufacturer" "Amphenol RF"
 			(at 171.45 83.82 0)
 			(effects
 				(font
@@ -3743,24 +3419,6 @@
 			)
 		)
 		(property "Manufacturer Number" "CONBNC001"
-			(at 171.45 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 171.45 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 171.45 83.82 0)
 			(effects
 				(font
@@ -3779,42 +3437,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 171.45 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 171.45 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 171.45 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 171.45 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 171.45 83.82 0)
 			(effects
 				(font
@@ -3876,7 +3498,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
+		(property "Footprint" "kicad-lib:BNC_AmphenolRF_031-5329-52RFX_Vertical"
 			(at 171.45 114.3 0)
 			(effects
 				(font
@@ -3885,7 +3507,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
+		(property "Datasheet" "https://www.amphenolrf.com/en-us/assets/file/4065788070/"
 			(at 171.45 114.3 0)
 			(effects
 				(font
@@ -3903,7 +3525,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
+		(property "Link" "https://www.digikey.com/en/products/detail/amphenol-rf/031-5329-52RFX/2041814"
 			(at 171.45 114.3 0)
 			(effects
 				(font
@@ -3912,7 +3534,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity Linx"
+		(property "Manufacturer" "Amphenol RF"
 			(at 171.45 114.3 0)
 			(effects
 				(font
@@ -3922,24 +3544,6 @@
 			)
 		)
 		(property "Manufacturer Number" "CONBNC001"
-			(at 171.45 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 171.45 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 171.45 114.3 0)
 			(effects
 				(font
@@ -3958,42 +3562,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 171.45 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 171.45 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 171.45 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 171.45 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 171.45 114.3 0)
 			(effects
 				(font
@@ -4329,24 +3897,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 137.16 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 137.16 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 137.16 62.23 90)
 			(effects
@@ -4357,42 +3907,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 137.16 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 137.16 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 137.16 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 137.16 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 137.16 62.23 90)
 			(effects
 				(font
@@ -4519,7 +4033,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
+		(property "Footprint" "kicad-lib:BNC_AmphenolRF_031-5329-52RFX_Vertical"
 			(at 172.72 67.31 0)
 			(effects
 				(font
@@ -4528,7 +4042,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
+		(property "Datasheet" "https://www.amphenolrf.com/en-us/assets/file/4065788070/"
 			(at 172.72 67.31 0)
 			(effects
 				(font
@@ -4546,7 +4060,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
+		(property "Link" "https://www.digikey.com/en/products/detail/amphenol-rf/031-5329-52RFX/2041814"
 			(at 172.72 67.31 0)
 			(effects
 				(font
@@ -4555,7 +4069,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity Linx"
+		(property "Manufacturer" "Amphenol RF"
 			(at 172.72 67.31 0)
 			(effects
 				(font
@@ -4565,24 +4079,6 @@
 			)
 		)
 		(property "Manufacturer Number" "CONBNC001"
-			(at 172.72 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 172.72 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 172.72 67.31 0)
 			(effects
 				(font
@@ -4601,42 +4097,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 172.72 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 172.72 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 172.72 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 172.72 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 172.72 67.31 0)
 			(effects
 				(font
@@ -4750,24 +4210,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 127 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 127 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 127 123.19 0)
 			(effects
@@ -4778,42 +4220,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 127 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 127 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 127 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 127 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 127 123.19 0)
 			(effects
 				(font
@@ -4972,24 +4378,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 118.11 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 118.11 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 118.11 62.23 90)
 			(effects
@@ -5000,42 +4388,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 118.11 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 118.11 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 118.11 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 118.11 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 118.11 62.23 90)
 			(effects
 				(font
@@ -5148,24 +4500,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 162.56 135.89 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 162.56 135.89 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 162.56 135.89 90)
 			(effects
@@ -5176,42 +4510,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 162.56 135.89 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 162.56 135.89 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 162.56 135.89 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 162.56 135.89 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 162.56 135.89 90)
 			(effects
 				(font
@@ -5325,24 +4623,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 127 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 127 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 127 76.2 0)
 			(effects
@@ -5353,42 +4633,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 127 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 127 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 127 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 127 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 127 76.2 0)
 			(effects
 				(font
@@ -5937,24 +5181,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 118.11 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 118.11 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 118.11 109.22 90)
 			(effects
@@ -5965,42 +5191,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 118.11 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 118.11 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 118.11 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 118.11 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 118.11 109.22 90)
 			(effects
 				(font
@@ -6121,26 +5311,8 @@
 				(hide yes)
 			)
 		)
-		(property "Tolerance" "1%"
+		(property "Tolerance" ""
 			(at 142.24 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 142.24 78.74 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 142.24 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6158,42 +5330,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 142.24 78.74 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 142.24 78.74 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 142.24 78.74 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 142.24 78.74 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 142.24 78.74 90)
 			(effects
 				(font
@@ -6314,26 +5450,8 @@
 				(hide yes)
 			)
 		)
-		(property "Tolerance" "1%"
+		(property "Tolerance" ""
 			(at 142.24 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 142.24 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 142.24 73.66 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6351,42 +5469,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 142.24 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 142.24 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 142.24 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 142.24 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 142.24 73.66 90)
 			(effects
 				(font
@@ -6592,24 +5674,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 137.16 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 137.16 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 137.16 109.22 90)
 			(effects
@@ -6620,42 +5684,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 137.16 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 137.16 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 137.16 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 137.16 109.22 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 137.16 109.22 90)
 			(effects
 				(font
