@@ -6,10 +6,10 @@
 	(paper "A4")
 	(title_block
 		(title "harp device quad dac")
-		(date "2025-07-15")
+		(date "2026-04-28")
 		(rev "1.1")
 		(company "The Allen Institute")
-		(comment 1 "Hexabitz")
+		(comment 1 "Sonya Vasquez")
 	)
 	(lib_symbols
 		(symbol "Amplifier_Operational:OPA2994xD"

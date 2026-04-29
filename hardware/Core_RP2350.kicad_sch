@@ -5,11 +5,11 @@
 	(uuid "7e50f2b3-ad7c-4ca1-aa67-f754ca02f837")
 	(paper "A4")
 	(title_block
-		(title "harp.device.quad-dac")
-		(date "2025-12-10")
+		(title "harp device quad dac")
+		(date "2026-04-28")
 		(rev "1.1")
 		(company "The Allen Institute")
-		(comment 1 "Sonya Vasquez and Hexabitz")
+		(comment 1 "Sonya Vasquez")
 	)
 	(lib_symbols
 		(symbol "Connector:Micro_SD_Card_Det_Hirose_DM3AT"
