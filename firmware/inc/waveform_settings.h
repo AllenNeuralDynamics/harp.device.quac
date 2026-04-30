@@ -1,40 +1,46 @@
 #ifndef WAVEFORM_SETTINGS_H
 #define WAVEFORM_SETTINGS_H
+#include <algorithm>
 #include <cstdint>
 
 
 #pragma pack(push, 1)
 struct WaveformSettings
 {
-    uint32_t cycles; // 0 for loops-forever.
-    uint32_t sample_count;
+    uint32_t cycles; /// number of iterations or 0 for loops-forever.
+    uint32_t duration_us; /// 0 for read-everything or keep-going forever.
     uint32_t frequency_hz;
-    uint8_t external_trigger_mask;
-    //uint8_t sha256[8];
 
-    // TODO: default constructor should set iterations=1
+    WaveformSettings()
+    : cycles{1}, duration_us{0}, frequency_hz{500000}
+    {}
+
+    uint32_t sample_count()
+    {return static_cast<uint32_t>(float(duration_us) * frequency_hz / 1.0E6);}
 };
 #pragma pack(pop)
 
-// TODO: should commands be enums, and the actual command is a struct of
-//  {cmd, mask}?
-struct BulkWaveformCommands
+
+#pragma pack(push, 1)
+/**
+ * \brief base waveform settings and additional settings for Harp interface.
+ */
+struct SineWaveSettings: WaveformSettings
 {
-    uint8_t start;
-    uint8_t pause;
-    uint8_t abort;
-    uint8_t arm;
+    uint16_t amplitude;             // peak offset above midscale in DAC codes.
 };
+#pragma pack(pop)
 
 
-/// Each bit represents a waveform.
-//struct BulkWaveformStates
-//{
-//    uint8_t is_armed;   // waveform[i] is ready (buffered) to be started.
-//    uint8_t is_playing; // waveform[i] is playing .
-//    uint8_t is_short_circuited; // waveform[i] short-circuit detection triggered.
-//};
-
+#pragma pack(push, 1)
+/**
+ * \brief base waveform settings and additional settings for Harp interface.
+ */
+struct WaveformInterfaceSettings: WaveformSettings
+{
+    uint8_t external_trigger_mask;
+};
+#pragma pack(pop)
 
 
 #endif // WAVEFORM_SETTINGS_H
