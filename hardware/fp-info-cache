@@ -1,4 +1,4 @@
-27391794173615964
+27501666931220399
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -108038,6 +108038,13 @@ banana socket
 2
 1
 kicad-lib
+BarrelJack_Same_Sky_PJ-102AH_Horizontal
+Thin-pin DC Barrel Jack, https://cdn-shop.adafruit.com/datasheets/21mmdcjackDatasheet.pdf
+Power Jack
+0
+3
+3
+kicad-lib
 CP_Radial_D8.0mm_P3.50mm_Bent_90
 CP, Radial series, Radial, pin pitch=3.50mm, , diameter=8mm, Electrolytic Capacitor
 CP Radial series Radial pin pitch 3.50mm  diameter 8mm Electrolytic Capacitor
@@ -108139,6 +108146,13 @@ kicad-lib
 L_0806_2016Metric
 Inductor SMD 0806 (2016 Metric)
 inductor
+0
+2
+2
+kicad-lib
+L_Bourns-SRP4030FA
+Bourns SRP4030FA series SMD inductor
+Bourns SRP4030FA SMD inductor
 0
 2
 2
@@ -108353,6 +108367,13 @@ SMD_RADIAL_CAN
 2
 2
 kicad-lib
+SOT-553
+SOT, 5 Pin (https://www.jedec.org/system/files/docs/MO-293B.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SOT TO_SOT_SMD JEDEC-MO-293-UAAD-1 Texas-DRL-5
+0
+5
+5
+kicad-lib
 SOT23-3-BAS70-04
 
 
@@ -108373,6 +108394,13 @@ SW_Push_1P1T-SH_NO_Vertical_Wuerth_WS-TASV
 0
 5
 5
+kicad-lib
+SW_SPDT_CK-JS102011SAQN
+Sub-miniature slide switch, right-angle, http://www.ckswitches.com/media/1422/js.pdf
+switch spdt
+0
+3
+3
 kicad-lib
 SW_SPDT_CK_JS102011JCQN
 Sub-miniature slide switch
@@ -108492,3 +108520,10 @@ pololu_BD65496MUV_breakout
 0
 12
 12
+project_lib
+harp.device.quac
+
+
+0
+0
+0
