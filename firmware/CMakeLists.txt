@@ -57,6 +57,10 @@ target_sources(file_player INTERFACE
     inc/file_player.h
 )
 
+target_link_libraries(dma_double_buffer INTERFACE
+  hardware_dma
+)
+
 target_link_libraries(file_player INTERFACE
     pio_ltc264x
     no-OS-FatFS-SD-SDIO-SPI-RPi-Pico

@@ -8,7 +8,8 @@
  *  DMADoubleBuffer. Ultimately, the DMADoubleBuffer may be connected to an
  *  output like a DAC.
  * \details Derived classes need only implement rewind_source(),
- *  transfer_source_chunk(), and source_finished(), functions.
+ *  transfer_source_chunk(), and source_finished(), functions and populate
+ *  settings_ptr_ in the constructor.
  */
 template <typename T, size_t BUF_SIZE>
 class SourcePlayer
@@ -18,9 +19,9 @@ public:
  * \brief constructor.
  */
     SourcePlayer(DMADoubleBuffer<T, BUF_SIZE>* buf_ptr = nullptr)
-    : idle_buf_ptr_{nullptr}, buf_ptr_{buf_ptr}, curr_cycles_{0}, settings_{}
+    : idle_buf_ptr_{nullptr}, buf_ptr_{buf_ptr}, curr_cycles_{0},
+      settings_ptr_{nullptr}
     {
-        reset();
         if (buf_ptr != nullptr)
             claim_buffer(buf_ptr);
     }
@@ -62,11 +63,14 @@ public:
     {return buf_ptr_ == nullptr;}
 
 /**
- * \brief Reset internal variables and close file if opened.
- * \warning not multicore safe.
+ * \brief Clear internal state but do not release claimed resources
  */
-    void reset()
-    {cleanup();}
+    virtual void reset()
+    {
+        curr_cycles_ = 0;
+        idle_buf_ptr_ = nullptr;
+        rewind_source();
+    }
 
 /**
  * \brief release claimed resources.
@@ -82,20 +86,21 @@ public:
 
 /**
  * \brief set waveform settings.
- * \note settings can only be altered if the player is not active.
+ * \note settings can only be altered if the player is not active otherwise
+ *  this function is not multicore safe.
  */
     bool apply_settings(WaveformSettings& settings)
     {
         // FIXME: implement this.
         // TODO: update the double buffer pacing settings?
-        return false;
+        *settings_ptr_ = settings;
     }
 
 /**
  * \brief return a read-only reference to the current settings
  */
     const WaveformSettings& get_settings() const
-    {return settings_;}
+    {return *settings_ptr_;}
 
 /**
  * \brief true if the channel's buffer has been pre-filled and the underlying
@@ -138,8 +143,6 @@ public:
         return (!is_active()) && is_armed();
     }
 
-
-// TODO: inline these!!
 /**
  * \brief rewind the source (move to start-of-file, set t=0 on an equation,
  *  etc.) such that it is ready to be played again from the beginning.
@@ -196,7 +199,7 @@ public:
         // Handle end-of-file.
          ++curr_cycles_; // increment full file read iterations.
         // Handle last transfer condition.
-        if ((curr_cycles_ == settings_.cycles) && (settings_.cycles != 0))
+        if ((curr_cycles_ == settings_ptr_->cycles) && (settings_ptr_->cycles != 0))
         {
             // Next transfer will be the last transfer.
             //printf("EOF at %llu. Setting up last transfer\r\n", fil_.fptr);
@@ -218,7 +221,7 @@ protected:
     T* idle_buf_ptr_;
     size_t curr_cycles_;
     DMADoubleBuffer<T, BUF_SIZE>* buf_ptr_;
-    WaveformSettings settings_;
+    WaveformSettings* settings_ptr_;
 
     static inline constexpr size_t CHUNK_SIZE_BYTES = BUF_SIZE * sizeof(T); // bytes
 };

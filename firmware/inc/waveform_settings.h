@@ -4,12 +4,15 @@
 #include <cstdint>
 
 
+/**
+ * \brief base waveform base settings common to all waveforms.
+ */
 #pragma pack(push, 1)
 struct WaveformSettings
 {
     uint32_t cycles; /// number of iterations or 0 for loops-forever.
     uint32_t duration_us; /// 0 for read-everything or keep-going forever.
-    uint32_t frequency_hz;
+    uint32_t frequency_hz; /// frequency that the waveform produces a new sample.
 
     WaveformSettings()
     : cycles{1}, duration_us{0}, frequency_hz{500000}
@@ -21,13 +24,14 @@ struct WaveformSettings
 #pragma pack(pop)
 
 
-#pragma pack(push, 1)
 /**
- * \brief base waveform settings and additional settings for Harp interface.
+ * \brief periodic waveform base settings.
  */
-struct SineWaveSettings: WaveformSettings
+#pragma pack(push, 1)
+struct FunctionSettings: WaveformSettings
 {
-    uint16_t amplitude;             // peak offset above midscale in DAC codes.
+    uint16_t amplitude; // peak offset above midscale in DAC codes.
+    // TODO: period???
 };
 #pragma pack(pop)
 

@@ -3,6 +3,7 @@
 #include "source_player.h"
 #include "ff.h"
 #include "f_util.h"
+#include "waveform_settings.h"
 
 
 // FIXME: implement read-subset-of-file: i.e: duration_us specified.
@@ -15,8 +16,10 @@ class FilePlayer: public SourcePlayer<T, BUF_SIZE>
 {
 public:
     FilePlayer(DMADoubleBuffer<T, BUF_SIZE>* buf_ptr = nullptr)
-    : SourcePlayer<T, BUF_SIZE>{buf_ptr}, filptr_{nullptr}
-    {}
+    : SourcePlayer<T, BUF_SIZE>{buf_ptr}, filptr_{nullptr}, settings_{}
+    {
+        this->settings_ptr_ = &settings_;
+    }
 
 /**
  *  \brief open the previously specified file.
@@ -86,5 +89,6 @@ public:
 
 private:
     FIL* filptr_;
+    WaveformSettings settings_;
 };
 #endif // FILE_PLAYER_H
