@@ -5,7 +5,7 @@
 #include <waveform_settings.h>
 #include <array>
 #include <config.h>
-#include <multi_file_player.h>
+#include "multi_transfer_manager.h"
 #include <pico/util/queue.h>
 #include <pico/multicore.h>
 #include <core1_file_player.h>
@@ -15,7 +15,11 @@ using enum reg_type_t;
 
 extern std::array<PIO_LTC264x, NUM_CHANNELS> dacs;
 extern queue_t ext_trigger_event_queue;
-extern MultiFilePlayer<T, NUM_CHANNELS, READ_BUF_SIZE> player;
+
+extern std::array<TimerPacedDMADoubleBuffer<T, READ_BUF_SIZE>, NUM_CHANNELS> bufs;
+extern std::array<DMADoubleBuffer<T, READ_BUF_SIZE>*, NUM_CHANNELS> buf_ptrs;
+extern std::array<FilePlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> file_players;
+extern MultiTransferManager<T, READ_BUF_SIZE, NUM_CHANNELS> transfer_manager;
 extern RegSpec app_reg_specs[];
 
 extern const size_t APP_REG_COUNT;
@@ -108,4 +112,3 @@ void handle_external_trigger();
 
 
 #endif // QUAC_H
-

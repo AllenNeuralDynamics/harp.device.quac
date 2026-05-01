@@ -1,3 +1,6 @@
+#include "dma_double_buffer.h"
+#include "file_player.h"
+#include <array>
 #include <cstring>
 #include <harp_c_app.h>
 #include <harp_synchronizer.h>
@@ -29,7 +32,22 @@ std::array<PIO_LTC264x, NUM_CHANNELS> dacs
     {pio2, DAC_PINS[2].sck, DAC_PINS[2].pico, false, dacs[0].get_offset()},
     {pio2, DAC_PINS[3].sck, DAC_PINS[3].pico, false, dacs[0].get_offset()},
 }};
-MultiFilePlayer<T, NUM_CHANNELS, READ_BUF_SIZE> player(dacs, filenames);
+
+std::array<FilePlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> file_players{};
+
+std::array<TimerPacedDMADoubleBuffer<T, READ_BUF_SIZE>, NUM_CHANNELS> bufs
+{{
+    {dacs[0].get_tx_fifo_address()},
+    {dacs[1].get_tx_fifo_address()},
+    {dacs[2].get_tx_fifo_address()},
+    {dacs[3].get_tx_fifo_address()}
+}};
+
+std::array<DMADoubleBuffer<T, READ_BUF_SIZE>*, NUM_CHANNELS> buf_ptrs
+{{ &bufs[0], &bufs[1], &bufs[2], &bufs[3] }};
+
+MultiTransferManager<T, READ_BUF_SIZE, NUM_CHANNELS> transfer_manager(buf_ptrs,
+                                                                      dacs);
 
 // Core0 main.
 int main()
@@ -45,11 +63,6 @@ int main()
     // Mount the file system.
     FATFS fs;
     FRESULT fr = f_mount(&fs, "", 1);
-
-    // Launch the file player.
-    player.enable_end_of_transfer_interrupt(1); // DMA // FIXME: should be on core1
-    //player.set_frequency_hz(500'000);
-    //player.setup(); // FIXME: Locks up if the files don't exist.
     // Setup DACs first.
     for (const auto& dac: dacs)
         dac.start();

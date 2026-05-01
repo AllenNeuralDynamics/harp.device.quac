@@ -29,7 +29,7 @@ using T = uint16_t; // Double Buffer Data Transfer Type.
 inline constexpr size_t SHA256_NUM_BYTES = 8;
 
 inline constexpr size_t NUM_CHANNELS = 4;
-inline constexpr std::array<const char*, NUM_CHANNELS> filenames
+inline constexpr std::array<const char*, NUM_CHANNELS> default_filenames
 {{
     "channel_0.bin", "channel_1.bin", "channel_2.bin", "channel_3.bin"
 }};

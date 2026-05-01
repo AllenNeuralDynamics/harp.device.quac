@@ -1,3 +1,6 @@
+#include "config.h"
+#include "dma_double_buffer.h"
+#include "pio_ltc264x.h"
 #include <quac_app.h>
 
 app_regs_t app_regs;
@@ -123,7 +126,7 @@ void read_analog_output_port_state(uint8_t address)
     // Ensure no channels are busy.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (player.channel_is_busy(i))
+        if (bufs[i].is_transferring())
         {
             HarpCore::send_harp_reply(READ_ERROR, address);
             return;
@@ -141,7 +144,7 @@ void write_analog_output_port_state(msg_t& msg)
     // Ensure no channels are busy.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (player.channel_is_busy(i))
+        if (bufs[i].is_transferring())
         {
             HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
             return;
@@ -163,7 +166,7 @@ void read_any_analog_output_channel(uint8_t address)
     // Convert address to output channel with pointer arithmetic.
     const RegSpec& specs = HarpCore::reg_address_to_spec(address);
     size_t channel = ((uint16_t*)specs.base_ptr - app_regs.analog_output_port_state);
-    if (player.channel_is_busy(channel))
+    if (bufs[channel].is_transferring())
     {
         HarpCore::send_harp_reply(READ_ERROR, address);
         return;
@@ -178,7 +181,7 @@ void write_any_analog_output_channel(msg_t& msg)
     // Convert address to output channel with pointer arithmetic.
     const RegSpec& specs = HarpCore::reg_address_to_spec(msg.header.address);
     size_t channel = ((uint16_t*)specs.base_ptr - app_regs.analog_output_port_state);
-    if (player.channel_is_busy(channel)) // FIXME: launch core1
+    if (bufs[channel].is_transferring())
     {
         if (!HarpCore::is_muted());
             HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
@@ -208,13 +211,13 @@ void write_dac_start(msg_t& msg)
         if (!((app_regs.dac_start >> i) & 1u)) // Skip untriggered channels.
             continue;
         // Error if any specified channel is not ready.
-        if (!player.channel_is_ready(i))
+        if (!file_players[i].is_ready())
         {
             HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
             return;
         }
     }
-    player.start(uint32_t(app_regs.dac_start)); // Can be started from core0.
+    transfer_manager.start(uint32_t(app_regs.dac_start)); // Can start from core0.
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -250,7 +253,7 @@ void write_any_dac_settings(msg_t& msg)
     // Convert address to output channel with pointer arithmetic.
     const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
     size_t channel = ((uint16_t*)spec.base_ptr - app_regs.analog_output_port_state);
-    if (player.channel_is_busy(channel))
+    if (bufs[channel].is_transferring())
     {
         HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
         return;
@@ -296,7 +299,7 @@ void update_app()
     if (HarpCore::is_muted())
     {
         while (queue_try_remove(&ext_trigger_event_queue, &trigger_event)){}
-        while (player.get_finished_transfers(&transfer_done_event)){}
+        while (transfer_manager.get_finished_transfers(&transfer_done_event)){}
         return;
     }
     // Dispatch any externally-triggered transfer-started events.
@@ -307,7 +310,7 @@ void update_app()
             HarpCore::system_to_harp_us_64(trigger_event.timestamp));
     }
     // Dispatch any transfer-finished events.
-    while (player.get_finished_transfers(&transfer_done_event))
+    while (transfer_manager.get_finished_transfers(&transfer_done_event))
     {
         app_regs.dac_finished = uint8_t(transfer_done_event.finished_channels_mask);
         HarpCore::send_harp_reply(EVENT, DAC_FINISHED_ADDRESS,
@@ -335,29 +338,38 @@ void reset_app()
     memset(&app_regs.waveform_hashes[3], 0, SHA256_NUM_BYTES);
     // TODO: open SD card, find hash files, update Harp reg hashes as needed.
 
-    // FYI: PIO_LTC264x instances manage GPIO pin function.
-    const T& DAC_MIDSCALE =
-        MultiFilePlayer<T, NUM_CHANNELS, READ_BUF_SIZE>::OUTPUT_MIDSCALE;
-    const size_t DEFAULT_FREQUENCY_HZ =
-        MultiFilePlayer<T, NUM_CHANNELS, READ_BUF_SIZE>::DEFAULT_FREQUENCY_HZ;
-
-    for (auto& dac: dacs)
-        dac.write_value(DAC_MIDSCALE);
-    for (size_t i = 0; i < NUM_CHANNELS; ++i)
-        app_regs.analog_output_port_state[i] = DAC_MIDSCALE;
     // Reset Waveform trigger settings.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
         auto& settings = app_regs.dac_settings[i];
         settings.cycles = 1; // play once: "single-shot."
         settings.sample_count = 0; // Play everything.
-        settings.frequency_hz = DEFAULT_FREQUENCY_HZ;
+        settings.frequency_hz =
+            TimerPacedDMADoubleBuffer<T, READ_BUF_SIZE>::DEFAULT_FREQUENCY_HZ;
         settings.external_trigger_mask = (1u << i); // DI[i] triggers AO[i].
     }
+    transfer_manager.reset();
+    // FIXME: hardcoded reference to DMA_IRQ_1.
+    transfer_manager.enable_end_of_transfer_interrupt(1); // corresponds to DMA_IRQ_1
+    // Reset DoubleBuffers before DACs, since they send data to DACs.
+    for (auto& buf: bufs)
+        buf.reset();
+    // TODO: "apply settings from WaveformSettings to buffers and xfer managers"
+    // FYI: PIO_LTC264x instances manage GPIO pin function.
+    for (auto& dac: dacs)
+        dac.write_value(PIO_LTC264x::OUTPUT_MIDSCALE);
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+        app_regs.analog_output_port_state[i] = PIO_LTC264x::OUTPUT_MIDSCALE;
     multicore_reset_core1(); // Ensure core1 is not updating the player first.
-    player.reset();
-    player.set_frequency_hz(500'000);
-    player.setup(); // FIXME: Locks up if the files don't exist.
+    for (auto& file_player: file_players)
+        file_player.reset();
+    // Open default files
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        file_players[i].claim_buffer(buf_ptrs[i]);
+        // Warning: might lock up if the file doesn't exist.
+        file_players[i].open_file(default_filenames[i]);
+    }
     // Launch core1.
     (void)multicore_fifo_pop_blocking(); // Wait until core1 is ready.
     multicore_launch_core1(core1main);
@@ -392,7 +404,7 @@ void __not_in_flash_func(handle_external_trigger)()
     uint32_t start_mask = 0;
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (player.channel_is_busy(i)) // Skip re-triggering busy channels.
+        if (bufs[i].is_transferring()) // Skip re-triggering busy channels.
             continue;
         // Check if any currently HIGH pins would trigger this channel.
         if (trigger_mask & app_regs.dac_settings[i].external_trigger_mask)
@@ -401,7 +413,7 @@ void __not_in_flash_func(handle_external_trigger)()
     if (start_mask != 0)
     {
         ext_trigger_event_t trigger_event;
-        player.start(start_mask); // Can be started from core1.
+        transfer_manager.start(start_mask); // Can be started from core1.
         trigger_event.channel_start_mask = start_mask;
         trigger_event.timestamp = time_us_64();
         // Push harp message
