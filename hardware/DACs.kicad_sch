@@ -6031,7 +6031,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 25.146 166.878 90)
 			(effects
 				(font
@@ -6050,7 +6050,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 31.75 156.21 0)
 			(effects
 				(font
@@ -6059,7 +6059,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 30.48 161.29 0)
 			(effects
 				(font
@@ -6077,7 +6077,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 30.48 161.29 0)
 			(effects
 				(font
@@ -6105,6 +6105,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 30.48 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 30.48 161.29 0)
 			(effects
 				(font
@@ -6230,7 +6239,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 25.146 41.148 90)
 			(effects
 				(font
@@ -6249,7 +6258,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 31.75 30.48 0)
 			(effects
 				(font
@@ -6258,7 +6267,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 30.48 35.56 0)
 			(effects
 				(font
@@ -6276,7 +6285,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 30.48 35.56 0)
 			(effects
 				(font
@@ -6304,6 +6313,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 30.48 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 30.48 35.56 0)
 			(effects
 				(font
@@ -8551,7 +8569,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 123.19 113.03 0)
 			(effects
 				(font
@@ -8568,7 +8586,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 124.46 114.3 0)
 			(effects
 				(font
@@ -8577,7 +8595,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 123.19 119.38 0)
 			(effects
 				(font
@@ -8595,7 +8613,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 123.19 119.38 0)
 			(effects
 				(font
@@ -8623,6 +8641,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 123.19 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 123.19 119.38 0)
 			(effects
 				(font
@@ -9159,7 +9186,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 25.146 83.058 90)
 			(effects
 				(font
@@ -9178,7 +9205,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 31.75 72.39 0)
 			(effects
 				(font
@@ -9187,7 +9214,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 30.48 77.47 0)
 			(effects
 				(font
@@ -9205,7 +9232,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 30.48 77.47 0)
 			(effects
 				(font
@@ -9233,6 +9260,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 30.48 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 30.48 77.47 0)
 			(effects
 				(font
@@ -9809,7 +9845,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 102.87 71.12 0)
 			(effects
 				(font
@@ -9826,7 +9862,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 104.14 72.39 0)
 			(effects
 				(font
@@ -9835,7 +9871,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 102.87 77.47 0)
 			(effects
 				(font
@@ -9853,7 +9889,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 102.87 77.47 0)
 			(effects
 				(font
@@ -9881,6 +9917,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 102.87 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 102.87 77.47 0)
 			(effects
 				(font
@@ -10483,7 +10528,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 102.87 113.03 0)
 			(effects
 				(font
@@ -10500,7 +10545,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 104.14 114.3 0)
 			(effects
 				(font
@@ -10509,7 +10554,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 102.87 119.38 0)
 			(effects
 				(font
@@ -10527,7 +10572,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 102.87 119.38 0)
 			(effects
 				(font
@@ -10555,6 +10600,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 102.87 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 102.87 119.38 0)
 			(effects
 				(font
@@ -11338,7 +11392,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 102.87 154.94 0)
 			(effects
 				(font
@@ -11355,7 +11409,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 104.14 156.21 0)
 			(effects
 				(font
@@ -11364,7 +11418,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 102.87 161.29 0)
 			(effects
 				(font
@@ -11382,7 +11436,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 102.87 161.29 0)
 			(effects
 				(font
@@ -11410,6 +11464,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 102.87 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 102.87 161.29 0)
 			(effects
 				(font
@@ -11469,7 +11532,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 25.146 124.968 90)
 			(effects
 				(font
@@ -11488,7 +11551,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 31.75 114.3 0)
 			(effects
 				(font
@@ -11497,7 +11560,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 30.48 119.38 0)
 			(effects
 				(font
@@ -11515,7 +11578,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 30.48 119.38 0)
 			(effects
 				(font
@@ -11543,6 +11606,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 30.48 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 30.48 119.38 0)
 			(effects
 				(font
@@ -13072,7 +13144,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 123.19 71.12 0)
 			(effects
 				(font
@@ -13089,7 +13161,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 124.46 72.39 0)
 			(effects
 				(font
@@ -13098,7 +13170,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 123.19 77.47 0)
 			(effects
 				(font
@@ -13116,7 +13188,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 123.19 77.47 0)
 			(effects
 				(font
@@ -13144,6 +13216,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 123.19 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 123.19 77.47 0)
 			(effects
 				(font
@@ -13919,7 +14000,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 123.19 154.94 0)
 			(effects
 				(font
@@ -13936,7 +14017,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 124.46 156.21 0)
 			(effects
 				(font
@@ -13945,7 +14026,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 123.19 161.29 0)
 			(effects
 				(font
@@ -13963,7 +14044,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 123.19 161.29 0)
 			(effects
 				(font
@@ -13991,6 +14072,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 123.19 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 123.19 161.29 0)
 			(effects
 				(font
@@ -16412,7 +16502,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 102.87 29.21 0)
 			(effects
 				(font
@@ -16429,7 +16519,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 104.14 30.48 0)
 			(effects
 				(font
@@ -16438,7 +16528,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 102.87 35.56 0)
 			(effects
 				(font
@@ -16456,7 +16546,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 102.87 35.56 0)
 			(effects
 				(font
@@ -16484,6 +16574,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 102.87 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 102.87 35.56 0)
 			(effects
 				(font
@@ -16675,7 +16774,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 123.19 29.21 0)
 			(effects
 				(font
@@ -16692,7 +16791,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 124.46 30.48 0)
 			(effects
 				(font
@@ -16701,7 +16800,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 123.19 35.56 0)
 			(effects
 				(font
@@ -16719,7 +16818,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 123.19 35.56 0)
 			(effects
 				(font
@@ -16747,6 +16846,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 123.19 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 123.19 35.56 0)
 			(effects
 				(font
