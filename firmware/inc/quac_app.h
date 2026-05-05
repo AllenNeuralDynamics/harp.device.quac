@@ -1,5 +1,6 @@
 #ifndef QUAC_H
 #define QUAC_H
+#include <cstdint>
 #include <harp_core.h>
 #include <harp_c_app.h>
 #include <waveform_settings.h>
@@ -52,28 +53,28 @@ struct app_regs_t
     uint16_t& analog_output_channel_2  = analog_output_port_state[2];
     uint16_t& analog_output_channel_3  = analog_output_port_state[3];
 
+    // DAC state masks.
     uint8_t dac_ready;
     uint8_t dac_start;
     uint8_t dac_pause; // 1-bit: pause active channel, 0-bit: unpause paused channel
     uint8_t dac_abort;
     uint8_t dac_finished;
 
-    // WaveformSettings are only exposed for read/write as individual registers.
-    WaveformInterfaceSettings dac_settings[NUM_CHANNELS];
+    // External trigger masks per-channeel. Assign a channel to one or more triggers.
+    uint8_t external_trigger_masks[NUM_CHANNELS];
+
+    // Settings for each distinct player.
+    FileSettings file_settings[NUM_CHANNELS];
+    FunctionSettings sine_settings[NUM_CHANNELS];
+    TrapezoidSettings trapezoid_settings[NUM_CHANNELS];
+    TrapezoidSettings (&sawtooth_settings)[NUM_CHANNELS] = trapezoid_settings;
+    TrapezoidSettings (&triangle_settings)[NUM_CHANNELS] = trapezoid_settings;
 
     // waveform_hashes are only exposed for read as individual registers.
     uint8_t waveform_hashes[NUM_CHANNELS][SHA256_NUM_BYTES];
     // waveform_data are only exposed for write as individual registers.
     T waveform_data[NUM_CHANNELS]; // treat like a pointer. Data is stored on SD card.
 
-    // Waveform generator registers (MultiWaveformPlayer).
-    //uint8_t waveform_type[NUM_CHANNELS];             // 0=Sine, 1=PulseTrain
-    //SineWaveSettings sine_settings[NUM_CHANNELS];
-    //PulseTrainSettings pulse_settings[NUM_CHANNELS];
-    uint8_t waveform_start;                          // write-only bitmask
-    uint8_t waveform_abort;                          // write-only bitmask
-    uint8_t waveform_finished;                       // EVENT payload
-    uint32_t sample_rate_hz;                         // shared DMA pacing rate
 };
 #pragma pack(pop)
 

@@ -108,7 +108,7 @@ public:
         dma_unclaim_mask((1u << ctrl_chan_) | (1u << data_chan_));
     }
 
-    void reset()
+    virtual void reset()
     {
         abort_transfer();
         reset_transfer_config();
@@ -423,7 +423,7 @@ public:
  * \brief reset the buffer and additionally reset the pacing timer to the
  *  default frequency
  */
-    void reset()
+    void reset() override
     {
         DMADoubleBuffer<T, BUF_SIZE>::reset();
         set_frequency_hz(DEFAULT_FREQUENCY_HZ);

@@ -2,6 +2,7 @@
 #define SOURCE_PLAYER_H
 #include "waveform_settings.h"
 #include "dma_double_buffer.h"
+#include <algorithm>
 
 /**
  * \brief Abstract base class for streaming a source waveform to a
@@ -9,7 +10,7 @@
  *  output like a DAC.
  * \details Derived classes need only implement rewind_source(),
  *  transfer_source_chunk(), and source_finished(), functions and populate
- *  settings_ptr_ in the constructor.
+ *  \ref settings_ptr_ in the constructor.
  */
 template <typename T, size_t BUF_SIZE>
 class SourcePlayer
@@ -18,13 +19,10 @@ public:
 /**
  * \brief constructor.
  */
-    SourcePlayer(DMADoubleBuffer<T, BUF_SIZE>* buf_ptr = nullptr)
-    : idle_buf_ptr_{nullptr}, buf_ptr_{buf_ptr}, curr_cycles_{0},
-      settings_ptr_{nullptr}
-    {
-        if (buf_ptr != nullptr)
-            claim_buffer(buf_ptr);
-    }
+    SourcePlayer()
+    : idle_buf_ptr_{nullptr}, buf_ptr_{nullptr}, curr_cycles_{0},
+      settings_ptr_{nullptr}, samples_emitted_{0}, manage_buffer_timing_{false}
+    {}
 
 /**
  * \brief destructor
@@ -33,15 +31,57 @@ public:
         {cleanup();}
 
 /**
+ * \brief claim the TimerPacedDMADoubleBuffer specified. true if successful.
+ * \details when apply_settings() is called, the underlying timer of this buffer
+ *  is adjusted to match.
+ */
+    bool claim_buffer(TimerPacedDMADoubleBuffer<T, BUF_SIZE>* buf)
+    {
+        manage_buffer_timing_ = true; // Flag that we need to deal with timer.
+        // Upcast to parent and call the other overload option.
+        DMADoubleBuffer<T, BUF_SIZE>* parent_buf =
+            static_cast<DMADoubleBuffer<T, BUF_SIZE>*>(buf);
+        return claim_buffer(parent_buf);
+    }
+
+/**
  * \brief claim the DMADoubleBuffer specified. true if successful.
  */
     bool claim_buffer(DMADoubleBuffer<T, BUF_SIZE>* buf)
     {
-        // FIXME: make it so buffer is claimable.
+        // FIXME: make it so buffer is claimable from the buffer's perspective.
         //if (!buf->claim(this))
         //    return false;
         buf_ptr_ = buf;
-        // TODO: apply the waveform frequency settings?
+        if (settings_ptr_)
+        {
+            apply_settings(*settings_ptr_);
+        }
+        return true;
+    }
+
+/**
+ * \brief apply settings passed in.
+ * \details if the claimed buffer manages its own timing via Timer, update the
+ *  Timer settings to match.
+ * \note child classes should call this function within their own override
+ *  implementation.
+ * \warning settings can only be applied if the player is not busy playing.
+ */
+    virtual bool apply_settings(WaveformSettings& settings)
+    {
+        if ((buf_ptr_ == nullptr) || is_busy())
+            return false;
+        reset(); // calls rewind_source().
+        // Check if buffer manages its own pacing via Timer. If yes, update the
+        // Timer to match current settings.
+        if (!manage_buffer_timing_)
+            return true;
+        // reinterpret_cast is safe here bc we know explicitly what buffer class
+        // was passed in using the overloaded claim_buffer().
+        TimerPacedDMADoubleBuffer<T, BUF_SIZE>* timer_paced_buf_ptr =
+            reinterpret_cast<TimerPacedDMADoubleBuffer<T, BUF_SIZE>*>(buf_ptr_);
+        timer_paced_buf_ptr->set_frequency_hz(settings.update_frequency_hz);
         return true;
     }
 
@@ -52,13 +92,13 @@ public:
     {
         if (buf_ptr_ == nullptr)
             return false;
-        //buf_ptr_->unclaim();
+        //buf_ptr_->unclaim(); // TODO: implement
         buf_ptr_ = nullptr;
         idle_buf_ptr_ = nullptr;
+        manage_buffer_timing_ = false;
         return true;
     }
 
-    // FIXME: consider reading from dma double buffer directly.
     inline bool output_buffer_unspecified()
     {return buf_ptr_ == nullptr;}
 
@@ -68,7 +108,9 @@ public:
     virtual void reset()
     {
         curr_cycles_ = 0;
+        samples_emitted_ = 0;
         idle_buf_ptr_ = nullptr;
+        sample_count_ = this->settings_ptr_->sample_count(); // Recompute.
         rewind_source();
     }
 
@@ -83,24 +125,6 @@ public:
             buf_ptr_->abort_transfer();
         unclaim_buffer();
     }
-
-/**
- * \brief set waveform settings.
- * \note settings can only be altered if the player is not active otherwise
- *  this function is not multicore safe.
- */
-    bool apply_settings(WaveformSettings& settings)
-    {
-        // FIXME: implement this.
-        // TODO: update the double buffer pacing settings?
-        *settings_ptr_ = settings;
-    }
-
-/**
- * \brief return a read-only reference to the current settings
- */
-    const WaveformSettings& get_settings() const
-    {return *settings_ptr_;}
 
 /**
  * \brief true if the channel's buffer has been pre-filled and the underlying
@@ -123,16 +147,10 @@ public:
 
 /**
  * \brief true if the specified channel needs to be handled with periodic calls
- *  to update().
+ *  to update(). Alias for is_active().
  */
     inline bool is_busy()
-    {
-        if (is_active())
-            return true;
-        else if (!is_armed())
-            return true;
-        return false;
-    }
+    {return is_active();}
 
 /**
  * \brief true if the player is ready to start transferring immediately.
@@ -142,24 +160,6 @@ public:
         // FIXME: validate that this will be multicore safe.
         return (!is_active()) && is_armed();
     }
-
-/**
- * \brief rewind the source (move to start-of-file, set t=0 on an equation,
- *  etc.) such that it is ready to be played again from the beginning.
- */
-    inline virtual void rewind_source() = 0;
-
-/**
- * \brief transfer bytes from source to the address specified in \p dest.
- */
-    inline virtual void transfer_source_chunk(T* dest, size_t num_bytes,
-                                              size_t& bytes_transferred) = 0;
-
-/**
- * \brief
- */
-    inline virtual bool source_finished() = 0;
-
 
 /**
  * \brief tick the buffer-stuffing process.
@@ -172,6 +172,7 @@ public:
     {
         // TODO: deadlne check between chunk transfers to ensure buffers are topped off.
         size_t bytes_read;
+        size_t bytes_to_read;
         if (output_buffer_unspecified())
             return;
         // Skip if channel is ready but not transferring.
@@ -193,19 +194,26 @@ public:
             return;
         idle_buf_ptr_ = buf_ptr_->get_idle_buffer();
         // Transfer data from card to double-buffer.
-        transfer_source_chunk(idle_buf_ptr_, CHUNK_SIZE_BYTES, bytes_read);
-        if (!source_finished()) // TODO: also handle reading subset of file.
+        // Read up to a chunk or up to the subset specified.
+        bytes_to_read = std::min(size_t((sample_count_ - samples_emitted_) * sizeof(T)),
+                                 CHUNK_SIZE_BYTES);
+        transfer_source_chunk(idle_buf_ptr_, bytes_to_read, bytes_read);
+        samples_emitted_ += bytes_read / sizeof(T);
+        bool source_subset_finished = ((samples_emitted_ == sample_count_)
+                                       && (sample_count_ != 0));
+        if (!source_finished() && !source_subset_finished)
             return;
-        // Handle end-of-file.
-         ++curr_cycles_; // increment full file read iterations.
+        // Handle end-of-source (or end of subset of source).
+         ++curr_cycles_; // increment full source read iterations.
         // Handle last transfer condition.
         if ((curr_cycles_ == settings_ptr_->cycles) && (settings_ptr_->cycles != 0))
         {
             // Next transfer will be the last transfer.
             //printf("EOF at %llu. Setting up last transfer\r\n", fil_.fptr);
-            buf_ptr_->setup_last_dma_transfer(bytes_read);
+            buf_ptr_->setup_last_dma_transfer(bytes_read / sizeof(T));
             idle_buf_ptr_ = nullptr; // Trigger a re-arm on next update.
             curr_cycles_ = 0; // reset counter for next round.
+            samples_emitted_ = 0;
             return;
         }
         // Handle endless/many-iteration transfer condition.
@@ -215,14 +223,45 @@ public:
             return;
         transfer_source_chunk(idle_buf_ptr_ + bytes_read/sizeof(T),
                               (CHUNK_SIZE_BYTES - bytes_read), bytes_read);
+        samples_emitted_ += bytes_read / sizeof(T);
     }
 
 protected:
-    T* idle_buf_ptr_;
-    size_t curr_cycles_;
+/**
+ * \brief rewind the source (move to start-of-file, set t=0 on an equation,
+ *  etc.) such that it is ready to be played again from the beginning.
+ * \details should be idempotent even if the source is unavailable.
+ */
+    inline virtual void rewind_source() = 0;
+
+/**
+ * \brief transfer bytes from source to the address specified in \p dest.
+ */
+    inline virtual void transfer_source_chunk(T* dest, size_t num_bytes,
+                                              size_t& bytes_transferred) = 0;
+
+/**
+ * \brief true if the source (file, waveform, etc) can or should no longer
+ *  produce samples under the current settings without a call to rewind() or
+ *  reset() first.
+ * \details examples of how this could be true include:
+ * - if the source is a file, the file has been read to completion.
+ * - if the current \ref WaveformSettings specify a fixed `duration_us`, and
+ *   producing more samples would violate the settings.
+ */
+    inline virtual bool source_finished() = 0;
+
+    size_t curr_cycles_; /// elapsed cycles of the specified settings
+                         /// (NOT cycles of a periodic waveform).
+    uint32_t samples_emitted_; /// samples emitted within a cycle. resets to 0.
+    uint32_t sample_count_; // Cached value. Recomputed on reset().
     DMADoubleBuffer<T, BUF_SIZE>* buf_ptr_;
     WaveformSettings* settings_ptr_;
 
     static inline constexpr size_t CHUNK_SIZE_BYTES = BUF_SIZE * sizeof(T); // bytes
+
+private:
+    bool manage_buffer_timing_;
+    T* idle_buf_ptr_;
 };
 #endif // SOURCE_PLAYER_H

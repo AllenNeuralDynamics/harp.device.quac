@@ -11,32 +11,41 @@ template <typename T, size_t BUF_SIZE>
 class TrapezoidPlayer: public FunctionPlayer<T, BUF_SIZE>
 {
 public:
-    TrapezoidPlayer(DMADoubleBuffer<T, BUF_SIZE>* buf_ptr = nullptr)
-    : FunctionPlayer<T, BUF_SIZE>{buf_ptr}, settings_{}
+    TrapezoidPlayer()
+    : FunctionPlayer<T, BUF_SIZE>{}, settings_{}
     {
         this->settings_ptr_ = &settings_;
     }
 
 /**
- * \brief Clear state but do not release claimed resources.
- * \note does not clear settings.
+ * \brief apply trapezoid-specific settings.
  */
-    void reset() override
+    bool apply_settings(TrapezoidSettings& settings) override
     {
-        FunctionPlayer<T, BUF_SIZE>::reset();
+        if ((!this->buf_ptr_) || this->is_busy())
+            return false;
+        settings_ = settings; // copy settings so rewind_source() works.
+        return SourcePlayer<T, BUF_SIZE>::apply_settings(settings_);
     }
 
+/**
+* \brief return a read-only reference to the current settings
+*/
+    const TrapezoidSettings& get_settings() const
+    {return settings_;}
+
+protected:
 /**
  * \brief rewind file so it's ready to be played again from the beginning.
  */
     inline void rewind_source() override
     {
         period_counter_ = 0;
-        interval_samples_ = 0;
-        width_samples_ = 0;
-        ramp_on_samples_ = 0;
-        ramp_off_samples_ = 0;
-        FunctionPlayer<T, BUF_SIZE>::rewind_source();
+        interval_samples_ = settings_.period_sample_count();
+        width_samples_ = settings_.width_sample_count();
+        ramp_on_samples_ = settings_.ramp_on_sample_count();
+        ramp_off_samples_ = settings_.ramp_off_sample_count();
+        SourcePlayer<T, BUF_SIZE>::rewind_source();
     }
 
 /**
@@ -45,9 +54,10 @@ public:
     void generate_function_chunk(T* dest, size_t num_samples) override
     {
         generate_pulse(dest, num_samples);
-        FunctionPlayer<T, BUF_SIZE>::generate_function_chunk(dest, num_samples);
+        SourcePlayer<T, BUF_SIZE>::generate_function_chunk(dest, num_samples);
     }
 
+private:
 /**
  * \brief generate a pulse
  */
@@ -63,15 +73,14 @@ public:
      const uint32_t plateau_end  = ramp_on + width;
      const uint32_t ramp_down_end = plateau_end + ramp_off;
 
-     for (size_t i = 0; i < n; ++i)
+     for (size_t i = 0; i < num_samples; ++i)
      {
          uint32_t level = 0;
          if (t < ramp_on)
          {
              level = (ramp_on == 0)
                  ? amp
-                 : static_cast<uint32_t>(
-                     (static_cast<uint64_t>(amp) * t) / ramp_on);
+                 : uint32_t{(uint64_t{amp} * t) / ramp_on};
          }
          else if (t < plateau_end)
          {
@@ -82,9 +91,7 @@ public:
              const uint32_t dt = t - plateau_end;
              level = (ramp_off == 0)
                  ? 0
-                 : static_cast<uint32_t>(
-                     static_cast<uint64_t>(amp) -
-                     (static_cast<uint64_t>(amp) * dt) / ramp_off);
+                 : uint32_t{uint64_t{amp} - (uint64_t{amp} * dt) / ramp_off};
          }
          else
          {
@@ -99,12 +106,12 @@ public:
 
 private:
     uint32_t period_counter_;
-    // TODO: these should be computed from settings???
+
     uint32_t interval_samples_;
     uint32_t width_samples_;
     uint32_t ramp_on_samples_;
     uint32_t ramp_off_samples_;
 
-    FunctionSettings settings_;
+    TrapezoidSettings settings_;
 };
 #endif // TRAPEZOID_PLAYER_H

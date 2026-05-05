@@ -40,13 +40,13 @@ RegSpec app_reg_specs[]
     RegSpec::U8(&app_regs.dac_finished,
         HarpCore::read_reg_error, HarpCore::write_reg_error),
 
-    RegSpec::U8Array(&app_regs.dac_settings[0], sizeof(WaveformSettings),
+    RegSpec::U8Array(&app_regs.file_settings[0], sizeof(WaveformSettings),
         read_any_dac_settings, write_any_dac_settings),
-    RegSpec::U8Array(&app_regs.dac_settings[1], sizeof(WaveformSettings),
+    RegSpec::U8Array(&app_regs.file_settings[1], sizeof(WaveformSettings),
         read_any_dac_settings, write_any_dac_settings),
-    RegSpec::U8Array(&app_regs.dac_settings[2], sizeof(WaveformSettings),
+    RegSpec::U8Array(&app_regs.file_settings[2], sizeof(WaveformSettings),
         read_any_dac_settings, write_any_dac_settings),
-    RegSpec::U8Array(&app_regs.dac_settings[3], sizeof(WaveformSettings),
+    RegSpec::U8Array(&app_regs.file_settings[3], sizeof(WaveformSettings),
         read_any_dac_settings, write_any_dac_settings),
 
     RegSpec::U8Array(&app_regs.waveform_hashes[0], SHA256_NUM_BYTES,
@@ -340,13 +340,16 @@ void reset_app()
 
     // Reset Waveform trigger settings.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
+        app_regs.external_trigger_masks[i] = (1u << i); // DI[i] triggers AO[i].
+    // Reset Waveform settings.
+    // TODO: rely on default constructors and do this per-settings type.
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        auto& settings = app_regs.dac_settings[i];
+        auto& settings = app_regs.file_settings[i];
         settings.cycles = 1; // play once: "single-shot."
-        settings.sample_count = 0; // Play everything.
-        settings.frequency_hz =
+        settings.duration_us = 0; // play everything.
+        settings.update_frequency_hz =
             TimerPacedDMADoubleBuffer<T, READ_BUF_SIZE>::DEFAULT_FREQUENCY_HZ;
-        settings.external_trigger_mask = (1u << i); // DI[i] triggers AO[i].
     }
     transfer_manager.reset();
     // FIXME: hardcoded reference to DMA_IRQ_1.
@@ -355,6 +358,7 @@ void reset_app()
     for (auto& buf: bufs)
         buf.reset();
     // TODO: "apply settings from WaveformSettings to buffers and xfer managers"
+    // FIXME: apply_settings??
     // FYI: PIO_LTC264x instances manage GPIO pin function.
     for (auto& dac: dacs)
         dac.write_value(PIO_LTC264x::OUTPUT_MIDSCALE);
@@ -400,14 +404,15 @@ void __not_in_flash_func(handle_external_trigger)()
     // Start the waveform per the 1s in the channel.
     // Filter out the busy channels first.
     uint32_t trigger_mask = ((gpio_get_all64() & DI_PORT_MASK) >> DI_PORT_BASE);
-    // Combine waveform settings external triggers to the final mask.
-    uint32_t start_mask = 0;
+    // Combine per-channel external trigger settings into the final trigger mask
+    // to trigger waveforms simultaneously.
+    uint32_t start_mask = 0; // aggregate multi-channel trigger mask.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
         if (bufs[i].is_transferring()) // Skip re-triggering busy channels.
             continue;
         // Check if any currently HIGH pins would trigger this channel.
-        if (trigger_mask & app_regs.dac_settings[i].external_trigger_mask)
+        if (trigger_mask & app_regs.external_trigger_masks[i])
             start_mask |= (1u << i);
     }
     if (start_mask != 0)
