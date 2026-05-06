@@ -53,17 +53,5 @@ protected:
         bytes_transferred = sizeof(T) * num_samples;
     }
 
-/**
- * \brief
- */
-    static inline T saturating_offset(uint32_t offset)
-    {
-        //uint32_t sample = static_cast<uint32_t>(OUTPUT_MIDSCALE) + offset;
-        uint32_t sample = offset;
-        if (sample > OUTPUT_MAX)
-            sample = OUTPUT_MAX;
-        return static_cast<T>(sample);
-    }
-
 };
 #endif // FUNCTION_PLAYER_H

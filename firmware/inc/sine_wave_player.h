@@ -46,18 +46,13 @@ protected:
  */
     inline void rewind_source() override
     {
-        phase_q32_          = 0;
-        phase_inc_q32_ = uint32_t{(uint64_t{settings_.frequency_hz} << 32)
-                                  / settings_.update_frequency_hz};
+        phase_q32_ = 0;
+        phase_inc_q32_ =
+            static_cast<uint32_t>((uint64_t{settings_.frequency_hz} << 32)
+                                  / settings_.update_frequency_hz);
     }
 
     inline void generate_function_chunk(T* dest, size_t num_samples) override
-    {
-        generate_sine(dest, num_samples);
-    }
-
-private:
-    void generate_sine(T* dest, size_t num_samples)
     {
         uint32_t phase = phase_q32_;
         const uint32_t inc = phase_inc_q32_;
@@ -74,10 +69,13 @@ private:
                 a + ((b - a) * static_cast<int64_t>(frac)) / (int64_t(1) << 22);
             const uint32_t shape = static_cast<uint32_t>(
                 interp < 0 ? 0 : (interp > 65535 ? 65535 : interp));
-            //const uint32_t offset = (shape * amp) >> 16;
-            //const uint32_t offset = (uint64_t(int32_t(shape) - 32768)*amp)/65535 + 32768; // ??
-            const uint32_t offset = float(int32_t(shape) - 32768)*(float(amp)/65535.0f) + 32768.0f;
-            dest[i] = static_cast<T>(offset); //this->saturating_offset(offset);
+            //const uint32_t result = (shape * amp) >> 16;
+            //const uint32_t result = (uint64_t(int32_t(shape) - 32768)*amp)/65535 + 32768; // ??
+            const uint32_t result = float(int32_t(shape) - 32768) *
+                                    (float(amp)/65535.0f)
+                                    + 32768.0f // nominal offset.
+                                    + settings_.vertical_shift;
+            dest[i] = static_cast<T>(result );
             phase += inc;
         }
         phase_q32_ = phase;

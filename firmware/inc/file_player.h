@@ -24,6 +24,7 @@ public:
  */
     bool apply_settings(WaveformSettings& settings) override
     {
+        /// FIXME: use FileSettings, not WaveformSettings to get file name.
         if ((this->buf_ptr_ == nullptr) || this->is_busy())
             return false;
         settings_ = settings; // copy settings so rewind_source() works.

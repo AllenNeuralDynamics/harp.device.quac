@@ -20,7 +20,7 @@ public:
 /**
  * \brief apply trapezoid-specific settings.
  */
-    bool apply_settings(TrapezoidSettings& settings) override
+    bool apply_settings(TrapezoidSettings& settings)
     {
         if ((!this->buf_ptr_) || this->is_busy())
             return false;
@@ -42,7 +42,7 @@ protected:
     {
         period_counter_ = 0;
         interval_samples_ = settings_.period_sample_count();
-        width_samples_ = settings_.width_sample_count();
+        width_samples_ = settings_.plateau_sample_count();
         ramp_on_samples_ = settings_.ramp_on_sample_count();
         ramp_off_samples_ = settings_.ramp_off_sample_count();
     }
@@ -50,17 +50,7 @@ protected:
 /**
  * \brief
  */
-    void generate_function_chunk(T* dest, size_t num_samples) override
-    {
-        generate_pulse(dest, num_samples);
-        SourcePlayer<T, BUF_SIZE>::generate_function_chunk(dest, num_samples);
-    }
-
-private:
-/**
- * \brief generate a pulse
- */
- void generate_pulse(T* dest, size_t num_samples)
+ void generate_function_chunk(T* dest, size_t num_samples) override
  {
      uint32_t t              = period_counter_;
      const uint32_t interval = interval_samples_;
@@ -74,29 +64,34 @@ private:
 
      for (size_t i = 0; i < num_samples; ++i)
      {
-         uint32_t level = 0;
+         uint32_t shape = 0;
          if (t < ramp_on)
          {
-             level = (ramp_on == 0)
-                 ? amp
-                 : uint32_t{(uint64_t{amp} * t) / ramp_on};
+             shape = (ramp_on == 0)
+                 ? 65535
+                 : static_cast<uint32_t>((uint64_t{65535} * t) / ramp_on);
          }
          else if (t < plateau_end)
          {
-             level = amp;
+             shape = 65535;
          }
          else if (t < ramp_down_end)
          {
              const uint32_t dt = t - plateau_end;
-             level = (ramp_off == 0)
+             shape = (ramp_off == 0)
                  ? 0
-                 : uint32_t{uint64_t{amp} - (uint64_t{amp} * dt) / ramp_off};
+                 : static_cast<uint32_t>(uint64_t{65535} - (uint64_t{65535} * dt)
+                                         / ramp_off);
          }
          else
          {
-             level = 0;
+             shape = 0;
          }
-         dest[i] = this->saturating_offset(level);
+         // Scale to desired frequency and amplitude settings.
+         uint32_t result = float(int32_t(shape ) - 32768) * (float(amp)/65535.0f)
+                          + 32768.0f // nominal offset.
+                          + settings_.vertical_shift;
+         dest[i] = static_cast<T>(result); // TODO: clamp instead.
          if (++t >= interval)
              t = 0;
      }
