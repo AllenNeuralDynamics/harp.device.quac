@@ -5,7 +5,10 @@ void core1main()
     // Note: Commands like Pause/Resume/Stop are handled by core0.
     while (true)
     {
-        for (auto& file_player: file_players)
-            file_player.update();
+        for (auto& player: file_players)
+        {
+            if (player.is_busy())
+                player.update();
+        }
     }
 }

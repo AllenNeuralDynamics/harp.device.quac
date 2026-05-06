@@ -45,7 +45,6 @@ protected:
         width_samples_ = settings_.width_sample_count();
         ramp_on_samples_ = settings_.ramp_on_sample_count();
         ramp_off_samples_ = settings_.ramp_off_sample_count();
-        SourcePlayer<T, BUF_SIZE>::rewind_source();
     }
 
 /**

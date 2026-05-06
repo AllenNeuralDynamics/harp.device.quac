@@ -76,9 +76,7 @@ int main() {
     // Create FilePlayer. Take default settings.
     FilePlayer<T, BUF_SIZE> player;
     player.claim_buffer(&buf);
-    // TODO: Can we apply settings here? What happens?
     player.open_file("channel_0.bin");
-    // TODO: Can we apply settings here? What happens?
     printf("File Player is ready.\r\n");
     sleep_ms(500);
     printf("Starting.\r\n");

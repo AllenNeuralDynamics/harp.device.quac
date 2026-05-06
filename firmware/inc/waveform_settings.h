@@ -22,6 +22,12 @@ struct WaveformSettings
     : cycles{1}, duration_us{0}, update_frequency_hz{500000}
     {}
 
+    WaveformSettings(uint32_t cycles, uint32_t duration_us,
+                     uint32_t update_frequency_hz)
+    : cycles{cycles}, duration_us{duration_us},
+      update_frequency_hz{update_frequency_hz}
+    {}
+
 /**
  * \brief get number of samples associated with the \ref duration_us setting.
  */
@@ -46,6 +52,10 @@ struct FunctionSettings: WaveformSettings
 {
     uint16_t amplitude; // peak offset above midscale in DAC codes.
     uint32_t frequency_hz;
+
+    FunctionSettings()
+    : WaveformSettings{1, 0, 10000}, amplitude{32768}, frequency_hz{10}
+    {}
 
 /**
  * \brief compute samples in one period.

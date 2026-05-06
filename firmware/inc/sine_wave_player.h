@@ -26,7 +26,7 @@ public:
 /**
  * \brief apply sinusoid-specific settings.
  */
-    bool apply_settings(FunctionSettings& settings) override
+    bool apply_settings(FunctionSettings& settings)
     {
         if ((this->buf_ptr_ == nullptr) || this->is_busy())
             return false;
@@ -49,7 +49,6 @@ protected:
         phase_q32_          = 0;
         phase_inc_q32_ = uint32_t{(uint64_t{settings_.frequency_hz} << 32)
                                   / settings_.update_frequency_hz};
-        SourcePlayer<T, BUF_SIZE>::rewind_source();
     }
 
     inline void generate_function_chunk(T* dest, size_t num_samples) override

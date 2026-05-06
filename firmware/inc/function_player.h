@@ -19,16 +19,28 @@ public:
     FunctionPlayer()
     : SourcePlayer<T, BUF_SIZE>{}{}
 
+
+    void setup()
+    {
+        // pre-read buffers (if buffer is claimed).
+        SourcePlayer<T, BUF_SIZE>::update();
+    }
+
 protected:
 /**
  * \brief true if the file has been fully read to the end.
  */
     inline virtual bool source_finished()
     {
-        if (this->settings_ptr_.duration_us == 0) // never finished in this case.
+        if (this->settings_ptr_->duration_us == 0) // never finished in this case.
             return false;
         return this->sample_count_ == this->samples_emitted_;
     }
+
+/**
+ * \brief
+ */
+    virtual void generate_function_chunk(T* dest, size_t num_samples) = 0;
 
 /**
  * \brief transfer bytes from file to the address specified in \p dest.

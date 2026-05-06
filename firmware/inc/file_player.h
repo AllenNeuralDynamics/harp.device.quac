@@ -4,6 +4,7 @@
 #include "ff.h"
 #include "f_util.h"
 #include "waveform_settings.h"
+#include <cstring>
 
 /**
  * \brief class for reading a file into a buffer
@@ -27,6 +28,10 @@ public:
             return false;
         settings_ = settings; // copy settings so rewind_source() works.
         return SourcePlayer<T, BUF_SIZE>::apply_settings(settings);
+        // if the file is open, reopen it to refresh the update loop with
+        // the new settings.
+        if (file_is_open())
+            open_file(curr_filename_);
     }
 
 /**
@@ -46,6 +51,7 @@ public:
         if (f_open(&fil_, filename, FA_READ) != FR_OK)
         {panic("Could not open: %s.\r\n", filename);}
         filptr_ = &fil_;
+        strcpy(curr_filename_, filename);
         // pre-read buffers (if buffer is claimed).
         SourcePlayer<T, BUF_SIZE>::update();
     }
@@ -58,7 +64,8 @@ public:
         if (filptr_ != nullptr)
             f_close(&fil_);
         filptr_ = nullptr; // clear ptr to indicate closed file.
-        this->reset();
+        this->reset(); // release armed or busy state conditions.
+        // Do not alter \ref curr_filename_.
     }
 
 /**
@@ -109,5 +116,6 @@ private:
     FIL fil_;
     FIL* filptr_; // pointer to fil_ to track if file is open.
     WaveformSettings settings_;
+    char curr_filename_[64];
 };
 #endif // FILE_PLAYER_H

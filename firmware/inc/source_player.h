@@ -3,6 +3,7 @@
 #include "waveform_settings.h"
 #include "dma_double_buffer.h"
 #include <algorithm>
+#include <atomic>
 
 /**
  * \brief Abstract base class for streaming a source waveform to a
@@ -21,7 +22,8 @@ public:
  */
     SourcePlayer()
     : idle_buf_ptr_{nullptr}, buf_ptr_{nullptr}, curr_cycles_{0},
-      settings_ptr_{nullptr}, samples_emitted_{0}, manage_buffer_timing_{false}
+      settings_ptr_{nullptr}, samples_emitted_{0}, manage_buffer_timing_{false},
+      is_updating{false}
     {}
 
 /**
@@ -53,10 +55,8 @@ public:
         //if (!buf->claim(this))
         //    return false;
         buf_ptr_ = buf;
-        if (settings_ptr_)
-        {
-            apply_settings(*settings_ptr_);
-        }
+        if (settings_ptr_) // shouldn't be nullptr if child was derived correctly.
+            return apply_settings(*settings_ptr_);
         return true;
     }
 
@@ -107,11 +107,26 @@ public:
  */
     virtual void reset()
     {
+        abort_transfer(); // Will deassert is_busy()
+        while (is_updating.load()) // wait for core1 update to finish any update.
+            __asm__ __volatile__ ("nop");
         curr_cycles_ = 0;
         samples_emitted_ = 0;
-        idle_buf_ptr_ = nullptr;
         sample_count_ = this->settings_ptr_->sample_count(); // Recompute.
         rewind_source();
+    }
+
+/**
+ * \brief abort any in-flight transfers and cleanup any internal variables
+ *  such that internal state tracking works from update(). Idempotent.
+ * \warninng you must call a reset before you can
+ */
+    void abort_transfer()
+    {
+        if (buf_ptr_ == nullptr)
+            return;
+        buf_ptr_->abort_transfer();
+        idle_buf_ptr_ = nullptr;
     }
 
 /**
@@ -121,8 +136,7 @@ public:
  */
     virtual void cleanup()
     {
-        if (buf_ptr_ != nullptr)
-            buf_ptr_->abort_transfer();
+        abort_transfer();
         unclaim_buffer();
     }
 
@@ -169,6 +183,13 @@ public:
  *  start immediately, i.e: "arm the buffer." Idempotent.
  */
     void update()
+    {
+        is_updating.store(true);
+        _update();
+        is_updating.store(false);
+    }
+
+    inline void _update()
     {
         // TODO: deadlne check between chunk transfers to ensure buffers are topped off.
         size_t bytes_read;
@@ -257,6 +278,7 @@ protected:
     uint32_t sample_count_; // Cached value. Recomputed on reset().
     DMADoubleBuffer<T, BUF_SIZE>* buf_ptr_;
     WaveformSettings* settings_ptr_;
+    std::atomic<bool> is_updating;  // should be in RAM
 
     static inline constexpr size_t CHUNK_SIZE_BYTES = BUF_SIZE * sizeof(T); // bytes
 

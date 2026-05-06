@@ -1,19 +1,20 @@
-#include <stdio.h>
-#include <pico/stdlib.h>
-#include <hardware/dma.h>
-#include <hardware/pio.h>
-#include <pio_ltc264x.h>
+#include "pico/stdlib.h"
+#include "hardware/dma.h"
+#include "hardware/pio.h"
+#include "pio_ltc264x.h"
+#include "file_player.h"
+#include "multi_transfer_manager.h"
+#include "f_util.h"
+#include "ff.h"
+#include "hw_config.h"
 #include <array>
-#include <f_util.h>
-#include <ff.h>
-#include <hw_config.h>
-#include <multi_file_player.h>
+#include <cstdio>
+#include <ranges>
 
 using T = uint16_t;
 inline constexpr size_t NUM_FILES = 4;
 inline constexpr size_t SD_CHUNK_SIZE = 32768;  // must be factor of 512.
-
-FIL __not_in_flash("file_handlers") fil[NUM_FILES];
+inline constexpr size_t BUF_SIZE = SD_CHUNK_SIZE/sizeof(T);
 
 std::array<const char*, NUM_FILES> filenames
 {{"channel_0.bin", "channel_1.bin", "channel_2.bin", "channel_3.bin"}};
@@ -70,11 +71,9 @@ sd_card_t* sd_get_by_num(size_t num) {
     {return NULL;}
 }
 
-    extern MultiFilePlayer<T, NUM_FILES, SD_CHUNK_SIZE/sizeof(T)> player;
+    //extern MultiFilePlayer<T, NUM_FILES, SD_CHUNK_SIZE/sizeof(T)> player;
 
 int main() {
-    UINT bytes_read;
-
     stdio_init_all();
     while (!stdio_usb_connected()){ sleep_ms(100);} // Wait for user to open com port.
     // Mount SD card.
@@ -94,41 +93,67 @@ int main() {
     for (const auto& dac: dacs)
         dac.start();
 
-    // Create MultiFilePlayer
-    MultiFilePlayer<T, NUM_FILES, SD_CHUNK_SIZE/sizeof(T)> player(dacs, filenames);
-    // 1: DMA_IRQ_1 (FYI: sd card setup to use DMA_IRQ_0)
-    player.enable_end_of_transfer_interrupt(1);//, local_dma_handler);
-    player.set_frequency_hz(500'000);
-    player.setup();
-    printf("File Player is ready.\r\n");
+    // Create buffers.
+    std::array<TimerPacedDMADoubleBuffer<T, BUF_SIZE>, NUM_FILES> bufs
+    {{
+        {dacs[0].get_tx_fifo_address()},
+        {dacs[1].get_tx_fifo_address()},
+        {dacs[2].get_tx_fifo_address()},
+        {dacs[3].get_tx_fifo_address()}
+    }};
+    // Create array of buffer ptrs for MultiTransferManager.
+    std::array<DMADoubleBuffer<T, BUF_SIZE>*, NUM_FILES> buf_ptrs
+    {{ &bufs[0], &bufs[1], &bufs[2], &bufs[3] }};
+
+    // Create file players. Take default file playback settings.
+    std::array<FilePlayer<T, BUF_SIZE>, NUM_FILES> players
+    {{ {}, {}, {}, {} }};
+
+    // Setup File Players.
+    printf("FilePlayers claiming buffers and opening respective files.\r\n");
+    for (auto [index, player] : std::views::enumerate(players))
+    {
+        player.claim_buffer(&bufs[index]);
+        player.open_file(filenames[index]); // will preload buffers.
+    }
+    printf("All FilePlayers ready.\r\n");
     sleep_ms(500);
-    printf("Starting.\r\n");
-    player.start(0b1111);
-    while(player.is_busy())
-        player.update();
+
+    // Create MultiTransferManager
+    printf("Setting up MultiTransferManager.\r\n");
+    sleep_ms(500);
+    MultiTransferManager<T, BUF_SIZE, NUM_FILES> transfer_manager(buf_ptrs, dacs);
+    transfer_manager.reset();
+    transfer_manager.enable_end_of_transfer_interrupt(1); // corresponds to DMA_IRQ_1
+
+    printf("Starting multiple channels.\r\n");
+    transfer_manager.start(0b1111);
+    uint32_t busy_players = 0b1111;
+    while (true)
+    {
+        for (auto [index, player]: std::views::enumerate(players))
+        {
+            if (player.is_busy())
+                player.update();
+            else // Mark this player as finished.
+                busy_players &= ~(1u << index);
+        }
+        if (!busy_players) // exit if all players are finished.
+            break;
+    }
     printf("Done playing!\r\n");
     end_of_transfer_event_t event;
-    while (player.get_finished_transfers(&event))
+    while (transfer_manager.get_finished_transfers(&event))
     {
         printf("Got end-of-transfer-event: (0b%032b, %llu [us])\r\n",
                event.finished_channels_mask, event.timestamp_us);
     }
     sleep_ms(1000);
 
-    // If we did not abort, we should be able to re-trigger.
-    // Retrigger all channels again.
-    printf("Restarting.\r\n");
-    player.start(0b1111);
-    while(player.is_busy())
-        player.update();
-    printf("Done replaying! Closing files.\r\n");
-    while (player.get_finished_transfers(&event))
-    {
-        printf("Got end-of-transfer-event: (0b%032b, %llu [us])\r\n",
-               event.finished_channels_mask, event.timestamp_us);
-    }
+    // Cleanup
+    for (auto& player: players)
+        player.close_file();
 
-    player.cleanup(); // Close files.
     // Unmount the file system.
     f_unmount("");
     printf("All transfers complete! Goodbye, world!\r\n");
