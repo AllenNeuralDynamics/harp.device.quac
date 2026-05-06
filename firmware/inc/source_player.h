@@ -216,8 +216,10 @@ public:
         idle_buf_ptr_ = buf_ptr_->get_idle_buffer();
         // Transfer data from card to double-buffer.
         // Read up to a chunk or up to the subset specified.
-        bytes_to_read = std::min(size_t((sample_count_ - samples_emitted_) * sizeof(T)),
-                                 CHUNK_SIZE_BYTES);
+        bytes_to_read = (sample_count_ == 0) ?
+            CHUNK_SIZE_BYTES:
+            std::min(size_t((sample_count_ - samples_emitted_) * sizeof(T)),
+                     CHUNK_SIZE_BYTES);
         transfer_source_chunk(idle_buf_ptr_, bytes_to_read, bytes_read);
         samples_emitted_ += bytes_read / sizeof(T);
         bool source_subset_finished = ((samples_emitted_ == sample_count_)

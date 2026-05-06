@@ -74,8 +74,10 @@ private:
                 a + ((b - a) * static_cast<int64_t>(frac)) / (int64_t(1) << 22);
             const uint32_t shape = static_cast<uint32_t>(
                 interp < 0 ? 0 : (interp > 65535 ? 65535 : interp));
-            const uint32_t offset = (shape * amp) >> 16;
-            dest[i] = this->saturating_offset(offset);
+            //const uint32_t offset = (shape * amp) >> 16;
+            //const uint32_t offset = (uint64_t(int32_t(shape) - 32768)*amp)/65535 + 32768; // ??
+            const uint32_t offset = float(int32_t(shape) - 32768)*(float(amp)/65535.0f) + 32768.0f;
+            dest[i] = static_cast<T>(offset); //this->saturating_offset(offset);
             phase += inc;
         }
         phase_q32_ = phase;

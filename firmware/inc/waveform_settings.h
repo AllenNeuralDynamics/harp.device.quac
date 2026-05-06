@@ -54,7 +54,7 @@ struct FunctionSettings: WaveformSettings
     uint32_t frequency_hz;
 
     FunctionSettings()
-    : WaveformSettings{1, 0, 10000}, amplitude{32768}, frequency_hz{10}
+    : WaveformSettings{1, 1000000, 10000}, amplitude{32768}, frequency_hz{10}
     {}
 
 /**
