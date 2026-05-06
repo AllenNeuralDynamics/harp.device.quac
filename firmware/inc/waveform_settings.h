@@ -47,30 +47,41 @@ struct FileSettings: WaveformSettings
 #pragma pack(push, 1)
 struct FunctionSettings: WaveformSettings
 {
-    uint16_t amplitude; // peak offset above midscale in DAC codes.
+    static inline constexpr float MAX_AMPLITUDE_VOLTS = 10.0f;
     uint32_t frequency_hz;
-    uint32_t vertical_shift; // vertical shift in samples.
+    float amplitude_volts; // peak offset from center position in volts.
+    float vertical_shift_volts; // vertical shift in samples.
 
 /// Default Constructor
     FunctionSettings()
-    : WaveformSettings{1, 1000000, 10000}, amplitude{65535}, frequency_hz{10},
-      vertical_shift{0}{}
+    : WaveformSettings{1, 1000000, 10000}, amplitude_volts{10}, frequency_hz{10},
+      vertical_shift_volts{0}{}
 
 /// Full Constructor
-    FunctionSettings(uint16_t amplitude, uint32_t frequency_hz,
-                    uint32_t vertical_shift, uint32_t cycles,
-                    uint32_t duration_us, uint32_t update_frequency_hz)
-    : amplitude{amplitude}, frequency_hz{frequency_hz},
-      vertical_shift{vertical_shift},
+    FunctionSettings(float amplitude_volts, uint32_t frequency_hz,
+                     float vertical_shift_volts, uint32_t cycles,
+                     uint32_t duration_us, uint32_t update_frequency_hz)
+    : amplitude_volts{amplitude_volts}, frequency_hz{frequency_hz},
+      vertical_shift_volts{vertical_shift_volts},
       WaveformSettings{cycles, duration_us, update_frequency_hz}{}
 
 /// \brief compute samples in one period.
     uint32_t period_sample_count()
     {return uint32_t(1.0f/float(frequency_hz) * update_frequency_hz);}
 
-    /// \brief compute period in microseconds
-        uint32_t period_us()
-        {return uint32_t(1.0e6f/float(frequency_hz));}
+/// \brief compute period in microseconds
+    uint32_t period_us()
+    {return uint32_t(1.0e6f/float(frequency_hz));}
+
+    uint32_t amplitude_16bit()
+    {return peak_to_peak_amplitude_16bit()/2;}
+
+    inline uint32_t peak_to_peak_amplitude_16bit()
+    {return uint32_t(amplitude_volts/MAX_AMPLITUDE_VOLTS * 65535u);}
+
+    uint32_t vertical_shift_16bit()
+    {return uint32_t(vertical_shift_volts/MAX_AMPLITUDE_VOLTS * 65535u);}
+
 };
 #pragma pack(pop)
 

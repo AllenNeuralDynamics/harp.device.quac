@@ -45,6 +45,8 @@ protected:
         width_samples_ = settings_.plateau_sample_count();
         ramp_on_samples_ = settings_.ramp_on_sample_count();
         ramp_off_samples_ = settings_.ramp_off_sample_count();
+        peak_to_peak_amplitude_samples_ = settings_.peak_to_peak_amplitude_16bit();
+        vertical_shift_samples_ = settings_.vertical_shift_16bit();
     }
 
 /**
@@ -57,7 +59,8 @@ protected:
      const uint32_t width    = width_samples_;
      const uint32_t ramp_on  = ramp_on_samples_;
      const uint32_t ramp_off = ramp_off_samples_;
-     const uint32_t amp      = settings_.amplitude;
+     const uint32_t p2p_amp      = peak_to_peak_amplitude_samples_;
+     const uint32_t vshift   = vertical_shift_samples_;
 
      const uint32_t plateau_end  = ramp_on + width;
      const uint32_t ramp_down_end = plateau_end + ramp_off;
@@ -88,9 +91,9 @@ protected:
              shape = 0;
          }
          // Scale to desired frequency and amplitude settings.
-         uint32_t result = float(int32_t(shape ) - 32768) * (float(amp)/65535.0f)
+         uint32_t result = float(int32_t(shape ) - 32768) * (float(p2p_amp)/65535.0f)
                           + 32768.0f // nominal offset.
-                          + settings_.vertical_shift;
+                          + vshift;
          dest[i] = static_cast<T>(result); // TODO: clamp instead.
          if (++t >= interval)
              t = 0;
@@ -105,6 +108,8 @@ private:
     uint32_t width_samples_;
     uint32_t ramp_on_samples_;
     uint32_t ramp_off_samples_;
+    uint32_t peak_to_peak_amplitude_samples_;
+    uint32_t vertical_shift_samples_;
 
     TrapezoidSettings settings_;
 };

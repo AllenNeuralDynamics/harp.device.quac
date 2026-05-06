@@ -34,15 +34,15 @@ int main() {
     // Create SinePlayer
     SineWavePlayer<T, BUF_SIZE> player;
     FunctionSettings settings;
-    settings.amplitude = 32768;
-    settings.vertical_shift = 16339;
+    settings.amplitude_volts = 5; // amplitude from center, not peak-to-peak.
+    settings.vertical_shift_volts = 2.5;
     printf("settings:\r\n");
     printf("update_frequency_hz: %u\r\n", settings.update_frequency_hz);
-    printf("amplitude: %u\r\n", settings.amplitude);
+    printf("amplitude: %f\r\n", settings.amplitude_volts);
     printf("duration_us: %u\r\n", settings.duration_us);
     printf("frequency_hz: %u\r\n", settings.frequency_hz);
     printf("period_us: %u\r\n", settings.period_us());
-    printf("vshift: %u\r\n", settings.vertical_shift);
+    printf("vshift: %f\r\n", settings.vertical_shift_volts);
     player.claim_buffer(&buf);
     player.apply_settings(settings);
     player.setup();

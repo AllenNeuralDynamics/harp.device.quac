@@ -50,13 +50,18 @@ protected:
         phase_inc_q32_ =
             static_cast<uint32_t>((uint64_t{settings_.frequency_hz} << 32)
                                   / settings_.update_frequency_hz);
+        // Precompute.
+        peak_to_peak_amplitude_samples_ = settings_.peak_to_peak_amplitude_16bit();
+        vertical_shift_samples_ = settings_.vertical_shift_16bit();
     }
 
     inline void generate_function_chunk(T* dest, size_t num_samples) override
     {
         uint32_t phase = phase_q32_;
         const uint32_t inc = phase_inc_q32_;
-        const uint32_t amp = settings_.amplitude;
+        const uint32_t p2p_amp = peak_to_peak_amplitude_samples_;
+        const uint32_t vshift = vertical_shift_samples_;
+
         for (size_t i = 0; i < num_samples; ++i)
         {
             const uint32_t idx  = phase >> 22; // top 10 bits from uint32
@@ -72,9 +77,9 @@ protected:
             //const uint32_t result = (shape * amp) >> 16;
             //const uint32_t result = (uint64_t(int32_t(shape) - 32768)*amp)/65535 + 32768; // ??
             const uint32_t result = float(int32_t(shape) - 32768) *
-                                    (float(amp)/65535.0f)
+                                    (float(p2p_amp)/65535.0f)
                                     + 32768.0f // nominal offset.
-                                    + settings_.vertical_shift;
+                                    + vshift;
             dest[i] = static_cast<T>(result );
             phase += inc;
         }
@@ -86,5 +91,8 @@ private:
     // Sine DDS state.
     uint32_t phase_q32_;
     uint32_t phase_inc_q32_; /// phase increment
+
+    uint32_t vertical_shift_samples_;
+    uint32_t peak_to_peak_amplitude_samples_;
 };
 #endif // SINE_WAVE_PLAYER_H
