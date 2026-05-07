@@ -1,7 +1,7 @@
 #include "config.h"
 #include "dma_double_buffer.h"
 #include "pio_ltc264x.h"
-#include <quac_app.h>
+#include "quac_app.h"
 
 app_regs_t app_regs;
 queue_t ext_trigger_event_queue;
@@ -40,14 +40,50 @@ RegSpec app_reg_specs[]
     RegSpec::U8(&app_regs.dac_finished,
         HarpCore::read_reg_error, HarpCore::write_reg_error),
 
-    RegSpec::U8Array(&app_regs.file_settings[0], sizeof(WaveformSettings),
-        read_any_dac_settings, write_any_dac_settings),
-    RegSpec::U8Array(&app_regs.file_settings[1], sizeof(WaveformSettings),
-        read_any_dac_settings, write_any_dac_settings),
-    RegSpec::U8Array(&app_regs.file_settings[2], sizeof(WaveformSettings),
-        read_any_dac_settings, write_any_dac_settings),
-    RegSpec::U8Array(&app_regs.file_settings[3], sizeof(WaveformSettings),
-        read_any_dac_settings, write_any_dac_settings),
+    RegSpec::U8(&app_regs.channel_external_triggers[0],
+        HarpCore::read_reg_generic, write_any_channel_external_triggers),
+    RegSpec::U8(&app_regs.channel_external_triggers[1],
+        HarpCore::read_reg_generic, write_any_channel_external_triggers),
+    RegSpec::U8(&app_regs.channel_external_triggers[2],
+        HarpCore::read_reg_generic, write_any_channel_external_triggers),
+    RegSpec::U8(&app_regs.channel_external_triggers[3],
+        HarpCore::read_reg_generic, write_any_channel_external_triggers),
+
+    RegSpec::U8(&app_regs.active_players[0],
+        HarpCore::read_reg_generic, write_any_channel_active_player),
+    RegSpec::U8(&app_regs.active_players[1],
+        HarpCore::read_reg_generic, write_any_channel_active_player),
+    RegSpec::U8(&app_regs.active_players[2],
+        HarpCore::read_reg_generic, write_any_channel_active_player),
+    RegSpec::U8(&app_regs.active_players[3],
+        HarpCore::read_reg_generic, write_any_channel_active_player),
+
+    RegSpec::U8Array(&app_regs.file_settings[0], sizeof(FileSettings),
+        read_any_file_settings, write_any_file_settings),
+    RegSpec::U8Array(&app_regs.file_settings[1], sizeof(FileSettings),
+        read_any_file_settings, write_any_file_settings),
+    RegSpec::U8Array(&app_regs.file_settings[2], sizeof(FileSettings),
+        read_any_file_settings, write_any_dac_settings),
+    RegSpec::U8Array(&app_regs.file_settings[3], sizeof(FileSettings),
+        read_any_file_settings, write_any_file_settings),
+
+    RegSpec::U8Array(&app_regs.sine_settings[0], sizeof(SineWaveSettings),
+        read_any_sine_settings, write_any_sine_settings),
+    RegSpec::U8Array(&app_regs.sine_settings[1], sizeof(SineWaveSettings),
+        read_any_sine_settings, write_any_sine_settings),
+    RegSpec::U8Array(&app_regs.sine_settings[2], sizeof(SineWaveSettings),
+        read_any_sine_settings, write_any_sine_settings),
+    RegSpec::U8Array(&app_regs.sine_settings[3], sizeof(SineWaveSettings),
+        read_any_sine_settings, write_any_sine_settings),
+
+    RegSpec::U8Array(&app_regs.trapezoid_settings[0], sizeof(TrapezoidSettings),
+        read_any_trapezoid_settings, write_any_trapezoid_settings),
+    RegSpec::U8Array(&app_regs.trapezoid_settings[1], sizeof(TrapezoidSettings),
+        read_any_trapezoid_settings, write_any_trapezoid_settings),
+    RegSpec::U8Array(&app_regs.trapezoid_settings[2], sizeof(TrapezoidSettings),
+        read_any_trapezoid_settings, write_any_trapezoid_settings),
+    RegSpec::U8Array(&app_regs.trapezoid_settings[3], sizeof(TrapezoidSettings),
+        read_any_trapezoid_settings, write_any_trapezoid_settings),
 
     RegSpec::U8Array(&app_regs.waveform_hashes[0], SHA256_NUM_BYTES,
         read_any_waveform_hash, HarpCore::write_reg_error),
@@ -318,6 +354,39 @@ void update_app()
     }
 }
 
+void select_player(size_t channel, player_t player)
+{
+    size_t& i = channel;
+    // Unclaim the shared buffer first.
+    SourcePlayer* players[] = {&file_players[i], &sine_players[i],
+                               &trapezoid_players[i]}
+    for (auto& player: players)
+    {
+        player->reset(); // calls an abort.
+        player->unclaim_buffer();
+    }
+    switch player
+    {
+        case player::file:
+            file_players[i].claim_buffer();
+            file_players[i].apply_settings(app_regs.file_settings[i]);
+            file_players[i].open_file(app_regs.file_settings[i].name)
+            break;
+        case player::sine:
+            sine_players[i].claim_buffer();
+            sine_players[i].apply_settings(app_regs.sine_settings[i]);
+            sine_players[i].setup();
+            break;
+        case player::trapezoid:
+            trapezoid_players[i].claim_buffer();
+            trapezoid_players[i].apply_settings(app_regs.trapezoid_settings[i]);
+            trapezoid_players[i].setup();
+            break;
+        default:
+            break;
+    }
+}
+
 void reset_app()
 {
     for (size_t i = DI_PORT_BASE; i < DI_PORT_BASE + NUM_DIS; ++i)
@@ -341,15 +410,13 @@ void reset_app()
     // Reset Waveform trigger settings.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         app_regs.external_trigger_masks[i] = (1u << i); // DI[i] triggers AO[i].
-    // Reset Waveform settings.
-    // TODO: rely on default constructors and do this per-settings type.
+    // Reset all player settings.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        auto& settings = app_regs.file_settings[i];
-        settings.cycles = 1; // play once: "single-shot."
-        settings.duration_us = 0; // play everything.
-        settings.update_frequency_hz =
-            TimerPacedDMADoubleBuffer<T, READ_BUF_SIZE>::DEFAULT_FREQUENCY_HZ;
+        app_regs.file_settings[i] = FileSettings();
+        app_regs.file_settings.path = default_filenames[i];
+        app_regs.sine_settings[i] = SineWaveSettings();
+        app_regs.triangle_settings[i] = TrapezoidSettings();
     }
     transfer_manager.reset();
     // FIXME: hardcoded reference to DMA_IRQ_1.
@@ -365,14 +432,21 @@ void reset_app()
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         app_regs.analog_output_port_state[i] = PIO_LTC264x::OUTPUT_MIDSCALE;
     multicore_reset_core1(); // Ensure core1 is not updating the player first.
-    for (auto& file_player: file_players)
-        file_player.reset();
-    // Open default files
+    // Reset all players (after)
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        file_players[i].claim_buffer(buf_ptrs[i]);
-        // Warning: might lock up if the file doesn't exist.
-        file_players[i].open_file(default_filenames[i]);
+        file_player[i].reset();
+        file_players[i].unclaim_buffer();
+        sine_players[i].reset();
+        sine_players[i].unclaim_buffer();
+        trapezoid_players[i].reset();
+        trapezoid_players[i].unclaim_buffer();
+    }
+
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        select_player(channel, player_t::file); // claim buffer & apply settings
+        // TODO: If not successful, set error bits.
     }
     // Launch core1.
     (void)multicore_fifo_pop_blocking(); // Wait until core1 is ready.

@@ -1,18 +1,19 @@
 #ifndef QUAC_H
 #define QUAC_H
-#include <cstdint>
-#include <harp_core.h>
-#include <harp_c_app.h>
-#include <waveform_settings.h>
-//#include "sine_wave_settings.h"
-//#include "pulse_train_settings.h"
-#include <array>
-#include <config.h>
-#include "multi_transfer_manager.h"
-#include <pico/util/queue.h>
-#include <pico/multicore.h>
+#include "pico/util/queue.h"
+#include "pico/multicore.h"
 #include <core1_file_player.h>
 #include <reg_spec.h>
+#include <harp_core.h>
+#include <harp_c_app.h>
+#include "waveform_settings.h"
+#include "multi_transfer_manager.h"
+#include "file_player.h"
+#include "sine_wave_player.h"
+#include "trapezoid_player.h"
+#include <array>
+#include <cstdint>
+#include <config.h>
 
 using enum reg_type_t;
 
@@ -22,6 +23,8 @@ extern queue_t ext_trigger_event_queue;
 extern std::array<TimerPacedDMADoubleBuffer<T, READ_BUF_SIZE>, NUM_CHANNELS> bufs;
 extern std::array<DMADoubleBuffer<T, READ_BUF_SIZE>*, NUM_CHANNELS> buf_ptrs;
 extern std::array<FilePlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> file_players;
+extern std::array<SineWavePlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> sine_players;
+extern std::array<TrapezoidPlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> trapezoid_players;
 extern MultiTransferManager<T, READ_BUF_SIZE, NUM_CHANNELS> transfer_manager;
 extern RegSpec app_reg_specs[];
 
@@ -29,6 +32,12 @@ extern const size_t APP_REG_COUNT;
 inline constexpr size_t DAC_START_ADDRESS = HarpCore::APP_REG_START_ADDRESS + 10;
 inline constexpr size_t DAC_FINISHED_ADDRESS = HarpCore::APP_REG_START_ADDRESS + 13;
 
+enum player_t: uint8_t
+{
+    file = 0,
+    sine = 1,
+    trapezoid = 2
+}
 
 struct ext_trigger_event_t
 {
@@ -61,14 +70,17 @@ struct app_regs_t
     uint8_t dac_finished;
 
     // External trigger masks per-channeel. Assign a channel to one or more triggers.
-    uint8_t external_trigger_masks[NUM_CHANNELS];
+    uint8_t channel_external_triggers[NUM_CHANNELS];
+
+    // Which player is active per channel.
+    uint8_t active_players[NUM_CHANNELS];
 
     // Settings for each distinct player.
     FileSettings file_settings[NUM_CHANNELS];
     FunctionSettings sine_settings[NUM_CHANNELS];
     TrapezoidSettings trapezoid_settings[NUM_CHANNELS];
-    TrapezoidSettings (&sawtooth_settings)[NUM_CHANNELS] = trapezoid_settings;
-    TrapezoidSettings (&triangle_settings)[NUM_CHANNELS] = trapezoid_settings;
+    //TrapezoidSettings (&sawtooth_settings)[NUM_CHANNELS] = trapezoid_settings;
+    //TrapezoidSettings (&triangle_settings)[NUM_CHANNELS] = trapezoid_settings;
 
     // waveform_hashes are only exposed for read as individual registers.
     uint8_t waveform_hashes[NUM_CHANNELS][SHA256_NUM_BYTES];
@@ -129,6 +141,8 @@ void read_sample_rate_hz(uint8_t address);
 void write_sample_rate_hz(msg_t& msg);
 
 void reset_app();
+
+void select_player(size_t channel, player_t player);
 
 void update_app();
 

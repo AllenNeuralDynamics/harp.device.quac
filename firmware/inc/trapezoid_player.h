@@ -108,6 +108,7 @@ private:
     uint32_t width_samples_;
     uint32_t ramp_on_samples_;
     uint32_t ramp_off_samples_;
+
     uint32_t peak_to_peak_amplitude_samples_;
     uint32_t vertical_shift_samples_;
 

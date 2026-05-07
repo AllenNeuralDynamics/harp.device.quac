@@ -22,17 +22,31 @@ public:
 /**
  * \brief
  */
-    bool apply_settings(WaveformSettings& settings) override
+    bool apply_settings(FileSettings& settings)
     {
         /// FIXME: use FileSettings, not WaveformSettings to get file name.
         if ((this->buf_ptr_ == nullptr) || this->is_busy())
             return false;
         settings_ = settings; // copy settings so rewind_source() works.
-        return SourcePlayer<T, BUF_SIZE>::apply_settings(settings);
+        return apply_settings((WaveformSettings&)settings); // upcast.
+    }
+
+/**
+ * \brief apply base waveform settings. Update current FileSettings to match.
+ */
+    bool apply_settings(WaveformSettings& settings) override
+    {
+        // Copy all WaveformSettings-related settings from
+        // WaveformSettings instance into our FileSettings instance;
+        static_cast<WaveformSettings&>(settings_) = settings;
+        // Call parent to trigger the underlying reset().
+        if (!SourcePlayer<T, BUF_SIZE>::apply_settings(settings))
+            return false;
         // if the file is open, reopen it to refresh the update loop with
         // the new settings.
         if (file_is_open())
-            open_file(curr_filename_);
+            return open_file(settings_.file_name);
+        return true;
     }
 
 /**
@@ -42,19 +56,24 @@ public:
     {return settings_;}
 
 /**
- *  \brief open the previously specified file.
- *  \details idempotent.
+ *  \brief open the previously specified file or a new one with the current
+ *   settings. Idempotent.
  */
-    inline void open_file(const char* filename)
+    inline bool open_file(const char* filename = nullptr)
     {
+        if (!filename)
+            filename = settings_.file_name;
         if (file_is_open())
         {close_file();}
+        strcpy(settings_.file_name, filename); // update settings_.
+        // f_open will fail if FileSettings were never specified and
+        // filename is not passed in or filename is not found on SD card.
         if (f_open(&fil_, filename, FA_READ) != FR_OK)
-        {panic("Could not open: %s.\r\n", filename);}
+        {return false;}
         filptr_ = &fil_;
-        strcpy(curr_filename_, filename);
         // pre-read buffers (if buffer is claimed).
         SourcePlayer<T, BUF_SIZE>::update();
+        return true;
     }
 
 /**
@@ -116,7 +135,6 @@ protected:
 private:
     FIL fil_;
     FIL* filptr_; // pointer to fil_ to track if file is open.
-    WaveformSettings settings_;
-    char curr_filename_[64];
+    FileSettings settings_;
 };
 #endif // FILE_PLAYER_H
