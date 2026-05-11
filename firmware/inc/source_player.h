@@ -10,8 +10,8 @@
  *  DMADoubleBuffer. Ultimately, the DMADoubleBuffer may be connected to an
  *  output like a DAC.
  * \details Derived classes need only implement rewind_source(),
- *  transfer_source_chunk(), and source_finished(), functions and populate
- *  \ref settings_ptr_ in the constructor.
+ *  transfer_source_chunk(), source_finished(), and setup() functions and
+ *  populate \ref settings_ptr_ in the constructor.
  */
 template <typename T, size_t BUF_SIZE>
 class SourcePlayer
@@ -134,9 +134,12 @@ public:
 /**
  * \brief
  */
-    void setup()
+    virtual void setup()
     {
         reset();
+        // pre-read buffers (if buffer is claimed).
+        if (!buf_ptr_)
+            return;
         // Continue calling update until the buffer is fully stuffed.
         while (!SourcePlayer<T, BUF_SIZE>::is_armed())
             SourcePlayer<T, BUF_SIZE>::update();

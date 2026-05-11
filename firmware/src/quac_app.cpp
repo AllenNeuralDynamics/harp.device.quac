@@ -449,26 +449,23 @@ void select_player(size_t channel, player_t player)
         player->reset(); // calls an abort.
         player->unclaim_buffer();
     }
-    switch (player)
+    SourcePlayer<T, READ_BUF_SIZE>& base_player = *players[i];
+    base_player.claim_buffer(&bufs[i]);
+    switch (player) // Call child class method on specific settings type.
     {
         case file:
-            file_players[i].claim_buffer(&bufs[i]);
             file_players[i].apply_settings(app_regs.file_settings[i]);
-            file_players[i].open_file(app_regs.file_settings[i].path);
             break;
         case sine:
-            sine_players[i].claim_buffer(&bufs[i]);
             sine_players[i].apply_settings(app_regs.sine_settings[i]);
-            sine_players[i].setup();
             break;
         case trapezoid:
-            trapezoid_players[i].claim_buffer(&bufs[i]);
             trapezoid_players[i].apply_settings(app_regs.trapezoid_settings[i]);
-            trapezoid_players[i].setup();
             break;
         default:
             break;
     }
+    base_player.setup();
     app_regs.active_players[i] = player; // Update Harp register.
 }
 

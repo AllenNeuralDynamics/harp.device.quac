@@ -90,14 +90,18 @@ int main() {
     MultiTransferManager<T, BUF_SIZE, 1> transfer_manager(buf_ptrs, dacs);
     transfer_manager.enable_end_of_transfer_interrupt(1); // corresponds to DMA_IRQ_1
     player.claim_buffer(&bufs[0]);
-    printf("Is FilePlayer armed? %s\r\n", player.is_armed()? "true" : "false");
     printf("Opening file\r\n");
     if (!player.open_file("channel_0.bin"))
     {
-        printf("error opening file!\r\n");
+        printf("Error opening file!\r\n");
         for (;;);
     }
-    printf("Is FilePlayer armed? %s\r\n", player.is_armed()? "true" : "false");
+    player.setup();
+    if (!player.is_armed())
+    {
+        printf("Error. FilePlayer is not armed.\r\n");
+        for (;;);
+    }
     printf("File Player is ready.\r\n");
     sleep_ms(500);
     printf("Starting.\r\n");

@@ -2,7 +2,7 @@
 #define FILE_PLAYER_H
 #include "source_player.h"
 #include "ff.h"
-#include "f_util.h"
+//#include "f_util.h"
 #include "waveform_settings.h"
 #include <cstring>
 
@@ -17,6 +17,16 @@ public:
     : SourcePlayer<T, BUF_SIZE>{}, filptr_{nullptr}, settings_{}
     {
         this->settings_ptr_ = &settings_;
+    }
+
+/**
+ * \brief Put the FilePlayer in a state where it is ready to be triggered
+ * immediately.
+ */
+    void setup() override
+    {
+        open_file(settings_.path);
+        SourcePlayer<T, BUF_SIZE>::setup();
     }
 
 /**
@@ -40,7 +50,7 @@ public:
         // WaveformSettings parameter into our FileSettings member;
         static_cast<WaveformSettings&>(settings_) = settings;
         // Call parent to trigger the underlying reset().
-        if (!SourcePlayer<T, BUF_SIZE>::apply_settings(settings))
+        if (!SourcePlayer<T, BUF_SIZE>::apply_settings(settings)) // will reset()
             return false;
         // if the file is open, reopen it to refresh the update loop with
         // the new settings.
@@ -57,7 +67,8 @@ public:
 
 /**
  *  \brief open the previously specified file or a new one with the current
- *   settings. Idempotent.
+ *  settings. Arm the buffer (if specified).
+ *  Idempotent.
  */
     inline bool open_file(const char* filepath = nullptr)
     {
@@ -71,9 +82,6 @@ public:
         if (f_open(&fil_, filepath, FA_READ) != FR_OK)
         {return false;}
         filptr_ = &fil_;
-        // pre-read buffers (if buffer is claimed).
-        // FIXME: do we need to while (!armed) {update}?
-        SourcePlayer<T, BUF_SIZE>::update();
         return true;
     }
 
