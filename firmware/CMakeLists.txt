@@ -4,6 +4,8 @@ execute_process(COMMAND "${GIT_EXECUTABLE}" rev-parse --short HEAD OUTPUT_VARIAB
 message(STATUS "Computed Git Hash: ${COMMIT_ID}")
 add_definitions(-DGIT_HASH="${COMMIT_ID}") # Usable in source code.
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # for clang
+
 #add_definitions(-DDEBUG) # Uncomment for debugging
 
 set(PICO_BOARD pico2)
@@ -75,6 +77,7 @@ target_link_libraries(${PROJECT_NAME}
     file_player
     no-OS-FatFS-SD-SDIO-SPI-RPi-Pico
     pico_multicore
+    pico_util
 )
 
 pico_add_extra_outputs(${PROJECT_NAME})

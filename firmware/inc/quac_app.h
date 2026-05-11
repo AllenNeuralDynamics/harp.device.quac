@@ -37,7 +37,7 @@ enum player_t: uint8_t
     file = 0,
     sine = 1,
     trapezoid = 2
-}
+};
 
 struct ext_trigger_event_t
 {
@@ -109,40 +109,30 @@ void write_any_analog_output_channel(msg_t& msg);
 
 void read_dac_ready(uint8_t address);
 
-void read_dac_start(uint8_t address);
 void write_dac_start(msg_t& msg);
 
-void read_dac_pause(uint8_t address);
 void write_dac_pause(msg_t& msg);
 
-void read_dac_abort(uint8_t address);
 void write_dac_abort(msg_t& msg);
 
-void read_any_dac_settings(uint8_t address);
-void write_any_dac_settings(msg_t& msg);
+void write_any_channel_external_triggers(msg_t& msg);
+
+void write_any_channel_active_player(msg_t& msg);
+
+// These should really be generated from function template.
+void write_any_file_settings(msg_t& msg);
+void write_any_sine_settings(msg_t& msg);
+void write_any_trapezoid_settings(msg_t& msg);
 
 void read_any_waveform_hash(uint8_t address);
 
 void write_any_waveform_data(msg_t& msg);
 
-void read_any_waveform_type(uint8_t address);
-void write_any_waveform_type(msg_t& msg);
-
-void read_any_sine_settings(uint8_t address);
-void write_any_sine_settings(msg_t& msg);
-
-void read_any_pulse_settings(uint8_t address);
-void write_any_pulse_settings(msg_t& msg);
-
-void write_waveform_start(msg_t& msg);
-void write_waveform_abort(msg_t& msg);
-
-void read_sample_rate_hz(uint8_t address);
-void write_sample_rate_hz(msg_t& msg);
-
 void reset_app();
 
 void select_player(size_t channel, player_t player);
+
+bool player_is_ready(size_t channel, player_t player);
 
 void update_app();
 

@@ -37,7 +37,7 @@ public:
     bool apply_settings(WaveformSettings& settings) override
     {
         // Copy all WaveformSettings-related settings from
-        // WaveformSettings instance into our FileSettings instance;
+        // WaveformSettings parameter into our FileSettings member;
         static_cast<WaveformSettings&>(settings_) = settings;
         // Call parent to trigger the underlying reset().
         if (!SourcePlayer<T, BUF_SIZE>::apply_settings(settings))
@@ -45,7 +45,7 @@ public:
         // if the file is open, reopen it to refresh the update loop with
         // the new settings.
         if (file_is_open())
-            return open_file(settings_.file_name);
+            return open_file(settings_.path);
         return true;
     }
 
@@ -59,19 +59,20 @@ public:
  *  \brief open the previously specified file or a new one with the current
  *   settings. Idempotent.
  */
-    inline bool open_file(const char* filename = nullptr)
+    inline bool open_file(const char* filepath = nullptr)
     {
-        if (!filename)
-            filename = settings_.file_name;
+        if (!filepath)
+            filepath = settings_.path;
         if (file_is_open())
         {close_file();}
-        strcpy(settings_.file_name, filename); // update settings_.
+        strcpy(settings_.path, filepath); // update settings_.
         // f_open will fail if FileSettings were never specified and
         // filename is not passed in or filename is not found on SD card.
-        if (f_open(&fil_, filename, FA_READ) != FR_OK)
+        if (f_open(&fil_, filepath, FA_READ) != FR_OK)
         {return false;}
         filptr_ = &fil_;
         // pre-read buffers (if buffer is claimed).
+        // FIXME: do we need to while (!armed) {update}?
         SourcePlayer<T, BUF_SIZE>::update();
         return true;
     }

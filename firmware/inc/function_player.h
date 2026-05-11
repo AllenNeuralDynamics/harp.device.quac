@@ -19,13 +19,6 @@ public:
     FunctionPlayer()
     : SourcePlayer<T, BUF_SIZE>{}{}
 
-
-    void setup()
-    {
-        // pre-read buffers (if buffer is claimed).
-        SourcePlayer<T, BUF_SIZE>::update();
-    }
-
 protected:
 /**
  * \brief true if the file has been fully read to the end.

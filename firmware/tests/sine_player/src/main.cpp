@@ -31,29 +31,33 @@ int main() {
     PIO& pio = dac.get_pio(); // TODO: dac.get_tx_fifo()
     int32_t sm = dac.get_sm();
     TimerPacedDMADoubleBuffer<T, BUF_SIZE> buf(&pio->txf[sm]);
+    printf("Buf is_aborted? %s\r\n", buf.is_aborted()? "true": "false");
     // Create SinePlayer
     SineWavePlayer<T, BUF_SIZE> player;
     FunctionSettings settings;
     settings.amplitude_volts = 5; // amplitude from center, not peak-to-peak.
     settings.vertical_shift_volts = 2.5;
-    printf("settings:\r\n");
-    printf("update_frequency_hz: %u\r\n", settings.update_frequency_hz);
-    printf("amplitude: %f\r\n", settings.amplitude_volts);
-    printf("duration_us: %u\r\n", settings.duration_us);
-    printf("frequency_hz: %u\r\n", settings.frequency_hz);
-    printf("period_us: %u\r\n", settings.period_us());
-    printf("vshift: %f\r\n", settings.vertical_shift_volts);
+//    printf("settings:\r\n");
+//    printf("update_frequency_hz: %u\r\n", settings.update_frequency_hz);
+//    printf("amplitude: %f\r\n", settings.amplitude_volts);
+//    printf("duration_us: %u\r\n", settings.duration_us);
+//    printf("frequency_hz: %u\r\n", settings.frequency_hz);
+//    printf("period_us: %u\r\n", settings.period_us());
+//    printf("vshift: %f\r\n", settings.vertical_shift_volts);
     player.claim_buffer(&buf);
+    printf("applying settings.\r\n");
     player.apply_settings(settings);
-    player.setup();
-    printf("Sine Player is ready.\r\n");
+    printf("Is SinePlayer is ready? %s\r\n", player.is_ready()? "true": "false");
+    player.setup(); // should arm.
+    printf("Is SinePlayer is ready? %s\r\n", player.is_ready()? "true": "false");
     sleep_ms(500);
     printf("Starting.\r\n");
     buf.start_transfer();
     while(player.is_busy())
         player.update();
     printf("Done playing!\r\n");
-    player.cleanup(); // Close file. Release buffer.
+    printf("Is SinePlayer is ready? %s\r\n", player.is_ready()? "true": "false");
+    player.cleanup(); // Release buffer.
     // Unmount the file system.
     printf("All transfers complete! Goodbye, world!\r\n");
     for (;;);

@@ -10,5 +10,15 @@ void core1main()
             if (player.is_busy())
                 player.update();
         }
+        for (auto& player: sine_players)
+        {
+            if (player.is_busy())
+                player.update();
+        }
+        for (auto& player: trapezoid_players)
+        {
+            if (player.is_busy())
+                player.update();
+        }
     }
 }

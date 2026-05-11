@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <cstdint>
 
-
 /**
  * \brief base waveform base settings common to all waveforms.
  */
@@ -36,8 +35,8 @@ struct WaveformSettings
 #pragma pack(push, 1)
 struct FileSettings: WaveformSettings
 {
-    static inline constexpr size_t MAX_FILE_NAME_LENGTH = 63;
-    char file_name[MAX_FILE_NAME_LENGTH + 1];
+    static inline constexpr size_t MAX_FILE_NAME_LENGTH = 32;
+    char path[MAX_FILE_NAME_LENGTH + 1];
 };
 #pragma pack(pop)
 

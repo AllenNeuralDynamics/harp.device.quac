@@ -90,8 +90,14 @@ int main() {
     MultiTransferManager<T, BUF_SIZE, 1> transfer_manager(buf_ptrs, dacs);
     transfer_manager.enable_end_of_transfer_interrupt(1); // corresponds to DMA_IRQ_1
     player.claim_buffer(&bufs[0]);
-    player.open_file("channel_0.bin");
-    bufs[0].set_frequency_hz(500'000);
+    printf("Is FilePlayer armed? %s\r\n", player.is_armed()? "true" : "false");
+    printf("Opening file\r\n");
+    if (!player.open_file("channel_0.bin"))
+    {
+        printf("error opening file!\r\n");
+        for (;;);
+    }
+    printf("Is FilePlayer armed? %s\r\n", player.is_armed()? "true" : "false");
     printf("File Player is ready.\r\n");
     sleep_ms(500);
     printf("Starting.\r\n");
@@ -99,14 +105,7 @@ int main() {
     while(player.is_busy())
         player.update();
     printf("Done playing!\r\n");
-    sleep_ms(1000);
-    // If we did not abort, we should be able to re-trigger.
-    // Retrigger all channels again.
-    printf("Restarting.\r\n");
-    bufs[0].start_transfer();
-    while(player.is_busy())
-        player.update();
-    printf("Done replaying! Closing files.\r\n");
+    sleep_ms(500);
     player.cleanup(); // Close file. Release buffer.
     // Unmount the file system.
     f_unmount("");

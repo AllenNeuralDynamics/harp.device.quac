@@ -288,6 +288,7 @@ public:
 
     bool is_aborted()
     {
+        // FIXME: technically is_aborted is more like an is_busy
         bool data_chan_is_busy = dma_channel_is_busy(data_chan_);
         bool ctrl_chan_is_busy = dma_channel_is_busy(ctrl_chan_);
         return dma_chain_loop_disconnected()
