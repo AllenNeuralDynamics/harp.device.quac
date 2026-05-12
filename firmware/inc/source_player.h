@@ -125,7 +125,7 @@ public:
  */
     void abort_transfer()
     {
-        if (buf_ptr_ == nullptr)
+        if (!buf_ptr_)
             return;
         buf_ptr_->abort_transfer();
         idle_buf_ptr_ = nullptr;
@@ -197,7 +197,11 @@ public:
  *  etc). False otherwise (paused or aborted).
  */
     inline bool is_active()
-    {return buf_ptr_->is_transferring();}
+    {
+        if (!buf_ptr_)
+            return false;
+        return buf_ptr_->is_transferring();
+    }
 
 /**
  * \brief true if the specified channel needs to be handled with periodic calls

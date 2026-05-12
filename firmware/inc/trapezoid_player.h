@@ -14,7 +14,7 @@ public:
     TrapezoidPlayer()
     : FunctionPlayer<T, BUF_SIZE>{}, settings_{}
     {
-        this->settings_ptr_ = &settings_;
+        this->settings_ptr_ = &settings_; // for base class.
     }
 
 /**
@@ -22,10 +22,10 @@ public:
  */
     bool apply_settings(TrapezoidSettings& settings)
     {
-        if ((!this->buf_ptr_) || this->is_busy())
+        if (!this->buf_ptr_ || this->is_busy())
             return false;
         settings_ = settings; // copy settings so rewind_source() works.
-        return SourcePlayer<T, BUF_SIZE>::apply_settings(settings_);
+        return SourcePlayer<T, BUF_SIZE>::apply_settings(settings);
     }
 
 /**

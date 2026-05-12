@@ -438,20 +438,21 @@ void update_app()
     app_regs.dac_start &= ~finished_transfers;
 }
 
-void select_player(size_t channel, player_t player)
+
+void select_player(size_t channel, player_t player_type)
 {
     size_t& i = channel;
-    // Unclaim the shared buffer first.
+    // Collect all players for the corresponding channel.
     SourcePlayer<T, READ_BUF_SIZE>* players[] =
         {&file_players[i], &sine_players[i], &trapezoid_players[i]};
+    // Unclaim the shared buffer first.
     for (auto& player: players)
     {
-        player->reset(); // calls an abort.
+        player->reset();
         player->unclaim_buffer();
     }
-    SourcePlayer<T, READ_BUF_SIZE>& base_player = *players[i];
-    base_player.claim_buffer(&bufs[i]);
-    switch (player) // Call child class method on specific settings type.
+    players[player_type]->claim_buffer(&bufs[i]);
+    switch (player_type) // Call child class method on specific settings type.
     {
         case file:
             file_players[i].apply_settings(app_regs.file_settings[i]);
@@ -465,8 +466,8 @@ void select_player(size_t channel, player_t player)
         default:
             break;
     }
-    base_player.setup();
-    app_regs.active_players[i] = player; // Update Harp register.
+    players[player_type]->setup();
+    app_regs.active_players[i] = player_type; // Update Harp register.
 }
 
 bool player_is_ready(size_t channel, player_t player)
@@ -485,6 +486,13 @@ bool player_is_ready(size_t channel, player_t player)
 
 void reset_app()
 {
+    // For debugging.
+    uint32_t LED_MASK = (1u << DEBUG_LEDS[0]) | (1u << DEBUG_LEDS[1]);
+    gpio_init_mask(LED_MASK);
+    gpio_set_dir_masked(LED_MASK, 0xFFFFFFFF); // 1: output.
+    gpio_put_masked(LED_MASK, 0);
+
+    // Init all digital inputs and outputs.
     for (size_t i = DI_PORT_BASE; i < DI_PORT_BASE + NUM_DIS; ++i)
         gpio_init(i);
     for (size_t i = DO_PORT_BASE; i < DO_PORT_BASE + NUM_DOS; ++i)
@@ -528,21 +536,11 @@ void reset_app()
         dac.write_value(PIO_LTC264x::OUTPUT_MIDSCALE);
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         app_regs.analog_output_port_state[i] = PIO_LTC264x::OUTPUT_MIDSCALE;
-    multicore_reset_core1(); // Ensure core1 is not updating the player first.
-    // Reset all players.
-    for (size_t i = 0; i < NUM_CHANNELS; ++i)
-    {
-        file_players[i].reset();
-        file_players[i].unclaim_buffer();
-        sine_players[i].reset();
-        sine_players[i].unclaim_buffer();
-        trapezoid_players[i].reset();
-        trapezoid_players[i].unclaim_buffer();
-    }
+    // Select default player (also does a reset).
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         select_player(i, player_t::sine); // claims buffer & applies settings.
-
     // Launch core1.
+    multicore_reset_core1(); // Ensure core1 is not updating the player first.
     (void)multicore_fifo_pop_blocking(); // Wait until core1 is ready.
     multicore_launch_core1(core1main);
 
@@ -552,20 +550,14 @@ void reset_app()
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         gpio_set_irq_enabled(i + DI_PORT_BASE, GPIO_IRQ_EDGE_RISE, true);
     irq_set_enabled(IO_IRQ_BANK0, true);
-
-    // For debugging.
-    uint32_t LED_MASK = (1u << DEBUG_LEDS[0]) | (1u << DEBUG_LEDS[1]);
-    gpio_init_mask(LED_MASK);
-    gpio_set_dir_masked(LED_MASK, 0xFFFFFFFF); // 1: output.
-    gpio_put_masked(LED_MASK, 0);
 }
 
 // FIXME: this ISR will fire for every rising edge event on said pins--event if
 // all channels are busy.
 void __not_in_flash_func(handle_external_trigger)()
 {
-    uint32_t LED_MASK = (1u << DEBUG_LEDS[0]) | (1u << DEBUG_LEDS[1]);
-    gpio_put_masked(LED_MASK, ~gpio_get_all()); // Toggle LEDs.
+    //uint32_t LED_MASK = (1u << DEBUG_LEDS[0]) | (1u << DEBUG_LEDS[1]);
+    //gpio_put_masked(LED_MASK, ~gpio_get_all()); // Toggle LEDs.
 
     // Note: we must read gpios here directly because we are not on a clean
     // multiple of 8-boundary, so it's cumbersome to assemble the interrupt

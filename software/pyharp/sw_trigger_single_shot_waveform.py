@@ -10,7 +10,8 @@ import sys
 
 #logging.basicConfig(level=logging.DEBUG)
 
-waveform_type =  WaveformType.File
+WAVEFORM_TYPE =  WaveformType.File
+NUM_CHANNELS = 4
 
 # Open the device and print the info on screen
 # Open serial connection and save communication to a file
@@ -19,10 +20,10 @@ if os.name == 'posix': # check for Linux.
 else: # assume Windows.
     device = Device("COM95", "ibl.bin")
 
-for i in range(4):
-    print(f"Setting all active players to {waveform_type.name}")
+for i in range(NUM_CHANNELS):
+    print(f"Setting all active players to {WAVEFORM_TYPE.name}")
     reply = device.send(WriteU8HarpMessage(AppRegs.ActivePlayers0 + i,
-                                           waveform_type.value).frame)
+                                           WAVEFORM_TYPE.value).frame)
     print(f" Read back: 0x{reply.payload[0]:02x} ({reply.message_type.name}), "
           f"time: {reply.timestamp}")
 sleep(0.1)
@@ -33,7 +34,7 @@ print(f" Read back: 0x{reply.payload[0]:02x}")
 if reply.payload[0] != 0b1111:
     sys.exit("Error: players are not yet ready.")
 
-for i in range(4):
+for i in range(NUM_CHANNELS):
     value = int(1) << i
     print(f"Writing: 0x{value:02x}", end = " ")
     reply = device.send(WriteU8HarpMessage(AppRegs.DACStart, value).frame)
@@ -41,7 +42,7 @@ for i in range(4):
     sleep(0.5)
 
 print("Waiting for end-of-message replies")
-waveform_replies_left = 4
+waveform_replies_left = NUM_CHANNELS
 while (waveform_replies_left):
     events = device.get_events()
     for msg in events:
