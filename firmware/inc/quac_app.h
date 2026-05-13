@@ -119,7 +119,37 @@ void write_any_channel_external_triggers(msg_t& msg);
 
 void write_any_channel_active_player(msg_t& msg);
 
-// These should really be generated from function template.
+/**
+ * \brief handler function to write any settings to a specific player type.
+ * \details templated function such that it can be specialized to a specific
+ *  player type.
+ */
+template <typename SETTINGS, SETTINGS* settings_arr,
+          typename PLAYER, PLAYER* players_arr,
+          player_t PLAYER_ENUM>
+void write_settings(msg_t& msg)
+{
+    // Convert address to output channel with pointer arithmetic.
+    const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
+    size_t i = ((SETTINGS*)spec.base_ptr - settings_arr);
+    // Error if we try to change the specified channel while it's busy.
+    if (bufs[i].is_transferring())
+    {
+        if (!HarpCore::is_muted())
+            HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+        return;
+    }
+    HarpCore::copy_msg_payload_to_register(msg);
+    players_arr[i].apply_settings(settings_arr[i]);
+    // Re-setup the player if it is active.
+    // TODO: should we do this internally?
+    if (player_t(app_regs.active_players[i]) == PLAYER_ENUM)
+        players_arr[i].setup();
+    if (!HarpCore::is_muted())
+        HarpCore::send_harp_reply(WRITE, msg.header.address);
+}
+
+// These are generated from the above function template
 void write_any_file_settings(msg_t& msg);
 void write_any_sine_settings(msg_t& msg);
 void write_any_trapezoid_settings(msg_t& msg);

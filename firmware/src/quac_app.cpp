@@ -1,6 +1,7 @@
 #include "config.h"
 #include "core1_file_player.h"
 #include "dma_double_buffer.h"
+#include "file_player.h"
 #include "harp_core.h"
 #include "harp_message.h"
 #include "pio_ltc264x.h"
@@ -323,70 +324,25 @@ void write_any_channel_active_player(msg_t &msg)
 
 void write_any_file_settings(msg_t& msg)
 {
-    // Convert address to output channel with pointer arithmetic.
-    const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
-    size_t i = ((FileSettings*)spec.base_ptr - app_regs.file_settings);
-    // Error if we try to change the specified channel while it's busy.
-    if (bufs[i].is_transferring())
-    {
-        if (!HarpCore::is_muted())
-            HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
-        return;
-    }
-    HarpCore::copy_msg_payload_to_register(msg);
-    file_players[i].apply_settings(app_regs.file_settings[i]);
-    // Re-setup the player if it is active.
-    // TODO: should we do this internally?
-    if (player_t(app_regs.active_players[i]) == player_t::file)
-        file_players[i].setup();
-    if (!HarpCore::is_muted())
-        HarpCore::send_harp_reply(WRITE, msg.header.address);
+    write_settings<FileSettings, app_regs.file_settings,
+                   FilePlayer<T, READ_BUF_SIZE>, file_players.data(),
+                   player_t::file>(msg);
 }
 
 
 void write_any_sine_settings(msg_t& msg)
 {
-    // Convert address to output channel with pointer arithmetic.
-    const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
-    size_t i = ((FunctionSettings*)spec.base_ptr - app_regs.sine_settings);
-    // Error if we try to change the specified channel while it's busy.
-    if (bufs[i].is_transferring())
-    {
-        if (!HarpCore::is_muted())
-            HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
-        return;
-    }
-    HarpCore::copy_msg_payload_to_register(msg);
-    sine_players[i].apply_settings(app_regs.sine_settings[i]);
-    // Re-setup the player if it is active.
-    // TODO: should we do this internally?
-    if (player_t(app_regs.active_players[i]) == player_t::sine)
-        sine_players[i].setup();
-    if (!HarpCore::is_muted())
-        HarpCore::send_harp_reply(WRITE, msg.header.address);
+    write_settings<FunctionSettings, app_regs.sine_settings,
+                   SineWavePlayer<T, READ_BUF_SIZE>, sine_players.data(),
+                   player_t::sine>(msg);
 }
 
 
 void write_any_trapezoid_settings(msg_t& msg)
 {
-    // Convert address to output channel with pointer arithmetic.
-    const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
-    size_t i = ((TrapezoidSettings*)spec.base_ptr - app_regs.trapezoid_settings);
-    // Error if we try to change the specified channel while it's busy.
-    if (bufs[i].is_transferring())
-    {
-        if (!HarpCore::is_muted())
-            HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
-        return;
-    }
-    HarpCore::copy_msg_payload_to_register(msg);
-    trapezoid_players[i].apply_settings(app_regs.trapezoid_settings[i]);
-    // Re-setup the player if it is active.
-    // TODO: should we do this internally?
-    if (player_t(app_regs.active_players[i]) == player_t::trapezoid)
-        trapezoid_players[i].setup();
-    if (!HarpCore::is_muted())
-        HarpCore::send_harp_reply(WRITE, msg.header.address);
+    write_settings<TrapezoidSettings, app_regs.trapezoid_settings,
+                   TrapezoidPlayer<T, READ_BUF_SIZE>, trapezoid_players.data(),
+                   player_t::trapezoid>(msg);
 }
 
 
