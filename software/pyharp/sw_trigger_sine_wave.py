@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
-import logging
 from time import sleep
 from pyharp.device import Device
 from pyharp.messages import (WriteU8HarpMessage, WriteU8ArrayMessage,
     ReadU8HarpMessage)
 from app_registers import AppRegs, WaveformType, SINE_SETTINGS_FMT
 
+#import logging
 # logging.basicConfig(level=logging.DEBUG)
 COM_PORT = "/dev/ttyACM0"
 
 CHANNEL = 0
 WAVEFORM_TYPE =  WaveformType.Sine
+WAVEFORM_FMT = SINE_SETTINGS_FMT
+BASE_SETTINGS_REG = AppRegs.SineSettings0
 
 cycles = 1
 duration_us = 2_000_000
@@ -23,13 +25,13 @@ vertical_shift_volts = 0
 # Open serial connection and save communication to a file
 device = Device(COM_PORT, "ibl.bin")
 
-# Specify Sine Player
+# Specify Player
 print(f"Setting channel {CHANNEL} to {WAVEFORM_TYPE.name} Player.")
 reply = device.send(WriteU8HarpMessage(AppRegs.ActivePlayers0 + CHANNEL,
                                        WAVEFORM_TYPE.value).frame)
 print(f"  Read back: {WaveformType(reply.payload[0]).name}, time: {reply.timestamp}")
 
-sine_settings = (
+settings = (
     cycles,
     duration_us,
     sample_rate_hz,
@@ -38,9 +40,9 @@ sine_settings = (
     vertical_shift_volts
 )
 # Apply settings.
-reply = device.send(WriteU8ArrayMessage(AppRegs.SineSettings0 + CHANNEL,
-                                        SINE_SETTINGS_FMT, sine_settings,).frame)
-print(f"SineSettings[{CHANNEL}] -> {sine_settings}, ({reply.message_type.name})")
+reply = device.send(WriteU8ArrayMessage(BASE_SETTINGS_REG + CHANNEL,
+                                        WAVEFORM_FMT, settings,).frame)
+print(f"SineSettings[{CHANNEL}] -> {settings}, ({reply.message_type.name})")
 
 # Ensure waveform is ready.
 channel_is_ready = False
@@ -56,7 +58,8 @@ print(f"Channel[{CHANNEL}] is ready.")
 print("Starting waveform.")
 start_mask = 1 << CHANNEL
 reply = device.send(WriteU8HarpMessage(AppRegs.DACStart, start_mask).frame)
-print(f" Read back: 0x{reply.payload[0]:02x} ({reply.message_type.name}), time: {reply.timestamp}")
+print(f" Read back: 0x{reply.payload[0]:02x} ({reply.message_type.name}), "
+      f"time: {reply.timestamp}")
 
 # Wait for waveform-finished event.
 print("Waiting for end-of-waveform event.")

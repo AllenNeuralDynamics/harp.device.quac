@@ -1,119 +1,81 @@
 #!/usr/bin/env python3
-"""
-Configure and software-trigger a trapezoidal pulse train on AO channel 0.
-
-Harp message sequence:
-  1. (optional) write SampleRateHz to change the shared DMA pacing rate.
-  2. write WaveformType0 = PulseTrain.
-  3. write PulseSettings0 (packed struct, 23 bytes) with the parameters.
-  4. write WaveformStart = 0b0001 to fire channel 0.
-  5. wait for the WaveformFinished event.
-"""
-import logging
-import os
 from time import sleep
-
 from pyharp.device import Device
-from pyharp.messages import (
-    WriteU8HarpMessage,
-    WriteU8ArrayMessage,
-    WriteU32HarpMessage,
-)
+from pyharp.messages import (WriteU8HarpMessage, WriteU8ArrayMessage,
+    ReadU8HarpMessage)
+from app_registers import AppRegs, WaveformType, TRAPEZOID_SETTINGS_FMT
 
-from app_registers import AppRegs, WaveformType, PULSE_SETTINGS_FMT
-
+#import logging
 # logging.basicConfig(level=logging.DEBUG)
+COM_PORT = "/dev/ttyACM0"
 
 CHANNEL = 0
+WAVEFORM_TYPE =  WaveformType.Trapezoid
+WAVEFORM_FMT = TRAPEZOID_SETTINGS_FMT
+BASE_SETTINGS_REG = AppRegs.TrapezoidSettings0
 
+cycles = 1
+duration_us = 1_000_000
+sample_rate_hz = 10_000
+frequency_hz = 3
+amplitude_volts = 5 # center-to-peak, not peak-to-peak
+vertical_shift_volts = 2.5
+ramp_on_us = 100_000
+ramp_off_us = 100_000
 
-def main():
-    if os.name == "posix":  # Linux / macOS
-        device = Device("/dev/ttyACM0", "ibl.bin")
-    else:  # Windows
-        device = Device("COM13", "ibl.bin")
+# Open the device and print the info on screen
+# Open serial connection and save communication to a file
+device = Device(COM_PORT, "ibl.bin")
 
-    # ----- 1) Sample rate. -----
-    # 10 kHz is the firmware default; writing explicitly makes the script
-    # self-contained.
-    sample_rate_hz = 10_000
-    reply = device.send(
-        WriteU32HarpMessage(AppRegs.SampleRateHz, sample_rate_hz).frame
-    )
-    print(f"SampleRateHz -> {sample_rate_hz} ({reply.message_type.name})")
+# Specify Player
+print(f"Setting channel {CHANNEL} to {WAVEFORM_TYPE.name} Player.")
+reply = device.send(WriteU8HarpMessage(AppRegs.ActivePlayers0 + CHANNEL,
+                                       WAVEFORM_TYPE.value).frame)
+print(f"  Read back: {WaveformType(reply.payload[0]).name}, time: {reply.timestamp}")
 
-    # ----- 2) Select PulseTrain on channel 0. -----
-    reply = device.send(
-        WriteU8HarpMessage(
-            AppRegs.WaveformType0 + CHANNEL, int(WaveformType.PulseTrain)
-        ).frame
-    )
-    print(
-        f"WaveformType[{CHANNEL}] -> PulseTrain "
-        f"({reply.message_type.name})"
-    )
+settings = (
+    cycles,
+    duration_us,
+    sample_rate_hz,
+    frequency_hz,
+    amplitude_volts,
+    vertical_shift_volts,
+    ramp_on_us,
+    ramp_off_us
+)
+# Apply settings.
+reply = device.send(WriteU8ArrayMessage(BASE_SETTINGS_REG + CHANNEL,
+                                        WAVEFORM_FMT, settings,).frame)
+print(f"TrapezoidSettings[{CHANNEL}] -> {settings}, "
+      f"({reply.message_type.name})")
 
-    # ----- 3) Configure the pulse train. -----
-    #   1 ms trapezoidal pulse every 10 ms, peak at +16384 DAC codes above
-    #   midscale (~+5 V on the bipolar +/-10 V board), 100 us rise,
-    #   300 us fall, run for 2 seconds total, no external trigger.
-    pulse_width_us       = 100_000      # flat-top duration
-    pulse_interval_us    = 200_000     # pulse-to-pulse period
-    pulse_amplitude      = 16_384     # DAC codes above midscale
-    ramp_on_duration_us  = 10_000
-    ramp_off_duration_us = 10_000
-    total_duration_us    = 1_100_000  # 0 = run forever
-    external_trigger_mask = 0         # no DI-based trigger
+# Ensure waveform is ready.
+channel_is_ready = False
+while not channel_is_ready:
+    reply = device.send(ReadU8HarpMessage(AppRegs.DACReady).frame)
+    channel_is_ready = bool(reply.payload[0] >> CHANNEL)
+    if not channel_is_ready:
+        print(f"Channel[{CHANNEL}] is not yet ready...")
+        sleep(0.1)
+print(f"Channel[{CHANNEL}] is ready.")
 
-    pulse_settings = (
-        pulse_width_us,
-        pulse_interval_us,
-        pulse_amplitude,
-        ramp_on_duration_us,
-        ramp_off_duration_us,
-        total_duration_us,
-        external_trigger_mask,
-    )
-    reply = device.send(
-        WriteU8ArrayMessage(
-            AppRegs.PulseSettings0 + CHANNEL,
-            PULSE_SETTINGS_FMT,
-            pulse_settings,
-        ).frame
-    )
-    print(f"PulseSettings[{CHANNEL}] -> {pulse_settings} "
-          f"({reply.message_type.name})")
+# Trigger waveform.
+print("Starting waveform.")
+start_mask = 1 << CHANNEL
+reply = device.send(WriteU8HarpMessage(AppRegs.DACStart, start_mask).frame)
+print(f" Read back: 0x{reply.payload[0]:02x} ({reply.message_type.name}), "
+      f"time: {reply.timestamp}")
 
-    # Small delay so core1 has definitely finished the previous reset_app
-    # cycle before we trigger.
-    sleep(0.05)
+# Wait for waveform-finished event.
+print("Waiting for end-of-waveform event.")
+waveform_playing = True
+while waveform_playing:
+    events = device.get_events()
+    for msg in events:
+        print(msg)
+        print()
+        if msg.address == AppRegs.DACFinished:
+            waveform_playing = False
 
-    # ----- 4) Trigger the waveform. -----
-    start_mask = 1 << CHANNEL
-    reply = device.send(
-        WriteU8HarpMessage(AppRegs.WaveformStart, start_mask).frame
-    )
-    print(
-        f"WaveformStart = 0x{start_mask:02x} "
-        f"({reply.message_type.name}, t={reply.timestamp})"
-    )
-
-    # ----- 5) Wait for the WaveformFinished event. -----
-    print("Waiting for WaveformFinished event...")
-    remaining_channels = start_mask
-    while remaining_channels:
-        for msg in device.get_events():
-            if msg.address == AppRegs.WaveformFinished:
-                finished = msg.payload[0]
-                print(
-                    f"WaveformFinished: 0x{finished:02x} at t={msg.timestamp}"
-                )
-                remaining_channels &= ~finished
-        sleep(0.01)
-
-    print("Done.")
-    device.disconnect()
-
-
-if __name__ == "__main__":
-    main()
+print("Done.")
+device.disconnect()
