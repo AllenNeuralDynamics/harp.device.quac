@@ -335,6 +335,10 @@ void write_any_file_settings(msg_t& msg)
     }
     HarpCore::copy_msg_payload_to_register(msg);
     file_players[i].apply_settings(app_regs.file_settings[i]);
+    // Re-setup the player if it is active.
+    // TODO: should we do this internally?
+    if (player_t(app_regs.active_players[i]) == player_t::file)
+        file_players[i].setup();
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -354,6 +358,10 @@ void write_any_sine_settings(msg_t& msg)
     }
     HarpCore::copy_msg_payload_to_register(msg);
     sine_players[i].apply_settings(app_regs.sine_settings[i]);
+    // Re-setup the player if it is active.
+    // TODO: should we do this internally?
+    if (player_t(app_regs.active_players[i]) == player_t::sine)
+        sine_players[i].setup();
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -373,6 +381,10 @@ void write_any_trapezoid_settings(msg_t& msg)
     }
     HarpCore::copy_msg_payload_to_register(msg);
     trapezoid_players[i].apply_settings(app_regs.trapezoid_settings[i]);
+    // Re-setup the player if it is active.
+    // TODO: should we do this internally?
+    if (player_t(app_regs.active_players[i]) == player_t::trapezoid)
+        trapezoid_players[i].setup();
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -540,7 +552,7 @@ void reset_app()
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         select_player(i, player_t::sine); // claims buffer & applies settings.
     // Launch core1.
-    multicore_reset_core1(); // Ensure core1 is not updating the player first.
+    multicore_reset_core1();
     (void)multicore_fifo_pop_blocking(); // Wait until core1 is ready.
     multicore_launch_core1(core1main);
 

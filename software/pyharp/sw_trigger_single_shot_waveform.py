@@ -9,19 +9,17 @@ from app_registers import AppRegs, WaveformType
 import sys
 
 #logging.basicConfig(level=logging.DEBUG)
+COM_PORT = "/dev/ttyACM0"
 
 WAVEFORM_TYPE =  WaveformType.File
 NUM_CHANNELS = 4
 
 # Open the device and print the info on screen
 # Open serial connection and save communication to a file
-if os.name == 'posix': # check for Linux.
-    device = Device("/dev/ttyACM0", "ibl.bin")
-else: # assume Windows.
-    device = Device("COM95", "ibl.bin")
+device = Device(COM_PORT, "ibl.bin")
 
+print(f"Setting all active players to {WAVEFORM_TYPE.name}")
 for i in range(NUM_CHANNELS):
-    print(f"Setting all active players to {WAVEFORM_TYPE.name}")
     reply = device.send(WriteU8HarpMessage(AppRegs.ActivePlayers0 + i,
                                            WAVEFORM_TYPE.value).frame)
     print(f" Read back: 0x{reply.payload[0]:02x} ({reply.message_type.name}), "
@@ -34,6 +32,7 @@ print(f" Read back: 0x{reply.payload[0]:02x}")
 if reply.payload[0] != 0b1111:
     sys.exit("Error: players are not yet ready.")
 
+# Start each channel offset by 0.5 sec.
 for i in range(NUM_CHANNELS):
     value = int(1) << i
     print(f"Writing: 0x{value:02x}", end = " ")

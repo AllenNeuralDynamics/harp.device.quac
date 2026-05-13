@@ -92,7 +92,6 @@ public:
     {
         if (buf_ptr_ == nullptr)
             return false;
-        //buf_ptr_->unclaim(); // TODO: implement
         buf_ptr_ = nullptr;
         idle_buf_ptr_ = nullptr;
         manage_buffer_timing_ = false;

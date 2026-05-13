@@ -61,5 +61,5 @@ class WaveformType(IntEnum):
 
 
 # struct format strings matching the packed C++ structs in firmware/inc.
-SINE_SETTINGS_FMT = "<IIHB"  # 11 bytes
-PULSE_SETTINGS_FMT = "<IIHIIIB"  # 23 bytes
+SINE_SETTINGS_FMT = "<IIIIff"  # 24 bytes
+TRAPEZOID_SETTINGS_FMT = "<IIIIffII"  # 36 bytes

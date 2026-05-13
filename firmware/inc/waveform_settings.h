@@ -11,7 +11,8 @@ struct WaveformSettings
 {
     uint32_t cycles; /// number of iterations or 0 for loops-forever.
     uint32_t duration_us; /// 0 for read-everything or keep-going forever.
-    uint32_t update_frequency_hz; /// update frequency that the waveform produces a new sample.
+    uint32_t update_frequency_hz; /// update rate that the waveform produces a
+                                  /// new sample.
 
 /// \brief default constructor: play the full duration once at 500KHz (max rate).
     WaveformSettings()
