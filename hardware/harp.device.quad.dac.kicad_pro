@@ -58,7 +58,48 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "footprint_type_mismatch|140873000|85000000|37b03e27-8325-4d51-87a9-49b01a9cbfee|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "lib_footprint_mismatch|152273000|123406728|07bcad7c-9c4a-4f12-8d7f-09618acef7f5|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "lib_footprint_mismatch|174873000|31525000|b8b077be-dcb8-45d0-8e1a-e2bec6b9ef61|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "silk_edge_clearance|127273000|30000000|b8ff23ae-2281-4110-babb-44d208766dc5|0226408a-f463-45c4-9697-0107336609fb",
+          ""
+        ],
+        [
+          "silk_edge_clearance|132473000|30000000|b8ff23ae-2281-4110-babb-44d208766dc5|de073685-dd3f-49ea-bf05-caa6f3df5d86",
+          ""
+        ],
+        [
+          "silk_edge_clearance|136293000|30000000|b8ff23ae-2281-4110-babb-44d208766dc5|241af01f-16bb-4b90-a603-a9631637bce5",
+          ""
+        ],
+        [
+          "silk_edge_clearance|145453000|30000000|b8ff23ae-2281-4110-babb-44d208766dc5|f17b1c0d-c9ac-4f95-8039-2c266f59d2e1",
+          ""
+        ],
+        [
+          "silk_over_copper|155888032|127227164|ad111a5c-ed1c-468e-9522-aedc4478c2dc|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "silk_over_copper|159443163|126950000|92ed521b-1a1c-4e51-afac-24d2f11bcbc8|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "silk_over_copper|162888032|127227164|5e92ef07-c477-4127-a30a-8dce0032870a|00000000-0000-0000-0000-000000000000",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -135,7 +176,7 @@
         "min_silk_clearance": 0.0,
         "min_text_height": 0.7,
         "min_text_thickness": 0.08,
-        "min_through_hole_diameter": 0.25,
+        "min_through_hole_diameter": 0.2,
         "min_track_width": 0.127,
         "min_via_annular_width": 0.1016,
         "min_via_diameter": 0.4572,
@@ -548,8 +589,8 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "Manufacturing Files/Gerber/",
-      "pos_files": "Manufacturing Files/Pick Place/",
+      "plot": "exports/harp.device.quac-v1.1.0/gerbers/",
+      "pos_files": "exports/harp.device.quac-v1.1.0/positions/",
       "specctra_dsn": "",
       "step": "",
       "svg": "",
@@ -1501,21 +1542,15 @@
           "show": true
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Value",
           "name": "Value",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "MPN",
-          "name": "Manufacturer_Part_Number",
           "show": true
         },
         {
           "group_by": false,
-          "label": "MFN",
-          "name": "Manufacturer_Name",
+          "label": "Manufacturer Number",
+          "name": "Manufacturer Number",
           "show": true
         },
         {
@@ -1564,25 +1599,13 @@
           "group_by": false,
           "label": "Tolerance",
           "name": "Tolerance",
-          "show": false
+          "show": true
         },
         {
           "group_by": true,
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
-        },
-        {
-          "group_by": false,
-          "label": "Arrow Part Number",
-          "name": "Arrow Part Number",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Arrow Price/Stock",
-          "name": "Arrow Price/Stock",
-          "show": false
         },
         {
           "group_by": false,
@@ -1598,38 +1621,14 @@
         },
         {
           "group_by": false,
-          "label": "Manufacturer Number",
-          "name": "Manufacturer Number",
-          "show": true
-        },
-        {
-          "group_by": false,
           "label": "Link",
           "name": "Link",
           "show": true
         },
         {
           "group_by": false,
-          "label": "Mouser Part Number",
-          "name": "Mouser Part Number",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Mouser Price/Stock",
-          "name": "Mouser Price/Stock",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "Notes",
           "name": "Notes",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "PCBWay Link",
-          "name": "PCBWay Link",
           "show": false
         },
         {
@@ -1668,7 +1667,7 @@
       "include_excluded_from_bom": false,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Reference"
+      "sort_field": "Value"
     },
     "connection_grid_size": 50.0,
     "drawing": {

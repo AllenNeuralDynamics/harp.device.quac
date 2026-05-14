@@ -6,6 +6,17 @@
 #include <array>
 #include <bitmask_gen.h>
 
+// Must be #defines for conditional compilation.
+#define HW_VERSION_MAJOR (1)
+#define HW_VERSION_MINOR (0) // prototype was: 1.0
+//#define HW_VERSION_MINOR (1)
+
+inline constexpr size_t FW_VERSION_MAJOR = 0;
+inline constexpr size_t FW_VERSION_MINOR = 0;
+inline constexpr size_t FW_VERSION_PATCH = 1;
+
+inline constexpr size_t UNUSED_SERIAL_NUMBER = 0; // Deprecated in favor of R_UUID
+
 struct DACPins
 {
     uint32_t pico;
@@ -38,14 +49,30 @@ extern std::array<PIO_LTC264x, NUM_CHANNELS> dacs;
 static_assert(SD_CHUNK_SIZE_BYTES % 512 == 0,
  "SD_CHUNK_SIZE_BYTES must be a multiple of 512 (SD card block size).");
 
+#if ((HW_VERSION_MAJOR == 1) && (HW_VERSION_MINOR == 0)) // prototoype boards.
+#pragma warning("Compiling for prototype target with distinct pinout.")
+    inline constexpr std::array<DACPins, NUM_CHANNELS> DAC_PINS
+    {{
+        {.pico = 4, .sck = 5, .cs = 6},
+        {.pico = 8, .sck = 9, .cs = 10},
+        {.pico = 12, .sck = 13, .cs = 14},
+        {.pico = 16, .sck = 17, .cs = 18}
+    }};
 
-inline constexpr std::array<DACPins, NUM_CHANNELS> DAC_PINS
-{{
-    {.pico = 4, .sck = 5, .cs = 6},
-    {.pico = 8, .sck = 9, .cs = 10},
-    {.pico = 12, .sck = 13, .cs = 14},
-    {.pico = 16, .sck = 17, .cs = 18}
-}};
+    inline constexpr std::array<uint32_t, NUM_CHANNELS> SHORT_CIRCUIT_DETECTS
+    {{7, 11, 15, 19}};
+#else // production boards.
+    inline constexpr std::array<DACPins, NUM_CHANNELS> DAC_PINS
+        {{
+            {.pico = 4, .sck = 5, .cs = 6},
+            {.pico = 7, .sck = 8, .cs = 9},
+            {.pico = 10, .sck = 11, .cs = 12},
+            {.pico = 13, .sck = 14, .cs = 15}
+        }};
+
+    inline constexpr std::array<uint32_t, NUM_CHANNELS> SHORT_CIRCUIT_DETECTS
+    {{16, 17, 18, 19}};
+#endif
 
 // SD pins and settings.
 inline constexpr size_t SD_CMD_PIN = 22;
@@ -77,9 +104,6 @@ inline constexpr std::array<uint32_t, NUM_CHANNELS> TTL_OUTPUTS
 inline constexpr std::array<uint32_t, NUM_CHANNELS> CURRENT_MEASUREMENTS
 {{40, 41, 42, 43}};
 
-inline constexpr std::array<uint32_t, NUM_CHANNELS> SHORT_CIRCUIT_DETECTS
-{{7, 11, 15, 19}};
-
 inline constexpr std::array<uint32_t, 2> DEBUG_LEDS
 {{2, 3}};
 
@@ -89,15 +113,5 @@ inline constexpr size_t DEBUG_UART_RX_PIN = 1;
 inline constexpr size_t HARP_SYNC_RX_PIN = 37;
 
 inline constexpr size_t HARP_DEVICE_ID = 0;
-
-inline constexpr size_t HW_VERSION_MAJOR = 1;
-inline constexpr size_t HW_VERSION_MINOR = 0;
-inline constexpr size_t HW_ASSEMBLY_VERSION = 0;
-
-inline constexpr size_t FW_VERSION_MAJOR = 0;
-inline constexpr size_t FW_VERSION_MINOR = 0;
-inline constexpr size_t FW_VERSION_PATCH = 1;
-
-inline constexpr size_t UNUSED_SERIAL_NUMBER = 0; // Deprecated in favor of R_UUID
 
 #endif // CONFIG_H
