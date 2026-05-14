@@ -11,7 +11,7 @@
 //extern queue_t bulk_waveform_states_queue;
 
 extern std::array<FilePlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> file_players;
-extern std::array<SineWavePlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> sine_players;
+extern std::array<SinePlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> sine_players;
 extern std::array<TrapezoidPlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> trapezoid_players;
 
 void core1main();

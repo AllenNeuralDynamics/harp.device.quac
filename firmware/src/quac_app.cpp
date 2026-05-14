@@ -90,16 +90,7 @@ RegSpec app_reg_specs[]
     RegSpec::U8Array(&app_regs.trapezoid_settings[3], sizeof(TrapezoidSettings),
         HarpCore::read_reg_generic, write_any_trapezoid_settings),
 
-    RegSpec::U8Array(&app_regs.waveform_hashes[0], SHA256_NUM_BYTES,
-        read_any_waveform_hash, HarpCore::write_reg_error),
-    RegSpec::U8Array(&app_regs.waveform_hashes[1], SHA256_NUM_BYTES,
-        read_any_waveform_hash, HarpCore::write_reg_error),
-    RegSpec::U8Array(&app_regs.waveform_hashes[2], SHA256_NUM_BYTES,
-        read_any_waveform_hash, HarpCore::write_reg_error),
-    RegSpec::U8Array(&app_regs.waveform_hashes[3], SHA256_NUM_BYTES,
-        read_any_waveform_hash, HarpCore::write_reg_error),
-
-    // TODO: Waveform blobs.
+    // TODO: File Waveform blobs.
 };
 
 const size_t APP_REG_COUNT = sizeof(app_reg_specs)/sizeof(RegSpec);
@@ -285,7 +276,10 @@ void write_dac_pause(msg_t& msg)
 
 void write_dac_abort(msg_t& msg)
 {
-    // TODO: implement this.
+    HarpCore::copy_msg_payload_to_register(msg); // update dac_start
+    transfer_manager.abort(app_regs.dac_abort);
+    if (!HarpCore::is_muted())
+        HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
 
 void write_any_channel_external_triggers(msg_t &msg)
@@ -316,32 +310,32 @@ void write_any_channel_active_player(msg_t &msg)
             HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
         return;
     }
+    // Error if active player enum does not exist.
+    uint8_t active_player_old = app_regs.active_players[i];
     HarpCore::copy_msg_payload_to_register(msg);
+    if (app_regs.active_players[i] > size_t(player_t::trapezoid))
+    {
+        app_regs.active_players[i] = active_player_old; // Restore old value.
+        if (!HarpCore::is_muted())
+            HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+        return;
+    }
     select_player(i, (player_t)app_regs.active_players[i]); // also updates reg.
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
 
 void write_any_file_settings(msg_t& msg)
-{
-    write_settings<FileSettings, app_regs.file_settings,
-                   FilePlayer<T, READ_BUF_SIZE>, file_players.data(),
-                   player_t::file>(msg);
-}
+{write_settings<FileSettings, app_regs.file_settings, player_t::file>(msg);}
 
 
 void write_any_sine_settings(msg_t& msg)
-{
-    write_settings<FunctionSettings, app_regs.sine_settings,
-                   SineWavePlayer<T, READ_BUF_SIZE>, sine_players.data(),
-                   player_t::sine>(msg);
-}
+{write_settings<FunctionSettings, app_regs.sine_settings, player_t::sine>(msg);}
 
 
 void write_any_trapezoid_settings(msg_t& msg)
 {
     write_settings<TrapezoidSettings, app_regs.trapezoid_settings,
-                   TrapezoidPlayer<T, READ_BUF_SIZE>, trapezoid_players.data(),
                    player_t::trapezoid>(msg);
 }
 
@@ -472,12 +466,6 @@ void reset_app()
     // Reset Digital Outputs.
     gpio_set_dir_masked64(DO_PORT_MASK, DO_PORT_MASK); // 1-bit: output.
     gpio_put_masked64(DO_PORT_MASK, 0); // Set all outputs LOW.
-
-    memset(&app_regs.waveform_hashes[0], 0, SHA256_NUM_BYTES);
-    memset(&app_regs.waveform_hashes[1], 0, SHA256_NUM_BYTES);
-    memset(&app_regs.waveform_hashes[2], 0, SHA256_NUM_BYTES);
-    memset(&app_regs.waveform_hashes[3], 0, SHA256_NUM_BYTES);
-    // TODO: open SD card, find hash files, update Harp reg hashes as needed.
 
     // Reset app reg values that are not write-only and are not updated
     // inside their handlers.

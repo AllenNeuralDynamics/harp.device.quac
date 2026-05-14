@@ -23,7 +23,7 @@ extern queue_t ext_trigger_event_queue;
 extern std::array<TimerPacedDMADoubleBuffer<T, READ_BUF_SIZE>, NUM_CHANNELS> bufs;
 extern std::array<DMADoubleBuffer<T, READ_BUF_SIZE>*, NUM_CHANNELS> buf_ptrs;
 extern std::array<FilePlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> file_players;
-extern std::array<SineWavePlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> sine_players;
+extern std::array<SinePlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> sine_players;
 extern std::array<TrapezoidPlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> trapezoid_players;
 extern MultiTransferManager<T, READ_BUF_SIZE, NUM_CHANNELS> transfer_manager;
 extern RegSpec app_reg_specs[];
@@ -69,7 +69,7 @@ struct app_regs_t
     uint8_t dac_abort;
     uint8_t dac_finished;
 
-    // External trigger masks per-channeel. Assign a channel to one or more triggers.
+    // External trigger masks per-channel. Assign channel[i] to one or more triggers.
     uint8_t channel_external_triggers[NUM_CHANNELS];
 
     // Which player is active per channel.
@@ -81,11 +81,6 @@ struct app_regs_t
     TrapezoidSettings trapezoid_settings[NUM_CHANNELS];
     //TrapezoidSettings (&sawtooth_settings)[NUM_CHANNELS] = trapezoid_settings;
     //TrapezoidSettings (&triangle_settings)[NUM_CHANNELS] = trapezoid_settings;
-
-    // waveform_hashes are only exposed for read as individual registers.
-    uint8_t waveform_hashes[NUM_CHANNELS][SHA256_NUM_BYTES];
-    // waveform_data are only exposed for write as individual registers.
-    T waveform_data[NUM_CHANNELS]; // treat like a pointer. Data is stored on SD card.
 
 };
 #pragma pack(pop)
@@ -119,14 +114,14 @@ void write_any_channel_external_triggers(msg_t& msg);
 
 void write_any_channel_active_player(msg_t& msg);
 
+void select_player(size_t channel, player_t player);
+
 /**
  * \brief handler function to write any settings to a specific player type.
  * \details templated function such that it can be specialized to a specific
  *  player type.
  */
-template <typename SETTINGS, SETTINGS* settings_arr,
-          typename PLAYER, PLAYER* players_arr,
-          player_t PLAYER_ENUM>
+template <typename SETTINGS, SETTINGS* settings_arr, player_t PLAYER_ENUM>
 void write_settings(msg_t& msg)
 {
     // Convert address to output channel with pointer arithmetic.
@@ -140,11 +135,9 @@ void write_settings(msg_t& msg)
         return;
     }
     HarpCore::copy_msg_payload_to_register(msg);
-    players_arr[i].apply_settings(settings_arr[i]);
-    // Re-setup the player if it is active.
-    // TODO: should we do this internally?
+    // Re-setup the player if it is active. (i.e: apply_settings() and setup())
     if (player_t(app_regs.active_players[i]) == PLAYER_ENUM)
-        players_arr[i].setup();
+        select_player(i, PLAYER_ENUM);
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -160,7 +153,6 @@ void write_any_waveform_data(msg_t& msg);
 
 void reset_app();
 
-void select_player(size_t channel, player_t player);
 
 bool player_is_ready(size_t channel, player_t player);
 

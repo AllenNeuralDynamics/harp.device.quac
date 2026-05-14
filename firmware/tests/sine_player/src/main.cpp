@@ -33,7 +33,7 @@ int main() {
     TimerPacedDMADoubleBuffer<T, BUF_SIZE> buf(&pio->txf[sm]);
     printf("Buf is_aborted? %s\r\n", buf.is_aborted()? "true": "false");
     // Create SinePlayer
-    SineWavePlayer<T, BUF_SIZE> player;
+    SinePlayer<T, BUF_SIZE> player;
     FunctionSettings settings;
     settings.amplitude_volts = 5; // amplitude from center, not peak-to-peak.
     settings.vertical_shift_volts = 2.5;

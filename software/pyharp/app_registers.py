@@ -47,11 +47,6 @@ class AppRegs(IntEnum):
     TrapezoidSettings2 = 64
     TrapezoidSettings3 = 65
 
-    WaveformHashes0 = 66
-    WaveformHashes1 = 67
-    WaveformHashes2 = 68
-    WaveformHashes3 = 69
-
 
 # Values for the WaveformTypeN registers.
 class WaveformType(IntEnum):

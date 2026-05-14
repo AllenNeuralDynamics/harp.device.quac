@@ -14,10 +14,10 @@
  * `midscale + amplitude`.
  */
 template <typename T, size_t BUF_SIZE>
-class SineWavePlayer: public FunctionPlayer<T, BUF_SIZE>
+class SinePlayer: public FunctionPlayer<T, BUF_SIZE>
 {
 public:
-    SineWavePlayer()
+    SinePlayer()
     : FunctionPlayer<T, BUF_SIZE>{}, settings_{}
     {
         this->settings_ptr_ = &settings_; // for base class.

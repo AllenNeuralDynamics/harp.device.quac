@@ -292,34 +292,6 @@ registers:
       amplitude_volts (Float), vertical_shift_volts (Float),
       ramp_on_us (U32), ramp_off_us (U32)"
 
-  WaveformHash0:
-    address: 66
-    type: U8
-    access: Read
-    length: 8
-    description: "Read-only SHA256 hash corresponding to AO0 Waveform."
-
-  WaveformHash1:
-    address: 67
-    type: U8
-    access: Read
-    length: 8
-    description: "Read-only SHA256 hash corresponding to AO1 Waveform."
-
-  WaveformHash2:
-    address: 68
-    type: U8
-    access: Read
-    length: 8
-    description: "Read-only SHA256 hash corresponding to AO2 Waveform."
-
-  WaveformHash3:
-    address: 69
-    type: U8
-    access: Read
-    length: 8
-    description: "Read-only SHA256 hash corresponding to AO3 Waveform."
-
 bitMasks:
   DOPort:
     description: "Available digital output pins on the device"

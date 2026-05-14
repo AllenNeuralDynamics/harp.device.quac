@@ -37,7 +37,7 @@ std::array<PIO_LTC264x, NUM_CHANNELS> dacs
 }};
 
 std::array<FilePlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> file_players{};
-std::array<SineWavePlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> sine_players{};
+std::array<SinePlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> sine_players{};
 std::array<TrapezoidPlayer<T, READ_BUF_SIZE>, NUM_CHANNELS> trapezoid_players{};
 
 std::array<TimerPacedDMADoubleBuffer<T, READ_BUF_SIZE>, NUM_CHANNELS> bufs

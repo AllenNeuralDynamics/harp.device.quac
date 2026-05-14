@@ -82,6 +82,30 @@ public:
     }
 
 /**
+ * \brief abort multiple buffer transfers simultaneously
+ */
+    void abort(uint32_t channel_mask)
+    {
+        // Create a mask to stop all Double Buffer DMA channels at once.
+        uint32_t abort_mask = 0;
+        for (size_t i = 0; i < NUM_CHANNELS; ++i)
+        {
+            if ((channel_mask & (1u << i)))
+                abort_mask |= (1u << buf_ptrs_[i]->get_dma_channel_mask());
+        }
+        dma_hw->abort = abort_mask;
+        // RP2350 only: poll set bits until they clear (i.e abort took effect).
+        while (dma_hw->abort & abort_mask)
+            tight_loop_contents();
+        // Additionally, call each channel's abort to clear DMA config.
+        for (size_t i = 0; i < NUM_CHANNELS; ++i)
+        {
+            if ((channel_mask & (1u << i)))
+                buf_ptrs_[i]->abort_transfer();
+        }
+    }
+
+/**
  * \brief Enable a finished transfer to trigger an interrupt.
  *  Interrupt can be specified explicitly. Otherwise, the default will be used.
  *  For more details on the default interrupt behavior, see
