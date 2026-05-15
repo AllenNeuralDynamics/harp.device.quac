@@ -10,7 +10,7 @@ import os
 from time import sleep
 from app_registers import AppRegs
 
-logging.basicConfig(level=logging.DEBUG)
+#logging.basicConfig(level=logging.DEBUG)
 
 
 # Open the device and print the info on screen
@@ -26,7 +26,8 @@ for i in range(4):
     reply = device.send(ReadU16HarpMessage(AppRegs.AOChannel0 + i).frame)
     print(f" AO[{i}] initial value: 0x{reply.payload[0]:04x}")
     print(f"Writing: 0x{ao_value:04x}", end = " ")
-    reply = device.send(WriteU16HarpMessage(AppRegs.AOChannel0 + i, ao_value).frame)
+    reply = device.send(WriteU16HarpMessage(AppRegs.AOChannel0 + i,
+                                            ao_value).frame)
     print(f" | result: 0x{reply.payload[0]:04x}")
     print()
     sleep(1.0)
@@ -34,5 +35,6 @@ for i in range(4):
 print(f"Resetting all Analog Output Waveforms to midscale.")
 midscale_settings = [32768, 32768, 32768, 32768]
 data_fmt = "<HHHH" # 4 unsigned 16-bit numbers.
-reply = device.send(WriteU16ArrayMessage(AppRegs.AOPortState, data_fmt, midscale_settings).frame)
+reply = device.send(WriteU16ArrayMessage(AppRegs.AOPortState, data_fmt,
+                                         midscale_settings).frame)
 print(f"  result: {reply.payload} ({reply.message_type.name})")

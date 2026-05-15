@@ -1,51 +1,17 @@
 """App registers for the quad-DAC device."""
-
+import git
+import yaml
 from enum import IntEnum
+from pathlib import Path
 
 
-class AppRegs(IntEnum):
-    DOPortState = 32
-    DOPortSet = 33
-    DOPortClear = 34
-
-    ExtTriggerState = 35
-
-    AOPortState = 36
-    AOChannel0 = 37
-    AOChannel1 = 38
-    AOChannel2 = 39
-    AOChannel3 = 40
-
-    DACReady = 41
-    DACStart = 42
-    DACPause = 43
-    DACAbort = 44
-    DACFinished = 45
-
-    ChannelExternalTriggers0 = 46
-    ChannelExternalTriggers1 = 47
-    ChannelExternalTriggers2 = 48
-    ChannelExternalTriggers3 = 49
-
-    ActivePlayers0 = 50
-    ActivePlayers1 = 51
-    ActivePlayers2 = 52
-    ActivePlayers3 = 53
-
-    FileSettings0 = 57
-    FileSettings1 = 55
-    FileSettings2 = 56
-    FileSettings3 = 57
-
-    SineSettings0 = 58
-    SineSettings1 = 59
-    SineSettings2 = 60
-    SineSettings3 = 61
-
-    TrapezoidSettings0 = 62
-    TrapezoidSettings1 = 63
-    TrapezoidSettings2 = 64
-    TrapezoidSettings3 = 65
+repo = git.Repo(".", search_parent_directories=True)
+device_yaml_path = Path(repo.working_tree_dir) / Path("device.yml")
+yml = None
+with open(device_yaml_path, "r") as yaml_file:
+    yml = yaml.safe_load(yaml_file)
+regs = {reg: data["address"] for reg, data in yml["registers"].items()}
+AppRegs = IntEnum("AppRegs", regs)
 
 
 # Values for the WaveformTypeN registers.
@@ -58,3 +24,7 @@ class WaveformType(IntEnum):
 # struct format strings matching the packed C++ structs in firmware/inc.
 SINE_SETTINGS_FMT = "<IIIIff"  # 24 bytes
 TRAPEZOID_SETTINGS_FMT = "<IIIIffII"  # 36 bytes
+
+if __name__ == "__main__":
+    for reg in AppRegs:
+        print(f"{reg.name}: {reg.value}")

@@ -17,7 +17,7 @@ RegSpec app_reg_specs[]
         read_ext_trigger_state, HarpCore::write_reg_error),
 
     RegSpec::U16Array(&app_regs.analog_output_port_state,
-        sizeof(app_regs.analog_output_port_state),
+        std::size(app_regs.analog_output_port_state),
         read_analog_output_port_state, write_analog_output_port_state),
     RegSpec::U16(&app_regs.analog_output_channel_0,
         read_any_analog_output_channel, write_any_analog_output_channel),
@@ -87,7 +87,7 @@ RegSpec app_reg_specs[]
     // TODO: File Waveform blobs.
 };
 
-const size_t APP_REG_COUNT = sizeof(app_reg_specs)/sizeof(RegSpec);
+const size_t APP_REG_COUNT = std::size(app_reg_specs);
 
 void read_digital_output_port_state(uint8_t address)
 {

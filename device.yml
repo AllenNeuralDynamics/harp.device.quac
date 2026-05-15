@@ -34,7 +34,7 @@ registers:
     maskType: DOPort
     description: "Read the raw state of the external trigger pins."
 
-  AnalogOutputPortState:
+  AOPortState:
     address: 36
     type: U16
     access: Write
@@ -47,7 +47,7 @@ registers:
       channels are not busy playing a preset waveform. Read error
       otherwise."
 
-  AnalogOutputChannel0:
+  AOChannel0:
     address: 37
     type: U16
     access: Write
@@ -58,7 +58,7 @@ registers:
       Warning: Returns a READ_ERROR if any AO channel is currently
       busy playing a preset waveform."
 
-  AnalogOutputChannel1:
+  AOChannel1:
     address: 38
     type: U16
     access: Write
@@ -68,7 +68,7 @@ registers:
       Warning: Returns a READ_ERROR if any AO channel is currently
       busy playing a preset waveform."
 
-  AnalogOutputChannel2:
+  AOChannel2:
     address: 39
     type: U16
     access: Write
@@ -78,7 +78,7 @@ registers:
       Warning: Returns a READ_ERROR if any AO channel is currently
       busy playing a preset waveform."
 
-  AnalogOutputChannel3:
+  AOChannel3:
     address: 40
     type: U16
     access: Write

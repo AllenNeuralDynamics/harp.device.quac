@@ -295,7 +295,7 @@ public:
                               chunk_bytes_read_);
         chunk_samples_read = chunk_bytes_read_ / sizeof(T);
         samples_emitted_ += chunk_samples_read;
-        total_samples_emitted_ += chunk_bytes_read_;
+        total_samples_emitted_ += chunk_samples_read;
     }
 
 protected:
