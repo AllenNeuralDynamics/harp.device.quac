@@ -1,13 +1,13 @@
 #ifndef MULTI_TRANSFER_MANAGER
 #define MULTI_TRANSFER_MANAGER
-#include "dma_double_buffer.h"
+#include <array>
+#include <cstdint>
 #include "pico/stdlib.h"
 #include "pico/util/queue.h"
 #include "hardware/dma.h"
 #include "hardware/timer.h"
 #include "pio_ltc264x.h"
-#include <array>
-#include <cstdint>
+#include "dma_double_buffer.h"
 
 /**
  * \brief represents an event when one or more channels finished transferring

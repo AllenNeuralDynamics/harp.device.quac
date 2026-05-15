@@ -1,11 +1,11 @@
 #ifndef DMA_DOUBLE_BUFFER
 #define DMA_DOUBLE_BUFFER
-#include "hardware/dma.h"
 #include <type_traits>
 #include <concepts>
 #include <bit>
 #include <cmath>
 #include <functional>
+#include "hardware/dma.h"
 
 
 // Restrict template class to 8-bit, 16-bit and 32-bit integral types.

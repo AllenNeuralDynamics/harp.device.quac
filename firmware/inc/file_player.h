@@ -1,10 +1,9 @@
 #ifndef FILE_PLAYER_H
 #define FILE_PLAYER_H
-#include "source_player.h"
-#include "ff.h"
-//#include "f_util.h"
-#include "waveform_settings.h"
 #include <cstring>
+#include "ff.h"
+#include "source_player.h"
+#include "waveform_settings.h"
 
 /**
  * \brief class for reading a file into a buffer

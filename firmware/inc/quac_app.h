@@ -1,19 +1,22 @@
 #ifndef QUAC_H
 #define QUAC_H
+#include <array>
+#include <cstdint>
 #include "pico/util/queue.h"
 #include "pico/multicore.h"
-#include <core1_file_player.h>
-#include <reg_spec.h>
-#include <harp_core.h>
-#include <harp_c_app.h>
-#include "waveform_settings.h"
-#include "multi_transfer_manager.h"
+#include "config.h"
+#include "core1_file_player.h"
+#include "harp_core.h"
+#include "harp_c_app.h"
+#include "harp_message.h"
+#include "reg_spec.h"
+#include "dma_double_buffer.h"
 #include "file_player.h"
 #include "sine_wave_player.h"
 #include "trapezoid_player.h"
-#include <array>
-#include <cstdint>
-#include <config.h>
+#include "multi_transfer_manager.h"
+#include "waveform_settings.h"
+#include "pio_ltc264x.h"
 
 using enum reg_type_t;
 
@@ -154,7 +157,7 @@ void write_any_waveform_data(msg_t& msg);
 void reset_app();
 
 
-bool player_is_ready(size_t channel, player_t player);
+bool player_is_ready(size_t channel, player_t player_type);
 
 void update_app();
 

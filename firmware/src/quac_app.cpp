@@ -1,11 +1,3 @@
-#include "config.h"
-#include "core1_file_player.h"
-#include "dma_double_buffer.h"
-#include "file_player.h"
-#include "harp_core.h"
-#include "harp_message.h"
-#include "pio_ltc264x.h"
-#include "waveform_settings.h"
 #include "quac_app.h"
 
 app_regs_t app_regs;
@@ -432,9 +424,9 @@ void select_player(size_t channel, player_t player_type)
     app_regs.active_players[i] = player_type; // Update Harp register.
 }
 
-bool player_is_ready(size_t channel, player_t player)
+bool player_is_ready(size_t channel, player_t player_type)
 {
-    switch (player)
+    switch (player_type)
     {
         case file:
             return file_players[channel].is_ready();
@@ -448,12 +440,6 @@ bool player_is_ready(size_t channel, player_t player)
 
 void reset_app()
 {
-    // For debugging.
-    uint32_t LED_MASK = (1u << DEBUG_LEDS[0]) | (1u << DEBUG_LEDS[1]);
-    gpio_init_mask(LED_MASK);
-    gpio_set_dir_masked(LED_MASK, 0xFFFFFFFF); // 1: output.
-    gpio_put_masked(LED_MASK, 0);
-
     // Init all digital inputs and outputs.
     for (size_t i = DI_PORT_BASE; i < DI_PORT_BASE + NUM_DIS; ++i)
         gpio_init(i);
@@ -477,7 +463,7 @@ void reset_app()
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
         app_regs.file_settings[i] = FileSettings();
-        strcpy(app_regs.file_settings[i].path, default_filenames[i]);
+        strcpy(app_regs.file_settings[i].path, DEFAULT_FILENAMES[i]);
         app_regs.sine_settings[i] = FunctionSettings();
         app_regs.trapezoid_settings[i] = TrapezoidSettings();
     }
@@ -508,13 +494,10 @@ void reset_app()
     irq_set_enabled(IO_IRQ_BANK0, true);
 }
 
-// FIXME: this ISR will fire for every rising edge event on said pins--event if
+// FYI: this ISR will fire for every rising edge event on said pins--even if
 // all channels are busy.
 void __not_in_flash_func(handle_external_trigger)()
 {
-    //uint32_t LED_MASK = (1u << DEBUG_LEDS[0]) | (1u << DEBUG_LEDS[1]);
-    //gpio_put_masked(LED_MASK, ~gpio_get_all()); // Toggle LEDs.
-
     // Note: we must read gpios here directly because we are not on a clean
     // multiple of 8-boundary, so it's cumbersome to assemble the interrupt
     // state from multiple reads.
