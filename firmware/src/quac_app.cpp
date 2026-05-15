@@ -1,4 +1,5 @@
 #include "quac_app.h"
+#include "config.h"
 
 app_regs_t app_regs;
 queue_t ext_trigger_event_queue;
@@ -15,7 +16,8 @@ RegSpec app_reg_specs[]
     RegSpec::U8(&app_regs.ext_trigger_state,
         read_ext_trigger_state, HarpCore::write_reg_error),
 
-    RegSpec::U16(&app_regs.analog_output_port_state,
+    RegSpec::U16Array(&app_regs.analog_output_port_state,
+        sizeof(app_regs.analog_output_port_state),
         read_analog_output_port_state, write_analog_output_port_state),
     RegSpec::U16(&app_regs.analog_output_channel_0,
         read_any_analog_output_channel, write_any_analog_output_channel),

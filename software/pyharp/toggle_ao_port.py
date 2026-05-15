@@ -10,7 +10,7 @@ import os
 from time import sleep
 from app_registers import AppRegs
 
-#logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG)
 
 
 # Open the device and print the info on screen
@@ -35,3 +35,4 @@ print(f"Resetting all Analog Output Waveforms to midscale.")
 midscale_settings = [32768, 32768, 32768, 32768]
 data_fmt = "<HHHH" # 4 unsigned 16-bit numbers.
 reply = device.send(WriteU16ArrayMessage(AppRegs.AOPortState, data_fmt, midscale_settings).frame)
+print(f"  result: {reply.payload} ({reply.message_type.name})")
