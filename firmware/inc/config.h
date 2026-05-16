@@ -1,10 +1,10 @@
 #ifndef CONFIG_H
 #define CONFIG_H
-#include <sd_card.h>  // from no-os* sd card library.
-#include <pio_ltc264x.h>
-#include <dma_double_buffer.h>
 #include <array>
-#include <bitmask_gen.h>
+#include <cstdint>
+#include "sd_card.h"  // from no-os* sd card library.
+#include "pio_ltc264x.h"
+#include "bitmask_gen.h"
 
 // Must be #defines for conditional compilation.
 #define HW_VERSION_MAJOR (1)
@@ -28,8 +28,9 @@ using T = uint16_t; // Double Buffer Data Transfer Type.
 
 inline constexpr size_t SHA256_NUM_BYTES = 8;
 
+inline constexpr size_t NUM_PLAYER_TYPES = 3;
 inline constexpr size_t NUM_CHANNELS = 4;
-inline constexpr std::array<const char*, NUM_CHANNELS> default_filenames
+inline constexpr std::array<const char*, NUM_CHANNELS> DEFAULT_FILENAMES
 {{
     "channel_0.bin", "channel_1.bin", "channel_2.bin", "channel_3.bin"
 }};

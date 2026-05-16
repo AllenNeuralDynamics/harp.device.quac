@@ -1,25 +1,39 @@
 #!/usr/bin/env python3
-from pyharp.device import Device, DeviceMode
-from pyharp.messages import WriteU8HarpMessage, WriteU8ArrayMessage
-from pyharp.messages import MessageType
-from pyharp.messages import CommonRegisters as Regs
+from pyharp.device import Device
+from pyharp.messages import ReadU8HarpMessage, WriteU8HarpMessage
 from struct import pack, unpack
 import logging
 import os
 from time import sleep
-from app_registers import AppRegs
+from app_registers import AppRegs, WaveformType
+import sys
 
 #logging.basicConfig(level=logging.DEBUG)
+COM_PORT = "/dev/ttyACM0"
 
+WAVEFORM_TYPE =  WaveformType.File
+NUM_CHANNELS = 4
 
 # Open the device and print the info on screen
 # Open serial connection and save communication to a file
-if os.name == 'posix': # check for Linux.
-    device = Device("/dev/ttyACM0", "ibl.bin")
-else: # assume Windows.
-    device = Device("COM95", "ibl.bin")
+device = Device(COM_PORT, "ibl.bin")
 
-for i in range(4):
+print(f"Setting all active players to {WAVEFORM_TYPE.name}")
+for i in range(NUM_CHANNELS):
+    reply = device.send(WriteU8HarpMessage(AppRegs.ActivePlayers0 + i,
+                                           WAVEFORM_TYPE.value).frame)
+    print(f" Read back: 0x{reply.payload[0]:02x} ({reply.message_type.name}), "
+          f"time: {reply.timestamp}")
+sleep(0.1)
+
+print("Checking if players are ready.")
+reply = device.send(ReadU8HarpMessage(AppRegs.DACReady).frame)
+print(f" Read back: 0x{reply.payload[0]:02x}")
+if reply.payload[0] != 0b1111:
+    sys.exit("Error: players are not yet ready.")
+
+# Start each channel offset by 0.5 sec.
+for i in range(NUM_CHANNELS):
     value = int(1) << i
     print(f"Writing: 0x{value:02x}", end = " ")
     reply = device.send(WriteU8HarpMessage(AppRegs.DACStart, value).frame)
@@ -27,7 +41,7 @@ for i in range(4):
     sleep(0.5)
 
 print("Waiting for end-of-message replies")
-waveform_replies_left = 4
+waveform_replies_left = NUM_CHANNELS
 while (waveform_replies_left):
     events = device.get_events()
     for msg in events:
@@ -35,4 +49,3 @@ while (waveform_replies_left):
         print()
         if msg.address == AppRegs.DACFinished:
             waveform_replies_left -= 1
-

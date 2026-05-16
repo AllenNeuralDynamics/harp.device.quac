@@ -1,11 +1,11 @@
 #ifndef DMA_DOUBLE_BUFFER
 #define DMA_DOUBLE_BUFFER
-#include <hardware/dma.h>
 #include <type_traits>
 #include <concepts>
 #include <bit>
 #include <cmath>
 #include <functional>
+#include "hardware/dma.h"
 
 
 // Restrict template class to 8-bit, 16-bit and 32-bit integral types.
@@ -108,7 +108,7 @@ public:
         dma_unclaim_mask((1u << ctrl_chan_) | (1u << data_chan_));
     }
 
-    void reset()
+    virtual void reset()
     {
         abort_transfer();
         reset_transfer_config();
@@ -288,6 +288,7 @@ public:
 
     bool is_aborted()
     {
+        // FIXME: technically is_aborted is more like an is_busy
         bool data_chan_is_busy = dma_channel_is_busy(data_chan_);
         bool ctrl_chan_is_busy = dma_channel_is_busy(ctrl_chan_);
         return dma_chain_loop_disconnected()
@@ -423,7 +424,7 @@ public:
  * \brief reset the buffer and additionally reset the pacing timer to the
  *  default frequency
  */
-    void reset()
+    void reset() override
     {
         DMADoubleBuffer<T, BUF_SIZE>::reset();
         set_frequency_hz(DEFAULT_FREQUENCY_HZ);

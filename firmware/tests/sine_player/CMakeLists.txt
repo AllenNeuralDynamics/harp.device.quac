@@ -10,55 +10,47 @@ set(PICO_BOARD pico2)
 set(PICO_PLATFORM rp2350-arm-s)
 
 if (DEFINED PICO_SDK_PATH)
-    message("Using explicitly defined PICO_SDK_PATH.")
+  message("Using explicitly defined PICO_SDK_PATH.")
 elseif (DEFINED ENV{PICO_SDK_PATH} AND NOT DEFINED PICO_SDK_PATH)
-    set(PICO_SDK_PATH "$ENV{PICO_SDK_PATH}")
-    add_definitions(-DPICO_SDK_PATH="$ENV{PICO_SDK_PATH}")
-    message("Using environment variable PICO_SDK_PATH.")
+  set(PICO_SDK_PATH "$ENV{PICO_SDK_PATH}")
+  add_definitions(-DPICO_SDK_PATH="$ENV{PICO_SDK_PATH}")
+  message("Using environment variable PICO_SDK_PATH.")
 else()
-    message(SEND_ERROR "PICO_SDK_PATH is not defined either as an environment "
+  message(SEND_ERROR "PICO_SDK_PATH is not defined either as an environment "
 "variable or explicitly via 'cmake -DPICO_SDK_PATH=<path to pico sdk> ..'")
 endif()
 include(${PICO_SDK_PATH}/pico_sdk_init.cmake)
-set(CMAKE_CXX_STANDARD 23)
-project(test_multi_file_player)
+set(CMAKE_CXX_STANDARD 20)
+project(test_sine_player)
 
 pico_sdk_init()
 
-#add_compile_definitions(USE_PRINTF) # For debugging no-os-* library.
+include_directories(../../inc)
 
-add_subdirectory(../../lib/no-OS-FatFS-SD-SDIO-SPI-RPi-Pico/src lib_build/no_os_fatfs_sd_sdio_spi_rpi_pico)
 add_subdirectory(../../lib/rp2040.pio-ltc264x lib_build/pio-ltc264x)
-
 
 add_library(dma_double_buffer INTERFACE)
 target_sources(dma_double_buffer INTERFACE
     ../../inc/dma_double_buffer.h
 )
 
-add_library(file_player INTERFACE)
-target_sources(file_player INTERFACE
-    ../../inc/file_player.h
-)
-
-add_library(multi_transfer_manager INTERFACE)
-target_sources(multi_transfer_manager INTERFACE
-    ../../inc/multi_transfer_manager.h
+add_library(sine_wave_player INTERFACE)
+target_sources(sine_wave_player INTERFACE
+    ../../inc/sine_wave_player.h
 )
 
 add_executable(${PROJECT_NAME}
     src/main.cpp
 )
 
-include_directories(../../inc)
+target_link_libraries(sine_wave_player INTERFACE
+    dma_double_buffer
+)
 
 target_link_libraries(${PROJECT_NAME}
     pico_stdlib
     pio_ltc264x
-    dma_double_buffer
-    file_player
-    multi_transfer_manager
-    no-OS-FatFS-SD-SDIO-SPI-RPi-Pico
+    sine_wave_player
 )
 
 pico_add_extra_outputs(${PROJECT_NAME})

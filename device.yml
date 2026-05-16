@@ -18,14 +18,14 @@ registers:
     access: Write
     maskType: DOPort
     description: "Set digital IO pins specified in the mask to logic HIGH by
-                  setting the corresponding bit."
+      setting the corresponding bit."
   DOPortClear:
     address: 34
     type: U8
     access: Write
     maskType: DOPort
     description: "Set digital IO specified pins in the mask to logic LOW by
-                  setting the corresponding bit."
+      setting the corresponding bit."
 
   ExtTriggerState:
     address: 35
@@ -34,59 +34,59 @@ registers:
     maskType: DOPort
     description: "Read the raw state of the external trigger pins."
 
-  AnalogOutputPortState:
+  AOPortState:
     address: 36
     type: U16
     access: Write
     length: 4
     description: "Read/Write the analog output of all 4 Analog output channels.
-                  Warning: Write values only take effect if all analog output
-                  channels are not busy playing a preset waveform. Write error
-                  otherwise.
-                  Warning: Read values are only valid if all analog output
-                  channels are not busy playing a preset waveform. Read error
-                  otherwise."
+      Warning: Write values only take effect if all analog output
+      channels are not busy playing a preset waveform. Write error
+      otherwise.
+      Warning: Read values are only valid if all analog output
+      channels are not busy playing a preset waveform. Read error
+      otherwise."
 
-  AnalogOutputChannel0:
+  AOChannel0:
     address: 37
     type: U16
     access: Write
     description: "Read/Set the value of analog output channel 0.
-                  Warning: Write values only take effect if the analog output
-                  channel is not busy playing a preset waveform. Write error
-                  otherwise.
-                  Warning: Returns a READ_ERROR if any AO channel is currently
-                  busy playing a preset waveform."
+      Warning: Write values only take effect if the analog output
+      channel is not busy playing a preset waveform. Write error
+      otherwise.
+      Warning: Returns a READ_ERROR if any AO channel is currently
+      busy playing a preset waveform."
 
-  AnalogOutputChannel1:
+  AOChannel1:
     address: 38
     type: U16
     access: Write
     description: "Read/Set the value of analog output channel 1.
-                  Warning: Write values only take effect if this channel is not
-                  busy playing a preset waveform. Write error otherwise.
-                  Warning: Returns a READ_ERROR if any AO channel is currently
-                  busy playing a preset waveform."
+      Warning: Write values only take effect if this channel is not
+      busy playing a preset waveform. Write error otherwise.
+      Warning: Returns a READ_ERROR if any AO channel is currently
+      busy playing a preset waveform."
 
-  AnalogOutputChannel2:
+  AOChannel2:
     address: 39
     type: U16
     access: Write
     description: "Read/Set the value of analog output channel 2.
-                  Warning: Write values only take effect if this channel is not
-                  busy playing a preset waveform. Write error otherwise.
-                  Warning: Returns a READ_ERROR if any AO channel is currently
-                  busy playing a preset waveform."
+      Warning: Write values only take effect if this channel is not
+      busy playing a preset waveform. Write error otherwise.
+      Warning: Returns a READ_ERROR if any AO channel is currently
+      busy playing a preset waveform."
 
-  AnalogOutputChannel3:
+  AOChannel3:
     address: 40
     type: U16
     access: Write
     description: "Read/Set the value of analog output channel 3.
-                  Warning: Write values only take effect if this channel is not
-                  busy playing a preset waveform. Write error otherwise.
-                  Warning: Returns a READ_ERROR if any AO channel is currently
-                  busy playing a preset waveform."
+      Warning: Write values only take effect if this channel is not
+      busy playing a preset waveform. Write error otherwise.
+      Warning: Returns a READ_ERROR if any AO channel is currently
+      busy playing a preset waveform."
 
   DACReady:
     address: 41
@@ -101,16 +101,17 @@ registers:
     access: Write, Event
     maskType: AOPort
     description: "Write to this register to start any/all ready channels.
-                  Events received from this register represent a bitmask of
-                  channels started via external trigger."
+      Events received from this register represent a bitmask of
+      channels started via external trigger."
+
   DACPause:
     address: 43
     type: U8
     access: Write
     maskType: AOPort
     description: "Write to this register to pause/resume any/all busy channels.
-                  Writing a 1 pauses the corresponding channel. Writing a 0
-                  resumes the corresponding channel."
+      Writing a 1 pauses the corresponding channel. Writing a 0
+      resumes the corresponding channel."
 
   DACAbort:
     address: 44
@@ -126,97 +127,170 @@ registers:
     maskType: AOPort
     description: ""
 
-  WaveformSettings0:
+  ChannelExternalTriggers0:
     address: 46
     type: U8
     access: Write
-    length: 13
-    description: "Struct to configure AO0 Waveform settings:
-                  cycles (U32), sample_count (U32), frequency_hz (U32),
-                  external_triggers (U8)"
-
-  WaveformSettings1:
+    description: "For Analog 0utput Channel 0, which Digital
+      Input pins, specified by mask, can trigger the channel
+      to start."
+  ChannelExternalTriggers1:
     address: 47
     type: U8
     access: Write
-    length: 13
-    description: "Struct to configure AO1 Waveform settings:
-                  cycles (U32), sample_count (U32), frequency_hz (U32),
-                  external_triggers (U8)"
-
-  WaveformSettings2:
+    description: "For Analog Output Channel 1, which Digital
+      Input pins, specified by mask, can trigger the channel
+      to start."
+  ChannelExternalTriggers2:
     address: 48
     type: U8
     access: Write
-    length: 13
-    description: "Struct to configure AO2 Waveform settings:
-                  cycles (U32), sample_count (U32), frequency_hz (U32),
-                  external_triggers (U8)"
-
-  WaveformSettings3:
+    description: "For Analog Output Channel 2, which Digital
+      Input pins, specified by mask, can trigger the channel
+      to start."
+  ChannelExternalTriggers3:
     address: 49
     type: U8
     access: Write
-    length: 13
-    description: "Struct to configure AO3 Waveform settings:
-                  cycles (U32), sample_count (U32), frequency_hz (U32),
-                  external_triggers (U8)"
+    description: "For Analog Output Channel 3, which Digital
+      Input pins, specified by mask, can trigger the channel
+      to start."
 
-  WaveformHash0:
+  ActivePlayers0:
     address: 50
     type: U8
-    access: Read
-    length: 8
-    description: "Read-only SHA256 hash corresponding to AO0 Waveform."
-
-  WaveformHash1:
+    access: Write
+    description: "For Analog Output Channel 0, which waveform
+      player is active: file, sine, or trapezoid."
+  ActivePlayers1:
     address: 51
     type: U8
-    access: Read
-    length: 8
-    description: "Read-only SHA256 hash corresponding to AO1 Waveform."
-
-  WaveformHash2:
+    access: Write
+    description: "For Analog Output Channel 1, which waveform
+      player is active: file, sine, or trapezoid."
+  ActivePlayers2:
     address: 52
     type: U8
-    access: Read
-    length: 8
-    description: "Read-only SHA256 hash corresponding to AO2 Waveform."
-
-  WaveformHash3:
+    access: Write
+    description: "For Analog Output Channel 2, which waveform
+      player is active: file, sine, or trapezoid."
+  ActivePlayers3:
     address: 53
     type: U8
-    access: Read
-    length: 8
-    description: "Read-only SHA256 hash corresponding to AO3 Waveform."
+    access: Write
+    description: "For Analog Output Channel 3, which waveform
+      player is active: file, sine, or trapezoid."
 
-  Waveform0:
+  FileSettings0:
     address: 54
-    type: U16
+    type: U8
     access: Write
-    length: 5000000
-    description: "AO0 Waveform."
-
-  Waveform1:
+    length: 45
+    description: "Struct to configure Analog Output Channel 0
+      File Player settings: cycles (U32), duration_us (U32),
+      update_frequency_hz (U32), path (U8 array, 33 elements)"
+  FileSettings1:
     address: 55
-    type: U16
+    type: U8
     access: Write
-    length: 5000000
-    description: "AO1 Waveform."
-
-  Waveform2:
+    length: 45
+    description: "Struct to configure Analog Output Channel 1
+      File Player settings: cycles (U32), duration_us (U32),
+      update_frequency_hz (U32), path (U8 array, 33 elements)"
+  FileSettings2:
     address: 56
-    type: U16
+    type: U8
     access: Write
-    length: 5000000
-    description: "AO2 Waveform."
-
-  Waveform3:
+    length: 45
+    description: "Struct to configure Analog Output Channel 2
+      File Player settings: cycles (U32), duration_us (U32),
+      update_frequency_hz (U32), path (U8 array, 33 elements)"
+  FileSettings3:
     address: 57
-    type: U16
+    type: U8
     access: Write
-    length: 5000000
-    description: "AO3 Waveform."
+    length: 45
+    description: "Struct to configure Analog Output Channel 3
+      File Player settings: cycles (U32), duration_us (U32),
+      update_frequency_hz (U32), path (U8 array, 33 elements)"
+
+  SineSettings0:
+    address: 58
+    type: U8
+    access: Write
+    length: 24
+    description: "Struct to configure Analog Output Channel 0
+      Sine Player settings: cycles (U32), duration_us (U32),
+      update_frequency_hz (U32), frequency_hz (U32),
+      amplitude_volts (Float), vertical_shift_volts (Float)."
+  SineSettings1:
+    address: 59
+    type: U8
+    access: Write
+    length: 24
+    description: "Struct to configure Analog Output Channel 1
+      Sine Player settings: cycles (U32), duration_us (U32),
+      update_frequency_hz (U32), frequency_hz (U32),
+      amplitude_volts (Float), vertical_shift_volts (Float)."
+  SineSettings2:
+    address: 60
+    type: U8
+    access: Write
+    length: 24
+    description: "Struct to configure Analog Output Channel 2
+      Sine Player settings: cycles (U32), duration_us (U32),
+      update_frequency_hz (U32), frequency_hz (U32),
+      amplitude_volts (Float), vertical_shift_volts (Float)."
+  SineSettings3:
+    address: 61
+    type: U8
+    access: Write
+    length: 24
+    description: "Struct to configure Analog Output Channel 3
+      Sine Player settings: cycles (U32), duration_us (U32),
+      update_frequency_hz (U32), frequency_hz (U32),
+      amplitude_volts (Float), vertical_shift_volts (Float)."
+
+  TrapezoidSettings0:
+    address: 62
+    type: U8
+    access: Write
+    length: 32
+    description: "Struct to configure Analog Output Channel 0
+      Trapezoid Player settings: cycles (U32), duration_us (U32),
+      update_frequency_hz (U32), frequency_hz (U32),
+      amplitude_volts (Float), vertical_shift_volts (Float),
+      ramp_on_us (U32), ramp_off_us (U32)"
+  TrapezoidSettings1:
+    address: 63
+    type: U8
+    access: Write
+    length: 32
+    description: "Struct to configure Analog Output Channel 1
+      Trapezoid Player settings: cycles (U32), duration_us (U32),
+      update_frequency_hz (U32), frequency_hz (U32),
+      amplitude_volts (Float), vertical_shift_volts (Float),
+      ramp_on_us (U32), ramp_off_us (U32)"
+  TrapezoidSettings2:
+    address: 64
+    type: U8
+    access: Write
+    length: 32
+    description: "Struct to configure Analog Output Channel 2
+      Trapezoid Player settings: cycles (U32), duration_us (U32),
+      update_frequency_hz (U32), frequency_hz (U32),
+      amplitude_volts (Float), vertical_shift_volts (Float),
+      ramp_on_us (U32), ramp_off_us (U32)"
+  TrapezoidSettings3:
+    address: 65
+    type: U8
+    access: Write
+    length: 32
+    description: "Struct to configure Analog Output Channel 3
+      Trapezoid Player settings: cycles (U32), duration_us (U32),
+      update_frequency_hz (U32), frequency_hz (U32),
+      amplitude_volts (Float), vertical_shift_volts (Float),
+      ramp_on_us (U32), ramp_off_us (U32)"
 
 bitMasks:
   DOPort:

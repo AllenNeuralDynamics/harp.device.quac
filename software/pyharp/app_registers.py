@@ -1,38 +1,30 @@
-"""App registers for the cuttlefish."""
+"""App registers for the quad-DAC device."""
+import git
+import yaml
 from enum import IntEnum
+from pathlib import Path
 
 
-class AppRegs(IntEnum):
-    DOPortState = 32
-    DOPortSet = 33
-    DOPortClear = 34
+repo = git.Repo(".", search_parent_directories=True)
+device_yaml_path = Path(repo.working_tree_dir) / Path("device.yml")
+yml = None
+with open(device_yaml_path, "r") as yaml_file:
+    yml = yaml.safe_load(yaml_file)
+regs = {reg: data["address"] for reg, data in yml["registers"].items()}
+AppRegs = IntEnum("AppRegs", regs)
 
-    ExtTriggerState = 35
 
-    AOPortState = 36
-    AOChannel0 = 37
-    AOChannel1 = 38
-    AOChannel2 = 39
-    AOChannel3 = 40
+# Values for the WaveformTypeN registers.
+class WaveformType(IntEnum):
+    File = 0
+    Sine = 1
+    Trapezoid = 2
 
-    DACReady = 41
-    DACStart = 42
-    DACPause = 43
-    DACAbort = 44
-    DACFinished = 45
 
-    DACSettings0 = 46
-    DACSettings1 = 47
-    DACSettings2 = 48
-    DACSettings3 = 49
+# struct format strings matching the packed C++ structs in firmware/inc.
+SINE_SETTINGS_FMT = "<IIIIff"  # 24 bytes
+TRAPEZOID_SETTINGS_FMT = "<IIIIffII"  # 36 bytes
 
-    WaveformHashes0 = 50
-    WaveformHashes1 = 51
-    WaveformHashes2 = 52
-    WaveformHashes3 = 53
-
-    WaveformData0 = 54
-    WaveformData1 = 55
-    WaveformData2 = 56
-    WaveformData3 = 57
-
+if __name__ == "__main__":
+    for reg in AppRegs:
+        print(f"{reg.name}: {reg.value}")

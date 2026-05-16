@@ -1,5 +1,6 @@
 #ifndef BITMASK_GEN_H
 #define BITMASK_GEN_H
+#include <cstdint>
 #include <limits>
 
 /**

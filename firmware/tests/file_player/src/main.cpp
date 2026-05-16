@@ -72,14 +72,11 @@ int main() {
     // Setup PIO Block for DAC communication.
     PIO_LTC264x dac(pio2, dac_pins.sck, dac_pins.pico);
     dac.start();
-    PIO& pio = dac.get_pio(); // TODO: dac.get_tx_fifo()
-    int32_t sm = dac.get_sm();
-    TimerPacedDMADoubleBuffer<T, BUF_SIZE> buf(&pio->txf[sm]);
-    // Create FilePlayer
+    TimerPacedDMADoubleBuffer<T, BUF_SIZE> buf(dac.get_tx_fifo_address());
+    // Create FilePlayer. Take default settings.
     FilePlayer<T, BUF_SIZE> player;
     player.claim_buffer(&buf);
     player.open_file("channel_0.bin");
-    buf.set_frequency_hz(500'000);
     printf("File Player is ready.\r\n");
     sleep_ms(500);
     printf("Starting.\r\n");

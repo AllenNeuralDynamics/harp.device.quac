@@ -1,13 +1,13 @@
 #ifndef MULTI_TRANSFER_MANAGER
 #define MULTI_TRANSFER_MANAGER
-#include "dma_double_buffer.h"
+#include <array>
+#include <cstdint>
 #include "pico/stdlib.h"
 #include "pico/util/queue.h"
 #include "hardware/dma.h"
 #include "hardware/timer.h"
 #include "pio_ltc264x.h"
-#include <array>
-#include <cstdint>
+#include "dma_double_buffer.h"
 
 /**
  * \brief represents an event when one or more channels finished transferring
@@ -79,6 +79,30 @@ public:
                 trigger_mask |= (1u << buf_ptrs_[i]->get_ctrl_channel());
         }
         dma_start_channel_mask(trigger_mask);
+    }
+
+/**
+ * \brief abort multiple buffer transfers simultaneously
+ */
+    void abort(uint32_t channel_mask)
+    {
+        // Create a mask to stop all Double Buffer DMA channels at once.
+        uint32_t abort_mask = 0;
+        for (size_t i = 0; i < NUM_CHANNELS; ++i)
+        {
+            if ((channel_mask & (1u << i)))
+                abort_mask |= (1u << buf_ptrs_[i]->get_dma_channel_mask());
+        }
+        dma_hw->abort = abort_mask;
+        // RP2350 only: poll set bits until they clear (i.e abort took effect).
+        while (dma_hw->abort & abort_mask)
+            tight_loop_contents();
+        // Additionally, call each channel's abort to clear DMA config.
+        for (size_t i = 0; i < NUM_CHANNELS; ++i)
+        {
+            if ((channel_mask & (1u << i)))
+                buf_ptrs_[i]->abort_transfer();
+        }
     }
 
 /**
