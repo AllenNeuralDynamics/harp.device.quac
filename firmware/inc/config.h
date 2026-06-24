@@ -7,9 +7,10 @@
 #include "bitmask_gen.h"
 
 // Must be #defines for conditional compilation.
+// Prototype was: 1.0. Main version is >= 1.1
 #define HW_VERSION_MAJOR (1)
-#define HW_VERSION_MINOR (0) // prototype was: 1.0
-//#define HW_VERSION_MINOR (1)
+#define HW_VERSION_MINOR (1)
+//#define HW_VERSION_MINOR (0)
 
 inline constexpr size_t FW_VERSION_MAJOR = 0;
 inline constexpr size_t FW_VERSION_MINOR = 0;
