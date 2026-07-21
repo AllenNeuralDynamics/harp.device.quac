@@ -4,6 +4,7 @@ from pyharp.device import Device
 from pyharp.messages import (WriteU8HarpMessage, WriteU8ArrayMessage,
     ReadU8HarpMessage)
 from app_registers import AppRegs, WaveformType, SINE_SETTINGS_FMT
+from struct import unpack
 
 #import logging
 # logging.basicConfig(level=logging.DEBUG)
@@ -15,9 +16,9 @@ WAVEFORM_FMT = SINE_SETTINGS_FMT
 BASE_SETTINGS_REG = AppRegs.SineSettings0
 
 cycles = 1
-duration_us = 2_000_000
+duration_us = 1_000_000
 sample_rate_hz = 10_000
-frequency_hz = 10
+frequency_hz = 1
 amplitude_volts = 2.5 # center-to-peak, not peak-to-peak
 vertical_shift_volts = 0
 
@@ -43,6 +44,8 @@ settings = (
 reply = device.send(WriteU8ArrayMessage(BASE_SETTINGS_REG + CHANNEL,
                                         WAVEFORM_FMT, settings,).frame)
 print(f"SineSettings[{CHANNEL}] -> {settings}, ({reply.message_type.name})")
+print(f"reply: {unpack(WAVEFORM_FMT, bytes(reply.payload))}")
+print()
 
 # Ensure waveform is ready.
 channel_is_ready = False

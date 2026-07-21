@@ -73,18 +73,23 @@ public:
     {
         if ((buf_ptr_ == nullptr) || is_busy())
             return false;
-        reset(); // calls rewind_source().
         // Check if buffer manages its own pacing via Timer. If yes, update the
         // Timer to match current settings.
         if (!manage_buffer_timing_)
+        {
+            reset(); // calls rewind_source().
             return true;
+        }
         // reinterpret_cast is safe here bc we know explicitly what buffer class
         // was passed in using the overloaded claim_buffer().
         TimerPacedDMADoubleBuffer<T, BUF_SIZE>* timer_paced_buf_ptr =
             reinterpret_cast<TimerPacedDMADoubleBuffer<T, BUF_SIZE>*>(buf_ptr_);
-        // Update settings passed in to reflect the actual frequency.
-        settings.update_frequency_hz =
+        // Update settings passed in to reflect the actual frequency achievable.
+        settings_ptr_->update_frequency_hz =
             timer_paced_buf_ptr->set_frequency_hz(settings.update_frequency_hz);
+        // Update input reference.
+        settings.update_frequency_hz = settings_ptr_->update_frequency_hz;
+        reset(); // calls rewind_source().
         return true;
     }
 

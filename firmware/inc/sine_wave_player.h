@@ -30,6 +30,7 @@ public:
     {
         if (!this->buf_ptr_ || this->is_busy())
             return false;
+        // TODO: value-checking.
         settings_ = settings; // copy settings so rewind_source() works.
         return SourcePlayer<T, BUF_SIZE>::apply_settings(settings);
     }

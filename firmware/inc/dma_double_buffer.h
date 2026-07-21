@@ -441,22 +441,22 @@ public:
  */
     float set_frequency_hz(uint32_t hz)
     {
+        uint32_t num_denom = dma_hw->timer[dma_timer_chan_];
+        uint16_t numerator = (num_denom >> DMA_TIMER0_X_LSB) & 0xFFFF;
+        uint16_t denominator = (num_denom >> DMA_TIMER0_Y_LSB) & 0xFFFF;
+        float old_frequency_hz = float(SYS_CLK_HZ) * numerator / denominator;
         // Ignore division-by-zero request and return original value.
         if (hz == 0)
-        {
-            uint32_t num_denom = dma_hw->timer[dma_timer_chan_];
-            uint16_t numerator = (num_denom >> DMA_TIMER0_X_LSB) & 0xFFFF;
-            uint16_t denominator = (num_denom >> DMA_TIMER0_Y_LSB) & 0xFFFF;
-            float old_frequency_hz = float(SYS_CLK_HZ) * numerator / denominator;
             return old_frequency_hz;
-        }
-        float divisor = float(SYS_CLK_HZ) / hz;
+        uint32_t divisor = round(float(SYS_CLK_HZ) / hz);
+        if (divisor >> 16) // Ensure result fits into a 16 bit value.
+            return old_frequency_hz;
         dma_timer_set_fraction(dma_timer_chan_, 1, divisor);
-        return float(SYS_CLK_HZ) * 1 / divisor;
-        // TODO: enable more flexible pacing options by allocating timers
-        //  on-demand and sharing timers for matching frequencies, and
-        //  respecting max number of used timers.
-        //  Requires re-attaching timers to buffers.
+        // Compute what was actually set.
+        num_denom = dma_hw->timer[dma_timer_chan_];
+        numerator = (num_denom >> DMA_TIMER0_X_LSB) & 0xFFFF;
+        denominator = (num_denom >> DMA_TIMER0_Y_LSB) & 0xFFFF;
+        return float(SYS_CLK_HZ) * numerator / denominator;
     }
 
 private:
