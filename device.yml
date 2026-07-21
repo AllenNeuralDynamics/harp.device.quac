@@ -4,7 +4,7 @@
 device: quac
 whoAmI: 1406
 firmwareVersion: "0.1"
-hardwareTargets: "0.0"
+hardwareTargets: "1.1"
 registers:
   DOPortState:
     address: 32

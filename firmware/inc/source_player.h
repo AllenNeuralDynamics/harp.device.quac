@@ -61,7 +61,8 @@ public:
     }
 
 /**
- * \brief apply settings passed in.
+ * \brief apply settings passed in and update settings to reflect what is
+ *  realistically achieveable with hardware limitations.
  * \details if the claimed buffer manages its own timing via Timer, update the
  *  Timer settings to match.
  * \note child classes should call this function within their own override
@@ -81,7 +82,9 @@ public:
         // was passed in using the overloaded claim_buffer().
         TimerPacedDMADoubleBuffer<T, BUF_SIZE>* timer_paced_buf_ptr =
             reinterpret_cast<TimerPacedDMADoubleBuffer<T, BUF_SIZE>*>(buf_ptr_);
-        timer_paced_buf_ptr->set_frequency_hz(settings.update_frequency_hz);
+        // Update settings passed in to reflect the actual frequency.
+        settings.update_frequency_hz =
+            timer_paced_buf_ptr->set_frequency_hz(settings.update_frequency_hz);
         return true;
     }
 

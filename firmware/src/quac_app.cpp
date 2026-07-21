@@ -201,7 +201,7 @@ void write_any_analog_output_channel(msg_t& msg)
     size_t channel = ((uint16_t*)specs.base_ptr - app_regs.analog_output_port_state);
     if (bufs[channel].is_transferring())
     {
-        if (!HarpCore::is_muted());
+        if (!HarpCore::is_muted())
             HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
         return;
     }
@@ -449,7 +449,7 @@ void reset_app()
         gpio_init(i);
 
     // Reset External Triggers to all-inputs.
-    gpio_set_dir_masked64(DI_PORT_BASE, 0); // 0-bit: input.
+    gpio_set_dir_masked64(DI_PORT_MASK, 0); // 0-bit: input.
 
     // Reset Digital Outputs.
     gpio_set_dir_masked64(DO_PORT_MASK, DO_PORT_MASK); // 1-bit: output.

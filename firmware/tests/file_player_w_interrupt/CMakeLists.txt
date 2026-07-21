@@ -57,7 +57,6 @@ target_link_libraries(file_player INTERFACE
     pico_stdlib
     pio_ltc264x
     no-OS-FatFS-SD-SDIO-SPI-RPi-Pico
-    file_player
     dma_double_buffer
     etl::etl
 )

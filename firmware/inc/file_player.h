@@ -128,8 +128,7 @@ protected:
     inline void transfer_source_chunk(T* dest, size_t num_bytes,
                                size_t& bytes_transferred)
     {
-        FRESULT fr = f_read(&fil_, dest, this->CHUNK_SIZE_BYTES,
-                            &bytes_transferred);
+        FRESULT fr = f_read(&fil_, dest, num_bytes, &bytes_transferred);
         if (fr != FR_OK) // TODO: better error handling instead of panicking.
         {panic("Could not read data from file!\r\n");}
     }

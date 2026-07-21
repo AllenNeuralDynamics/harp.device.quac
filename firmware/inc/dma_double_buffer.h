@@ -1,9 +1,11 @@
 #ifndef DMA_DOUBLE_BUFFER
 #define DMA_DOUBLE_BUFFER
+#include <hardware/platform_defs.h>
 #include <type_traits>
 #include <concepts>
 #include <bit>
 #include <cmath>
+#include <cstring>
 #include <functional>
 #include "hardware/dma.h"
 
@@ -230,7 +232,7 @@ public:
             channel_config_set_enable(&cfg, false); // clear enable bit.
             dma_channel_set_config(data_chan_, &cfg, false); // trigger = false
             // re apply if needed.
-            dma_channel_config cfg = dma_get_channel_config(data_chan_);
+            cfg = dma_get_channel_config(data_chan_);
         }
     }
 
@@ -433,17 +435,25 @@ public:
 /**
  *  \brief set frequency (in Hz) at which the buffer sends new data to the
  * target address specified in the constructor.
- * \warning frequency must be a multiple of sys clock (150MHz).
+ * \warning frequency must be a multiple of sys clock (150MHz) or the result will
+ * be an approximation.
  * \warning if timer is shared, this value will also apply to other resources
  * using the timer.
  */
-    void set_frequency_hz(uint32_t hz)
+    float set_frequency_hz(uint32_t hz)
     {
+        // Ignore division-by-zero request and return original value.
+        if (hz == 0)
+        {
+            uint32_t num_denom = dma_hw->timer[dma_timer_chan_];
+            uint16_t numerator = (num_denom >> DMA_TIMER0_X_LSB) & 0xFFFF;
+            uint16_t denominator = (num_denom >> DMA_TIMER0_Y_LSB) & 0xFFFF;
+            float old_frequency_hz = float(SYS_CLK_HZ) * numerator / denominator;
+            return old_frequency_hz;
+        }
         float divisor = float(SYS_CLK_HZ) / hz;
-        if (round(divisor) != divisor)
-        {panic("Update frequency (%f [Hz]) must be a multiple of sys clock: %d",
-                SYS_CLK_HZ);}
         dma_timer_set_fraction(dma_timer_chan_, 1, divisor);
+        return float(SYS_CLK_HZ) * 1 / divisor;
         // TODO: enable more flexible pacing options by allocating timers
         //  on-demand and sharing timers for matching frequencies, and
         //  respecting max number of used timers.

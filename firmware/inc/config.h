@@ -13,8 +13,8 @@
 //#define HW_VERSION_MINOR (0)
 
 inline constexpr size_t FW_VERSION_MAJOR = 0;
-inline constexpr size_t FW_VERSION_MINOR = 0;
-inline constexpr size_t FW_VERSION_PATCH = 1;
+inline constexpr size_t FW_VERSION_MINOR = 1;
+inline constexpr size_t FW_VERSION_PATCH = 0;
 
 inline constexpr size_t UNUSED_SERIAL_NUMBER = 0; // Deprecated in favor of R_UUID
 
@@ -52,7 +52,7 @@ static_assert(SD_CHUNK_SIZE_BYTES % 512 == 0,
  "SD_CHUNK_SIZE_BYTES must be a multiple of 512 (SD card block size).");
 
 #if ((HW_VERSION_MAJOR == 1) && (HW_VERSION_MINOR == 0)) // prototoype boards.
-#pragma warning("Compiling for prototype target with distinct pinout.")
+#warning("Compiling for prototype target with distinct pinout.")
     inline constexpr std::array<DACPins, NUM_CHANNELS> DAC_PINS
     {{
         {.pico = 4, .sck = 5, .cs = 6},
