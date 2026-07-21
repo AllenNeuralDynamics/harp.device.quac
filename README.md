@@ -16,18 +16,29 @@ But since card performance can vary, here's a list of tested cards:
 |           |                         |
 
 ## Generating Waveforms ﮩ٨ـﮩﮩ٨ـ
+There are two ways to generate waveforms: either with one of two primitive waveform generators or by playing files from the SD card.
+
+### SinePlayer Waveforms
+
+  <img width="800" src="./assets/pics/sine_waveform_specs.drawio.png" />
+  
+### TrapezoidPlayer Waveforms
+
+  <img width="800" src="./assets/pics/ramp_waveform_specs.drawio.png" />
+
+### Waveforms from the SD Card 💾
 
 The _quac_ board reads files in 16-bit little-endian _Pulse-Code Modulation_ (PCM) format.
 There are a few options for generating waveforms in this format.
 
-### Upscaling Existing Files 💽
+#### Upscaling Existing Files 💽
 It's possible to convert existing audio files to a format compatible with the _quac_ board using `ffmpeg`.
 To upscale an existing _\*.wav_ file to a compatible format, use:
 ```bash
 ffmpeg -i example.wav -f u16le -ar 500000 output.raw
 ```
 
-### With numpy 💻
+#### With numpy 💻
 For more complicated waveforms that do not derive from an existing audio file, we recommend using numpy.
 
 Here's an example to generate the [North American Ringing Tone](https://en.wikipedia.org/wiki/Ringing_tone#Bell_System_tones), which is the sum of a 440Hz and 480Hz sine wave.
@@ -54,7 +65,7 @@ with open(FILENAME, "wb") as file:
 
 ```
 
-## Uploading Waveforms ♒︎➝💾
+#### Uploading Waveforms ♒︎➝💾
 Currently waveforms must be uploaded to the SD card manually.
 Waveforms must be placed at the top level (not inside a folder!) and be labeled `channel_<i>.bin` where `<i>` could be `0`, `1`, `2`, or `3` corresponding to waveform 0-3 respectively.
 
