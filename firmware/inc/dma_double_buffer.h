@@ -224,15 +224,14 @@ public:
         // data channel was in the middle of being reconfigured).
         if (!is_transferring())
             return;
-        dma_channel_config cfg = dma_get_channel_config(data_chan_);
         while (true)
         {
+            dma_channel_config cfg = dma_get_channel_config(data_chan_);
             if ((cfg.ctrl & DMA_CH0_CTRL_TRIG_EN_BITS) == 0) // is-paused
                 return; // bail when channel actually pauses.
             channel_config_set_enable(&cfg, false); // clear enable bit.
             dma_channel_set_config(data_chan_, &cfg, false); // trigger = false
-            // re apply if needed.
-            cfg = dma_get_channel_config(data_chan_);
+            // Changes may take a few CPU cycles to take effect, so loop again.
         }
     }
 
