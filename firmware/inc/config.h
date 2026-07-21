@@ -114,6 +114,6 @@ inline constexpr size_t DEBUG_UART_RX_PIN = 1;
 
 inline constexpr size_t HARP_SYNC_RX_PIN = 37;
 
-inline constexpr size_t HARP_DEVICE_ID = 0;
+inline constexpr size_t HARP_DEVICE_ID = 1411;
 
 #endif // CONFIG_H
