@@ -55,6 +55,8 @@ public:
         // the new settings.
         if (file_is_open())
             return open_file(settings_.path);
+        // FIXME: edge case where we specify reading a subset of the file that
+        //   is longer than the actual file. We need to check f_size.
         return true;
     }
 

@@ -24,7 +24,11 @@ struct WaveformSettings
     : cycles{cycles}, duration_us{duration_us},
       update_frequency_hz{update_frequency_hz}{}
 
-/// \brief get number of samples associated with the \ref duration_us setting.
+/**
+ * \brief get number of samples within a cycle associated with the
+ *  \ref duration_us setting.
+ *  May be zero if WaveformSettings.duration_us is zero (loop-forever case).
+ **/
     uint32_t sample_count()
     {return uint32_t((float(duration_us) * update_frequency_hz / 1.0E6));}
 };
@@ -126,17 +130,5 @@ struct TrapezoidSettings: FunctionSettings
     // TODO: Sawtooth constructor
 };
 #pragma pack(pop)
-
-
-#pragma pack(push, 1)
-/**
- * \brief base waveform settings and additional settings for Harp interface.
- */
-struct WaveformInterfaceSettings: WaveformSettings
-{
-    uint8_t external_trigger_mask;
-};
-#pragma pack(pop)
-
 
 #endif // WAVEFORM_SETTINGS_H

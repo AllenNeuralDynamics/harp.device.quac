@@ -32,7 +32,9 @@ protected:
  */
     DMADoubleBuffer()
     :ctrl_chan_{-1}, data_chan_{-1}, end_of_transfer_irq_num_{-1},
-    trigger_isr_{false}{}
+    trigger_isr_{false}, target_address_{nullptr},
+    ctrl_chan_data_{&buffers_[0], &buffers_[1]},
+    last_xfer_idle_buffer_ptr_{(T*)ctrl_chan_data_[0]}{}
 
 public:
 /**
@@ -55,6 +57,7 @@ public:
 
     void setup_transfer(dreq_num_t pacing_signal, volatile void* target_address)
     {
+        target_address_ = target_address; // Save for setting up last transfer.
         ctrl_chan_ = dma_claim_unused_channel(true);
         data_chan_ = dma_claim_unused_channel(true);
         // Setup the control channel.
@@ -62,8 +65,6 @@ public:
         // is invoked using the ring feature.
         // Write to update the data channel's read address.
         // Use alias3 to start the transfer in one write.
-        ctrl_chan_data_[0] = &buffers_[0];
-        ctrl_chan_data_[1] = &buffers_[1];
         dma_channel_config ctrl_chan_cfg = dma_channel_get_default_config(ctrl_chan_);
         channel_config_set_dreq(&ctrl_chan_cfg, DREQ_FORCE); // Go as fast as possible.
         channel_config_set_transfer_data_size(&ctrl_chan_cfg, DMA_SIZE_32); // system address size.
@@ -124,9 +125,26 @@ public:
     inline void load_buffer(T* word_source, size_t num_words)
     {memcpy(get_idle_buffer(), word_source, num_words*sizeof(T));}
 
-    //T (*get_idle_buffer())[BUF_SIZE]
-    T* get_idle_buffer()
-    {return *((T**)(dma_channel_hw_addr(ctrl_chan_)->read_addr));}
+/**
+* \brief get pointer to the current idle buffer.
+*/
+    inline T* get_idle_buffer()
+    {
+        // Edge case: we are executing the last transfer.
+        //   idle buffer is what we saved.
+        if (dma_chain_loop_disconnected())
+            return last_xfer_idle_buffer_ptr_;
+        // Normal case. idle buffer can be read from ctrl chan which points to
+        //   the *next* buffer to read from and wraps automatically.
+        return *((T**)(dma_channel_hw_addr(ctrl_chan_)->read_addr));
+    }
+
+    inline T* get_active_buffer()
+    {
+        return (get_idle_buffer() == (T*)ctrl_chan_data_[0])?
+            (T*)ctrl_chan_data_[1]:
+            (T*)ctrl_chan_data_[0];
+    }
 
 /**
  * \brief Enable the last completed dma transfer to trigger an interrupt
@@ -160,20 +178,40 @@ public:
  */
     void setup_last_dma_transfer(size_t word_count)
     {
-        // setting the transfer count while the dma channel is running sets the
-        // *next* transfer count; it doesn't affect the active transfer.
-        // ref: RP2350 pg 1126
-        //TODO: uint32_t encoded_transfer_count = dma_encode_transfer_count(word_count);
-        dma_channel_hw_addr(data_chan_)->transfer_count = word_count;
+        // Record idle buffer when last transfer is running.
+        last_xfer_idle_buffer_ptr_ = get_active_buffer();
         // Attach channel to IRQ if configured to do so:
         dma_irqn_set_channel_enabled(end_of_transfer_irq_num_, data_chan_,
                                      trigger_isr_);
         // Disable chaining on the next transfer.
         // Modifying the CTRL register updates settings for the *next* transfer.
-        dma_channel_config cfg = dma_get_channel_config(data_chan_);
-        channel_config_set_chain_to(&cfg, data_chan_); // chain-to-self disables chaining.
-        channel_config_set_irq_quiet(&cfg, false); // Enable end of transfer irq
-        dma_channel_set_config(data_chan_, &cfg, false); // trigger = false
+        //// Setup control block to write to data_chan_ to reconfigure and trigger
+        //// it on the final transfer.
+        dma_channel_config last_cfg = data_chan_default_cfg_;
+        channel_config_set_chain_to(&last_cfg, data_chan_); // chain-to-self disables chaining.
+        channel_config_set_irq_quiet(&last_cfg, false); // Enable end of transfer irq
+        ctrl_chan_last_xfer_data_ =
+            ctrl_chan_data_al0_t(reinterpret_cast<T(*)[BUF_SIZE]>(get_idle_buffer()),
+                                 target_address_, word_count, last_cfg);
+        // Setup ctrl_chan with final transfer config.
+        // When the ctrl channel is next triggered by the data channel,
+        // write 4 words to reconfigure and trigger the data channel (alias0).
+        // to send the final transfer.
+        dma_channel_config ctrl_chan_cfg = dma_channel_get_default_config(ctrl_chan_);
+        channel_config_set_dreq(&ctrl_chan_cfg, DREQ_FORCE); // Go as fast as possible.
+        channel_config_set_transfer_data_size(&ctrl_chan_cfg, DMA_SIZE_32);
+        channel_config_set_read_increment(&ctrl_chan_cfg, true);
+        channel_config_set_write_increment(&ctrl_chan_cfg, true);
+        channel_config_set_irq_quiet(&ctrl_chan_cfg, true);
+        channel_config_set_chain_to(&ctrl_chan_cfg, ctrl_chan_); // disable chaining.
+        const size_t ctrl_chan_data_word_count = sizeof(ctrl_chan_data_al0_t)/sizeof(uint32_t);
+        static_assert(ctrl_chan_data_word_count == 4);
+        // Apply the configuration.
+        dma_channel_configure(ctrl_chan_, &ctrl_chan_cfg,
+                              &dma_hw->ch[data_chan_].read_addr, // 4 writes will end on ctrl_trig
+                              &ctrl_chan_last_xfer_data_,      // read address.
+                              ctrl_chan_data_word_count,
+                              false);  // Don't start.
     }
 
 /**
@@ -302,13 +340,24 @@ public:
  *  ready to kick off a transfer sequence) set by the most recent call to
  * setup_transfer().
  */
-    void reset_transfer_config()
+    void reset_transfer_config(bool reset_idle_buffer = true)
     {
-        // For ctrl_chan_ we must additionally reset the idle buffer because
-        // ping-ponging between buffers is specified relative to the starting
-        // buffer address.
-        dma_channel_set_read_addr(ctrl_chan_, &ctrl_chan_data_[0], false);
-        dma_channel_set_config(ctrl_chan_, &ctrl_chan_default_cfg_, false);
+        // Reset buffer tracking if specified.
+        // true -> full reset.
+        // false -> reset everything except buffer tracking such that restarting
+        //   can start from the buffer that may have been filled while clocking
+        //   out the last transfer from the prevous playthrough.
+        T** ctrl_chan_data_start_addr =
+            (last_xfer_idle_buffer_ptr_ == (T*)ctrl_chan_data_[0])?
+                (T**)&ctrl_chan_data_[0]:
+                (T**)&ctrl_chan_data_[1];
+        if (reset_idle_buffer)
+            ctrl_chan_data_start_addr = (T**)&ctrl_chan_data_[0];
+        dma_channel_configure(ctrl_chan_, &ctrl_chan_default_cfg_,
+                              &dma_hw->ch[data_chan_].al3_read_addr_trig, // write address
+                              ctrl_chan_data_start_addr,
+                              1,
+                              false);  // Don't start.
         // For data_chan_ we must additionally reset the transfer count since
         // it was likely altered for the last buffer transfer.
         dma_channel_hw_addr(data_chan_)->transfer_count = BUF_SIZE;
@@ -355,6 +404,24 @@ public:
 
 private:
 /**
+ * \brief data sent from ctrl_chan_ to data_chan_ to configure data_chan_'s
+ * last transfer.
+ * \details On every trigger of the ctrl_chan_ we need to reconfigure data_chan_
+ * with an updated CTRL and READ_ADDR and then trigger data_chan_.
+ * Since no alias exists where we can trigger both registers above in two writes
+ * that end with a trigger, we need to perform 4 writes.
+ */
+#pragma pack(push, 1)
+    struct ctrl_chan_data_al0_t
+    {
+        T (*read_address)[BUF_SIZE];
+        volatile void* write_address;
+        uint32_t transfer_count; // in words, not bytes.
+        dma_channel_config data_chan_cfg;
+    };
+#pragma pack(pop)
+
+/**
  * \brief get the chained channel encoded in the given dma channel config.
  */
     inline uint32_t get_chained_channel(dma_channel_config cfg)
@@ -363,13 +430,16 @@ private:
                 >> DMA_CH0_CTRL_TRIG_CHAIN_TO_LSB);
     }
 
-
-    alignas(8*sizeof(T)) T buffers_[2][BUF_SIZE];
+    T buffers_[2][BUF_SIZE];
     int ctrl_chan_;
     dma_channel_config ctrl_chan_default_cfg_;
-    T (*ctrl_chan_data_[2])[BUF_SIZE];
+    /// align to 8 byte boundary for ctrl_chan_ ring buffer settings.
+    alignas(8) const T (*ctrl_chan_data_[2])[BUF_SIZE];
+    ctrl_chan_data_al0_t ctrl_chan_last_xfer_data_;
+    T* last_xfer_idle_buffer_ptr_;
     int data_chan_;
     dma_channel_config data_chan_default_cfg_;
+    volatile void* target_address_;
 
     int end_of_transfer_irq_num_;
     bool trigger_isr_;
