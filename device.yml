@@ -162,24 +162,40 @@ registers:
     access: Write
     description: "For Analog Output Channel 0, which waveform
       player is active: file, sine, or trapezoid."
+    payloadSpec:
+      Player:
+        offset: 0
+        maskType: PlayerType
   ActivePlayers1:
     address: 51
     type: U8
     access: Write
     description: "For Analog Output Channel 1, which waveform
       player is active: file, sine, or trapezoid."
+    payloadSpec:
+      Player:
+        offset: 0
+        maskType: PlayerType
   ActivePlayers2:
     address: 52
     type: U8
     access: Write
     description: "For Analog Output Channel 2, which waveform
       player is active: file, sine, or trapezoid."
+    payloadSpec:
+      Player:
+        offset: 0
+        maskType: PlayerType
   ActivePlayers3:
     address: 53
     type: U8
     access: Write
     description: "For Analog Output Channel 3, which waveform
       player is active: file, sine, or trapezoid."
+    payloadSpec:
+      Player:
+        offset: 0
+        maskType: PlayerType
 
   FileSettings0:
     address: 54
@@ -189,6 +205,8 @@ registers:
     description: "Struct to configure Analog Output Channel 0
       File Player settings: cycles (U32), duration_us (U32),
       update_frequency_hz (U32), path (U8 array, 33 elements)"
+    payloadSpec:
+      <<: *file_settings_spec
   FileSettings1:
     address: 55
     type: U8
@@ -197,6 +215,8 @@ registers:
     description: "Struct to configure Analog Output Channel 1
       File Player settings: cycles (U32), duration_us (U32),
       update_frequency_hz (U32), path (U8 array, 33 elements)"
+    payloadSpec:
+      <<: *file_settings_spec
   FileSettings2:
     address: 56
     type: U8
@@ -205,6 +225,8 @@ registers:
     description: "Struct to configure Analog Output Channel 2
       File Player settings: cycles (U32), duration_us (U32),
       update_frequency_hz (U32), path (U8 array, 33 elements)"
+    payloadSpec:
+      <<: *file_settings_spec
   FileSettings3:
     address: 57
     type: U8
@@ -213,7 +235,8 @@ registers:
     description: "Struct to configure Analog Output Channel 3
       File Player settings: cycles (U32), duration_us (U32),
       update_frequency_hz (U32), path (U8 array, 33 elements)"
-
+    payloadSpec:
+      <<: *file_settings_spec
   SineSettings0:
     address: 58
     type: U8
@@ -223,6 +246,8 @@ registers:
       Sine Player settings: cycles (U32), duration_us (U32),
       update_frequency_hz (U32), frequency_hz (U32),
       amplitude_volts (Float), vertical_shift_volts (Float)."
+    payloadSpec:
+      <<: *function_settings_spec
   SineSettings1:
     address: 59
     type: U8
@@ -232,6 +257,8 @@ registers:
       Sine Player settings: cycles (U32), duration_us (U32),
       update_frequency_hz (U32), frequency_hz (U32),
       amplitude_volts (Float), vertical_shift_volts (Float)."
+    payloadSpec:
+      <<: *function_settings_spec
   SineSettings2:
     address: 60
     type: U8
@@ -241,6 +268,8 @@ registers:
       Sine Player settings: cycles (U32), duration_us (U32),
       update_frequency_hz (U32), frequency_hz (U32),
       amplitude_volts (Float), vertical_shift_volts (Float)."
+    payloadSpec:
+      <<: *function_settings_spec
   SineSettings3:
     address: 61
     type: U8
@@ -250,6 +279,8 @@ registers:
       Sine Player settings: cycles (U32), duration_us (U32),
       update_frequency_hz (U32), frequency_hz (U32),
       amplitude_volts (Float), vertical_shift_volts (Float)."
+    payloadSpec:
+      <<: *function_settings_spec
 
   TrapezoidSettings0:
     address: 62
@@ -261,6 +292,8 @@ registers:
       update_frequency_hz (U32), frequency_hz (U32),
       amplitude_volts (Float), vertical_shift_volts (Float),
       ramp_on_us (U32), ramp_off_us (U32)"
+    payloadSpec:
+      <<: *trapezoid_settings_spec
   TrapezoidSettings1:
     address: 63
     type: U8
@@ -271,6 +304,8 @@ registers:
       update_frequency_hz (U32), frequency_hz (U32),
       amplitude_volts (Float), vertical_shift_volts (Float),
       ramp_on_us (U32), ramp_off_us (U32)"
+    payloadSpec:
+      <<: *trapezoid_settings_spec
   TrapezoidSettings2:
     address: 64
     type: U8
@@ -281,6 +316,8 @@ registers:
       update_frequency_hz (U32), frequency_hz (U32),
       amplitude_volts (Float), vertical_shift_volts (Float),
       ramp_on_us (U32), ramp_off_us (U32)"
+    payloadSpec:
+      <<: *trapezoid_settings_spec
   TrapezoidSettings3:
     address: 65
     type: U8
@@ -291,6 +328,8 @@ registers:
       update_frequency_hz (U32), frequency_hz (U32),
       amplitude_volts (Float), vertical_shift_volts (Float),
       ramp_on_us (U32), ramp_off_us (U32)"
+    payloadSpec:
+      <<: *trapezoid_settings_spec
 
 bitMasks:
   DOPort:
@@ -309,3 +348,55 @@ bitMasks:
       AO1: 0x2
       AO2: 0x4
       AO3: 0x8
+
+groupMasks:
+  PlayerType:
+    description: ""
+    values:
+      file: 0x0
+      sine: 0x1
+      trapezoid: 0x2
+
+WaveformSettings: &waveform_settings_spec
+  cycles:
+    offset: 0
+    length: 4
+    interfaceType: uint
+  duration_us:
+    offset: 4
+    length: 4
+    interfaceType: uint
+  update_frequency_hz:
+    offset: 8
+    length: 4
+    interfaceType: uint
+FileSettingsSpec: &file_settings_spec
+  <<: waveform_settings_spec
+  path:
+    offset: 12
+    length: 32
+    interfaceType: string
+FunctionSettings: &function_settings_spec
+  <<: *waveform_settings_spec
+  frequency_hz:
+    offset: 12
+    length: 4
+    interfaceType: uint
+  amplitude_volts:
+    offset: 16
+    length: 4
+    interfaceType: float
+  vertical_shift_volts:
+    offset: 20
+    length: 4
+    interfaceType: float
+TrapezoidSettings: &trapezoid_settings_spec
+  <<: *function_settings_spec
+  ramp_on_us:
+    offset: 24
+    length: 4
+    interfaceType: uint
+  ramp_off_us:
+    offset: 28
+    length: 4
+    interfaceType: uint
