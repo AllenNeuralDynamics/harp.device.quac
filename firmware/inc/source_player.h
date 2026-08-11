@@ -241,23 +241,37 @@ public:
         // Skip if channel is ready but not transferring.
         if (!is_active() && is_armed())
             return;
-        // Skip if channel is active but buffer hasn't switched yet.
-        if (idle_buf_ptr_ == buf_ptr_->get_idle_buffer())
+        T* curr_idle_buf_ptr_ = buf_ptr_->get_idle_buffer();
+        // Skip if channel is active but buffer hasn't switched yet & the idle
+        // buffer is full.
+        if (idle_buf_ptr_ == curr_idle_buf_ptr_ && !remaining_buf_size())
             return;
-        idle_buf_ptr_ = buf_ptr_->get_idle_buffer();
+        // Reset chunk index tracking as soon as we switch buffers.
+        if (idle_buf_ptr_ != curr_idle_buf_ptr_)
+            chunk_bytes_read_ = 0;
+        // Save buffer ptr to track when buffers switch next.
+        idle_buf_ptr_ = curr_idle_buf_ptr_;
         // Transfer data from source to idle buffer.
-        // Read a full chunk or up to the subset specified.
-        size_t bytes_to_read = (sample_count_ == 0) ?
-            CHUNK_SIZE_BYTES:
-            std::min(size_t((sample_count_ - samples_emitted_) * sizeof(T)),
-                     CHUNK_SIZE_BYTES);
-        transfer_source_chunk(idle_buf_ptr_, bytes_to_read, chunk_bytes_read_);
-        size_t chunk_samples_read = chunk_bytes_read_ / sizeof(T);
-        samples_emitted_ += chunk_samples_read;
-        total_samples_emitted_ += chunk_samples_read;
+        // Continue reading up to a full chunk or up to the subset specified.
+        // if sample_count_ is 0, read forever or up to the end of the source.
+        size_t bytes_remaining_for_cycle = (sample_count_ == 0)?
+            remaining_buf_size_bytes():
+            size_t{(sample_count_ - samples_emitted_) * sizeof(T)};
+        size_t bytes_to_read =
+            std::min(bytes_remaining_for_cycle, remaining_buf_size_bytes());
+        size_t bytes_transferred;
+        transfer_source_chunk(idle_buf_ptr_ + chunk_index(), bytes_to_read,
+                              bytes_transferred);
+        chunk_bytes_read_ += bytes_transferred;
+        size_t samples_transferred = bytes_transferred / sizeof(T);
+        samples_emitted_ += samples_transferred;
+        total_samples_emitted_ += samples_transferred;
         bool source_subset_finished = ((samples_emitted_ == sample_count_)
                                        && (sample_count_ != 0));
-        is_armed_ = true;
+        // armed long-waveform (>1 buffer) case:
+        //   armed as soon as we've fully stuffed the first buffer
+        if (!remaining_buf_size())
+            is_armed_ = true;
         if (!source_finished() && !source_subset_finished)
             return;
         // Handle end-of-source (or end of subset of source).
@@ -266,27 +280,20 @@ public:
         // Handle last transfer condition.
         if ((curr_cycles_ == settings_ptr_->cycles) && (settings_ptr_->cycles != 0))
         {
+            // armed short-waveform (<=1 buffer) case:
+            //   armed as soon as we've stuffed the first buffer as much as
+            //   as possible for the given settings.
+            is_armed_ = true;
             // Next transfer will be the last transfer.
             // The next update() tick will reload waveform from the beginning.
             // At that point, user will be able to retrigger the waveform once
             // is_busy() is false.
-            buf_ptr_->setup_last_dma_transfer(chunk_samples_read);
+            buf_ptr_->setup_last_dma_transfer(chunk_index());
             curr_cycles_ = 0;
             return;
         }
         // Handle endless/many-iteration transfer condition.
         rewind_source();
-        // Pad out the rest of the chunk if we didn't read a full chunk.
-        if (chunk_bytes_read_ == CHUNK_SIZE_BYTES)
-            return;
-        // FIXME: naive approach does not handle case where source is shorter
-        // than buffer.
-        transfer_source_chunk(idle_buf_ptr_ + chunk_samples_read,
-                              CHUNK_SIZE_BYTES - chunk_bytes_read_,
-                              chunk_bytes_read_);
-        chunk_samples_read = chunk_bytes_read_ / sizeof(T);
-        samples_emitted_ += chunk_samples_read;
-        total_samples_emitted_ += chunk_samples_read;
     }
 
 protected:
@@ -332,6 +339,15 @@ protected:
     static inline constexpr size_t CHUNK_SIZE_BYTES = BUF_SIZE * sizeof(T); // bytes
 
 private:
+    inline size_t remaining_buf_size_bytes()
+    {return (CHUNK_SIZE_BYTES - chunk_bytes_read_);}
+
+    inline size_t remaining_buf_size()
+    {return remaining_buf_size_bytes() / sizeof(T);}
+
+    inline size_t chunk_index()
+    {return chunk_bytes_read_ / sizeof(T);}
+
     bool manage_buffer_timing_;
     T* idle_buf_ptr_;
 };
