@@ -21,13 +21,12 @@ public:
 
 protected:
 /**
- * \brief true if the file has been fully read to the end.
+ * \brief true if the function has played through to the end under its current
+ * settings.
  */
     inline virtual bool source_finished()
     {
-        if (this->settings_ptr_->duration_us == 0) // never finished in this case.
-            return false;
-        return this->sample_count_ == this->samples_emitted_;
+        return false; // functions are technically endless.
     }
 
 /**

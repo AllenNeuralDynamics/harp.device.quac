@@ -15,10 +15,11 @@ WAVEFORM_TYPE =  WaveformType.Sine
 WAVEFORM_FMT = SINE_SETTINGS_FMT
 BASE_SETTINGS_REG = AppRegs.SineSettings0
 
-cycles = 1
-duration_us = 1_000_000
+
+cycles = 2
 sample_rate_hz = 10_000
 frequency_hz = 1
+duration_us = 2_000_000
 amplitude_volts = 2.5 # center-to-peak, not peak-to-peak
 vertical_shift_volts = 0
 
@@ -46,7 +47,6 @@ reply = device.send(WriteU8ArrayMessage(BASE_SETTINGS_REG + CHANNEL,
 print(f"SineSettings[{CHANNEL}] -> {settings}, ({reply.message_type.name})")
 print(f"reply: {unpack(WAVEFORM_FMT, bytes(reply.payload))}")
 print()
-
 # Ensure waveform is ready.
 channel_is_ready = False
 while not channel_is_ready:
@@ -55,25 +55,36 @@ while not channel_is_ready:
     if not channel_is_ready:
         print(f"Channel[{CHANNEL}] is not yet ready...")
         sleep(0.1)
-print(f"Channel[{CHANNEL}] is ready.")
 
-# Trigger waveform.
-print("Starting waveform.")
-start_mask = 1 << CHANNEL
-reply = device.send(WriteU8HarpMessage(AppRegs.DACStart, start_mask).frame)
-print(f" Read back: 0x{reply.payload[0]:02x} ({reply.message_type.name}), "
-      f"time: {reply.timestamp}")
-
-# Wait for waveform-finished event.
-print("Waiting for end-of-waveform event.")
-waveform_playing = True
-while waveform_playing:
-    events = device.get_events()
-    for msg in events:
-        print(msg)
-        print()
-        if msg.address == AppRegs.DACFinished:
-            waveform_playing = False
-
-print("Done.")
+while (True):
+    try:
+        # Ensure waveform is ready.
+        channel_is_ready = False
+        while not channel_is_ready:
+            reply = device.send(ReadU8HarpMessage(AppRegs.DACReady).frame)
+            channel_is_ready = bool(reply.payload[0] >> CHANNEL)
+            if not channel_is_ready:
+                print(f"Channel[{CHANNEL}] is not yet ready...")
+                sleep(0.1)
+        print(f"Channel[{CHANNEL}] is ready.")
+        input("press Enter to start.")
+        print("Starting waveform.")
+        start_mask = 1 << CHANNEL
+        reply = device.send(WriteU8HarpMessage(AppRegs.DACStart, start_mask).frame)
+        print(f" Read back: 0x{reply.payload[0]:02x} ({reply.message_type.name}), "
+            f"time: {reply.timestamp}")
+        # Wait for waveform-finished event.
+        print("Waiting for end-of-waveform event.")
+        waveform_playing = True
+        while waveform_playing:
+            events = device.get_events()
+            for msg in events:
+                print(msg)
+                print()
+                if msg.address == AppRegs.DACFinished:
+                    waveform_playing = False
+        # Re-trigger waveform.
+    except KeyboardInterrupt:
+        break
+print("Disconnecting.")
 device.disconnect()

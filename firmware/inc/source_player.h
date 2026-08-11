@@ -23,7 +23,8 @@ public:
     SourcePlayer()
     : idle_buf_ptr_{nullptr}, buf_ptr_{nullptr}, curr_cycles_{0},
     settings_ptr_{nullptr}, samples_emitted_{0}, total_samples_emitted_{0},
-    chunk_bytes_read_{0}, manage_buffer_timing_{false}, is_updating{false}
+    chunk_bytes_read_{0}, manage_buffer_timing_{false}, is_updating{false},
+    is_armed_{false}
     {}
 
 /**
@@ -115,8 +116,13 @@ public:
     virtual void reset()
     {
         abort_transfer(); // Will deassert is_busy()
+        // Don't reset tracking of underlying buffers.
+        if (buf_ptr_ != nullptr)
+            buf_ptr_->reset_transfer_config(false);
         while (is_updating.load()) // wait for core1 update to finish any update.
             __asm__ __volatile__ ("nop");
+        is_armed_ = false;
+        idle_buf_ptr_ = nullptr;
         total_samples_emitted_ = 0;
         curr_cycles_ = 0;
         samples_emitted_ = 0;
@@ -182,21 +188,8 @@ public:
         // -> Player has played at least once and needs to be reset() before
         //    we can rerun it.
 
-        // Bail-early case: buffer is fully stuffed.
-        if (total_samples_emitted_ >= BUF_SIZE)
-            return true;
-        // Play-forever or play-to-completion case.
-        if (sample_count_ == 0)
-        {
-            // Short finite source that's smaller than the buffer.
-            // i.e: play-to-completion.
-            if (curr_cycles_ == settings_ptr_->cycles) // i.e: source finished.
-                return true;
-        }
-        // Bounded sample count and finite source that is also short.
-        else if (sample_count_ < BUF_SIZE)
-            return total_samples_emitted_ == sample_count_;
-        return false; // shouldn't happen unless there are cases we haven't found.
+        // Once armed, always armed unless reset.
+        return is_armed_;
     }
 
 /**
@@ -243,54 +236,42 @@ public:
     inline void _update()
     {
         // TODO: deadlne check between chunk transfers to ensure buffers are topped off.
-        size_t chunk_samples_read;
-        size_t bytes_to_read;
         if (output_buffer_unspecified())
             return;
         // Skip if channel is ready but not transferring.
-        bool active = is_active();
-        bool armed = is_armed();
-        if (!active && armed)
-            return;
-        // Handle playback finished or aborted condition (i.e: needs rewind).
-        if (!active && !armed)
-        {
-            buf_ptr_->reset_transfer_config();
-            rewind_source();
-        } // Keep going.
-        // Skip if we setup last DMA transfer, but it hasn't finished yet.
-        if (active && buf_ptr_->dma_chain_loop_disconnected())
+        if (!is_active() && is_armed())
             return;
         // Skip if channel is active but buffer hasn't switched yet.
         if (idle_buf_ptr_ == buf_ptr_->get_idle_buffer())
             return;
         idle_buf_ptr_ = buf_ptr_->get_idle_buffer();
-        // Transfer data from card to double-buffer.
-        // Read up to a chunk or up to the subset specified.
-        bytes_to_read = (sample_count_ == 0) ?
+        // Transfer data from source to idle buffer.
+        // Read a full chunk or up to the subset specified.
+        size_t bytes_to_read = (sample_count_ == 0) ?
             CHUNK_SIZE_BYTES:
             std::min(size_t((sample_count_ - samples_emitted_) * sizeof(T)),
                      CHUNK_SIZE_BYTES);
         transfer_source_chunk(idle_buf_ptr_, bytes_to_read, chunk_bytes_read_);
-        chunk_samples_read = chunk_bytes_read_ / sizeof(T);
+        size_t chunk_samples_read = chunk_bytes_read_ / sizeof(T);
         samples_emitted_ += chunk_samples_read;
         total_samples_emitted_ += chunk_samples_read;
         bool source_subset_finished = ((samples_emitted_ == sample_count_)
                                        && (sample_count_ != 0));
+        is_armed_ = true;
         if (!source_finished() && !source_subset_finished)
             return;
         // Handle end-of-source (or end of subset of source).
          ++curr_cycles_; // increment full source read iterations.
+         samples_emitted_ = 0; // Reset tracking of samples within a cycle.
         // Handle last transfer condition.
         if ((curr_cycles_ == settings_ptr_->cycles) && (settings_ptr_->cycles != 0))
         {
             // Next transfer will be the last transfer.
-            //printf("EOF at %llu. Setting up last transfer\r\n", fil_.fptr);
-            // Current idle buffer is the last active buffer
-            buf_ptr_->setup_last_dma_transfer(chunk_bytes_read_ / sizeof(T));
-            idle_buf_ptr_ = nullptr; // Trigger a re-arm on next update.
-            curr_cycles_ = 0; // reset counter for next round.
-            samples_emitted_ = 0;
+            // The next update() tick will reload waveform from the beginning.
+            // At that point, user will be able to retrigger the waveform once
+            // is_busy() is false.
+            buf_ptr_->setup_last_dma_transfer(chunk_samples_read);
+            curr_cycles_ = 0;
             return;
         }
         // Handle endless/many-iteration transfer condition.
@@ -298,8 +279,10 @@ public:
         // Pad out the rest of the chunk if we didn't read a full chunk.
         if (chunk_bytes_read_ == CHUNK_SIZE_BYTES)
             return;
-        transfer_source_chunk(idle_buf_ptr_ + chunk_bytes_read_/sizeof(T),
-                              (CHUNK_SIZE_BYTES - chunk_bytes_read_),
+        // FIXME: naive approach does not handle case where source is shorter
+        // than buffer.
+        transfer_source_chunk(idle_buf_ptr_ + chunk_samples_read,
+                              CHUNK_SIZE_BYTES - chunk_bytes_read_,
                               chunk_bytes_read_);
         chunk_samples_read = chunk_bytes_read_ / sizeof(T);
         samples_emitted_ += chunk_samples_read;
@@ -331,13 +314,15 @@ protected:
  */
     inline virtual bool source_finished() = 0;
 
-    uint32_t total_samples_emitted_;
+    bool is_armed_;
+    uint32_t total_samples_emitted_; // Never resets unless we call reset()
     size_t curr_cycles_; /// elapsed cycles of the specified settings
                          /// (NOT cycles of a periodic waveform).
     uint32_t samples_emitted_; /// samples emitted within a cycle. resets to 0.
                                /// upon reset() or at the beginning of each
                                /// cycle.
     uint32_t sample_count_; // Cached value. Recomputed on reset().
+                            // Number of samples within a cycle.
     size_t chunk_bytes_read_; /// bytes read after the most recent call to
                               /// transfer_source_chunk().
     DMADoubleBuffer<T, BUF_SIZE>* buf_ptr_;
