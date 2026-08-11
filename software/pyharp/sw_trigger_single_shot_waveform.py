@@ -13,7 +13,7 @@ COM_PORT = "/dev/ttyACM0"
 WAVEFORM_TYPE =  WaveformType.File
 WAVEFORM_FMT = FILE_SETTINGS_FMT
 BASE_SETTINGS_REG = AppRegs.FileSettings0
-NUM_CHANNELS = 1
+NUM_CHANNELS = 4
 
 # Open the device and print the info on screen
 # Open serial connection and save communication to a file

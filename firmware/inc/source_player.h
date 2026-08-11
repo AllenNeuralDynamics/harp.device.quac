@@ -279,6 +279,8 @@ public:
         // Pad out the rest of the chunk if we didn't read a full chunk.
         if (chunk_bytes_read_ == CHUNK_SIZE_BYTES)
             return;
+        // FIXME: naive approach does not handle case where source is shorter
+        // than buffer.
         transfer_source_chunk(idle_buf_ptr_ + chunk_samples_read,
                               CHUNK_SIZE_BYTES - chunk_bytes_read_,
                               chunk_bytes_read_);
