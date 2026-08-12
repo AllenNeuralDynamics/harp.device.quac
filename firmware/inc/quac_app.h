@@ -2,6 +2,7 @@
 #define QUAC_H
 #include <array>
 #include <cstdint>
+#include <cstring> // for memcpy
 #include "pico/util/queue.h"
 #include "pico/multicore.h"
 #include "config.h"
@@ -59,11 +60,11 @@ struct app_regs_t
     // Triggers.
     uint8_t ext_trigger_state;
 
-    uint16_t analog_output_port_state[NUM_CHANNELS];
-    uint16_t& analog_output_channel_0  = analog_output_port_state[0];
-    uint16_t& analog_output_channel_1  = analog_output_port_state[1];
-    uint16_t& analog_output_channel_2  = analog_output_port_state[2];
-    uint16_t& analog_output_channel_3  = analog_output_port_state[3];
+    float analog_output_port_state[NUM_CHANNELS];
+    float& analog_output_channel_0  = analog_output_port_state[0];
+    float& analog_output_channel_1  = analog_output_port_state[1];
+    float& analog_output_channel_2  = analog_output_port_state[2];
+    float& analog_output_channel_3  = analog_output_port_state[3];
 
     // DAC state masks.
     uint8_t dac_ready;

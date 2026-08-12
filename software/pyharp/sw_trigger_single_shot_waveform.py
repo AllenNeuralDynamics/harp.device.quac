@@ -19,8 +19,8 @@ NUM_CHANNELS = 4
 # Open serial connection and save communication to a file
 device = Device(COM_PORT, "ibl.bin")
 
-cycles = 5
-duration_us = 1_000_000
+duration_us = 0 # Play the whole file.
+cycles = 2 # Play twice
 sample_rate_hz = 500_000
 
 settings = [
@@ -49,7 +49,7 @@ for i in range(NUM_CHANNELS):
 # Ensure waveform is ready.
 channels_ready = False
 while not channels_ready:
-    reply = device.send(ReadU8HarpMessage(AppRegs.DACReady).frame)
+    reply = device.send(ReadU8HarpMessage(AppRegs.DacReady).frame)
     channels_ready = reply.payload[0] == 0b1111
     if not channels_ready:
         print(f"Not all channels are ready.... Current state: {reply.payload[0]:02x}")
@@ -60,7 +60,7 @@ print(f"Channels are all ready.")
 for i in range(NUM_CHANNELS):
     value = int(1) << i
     print(f"Writing: 0x{value:02x}", end = " ")
-    reply = device.send(WriteU8HarpMessage(AppRegs.DACStart, value).frame)
+    reply = device.send(WriteU8HarpMessage(AppRegs.DacStart, value).frame)
     print(f" Read back: 0x{reply.payload[0]:02x} ({reply.message_type.name}), time: {reply.timestamp}")
     sleep(0.5)
 
@@ -71,5 +71,5 @@ while (waveform_replies_left):
     for msg in events:
         print(msg)
         print()
-        if msg.address == AppRegs.DACFinished:
+        if msg.address == AppRegs.DacFinished:
             waveform_replies_left -= 1

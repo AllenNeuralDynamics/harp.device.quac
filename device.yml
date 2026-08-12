@@ -1,6 +1,59 @@
 %YAML 1.1
 ---
 # yaml-language-server: $schema=https://harp-tech.org/draft-02/schema/device.json
+WaveformSettings: &waveform_settings_spec
+  cycles:
+    offset: 0
+    length: 4
+    interfaceType: uint
+    defaultValue: 1
+  duration_us:
+    offset: 4
+    length: 4
+    interfaceType: uint
+    defaultValue: 0
+  update_frequency_hz:
+    offset: 8
+    length: 4
+    interfaceType: uint
+    defaultValue: 500000
+FileSettingsSpec: &file_settings_spec
+  <<: *waveform_settings_spec
+  path:
+    offset: 12
+    length: 32
+    interfaceType: string
+FunctionSettings: &function_settings_spec
+  <<: *waveform_settings_spec
+  frequency_hz:
+    offset: 12
+    length: 4
+    interfaceType: uint
+    defaultValue: 1
+  amplitude_volts:
+    offset: 16
+    length: 4
+    minValue: 0
+    maxValue: 10
+    interfaceType: float
+    defaultValue: 1
+  vertical_shift_volts:
+    offset: 20
+    length: 4
+    interfaceType: float
+    defaultValue: 1
+TrapezoidSettings: &trapezoid_settings_spec
+  <<: *function_settings_spec
+  ramp_on_us:
+    offset: 24
+    length: 4
+    interfaceType: uint
+    defaultValue: 0
+  ramp_off_us:
+    offset: 28
+    length: 4
+    interfaceType: uint
+    defaultValue: 0
 device: quac
 whoAmI: 1411
 firmwareVersion: "0.1"
@@ -36,10 +89,11 @@ registers:
 
   AOPortState:
     address: 36
-    type: U16
+    type: Float
     access: Write
     length: 4
-    description: "Read/Write the analog output of all 4 Analog output channels.
+    description: "Read/Write the analog output voltage of all 4 Analog
+      output channels.
       Warning: Write values only take effect if all analog output
       channels are not busy playing a preset waveform. Write error
       otherwise.
@@ -49,9 +103,12 @@ registers:
 
   AOChannel0:
     address: 37
-    type: U16
+    type: Float
     access: Write
-    description: "Read/Set the value of analog output channel 0.
+    minValue: -10
+    maxValue: 10
+    defaultValue: 0
+    description: "Read/Set the voltage value of analog output channel 0.
       Warning: Write values only take effect if the analog output
       channel is not busy playing a preset waveform. Write error
       otherwise.
@@ -60,9 +117,12 @@ registers:
 
   AOChannel1:
     address: 38
-    type: U16
+    type: Float
     access: Write
-    description: "Read/Set the value of analog output channel 1.
+    minValue: -10
+    maxValue: 10
+    defaultValue: 0
+    description: "Read/Set the voltage value of analog output channel 1.
       Warning: Write values only take effect if this channel is not
       busy playing a preset waveform. Write error otherwise.
       Warning: Returns a READ_ERROR if any AO channel is currently
@@ -70,9 +130,12 @@ registers:
 
   AOChannel2:
     address: 39
-    type: U16
+    type: Float
     access: Write
-    description: "Read/Set the value of analog output channel 2.
+    minValue: -10
+    maxValue: 10
+    defaultValue: 0
+    description: "Read/Set the voltage value of analog output channel 2.
       Warning: Write values only take effect if this channel is not
       busy playing a preset waveform. Write error otherwise.
       Warning: Returns a READ_ERROR if any AO channel is currently
@@ -80,9 +143,12 @@ registers:
 
   AOChannel3:
     address: 40
-    type: U16
+    type: Float
     access: Write
-    description: "Read/Set the value of analog output channel 3.
+    minValue: -10
+    maxValue: 10
+    defaultValue: 0
+    description: "Read/Set the voltage value of analog output channel 3.
       Warning: Write values only take effect if this channel is not
       busy playing a preset waveform. Write error otherwise.
       Warning: Returns a READ_ERROR if any AO channel is currently
@@ -360,47 +426,3 @@ groupMasks:
       File: 0x0
       Sine: 0x1
       Trapezoid: 0x2
-
-WaveformSettings: &waveform_settings_spec
-  cycles:
-    offset: 0
-    length: 4
-    interfaceType: uint
-  duration_us:
-    offset: 4
-    length: 4
-    interfaceType: uint
-  update_frequency_hz:
-    offset: 8
-    length: 4
-    interfaceType: uint
-FileSettingsSpec: &file_settings_spec
-  <<: waveform_settings_spec
-  path:
-    offset: 12
-    length: 32
-    interfaceType: string
-FunctionSettings: &function_settings_spec
-  <<: *waveform_settings_spec
-  frequency_hz:
-    offset: 12
-    length: 4
-    interfaceType: uint
-  amplitude_volts:
-    offset: 16
-    length: 4
-    interfaceType: float
-  vertical_shift_volts:
-    offset: 20
-    length: 4
-    interfaceType: float
-TrapezoidSettings: &trapezoid_settings_spec
-  <<: *function_settings_spec
-  ramp_on_us:
-    offset: 24
-    length: 4
-    interfaceType: uint
-  ramp_off_us:
-    offset: 28
-    length: 4
-    interfaceType: uint

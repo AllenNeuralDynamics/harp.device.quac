@@ -1,5 +1,6 @@
 #include "quac_app.h"
-#include "config.h"
+#include "pio_ltc264x.h"
+#include "waveform_settings.h"
 
 app_regs_t app_regs;
 queue_t ext_trigger_event_queue;
@@ -16,16 +17,16 @@ RegSpec app_reg_specs[]
     RegSpec::U8(&app_regs.ext_trigger_state,
         read_ext_trigger_state, HarpCore::write_reg_error),
 
-    RegSpec::U16Array(&app_regs.analog_output_port_state,
+    RegSpec::FloatArray(&app_regs.analog_output_port_state,
         std::size(app_regs.analog_output_port_state),
         read_analog_output_port_state, write_analog_output_port_state),
-    RegSpec::U16(&app_regs.analog_output_channel_0,
+    RegSpec::Float(&app_regs.analog_output_channel_0,
         read_any_analog_output_channel, write_any_analog_output_channel),
-    RegSpec::U16(&app_regs.analog_output_channel_1,
+    RegSpec::Float(&app_regs.analog_output_channel_1,
         read_any_analog_output_channel, write_any_analog_output_channel),
-    RegSpec::U16(&app_regs.analog_output_channel_2,
+    RegSpec::Float(&app_regs.analog_output_channel_2,
         read_any_analog_output_channel, write_any_analog_output_channel),
-    RegSpec::U16(&app_regs.analog_output_channel_3,
+    RegSpec::Float(&app_regs.analog_output_channel_3,
         read_any_analog_output_channel, write_any_analog_output_channel),
 
     RegSpec::U8(&app_regs.dac_ready,
@@ -152,13 +153,18 @@ void read_analog_output_port_state(uint8_t address)
     }
     // Update register contents.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
-        app_regs.analog_output_port_state[i] = dacs[i].get_last_value();
+    {
+        app_regs.analog_output_port_state[i] =
+            FunctionSettings::volts_16bit_to_float(dacs[i].get_last_value());
+    }
     HarpCore::send_harp_reply(READ, address);
 }
 
 
 void write_analog_output_port_state(msg_t& msg)
 {
+    const float& MIN_VOLTS = FunctionSettings::MIN_VOLTS;
+    const float& MAX_VOLTS = FunctionSettings::MAX_VOLTS;
     // Ensure no channels are busy.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
@@ -168,10 +174,28 @@ void write_analog_output_port_state(msg_t& msg)
             return;
         }
     }
+    // Limits check:
+    float old_outputs[NUM_CHANNELS];
+    memcpy(old_outputs, app_regs.analog_output_port_state, sizeof(old_outputs));
     HarpCore::copy_msg_payload_to_register(msg);
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        float& value = app_regs.analog_output_port_state[i];
+        if (value < MIN_VOLTS || value > MAX_VOLTS)
+        {
+            // Restore old value.
+            memcpy(app_regs.analog_output_port_state, old_outputs, sizeof(old_outputs));
+            HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+            return;
+        }
+    }
     // Apply the write.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
-        dacs[i].write_value(app_regs.analog_output_port_state[i]);
+    {
+        float& volts = app_regs.analog_output_port_state[i];
+        uint16_t volts_16bit = FunctionSettings::volts_float_to_16bit(volts);
+        dacs[i].write_value(volts_16bit);
+    }
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -183,31 +207,45 @@ void read_any_analog_output_channel(uint8_t address)
         return;
     // Convert address to output channel with pointer arithmetic.
     const RegSpec& specs = HarpCore::reg_address_to_spec(address);
-    size_t channel = ((uint16_t*)specs.base_ptr - app_regs.analog_output_port_state);
+    size_t channel = ((float*)specs.base_ptr - app_regs.analog_output_port_state);
     if (bufs[channel].is_transferring())
     {
         HarpCore::send_harp_reply(READ_ERROR, address);
         return;
     }
-    app_regs.analog_output_port_state[channel] = dacs[channel].get_last_value();
+    app_regs.analog_output_port_state[channel] =
+        FunctionSettings::volts_16bit_to_float(dacs[channel].get_last_value());
     HarpCore::send_harp_reply(READ, address);
 }
 
 
 void write_any_analog_output_channel(msg_t& msg)
 {
+    const float& MIN_VOLTS = FunctionSettings::MIN_VOLTS;
+    const float& MAX_VOLTS = FunctionSettings::MAX_VOLTS;
     // Convert address to output channel with pointer arithmetic.
     const RegSpec& specs = HarpCore::reg_address_to_spec(msg.header.address);
-    size_t channel = ((uint16_t*)specs.base_ptr - app_regs.analog_output_port_state);
+    size_t channel = ((float*)specs.base_ptr - app_regs.analog_output_port_state);
     if (bufs[channel].is_transferring())
     {
         if (!HarpCore::is_muted())
             HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
         return;
     }
+    // Limits Check
+    float old_value = app_regs.analog_output_port_state[channel];
     HarpCore::copy_msg_payload_to_register(msg);
+    float& volts = app_regs.analog_output_port_state[channel];
+    if (volts < MIN_VOLTS || volts > MAX_VOLTS)
+    {
+        // Restore old value.
+        app_regs.analog_output_port_state[channel] = old_value;
+        HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+        return;
+    }
     // FYI: also updates the individual register representation bc it's a ref.
-    dacs[channel].write_value(app_regs.analog_output_port_state[channel]);
+    uint16_t volts_16bit = FunctionSettings::volts_float_to_16bit(volts);
+    dacs[channel].write_value(volts_16bit);
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -479,7 +517,8 @@ void reset_app()
     for (auto& dac: dacs)
         dac.write_value(PIO_LTC264x::OUTPUT_MIDSCALE);
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
-        app_regs.analog_output_port_state[i] = PIO_LTC264x::OUTPUT_MIDSCALE;
+        app_regs.analog_output_port_state[i] =
+            FunctionSettings::volts_16bit_to_float(PIO_LTC264x::OUTPUT_MIDSCALE);
     // Select default player (also does a reset).
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         select_player(i, player_t::sine); // claims buffer & applies settings.
@@ -487,7 +526,6 @@ void reset_app()
     multicore_reset_core1();
     (void)multicore_fifo_pop_blocking(); // Wait until core1 is ready.
     multicore_launch_core1(core1main);
-
     // Setup External Trigger Callback
     // Enable all External Trigger GPIOS to trigger the callback.
     irq_set_exclusive_handler(IO_IRQ_BANK0, handle_external_trigger);

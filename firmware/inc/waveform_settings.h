@@ -51,7 +51,8 @@ struct FileSettings: WaveformSettings
 #pragma pack(push, 1)
 struct FunctionSettings: WaveformSettings
 {
-    static inline constexpr float MAX_AMPLITUDE_VOLTS = 10.0f;
+    static inline constexpr float MIN_VOLTS = -10.0;
+    static inline constexpr float MAX_VOLTS = 10.0;
     uint32_t frequency_hz;
     float amplitude_volts; // peak offset from center position in volts.
     float vertical_shift_volts; // vertical shift in samples.
@@ -81,10 +82,17 @@ struct FunctionSettings: WaveformSettings
     {return peak_to_peak_amplitude_16bit()/2;}
 
     inline uint32_t peak_to_peak_amplitude_16bit()
-    {return uint32_t(amplitude_volts/MAX_AMPLITUDE_VOLTS * 65535u);}
+    {return uint32_t(amplitude_volts/MAX_VOLTS * 65535u);}
 
     uint32_t vertical_shift_16bit()
-    {return uint32_t(vertical_shift_volts/MAX_AMPLITUDE_VOLTS * 65535u);}
+    {return uint32_t(vertical_shift_volts/MAX_VOLTS * 65535u);}
+
+    static uint16_t volts_float_to_16bit(float volts)
+    {return static_cast<uint16_t>(volts * 65535u/(MAX_VOLTS - MIN_VOLTS) + 32767.5);}
+
+    static float volts_16bit_to_float(uint16_t volts_16bit)
+    {return static_cast<float>(volts_16bit) * (MAX_VOLTS - MIN_VOLTS)/65535.0 - 10.0;}
+
 
 };
 #pragma pack(pop)

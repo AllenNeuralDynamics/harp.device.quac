@@ -52,7 +52,7 @@ print(f"TrapezoidSettings[{CHANNEL}] -> {settings}, "
 # Ensure waveform is ready.
 channel_is_ready = False
 while not channel_is_ready:
-    reply = device.send(ReadU8HarpMessage(AppRegs.DACReady).frame)
+    reply = device.send(ReadU8HarpMessage(AppRegs.DacReady).frame)
     channel_is_ready = bool(reply.payload[0] >> CHANNEL)
     if not channel_is_ready:
         print(f"Channel[{CHANNEL}] is not yet ready...")
@@ -62,7 +62,7 @@ print(f"Channel[{CHANNEL}] is ready.")
 # Trigger waveform.
 print("Starting waveform.")
 start_mask = 1 << CHANNEL
-reply = device.send(WriteU8HarpMessage(AppRegs.DACStart, start_mask).frame)
+reply = device.send(WriteU8HarpMessage(AppRegs.DacStart, start_mask).frame)
 print(f" Read back: 0x{reply.payload[0]:02x} ({reply.message_type.name}), "
       f"time: {reply.timestamp}")
 
@@ -74,7 +74,7 @@ while waveform_playing:
     for msg in events:
         print(msg)
         print()
-        if msg.address == AppRegs.DACFinished:
+        if msg.address == AppRegs.DacFinished:
             waveform_playing = False
 
 print("Done.")
