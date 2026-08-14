@@ -1,428 +1,372 @@
 %YAML 1.1
 ---
 # yaml-language-server: $schema=https://harp-tech.org/draft-02/schema/device.json
-WaveformSettings: &waveform_settings_spec
-  cycles:
-    offset: 0
-    length: 4
-    interfaceType: uint
-    defaultValue: 1
-  duration_us:
-    offset: 4
-    length: 4
-    interfaceType: uint
-    defaultValue: 0
-  update_frequency_hz:
-    offset: 8
-    length: 4
-    interfaceType: uint
-    defaultValue: 500000
-FileSettingsSpec: &file_settings_spec
-  <<: *waveform_settings_spec
-  path:
-    offset: 12
-    length: 32
-    interfaceType: string
-FunctionSettings: &function_settings_spec
-  <<: *waveform_settings_spec
-  frequency_hz:
-    offset: 12
-    length: 4
-    interfaceType: uint
-    defaultValue: 1
-  amplitude_volts:
-    offset: 16
-    length: 4
-    minValue: 0
-    maxValue: 10
-    interfaceType: float
-    defaultValue: 1
-  vertical_shift_volts:
-    offset: 20
-    length: 4
-    interfaceType: float
-    defaultValue: 1
-TrapezoidSettings: &trapezoid_settings_spec
-  <<: *function_settings_spec
-  ramp_on_us:
-    offset: 24
-    length: 4
-    interfaceType: uint
-    defaultValue: 0
-  ramp_off_us:
-    offset: 28
-    length: 4
-    interfaceType: uint
-    defaultValue: 0
-device: quac
+device: Quac
 whoAmI: 1411
 firmwareVersion: "0.1"
 hardwareTargets: "1.1"
+
+# Payload layouts shared by the waveform player settings registers, mirroring the
+# struct hierarchy in firmware/inc/waveform_settings.h. Authoring aid only: this
+# key hosts YAML anchors and is not part of the device interface.
+payloadLayouts:
+  waveform: &waveformPayload
+    Cycles:
+      offset: 0
+      length: 4
+      interfaceType: uint
+      defaultValue: 1
+      description: >-
+        Specifies how many times the waveform is played, or zero to play it
+        indefinitely.
+    Duration:
+      offset: 4
+      length: 4
+      interfaceType: uint
+      defaultValue: 0
+      description: >-
+        Specifies the duration of a single cycle in microseconds, or zero to
+        play the whole waveform.
+    UpdateFrequency:
+      offset: 8
+      length: 4
+      interfaceType: uint
+      defaultValue: 500000
+      description: Specifies the sample update rate in hertz.
+
+  file: &filePayload
+    <<: *waveformPayload
+    Path:
+      offset: 12
+      length: 33
+      interfaceType: string
+      description: Specifies the null-terminated path of the waveform file on the SD card.
+
+  function: &functionPayload
+    <<: *waveformPayload
+    Frequency:
+      offset: 12
+      length: 4
+      interfaceType: uint
+      defaultValue: 1
+      description: Specifies the frequency of the waveform in hertz.
+    Amplitude:
+      offset: 16
+      length: 4
+      interfaceType: float
+      minValue: 0
+      maxValue: 10
+      defaultValue: 1
+      description: >-
+        Specifies the peak amplitude of the waveform in volts, measured from
+        its vertical centre.
+    VerticalShift:
+      offset: 20
+      length: 4
+      interfaceType: float
+      defaultValue: 1
+      description: Specifies the vertical offset applied to the waveform in volts.
+
+  trapezoid: &trapezoidPayload
+    <<: *functionPayload
+    RampOnDuration:
+      offset: 24
+      length: 4
+      interfaceType: uint
+      defaultValue: 0
+      description: Specifies the duration of the rising ramp in microseconds.
+    RampOffDuration:
+      offset: 28
+      length: 4
+      interfaceType: uint
+      defaultValue: 0
+      description: Specifies the duration of the falling ramp in microseconds.
+
 registers:
   DOPortState:
     address: 32
     type: U8
     access: Write
-    maskType: DOPort
-    description: "Read or write the state of the digital IO pins."
+    maskType: DigitalOutputs
+    description: Reflects and specifies the state of the digital output lines.
   DOPortSet:
     address: 33
     type: U8
     access: Write
-    maskType: DOPort
-    description: "Set digital IO pins specified in the mask to logic HIGH by
-      setting the corresponding bit."
+    maskType: DigitalOutputs
+    description: Sets the digital output lines specified in the mask to logic HIGH.
   DOPortClear:
     address: 34
     type: U8
     access: Write
-    maskType: DOPort
-    description: "Set digital IO specified pins in the mask to logic LOW by
-      setting the corresponding bit."
+    maskType: DigitalOutputs
+    description: Clears the digital output lines specified in the mask to logic LOW.
 
-  ExtTriggerState:
+  ExternalTriggerState:
     address: 35
     type: U8
     access: Read
-    maskType: DOPort
-    description: "Read the raw state of the external trigger pins."
+    maskType: DigitalInputs
+    description: Reflects the raw state of the external trigger input lines.
 
   AOPortState:
     address: 36
     type: Float
-    access: Write
     length: 4
-    description: "Read/Write the analog output voltage of all 4 Analog
-      output channels.
-      Warning: Write values only take effect if all analog output
-      channels are not busy playing a preset waveform. Write error
-      otherwise.
-      Warning: Read values are only valid if all analog output
-      channels are not busy playing a preset waveform. Read error
-      otherwise."
+    access: Write
+    description: >-
+      Reflects and specifies the output voltage of all four analog output
+      channels in volts. Reads and writes fail with an error unless every
+      channel is idle, since a channel playing a preset waveform owns its
+      output value.
+    payloadSpec:
+      AOChannel0:
+        offset: 0
+        description: The output voltage of analog output channel 0 in volts.
+      AOChannel1:
+        offset: 1
+        description: The output voltage of analog output channel 1 in volts.
+      AOChannel2:
+        offset: 2
+        description: The output voltage of analog output channel 2 in volts.
+      AOChannel3:
+        offset: 3
+        description: The output voltage of analog output channel 3 in volts.
 
-  AOChannel0:
+  AOChannel0: &aoChannel
     address: 37
     type: Float
     access: Write
     minValue: -10
     maxValue: 10
     defaultValue: 0
-    description: "Read/Set the voltage value of analog output channel 0.
-      Warning: Write values only take effect if the analog output
-      channel is not busy playing a preset waveform. Write error
-      otherwise.
-      Warning: Returns a READ_ERROR if any AO channel is currently
-      busy playing a preset waveform."
-
+    description: >-
+      Reflects and specifies the output voltage of analog output channel 0 in
+      volts. Writes fail with an error while this channel is playing a preset
+      waveform, and reads fail with an error while any channel is playing a
+      preset waveform.
   AOChannel1:
+    <<: *aoChannel
     address: 38
-    type: Float
-    access: Write
-    minValue: -10
-    maxValue: 10
-    defaultValue: 0
-    description: "Read/Set the voltage value of analog output channel 1.
-      Warning: Write values only take effect if this channel is not
-      busy playing a preset waveform. Write error otherwise.
-      Warning: Returns a READ_ERROR if any AO channel is currently
-      busy playing a preset waveform."
-
+    description: >-
+      Reflects and specifies the output voltage of analog output channel 1 in
+      volts. Writes fail with an error while this channel is playing a preset
+      waveform, and reads fail with an error while any channel is playing a
+      preset waveform.
   AOChannel2:
+    <<: *aoChannel
     address: 39
-    type: Float
-    access: Write
-    minValue: -10
-    maxValue: 10
-    defaultValue: 0
-    description: "Read/Set the voltage value of analog output channel 2.
-      Warning: Write values only take effect if this channel is not
-      busy playing a preset waveform. Write error otherwise.
-      Warning: Returns a READ_ERROR if any AO channel is currently
-      busy playing a preset waveform."
-
+    description: >-
+      Reflects and specifies the output voltage of analog output channel 2 in
+      volts. Writes fail with an error while this channel is playing a preset
+      waveform, and reads fail with an error while any channel is playing a
+      preset waveform.
   AOChannel3:
+    <<: *aoChannel
     address: 40
-    type: Float
-    access: Write
-    minValue: -10
-    maxValue: 10
-    defaultValue: 0
-    description: "Read/Set the voltage value of analog output channel 3.
-      Warning: Write values only take effect if this channel is not
-      busy playing a preset waveform. Write error otherwise.
-      Warning: Returns a READ_ERROR if any AO channel is currently
-      busy playing a preset waveform."
+    description: >-
+      Reflects and specifies the output voltage of analog output channel 3 in
+      volts. Writes fail with an error while this channel is playing a preset
+      waveform, and reads fail with an error while any channel is playing a
+      preset waveform.
 
   DacReady:
     address: 41
     type: U8
     access: Read
-    maskType: AOPort
-    description: ""
-
+    maskType: AnalogOutputs
+    description: Reflects which analog output channels are configured and ready to start.
   DacStart:
     address: 42
     type: U8
-    access: Write, Event
-    maskType: AOPort
-    description: "Write to this register to start any/all ready channels.
-      Events received from this register represent a bitmask of
-      channels started via external trigger."
-
+    access: [Write, Event]
+    maskType: AnalogOutputs
+    description: >-
+      Starts the waveform player on the ready analog output channels specified
+      in the mask. Events from this register report the channels that were
+      started by an external trigger.
   DacPause:
     address: 43
     type: U8
     access: Write
-    maskType: AOPort
-    description: "Write to this register to pause/resume any/all busy channels.
-      Writing a 1 pauses the corresponding channel. Writing a 0
-      resumes the corresponding channel."
-
+    maskType: AnalogOutputs
+    description: Pauses the channels set in the mask and resumes those cleared in it.
   DacAbort:
     address: 44
     type: U8
     access: Write
-    maskType: AOPort
-    description: ""
-
+    maskType: AnalogOutputs
+    description: Aborts waveform playback on the analog output channels specified in the mask.
   DacFinished:
     address: 45
     type: U8
     access: Event
-    maskType: AOPort
-    description: ""
+    maskType: AnalogOutputs
+    description: Reports which analog output channels have finished playing their waveform.
 
-  ChannelExternalTriggers0:
+  ChannelExternalTriggers0: &channelExternalTriggers
     address: 46
     type: U8
     access: Write
-    maskType: DOPort
-    description: "For Analog 0utput Channel 0, which Digital
-      Input pins, specified by mask, can trigger the channel
-      to start."
+    maskType: DigitalInputs
+    description: Specifies which external trigger lines can start channel 0.
   ChannelExternalTriggers1:
+    <<: *channelExternalTriggers
     address: 47
-    type: U8
-    access: Write
-    maskType: DOPort
-    description: "For Analog Output Channel 1, which Digital
-      Input pins, specified by mask, can trigger the channel
-      to start."
+    description: Specifies which external trigger lines can start channel 1.
   ChannelExternalTriggers2:
+    <<: *channelExternalTriggers
     address: 48
-    type: U8
-    access: Write
-    maskType: DOPort
-    description: "For Analog Output Channel 2, which Digital
-      Input pins, specified by mask, can trigger the channel
-      to start."
+    description: Specifies which external trigger lines can start channel 2.
   ChannelExternalTriggers3:
+    <<: *channelExternalTriggers
     address: 49
-    type: U8
-    access: Write
-    maskType: DOPort
-    description: "For Analog Output Channel 3, which Digital
-      Input pins, specified by mask, can trigger the channel
-      to start."
+    description: Specifies which external trigger lines can start channel 3.
 
-  ActivePlayers0:
+  ActivePlayer0: &activePlayer
     address: 50
     type: U8
     access: Write
-    description: "For Analog Output Channel 0, which waveform
-      player is active: file, sine, or trapezoid."
-    payloadSpec:
-      Player:
-        offset: 0
-        maskType: PlayerType
-  ActivePlayers1:
+    maskType: PlayerType
+    description: Specifies which waveform player drives analog output channel 0.
+  ActivePlayer1:
+    <<: *activePlayer
     address: 51
-    type: U8
-    access: Write
-    description: "For Analog Output Channel 1, which waveform
-      player is active: file, sine, or trapezoid."
-    payloadSpec:
-      Player:
-        offset: 0
-        maskType: PlayerType
-  ActivePlayers2:
+    description: Specifies which waveform player drives analog output channel 1.
+  ActivePlayer2:
+    <<: *activePlayer
     address: 52
-    type: U8
-    access: Write
-    description: "For Analog Output Channel 2, which waveform
-      player is active: file, sine, or trapezoid."
-    payloadSpec:
-      Player:
-        offset: 0
-        maskType: PlayerType
-  ActivePlayers3:
+    description: Specifies which waveform player drives analog output channel 2.
+  ActivePlayer3:
+    <<: *activePlayer
     address: 53
-    type: U8
-    access: Write
-    description: "For Analog Output Channel 3, which waveform
-      player is active: file, sine, or trapezoid."
-    payloadSpec:
-      Player:
-        offset: 0
-        maskType: PlayerType
+    description: Specifies which waveform player drives analog output channel 3.
 
-  FileSettings0:
+  FileSettings0: &fileSettings
     address: 54
     type: U8
-    access: Write
     length: 45
-    description: "Struct to configure Analog Output Channel 0
-      File Player settings: cycles (U32), duration_us (U32),
-      update_frequency_hz (U32), path (U8 array, 33 elements)"
+    access: Write
+    description: Specifies the file player settings for analog output channel 0.
     payloadSpec:
-      <<: *file_settings_spec
+      <<: *filePayload
   FileSettings1:
+    <<: *fileSettings
     address: 55
-    type: U8
-    access: Write
-    length: 45
-    description: "Struct to configure Analog Output Channel 1
-      File Player settings: cycles (U32), duration_us (U32),
-      update_frequency_hz (U32), path (U8 array, 33 elements)"
-    payloadSpec:
-      <<: *file_settings_spec
+    description: Specifies the file player settings for analog output channel 1.
   FileSettings2:
+    <<: *fileSettings
     address: 56
-    type: U8
-    access: Write
-    length: 45
-    description: "Struct to configure Analog Output Channel 2
-      File Player settings: cycles (U32), duration_us (U32),
-      update_frequency_hz (U32), path (U8 array, 33 elements)"
-    payloadSpec:
-      <<: *file_settings_spec
+    description: Specifies the file player settings for analog output channel 2.
   FileSettings3:
+    <<: *fileSettings
     address: 57
-    type: U8
-    access: Write
-    length: 45
-    description: "Struct to configure Analog Output Channel 3
-      File Player settings: cycles (U32), duration_us (U32),
-      update_frequency_hz (U32), path (U8 array, 33 elements)"
-    payloadSpec:
-      <<: *file_settings_spec
-  SineSettings0:
+    description: Specifies the file player settings for analog output channel 3.
+
+  SineSettings0: &sineSettings
     address: 58
     type: U8
-    access: Write
     length: 24
-    description: "Struct to configure Analog Output Channel 0
-      Sine Player settings: cycles (U32), duration_us (U32),
-      update_frequency_hz (U32), frequency_hz (U32),
-      amplitude_volts (Float), vertical_shift_volts (Float)."
+    access: Write
+    description: Specifies the sine player settings for analog output channel 0.
     payloadSpec:
-      <<: *function_settings_spec
+      <<: *functionPayload
   SineSettings1:
+    <<: *sineSettings
     address: 59
-    type: U8
-    access: Write
-    length: 24
-    description: "Struct to configure Analog Output Channel 1
-      Sine Player settings: cycles (U32), duration_us (U32),
-      update_frequency_hz (U32), frequency_hz (U32),
-      amplitude_volts (Float), vertical_shift_volts (Float)."
-    payloadSpec:
-      <<: *function_settings_spec
+    description: Specifies the sine player settings for analog output channel 1.
   SineSettings2:
+    <<: *sineSettings
     address: 60
-    type: U8
-    access: Write
-    length: 24
-    description: "Struct to configure Analog Output Channel 2
-      Sine Player settings: cycles (U32), duration_us (U32),
-      update_frequency_hz (U32), frequency_hz (U32),
-      amplitude_volts (Float), vertical_shift_volts (Float)."
-    payloadSpec:
-      <<: *function_settings_spec
+    description: Specifies the sine player settings for analog output channel 2.
   SineSettings3:
+    <<: *sineSettings
     address: 61
-    type: U8
-    access: Write
-    length: 24
-    description: "Struct to configure Analog Output Channel 3
-      Sine Player settings: cycles (U32), duration_us (U32),
-      update_frequency_hz (U32), frequency_hz (U32),
-      amplitude_volts (Float), vertical_shift_volts (Float)."
-    payloadSpec:
-      <<: *function_settings_spec
+    description: Specifies the sine player settings for analog output channel 3.
 
-  TrapezoidSettings0:
+  TrapezoidSettings0: &trapezoidSettings
     address: 62
     type: U8
-    access: Write
     length: 32
-    description: "Struct to configure Analog Output Channel 0
-      Trapezoid Player settings: cycles (U32), duration_us (U32),
-      update_frequency_hz (U32), frequency_hz (U32),
-      amplitude_volts (Float), vertical_shift_volts (Float),
-      ramp_on_us (U32), ramp_off_us (U32)"
+    access: Write
+    description: Specifies the trapezoid player settings for analog output channel 0.
     payloadSpec:
-      <<: *trapezoid_settings_spec
+      <<: *trapezoidPayload
   TrapezoidSettings1:
+    <<: *trapezoidSettings
     address: 63
-    type: U8
-    access: Write
-    length: 32
-    description: "Struct to configure Analog Output Channel 1
-      Trapezoid Player settings: cycles (U32), duration_us (U32),
-      update_frequency_hz (U32), frequency_hz (U32),
-      amplitude_volts (Float), vertical_shift_volts (Float),
-      ramp_on_us (U32), ramp_off_us (U32)"
-    payloadSpec:
-      <<: *trapezoid_settings_spec
+    description: Specifies the trapezoid player settings for analog output channel 1.
   TrapezoidSettings2:
+    <<: *trapezoidSettings
     address: 64
-    type: U8
-    access: Write
-    length: 32
-    description: "Struct to configure Analog Output Channel 2
-      Trapezoid Player settings: cycles (U32), duration_us (U32),
-      update_frequency_hz (U32), frequency_hz (U32),
-      amplitude_volts (Float), vertical_shift_volts (Float),
-      ramp_on_us (U32), ramp_off_us (U32)"
-    payloadSpec:
-      <<: *trapezoid_settings_spec
+    description: Specifies the trapezoid player settings for analog output channel 2.
   TrapezoidSettings3:
+    <<: *trapezoidSettings
     address: 65
-    type: U8
-    access: Write
-    length: 32
-    description: "Struct to configure Analog Output Channel 3
-      Trapezoid Player settings: cycles (U32), duration_us (U32),
-      update_frequency_hz (U32), frequency_hz (U32),
-      amplitude_volts (Float), vertical_shift_volts (Float),
-      ramp_on_us (U32), ramp_off_us (U32)"
-    payloadSpec:
-      <<: *trapezoid_settings_spec
+    description: Specifies the trapezoid player settings for analog output channel 3.
 
 bitMasks:
-  DOPort:
-    description: "Available digital output pins on the device"
+  DigitalInputs:
+    description: Specifies the external trigger input lines available on the device.
     bits:
       None: 0x0
-      DO0: 0x1
-      DO1: 0x2
-      DO2: 0x4
-      DO3: 0x8
-  AOPort:
-    description: "Available +/-10V analog outputs on the device"
+      DI0:
+        value: 0x1
+        description: External trigger input line 0.
+      DI1:
+        value: 0x2
+        description: External trigger input line 1.
+      DI2:
+        value: 0x4
+        description: External trigger input line 2.
+      DI3:
+        value: 0x8
+        description: External trigger input line 3.
+
+  DigitalOutputs:
+    description: Specifies the digital output lines available on the device.
     bits:
       None: 0x0
-      AO0: 0x1
-      AO1: 0x2
-      AO2: 0x4
-      AO3: 0x8
+      DO0:
+        value: 0x1
+        description: Digital output line 0.
+      DO1:
+        value: 0x2
+        description: Digital output line 1.
+      DO2:
+        value: 0x4
+        description: Digital output line 2.
+      DO3:
+        value: 0x8
+        description: Digital output line 3.
+
+  AnalogOutputs:
+    description: Specifies the ten volt bipolar analog output channels available on the device.
+    bits:
+      None: 0x0
+      AO0:
+        value: 0x1
+        description: Analog output channel 0.
+      AO1:
+        value: 0x2
+        description: Analog output channel 1.
+      AO2:
+        value: 0x4
+        description: Analog output channel 2.
+      AO3:
+        value: 0x8
+        description: Analog output channel 3.
 
 groupMasks:
   PlayerType:
-    description: ""
+    description: Specifies the waveform player driving an analog output channel.
     values:
-      File: 0x0
-      Sine: 0x1
-      Trapezoid: 0x2
+      File:
+        value: 0
+        description: Plays samples streamed from a file on the SD card.
+      Sine:
+        value: 1
+        description: Plays a synthesized sine waveform.
+      Trapezoid:
+        value: 2
+        description: Plays a synthesized trapezoid waveform.
