@@ -1,81 +1,90 @@
 #!/usr/bin/env python3
+"""Trigger a trapezoid waveform on one analog output channel."""
+import threading
 from time import sleep
-from pyharp.device import Device
-from pyharp.messages import (WriteU8HarpMessage, WriteU8ArrayMessage,
-    ReadU8HarpMessage)
-from app_registers import AppRegs, WaveformType, TRAPEZOID_SETTINGS_FMT
 
-#import logging
-# logging.basicConfig(level=logging.DEBUG)
-COM_PORT = "/dev/ttyACM0"
+import os
+from harp.protocol import HarpMessage
+from harp.serial import open_device
 
+from app_registers import ACTIVE_PLAYERS, AppRegs, TRAPEZOID_SETTINGS, WaveformType
+
+# -------------------------------------------------------------------
+# CUSTOM SETTINGS
+COM_PORT = "/dev/ttyACM0" if os.name == "posix" else "COM3"
 CHANNEL = 0
-WAVEFORM_TYPE =  WaveformType.Trapezoid
-WAVEFORM_FMT = TRAPEZOID_SETTINGS_FMT
-BASE_SETTINGS_REG = AppRegs.TrapezoidSettings0
+WAVEFORM_TYPE = WaveformType.TRAPEZOID
+ACTIVE_PLAYER_REG = ACTIVE_PLAYERS[CHANNEL]
+SETTINGS_REG = TRAPEZOID_SETTINGS[CHANNEL]
 
 cycles = 1
 duration_us = 1_000_000
-sample_rate_hz = 10_000
+update_frequency_hz = 10_000
 frequency_hz = 3
 amplitude_volts = 5 # center-to-peak, not peak-to-peak
 vertical_shift_volts = 2.5
 ramp_on_us = 100_000
 ramp_off_us = 100_000
 
-# Open the device and print the info on screen
-# Open serial connection and save communication to a file
-device = Device(COM_PORT, "ibl.bin")
+# -------------------------------------------------------------------
+
+# Open the device (validates WhoAmI against device.yml) and print the info on
+# screen. There is no built-in raw-traffic dump file in the new package (the
+# old "ibl.bin" argument); use device.subscribe_all() if that's needed again.
+device = open_device(AppRegs, port=COM_PORT)
 
 # Specify Player
 print(f"Setting channel {CHANNEL} to {WAVEFORM_TYPE.name} Player.")
-reply = device.send(WriteU8HarpMessage(AppRegs.ActivePlayers0 + CHANNEL,
-                                       WAVEFORM_TYPE.value).frame)
-print(f"  Read back: {WaveformType(reply.payload[0]).name}, time: {reply.timestamp}")
+reply = device.write(ACTIVE_PLAYER_REG, WAVEFORM_TYPE)
+print(f"  Read back: {reply.payload.player.name}, time: {reply.timestamp}")
 
-settings = (
-    cycles,
-    duration_us,
-    sample_rate_hz,
-    frequency_hz,
-    amplitude_volts,
-    vertical_shift_volts,
-    ramp_on_us,
-    ramp_off_us
+settings = SETTINGS_REG.payload_class(
+    cycles=cycles,
+    duration_us=duration_us,
+    update_frequency_hz=update_frequency_hz,
+    frequency_hz=frequency_hz,
+    amplitude_volts=amplitude_volts,
+    vertical_shift_volts=vertical_shift_volts,
+    ramp_on_us=ramp_on_us,
+    ramp_off_us=ramp_off_us,
 )
 # Apply settings.
-reply = device.send(WriteU8ArrayMessage(BASE_SETTINGS_REG + CHANNEL,
-                                        WAVEFORM_FMT, settings,).frame)
+reply = device.write(SETTINGS_REG, settings)
 print(f"TrapezoidSettings[{CHANNEL}] -> {settings}, "
       f"({reply.message_type.name})")
 
 # Ensure waveform is ready.
+channel_mask = 1 << CHANNEL
 channel_is_ready = False
 while not channel_is_ready:
-    reply = device.send(ReadU8HarpMessage(AppRegs.DacReady).frame)
-    channel_is_ready = bool(reply.payload[0] >> CHANNEL)
+    reply = device.read(AppRegs.DacReady)
+    channel_is_ready = bool(int(reply.payload) & channel_mask)
     if not channel_is_ready:
         print(f"Channel[{CHANNEL}] is not yet ready...")
         sleep(0.1)
 print(f"Channel[{CHANNEL}] is ready.")
 
-# Trigger waveform.
-print("Starting waveform.")
-start_mask = 1 << CHANNEL
-reply = device.send(WriteU8HarpMessage(AppRegs.DacStart, start_mask).frame)
-print(f" Read back: 0x{reply.payload[0]:02x} ({reply.message_type.name}), "
-      f"time: {reply.timestamp}")
+# Subscribe to the end-of-waveform event *before* triggering, so a fast
+# finish can't be missed between starting the waveform and waiting for it.
+waveform_finished = threading.Event()
 
-# Wait for waveform-finished event.
-print("Waiting for end-of-waveform event.")
-waveform_playing = True
-while waveform_playing:
-    events = device.get_events()
-    for msg in events:
-        print(msg)
-        print()
-        if msg.address == AppRegs.DacFinished:
-            waveform_playing = False
+
+def on_dac_finished(msg: HarpMessage) -> None:
+    print(msg)
+    print()
+    waveform_finished.set()
+
+
+with device.subscribe(AppRegs.DacFinished, on_dac_finished):
+    # Trigger waveform.
+    print("Starting waveform.")
+    reply = device.write(AppRegs.DacStart, channel_mask)
+    print(f" Read back: 0x{int(reply.payload):02x} ({reply.message_type.name}), "
+          f"time: {reply.timestamp}")
+
+    # Wait for waveform-finished event.
+    print("Waiting for end-of-waveform event.")
+    waveform_finished.wait()
 
 print("Done.")
-device.disconnect()
+device.close()

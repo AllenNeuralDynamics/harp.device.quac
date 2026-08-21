@@ -1,29 +1,24 @@
 #!/usr/bin/env python3
-from pyharp.device import Device, DeviceMode
-from pyharp.messages import WriteU8HarpMessage, WriteU8ArrayMessage
-from pyharp.messages import MessageType
-from pyharp.messages import CommonRegisters as Regs
-from struct import pack, unpack
-import logging
 import os
 from time import sleep
+
+from harp.serial import open_device
+
 from app_registers import AppRegs
 
-#logging.basicConfig(level=logging.DEBUG)
+# ----CUSTOM SETTINGS------------------------------------------------
+COM_PORT = "/dev/ttyACM0" if os.name == "posix" else "COM3"
 
+# ----END OF CUSTOM SETTINGS-----------------------------------------
 
-# Open the device and print the info on screen
-# Open serial connection and save communication to a file
-if os.name == 'posix': # check for Linux.
-    device = Device("/dev/ttyACM0", "ibl.bin")
-else: # assume Windows.
-    device = Device("COM95", "ibl.bin")
+device = open_device(AppRegs, port=COM_PORT)
 
 for i in range(4):
     value = int(1) << i
-    print("Writing: 0x{value:02x}", end = " ")
-    reply = device.send(WriteU8HarpMessage(AppRegs.DOPortState, value).frame)
-    print(f" Read back: 0x{reply.payload[0]:02x}")
+    print(f"Writing: 0x{value:02x}", end = " ")
+    reply = device.write(AppRegs.DOPortState, value)
+    print(f" Read back: 0x{int(reply.payload):02x}")
     sleep(0.5)
 print("Setting all Digital outputs to 0.")
-reply = device.send(WriteU8HarpMessage(AppRegs.DOPortState, 0).frame)
+reply = device.write(AppRegs.DOPortState, 0)
+device.close()
