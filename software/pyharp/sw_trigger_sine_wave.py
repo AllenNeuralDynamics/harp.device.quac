@@ -22,7 +22,7 @@ update_frequency_hz = 10_000
 frequency_hz = 1
 duration_us = 2_000_000
 amplitude_volts = 2.5 # center-to-peak, not peak-to-peak
-vertical_shift_volts = 0
+vertical_shift_volts = 1.25
 
 # ----END OF CUSTOM SETTINGS-----------------------------------------
 
@@ -35,15 +35,15 @@ device = open_device(AppRegs, port=COM_PORT)
 # Specify Player
 print(f"Setting channel {CHANNEL} to {WAVEFORM_TYPE.name} Player.")
 reply = device.write(ACTIVE_PLAYER_REG, WAVEFORM_TYPE)
-print(f"  Read back: {reply.payload.player.name}, time: {reply.timestamp}")
+print(f"  Read back: {reply.payload.name}, time: {reply.timestamp}")
 
 settings = SETTINGS_REG.payload_class(
     cycles=cycles,
-    duration_us=duration_us,
-    update_frequency_hz=update_frequency_hz,
-    frequency_hz=frequency_hz,
-    amplitude_volts=amplitude_volts,
-    vertical_shift_volts=vertical_shift_volts,
+    duration=duration_us,
+    update_frequency=update_frequency_hz,
+    frequency=frequency_hz,
+    amplitude=amplitude_volts,
+    vertical_shift=vertical_shift_volts,
 )
 # Apply settings.
 reply = device.write(SETTINGS_REG, settings)
@@ -53,6 +53,9 @@ print()
 
 channel_mask = 1 << CHANNEL
 
+# Subscribe to the end-of-waveform event *before* triggering, so a fast
+# finish can't be missed between starting the waveform and waiting for it.
+waveform_finished = threading.Event()
 
 def on_dac_finished(msg: HarpMessage) -> None:
     print(msg)
@@ -60,33 +63,16 @@ def on_dac_finished(msg: HarpMessage) -> None:
     waveform_finished.set()
 
 
-try:
-    # Ensure waveform is ready.
-    channel_is_ready = False
-    while not channel_is_ready:
-        reply = device.read(AppRegs.DacReady)
-        channel_is_ready = bool(int(reply.payload) & channel_mask)
-        if not channel_is_ready:
-            print(f"Channel[{CHANNEL}] is not yet ready...")
-            sleep(0.1)
-    print(f"Channel[{CHANNEL}] is ready.")
-    input("press Enter to start.")
+with device.subscribe(AppRegs.DacFinished, on_dac_finished):
+    # Trigger waveform.
     print("Starting waveform.")
+    reply = device.write(AppRegs.DacStart, channel_mask)
+    print(f" Read back: 0x{int(reply.payload):02x} ({reply.message_type.name}), "
+          f"time: {reply.timestamp}")
 
-    # Subscribe to the end-of-waveform event *before* triggering, so a
-    # fast finish can't be missed.
-    waveform_finished = threading.Event()
-    with device.subscribe(AppRegs.DacFinished, on_dac_finished):
-        reply = device.write(AppRegs.DacStart, channel_mask)
-        print(f" Read back: 0x{int(reply.payload):02x} ({reply.message_type.name}), "
-            f"time: {reply.timestamp}")
-        # Wait for waveform-finished event.
-        print("Waiting for end-of-waveform event.")
-        waveform_finished.wait()
-    # Re-trigger waveform.
-except KeyboardInterrupt:
-    print("Keyboard interrupt received. Exiting loop.")
-    pass
-    
+    # Wait for waveform-finished event.
+    print("Waiting for end-of-waveform event.")
+    waveform_finished.wait()
+
 print("Disconnecting.")
 device.close()

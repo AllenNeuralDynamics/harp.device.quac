@@ -28,8 +28,8 @@ update_frequency_hz = 500_000
 
 settings = [
     FILE_SETTINGS[i].payload_class(
-        cycles=cycles, duration_us=duration_us,
-        update_frequency_hz=update_frequency_hz, path=f"channel_{i}.bin",
+        cycles=cycles, duration=duration_us,
+        update_frequency=update_frequency_hz, path=f"channel_{i}.bin",
     )
     for i in range(NUM_CHANNELS)
 ]
@@ -37,7 +37,7 @@ settings = [
 print(f"Setting all active players to {WAVEFORM_TYPE.name}")
 for i in range(NUM_CHANNELS):
     reply = device.write(ACTIVE_PLAYERS[i], WAVEFORM_TYPE)
-    print(f" Read back: {reply.payload.player.name} ({reply.message_type.name}), "
+    print(f" Read back: {reply.payload.name} ({reply.message_type.name}), "
           f"time: {reply.timestamp}")
 print()
 

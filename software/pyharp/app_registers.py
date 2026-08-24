@@ -25,8 +25,8 @@ WaveformType = AppRegs.PlayerType
 # Per-channel register lookups, so scripts can index by channel number the
 # same way the old code added CHANNEL to a base register address.
 ACTIVE_PLAYERS = [
-    AppRegs.ActivePlayers0, AppRegs.ActivePlayers1,
-    AppRegs.ActivePlayers2, AppRegs.ActivePlayers3,
+    AppRegs.ActivePlayer0, AppRegs.ActivePlayer1,
+    AppRegs.ActivePlayer2, AppRegs.ActivePlayer3,
 ]
 FILE_SETTINGS = [
     AppRegs.FileSettings0, AppRegs.FileSettings1,

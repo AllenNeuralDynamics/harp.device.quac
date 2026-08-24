@@ -36,17 +36,17 @@ device = open_device(AppRegs, port=COM_PORT)
 # Specify Player
 print(f"Setting channel {CHANNEL} to {WAVEFORM_TYPE.name} Player.")
 reply = device.write(ACTIVE_PLAYER_REG, WAVEFORM_TYPE)
-print(f"  Read back: {reply.payload.player.name}, time: {reply.timestamp}")
+print(f"  Read back: {reply.payload.name}, time: {reply.timestamp}")
 
 settings = SETTINGS_REG.payload_class(
     cycles=cycles,
-    duration_us=duration_us,
-    update_frequency_hz=update_frequency_hz,
-    frequency_hz=frequency_hz,
-    amplitude_volts=amplitude_volts,
-    vertical_shift_volts=vertical_shift_volts,
-    ramp_on_us=ramp_on_us,
-    ramp_off_us=ramp_off_us,
+    duration=duration_us,
+    update_frequency=update_frequency_hz,
+    frequency=frequency_hz,
+    amplitude=amplitude_volts,
+    vertical_shift=vertical_shift_volts,
+    ramp_on_duration=ramp_on_us,
+    ramp_off_duration=ramp_off_us,
 )
 # Apply settings.
 reply = device.write(SETTINGS_REG, settings)
