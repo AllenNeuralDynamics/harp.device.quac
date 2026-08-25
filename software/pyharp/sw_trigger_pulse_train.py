@@ -7,7 +7,10 @@ import os
 from harp.protocol import HarpMessage
 from harp.serial import open_device
 
-from app_registers import ACTIVE_PLAYERS, AppRegs, TRAPEZOID_SETTINGS, WaveformType
+from app_registers import (device_module, 
+                           ACTIVE_PLAYERS, 
+                           TRAPEZOID_SETTINGS, 
+                           WaveformType)
 
 # -------------------------------------------------------------------
 # CUSTOM SETTINGS
@@ -31,7 +34,7 @@ ramp_off_us = 100_000
 # Open the device (validates WhoAmI against device.yml) and print the info on
 # screen. There is no built-in raw-traffic dump file in the new package (the
 # old "ibl.bin" argument); use device.subscribe_all() if that's needed again.
-device = open_device(AppRegs, port=COM_PORT)
+device = open_device(device_module, port=COM_PORT)
 
 # Specify Player
 print(f"Setting channel {CHANNEL} to {WAVEFORM_TYPE.name} Player.")
@@ -57,8 +60,8 @@ print(f"TrapezoidSettings[{CHANNEL}] -> {settings}, "
 channel_mask = 1 << CHANNEL
 channel_is_ready = False
 while not channel_is_ready:
-    reply = device.read(AppRegs.DacReady)
-    channel_is_ready = bool(int(reply.payload) & channel_mask)
+    reply = device.read(device_module.DacReady)
+    channel_is_ready = (reply.payload) & channel_mask > 0
     if not channel_is_ready:
         print(f"Channel[{CHANNEL}] is not yet ready...")
         sleep(0.1)
@@ -75,10 +78,10 @@ def on_dac_finished(msg: HarpMessage) -> None:
     waveform_finished.set()
 
 
-with device.subscribe(AppRegs.DacFinished, on_dac_finished):
+with device.subscribe(device_module.DacFinished, on_dac_finished):
     # Trigger waveform.
     print("Starting waveform.")
-    reply = device.write(AppRegs.DacStart, channel_mask)
+    reply = device.write(device_module.DacStart, channel_mask)
     print(f" Read back: 0x{int(reply.payload):02x} ({reply.message_type.name}), "
           f"time: {reply.timestamp}")
 
