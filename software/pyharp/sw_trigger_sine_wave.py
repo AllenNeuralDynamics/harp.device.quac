@@ -1,90 +1,81 @@
 #!/usr/bin/env python3
+"""Trigger a sine waveform on one analog output channel, repeatedly on Enter."""
+import os
+import threading
 from time import sleep
-from pyharp.device import Device
-from pyharp.messages import (WriteU8HarpMessage, WriteU8ArrayMessage,
-    ReadU8HarpMessage)
-from app_registers import AppRegs, WaveformType, SINE_SETTINGS_FMT
-from struct import unpack
 
-#import logging
-# logging.basicConfig(level=logging.DEBUG)
-COM_PORT = "/dev/ttyACM0"
+from harp.protocol import HarpMessage
+from harp.serial import open_device
+
+from app_registers import (device_module, 
+                           ACTIVE_PLAYERS, 
+                           SINE_SETTINGS, 
+                           WaveformType)
+
+# ----CUSTOM SETTINGS------------------------------------------------
+COM_PORT = "/dev/ttyACM0" if os.name == "posix" else "COM3"
 
 CHANNEL = 0
-WAVEFORM_TYPE =  WaveformType.Sine
-WAVEFORM_FMT = SINE_SETTINGS_FMT
-BASE_SETTINGS_REG = AppRegs.SineSettings0
-
+WAVEFORM_TYPE = WaveformType.SINE
+ACTIVE_PLAYER_REG = ACTIVE_PLAYERS[CHANNEL]
+SETTINGS_REG = SINE_SETTINGS[CHANNEL]
 
 cycles = 2
-sample_rate_hz = 10_000
+update_frequency_hz = 10_000
 frequency_hz = 1
 duration_us = 2_000_000
 amplitude_volts = 2.5 # center-to-peak, not peak-to-peak
-vertical_shift_volts = 0
+vertical_shift_volts = 1.25
 
-# Open the device and print the info on screen
-# Open serial connection and save communication to a file
-device = Device(COM_PORT, "ibl.bin")
+# ----END OF CUSTOM SETTINGS-----------------------------------------
 
-# Specify Player
-print(f"Setting channel {CHANNEL} to {WAVEFORM_TYPE.name} Player.")
-reply = device.send(WriteU8HarpMessage(AppRegs.ActivePlayers0 + CHANNEL,
-                                       WAVEFORM_TYPE.value).frame)
-print(f"  Read back: {WaveformType(reply.payload[0]).name}, time: {reply.timestamp}")
 
-settings = (
-    cycles,
-    duration_us,
-    sample_rate_hz,
-    frequency_hz,
-    amplitude_volts,
-    vertical_shift_volts
-)
-# Apply settings.
-reply = device.send(WriteU8ArrayMessage(BASE_SETTINGS_REG + CHANNEL,
-                                        WAVEFORM_FMT, settings,).frame)
-print(f"SineSettings[{CHANNEL}] -> {settings}, ({reply.message_type.name})")
-print(f"reply: {unpack(WAVEFORM_FMT, bytes(reply.payload))}")
-print()
-# Ensure waveform is ready.
-channel_is_ready = False
-while not channel_is_ready:
-    reply = device.send(ReadU8HarpMessage(AppRegs.DacReady).frame)
-    channel_is_ready = bool(reply.payload[0] >> CHANNEL)
-    if not channel_is_ready:
-        print(f"Channel[{CHANNEL}] is not yet ready...")
-        sleep(0.1)
+# Open the device (validates WhoAmI against device.yml) and print the info on
+# screen. There is no built-in raw-traffic dump file in the new package (the
+# old "ibl.bin" argument); use device.subscribe_all() if that's needed again.
+with open_device(device_module, port=COM_PORT) as device:
 
-while (True):
-    try:
-        # Ensure waveform is ready.
-        channel_is_ready = False
-        while not channel_is_ready:
-            reply = device.send(ReadU8HarpMessage(AppRegs.DacReady).frame)
-            channel_is_ready = bool(reply.payload[0] >> CHANNEL)
-            if not channel_is_ready:
-                print(f"Channel[{CHANNEL}] is not yet ready...")
-                sleep(0.1)
-        print(f"Channel[{CHANNEL}] is ready.")
-        input("press Enter to start.")
+    # Specify Player
+    print(f"Setting channel {CHANNEL} to {WAVEFORM_TYPE.name} Player.")
+    reply = device.write(ACTIVE_PLAYER_REG, WAVEFORM_TYPE)
+    print(f"  Read back: {reply.payload.name}, time: {reply.timestamp}")
+
+    settings = SETTINGS_REG.payload_class(
+        cycles=cycles,
+        duration=duration_us,
+        update_frequency=update_frequency_hz,
+        frequency=frequency_hz,
+        amplitude=amplitude_volts,
+        vertical_shift=vertical_shift_volts,
+    )
+    # Apply settings.
+    reply = device.write(SETTINGS_REG, settings)
+    print(f"SineSettings[{CHANNEL}] -> {settings}, ({reply.message_type.name})")
+    print(f"reply: {reply.payload}")
+    print()
+
+    channel_mask = 1 << CHANNEL
+
+    # Subscribe to the end-of-waveform event *before* triggering, so a fast
+    # finish can't be missed between starting the waveform and waiting for it.
+    waveform_finished = threading.Event()
+
+    def on_dac_finished(msg: HarpMessage) -> None:
+        print(msg)
+        print()
+        waveform_finished.set()
+
+
+    with device.subscribe(device_module.DacFinished, on_dac_finished):
+        # Trigger waveform.
         print("Starting waveform.")
-        start_mask = 1 << CHANNEL
-        reply = device.send(WriteU8HarpMessage(AppRegs.DacStart, start_mask).frame)
-        print(f" Read back: 0x{reply.payload[0]:02x} ({reply.message_type.name}), "
+        reply = device.write(device_module.DacStart, channel_mask)
+        print(f" Read back: 0x{int(reply.payload):02x} ({reply.message_type.name}), "
             f"time: {reply.timestamp}")
+
         # Wait for waveform-finished event.
         print("Waiting for end-of-waveform event.")
-        waveform_playing = True
-        while waveform_playing:
-            events = device.get_events()
-            for msg in events:
-                print(msg)
-                print()
-                if msg.address == AppRegs.DacFinished:
-                    waveform_playing = False
-        # Re-trigger waveform.
-    except KeyboardInterrupt:
-        break
-print("Disconnecting.")
-device.disconnect()
+        waveform_finished.wait()
+
+    print("Disconnecting.")
+    device.close()

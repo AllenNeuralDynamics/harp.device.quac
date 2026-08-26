@@ -1,32 +1,30 @@
 #!/usr/bin/env python3
-from pyharp.device import Device, DeviceMode
-from pyharp.messages import WriteU16HarpMessage, WriteU16ArrayMessage
-from pyharp.messages import MessageType
-from pyharp.messages import CommonRegisters as Regs
-from struct import pack, unpack
-import logging
-import random
 import os
-from time import sleep
-from app_registers import AppRegs
+import threading
 
-#logging.basicConfig(level=logging.DEBUG)
+from harp.protocol import HarpMessage
+from harp.serial import open_device
+
+from app_registers import device_module
+
+# ----CUSTOM SETTINGS------------------------------------------------
+COM_PORT = "/dev/ttyACM0" if os.name == "posix" else "COM3"
+
+# ----END OF CUSTOM SETTINGS-----------------------------------------
+
+device = open_device(device_module, port=COM_PORT)
 
 
-# Open the device and print the info on screen
-# Open serial connection and save communication to a file
-if os.name == 'posix': # check for Linux.
-    device = Device("/dev/ttyACM0", "ibl.bin")
-else: # assume Windows.
-    device = Device("COM95", "ibl.bin")
+def print_event(msg: HarpMessage) -> None:
+    print(msg)
+    print()
 
 
 print("Waiting for events.")
-try:
-    while True:
-        for event_msg in device.get_events():
-            print(event_msg)
-            print()
-except KeyboardInterrupt:
-    # Close connection
-    device.disconnect()
+with device.subscribe_all(print_event):
+    try:
+        threading.Event().wait()
+    except KeyboardInterrupt:
+        pass
+print("Disconnecting.")
+device.close()
