@@ -5,8 +5,6 @@
 #     "harp",
 #     "gitpython",
 # ]
-# [tool.uv.sources]
-# harp = { git = "https://github.com/harp-tech/python", branch = "main" }
 # ///
 """Trigger four file-based waveforms across all analog output channels."""
 
