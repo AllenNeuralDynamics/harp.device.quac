@@ -1,12 +1,9 @@
 # harp.device.quac
-hardware, firmware, and software source files for a Harp-compatible 4-channel Digital-to-Analog Converter (DAC).
+hardware, firmware, and software source files for a Harp-compatible 4-channel Digital-to-Analog Converter.
 
 <img width="480" src="./assets/pics/cad_mockup.png" />
 
 ## Specs
-Here's a breakdown of the device's features.
-
-### High Level Specs
 * Analog Output Channels: 4
 * Bit depth: 16-bit
 * Update Rate: 100[Hz] to _500[KHz]_ (selectable per-channel)
@@ -49,9 +46,8 @@ The Quac board is a fully Harp-protocol-compliant device built on top of the [Ha
   * Waveform Start (per-channel)
   * Waveform Finished (per-channel)
 
-
 ## Alternates
-The harp.device.quac board is built following a legacy of many other devices that came before it.
+The harp.device.quac board follows a legacy of many other devices that came before it.
 For similar devices, have a look at:
 * [Pulse Pal](https://sanworks.io/shop/viewproduct?productID=1102) by Josh Sanders.
 * [PCIE-6738](https://www.ni.com/docs/en-US/bundle/pcie-6738-specs/page/specs.html) by National Instruments.
