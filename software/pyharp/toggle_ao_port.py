@@ -1,4 +1,12 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "harp",
+#     "gitpython",
+# ]
+# ///
+
 import os
 import random
 from time import sleep
@@ -29,4 +37,4 @@ with open_device(device_module, port=COM_PORT) as device:
     for i in range(NUM_CHANNELS):
         reply = device.write(AO_CHANNELS[i], 0)
         print(f"  result: {reply.payload} ({reply.message_type.name})")
-    device.close()
+    print("Disconnecting.")

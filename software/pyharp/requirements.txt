@@ -1,9 +1,0 @@
-git+https://github.com/harp-tech/python#subdirectory=src/packages/harp-protocol
-git+https://github.com/harp-tech/python#subdirectory=src/packages/harp-device
-git+https://github.com/harp-tech/python#subdirectory=src/packages/harp-serial
-git+https://github.com/harp-tech/python#subdirectory=src/packages/harp-data
-git+https://github.com/harp-tech/python
-gitdb==4.0.12
-gitpython==3.1.50
-smmap==5.0.3
-typing-extensions==4.15.0

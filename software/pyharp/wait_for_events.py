@@ -1,4 +1,12 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "harp",
+#     "gitpython",
+# ]
+# ///
+
 import os
 import threading
 
@@ -12,19 +20,15 @@ COM_PORT = "/dev/ttyACM0" if os.name == "posix" else "COM3"
 
 # ----END OF CUSTOM SETTINGS-----------------------------------------
 
-device = open_device(device_module, port=COM_PORT)
-
-
 def print_event(msg: HarpMessage) -> None:
     print(msg)
     print()
 
 
 print("Waiting for events.")
-with device.subscribe_all(print_event):
-    try:
-        threading.Event().wait()
-    except KeyboardInterrupt:
-        pass
-print("Disconnecting.")
-device.close()
+with open_device(device_module, port=COM_PORT) as device:
+    with device.subscribe_all(print_event):
+        try:
+            threading.Event().wait()
+        except KeyboardInterrupt:
+            print("Disconnecting.")
