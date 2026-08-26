@@ -1,4 +1,14 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "harp",
+#     "gitpython",
+# ]
+# [tool.uv.sources]
+# harp = { git = "https://github.com/harp-tech/python", branch = "main" }
+# ///
+
 import os
 from time import sleep
 
@@ -21,4 +31,4 @@ with open_device(device_module, port=COM_PORT) as device:
         sleep(0.5)
     print("Setting all Digital outputs to 0.")
     reply = device.write(device_module.DOPortState, 0)
-    device.close()
+    print("Disconnecting.")

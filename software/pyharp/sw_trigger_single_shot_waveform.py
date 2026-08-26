@@ -1,5 +1,15 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "harp",
+#     "gitpython",
+# ]
+# [tool.uv.sources]
+# harp = { git = "https://github.com/harp-tech/python", branch = "main" }
+# ///
 """Trigger four file-based waveforms across all analog output channels."""
+
 import os
 import threading
 from time import sleep
@@ -7,9 +17,9 @@ from time import sleep
 from harp.protocol import HarpMessage
 from harp.serial import open_device
 
-from app_registers import (device_module, 
-                           ACTIVE_PLAYERS, 
-                           FILE_SETTINGS, 
+from app_registers import (device_module,
+                           ACTIVE_PLAYERS,
+                           FILE_SETTINGS,
                            WaveformType)
 
 # ----CUSTOM SETTINGS------------------------------------------------
@@ -88,4 +98,3 @@ with open_device(device_module, port=COM_PORT) as device:
         all_finished.wait()
 
     print("Done.")
-    device.close()
