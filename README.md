@@ -148,6 +148,9 @@ But since card performance can vary, here's a list of tested cards:
 
 ### Selectable Player Architecture
 Each channel features a modular approach to dividing up the work of playing waveforms.
+<p align="center">
+  <img width="480" src="./assets/pics/player_architecture.drawio.png" />
+</p>
 
 The level closest to the hardware is a driver that wraps a custom PIO program to communicate over SPI to each LTC2641 DAC chip.
 
@@ -157,9 +160,6 @@ Inspecting the state of the double buffer is implemented by reading single regis
 The layer above features one of multiple ways of generating data.
 These _Players_ are responsible for producing a sequence of bytes up to the limits specified by the user's waveform settings.
 Each _Player_ is derived from a base class that manages sending data to the corresponding available buffer from the downstream double buffer and manages sequence arming and termination.
-<p align="center">
-  <img width="480" src="./assets/pics/player_architecture.drawio.png" />
-</p>
 
 In the full architecture, four copies of the above pipeline exist like so:
 
