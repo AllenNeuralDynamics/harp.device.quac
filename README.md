@@ -82,11 +82,11 @@ The following settings are common to each *Player*.
 ### SinePlayer Waveforms
 
 #### Settings
-* `frequency_hz`: sine wave frequency in hertz.
-* `amplitude_volts`: "center-to-peak" amplitude in volts.
-* `vertical_shift_volts`: vertical shift in volts.
+* `frequency_hz`: sine wave frequency in hertz
+* `amplitude_volts`: "center-to-peak" amplitude in volts
+* `vertical_shift_volts`: vertical shift in volts
 
-  <img width="800" src="./assets/pics/sine_waveform_specs.drawio.png" />
+<img width="800" src="./assets/pics/sine_waveform_specs.drawio.png" />
 
 #### Example Settings: play a 10Hz sine wave for 3 seconds
 | Setting                | Value   | Note                                 |
@@ -109,17 +109,14 @@ The following settings are common to each *Player*.
 | `vertical_shift_volts` | 0     | result will be centered around 0 [V] |
 
 ### TrapezoidPlayer Waveforms
+#### Settings
 * `frequency_hz`: sine wave frequency in hertz.
 * `amplitude_volts`: "center-to-peak" amplitude in volts.
 * `vertical_shift_volts`: vertical shift in volts.
-* `ramp_on_us`
-* `ramp_off_us`
+* `ramp_on_us`:
+* `ramp_off_us`:
 
-
-#### Settings
-* `path`: filepath on the SD card (32-character limit max)
-
-  <img width="800" src="./assets/pics/ramp_waveform_specs.drawio.png" />
+<img width="800" src="./assets/pics/ramp_waveform_specs.drawio.png" />
   
 ### FilePlayer Waveforms from the SD Card 💾
 
