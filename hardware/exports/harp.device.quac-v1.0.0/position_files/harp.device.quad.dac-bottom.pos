@@ -1,9 +1,0 @@
-### Footprint positions - created on 2026-01-01T13:25:42-0800 ###
-### Printed by KiCad version 9.0.6
-## Unit = mm, Angle = deg.
-## Side : bottom
-# Ref     Val                 Package                                           PosX       PosY       Rot  Side
-H1        MountingHole_Pad    Terminal_Keystone_779x_EdgeMount_Horizontal    68.3500    92.4000    0.0000  bottom
-J3        AudioJack3          Jack_3.5mm_CUI_SJ-3524-SMT_Horizontal          34.0000    93.8000  180.0000  bottom
-J14       Barrel_Jack_Switch  BarrelJack_CUI_PJ-102AH_Horizontal             78.9000    86.2000    0.0000  bottom
-## End

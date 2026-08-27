@@ -7132,6 +7132,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Number" "INA630DDFR"
+			(at 90.17 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d95d9783-2e41-4c9a-b1ec-f8d66bd96a41")
 		)
@@ -9219,6 +9228,15 @@
 		)
 		(property "Description" "Bidirectional, Instrumentation Amplifier, SOT-23-8"
 			(at 87.122 109.474 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "INA630DDFR"
+			(at 90.17 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14394,6 +14412,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Number" "INA630DDFR"
+			(at 90.17 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4f8d3b4b-fbd6-4365-9b18-5402dcf8c724")
 		)
@@ -15020,6 +15047,15 @@
 		)
 		(property "Description" "Bidirectional, Instrumentation Amplifier, SOT-23-8"
 			(at 87.122 151.384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Number" "INA630DDFR"
+			(at 90.17 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)

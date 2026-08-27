@@ -2399,6 +2399,15 @@
 				(hide yes)
 			)
 		)
+		(property "Alternate" "VBUS05N1-HD1HG3-08"
+			(at 124.46 143.51 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5d7094f9-09e4-49c5-acc1-f02006588401")
 		)
@@ -4456,6 +4465,15 @@
 				(hide yes)
 			)
 		)
+		(property "Alternate" "VBUS05N1-HD1HG3-08"
+			(at 124.46 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e7047063-4f4b-4d33-be83-8268e0bbbece")
 		)
@@ -5013,6 +5031,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 124.46 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Alternate" "VBUS05N1-HD1HG3-08"
 			(at 124.46 121.92 90)
 			(effects
 				(font
@@ -6038,6 +6065,15 @@
 			)
 		)
 		(property "Supplier Link" ""
+			(at 124.46 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Alternate" "VBUS05N1-HD1HG3-08"
 			(at 124.46 64.77 90)
 			(effects
 				(font

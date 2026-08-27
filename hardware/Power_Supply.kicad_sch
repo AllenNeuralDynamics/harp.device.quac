@@ -7118,6 +7118,15 @@
 				(hide yes)
 			)
 		)
+		(property "Alternate" "PA5430.682NLT "
+			(at 210.82 33.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a4647ac7-c2c9-461a-b39b-7d4d7c184501")
 		)
