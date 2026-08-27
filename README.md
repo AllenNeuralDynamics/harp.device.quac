@@ -8,13 +8,13 @@ hardware, firmware, and software source files for a Harp-compatible 4-channel Di
 ## Specs
 * Analog Output Channels: 4
 * Bit depth: 16-bit
-* Update Rate: 100[Hz] to _500[KHz]_ (selectable per-channel)
+* Update Rate: 100 [Hz] to **500 [KHz]** (selectable per-channel)
   * this is the rate at which a new output value is selected.
-* Voltage Swing: ±10[V]
-* RMS noise at the zero voltage setting: ~±2.5[mV]
-* absolute deviation from 0[V]: ±2.5[mV]
-* Power Input: 12-24[V]
-* Power Input Plug: 2.1 x 5.5mm barrel jack
+* Voltage Swing: ±10 [V]
+* RMS noise at the zero voltage setting: ~±2.5 [mV]
+* absolute deviation from 0 [V]: ±2.5 [mV]
+* Power Input: 12-24 [V]
+* Power Input Plug: 2.1 x 5.5mm barrel jack (positive center)
 * Reverse Polarity protected.
 * Additional M4 _ground lug_ provided for de-noising.
 * Open source hardware, firmware, and software.
@@ -62,15 +62,86 @@ These printed circuit boards are made on-demand.
 ## Generating Waveforms ﮩ٨ـﮩﮩ٨ـ
 There are two ways to generate waveforms: either with one of two primitive waveform generators or by playing files from the SD card.
 
+Setting up and playing a waveform is a simple process for each Analog Output (AO) channel.
+1. Specify any external input trigger conditions for the output channel.
+2. Specify the Waveform *Player*.
+3. Specify the *Player*'s settings.
+4. Wait until the Player is ready (< 50[ms] of wait time for the player to apply the settings and arm the waveform).
+5. Trigger the player either with a software command or by applying external input to any of the previously configured external input pins.
+
+For fully worked examples of the above steps, see the examples in the [software](./software) folder.
+
+*Player* Settings are detailed below for each *Player*.
+
+### Common Settings
+The following settings are common to each *Player*.
+* `cycles`: number of iterations of the current settings (will probably be 1 in most cases).
+* `duration_us`: duration in microseconds to play the waveform or 0 to either *play-forever* (if the source is infinite ie: periodic functions) or *play-to-completion* (if the source is finite i.e: files on the SD card).
+* `update_frequency_hz`: rate at which samples are produced (max 500 [KHz]).
+
 ### SinePlayer Waveforms
 
+#### Settings
+* `frequency_hz`: sine wave frequency in hertz.
+* `amplitude_volts`: "center-to-peak" amplitude in volts.
+* `vertical_shift_volts`: vertical shift in volts.
+
   <img width="800" src="./assets/pics/sine_waveform_specs.drawio.png" />
-  
+
+#### Example Settings: play a 10Hz sine wave for 3 seconds
+| Setting                | Value   | Note                                 |
+|------------------------|---------|--------------------------------------|
+| `cycles`               | 1       | play the following settings once     |
+| `duration_us`          | 3000000 | play for 3 seconds                   |
+| `update_frequency_hz`  | 10000   | rate at which to produce new samples |
+| `frequency_hz`         | 10      |                                      |
+| `amplitude_volts`      | 0.5     | result will be 1 [V] peak-to-peak    |
+| `vertical_shift_volts` | 0.5     | result will span 0 [V] to 1 [V]      |
+
+#### Example Settings: play a 10Hz sine wave forever
+  | Setting                | Value | Note                               |
+|------------------------|-------|--------------------------------------|
+| `cycles`               | 1     | play the following settings once     |
+| `duration_us`          | 0     | play forever (until aborted)         |
+| `update_frequency_hz`  | 10000 |                                      |
+| `frequency_hz`         | 10    |                                      |
+| `amplitude_volts`      | 0.5   | result will be 1 [V] peak-to-peak    |
+| `vertical_shift_volts` | 0     | result will be centered around 0 [V] |
+
 ### TrapezoidPlayer Waveforms
+* `frequency_hz`: sine wave frequency in hertz.
+* `amplitude_volts`: "center-to-peak" amplitude in volts.
+* `vertical_shift_volts`: vertical shift in volts.
+* `ramp_on_us`
+* `ramp_off_us`
+
+
+#### Settings
+* `path`: filepath on the SD card (32-character limit max)
 
   <img width="800" src="./assets/pics/ramp_waveform_specs.drawio.png" />
-
+  
 ### FilePlayer Waveforms from the SD Card 💾
+
+#### Settings
+* `path`: filepath on the SD card (32-character limit max)
+
+#### Example Settings: play a file once
+| Setting               | Value         | Note                                                            |
+|-----------------------|---------------|-----------------------------------------------------------------|
+| `cycles`              | 1             | play the following settings once                                |
+| `duration_us`         | 0             | play the file to completion                                     |
+| `update_frequency_hz` | 500000        | max update rate (might be different depending on file).         |
+| `path`                | channel_0.bin | assumes this file exists at the top level folder in the SD card |
+
+#### Example Settings: play a file multiple times
+| Setting               | Value         | Note                                       |
+|-----------------------|---------------|--------------------------------------------|
+| `cycles`              | 3             | loop back and play the entire file 3 times |
+| `duration_us`         | 0             |                                            |
+| `update_frequency_hz` | 500000        |                                            |
+| `path`                | channel_0.bin |                                            |
+
 
 The _quac_ board reads files in 16-bit little-endian _Pulse-Code Modulation_ (PCM) format.
 There are a few options for generating waveforms in this format.
