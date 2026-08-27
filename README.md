@@ -184,7 +184,7 @@ To upload new firmware to the device, do the following:
   <img width="400" src="./assets/pics/flash_quac_board.png" />
 </p>
 
-3. Drag and drop the **\*.uf2** firmware file into the flash drive's top level directory. The flash drive should disappear indicating that the firmware upload worked. The device now has new firmware.
+4. Drag and drop the **\*.uf2** firmware file into the flash drive's top level directory. The flash drive should disappear indicating that the firmware upload worked. The device now has new firmware.
 
 ## Known Limitations
 Currently the device has some known limits, many of which are planned to be eclipsed by future firmware releases.
