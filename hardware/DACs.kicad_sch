@@ -6,10 +6,10 @@
 	(paper "A4")
 	(title_block
 		(title "harp device quad dac")
-		(date "2025-07-15")
+		(date "2026-04-28")
 		(rev "1.1")
 		(company "The Allen Institute")
-		(comment 1 "Hexabitz")
+		(comment 1 "Sonya Vasquez")
 	)
 	(lib_symbols
 		(symbol "Amplifier_Operational:OPA2994xD"
@@ -6031,7 +6031,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 25.146 166.878 90)
 			(effects
 				(font
@@ -6050,7 +6050,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 31.75 156.21 0)
 			(effects
 				(font
@@ -6059,7 +6059,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 30.48 161.29 0)
 			(effects
 				(font
@@ -6077,25 +6077,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
-			(at 30.48 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 30.48 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 30.48 161.29 0)
 			(effects
 				(font
@@ -6122,43 +6104,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 30.48 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 30.48 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 30.48 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 30.48 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 30.48 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 30.48 161.29 0)
 			(effects
 				(font
@@ -6284,7 +6239,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 25.146 41.148 90)
 			(effects
 				(font
@@ -6303,7 +6258,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 31.75 30.48 0)
 			(effects
 				(font
@@ -6312,7 +6267,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 30.48 35.56 0)
 			(effects
 				(font
@@ -6330,25 +6285,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
-			(at 30.48 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 30.48 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 30.48 35.56 0)
 			(effects
 				(font
@@ -6375,43 +6312,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 30.48 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 30.48 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 30.48 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 30.48 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 30.48 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 30.48 35.56 0)
 			(effects
 				(font
@@ -6445,7 +6355,7 @@
 			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc05")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "U4")
 					(unit 3)
@@ -6598,24 +6508,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 124.46 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 124.46 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 124.46 125.73 90)
 			(effects
@@ -6626,42 +6518,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 124.46 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 124.46 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 124.46 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 124.46 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 124.46 125.73 90)
 			(effects
 				(font
@@ -6969,24 +6825,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 124.46 41.91 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 124.46 41.91 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 124.46 41.91 90)
 			(effects
@@ -6997,42 +6835,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 124.46 41.91 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 124.46 41.91 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 124.46 41.91 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 124.46 41.91 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 124.46 41.91 90)
 			(effects
 				(font
@@ -7145,24 +6947,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 139.7 161.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 139.7 161.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 139.7 161.29 90)
 			(effects
@@ -7173,42 +6957,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 139.7 161.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 139.7 161.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 139.7 161.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 139.7 161.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 139.7 161.29 90)
 			(effects
 				(font
@@ -7320,24 +7068,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 124.46 83.82 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 124.46 83.82 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 124.46 83.82 90)
 			(effects
@@ -7348,42 +7078,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 124.46 83.82 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 124.46 83.82 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 124.46 83.82 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 124.46 83.82 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 124.46 83.82 90)
 			(effects
 				(font
@@ -7524,24 +7218,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 31.75 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 31.75 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 31.75 161.29 0)
 			(effects
@@ -7552,42 +7228,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 31.75 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 31.75 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 31.75 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 31.75 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 31.75 161.29 0)
 			(effects
 				(font
@@ -7764,24 +7404,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 124.46 167.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 124.46 167.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 124.46 167.64 90)
 			(effects
@@ -7792,42 +7414,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 124.46 167.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 124.46 167.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 124.46 167.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 124.46 167.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 124.46 167.64 90)
 			(effects
 				(font
@@ -7894,7 +7480,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 58.42 26.67 0)
 			(effects
 				(font
@@ -7912,7 +7498,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 58.42 26.67 0)
 			(effects
 				(font
@@ -7921,7 +7507,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 58.42 26.67 0)
 			(effects
 				(font
@@ -7930,25 +7516,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
-			(at 58.42 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 58.42 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 58.42 26.67 0)
 			(effects
 				(font
@@ -7975,43 +7543,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 58.42 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 58.42 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 58.42 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 58.42 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 58.42 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 58.42 26.67 0)
 			(effects
 				(font
@@ -8134,7 +7675,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 114.3 172.72 0)
 			(effects
 				(font
@@ -8152,7 +7693,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 114.3 172.72 0)
 			(effects
 				(font
@@ -8161,7 +7702,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 114.3 172.72 0)
 			(effects
 				(font
@@ -8170,25 +7711,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
-			(at 114.3 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 114.3 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 114.3 172.72 0)
 			(effects
 				(font
@@ -8215,43 +7738,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 114.3 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 114.3 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 114.3 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 114.3 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 114.3 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 114.3 172.72 0)
 			(effects
 				(font
@@ -8375,7 +7871,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 114.3 88.9 0)
 			(effects
 				(font
@@ -8393,7 +7889,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 114.3 88.9 0)
 			(effects
 				(font
@@ -8402,7 +7898,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 114.3 88.9 0)
 			(effects
 				(font
@@ -8411,25 +7907,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
-			(at 114.3 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 114.3 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 114.3 88.9 0)
 			(effects
 				(font
@@ -8456,43 +7934,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 114.3 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 114.3 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 114.3 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 114.3 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 114.3 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 114.3 88.9 0)
 			(effects
 				(font
@@ -8606,24 +8057,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 21.59 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 21.59 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 21.59 40.64 0)
 			(effects
@@ -8634,42 +8067,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 21.59 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 21.59 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 21.59 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 21.59 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 21.59 40.64 0)
 			(effects
 				(font
@@ -8857,24 +8254,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 21.59 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 21.59 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 21.59 114.3 0)
 			(effects
@@ -8885,42 +8264,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 21.59 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 21.59 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 21.59 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 21.59 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 21.59 114.3 0)
 			(effects
 				(font
@@ -8987,7 +8330,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 58.42 110.49 0)
 			(effects
 				(font
@@ -9005,7 +8348,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 58.42 110.49 0)
 			(effects
 				(font
@@ -9014,7 +8357,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 58.42 110.49 0)
 			(effects
 				(font
@@ -9023,25 +8366,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
-			(at 58.42 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 58.42 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 58.42 110.49 0)
 			(effects
 				(font
@@ -9068,43 +8393,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 58.42 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 58.42 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 58.42 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 58.42 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 58.42 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 58.42 110.49 0)
 			(effects
 				(font
@@ -9211,24 +8509,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 147.32 82.55 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 147.32 82.55 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 147.32 82.55 90)
 			(effects
@@ -9239,42 +8519,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 147.32 82.55 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 147.32 82.55 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 147.32 82.55 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 147.32 82.55 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 147.32 82.55 90)
 			(effects
 				(font
@@ -9325,7 +8569,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 123.19 113.03 0)
 			(effects
 				(font
@@ -9342,7 +8586,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 124.46 114.3 0)
 			(effects
 				(font
@@ -9351,7 +8595,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 123.19 119.38 0)
 			(effects
 				(font
@@ -9369,25 +8613,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
-			(at 123.19 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 123.19 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 123.19 119.38 0)
 			(effects
 				(font
@@ -9414,43 +8640,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 123.19 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 123.19 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 123.19 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 123.19 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 123.19 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 123.19 119.38 0)
 			(effects
 				(font
@@ -9615,7 +8814,7 @@
 			(uuid "74ab6ee4-3ab2-49f1-a97e-6b073225527e")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "#PWR057")
 					(unit 1)
@@ -9732,24 +8931,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 234.95 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 234.95 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 234.95 152.4 0)
 			(effects
@@ -9760,42 +8941,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 234.95 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 234.95 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 234.95 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 234.95 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 234.95 152.4 0)
 			(effects
 				(font
@@ -9862,7 +9007,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 55.88 68.58 0)
 			(effects
 				(font
@@ -9880,7 +9025,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 55.88 68.58 0)
 			(effects
 				(font
@@ -9889,7 +9034,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 55.88 68.58 0)
 			(effects
 				(font
@@ -9898,25 +9043,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
-			(at 55.88 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 55.88 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 55.88 68.58 0)
 			(effects
 				(font
@@ -9943,43 +9070,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 55.88 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 55.88 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 55.88 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 55.88 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 55.88 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 55.88 68.58 0)
 			(effects
 				(font
@@ -10086,7 +9186,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 25.146 83.058 90)
 			(effects
 				(font
@@ -10105,7 +9205,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 31.75 72.39 0)
 			(effects
 				(font
@@ -10114,7 +9214,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 30.48 77.47 0)
 			(effects
 				(font
@@ -10132,25 +9232,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
-			(at 30.48 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 30.48 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 30.48 77.47 0)
 			(effects
 				(font
@@ -10177,43 +9259,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 30.48 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 30.48 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 30.48 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 30.48 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 30.48 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 30.48 77.47 0)
 			(effects
 				(font
@@ -10345,24 +9400,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 21.59 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 21.59 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 21.59 72.39 0)
 			(effects
@@ -10373,42 +9410,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 21.59 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 21.59 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 21.59 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 21.59 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 21.59 72.39 0)
 			(effects
 				(font
@@ -10470,7 +9471,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
+		(property "Footprint" "kicad-lib:BNC_AmphenolRF_031-5329-52RFX_Vertical"
 			(at 158.75 77.47 0)
 			(effects
 				(font
@@ -10479,7 +9480,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
+		(property "Datasheet" "https://www.amphenolrf.com/en-us/assets/file/4065788070/"
 			(at 158.75 77.47 0)
 			(effects
 				(font
@@ -10497,7 +9498,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
+		(property "Link" "https://www.digikey.com/en/products/detail/amphenol-rf/031-5329-52RFX/2041814"
 			(at 158.75 77.47 0)
 			(effects
 				(font
@@ -10506,7 +9507,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity Linx"
+		(property "Manufacturer" "Amphenol RF"
 			(at 158.75 77.47 0)
 			(effects
 				(font
@@ -10516,24 +9517,6 @@
 			)
 		)
 		(property "Manufacturer Number" "CONBNC001"
-			(at 158.75 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 158.75 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 158.75 77.47 0)
 			(effects
 				(font
@@ -10552,42 +9535,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 158.75 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 158.75 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 158.75 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 158.75 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 158.75 77.47 0)
 			(effects
 				(font
@@ -10720,7 +9667,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 55.88 152.4 0)
 			(effects
 				(font
@@ -10738,7 +9685,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 55.88 152.4 0)
 			(effects
 				(font
@@ -10747,7 +9694,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 55.88 152.4 0)
 			(effects
 				(font
@@ -10756,25 +9703,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
-			(at 55.88 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 55.88 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 55.88 152.4 0)
 			(effects
 				(font
@@ -10801,43 +9730,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 55.88 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 55.88 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 55.88 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 55.88 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 55.88 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 55.88 152.4 0)
 			(effects
 				(font
@@ -10943,7 +9845,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 102.87 71.12 0)
 			(effects
 				(font
@@ -10960,7 +9862,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 104.14 72.39 0)
 			(effects
 				(font
@@ -10969,7 +9871,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 102.87 77.47 0)
 			(effects
 				(font
@@ -10987,25 +9889,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
-			(at 102.87 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 102.87 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 102.87 77.47 0)
 			(effects
 				(font
@@ -11032,43 +9916,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 102.87 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 102.87 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 102.87 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 102.87 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 102.87 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 102.87 77.47 0)
 			(effects
 				(font
@@ -11198,24 +10055,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 91.44 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 91.44 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 91.44 43.18 0)
 			(effects
@@ -11226,42 +10065,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 91.44 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 91.44 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 91.44 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 91.44 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 91.44 43.18 0)
 			(effects
 				(font
@@ -11286,7 +10089,7 @@
 			(uuid "96bd3ed6-f937-4e09-856c-94ff6acca51f")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "C43")
 					(unit 1)
@@ -11328,7 +10131,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 114.3 46.99 0)
 			(effects
 				(font
@@ -11346,7 +10149,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 114.3 46.99 0)
 			(effects
 				(font
@@ -11355,7 +10158,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 114.3 46.99 0)
 			(effects
 				(font
@@ -11364,25 +10167,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
-			(at 114.3 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 114.3 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 114.3 46.99 0)
 			(effects
 				(font
@@ -11409,43 +10194,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 114.3 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 114.3 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 114.3 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 114.3 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 114.3 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 114.3 46.99 0)
 			(effects
 				(font
@@ -11461,7 +10219,7 @@
 			(uuid "0de77a12-9de3-42c9-a6fd-70936e0fe0cc")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "R27")
 					(unit 1)
@@ -11586,24 +10344,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 264.16 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 264.16 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 264.16 152.4 0)
 			(effects
@@ -11614,42 +10354,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 264.16 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 264.16 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 264.16 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 264.16 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 264.16 152.4 0)
 			(effects
 				(font
@@ -11711,7 +10415,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
+		(property "Footprint" "kicad-lib:BNC_AmphenolRF_031-5329-52RFX_Vertical"
 			(at 158.75 161.29 0)
 			(effects
 				(font
@@ -11720,7 +10424,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
+		(property "Datasheet" "https://www.amphenolrf.com/en-us/assets/file/4065788070/"
 			(at 158.75 161.29 0)
 			(effects
 				(font
@@ -11738,7 +10442,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
+		(property "Link" "https://www.digikey.com/en/products/detail/amphenol-rf/031-5329-52RFX/2041814"
 			(at 158.75 161.29 0)
 			(effects
 				(font
@@ -11747,7 +10451,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity Linx"
+		(property "Manufacturer" "Amphenol RF"
 			(at 158.75 161.29 0)
 			(effects
 				(font
@@ -11757,24 +10461,6 @@
 			)
 		)
 		(property "Manufacturer Number" "CONBNC001"
-			(at 158.75 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 158.75 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 158.75 161.29 0)
 			(effects
 				(font
@@ -11793,42 +10479,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 158.75 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 158.75 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 158.75 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 158.75 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 158.75 161.29 0)
 			(effects
 				(font
@@ -11878,7 +10528,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 102.87 113.03 0)
 			(effects
 				(font
@@ -11895,7 +10545,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 104.14 114.3 0)
 			(effects
 				(font
@@ -11904,7 +10554,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 102.87 119.38 0)
 			(effects
 				(font
@@ -11922,25 +10572,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
-			(at 102.87 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 102.87 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 102.87 119.38 0)
 			(effects
 				(font
@@ -11967,43 +10599,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 102.87 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 102.87 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 102.87 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 102.87 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 102.87 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 102.87 119.38 0)
 			(effects
 				(font
@@ -12266,24 +10871,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 21.59 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 21.59 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 21.59 124.46 0)
 			(effects
@@ -12294,42 +10881,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 21.59 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 21.59 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 21.59 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 21.59 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 21.59 124.46 0)
 			(effects
 				(font
@@ -12396,7 +10947,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 58.42 152.4 0)
 			(effects
 				(font
@@ -12414,7 +10965,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 58.42 152.4 0)
 			(effects
 				(font
@@ -12423,7 +10974,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 58.42 152.4 0)
 			(effects
 				(font
@@ -12432,25 +10983,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
-			(at 58.42 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 58.42 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 58.42 152.4 0)
 			(effects
 				(font
@@ -12477,43 +11010,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 58.42 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 58.42 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 58.42 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 58.42 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 58.42 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 58.42 152.4 0)
 			(effects
 				(font
@@ -12737,24 +11243,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 76.2 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 76.2 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 76.2 161.29 0)
 			(effects
@@ -12765,42 +11253,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 76.2 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 76.2 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 76.2 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 76.2 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 76.2 161.29 0)
 			(effects
 				(font
@@ -12940,7 +11392,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 102.87 154.94 0)
 			(effects
 				(font
@@ -12957,7 +11409,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 104.14 156.21 0)
 			(effects
 				(font
@@ -12966,7 +11418,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 102.87 161.29 0)
 			(effects
 				(font
@@ -12984,25 +11436,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
-			(at 102.87 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 102.87 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 102.87 161.29 0)
 			(effects
 				(font
@@ -13029,43 +11463,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 102.87 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 102.87 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 102.87 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 102.87 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 102.87 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 102.87 161.29 0)
 			(effects
 				(font
@@ -13125,7 +11532,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 25.146 124.968 90)
 			(effects
 				(font
@@ -13144,7 +11551,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 31.75 114.3 0)
 			(effects
 				(font
@@ -13153,7 +11560,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 30.48 119.38 0)
 			(effects
 				(font
@@ -13171,25 +11578,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
-			(at 30.48 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 30.48 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 30.48 119.38 0)
 			(effects
 				(font
@@ -13216,43 +11605,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 30.48 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 30.48 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 30.48 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 30.48 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 30.48 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 30.48 119.38 0)
 			(effects
 				(font
@@ -13377,24 +11739,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 147.32 166.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 147.32 166.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 147.32 166.37 90)
 			(effects
@@ -13405,42 +11749,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 147.32 166.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 147.32 166.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 147.32 166.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 147.32 166.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 147.32 166.37 90)
 			(effects
 				(font
@@ -13566,7 +11874,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
+		(property "Footprint" "kicad-lib:BNC_AmphenolRF_031-5329-52RFX_Vertical"
 			(at 158.75 119.38 0)
 			(effects
 				(font
@@ -13575,7 +11883,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
+		(property "Datasheet" "https://www.amphenolrf.com/en-us/assets/file/4065788070/"
 			(at 158.75 119.38 0)
 			(effects
 				(font
@@ -13593,7 +11901,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
+		(property "Link" "https://www.digikey.com/en/products/detail/amphenol-rf/031-5329-52RFX/2041814"
 			(at 158.75 119.38 0)
 			(effects
 				(font
@@ -13602,7 +11910,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity Linx"
+		(property "Manufacturer" "Amphenol RF"
 			(at 158.75 119.38 0)
 			(effects
 				(font
@@ -13612,24 +11920,6 @@
 			)
 		)
 		(property "Manufacturer Number" "CONBNC001"
-			(at 158.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 158.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 158.75 119.38 0)
 			(effects
 				(font
@@ -13648,42 +11938,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 158.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 158.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 158.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 158.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 158.75 119.38 0)
 			(effects
 				(font
@@ -13750,7 +12004,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 114.3 130.81 0)
 			(effects
 				(font
@@ -13768,7 +12022,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 114.3 130.81 0)
 			(effects
 				(font
@@ -13777,7 +12031,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 114.3 130.81 0)
 			(effects
 				(font
@@ -13786,25 +12040,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
-			(at 114.3 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 114.3 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 114.3 130.81 0)
 			(effects
 				(font
@@ -13831,43 +12067,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 114.3 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 114.3 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 114.3 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 114.3 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 114.3 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 114.3 130.81 0)
 			(effects
 				(font
@@ -13979,24 +12188,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 91.44 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 91.44 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 91.44 85.09 0)
 			(effects
@@ -14007,42 +12198,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 91.44 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 91.44 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 91.44 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 91.44 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 91.44 85.09 0)
 			(effects
 				(font
@@ -14175,7 +12330,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 55.88 110.49 0)
 			(effects
 				(font
@@ -14193,7 +12348,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 55.88 110.49 0)
 			(effects
 				(font
@@ -14202,7 +12357,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 55.88 110.49 0)
 			(effects
 				(font
@@ -14211,25 +12366,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
-			(at 55.88 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 55.88 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 55.88 110.49 0)
 			(effects
 				(font
@@ -14256,43 +12393,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 55.88 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 55.88 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 55.88 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 55.88 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 55.88 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 55.88 110.49 0)
 			(effects
 				(font
@@ -14396,24 +12506,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 139.7 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 139.7 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 139.7 35.56 90)
 			(effects
@@ -14424,42 +12516,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 139.7 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 139.7 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 139.7 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 139.7 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 139.7 35.56 90)
 			(effects
 				(font
@@ -14572,24 +12628,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 139.7 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 139.7 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 139.7 119.38 90)
 			(effects
@@ -14600,42 +12638,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 139.7 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 139.7 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 139.7 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 139.7 119.38 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 139.7 119.38 90)
 			(effects
 				(font
@@ -14886,24 +12888,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 91.44 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 91.44 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 91.44 127 0)
 			(effects
@@ -14914,42 +12898,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 91.44 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 91.44 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 91.44 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 91.44 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 91.44 127 0)
 			(effects
 				(font
@@ -15196,7 +13144,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 123.19 71.12 0)
 			(effects
 				(font
@@ -15213,7 +13161,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 124.46 72.39 0)
 			(effects
 				(font
@@ -15222,7 +13170,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 123.19 77.47 0)
 			(effects
 				(font
@@ -15240,25 +13188,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
-			(at 123.19 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 123.19 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 123.19 77.47 0)
 			(effects
 				(font
@@ -15285,43 +13215,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 123.19 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 123.19 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 123.19 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 123.19 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 123.19 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 123.19 77.47 0)
 			(effects
 				(font
@@ -15651,24 +13554,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 21.59 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 21.59 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 21.59 156.21 0)
 			(effects
@@ -15679,42 +13564,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 21.59 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 21.59 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 21.59 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 21.59 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 21.59 156.21 0)
 			(effects
 				(font
@@ -16037,7 +13886,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicad-lib:BNC_TEConnectivity_CONBNC001_Vertical"
+		(property "Footprint" "kicad-lib:BNC_AmphenolRF_031-5329-52RFX_Vertical"
 			(at 158.75 35.56 0)
 			(effects
 				(font
@@ -16046,7 +13895,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=CONBNC001&DocType=Data+Sheet&DocLang=English&DocFormat=pdf&PartCntxt=CONBNC001"
+		(property "Datasheet" "https://www.amphenolrf.com/en-us/assets/file/4065788070/"
 			(at 158.75 35.56 0)
 			(effects
 				(font
@@ -16064,7 +13913,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/te-connectivity-linx/CONBNC001/16013844"
+		(property "Link" "https://www.digikey.com/en/products/detail/amphenol-rf/031-5329-52RFX/2041814"
 			(at 158.75 35.56 0)
 			(effects
 				(font
@@ -16073,7 +13922,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity Linx"
+		(property "Manufacturer" "Amphenol RF"
 			(at 158.75 35.56 0)
 			(effects
 				(font
@@ -16083,24 +13932,6 @@
 			)
 		)
 		(property "Manufacturer Number" "CONBNC001"
-			(at 158.75 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 158.75 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
 			(at 158.75 35.56 0)
 			(effects
 				(font
@@ -16119,42 +13950,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 158.75 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 158.75 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 158.75 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 158.75 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 158.75 35.56 0)
 			(effects
 				(font
@@ -16205,7 +14000,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 123.19 154.94 0)
 			(effects
 				(font
@@ -16222,7 +14017,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 124.46 156.21 0)
 			(effects
 				(font
@@ -16231,7 +14026,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 123.19 161.29 0)
 			(effects
 				(font
@@ -16249,25 +14044,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
-			(at 123.19 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 123.19 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 123.19 161.29 0)
 			(effects
 				(font
@@ -16294,43 +14071,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 123.19 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 123.19 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 123.19 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 123.19 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 123.19 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 123.19 161.29 0)
 			(effects
 				(font
@@ -16442,24 +14192,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 76.2 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 76.2 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 76.2 119.38 0)
 			(effects
@@ -16470,42 +14202,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 76.2 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 76.2 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 76.2 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 76.2 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 76.2 119.38 0)
 			(effects
 				(font
@@ -16652,24 +14348,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 21.59 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 21.59 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 21.59 82.55 0)
 			(effects
@@ -16680,42 +14358,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 21.59 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 21.59 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 21.59 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 21.59 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 21.59 82.55 0)
 			(effects
 				(font
@@ -16856,24 +14498,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 31.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 31.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 31.75 119.38 0)
 			(effects
@@ -16884,42 +14508,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 31.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 31.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 31.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 31.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 31.75 119.38 0)
 			(effects
 				(font
@@ -17076,7 +14664,7 @@
 			(uuid "e89cc462-4712-4422-9e02-e5d312477512")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "#PWR056")
 					(unit 1)
@@ -17231,24 +14819,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 248.92 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 248.92 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 248.92 146.05 0)
 			(effects
@@ -17259,42 +14829,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 248.92 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 248.92 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 248.92 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 248.92 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 248.92 146.05 0)
 			(effects
 				(font
@@ -17331,7 +14865,7 @@
 			(uuid "faf285c8-88ca-4e88-ae71-281b7dada762")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "U12")
 					(unit 1)
@@ -17513,24 +15047,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 31.75 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 31.75 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 31.75 35.56 0)
 			(effects
@@ -17541,42 +15057,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 31.75 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 31.75 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 31.75 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 31.75 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 31.75 35.56 0)
 			(effects
 				(font
@@ -17758,24 +15238,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 147.32 40.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 147.32 40.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 147.32 40.64 90)
 			(effects
@@ -17786,42 +15248,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 147.32 40.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 147.32 40.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 147.32 40.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 147.32 40.64 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 147.32 40.64 90)
 			(effects
 				(font
@@ -18138,24 +15564,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 91.44 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 91.44 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 91.44 168.91 0)
 			(effects
@@ -18166,42 +15574,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 91.44 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 91.44 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 91.44 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 91.44 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 91.44 168.91 0)
 			(effects
 				(font
@@ -18351,24 +15723,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 257.81 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 257.81 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 257.81 152.4 0)
 			(effects
@@ -18379,42 +15733,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 257.81 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 257.81 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 257.81 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 257.81 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 257.81 152.4 0)
 			(effects
 				(font
@@ -18603,24 +15921,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 21.59 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 21.59 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 21.59 30.48 0)
 			(effects
@@ -18631,42 +15931,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 21.59 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 21.59 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 21.59 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 21.59 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 21.59 30.48 0)
 			(effects
 				(font
@@ -18733,7 +15997,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 58.42 68.58 0)
 			(effects
 				(font
@@ -18751,7 +16015,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 58.42 68.58 0)
 			(effects
 				(font
@@ -18760,7 +16024,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 58.42 68.58 0)
 			(effects
 				(font
@@ -18769,25 +16033,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
-			(at 58.42 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 58.42 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 58.42 68.58 0)
 			(effects
 				(font
@@ -18814,43 +16060,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 58.42 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 58.42 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 58.42 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 58.42 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 58.42 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 58.42 68.58 0)
 			(effects
 				(font
@@ -18908,7 +16127,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/39/RC_Series_ds.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L"
 			(at 55.88 26.67 0)
 			(effects
 				(font
@@ -18926,7 +16145,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "YAGEO"
 			(at 55.88 26.67 0)
 			(effects
 				(font
@@ -18935,7 +16154,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "RC1005F103CS"
+		(property "Manufacturer Number" "RT0402BRD0710KL"
 			(at 55.88 26.67 0)
 			(effects
 				(font
@@ -18944,25 +16163,7 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/RC1005F103CS/3903439"
-			(at 55.88 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 55.88 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Link" "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998"
 			(at 55.88 26.67 0)
 			(effects
 				(font
@@ -18989,43 +16190,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 55.88 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 55.88 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 55.88 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 55.88 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 55.88 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "0.1%"
 			(at 55.88 26.67 0)
 			(effects
 				(font
@@ -19328,7 +16502,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 102.87 29.21 0)
 			(effects
 				(font
@@ -19345,7 +16519,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 104.14 30.48 0)
 			(effects
 				(font
@@ -19354,7 +16528,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 102.87 35.56 0)
 			(effects
 				(font
@@ -19372,25 +16546,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
-			(at 102.87 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 102.87 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 102.87 35.56 0)
 			(effects
 				(font
@@ -19417,43 +16573,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 102.87 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 102.87 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 102.87 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 102.87 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 102.87 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 102.87 35.56 0)
 			(effects
 				(font
@@ -19487,7 +16616,7 @@
 			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc0c")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "U4")
 					(unit 1)
@@ -19585,24 +16714,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 21.59 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 21.59 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 21.59 166.37 0)
 			(effects
@@ -19613,42 +16724,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 21.59 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 21.59 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 21.59 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 21.59 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 21.59 166.37 0)
 			(effects
 				(font
@@ -19699,7 +16774,7 @@
 				)
 			)
 		)
-		(property "Value" "OPA2994IDGKR"
+		(property "Value" "OPA2810IDGKT"
 			(at 123.19 29.21 0)
 			(effects
 				(font
@@ -19716,7 +16791,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2994.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa2810.pdf"
 			(at 124.46 30.48 0)
 			(effects
 				(font
@@ -19725,7 +16800,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Opamp, Rail-to-Rail Input/Output, Unlimited Capacitive Load Drive, 125mA Output Current, 2-32V, 350uV offset, 24MHz GBW, SOIC-8"
+		(property "Description" "Voltage Feedback Amplifier 2 Circuit Rail-to-Rail 8-VSSOP"
 			(at 123.19 35.56 0)
 			(effects
 				(font
@@ -19743,25 +16818,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "OPA2994IDGKR"
-			(at 123.19 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 123.19 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
+		(property "Manufacturer Number" "OPA2810IDGKT"
 			(at 123.19 35.56 0)
 			(effects
 				(font
@@ -19788,43 +16845,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" ""
-			(at 123.19 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 123.19 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 123.19 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 123.19 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Supplier Link" ""
+			(at 123.19 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.digikey.com/en/products/detail/texas-instruments/OPA2810IDGKT/9654077"
 			(at 123.19 35.56 0)
 			(effects
 				(font
@@ -19858,7 +16888,7 @@
 			(uuid "187b23d5-53bc-45bd-be99-d6b44e95cc0d")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "U4")
 					(unit 2)
@@ -20011,24 +17041,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 139.7 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 139.7 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 139.7 77.47 90)
 			(effects
@@ -20039,42 +17051,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 139.7 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 139.7 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 139.7 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 139.7 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 139.7 77.47 90)
 			(effects
 				(font
@@ -20177,24 +17153,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 76.2 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 76.2 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 76.2 77.47 0)
 			(effects
@@ -20205,42 +17163,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 76.2 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 76.2 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 76.2 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 76.2 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 76.2 77.47 0)
 			(effects
 				(font
@@ -20405,24 +17327,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 31.75 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 31.75 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 31.75 77.47 0)
 			(effects
@@ -20433,42 +17337,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 31.75 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 31.75 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 31.75 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 31.75 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 31.75 77.47 0)
 			(effects
 				(font
@@ -20584,24 +17452,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 147.32 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 147.32 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 147.32 124.46 90)
 			(effects
@@ -20612,42 +17462,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 147.32 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 147.32 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 147.32 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 147.32 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 147.32 124.46 90)
 			(effects
 				(font
@@ -20817,24 +17631,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" ""
-			(at 76.2 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 76.2 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Description_1" ""
 			(at 76.2 35.56 0)
 			(effects
@@ -20845,42 +17641,6 @@
 			)
 		)
 		(property "Height" ""
-			(at 76.2 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 76.2 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 76.2 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 76.2 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
 			(at 76.2 35.56 0)
 			(effects
 				(font
@@ -20929,7 +17689,7 @@
 			(uuid "3aaa89e3-4081-45ff-89cd-11d4d443f612")
 		)
 		(instances
-			(project ""
+			(project "harp.device.quad.dac"
 				(path "/6b47c519-21c4-43bd-9777-b273999e4447/50574cb8-ffd5-42a3-a56c-0f0945fbd245"
 					(reference "U8")
 					(unit 1)
