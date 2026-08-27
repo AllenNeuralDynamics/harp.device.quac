@@ -179,7 +179,6 @@ with open(FILENAME, "wb") as file:
 
 #### Uploading Waveforms ♒︎➝💾
 Currently waveforms must be uploaded to the SD card manually.
-Waveforms must be placed at the top level (not inside a folder!) and be labeled `channel_<i>.bin` where `<i>` could be `0`, `1`, `2`, or `3` corresponding to waveform 0-3 respectively.
 
 > [!WARNING]
 > Power down the device before removing or inserting the SD card.
@@ -194,12 +193,10 @@ For fully worked examples in both Bonsai and Python, see the [software examples 
 
 ### External Triggering
 By default the device's power-on-reset behavior is setup to:
-1. load the _FilePlayer_ on all four channels.
-2. Search for files named `channel_0.bin` - `channel_3.bin` and arm them.
-3. Setup external triggers such that pins _DIO_ - _DI3_ correspond to playing _channel\_0.bin_ - _channel\_3.bin_ on output pins _A0_ - _A3_ respectively.
+setup external triggers such that pins _DIO_ - _DI3_ correspond to playing output pins _A0_ - _A3_ respectively.
 
 Trigger mapping is configurable!
-i.e: any input trigger can be configured to trigger any number of outputs.
+Any input trigger can be configured to trigger any number of outputs.
 To alter the trigger mapping, you must use software commands through either Bonsai or Python.
 
 ## Compatible SD Cards 💾
@@ -215,6 +212,7 @@ But since card performance can vary, here's a list of tested cards:
 |           |                         |
 
 ## Working Principle
+The following section details how the underlying firmware generates waveforms.
 
 ### Selectable Player Architecture
 Each channel features a modular approach to dividing up the work of playing waveforms.
@@ -240,6 +238,13 @@ In the full architecture, four copies of the above pipeline exist like so:
 The `MultiTransferManager` connects to each double buffer and driver and handles triggering an armed transfer, and it guarantees that multiple simultaneous requests to start a transfer occur simultaneously.
 
 ### FilePlayer Streaming Pipeline
+Waveforms are read interleaved from their sources in "chunks" of 16384 samples at a time and then pushed into double buffers such that the resulting output plays waveforms concurrently without interruption.
+
+Buffer size was selected to be large enough such that data from the SD card is can be read faster than it needs to sent to the downstream DAC drivers.
+This setup was tested in the worst-case scenario where 4 files are being read at once.
+
+A single CPU core is dedicated to this task of reading waveform sources and topping off buffers while the other core handles Harp communication, settings configuration, and waveform start/stop inputs.
+
 <p align="center">
   <img width="480" src="./assets/pics/file_player_streaming.drawio.png" />
 </p>
