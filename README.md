@@ -2,7 +2,7 @@
 hardware, firmware, and software source files for a Harp-compatible 4-channel Digital-to-Analog Converter.
 
 <p align="center">
-  <img width="480" src="./assets/pics/low_res_pcba.png" />
+  <img width="550" src="./assets/pics/low_res_pcba.png" />
 </p>
 
 ## Specs
