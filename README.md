@@ -174,7 +174,17 @@ The `MultiTransferManager` connects to each double buffer and driver and handles
   <img width="480" src="./assets/pics/file_player_streaming.drawio.png" />
 </p>
 
+## Updating the Firmware
+New firmware is available on the [Releases Page](https://github.com/AllenNeuralDynamics/harp.device.quac/releases).
+To upload new firmware to the device, do the following:
+1. Ensure that the board is connected to a PC with the USB cable.
+1. Power down the board. (Note that power comes from the barrel jack, _not_ the USB cable.)
+2. Power on the board with the _BOOTSEL_ button held down. Then release the BOOTSEL button once the board has been powered up. The device will now appear on the connected PC as a flash drive. See the figure below to identify the BOOTSEL button. You may need to use a hex key to access this button with the case lid attached. 
+<p align="center">
+  <img width="400" src="./assets/pics/flash_quac_board.png" />
+</p>
 
+3. Drag and drop the **\*.uf2** firmware file into the flash drive's top level directory. The flash drive should disappear indicating that the firmware upload worked. The device now has new firmware.
 
 ## Known Limitations
 Currently the device has some known limits, many of which are planned to be eclipsed by future firmware releases.

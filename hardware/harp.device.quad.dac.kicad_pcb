@@ -22833,7 +22833,7 @@
 			(uuid "9892e6a6-5f01-49b6-8eb5-05de43cfba8b")
 		)
 		(embedded_fonts no)
-		(model "/home/poofjunior/projects/kicad_libraries/kicad-lib/kicad-lib.3dshapes/RP2350_QFN80.step"
+		(model "/home/poofjunior/projects/kicad_libraries/kicad-lib/kicad-lib.3dshapes/SC1510-A4.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -107464,15 +107464,15 @@
 			(uuid "d885174b-f0b8-4e88-9c4a-36dd0043a13e")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Connector_BarrelJack.3dshapes/BarrelJack_CUI_PJ-102AH_Horizontal.step"
+		(model "/home/poofjunior/projects/kicad_libraries/kicad-lib/kicad-lib.3dshapes/Same_Sky_PJ-102AH.step"
 			(offset
-				(xyz 0 0 0)
+				(xyz 0 -13.7 6.47)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -90 -0 90)
 			)
 		)
 	)
