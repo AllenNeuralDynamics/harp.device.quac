@@ -71,6 +71,9 @@ Setting up and playing a waveform is a simple process for each Analog Output (AO
 
 For fully worked examples of the above steps, see the examples in the [software](./software) folder.
 
+> [!NOTE]
+> While waveforms on the SD card will remain on the card until they are deleted, *Player* settings for any *Player* do not persist across device power-cycles or resets.
+
 *Player* Settings are detailed below for each *Player*.
 
 ### Common Settings
