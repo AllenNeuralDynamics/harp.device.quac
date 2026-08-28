@@ -119,7 +119,7 @@ The following settings are common to each *Player*.
 (Inherits all Common Settings and Sine Player Settings)
 
 * `ramp_on_us`: time in microseconds to rise from lowest to peak value.
-* `width_us`: the width of the waveform in microseconds.
+* `pulse_width_us`: the total pulse width (including ramp-on and ramp-off duration of the waveform in microseconds.
 * `ramp_off_us`: time in microseconds to fall from peak to lowest value.
 
 <img width="800" src="./assets/pics/ramp_waveform_specs.drawio.png" />

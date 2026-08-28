@@ -85,8 +85,16 @@ payloadLayouts:
       interfaceType: uint
       defaultValue: 0
       description: Specifies the duration of the rising ramp in microseconds.
-    RampOffDuration:
+    PulseWidthDuration:
       offset: 32
+      length: 4
+      interfaceType: uint
+      defaultValue: 0
+      description: >-
+        Specifies the total pulse width (including ramp-on and ramp-off
+        duration) in microseconds.
+    RampOffDuration:
+      offset: 36
       length: 4
       interfaceType: uint
       defaultValue: 0
@@ -297,7 +305,7 @@ registers:
   TrapezoidSettings0: &trapezoidSettings
     address: 62
     type: U8
-    length: 36
+    length: 40
     access: Write
     description: Specifies the trapezoid player settings for analog output channel 0.
     payloadSpec:

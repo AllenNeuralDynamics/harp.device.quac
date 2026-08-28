@@ -105,9 +105,8 @@ struct FunctionSettings: WaveformSettings
 struct TrapezoidSettings: FunctionSettings
 {
     uint32_t ramp_on_us;
+    uint32_t pulse_width_us; // include ramp on and ramp off time
     uint32_t ramp_off_us;
-    // TODO: a duty cycle? so we can reuse this class for pulse trains?
-    // TODO: a phase offset? so we can start slightly offset?
 
 /// \brief Default Constructor
     TrapezoidSettings()
@@ -125,14 +124,17 @@ struct TrapezoidSettings: FunctionSettings
       ramp_on_us{ramp_on_us}, ramp_off_us{ramp_off_us}{}
 
 // Computed values
+    uint32_t pulse_width_sample_count()
+    {return uint32_t(float(update_frequency_hz) * float(pulse_width_us) / 1.0e6f);}
+
     uint32_t plateau_sample_count()
-    {return period_sample_count() - ramp_on_sample_count() - ramp_off_sample_count();}
+    {return pulse_width_sample_count() - ramp_on_sample_count() - ramp_off_sample_count();}
 
     uint32_t ramp_on_sample_count()
-    {return uint32_t(float(update_frequency_hz) * float(ramp_on_us) / 1'000'000.0f);}
+    {return uint32_t(float(update_frequency_hz) * float(ramp_on_us) / 1.0e6f);}
 
     uint32_t ramp_off_sample_count()
-    {return uint32_t(float(update_frequency_hz) * float(ramp_off_us) / 1'000'000.0f);}
+    {return uint32_t(float(update_frequency_hz) * float(ramp_off_us) / 1.0e6f);}
 
     // TODO: Triangle constructor
     // TODO: Pulse Train constructor
