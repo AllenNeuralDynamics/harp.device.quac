@@ -34,6 +34,7 @@ frequency_hz = 1
 duration_us = 2_000_000
 amplitude_volts = 2.5 # center-to-peak, not peak-to-peak
 vertical_shift_volts = 1.25
+normalized_phase_shift = 0
 
 # ----END OF CUSTOM SETTINGS-----------------------------------------
 
@@ -55,6 +56,7 @@ with open_device(device_module, port=COM_PORT) as device:
         frequency=frequency_hz,
         amplitude=amplitude_volts,
         vertical_shift=vertical_shift_volts,
+        normalized_phase_shift=normalized_phase_shift
     )
     # Apply settings.
     reply = device.write(SETTINGS_REG, settings)

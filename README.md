@@ -88,36 +88,39 @@ The following settings are common to each *Player*.
 * `frequency_hz`: sine wave frequency in hertz
 * `amplitude_volts`: "center-to-peak" amplitude in volts
 * `vertical_shift_volts`: vertical shift in volts
+* `normalized_phase_shift`: period shift normalized to -1.0 (max right shift) to 1.0 (max left shift)
 
 <img width="800" src="./assets/pics/sine_waveform_specs.drawio.png" />
 
 #### Example Settings: play a 10Hz sine wave for 3 seconds
-| Setting                | Value   | Note                                 |
-|------------------------|---------|--------------------------------------|
-| `cycles`               | 1       | play the following settings once     |
-| `duration_us`          | 3000000 | play for 3 seconds                   |
-| `update_frequency_hz`  | 10000   | rate at which to produce new samples |
-| `frequency_hz`         | 10      |                                      |
-| `amplitude_volts`      | 0.5     | result will be 1 [V] peak-to-peak    |
-| `vertical_shift_volts` | 0.5     | result will span 0 [V] to 1 [V]      |
+| Setting                  | Value   | Note                                 |
+|--------------------------|---------|--------------------------------------|
+| `cycles`                 | 1       | play the following settings once     |
+| `duration_us`            | 3000000 | play for 3 seconds                   |
+| `update_frequency_hz`    | 10000   | rate at which to produce new samples |
+| `frequency_hz`           | 10      |                                      |
+| `amplitude_volts`        | 0.5     | result will be 1 [V] peak-to-peak    |
+| `vertical_shift_volts`   | 0.5     | result will span 0 [V] to 1 [V]      |
+| `normalized_phase_shift` | 0       | no phase shift                       |
 
 #### Example Settings: play a 10Hz sine wave forever
-  | Setting                | Value | Note                               |
-|------------------------|-------|--------------------------------------|
-| `cycles`               | 1     | play the following settings once     |
-| `duration_us`          | 0     | play forever (until aborted)         |
-| `update_frequency_hz`  | 10000 |                                      |
-| `frequency_hz`         | 10    |                                      |
-| `amplitude_volts`      | 0.5   | result will be 1 [V] peak-to-peak    |
-| `vertical_shift_volts` | 0     | result will be centered around 0 [V] |
+| Setting                  | Value | Note                                 |
+|--------------------------|-------|--------------------------------------|
+| `cycles`                 | 1     | play the following settings once     |
+| `duration_us`            | 0     | play forever (until aborted)         |
+| `update_frequency_hz`    | 10000 |                                      |
+| `frequency_hz`           | 10    |                                      |
+| `amplitude_volts`        | 0.5   | result will be 1 [V] peak-to-peak    |
+| `vertical_shift_volts`   | 0     | result will be centered around 0 [V] |
+| `normalized_phase_shift` | 0     | no phase shift                       |
 
 ### TrapezoidPlayer Waveforms
 #### Settings
-* `frequency_hz`: sine wave frequency in hertz.
-* `amplitude_volts`: "center-to-peak" amplitude in volts.
-* `vertical_shift_volts`: vertical shift in volts.
-* `ramp_on_us`:
-* `ramp_off_us`:
+(Inherits all Common Settings and Sine Player Settings)
+
+* `ramp_on_us`: time in microseconds to rise from lowest to peak value.
+* `width_us`: the width of the waveform in microseconds.
+* `ramp_off_us`: time in microseconds to fall from peak to lowest value.
 
 <img width="800" src="./assets/pics/ramp_waveform_specs.drawio.png" />
   

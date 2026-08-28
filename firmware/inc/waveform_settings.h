@@ -55,7 +55,8 @@ struct FunctionSettings: WaveformSettings
     static inline constexpr float MAX_VOLTS = 10.0;
     uint32_t frequency_hz;
     float amplitude_volts; // peak offset from center position in volts.
-    float vertical_shift_volts; // vertical shift in samples.
+    float vertical_shift_volts; // vertical shift in volts.
+    float normalized_phase_shift; // -1.0 (right shift) to 1.0 (left shift)
 
 /// Default Constructor
     FunctionSettings()
