@@ -268,11 +268,9 @@ To upload new firmware to the device, do the following:
 4. Drag and drop the **\*.uf2** firmware file into the flash drive's top level directory. The flash drive should disappear indicating that the firmware upload worked. The device now has new firmware.
 
 ## Known Limitations
-Currently the device has some known limits, many of which are planned to be eclipsed by future firmware releases.
+Currently the device has some known limits, most of which are planned to be eclipsed by future firmware releases.
 This non-comprehensive list includes:
-* [SinePlayer cannot specify phase shift]()
-* [TrapezoidPlayer cannot specify pulse width]()
-* [FilePlayer cannot deterministically play a subset of a file multiple times]()
-* Waveforms cannot yet be uploaded to the SD card directly over USB.
+* [FilePlayer cannot deterministically play a subset of a file multiple times](https://github.com/AllenNeuralDynamics/harp.device.quac/issues/100)
+* [Waveforms cannot yet be uploaded to the SD card directly over USB](https://github.com/AllenNeuralDynamics/harp.device.quac/issues/6)
 
 For a full list of issues, head over to the project's [issues page](https://github.com/AllenNeuralDynamics/harp.device.quac/issues).
