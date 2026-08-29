@@ -8,7 +8,7 @@ hardware, firmware, and software source files for a Harp-compatible 4-channel Di
 ## Specs
 * Analog Output Channels: 4
 * Bit depth: 16-bit
-* Update Rate: 100 [Hz] to **500 [KHz]** (selectable per-channel)
+* Update Rate: 2.288 [KHz] to **500 [KHz]** (selectable per-channel)
   * this is the rate at which a new output value is selected.
 * Voltage Swing: ±10 [V]
 * RMS noise at the zero voltage setting: ~±2.5 [mV]
