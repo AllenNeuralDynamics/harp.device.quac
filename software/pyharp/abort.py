@@ -6,7 +6,7 @@
 #     "gitpython",
 # ]
 # ///
-"""Trigger a sine waveform on one analog output channel, repeatedly on Enter."""
+"""Trigger a sine waveform on one analog output channel and abort it shortly after."""
 
 import os
 import threading
@@ -84,7 +84,7 @@ with open_device(device_module, port=COM_PORT) as device:
         f"time: {reply.timestamp}")
 
     # Abort waveform
-    sleep(3.0)
+    sleep(1.25)
     print("Aborting waveform.")
     reply = device.write(device_module.DacAbort, CHANNEL_MASK)
     print(f" Read back: 0x{int(reply.payload):02x} ({reply.message_type.name}), "
