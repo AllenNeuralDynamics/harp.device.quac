@@ -59,7 +59,7 @@ protected:
      const uint32_t width    = width_samples_;
      const uint32_t ramp_on  = ramp_on_samples_;
      const uint32_t ramp_off = ramp_off_samples_;
-     const uint32_t p2p_amp      = peak_to_peak_amplitude_samples_;
+     const uint32_t p2p_amp  = peak_to_peak_amplitude_samples_;
      const uint32_t vshift   = vertical_shift_samples_;
 
      const uint32_t plateau_end  = ramp_on + width;

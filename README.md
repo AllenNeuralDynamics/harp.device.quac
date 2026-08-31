@@ -8,13 +8,13 @@ hardware, firmware, and software source files for a Harp-compatible 4-channel Di
 ## Specs
 * Analog Output Channels: 4
 * Bit depth: 16-bit
-* Update Rate: 100[Hz] to _500[KHz]_ (selectable per-channel)
+* Update Rate: 2.288 [KHz] to **500 [KHz]** (selectable per-channel)
   * this is the rate at which a new output value is selected.
-* Voltage Swing: ±10[V]
-* RMS noise at the zero voltage setting: ~±2.5[mV]
-* absolute deviation from 0[V]: ±2.5[mV]
-* Power Input: 12-24[V]
-* Power Input Plug: 2.1 x 5.5mm barrel jack
+* Voltage Swing: ±10 [V]
+* RMS noise at the zero voltage setting: ~±2.5 [mV]
+* absolute deviation from 0 [V]: ±2.5 [mV]
+* Power Input: 12-24 [V]
+* Power Input Plug: 2.1 x 5.5mm barrel jack (positive center)
 * Reverse Polarity protected.
 * Additional M4 _ground lug_ provided for de-noising.
 * Open source hardware, firmware, and software.
@@ -61,23 +61,98 @@ These printed circuit boards are made on-demand.
 
 ## Generating Waveforms ﮩ٨ـﮩﮩ٨ـ
 There are two ways to generate waveforms: either with one of two primitive waveform generators or by playing files from the SD card.
+These options are referred to as waveform *Player*s.
+
+Setting up and playing a waveform is a simple process for each Analog Output (AO) channel.
+1. Specify any external input trigger conditions for the output channel.
+2. Specify the waveform Player.
+3. Specify the Player's settings.
+4. Wait until the Player is ready (< 50[ms] of wait time for the player to apply the settings and arm the waveform).
+5. Trigger the Player either via software command or by applying external input to the corresponding external input pins.
+
+For fully worked examples of the above steps, see the examples in the [software](./software) folder.
+
+> [!NOTE]
+> While waveforms on the SD card will remain on the card until they are deleted, Player settings for any Player do not persist across device power-cycles or resets.
+
+Player Settings are detailed below for each Player.
+
+### Common Settings
+The following settings are common to each Player.
+* `cycles`: number of iterations of the current settings (will probably be 1 in most cases).
+* `duration_us`: duration in microseconds to play the waveform or 0 to either *play-forever* (if the source is infinite ie: periodic functions) or *play-to-completion* (if the source is finite i.e: files on the SD card).
+* `update_frequency_hz`: rate at which samples are produced (max 500 [KHz]).
 
 ### SinePlayer Waveforms
 
-  <img width="800" src="./assets/pics/sine_waveform_specs.drawio.png" />
-  
+#### Settings
+* `frequency_hz`: sine wave frequency in hertz
+* `amplitude_volts`: "center-to-peak" amplitude in volts
+* `vertical_shift_volts`: vertical shift in volts
+* `normalized_phase_shift`: period shift normalized to -1.0 (max right shift) to 1.0 (max left shift)
+
+<img width="800" src="./assets/pics/sine_waveform_specs.drawio.png" />
+
+#### Example Settings: play a 10Hz sine wave for 3 seconds
+| Setting                  | Value   | Note                                 |
+|--------------------------|---------|--------------------------------------|
+| `cycles`                 | 1       | play the following settings once     |
+| `duration_us`            | 3000000 | play for 3 seconds                   |
+| `update_frequency_hz`    | 10000   | rate at which to produce new samples |
+| `frequency_hz`           | 10      | sine wave frequency                  |
+| `amplitude_volts`        | 0.5     | result will be 1 [V] peak-to-peak    |
+| `vertical_shift_volts`   | 0.5     | result will span 0 [V] to 1 [V]      |
+| `normalized_phase_shift` | 0       | no phase shift                       |
+
+#### Example Settings: play a 10Hz sine wave forever
+| Setting                  | Value | Note                         |
+|--------------------------|-------|------------------------------|
+| `cycles`                 | 1     |                              |
+| `duration_us`            | 0     | play forever (until aborted) |
+| `update_frequency_hz`    | 10000 |                              |
+| `frequency_hz`           | 10    |                              |
+| `amplitude_volts`        | 0.5   |                              |
+| `vertical_shift_volts`   | 0     |                              |
+| `normalized_phase_shift` | 0     |                              |
+
 ### TrapezoidPlayer Waveforms
+#### Settings
+(Inherits all Common Settings and Sine Player Settings)
 
-  <img width="800" src="./assets/pics/ramp_waveform_specs.drawio.png" />
+* `ramp_on_us`: time in microseconds to rise from lowest to peak value.
+* `pulse_width_us`: the total pulse width (including ramp-on and ramp-off duration of the waveform in microseconds.
+* `ramp_off_us`: time in microseconds to fall from peak to lowest value.
 
+<img width="800" src="./assets/pics/ramp_waveform_specs.drawio.png" />
+  
 ### FilePlayer Waveforms from the SD Card 💾
+
+#### Settings
+* `path`: filepath on the SD card (32-character limit max)
+
+#### Example Settings: play a file once
+| Setting               | Value         | Note                                                            |
+|-----------------------|---------------|-----------------------------------------------------------------|
+| `cycles`              | 1             | play the following settings once                                |
+| `duration_us`         | 0             | play the file to completion                                     |
+| `update_frequency_hz` | 500000        | max update rate (might be different depending on file).         |
+| `path`                | channel_0.bin | assumes this file exists at the top level folder in the SD card |
+
+#### Example Settings: play a file multiple times
+| Setting               | Value         | Note                                       |
+|-----------------------|---------------|--------------------------------------------|
+| `cycles`              | 3             | loop back and play the entire file 3 times |
+| `duration_us`         | 0             |                                            |
+| `update_frequency_hz` | 500000        |                                            |
+| `path`                | channel_0.bin |                                            |
+
 
 The _quac_ board reads files in 16-bit little-endian _Pulse-Code Modulation_ (PCM) format.
 There are a few options for generating waveforms in this format.
 
 #### Upscaling Existing Files 💽
 It's possible to convert existing audio files to a format compatible with the _quac_ board using `ffmpeg`.
-To upscale an existing _\*.wav_ file to a compatible format, use:
+To upscale an existing _\*.wav_ file to a 500KHz update rate, use:
 ```bash
 ffmpeg -i example.wav -f u16le -ar 500000 output.raw
 ```
@@ -85,7 +160,7 @@ ffmpeg -i example.wav -f u16le -ar 500000 output.raw
 #### With numpy 💻
 For more complicated waveforms that do not derive from an existing audio file, we recommend using numpy.
 
-Here's an example to generate the [North American Ringing Tone](https://en.wikipedia.org/wiki/Ringing_tone#Bell_System_tones), which is the sum of a 440Hz and 480Hz sine wave.
+Here's an example that generates the [North American Ringing Tone](https://en.wikipedia.org/wiki/Ringing_tone#Bell_System_tones), which is the sum of a 440Hz and 480Hz sine wave.
 
 ```python
 import numpy as np
@@ -111,7 +186,6 @@ with open(FILENAME, "wb") as file:
 
 #### Uploading Waveforms ♒︎➝💾
 Currently waveforms must be uploaded to the SD card manually.
-Waveforms must be placed at the top level (not inside a folder!) and be labeled `channel_<i>.bin` where `<i>` could be `0`, `1`, `2`, or `3` corresponding to waveform 0-3 respectively.
 
 > [!WARNING]
 > Power down the device before removing or inserting the SD card.
@@ -126,12 +200,10 @@ For fully worked examples in both Bonsai and Python, see the [software examples 
 
 ### External Triggering
 By default the device's power-on-reset behavior is setup to:
-1. load the _FilePlayer_ on all four channels.
-2. Search for files named `channel_0.bin` - `channel_3.bin` and arm them.
-3. Setup external triggers such that pins _DIO_ - _DI3_ correspond to playing _channel\_0.bin_ - _channel\_3.bin_ on output pins _A0_ - _A3_ respectively.
+setup external triggers such that pins _DIO_ - _DI3_ correspond to playing output pins _A0_ - _A3_ respectively.
 
 Trigger mapping is configurable!
-i.e: any input trigger can be configured to trigger any number of outputs.
+Any input trigger can be configured to trigger any number of outputs.
 To alter the trigger mapping, you must use software commands through either Bonsai or Python.
 
 ## Compatible SD Cards 💾
@@ -147,6 +219,7 @@ But since card performance can vary, here's a list of tested cards:
 |           |                         |
 
 ## Working Principle
+The following section details how the underlying firmware generates waveforms.
 
 ### Selectable Player Architecture
 Each channel features a modular approach to dividing up the work of playing waveforms.
@@ -172,6 +245,13 @@ In the full architecture, four copies of the above pipeline exist like so:
 The `MultiTransferManager` connects to each double buffer and driver and handles triggering an armed transfer, and it guarantees that multiple simultaneous requests to start a transfer occur simultaneously.
 
 ### FilePlayer Streaming Pipeline
+Waveforms are read interleaved from their sources in "chunks" of 16384 samples at a time and then pushed into double buffers such that the resulting output plays waveforms concurrently without interruption.
+
+Buffer size was selected to be large enough such that data from the SD card is can be read faster than it needs to sent to the downstream DAC drivers.
+This setup was tested in the worst-case scenario where 4 files are being read at once.
+
+A single CPU core is dedicated to this task of reading waveform sources and topping off buffers while the other core handles Harp communication, settings configuration, and waveform start/stop inputs.
+
 <p align="center">
   <img width="480" src="./assets/pics/file_player_streaming.drawio.png" />
 </p>
@@ -189,11 +269,9 @@ To upload new firmware to the device, do the following:
 4. Drag and drop the **\*.uf2** firmware file into the flash drive's top level directory. The flash drive should disappear indicating that the firmware upload worked. The device now has new firmware.
 
 ## Known Limitations
-Currently the device has some known limits, many of which are planned to be eclipsed by future firmware releases.
+Currently the device has some known limits, most of which are planned to be eclipsed by future firmware releases.
 This non-comprehensive list includes:
-* [SinePlayer cannot specify phase shift]()
-* [TrapezoidPlayer cannot specify pulse width]()
-* [FilePlayer cannot deterministically play a subset of a file multiple times]()
-* Waveforms cannot yet be uploaded to the SD card directly over USB.
+* [FilePlayer cannot deterministically play a subset of a file multiple times](https://github.com/AllenNeuralDynamics/harp.device.quac/issues/100)
+* [Waveforms cannot yet be uploaded to the SD card directly over USB](https://github.com/AllenNeuralDynamics/harp.device.quac/issues/6)
 
 For a full list of issues, head over to the project's [issues page](https://github.com/AllenNeuralDynamics/harp.device.quac/issues).
