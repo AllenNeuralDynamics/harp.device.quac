@@ -61,23 +61,24 @@ These printed circuit boards are made on-demand.
 
 ## Generating Waveforms ﮩ٨ـﮩﮩ٨ـ
 There are two ways to generate waveforms: either with one of two primitive waveform generators or by playing files from the SD card.
+These options are referred to as waveform *Player*s.
 
 Setting up and playing a waveform is a simple process for each Analog Output (AO) channel.
 1. Specify any external input trigger conditions for the output channel.
-2. Specify the Waveform *Player*.
-3. Specify the *Player*'s settings.
+2. Specify the waveform Player.
+3. Specify the Player's settings.
 4. Wait until the Player is ready (< 50[ms] of wait time for the player to apply the settings and arm the waveform).
-5. Trigger the player either with a software command or by applying external input to any of the previously configured external input pins.
+5. Trigger the Player either via software command or by applying external input to the corresponding external input pins.
 
 For fully worked examples of the above steps, see the examples in the [software](./software) folder.
 
 > [!NOTE]
-> While waveforms on the SD card will remain on the card until they are deleted, *Player* settings for any *Player* do not persist across device power-cycles or resets.
+> While waveforms on the SD card will remain on the card until they are deleted, Player settings for any Player do not persist across device power-cycles or resets.
 
-*Player* Settings are detailed below for each *Player*.
+Player Settings are detailed below for each Player.
 
 ### Common Settings
-The following settings are common to each *Player*.
+The following settings are common to each Player.
 * `cycles`: number of iterations of the current settings (will probably be 1 in most cases).
 * `duration_us`: duration in microseconds to play the waveform or 0 to either *play-forever* (if the source is infinite ie: periodic functions) or *play-to-completion* (if the source is finite i.e: files on the SD card).
 * `update_frequency_hz`: rate at which samples are produced (max 500 [KHz]).
@@ -98,21 +99,21 @@ The following settings are common to each *Player*.
 | `cycles`                 | 1       | play the following settings once     |
 | `duration_us`            | 3000000 | play for 3 seconds                   |
 | `update_frequency_hz`    | 10000   | rate at which to produce new samples |
-| `frequency_hz`           | 10      |                                      |
+| `frequency_hz`           | 10      | sine wave frequency                  |
 | `amplitude_volts`        | 0.5     | result will be 1 [V] peak-to-peak    |
 | `vertical_shift_volts`   | 0.5     | result will span 0 [V] to 1 [V]      |
 | `normalized_phase_shift` | 0       | no phase shift                       |
 
 #### Example Settings: play a 10Hz sine wave forever
-| Setting                  | Value | Note                                 |
-|--------------------------|-------|--------------------------------------|
-| `cycles`                 | 1     | play the following settings once     |
-| `duration_us`            | 0     | play forever (until aborted)         |
-| `update_frequency_hz`    | 10000 |                                      |
-| `frequency_hz`           | 10    |                                      |
-| `amplitude_volts`        | 0.5   | result will be 1 [V] peak-to-peak    |
-| `vertical_shift_volts`   | 0     | result will be centered around 0 [V] |
-| `normalized_phase_shift` | 0     | no phase shift                       |
+| Setting                  | Value | Note                         |
+|--------------------------|-------|------------------------------|
+| `cycles`                 | 1     |                              |
+| `duration_us`            | 0     | play forever (until aborted) |
+| `update_frequency_hz`    | 10000 |                              |
+| `frequency_hz`           | 10    |                              |
+| `amplitude_volts`        | 0.5   |                              |
+| `vertical_shift_volts`   | 0     |                              |
+| `normalized_phase_shift` | 0     |                              |
 
 ### TrapezoidPlayer Waveforms
 #### Settings
@@ -151,7 +152,7 @@ There are a few options for generating waveforms in this format.
 
 #### Upscaling Existing Files 💽
 It's possible to convert existing audio files to a format compatible with the _quac_ board using `ffmpeg`.
-To upscale an existing _\*.wav_ file to a compatible format, use:
+To upscale an existing _\*.wav_ file to a 500KHz update rate, use:
 ```bash
 ffmpeg -i example.wav -f u16le -ar 500000 output.raw
 ```
@@ -159,7 +160,7 @@ ffmpeg -i example.wav -f u16le -ar 500000 output.raw
 #### With numpy 💻
 For more complicated waveforms that do not derive from an existing audio file, we recommend using numpy.
 
-Here's an example to generate the [North American Ringing Tone](https://en.wikipedia.org/wiki/Ringing_tone#Bell_System_tones), which is the sum of a 440Hz and 480Hz sine wave.
+Here's an example that generates the [North American Ringing Tone](https://en.wikipedia.org/wiki/Ringing_tone#Bell_System_tones), which is the sum of a 440Hz and 480Hz sine wave.
 
 ```python
 import numpy as np
