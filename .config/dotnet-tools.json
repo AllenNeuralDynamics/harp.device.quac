@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "harp.toolkit": {
+      "version": "0.2.3-refs-pull-34-merge-ci56",
+      "commands": [
+        "harp.toolkit"
+      ],
+      "rollForward": false
+    }
+  }
+}

@@ -6,100 +6,6 @@ whoAmI: 1411
 firmwareVersion: "0.1"
 hardwareTargets: "1.1"
 
-# Payload layouts shared by the waveform player settings registers, mirroring the
-# struct hierarchy in firmware/inc/waveform_settings.h. Authoring aid only: this
-# key hosts YAML anchors and is not part of the device interface.
-payloadLayouts:
-  waveform: &waveformPayload
-    Cycles:
-      offset: 0
-      length: 4
-      interfaceType: uint
-      defaultValue: 1
-      description: >-
-        Specifies how many times the waveform is played, or zero to play it
-        indefinitely.
-    Duration:
-      offset: 4
-      length: 4
-      interfaceType: uint
-      defaultValue: 0
-      description: >-
-        Specifies the duration of a single cycle in microseconds, or zero to
-        play the whole waveform.
-    UpdateFrequency:
-      offset: 8
-      length: 4
-      interfaceType: uint
-      defaultValue: 500000
-      description: Specifies the sample update rate in hertz.
-
-  file: &filePayload
-    <<: *waveformPayload
-    Path:
-      offset: 12
-      length: 33
-      interfaceType: string
-      description: Specifies the null-terminated path of the waveform file on the SD card.
-
-  function: &functionPayload
-    <<: *waveformPayload
-    Frequency:
-      offset: 12
-      length: 4
-      interfaceType: uint
-      defaultValue: 1
-      description: Specifies the frequency of the waveform in hertz.
-    Amplitude:
-      offset: 16
-      length: 4
-      interfaceType: float
-      minValue: 0
-      maxValue: 10
-      defaultValue: 1
-      description: >-
-        Specifies the peak amplitude of the waveform in volts, measured from
-        its vertical centre.
-    VerticalShift:
-      offset: 20
-      length: 4
-      interfaceType: float
-      defaultValue: 1
-      description: Specifies the vertical offset applied to the waveform in volts.
-    NormalizedPhaseShift:
-      offset: 24
-      length: 4
-      interfaceType: float
-      minValue: -1
-      maxValue: 1
-      defaultValue: 0
-      description: >-
-        Normalized phase shift relative to the period with range:
-        -1.0 (max right shift) to 1.0 (max left shift).
-
-  trapezoid: &trapezoidPayload
-    <<: *functionPayload
-    RampOnDuration:
-      offset: 28
-      length: 4
-      interfaceType: uint
-      defaultValue: 0
-      description: Specifies the duration of the rising ramp in microseconds.
-    PulseWidthDuration:
-      offset: 32
-      length: 4
-      interfaceType: uint
-      defaultValue: 0
-      description: >-
-        Specifies the total pulse width (including ramp-on and ramp-off
-        duration) in microseconds.
-    RampOffDuration:
-      offset: 36
-      length: 4
-      interfaceType: uint
-      defaultValue: 0
-      description: Specifies the duration of the falling ramp in microseconds.
-
 registers:
   DOPortState:
     address: 32
@@ -267,7 +173,33 @@ registers:
     access: Write
     description: Specifies the file player settings for analog output channel 0.
     payloadSpec:
-      <<: *filePayload
+      Cycles:
+        offset: 0
+        length: 4
+        interfaceType: uint
+        defaultValue: 1
+        description: >-
+          Specifies how many times the waveform is played, or zero to play it
+          indefinitely.
+      Duration:
+        offset: 4
+        length: 4
+        interfaceType: uint
+        defaultValue: 0
+        description: >-
+          Specifies the duration of a single cycle in microseconds, or zero to
+          play the whole waveform.
+      UpdateFrequency:
+        offset: 8
+        length: 4
+        interfaceType: uint
+        defaultValue: 500000
+        description: Specifies the sample update rate in hertz.
+      Path:
+        offset: 12
+        length: 33
+        interfaceType: string
+        description: Specifies the null-terminated path of the waveform file on the SD card.
   FileSettings1:
     <<: *fileSettings
     address: 55
@@ -287,8 +219,63 @@ registers:
     length: 28
     access: Write
     description: Specifies the sine player settings for analog output channel 0.
-    payloadSpec:
-      <<: *functionPayload
+    # Shared by the sine and trapezoid player settings, mirroring the struct
+    # hierarchy in firmware/inc/waveform_settings.h.
+    payloadSpec: &functionPayload
+      Cycles:
+        offset: 0
+        length: 4
+        interfaceType: uint
+        defaultValue: 1
+        description: >-
+          Specifies how many times the waveform is played, or zero to play it
+          indefinitely.
+      Duration:
+        offset: 4
+        length: 4
+        interfaceType: uint
+        defaultValue: 0
+        description: >-
+          Specifies the duration of a single cycle in microseconds, or zero to
+          play the whole waveform.
+      UpdateFrequency:
+        offset: 8
+        length: 4
+        interfaceType: uint
+        defaultValue: 500000
+        description: Specifies the sample update rate in hertz.
+      Frequency:
+        offset: 12
+        length: 4
+        interfaceType: uint
+        defaultValue: 1
+        description: Specifies the frequency of the waveform in hertz.
+      Amplitude:
+        offset: 16
+        length: 4
+        interfaceType: float
+        minValue: 0
+        maxValue: 10
+        defaultValue: 1
+        description: >-
+          Specifies the peak amplitude of the waveform in volts, measured from
+          its vertical centre.
+      VerticalShift:
+        offset: 20
+        length: 4
+        interfaceType: float
+        defaultValue: 1
+        description: Specifies the vertical offset applied to the waveform in volts.
+      NormalizedPhaseShift:
+        offset: 24
+        length: 4
+        interfaceType: float
+        minValue: -1
+        maxValue: 1
+        defaultValue: 0
+        description: >-
+          Normalized phase shift relative to the period with range:
+          -1.0 (max right shift) to 1.0 (max left shift).
   SineSettings1:
     <<: *sineSettings
     address: 59
@@ -309,7 +296,27 @@ registers:
     access: Write
     description: Specifies the trapezoid player settings for analog output channel 0.
     payloadSpec:
-      <<: *trapezoidPayload
+      <<: *functionPayload
+      RampOnDuration:
+        offset: 28
+        length: 4
+        interfaceType: uint
+        defaultValue: 0
+        description: Specifies the duration of the rising ramp in microseconds.
+      PulseWidthDuration:
+        offset: 32
+        length: 4
+        interfaceType: uint
+        defaultValue: 0
+        description: >-
+          Specifies the total pulse width (including ramp-on and ramp-off
+          duration) in microseconds.
+      RampOffDuration:
+        offset: 36
+        length: 4
+        interfaceType: uint
+        defaultValue: 0
+        description: Specifies the duration of the falling ramp in microseconds.
   TrapezoidSettings1:
     <<: *trapezoidSettings
     address: 63
