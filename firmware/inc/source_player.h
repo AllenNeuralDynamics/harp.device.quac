@@ -40,7 +40,7 @@ public:
  */
     bool claim_buffer(TimerPacedDMADoubleBuffer<T, BUF_SIZE>* buf)
     {
-        manage_buffer_timing_ = true; // Flag that we need to deal with timer.
+        manage_buffer_timing_ = true;
         // Upcast to parent and call the other overload option.
         DMADoubleBuffer<T, BUF_SIZE>* parent_buf =
             static_cast<DMADoubleBuffer<T, BUF_SIZE>*>(buf);
@@ -350,7 +350,7 @@ private:
     inline size_t chunk_index()
     {return chunk_bytes_read_ / sizeof(T);}
 
-    bool manage_buffer_timing_;
+    bool manage_buffer_timing_; // Flag that we need to deal with timer.
     T* idle_buf_ptr_;
 };
 #endif // SOURCE_PLAYER_H
