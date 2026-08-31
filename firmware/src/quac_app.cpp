@@ -310,6 +310,8 @@ void write_dac_abort(msg_t& msg)
 {
     HarpCore::copy_msg_payload_to_register(msg); // update dac_start
     transfer_manager.abort(app_regs.dac_abort);
+    // Update DacStart Register state to reflect aborted state.
+    app_regs.dac_start &= ~app_regs.dac_abort;
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
