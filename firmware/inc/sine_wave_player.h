@@ -47,7 +47,9 @@ protected:
  */
     inline void rewind_source() override
     {
-        phase_q32_ = 0;
+        phase_q32_ = settings_.normalized_phase_shift > 0 ?
+            settings_.normalized_phase_shift * 0xFFFFFFFF:
+            (1 + settings_.normalized_phase_shift) * 0xFFFFFFFF;
         phase_inc_q32_ =
             static_cast<uint32_t>((uint64_t{settings_.frequency_hz} << 32)
                                   / settings_.update_frequency_hz);

@@ -1,5 +1,13 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "harp",
+#     "gitpython",
+# ]
+# ///
 """Trigger a trapezoid waveform on one analog output channel."""
+
 import threading
 from time import sleep
 
@@ -7,9 +15,9 @@ import os
 from harp.protocol import HarpMessage
 from harp.serial import open_device
 
-from app_registers import (device_module, 
-                           ACTIVE_PLAYERS, 
-                           TRAPEZOID_SETTINGS, 
+from app_registers import (device_module,
+                           ACTIVE_PLAYERS,
+                           TRAPEZOID_SETTINGS,
                            WaveformType)
 
 # -------------------------------------------------------------------
@@ -23,11 +31,13 @@ SETTINGS_REG = TRAPEZOID_SETTINGS[CHANNEL]
 cycles = 1
 duration_us = 1_000_000
 update_frequency_hz = 10_000
-frequency_hz = 3
+frequency_hz = 2
 amplitude_volts = 5 # center-to-peak, not peak-to-peak
 vertical_shift_volts = 2.5
-ramp_on_us = 100_000
-ramp_off_us = 100_000
+normalized_phase_shift = 0
+ramp_on_us = 50_000
+ramp_off_us = 50_000
+pulse_width_us = 150_000
 
 # -------------------------------------------------------------------
 
@@ -48,7 +58,9 @@ settings = SETTINGS_REG.payload_class(
     frequency=frequency_hz,
     amplitude=amplitude_volts,
     vertical_shift=vertical_shift_volts,
+    normalized_phase_shift=normalized_phase_shift,
     ramp_on_duration=ramp_on_us,
+    pulse_width_duration=pulse_width_us,
     ramp_off_duration=ramp_off_us,
 )
 # Apply settings.
@@ -88,6 +100,4 @@ with device.subscribe(device_module.DacFinished, on_dac_finished):
     # Wait for waveform-finished event.
     print("Waiting for end-of-waveform event.")
     waveform_finished.wait()
-
-print("Done.")
-device.close()
+    print("Disconnecting")

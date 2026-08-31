@@ -242,23 +242,24 @@ public:
         if (!is_active() && is_armed())
             return;
         T* curr_idle_buf_ptr_ = buf_ptr_->get_idle_buffer();
+        // Reset chunk index tracking as soon as we switch buffers.
+        if (idle_buf_ptr_ != curr_idle_buf_ptr_)
+            chunk_bytes_read_ = 0;
         // Skip if channel is active but buffer hasn't switched yet & the idle
         // buffer is full.
         if (idle_buf_ptr_ == curr_idle_buf_ptr_ && !remaining_buf_size())
             return;
-        // Reset chunk index tracking as soon as we switch buffers.
-        if (idle_buf_ptr_ != curr_idle_buf_ptr_)
-            chunk_bytes_read_ = 0;
         // Save buffer ptr to track when buffers switch next.
         idle_buf_ptr_ = curr_idle_buf_ptr_;
         // Transfer data from source to idle buffer.
         // Continue reading up to a full chunk or up to the subset specified.
         // if sample_count_ is 0, read forever or up to the end of the source.
-        size_t bytes_remaining_for_cycle = (sample_count_ == 0)?
+        size_t bytes_to_read = (sample_count_ == 0)?
             remaining_buf_size_bytes():
-            size_t{(sample_count_ - samples_emitted_) * sizeof(T)};
-        size_t bytes_to_read =
-            std::min(bytes_remaining_for_cycle, remaining_buf_size_bytes());
+            std::min(size_t((sample_count_ - samples_emitted_)*sizeof(T)),
+                     remaining_buf_size_bytes());
+        if (bytes_to_read == 0)
+            return;
         size_t bytes_transferred;
         transfer_source_chunk(idle_buf_ptr_ + chunk_index(), bytes_to_read,
                               bytes_transferred);
@@ -293,6 +294,7 @@ public:
             return;
         }
         // Handle endless/many-iteration transfer condition.
+        // i.e: rewind at the completion of a cycle.
         rewind_source();
     }
 

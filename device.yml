@@ -66,17 +66,35 @@ payloadLayouts:
       interfaceType: float
       defaultValue: 1
       description: Specifies the vertical offset applied to the waveform in volts.
+    NormalizedPhaseShift:
+      offset: 24
+      length: 4
+      interfaceType: float
+      minValue: -1
+      maxValue: 1
+      defaultValue: 0
+      description: >-
+        Normalized phase shift relative to the period with range:
+        -1.0 (max right shift) to 1.0 (max left shift).
 
   trapezoid: &trapezoidPayload
     <<: *functionPayload
     RampOnDuration:
-      offset: 24
+      offset: 28
       length: 4
       interfaceType: uint
       defaultValue: 0
       description: Specifies the duration of the rising ramp in microseconds.
+    PulseWidthDuration:
+      offset: 32
+      length: 4
+      interfaceType: uint
+      defaultValue: 0
+      description: >-
+        Specifies the total pulse width (including ramp-on and ramp-off
+        duration) in microseconds.
     RampOffDuration:
-      offset: 28
+      offset: 36
       length: 4
       interfaceType: uint
       defaultValue: 0
@@ -266,7 +284,7 @@ registers:
   SineSettings0: &sineSettings
     address: 58
     type: U8
-    length: 24
+    length: 28
     access: Write
     description: Specifies the sine player settings for analog output channel 0.
     payloadSpec:
@@ -287,7 +305,7 @@ registers:
   TrapezoidSettings0: &trapezoidSettings
     address: 62
     type: U8
-    length: 32
+    length: 40
     access: Write
     description: Specifies the trapezoid player settings for analog output channel 0.
     payloadSpec:

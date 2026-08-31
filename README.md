@@ -8,7 +8,7 @@ hardware, firmware, and software source files for a Harp-compatible 4-channel Di
 ## Specs
 * Analog Output Channels: 4
 * Bit depth: 16-bit
-* Update Rate: 100 [Hz] to **500 [KHz]** (selectable per-channel)
+* Update Rate: 2.288 [KHz] to **500 [KHz]** (selectable per-channel)
   * this is the rate at which a new output value is selected.
 * Voltage Swing: ±10 [V]
 * RMS noise at the zero voltage setting: ~±2.5 [mV]
@@ -88,36 +88,39 @@ The following settings are common to each *Player*.
 * `frequency_hz`: sine wave frequency in hertz
 * `amplitude_volts`: "center-to-peak" amplitude in volts
 * `vertical_shift_volts`: vertical shift in volts
+* `normalized_phase_shift`: period shift normalized to -1.0 (max right shift) to 1.0 (max left shift)
 
 <img width="800" src="./assets/pics/sine_waveform_specs.drawio.png" />
 
 #### Example Settings: play a 10Hz sine wave for 3 seconds
-| Setting                | Value   | Note                                 |
-|------------------------|---------|--------------------------------------|
-| `cycles`               | 1       | play the following settings once     |
-| `duration_us`          | 3000000 | play for 3 seconds                   |
-| `update_frequency_hz`  | 10000   | rate at which to produce new samples |
-| `frequency_hz`         | 10      |                                      |
-| `amplitude_volts`      | 0.5     | result will be 1 [V] peak-to-peak    |
-| `vertical_shift_volts` | 0.5     | result will span 0 [V] to 1 [V]      |
+| Setting                  | Value   | Note                                 |
+|--------------------------|---------|--------------------------------------|
+| `cycles`                 | 1       | play the following settings once     |
+| `duration_us`            | 3000000 | play for 3 seconds                   |
+| `update_frequency_hz`    | 10000   | rate at which to produce new samples |
+| `frequency_hz`           | 10      |                                      |
+| `amplitude_volts`        | 0.5     | result will be 1 [V] peak-to-peak    |
+| `vertical_shift_volts`   | 0.5     | result will span 0 [V] to 1 [V]      |
+| `normalized_phase_shift` | 0       | no phase shift                       |
 
 #### Example Settings: play a 10Hz sine wave forever
-  | Setting                | Value | Note                               |
-|------------------------|-------|--------------------------------------|
-| `cycles`               | 1     | play the following settings once     |
-| `duration_us`          | 0     | play forever (until aborted)         |
-| `update_frequency_hz`  | 10000 |                                      |
-| `frequency_hz`         | 10    |                                      |
-| `amplitude_volts`      | 0.5   | result will be 1 [V] peak-to-peak    |
-| `vertical_shift_volts` | 0     | result will be centered around 0 [V] |
+| Setting                  | Value | Note                                 |
+|--------------------------|-------|--------------------------------------|
+| `cycles`                 | 1     | play the following settings once     |
+| `duration_us`            | 0     | play forever (until aborted)         |
+| `update_frequency_hz`    | 10000 |                                      |
+| `frequency_hz`           | 10    |                                      |
+| `amplitude_volts`        | 0.5   | result will be 1 [V] peak-to-peak    |
+| `vertical_shift_volts`   | 0     | result will be centered around 0 [V] |
+| `normalized_phase_shift` | 0     | no phase shift                       |
 
 ### TrapezoidPlayer Waveforms
 #### Settings
-* `frequency_hz`: sine wave frequency in hertz.
-* `amplitude_volts`: "center-to-peak" amplitude in volts.
-* `vertical_shift_volts`: vertical shift in volts.
-* `ramp_on_us`:
-* `ramp_off_us`:
+(Inherits all Common Settings and Sine Player Settings)
+
+* `ramp_on_us`: time in microseconds to rise from lowest to peak value.
+* `pulse_width_us`: the total pulse width (including ramp-on and ramp-off duration of the waveform in microseconds.
+* `ramp_off_us`: time in microseconds to fall from peak to lowest value.
 
 <img width="800" src="./assets/pics/ramp_waveform_specs.drawio.png" />
   
@@ -265,11 +268,9 @@ To upload new firmware to the device, do the following:
 4. Drag and drop the **\*.uf2** firmware file into the flash drive's top level directory. The flash drive should disappear indicating that the firmware upload worked. The device now has new firmware.
 
 ## Known Limitations
-Currently the device has some known limits, many of which are planned to be eclipsed by future firmware releases.
+Currently the device has some known limits, most of which are planned to be eclipsed by future firmware releases.
 This non-comprehensive list includes:
-* [SinePlayer cannot specify phase shift]()
-* [TrapezoidPlayer cannot specify pulse width]()
-* [FilePlayer cannot deterministically play a subset of a file multiple times]()
-* Waveforms cannot yet be uploaded to the SD card directly over USB.
+* [FilePlayer cannot deterministically play a subset of a file multiple times](https://github.com/AllenNeuralDynamics/harp.device.quac/issues/100)
+* [Waveforms cannot yet be uploaded to the SD card directly over USB](https://github.com/AllenNeuralDynamics/harp.device.quac/issues/6)
 
 For a full list of issues, head over to the project's [issues page](https://github.com/AllenNeuralDynamics/harp.device.quac/issues).

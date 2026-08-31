@@ -179,7 +179,7 @@ public:
     void setup_last_dma_transfer(size_t word_count)
     {
         // Record idle buffer when last transfer is running.
-        last_xfer_idle_buffer_ptr_ = get_active_buffer();
+        last_xfer_idle_buffer_ptr_ = get_idle_buffer();
         // Attach channel to IRQ if configured to do so:
         dma_irqn_set_channel_enabled(end_of_transfer_irq_num_, data_chan_,
                                      trigger_isr_);
@@ -508,6 +508,9 @@ public:
  * be an approximation.
  * \warning if timer is shared, this value will also apply to other resources
  * using the timer.
+ * \warning settings that are invalid will be rejected, and the previous settings
+ *  will be kept.
+ * \return the actual frequency set.
  */
     float set_frequency_hz(uint32_t hz)
     {
