@@ -13,7 +13,7 @@
 //#define HW_VERSION_MINOR (0)
 
 inline constexpr size_t FW_VERSION_MAJOR = 0;
-inline constexpr size_t FW_VERSION_MINOR = 1;
+inline constexpr size_t FW_VERSION_MINOR = 2;
 inline constexpr size_t FW_VERSION_PATCH = 0;
 
 inline constexpr size_t UNUSED_SERIAL_NUMBER = 0; // Deprecated in favor of R_UUID
