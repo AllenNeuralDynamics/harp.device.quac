@@ -8,7 +8,6 @@ exports/ # or exporting Kicad files.
 *.lck
 __fp-info-cache__/
 
-
 # Vim temporary files
 *.swp
 *.swo
@@ -25,3 +24,6 @@ __pycache__/
 
 # Binary files
 *.bin
+
+# Other temporary folders/files.
+.cache/
