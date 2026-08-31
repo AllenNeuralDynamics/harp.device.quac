@@ -25,5 +25,8 @@ __pycache__/
 # Binary files
 *.bin
 
+# Drawio files
+*.$*
+
 # Other temporary folders/files.
 .cache/
