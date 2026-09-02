@@ -82,6 +82,21 @@ public:
     }
 
 /**
+ * \brief pause/unpause one or more channels (as close to simultaneously as possible).
+ */
+    void pause(uint32_t channel_mask)
+    {
+        for (size_t i = 0; i < NUM_CHANNELS; ++i)
+        {
+            if ((channel_mask & (1u << i)))
+                buf_ptrs_[i]->pause_transfer();
+            else
+                buf_ptrs_[i]->resume_transfer();
+        }
+
+    }
+
+/**
  * \brief abort multiple buffer transfers simultaneously
  */
     void abort(uint32_t channel_mask)

@@ -1,4 +1,5 @@
 #include "quac_app.h"
+#include "harp_core.h"
 #include "pio_ltc264x.h"
 #include "waveform_settings.h"
 
@@ -302,7 +303,16 @@ void write_dac_start(msg_t& msg)
 
 void write_dac_pause(msg_t& msg)
 {
-    // TODO: implement this.
+    HarpCore::copy_msg_payload_to_register(msg);
+    // Pause-able channels are channels that are currently active.
+    app_regs.dac_pause &= app_regs.dac_start;
+    transfer_manager.pause(app_regs.dac_pause);
+    // Because playback and pausing happen concurrently (CPU & DMA), the channel
+    // may finish before the pause command takes place, but the true state of the
+    // device will always be recoverable to the PC since the device issues a
+    // DacFinished EVENT any time a channel finishes.
+    if (!HarpCore::is_muted())
+        HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
 
 
