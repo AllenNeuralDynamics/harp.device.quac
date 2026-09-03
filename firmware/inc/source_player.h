@@ -289,7 +289,7 @@ public:
             // The next update() tick will reload waveform from the beginning.
             // At that point, user will be able to retrigger the waveform once
             // is_busy() is false.
-            buf_ptr_->setup_last_dma_transfer(chunk_index());
+            buf_ptr_->setup_last_dma_transfer(chunk_index(), idle_buf_ptr_);
             curr_cycles_ = 0;
             return;
         }
