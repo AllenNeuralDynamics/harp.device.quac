@@ -423,6 +423,8 @@ void update_app()
     }
     // TODO: mixed inputs.
     // Re-arm any finished waveforms.
+    // In the future, have SourcePlayer FSM preload waveforms as soon as the
+    // last dma transfer from the previous run starts.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
         if (!((finished_transfers >> i) & 1u)) // Skip unfinished/untriggered channels.
