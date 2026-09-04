@@ -20,7 +20,8 @@ hardware, firmware, and software source files for a Harp-compatible 4-channel Di
 * Open source hardware, firmware, and software.
 * Cost-effective at < $300 USD to manufacture a single unit.
 * Preview the hardware design online with [KiCanvas](https://kicanvas.org/?repo=https%3A%2F%2Fgithub.com%2FAllenNeuralDynamics%2Fharp.device.quac%2Ftree%2Fdev%2Fhardware).
-
+* Enclosure [CAD Model](https://cad.onshape.com/documents/ead77968efe820b4ecd131c1/w/59637a9e969f17bdfb8f8a49/e/516871a36164952787a658eb?renderMode=0&uiState=6a9b4d63c8796f3fb59185e1)
+ 
 ### Trigger Specs
 * Trigger options
   * external trigger
