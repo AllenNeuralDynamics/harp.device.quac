@@ -140,8 +140,15 @@ public:
     }
 
     inline T* get_active_buffer()
+    {return get_pong_buffer(get_idle_buffer());}
+
+/**
+ * \brief for a given valid buffer ptr to one of the two buffers, return the
+ *  other buffer ptr.
+ */
+    inline T* get_pong_buffer(T* buffer_ptr)
     {
-        return (get_idle_buffer() == (T*)ctrl_chan_data_[0])?
+        return (buffer_ptr == (T*)ctrl_chan_data_[0])?
             (T*)ctrl_chan_data_[1]:
             (T*)ctrl_chan_data_[0];
     }
@@ -176,10 +183,11 @@ public:
  *  buffer transfer. Adjust transfer count if we aren't transferring a full
  *  buffer's worth.
  */
-    void setup_last_dma_transfer(size_t word_count)
+    void setup_last_dma_transfer(size_t word_count, T* idle_buffer_ptr)
     {
-        // Record idle buffer when last transfer is running.
-        last_xfer_idle_buffer_ptr_ = get_idle_buffer();
+        // Record idle buffer **when last transfer would be running**.
+        // (This is the current active buffer.)
+        last_xfer_idle_buffer_ptr_ = get_pong_buffer(idle_buffer_ptr);
         // Attach channel to IRQ if configured to do so:
         dma_irqn_set_channel_enabled(end_of_transfer_irq_num_, data_chan_,
                                      trigger_isr_);
@@ -191,7 +199,7 @@ public:
         channel_config_set_chain_to(&last_cfg, data_chan_); // chain-to-self disables chaining.
         channel_config_set_irq_quiet(&last_cfg, false); // Enable end of transfer irq
         ctrl_chan_last_xfer_data_ =
-            ctrl_chan_data_al0_t(reinterpret_cast<T(*)[BUF_SIZE]>(get_idle_buffer()),
+            ctrl_chan_data_al0_t(reinterpret_cast<T(*)[BUF_SIZE]>(idle_buffer_ptr),
                                  target_address_, word_count, last_cfg);
         // Setup ctrl_chan with final transfer config.
         // When the ctrl channel is next triggered by the data channel,
@@ -213,6 +221,12 @@ public:
                               ctrl_chan_data_word_count,
                               false);  // Don't start.
     }
+
+/**
+ * \brief true if the last dma transfer has been setup.
+ */
+    inline bool last_transfer_configured()
+    {return (ctrl_chan_data_al0_t*)dma_channel_hw_addr(ctrl_chan_)->read_addr == &ctrl_chan_last_xfer_data_;}
 
 /**
  * \brief start dma transfer. Note that setup_transfer() must be called first.
@@ -353,6 +367,8 @@ public:
                 (T**)&ctrl_chan_data_[1];
         if (reset_idle_buffer)
             ctrl_chan_data_start_addr = (T**)&ctrl_chan_data_[0];
+        // Reconfigure the DMA channels. Result should match the result of
+        // setup_transfer(...) except for the starting ping-pong buffer.
         dma_channel_configure(ctrl_chan_, &ctrl_chan_default_cfg_,
                               &dma_hw->ch[data_chan_].al3_read_addr_trig, // write address
                               ctrl_chan_data_start_addr,
@@ -360,8 +376,11 @@ public:
                               false);  // Don't start.
         // For data_chan_ we must additionally reset the transfer count since
         // it was likely altered for the last buffer transfer.
-        dma_channel_hw_addr(data_chan_)->transfer_count = BUF_SIZE;
-        dma_channel_set_config(data_chan_, &data_chan_default_cfg_, false);
+        dma_channel_configure(data_chan_, &data_chan_default_cfg_,
+                              target_address_,   // write address
+                              nullptr,          // read address to be populated by ctrl_chan_
+                              BUF_SIZE,
+                              false);  // Don't start.
     }
 
 /**
@@ -393,6 +412,7 @@ public:
  * \brief true if dma re-triggering loop has been disconnected.
  * \details this happens if the current transfer was aborted or the next
  *  transfer was set to be the final transfer.
+ * \details this value is set immediately before the final dma transfer starts.
  */
     inline bool dma_chain_loop_disconnected()
     {

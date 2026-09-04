@@ -116,9 +116,8 @@ public:
     virtual void reset()
     {
         abort_transfer(); // Will deassert is_busy()
-        // Don't reset tracking of underlying buffers.
         if (buf_ptr_ != nullptr)
-            buf_ptr_->reset_transfer_config(false);
+            buf_ptr_->reset_transfer_config(false); // Don't reset buffer tracking.
         while (is_updating.load()) // wait for core1 update to finish any update.
             __asm__ __volatile__ ("nop");
         is_armed_ = false;
@@ -241,6 +240,8 @@ public:
         // Skip if channel is ready but not transferring.
         if (!is_active() && is_armed())
             return;
+        if (buf_ptr_->last_transfer_configured())
+            return;
         T* curr_idle_buf_ptr_ = buf_ptr_->get_idle_buffer();
         // Reset chunk index tracking as soon as we switch buffers.
         if (idle_buf_ptr_ != curr_idle_buf_ptr_)
@@ -289,7 +290,7 @@ public:
             // The next update() tick will reload waveform from the beginning.
             // At that point, user will be able to retrigger the waveform once
             // is_busy() is false.
-            buf_ptr_->setup_last_dma_transfer(chunk_index());
+            buf_ptr_->setup_last_dma_transfer(chunk_index(), idle_buf_ptr_);
             curr_cycles_ = 0;
             return;
         }
