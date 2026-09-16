@@ -2,6 +2,7 @@
 #define CONFIG_H
 #include <array>
 #include <cstdint>
+#include "core_registers.h" // for semver_t
 #include "sd_card.h"  // from no-os* sd card library.
 #include "pio_ltc264x.h"
 #include "bitmask_gen.h"
@@ -11,10 +12,9 @@
 #define HW_VERSION_MAJOR (1)
 #define HW_VERSION_MINOR (1)
 //#define HW_VERSION_MINOR (0)
+inline constexpr semver_t HW_VERSION = {HW_VERSION_MAJOR, HW_VERSION_MINOR, 0};
 
-inline constexpr size_t FW_VERSION_MAJOR = 0;
-inline constexpr size_t FW_VERSION_MINOR = 2;
-inline constexpr size_t FW_VERSION_PATCH = 1;
+inline constexpr semver_t FW_VERSION = {0, 2, 1};
 
 inline constexpr size_t UNUSED_SERIAL_NUMBER = 0; // Deprecated in favor of R_UUID
 
