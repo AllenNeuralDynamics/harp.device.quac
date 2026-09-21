@@ -3,28 +3,29 @@
 # requires-python = ">=3.12"
 # dependencies = [
 #     "harp",
-#     "gitpython",
 # ]
 # ///
 """Trigger a trapezoid waveform on one analog output channel."""
 
+import os
 import threading
 from time import sleep
 
-import os
+from harp import serial
 from harp.protocol import HarpMessage
-from harp.serial import open_device
 
-from app_registers import (device_module,
-                           ACTIVE_PLAYERS,
-                           TRAPEZOID_SETTINGS,
-                           WaveformType)
+import device as quac
 
 # -------------------------------------------------------------------
 # CUSTOM SETTINGS
 COM_PORT = "/dev/ttyACM0" if os.name == "posix" else "COM3"
 CHANNEL = 0
-WAVEFORM_TYPE = WaveformType.TRAPEZOID
+WAVEFORM_TYPE = quac.PlayerType.TRAPEZOID
+ACTIVE_PLAYERS = [quac.ActivePlayer0, quac.ActivePlayer1, quac.ActivePlayer2, quac.ActivePlayer3]
+TRAPEZOID_SETTINGS = [
+    quac.TrapezoidSettings0, quac.TrapezoidSettings1,
+    quac.TrapezoidSettings2, quac.TrapezoidSettings3,
+]
 ACTIVE_PLAYER_REG = ACTIVE_PLAYERS[CHANNEL]
 SETTINGS_REG = TRAPEZOID_SETTINGS[CHANNEL]
 
@@ -44,7 +45,7 @@ pulse_width_us = 150_000
 # Open the device (validates WhoAmI against device.yml) and print the info on
 # screen. There is no built-in raw-traffic dump file in the new package (the
 # old "ibl.bin" argument); use device.subscribe_all() if that's needed again.
-device = open_device(device_module, port=COM_PORT)
+device = serial.open_device(quac, port=COM_PORT)
 
 # Specify Player
 print(f"Setting channel {CHANNEL} to {WAVEFORM_TYPE.name} Player.")
@@ -72,7 +73,7 @@ print(f"TrapezoidSettings[{CHANNEL}] -> {settings}, "
 channel_mask = 1 << CHANNEL
 channel_is_ready = False
 while not channel_is_ready:
-    reply = device.read(device_module.DacReady)
+    reply = device.read(quac.DacReady)
     channel_is_ready = (reply.payload) & channel_mask > 0
     if not channel_is_ready:
         print(f"Channel[{CHANNEL}] is not yet ready...")
@@ -90,10 +91,10 @@ def on_dac_finished(msg: HarpMessage) -> None:
     waveform_finished.set()
 
 
-with device.subscribe(device_module.DacFinished, on_dac_finished):
+with device.subscribe(quac.DacFinished, on_dac_finished):
     # Trigger waveform.
     print("Starting waveform.")
-    reply = device.write(device_module.DacStart, channel_mask)
+    reply = device.write(quac.DacStart, channel_mask)
     print(f" Read back: 0x{int(reply.payload):02x} ({reply.message_type.name}), "
           f"time: {reply.timestamp}")
 

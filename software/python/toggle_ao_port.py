@@ -3,17 +3,16 @@
 # requires-python = ">=3.12"
 # dependencies = [
 #     "harp",
-#     "gitpython",
 # ]
 # ///
-
+"""Write a random voltage to each analog output channel, then reset to midscale."""
 import os
 import random
 from time import sleep
 
-from harp.serial import open_device
+from harp import serial
 
-from app_registers import AO_CHANNELS, device_module
+import device as quac
 
 # ----CUSTOM SETTINGS------------------------------------------------
 COM_PORT = "/dev/ttyACM0" if os.name == "posix" else "COM3"
@@ -21,7 +20,9 @@ NUM_CHANNELS = 4
 
 # ----END OF CUSTOM SETTINGS-----------------------------------------
 
-with open_device(device_module, port=COM_PORT) as device:
+AO_CHANNELS = [quac.AOChannel0, quac.AOChannel1, quac.AOChannel2, quac.AOChannel3]
+
+with serial.open_device(quac, port=COM_PORT) as device:
 
     for i in range(NUM_CHANNELS):
         ao_value = random.uniform(-10, 10)
