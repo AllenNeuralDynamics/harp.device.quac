@@ -56,7 +56,7 @@ For similar devices, have a look at:
 * [PCIE-6738](https://www.ni.com/docs/en-US/bundle/pcie-6738-specs/page/specs.html) by National Instruments.
 
 ## Ordering ➡ 💸
-Stay tuned for a link to order boards directly from PCBWay:
+Order fully-assembled boards directly from [PCBWay](https://www.pcbway.com/project/shareproject/harp_device_quac_quad_DAC_90dbc413.html).
 
 These printed circuit boards are made on-demand.
 
