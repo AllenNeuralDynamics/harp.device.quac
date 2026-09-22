@@ -17,15 +17,11 @@
     #include "pico/stdlib.h" // for uart printing
 #endif
 
+const uint8_t interface_hash[20] = INTERFACE_HASH;
 
 // Create Harp App.
-HarpCApp& app = HarpCApp::init(HARP_DEVICE_ID,
-                               HW_VERSION_MAJOR, HW_VERSION_MINOR,
-                               0,
-                               FW_VERSION_MAJOR, FW_VERSION_MINOR,
-                               UNUSED_SERIAL_NUMBER,
-                               "quac",
-                               (uint8_t*)GIT_HASH,
+HarpCApp& app = HarpCApp::init(HARP_DEVICE_ID, FW_VERSION, HW_VERSION, "quac",
+                               (uint8_t*)GIT_HASH, interface_hash,
                                app_reg_specs, APP_REG_COUNT,
                                update_app, reset_app);
 
@@ -59,12 +55,23 @@ player_ptrs;
 MultiTransferManager<T, READ_BUF_SIZE, NUM_CHANNELS> transfer_manager(buf_ptrs,
                                                                       dacs);
 
+void set_led(bool enabled)
+{    gpio_put(DEBUG_LEDS[0], enabled);}
+
+bool get_led()
+{    return gpio_get(DEBUG_LEDS[0]);}
+
 // Core0 main.
 int main()
 {
+// Configure OP_LED
+    gpio_init(DEBUG_LEDS[0]);
+    gpio_set_dir(DEBUG_LEDS[0], GPIO_OUT);
+    gpio_put(DEBUG_LEDS[0], 0);
 // Init Synchronizer.
     HarpSynchronizer::init(uart1, HARP_SYNC_RX_PIN);
     app.set_synchronizer(&HarpSynchronizer::instance());
+    app.set_op_led_fns(set_led, get_led);
 #ifdef DEBUG
     stdio_uart_init_full(uart0, 921600, UART_TX_PIN, -1); // use uart1 tx only.
     printf("Hello, from the quac board!\r\n");

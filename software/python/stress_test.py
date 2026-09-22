@@ -8,7 +8,9 @@
 """Trigger a sine waveform on one analog output channel, repeatedly on Enter."""
 
 import os
+import random
 import threading
+from time import sleep
 
 from harp import serial
 from harp.protocol import HarpMessage
@@ -26,12 +28,15 @@ ACTIVE_PLAYER_REG = ACTIVE_PLAYERS[CHANNEL]
 SETTINGS_REG = SINE_SETTINGS[CHANNEL]
 
 cycles = 1
-update_frequency_hz = 10_000
-frequency_hz = 1
-duration_us = 3_000_000
+#update_frequency_hz = 10_000
+update_frequency_hz = 500_000
+#frequency_hz = 1
+frequency_hz = 10
+#duration_us = 3_000_000
+duration_us = 100_000
 amplitude_volts = 2.5 # center-to-peak, not peak-to-peak
 vertical_shift_volts = 1.25
-normalized_phase_shift = 0
+normalized_phase_shift = 0.5
 
 # ----END OF CUSTOM SETTINGS-----------------------------------------
 
@@ -55,11 +60,11 @@ with serial.open_device(quac, port=COM_PORT) as device:
         vertical_shift=vertical_shift_volts,
         normalized_phase_shift=normalized_phase_shift
     )
-    # Apply settings.
-    reply = device.write(SETTINGS_REG, settings)
-    print(f"SineSettings[{CHANNEL}] -> {settings}, ({reply.message_type.name})")
-    print(f"reply: {reply.payload}")
-    print()
+    ## Apply settings.
+    #reply = device.write(SETTINGS_REG, settings)
+    #print(f"SineSettings[{CHANNEL}] -> {settings}, ({reply.message_type.name})")
+    #print(f"reply: {reply.payload}")
+    #print()
 
     channel_mask = 1 << CHANNEL
 
@@ -69,19 +74,45 @@ with serial.open_device(quac, port=COM_PORT) as device:
 
     def on_dac_finished(msg: HarpMessage) -> None:
         print(msg)
-        print()
         waveform_finished.set()
 
 
     with device.subscribe(quac.DacFinished, on_dac_finished):
-        # Trigger waveform.
-        print("Starting waveform.")
-        reply = device.write(quac.DacStart, channel_mask)
-        print(f" Read back: 0x{int(reply.payload):02x} ({reply.message_type.name}), "
-            f"time: {reply.timestamp}")
+        for i in range(1000):
+            print(f"Trial {i+1}/1000")
+            waveform_finished.clear()
 
-        # Wait for waveform-finished event.
-        print("Waiting for end-of-waveform event.")
-        waveform_finished.wait()
+            # Apply settings.
+            print("Applying settings.")
+            reply = device.write(SETTINGS_REG, settings)
+            print(f"SineSettings[{CHANNEL}] -> {settings}, ({reply.message_type.name})")
+            print(f"reply: {reply.payload}")
+            print()
+
+            # Wait until device is ready
+            print("Waiting for device to be ready. ")
+            ready = 0
+            for i in range(1000):
+                print(f"  Checking... try {i}/1000", end="")
+                ready = int(device.read(quac.DacReady).payload)
+                if ready & channel_mask:
+                    print()
+                    break
+                sleep(0.001)
+            if not ready:
+                raise RuntimeError(f"AO{CHANNEL} never became ready")
+            # Trigger waveform.
+            print("Starting waveform.")
+            reply = device.write(quac.DacStart, channel_mask)
+            print(f" Read back: 0x{int(reply.payload):02x} ({reply.message_type.name}), "
+                f"time: {reply.timestamp}")
+
+            # Wait for waveform-finished event.
+            print("Waiting for end-of-waveform event.")
+            waveform_finished.wait(timeout=(duration_us/1.0e6 + 0.1))
+            if not waveform_finished:
+                raise RuntimeError("Waveform not finished")
+            sleep(random.uniform(0, 0.1))
+            print()
 
     print("Disconnecting.")

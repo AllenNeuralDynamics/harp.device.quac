@@ -3,6 +3,18 @@ find_package(Git REQUIRED)
 execute_process(COMMAND "${GIT_EXECUTABLE}" rev-parse --short HEAD OUTPUT_VARIABLE COMMIT_ID OUTPUT_STRIP_TRAILING_WHITESPACE)
 message(STATUS "Computed Git Hash: ${COMMIT_ID}")
 add_definitions(-DGIT_HASH="${COMMIT_ID}") # Usable in source code.
+# Generate device.yml interface hash
+file(SHA1 "../../device.yml" INTERFACE_HASH_STR)
+set(BYTE_ARRAY "")
+string(LENGTH "${INTERFACE_HASH_STR}" HEX_LEN)
+math(EXPR LOOP_MAX "${HEX_LEN} - 1")
+foreach(I RANGE 0 ${LOOP_MAX} 2)
+    string(SUBSTRING "${INTERFACE_HASH_STR}" ${I} 2 HEX_BYTE)
+    list(APPEND BYTE_ARRAY "0x${HEX_BYTE}")
+endforeach()
+string(JOIN ", " INTERFACE_HASH ${BYTE_ARRAY})
+message(STATUS "Device Interface SHA-1 Hash: ${INTERFACE_HASH_STR}")
+
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # for clang
 
@@ -40,11 +52,16 @@ add_subdirectory(lib/core.pico/firmware lib_build/pico-core)
 add_subdirectory(lib/rp2040.pio-ltc264x lib_build/pio-ltc264x)
 add_subdirectory(lib/etl lib_build/etl)
 
+
 add_executable(${PROJECT_NAME}
     src/main.cpp
     src/sd_hw_config.cpp
     src/quac_app.cpp
     src/core1_file_player.cpp
+)
+
+target_compile_definitions(${PROJECT_NAME} PRIVATE
+    "INTERFACE_HASH={${INTERFACE_HASH}}"
 )
 
 include_directories(inc)

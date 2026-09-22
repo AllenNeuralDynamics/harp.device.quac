@@ -3,22 +3,20 @@
 # requires-python = ">=3.12"
 # dependencies = [
 #     "harp",
-#     "gitpython",
 # ]
 # ///
-
+"""Subscribe to and print all Harp events from the device."""
 import os
 import threading
 
+from harp import serial
 from harp.protocol import HarpMessage
-from harp.serial import open_device
 
-from app_registers import device_module
+import device as quac
 
-# ----CUSTOM SETTINGS------------------------------------------------
+
 COM_PORT = "/dev/ttyACM0" if os.name == "posix" else "COM3"
 
-# ----END OF CUSTOM SETTINGS-----------------------------------------
 
 def print_event(msg: HarpMessage) -> None:
     print(msg)
@@ -26,7 +24,7 @@ def print_event(msg: HarpMessage) -> None:
 
 
 print("Waiting for events.")
-with open_device(device_module, port=COM_PORT) as device:
+with serial.open_device(quac, port=COM_PORT) as device:
     with device.subscribe_all(print_event):
         try:
             threading.Event().wait()

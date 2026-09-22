@@ -3,29 +3,26 @@
 # requires-python = ">=3.12"
 # dependencies = [
 #     "harp",
-#     "gitpython",
 # ]
 # ///
 """Trigger a sine waveform on one analog output channel and abort it shortly after."""
 
 import os
-import threading
 from time import sleep
 
+from harp import serial
 from harp.protocol import HarpMessage
-from harp.serial import open_device
 
-from app_registers import (device_module,
-                           ACTIVE_PLAYERS,
-                           SINE_SETTINGS,
-                           WaveformType)
+import device as quac
 
 # ----CUSTOM SETTINGS------------------------------------------------
 COM_PORT = "/dev/ttyACM0" if os.name == "posix" else "COM3"
 
 CHANNEL = 0
 CHANNEL_MASK = 1 << CHANNEL
-WAVEFORM_TYPE = WaveformType.SINE
+WAVEFORM_TYPE = quac.PlayerType.SINE
+ACTIVE_PLAYERS = [quac.ActivePlayer0, quac.ActivePlayer1, quac.ActivePlayer2, quac.ActivePlayer3]
+SINE_SETTINGS = [quac.SineSettings0, quac.SineSettings1, quac.SineSettings2, quac.SineSettings3]
 ACTIVE_PLAYER_REG = ACTIVE_PLAYERS[CHANNEL]
 SETTINGS_REG = SINE_SETTINGS[CHANNEL]
 
@@ -42,7 +39,7 @@ normalized_phase_shift = 0
 
 # Open the device (validates WhoAmI against device.yml) and print the info on
 # screen.
-with open_device(device_module, port=COM_PORT) as device:
+with serial.open_device(quac, port=COM_PORT) as device:
 
     # Specify Player
     print(f"Setting channel {CHANNEL} to {WAVEFORM_TYPE.name} Player.")
@@ -68,7 +65,7 @@ with open_device(device_module, port=COM_PORT) as device:
     channels_ready = False
     print("Checking if channel is ready.")
     while not channels_ready:
-        reply = device.read(device_module.DacReady)
+        reply = device.read(quac.DacReady)
         print(f" Read back: 0x{int(reply.payload):02x} ({reply.message_type.name}), "
             f"time: {reply.timestamp}")
         channels_ready = int(reply.payload) & CHANNEL_MASK
@@ -79,14 +76,14 @@ with open_device(device_module, port=COM_PORT) as device:
 
     # Trigger waveform.
     print("Starting waveform.")
-    reply = device.write(device_module.DacStart, CHANNEL_MASK)
+    reply = device.write(quac.DacStart, CHANNEL_MASK)
     print(f" Read back: 0x{int(reply.payload):02x} ({reply.message_type.name}), "
         f"time: {reply.timestamp}")
 
     # Abort waveform
     sleep(1.25)
     print("Aborting waveform.")
-    reply = device.write(device_module.DacAbort, CHANNEL_MASK)
+    reply = device.write(quac.DacAbort, CHANNEL_MASK)
     print(f" Read back: 0x{int(reply.payload):02x} ({reply.message_type.name}), "
         f"time: {reply.timestamp}")
 

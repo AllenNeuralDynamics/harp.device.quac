@@ -3,7 +3,6 @@
 # requires-python = ">=3.12"
 # dependencies = [
 #     "harp",
-#     "gitpython",
 # ]
 # ///
 """Trigger four file-based waveforms across all analog output channels."""
@@ -12,18 +11,15 @@ import os
 import threading
 from time import sleep
 
+from harp import serial
 from harp.protocol import HarpMessage
-from harp.serial import open_device
 
-from app_registers import (device_module,
-                           ACTIVE_PLAYERS,
-                           FILE_SETTINGS,
-                           WaveformType)
+import device as quac
 
 # ----CUSTOM SETTINGS------------------------------------------------
 COM_PORT = "/dev/ttyACM0" if os.name == "posix" else "COM3"
 
-WAVEFORM_TYPE = WaveformType.FILE
+WAVEFORM_TYPE = quac.PlayerType.FILE
 NUM_CHANNELS = 4
 
 duration_us = 0 # play the whole file
@@ -32,10 +28,15 @@ update_frequency_hz = 500_000
 
 # ----END OF CUSTOM SETTINGS-----------------------------------------
 
+ACTIVE_PLAYERS = [quac.ActivePlayer0, quac.ActivePlayer1, quac.ActivePlayer2, quac.ActivePlayer3]
+FILE_SETTINGS = [
+    quac.FileSettings0, quac.FileSettings1, quac.FileSettings2, quac.FileSettings3,
+]
+
 # Open the device (validates WhoAmI against device.yml) and print the info on
 # screen. There is no built-in raw-traffic dump file in the new package (the
 # old "ibl.bin" argument); use device.subscribe_all() if that's needed again.
-with open_device(device_module, port=COM_PORT) as device:
+with serial.open_device(quac, port=COM_PORT) as device:
 
     settings = [
         FILE_SETTINGS[i].payload_class(
@@ -61,7 +62,7 @@ with open_device(device_module, port=COM_PORT) as device:
     # Ensure waveform is ready.
     channels_ready = False
     while not channels_ready:
-        reply = device.read(device_module.DacReady)
+        reply = device.read(quac.DacReady)
         channels_ready = int(reply.payload) == 0b1111
         if not channels_ready:
             print(f"Not all channels are ready.... Current state: {int(reply.payload):02x}")
@@ -83,12 +84,12 @@ with open_device(device_module, port=COM_PORT) as device:
             all_finished.set()
 
 
-    with device.subscribe(device_module.DacFinished, on_dac_finished):
+    with device.subscribe(quac.DacFinished, on_dac_finished):
         # Start each channel offset by 0.5 sec.
         for i in range(NUM_CHANNELS):
             value = int(1) << i
             print(f"Writing: 0x{value:02x}", end = " ")
-            reply = device.write(device_module.DacStart, value)
+            reply = device.write(quac.DacStart, value)
             print(f" Read back: 0x{int(reply.payload):02x} ({reply.message_type.name}), time: {reply.timestamp}")
             sleep(0.5)
 
