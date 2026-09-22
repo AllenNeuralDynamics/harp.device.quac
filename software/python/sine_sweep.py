@@ -97,7 +97,7 @@ with serial.open_device(quac, port=args.port) as device:
     waveform_finished = threading.Event()
 
     def on_dac_finished(msg):
-        if int(msg.payload) & channel_mask:
+        if msg.payload & channel_mask:
             waveform_finished.set()
             print("Waveform finished.")
 
