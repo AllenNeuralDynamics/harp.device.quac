@@ -82,6 +82,34 @@ public:
     }
 
 /**
+ * \brief Mute or un-mute the specified channels. (aka: "blanking")
+ */
+    void mute_outputs(uint32_t mute_mask, uint32_t mute_setting)
+    {
+        for (size_t i = 0; i < NUM_CHANNELS; ++i)
+        {
+            if (!(mute_mask & (1u << i)))
+                continue;
+            size_t mute = ((mute_setting >> i) & 1u);
+            if (mute)
+            {
+                // Move DMA channel output address to "null" location
+                uint32_t data_chan = buf_ptrs_[i]->get_data_channel();
+                dma_channel_set_write_addr(data_chan, nullptr, false);
+                // Manually write output to 0 V.
+                dacs_[i].write_value(PIO_LTC264x::OUTPUT_MIDSCALE);
+            }
+            else // unmute
+            {
+                // Restore DMA channel output address to peripheral location
+                uint32_t data_chan = buf_ptrs_[i]->get_data_channel();
+                dma_channel_set_write_addr(data_chan,
+                    buf_ptrs_[i]->get_destination_address(), false);
+            }
+        }
+    }
+
+/**
  * \brief abort multiple buffer transfers simultaneously
  */
     void abort(uint32_t channel_mask)

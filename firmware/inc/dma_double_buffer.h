@@ -422,6 +422,12 @@ public:
         return chained_channel == data_chan_;
     }
 
+/**
+ * \brief getter function.
+ */
+    inline volatile void* get_destination_address()
+    {return target_address_;}
+
 private:
 /**
  * \brief data sent from ctrl_chan_ to data_chan_ to configure data_chan_'s
