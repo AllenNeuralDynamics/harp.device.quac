@@ -134,22 +134,22 @@ registers:
     type: U8
     access: Write
     maskType: DIPinMode
-    default: ExternalTrigger
+    default: 1  # External Trigger
     description: "DI Pin 0's Function assignment (external trigger or blanking)."
   DI1PinMode:
     <<: *diPinMode
     address: 47
-    default: ExternalTrigger
+    default: 1
     description: "DI Pin 1's Function assignment (external trigger or blanking)."
   DI2PinMode:
     <<: *diPinMode
     address: 48
-    default: ExternalTrigger
+    default: 1
     description: "DI Pin 2's Function assignment (external trigger or blanking)."
   DI3PinMode:
     <<: *diPinMode
     address: 49
-    default: ExternalTrigger
+    default: 1
     description: "DI Pin 3's Function assignment (external trigger or blanking)."
 
   DI0AnalogOutputChannelAssignment: &AnalogOutputChannelAssignment
