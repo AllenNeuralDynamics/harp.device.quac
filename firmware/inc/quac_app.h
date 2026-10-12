@@ -144,30 +144,7 @@ void write_any_channel_active_player(msg_t& msg);
 
 void select_player(size_t channel, player_t player);
 
-template <typename DI_SETTING_TYPE>
-void write_di_setting(msg_t& msg, DI_SETTING_TYPE* base_address)
-{
-    // Convert address to output channel with pointer arithmetic.
-    const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
-    size_t di_pin = ((DI_SETTING_TYPE*)spec.base_ptr - app_regs.di_pin_modes);
-    // Error if we try to change the DI setting while any of its
-    // assigned analog outputs are busy playing.
-    for (size_t ao_chan = 0; ao_chan < NUM_CHANNELS; ++ao_chan)
-    {
-        // Skip checking unassigned analog output channels.
-        if (!((app_regs.input_to_ao_channel_mapping[di_pin] >> ao_chan) & 1u))
-            continue;
-        // Check if this analog output channel is busy.
-        if (bufs[ao_chan].is_transferring())
-        {
-            if (!HarpCore::is_muted())
-                HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
-            return;
-        }
-    }
-    // Write the setting
-    HarpCore::write_reg_generic(msg);
-}
+
 
 /**
  * \brief handler function to write any settings to a specific player type.
@@ -204,6 +181,8 @@ void read_any_waveform_hash(uint8_t address);
 
 void write_any_waveform_data(msg_t& msg);
 
+void apply_blanking_settings_to_ao_channel(uint32_t ao_channel);
+
 void reset_app();
 
 
@@ -215,6 +194,71 @@ void update_app();
 /// Callbacks
 void handle_digital_input();
 
+
+template <typename DI_SETTING_TYPE>
+void write_di_setting(msg_t& msg, DI_SETTING_TYPE* base_address)
+{
+    // Convert address to output channel with pointer arithmetic.
+    const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
+    size_t di_index = ((DI_SETTING_TYPE*)spec.base_ptr - base_address);
+    // Error if we try to change the DI setting while any of its
+    // assigned analog outputs are busy playing.
+    for (size_t ao_chan = 0; ao_chan < NUM_CHANNELS; ++ao_chan)
+    {
+        // Skip checking unassigned analog output channels.
+        if (!((app_regs.input_to_ao_channel_mapping[di_index] >> ao_chan) & 1u))
+            continue;
+        // Check if this analog output channel is busy.
+        if (bufs[ao_chan].is_transferring())
+        {
+            if (!HarpCore::is_muted())
+                HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+            return;
+        }
+    }
+    // Check if resulting blanking settings are valid.
+    // i.e: 2 DI pins cannot blank the same AO pin.
+    // i.e: do pairwise combination of all ao blanking masks to make sure any AO
+    // channel is being blanked by at most 1 DI pin. (oof.)
+    // Temporarily write the settings.
+    // Save current settings.
+    DI_SETTING_TYPE old_setting = base_address[di_index];
+    HarpCore::copy_msg_payload_to_register(msg);
+    bool valid_settings = true;
+    for (size_t i = 0; i < NUM_DIS; ++i)
+    {
+        // Only check overlapping BLANKING settings.
+        if (app_regs.di_pin_modes[i] != BLANKING)
+            continue;
+        for (size_t j = i+1; j < NUM_DIS; ++j)
+        {
+            if (app_regs.di_pin_modes[j] != BLANKING)
+                continue;
+            if (app_regs.input_to_ao_channel_mapping[i] &
+                app_regs.input_to_ao_channel_mapping[j])
+                valid_settings = false;
+        }
+    }
+    if (!valid_settings)
+    {
+        // restore settings. Harp error.
+        base_address[di_index] = old_setting;
+        if (!HarpCore::is_muted())
+            HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+        return;
+    }
+    // Apply any new blanking settings to any channels that have already been setup.
+    for (size_t ao_chan = 0; ao_chan < NUM_CHANNELS; ++ao_chan)
+    {
+        player_t active_player = player_t(app_regs.active_players[ao_chan]);
+        if (player_is_ready(ao_chan, active_player))
+            apply_blanking_settings_to_ao_channel(ao_chan);
+    }
+
+    // Write the setting
+    HarpCore::write_reg_generic(msg);
+
+}
 
 
 #endif // QUAC_H
