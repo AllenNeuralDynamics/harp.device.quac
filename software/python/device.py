@@ -27,6 +27,7 @@ __all__ = [
     "DigitalOutputs",
     "AnalogOutputs",
     "PlayerType",
+    "DIPinMode",
     "DOPortStatePayload",
     "DOPortSetPayload",
     "DOPortClearPayload",
@@ -37,10 +38,14 @@ __all__ = [
     "DacPausePayload",
     "DacAbortPayload",
     "DacFinishedPayload",
-    "ChannelExternalTriggers0Payload",
-    "ChannelExternalTriggers1Payload",
-    "ChannelExternalTriggers2Payload",
-    "ChannelExternalTriggers3Payload",
+    "DI0PinModePayload",
+    "DI1PinModePayload",
+    "DI2PinModePayload",
+    "DI3PinModePayload",
+    "DI0AnalogOutputChannelAssignmentPayload",
+    "DI1AnalogOutputChannelAssignmentPayload",
+    "DI2AnalogOutputChannelAssignmentPayload",
+    "DI3AnalogOutputChannelAssignmentPayload",
     "ActivePlayer0Payload",
     "ActivePlayer1Payload",
     "ActivePlayer2Payload",
@@ -71,10 +76,14 @@ __all__ = [
     "DacPause",
     "DacAbort",
     "DacFinished",
-    "ChannelExternalTriggers0",
-    "ChannelExternalTriggers1",
-    "ChannelExternalTriggers2",
-    "ChannelExternalTriggers3",
+    "DI0PinMode",
+    "DI1PinMode",
+    "DI2PinMode",
+    "DI3PinMode",
+    "DI0AnalogOutputChannelAssignment",
+    "DI1AnalogOutputChannelAssignment",
+    "DI2AnalogOutputChannelAssignment",
+    "DI3AnalogOutputChannelAssignment",
     "ActivePlayer0",
     "ActivePlayer1",
     "ActivePlayer2",
@@ -159,6 +168,20 @@ class PlayerType(enum.IntEnum):
     """Plays a synthesized trapezoid waveform."""
 
 
+class DIPinMode(enum.IntEnum):
+    """Specifies the digital input pin function"""
+
+    NONE = 0
+    """Setting the pin HIGH does nothing."""
+
+    EXTERNAL_TRIGGER = 1
+    """Setting the pin HIGH will start the assigned AO channels."""
+
+    BLANKING = 2
+    """Setting the pin HIGH will mute (i.e set to 0[V]) the assigned AO channels until the pin is brought low.
+"""
+
+
 class DOPortStatePayload(AnonymousPayload[np.uint8]):
     """Represents the payload of the DOPortState register."""
 
@@ -229,26 +252,50 @@ class DacFinishedPayload(AnonymousPayload[np.uint8]):
     __value__: AnalogOutputs = BitMask(enum=AnalogOutputs)
 
 
-class ChannelExternalTriggers0Payload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the ChannelExternalTriggers0 register."""
+class DI0PinModePayload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the DI0PinMode register."""
+
+    __value__: DIPinMode = GroupMask(enum=DIPinMode, mask=0xFF)
+
+
+class DI1PinModePayload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the DI1PinMode register."""
+
+    __value__: DIPinMode = GroupMask(enum=DIPinMode, mask=0xFF)
+
+
+class DI2PinModePayload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the DI2PinMode register."""
+
+    __value__: DIPinMode = GroupMask(enum=DIPinMode, mask=0xFF)
+
+
+class DI3PinModePayload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the DI3PinMode register."""
+
+    __value__: DIPinMode = GroupMask(enum=DIPinMode, mask=0xFF)
+
+
+class DI0AnalogOutputChannelAssignmentPayload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the DI0AnalogOutputChannelAssignment register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
 
-class ChannelExternalTriggers1Payload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the ChannelExternalTriggers1 register."""
+class DI1AnalogOutputChannelAssignmentPayload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the DI1AnalogOutputChannelAssignment register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
 
-class ChannelExternalTriggers2Payload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the ChannelExternalTriggers2 register."""
+class DI2AnalogOutputChannelAssignmentPayload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the DI2AnalogOutputChannelAssignment register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
 
-class ChannelExternalTriggers3Payload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the ChannelExternalTriggers3 register."""
+class DI3AnalogOutputChannelAssignmentPayload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the DI3AnalogOutputChannelAssignment register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
@@ -681,42 +728,74 @@ class DacFinished(RegisterBase[AnalogOutputs]):
     payload_class = DacFinishedPayload
 
 
-class ChannelExternalTriggers0(RegisterBase[DigitalInputs]):
-    """Specifies which external trigger lines can start channel 0."""
+class DI0PinMode(RegisterBase[DIPinMode]):
+    """DI Pin 0's Function assignment (external trigger or blanking)."""
 
     address: ClassVar[int] = 46
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = ChannelExternalTriggers0Payload
+    payload_class = DI0PinModePayload
 
 
-class ChannelExternalTriggers1(RegisterBase[DigitalInputs]):
-    """Specifies which external trigger lines can start channel 1."""
+class DI1PinMode(RegisterBase[DIPinMode]):
+    """DI Pin 1's Function assignment (external trigger or blanking)."""
 
     address: ClassVar[int] = 47
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = ChannelExternalTriggers1Payload
+    payload_class = DI1PinModePayload
 
 
-class ChannelExternalTriggers2(RegisterBase[DigitalInputs]):
-    """Specifies which external trigger lines can start channel 2."""
+class DI2PinMode(RegisterBase[DIPinMode]):
+    """DI Pin 2's Function assignment (external trigger or blanking)."""
 
     address: ClassVar[int] = 48
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = ChannelExternalTriggers2Payload
+    payload_class = DI2PinModePayload
 
 
-class ChannelExternalTriggers3(RegisterBase[DigitalInputs]):
-    """Specifies which external trigger lines can start channel 3."""
+class DI3PinMode(RegisterBase[DIPinMode]):
+    """DI Pin 3's Function assignment (external trigger or blanking)."""
 
     address: ClassVar[int] = 49
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = ChannelExternalTriggers3Payload
+    payload_class = DI3PinModePayload
+
+
+class DI0AnalogOutputChannelAssignment(RegisterBase[DigitalInputs]):
+    """Specifies which AO channels are assigned to DI Pin 0."""
+
+    address: ClassVar[int] = 50
+    payload_type: ClassVar[PayloadType] = PayloadType.U8
+    payload_class = DI0AnalogOutputChannelAssignmentPayload
+
+
+class DI1AnalogOutputChannelAssignment(RegisterBase[DigitalInputs]):
+    """Specifies which AO channels are assigned to DI Pin 1."""
+
+    address: ClassVar[int] = 51
+    payload_type: ClassVar[PayloadType] = PayloadType.U8
+    payload_class = DI1AnalogOutputChannelAssignmentPayload
+
+
+class DI2AnalogOutputChannelAssignment(RegisterBase[DigitalInputs]):
+    """Specifies which AO channels are assigned to DI Pin 2."""
+
+    address: ClassVar[int] = 52
+    payload_type: ClassVar[PayloadType] = PayloadType.U8
+    payload_class = DI2AnalogOutputChannelAssignmentPayload
+
+
+class DI3AnalogOutputChannelAssignment(RegisterBase[DigitalInputs]):
+    """Specifies which AO channels are assigned to DI Pin 3."""
+
+    address: ClassVar[int] = 53
+    payload_type: ClassVar[PayloadType] = PayloadType.U8
+    payload_class = DI3AnalogOutputChannelAssignmentPayload
 
 
 class ActivePlayer0(RegisterBase[PlayerType]):
     """Specifies which waveform player drives analog output channel 0."""
 
-    address: ClassVar[int] = 50
+    address: ClassVar[int] = 54
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = ActivePlayer0Payload
 
@@ -724,7 +803,7 @@ class ActivePlayer0(RegisterBase[PlayerType]):
 class ActivePlayer1(RegisterBase[PlayerType]):
     """Specifies which waveform player drives analog output channel 1."""
 
-    address: ClassVar[int] = 51
+    address: ClassVar[int] = 55
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = ActivePlayer1Payload
 
@@ -732,7 +811,7 @@ class ActivePlayer1(RegisterBase[PlayerType]):
 class ActivePlayer2(RegisterBase[PlayerType]):
     """Specifies which waveform player drives analog output channel 2."""
 
-    address: ClassVar[int] = 52
+    address: ClassVar[int] = 56
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = ActivePlayer2Payload
 
@@ -740,7 +819,7 @@ class ActivePlayer2(RegisterBase[PlayerType]):
 class ActivePlayer3(RegisterBase[PlayerType]):
     """Specifies which waveform player drives analog output channel 3."""
 
-    address: ClassVar[int] = 53
+    address: ClassVar[int] = 57
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = ActivePlayer3Payload
 
@@ -748,7 +827,7 @@ class ActivePlayer3(RegisterBase[PlayerType]):
 class FileSettings0(RegisterBase[FileSettings0Payload]):
     """Specifies the file player settings for analog output channel 0."""
 
-    address: ClassVar[int] = 54
+    address: ClassVar[int] = 58
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = FileSettings0Payload
 
@@ -756,7 +835,7 @@ class FileSettings0(RegisterBase[FileSettings0Payload]):
 class FileSettings1(RegisterBase[FileSettings1Payload]):
     """Specifies the file player settings for analog output channel 1."""
 
-    address: ClassVar[int] = 55
+    address: ClassVar[int] = 59
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = FileSettings1Payload
 
@@ -764,7 +843,7 @@ class FileSettings1(RegisterBase[FileSettings1Payload]):
 class FileSettings2(RegisterBase[FileSettings2Payload]):
     """Specifies the file player settings for analog output channel 2."""
 
-    address: ClassVar[int] = 56
+    address: ClassVar[int] = 60
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = FileSettings2Payload
 
@@ -772,7 +851,7 @@ class FileSettings2(RegisterBase[FileSettings2Payload]):
 class FileSettings3(RegisterBase[FileSettings3Payload]):
     """Specifies the file player settings for analog output channel 3."""
 
-    address: ClassVar[int] = 57
+    address: ClassVar[int] = 61
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = FileSettings3Payload
 
@@ -780,7 +859,7 @@ class FileSettings3(RegisterBase[FileSettings3Payload]):
 class SineSettings0(RegisterBase[SineSettings0Payload]):
     """Specifies the sine player settings for analog output channel 0."""
 
-    address: ClassVar[int] = 58
+    address: ClassVar[int] = 62
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = SineSettings0Payload
 
@@ -788,7 +867,7 @@ class SineSettings0(RegisterBase[SineSettings0Payload]):
 class SineSettings1(RegisterBase[SineSettings1Payload]):
     """Specifies the sine player settings for analog output channel 1."""
 
-    address: ClassVar[int] = 59
+    address: ClassVar[int] = 63
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = SineSettings1Payload
 
@@ -796,7 +875,7 @@ class SineSettings1(RegisterBase[SineSettings1Payload]):
 class SineSettings2(RegisterBase[SineSettings2Payload]):
     """Specifies the sine player settings for analog output channel 2."""
 
-    address: ClassVar[int] = 60
+    address: ClassVar[int] = 64
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = SineSettings2Payload
 
@@ -804,7 +883,7 @@ class SineSettings2(RegisterBase[SineSettings2Payload]):
 class SineSettings3(RegisterBase[SineSettings3Payload]):
     """Specifies the sine player settings for analog output channel 3."""
 
-    address: ClassVar[int] = 61
+    address: ClassVar[int] = 65
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = SineSettings3Payload
 
@@ -812,7 +891,7 @@ class SineSettings3(RegisterBase[SineSettings3Payload]):
 class TrapezoidSettings0(RegisterBase[TrapezoidSettings0Payload]):
     """Specifies the trapezoid player settings for analog output channel 0."""
 
-    address: ClassVar[int] = 62
+    address: ClassVar[int] = 66
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = TrapezoidSettings0Payload
 
@@ -820,7 +899,7 @@ class TrapezoidSettings0(RegisterBase[TrapezoidSettings0Payload]):
 class TrapezoidSettings1(RegisterBase[TrapezoidSettings1Payload]):
     """Specifies the trapezoid player settings for analog output channel 1."""
 
-    address: ClassVar[int] = 63
+    address: ClassVar[int] = 67
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = TrapezoidSettings1Payload
 
@@ -828,7 +907,7 @@ class TrapezoidSettings1(RegisterBase[TrapezoidSettings1Payload]):
 class TrapezoidSettings2(RegisterBase[TrapezoidSettings2Payload]):
     """Specifies the trapezoid player settings for analog output channel 2."""
 
-    address: ClassVar[int] = 64
+    address: ClassVar[int] = 68
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = TrapezoidSettings2Payload
 
@@ -836,7 +915,7 @@ class TrapezoidSettings2(RegisterBase[TrapezoidSettings2Payload]):
 class TrapezoidSettings3(RegisterBase[TrapezoidSettings3Payload]):
     """Specifies the trapezoid player settings for analog output channel 3."""
 
-    address: ClassVar[int] = 65
+    address: ClassVar[int] = 69
     payload_type: ClassVar[PayloadType] = PayloadType.U8
     payload_class = TrapezoidSettings3Payload
 
@@ -857,24 +936,28 @@ REGISTER_MAP: dict[int, type[RegisterBase[Any]]] = {
     43: DacPause,
     44: DacAbort,
     45: DacFinished,
-    46: ChannelExternalTriggers0,
-    47: ChannelExternalTriggers1,
-    48: ChannelExternalTriggers2,
-    49: ChannelExternalTriggers3,
-    50: ActivePlayer0,
-    51: ActivePlayer1,
-    52: ActivePlayer2,
-    53: ActivePlayer3,
-    54: FileSettings0,
-    55: FileSettings1,
-    56: FileSettings2,
-    57: FileSettings3,
-    58: SineSettings0,
-    59: SineSettings1,
-    60: SineSettings2,
-    61: SineSettings3,
-    62: TrapezoidSettings0,
-    63: TrapezoidSettings1,
-    64: TrapezoidSettings2,
-    65: TrapezoidSettings3,
+    46: DI0PinMode,
+    47: DI1PinMode,
+    48: DI2PinMode,
+    49: DI3PinMode,
+    50: DI0AnalogOutputChannelAssignment,
+    51: DI1AnalogOutputChannelAssignment,
+    52: DI2AnalogOutputChannelAssignment,
+    53: DI3AnalogOutputChannelAssignment,
+    54: ActivePlayer0,
+    55: ActivePlayer1,
+    56: ActivePlayer2,
+    57: ActivePlayer3,
+    58: FileSettings0,
+    59: FileSettings1,
+    60: FileSettings2,
+    61: FileSettings3,
+    62: SineSettings0,
+    63: SineSettings1,
+    64: SineSettings2,
+    65: SineSettings3,
+    66: TrapezoidSettings0,
+    67: TrapezoidSettings1,
+    68: TrapezoidSettings2,
+    69: TrapezoidSettings3,
 }

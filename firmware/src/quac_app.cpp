@@ -5,8 +5,8 @@
 #include "waveform_settings.h"
 #include <hardware/gpio.h>
 
-app_regs_t app_regs;
-queue_t ext_trigger_event_queue;
+app_regs_t __not_in_flash("app_regs") app_regs;
+queue_t __not_in_flash("ext_trigger_event_queue") ext_trigger_event_queue;
 
 
 RegSpec app_reg_specs[]
@@ -331,13 +331,13 @@ void write_dac_abort(msg_t& msg)
 
 void write_any_di_pin_mode(msg_t &msg)
 {
-    write_di_setting(msg, app_regs.di_pin_modes);
+    write_di_setting<uint8_t>(msg, app_regs.di_pin_modes);
 }
 
 
 void write_map_any_di_pin_to_ao_channels(msg_t& msg)
 {
-    write_di_setting(msg, app_regs.input_to_ao_channel_mapping);
+    write_di_setting<uint8_t>(msg, app_regs.input_to_ao_channel_mapping);
 }
 
 
@@ -556,16 +556,10 @@ void reset_app()
 // all channels are busy.
 void __not_in_flash_func(handle_digital_input)()
 {
-    static uint32_t old_pin_state = 0;
     // Note: we must read gpios here directly because we are not on a clean
     // multiple of 8-boundary, so it's cumbersome to assemble the interrupt
     // state from multiple reads.
     uint32_t pin_state = ((gpio_get_all64() & DI_PORT_MASK) >> DI_PORT_BASE);
-    uint32_t changed_pins = pin_state ^ old_pin_state;
-    old_pin_state = pin_state;
-    // Deduce a RISE or a FALL for all pins.
-    uint32_t rising_pins = changed_pins & pin_state & nwide_mask<uint32_t>(NUM_DIS);
-    //uint32_t falling_pins = changed_pins & ~pin_state & nwide_mask<uint32_t>(NUM_DIS);
     // Deduce which AO channels are assigned a blanking setting (from any DI pin)
     // and which AO channels are assigned an external trigger setting (any DI pin).
     uint32_t ao_blanking_mask = 0;
@@ -573,15 +567,11 @@ void __not_in_flash_func(handle_digital_input)()
     for (size_t i = 0; i < NUM_DIS; ++i)
     {
         if (app_regs.di_pin_modes[i] == BLANKING)
-        {
             ao_blanking_mask |= app_regs.input_to_ao_channel_mapping[i];
-        }
-        if (app_regs.di_pin_modes[i] == EXTERNAL_TRIGGER)
+        else if (app_regs.di_pin_modes[i] == EXTERNAL_TRIGGER)
         {
-            if ((rising_pins >> i) & 1u)
-            {
+            if ((pin_state >> i) & 1u)
                 ao_ext_trigger_mask |= app_regs.input_to_ao_channel_mapping[i];
-            }
         }
     }
     // For external triggers, filter out already-transferring channels.
@@ -594,16 +584,15 @@ void __not_in_flash_func(handle_digital_input)()
     // apply BLANKING settings first so we don't "chirp" any externally
     // triggered output.
     if (ao_blanking_mask)
-    {
         transfer_manager.mute_outputs(ao_blanking_mask, pin_state);
-    }
+    // apply EXTERNAL_TRIGGER settings next.
     if (ao_ext_trigger_mask)
     {
         ext_trigger_event_t trigger_event;
         transfer_manager.start(ao_ext_trigger_mask); // Can be started from core1.
         trigger_event.channel_start_mask = ao_ext_trigger_mask;
         trigger_event.timestamp = time_us_64();
-        // Push harp message
+        // Push Harp message for external trigger event.
         queue_try_add(&ext_trigger_event_queue, &trigger_event);
         // Update which dacs have started.
         app_regs.dac_start |= ao_ext_trigger_mask;

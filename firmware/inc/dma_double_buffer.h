@@ -198,9 +198,10 @@ public:
         dma_channel_config last_cfg = data_chan_default_cfg_;
         channel_config_set_chain_to(&last_cfg, data_chan_); // chain-to-self disables chaining.
         channel_config_set_irq_quiet(&last_cfg, false); // Enable end of transfer irq
+        volatile void* target_address = is_muted_? nullptr: target_address_;
         ctrl_chan_last_xfer_data_ =
             ctrl_chan_data_al0_t(reinterpret_cast<T(*)[BUF_SIZE]>(idle_buffer_ptr),
-                                 target_address_, word_count, last_cfg);
+                                 target_address, word_count, last_cfg);
         // Setup ctrl_chan with final transfer config.
         // When the ctrl channel is next triggered by the data channel,
         // write 4 words to reconfigure and trigger the data channel (alias0).
@@ -312,6 +313,27 @@ public:
             return false;
         dma_channel_config cfg = dma_get_channel_config(data_chan_);
         return (cfg.ctrl & DMA_CH0_CTRL_TRIG_EN_BITS) == 0;
+    }
+
+/**
+ * \brief Mute the transfer. I.e: continue transferring data, but
+ * send data to a dummy destination address.
+ */
+    void mute_transfer()
+    {
+        // Move DMA channel output address to "null" location
+        dma_channel_set_write_addr(data_chan_, nullptr, false);
+        is_muted_ = true;
+    }
+
+/**
+ * \brief Unmute the transfer. i.e: restore target address.
+ */
+    void unmute_transfer()
+    {
+        // Restore DMA channel output address to peripheral location
+        dma_channel_set_write_addr(data_chan_, target_address_, false);
+        is_muted_ = false;
     }
 
 /**
@@ -466,6 +488,7 @@ private:
     int data_chan_;
     dma_channel_config data_chan_default_cfg_;
     volatile void* target_address_;
+    bool is_muted_;
 
     int end_of_transfer_irq_num_;
     bool trigger_isr_;

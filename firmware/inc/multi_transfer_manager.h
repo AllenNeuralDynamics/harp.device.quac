@@ -93,18 +93,13 @@ public:
             size_t mute = ((mute_setting >> i) & 1u);
             if (mute)
             {
-                // Move DMA channel output address to "null" location
-                uint32_t data_chan = buf_ptrs_[i]->get_data_channel();
-                dma_channel_set_write_addr(data_chan, nullptr, false);
+                buf_ptrs_[i]->mute_transfer();
                 // Manually write output to 0 V.
                 dacs_[i].write_value(PIO_LTC264x::OUTPUT_MIDSCALE);
             }
             else // unmute
             {
-                // Restore DMA channel output address to peripheral location
-                uint32_t data_chan = buf_ptrs_[i]->get_data_channel();
-                dma_channel_set_write_addr(data_chan,
-                    buf_ptrs_[i]->get_destination_address(), false);
+                buf_ptrs_[i]->unmute_transfer();
             }
         }
     }

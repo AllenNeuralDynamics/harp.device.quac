@@ -145,16 +145,16 @@ void write_any_channel_active_player(msg_t& msg);
 void select_player(size_t channel, player_t player);
 
 template <typename DI_SETTING_TYPE>
-void write_di_setting(msg_t& msg, DI_SETTING_TYPE base_address)
+void write_di_setting(msg_t& msg, DI_SETTING_TYPE* base_address)
 {
     // Convert address to output channel with pointer arithmetic.
     const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
-    size_t di_pin = ((uint8_t*)spec.base_ptr - app_regs.di_pin_modes);
+    size_t di_pin = ((DI_SETTING_TYPE*)spec.base_ptr - app_regs.di_pin_modes);
     // Error if we try to change the DI setting while any of its
     // assigned analog outputs are busy playing.
     for (size_t ao_chan = 0; ao_chan < NUM_CHANNELS; ++ao_chan)
     {
-        // Skip checking if unassigned analog output channels are busy.
+        // Skip checking unassigned analog output channels.
         if (!((app_regs.input_to_ao_channel_mapping[di_pin] >> ao_chan) & 1u))
             continue;
         // Check if this analog output channel is busy.

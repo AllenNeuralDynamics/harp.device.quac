@@ -14,6 +14,11 @@
 //#define HW_VERSION_MINOR (0)
 inline constexpr semver_t HW_VERSION = {HW_VERSION_MAJOR, HW_VERSION_MINOR, 0};
 
+
+#if ((HW_VERSION_MAJOR == 1) && (HW_VERSION_MINOR == 0)) // prototoype boards.
+#warning("Compiling for prototype target with distinct pinout.")
+#endif
+
 inline constexpr semver_t FW_VERSION = {0, 3, 0};
 
 inline constexpr size_t UNUSED_SERIAL_NUMBER = 0; // Deprecated in favor of R_UUID
@@ -52,7 +57,6 @@ static_assert(SD_CHUNK_SIZE_BYTES % 512 == 0,
  "SD_CHUNK_SIZE_BYTES must be a multiple of 512 (SD card block size).");
 
 #if ((HW_VERSION_MAJOR == 1) && (HW_VERSION_MINOR == 0)) // prototoype boards.
-#warning("Compiling for prototype target with distinct pinout.")
     inline constexpr std::array<DACPins, NUM_CHANNELS> DAC_PINS
     {{
         {.pico = 4, .sck = 5, .cs = 6},
@@ -82,7 +86,11 @@ inline constexpr size_t SD_D0_PIN = 23;
 inline constexpr size_t SD_READ_SPEED_HZ = 150 * 1000 * 1000 / 6; // RP2350: 25 MHz
 
 inline constexpr size_t NUM_DIS = 4;
+#if ((HW_VERSION_MAJOR == 1) && (HW_VERSION_MINOR == 0)) // prototoype boards.
 inline constexpr size_t DI_PORT_BASE = 29;
+#else // production boards.
+inline constexpr size_t DI_PORT_BASE = 28;
+#endif
 inline constexpr uint64_t DI_PORT_MASK =
     nwide_mask<uint64_t>(NUM_DIS) << DI_PORT_BASE;
 
@@ -92,7 +100,7 @@ inline constexpr uint64_t DO_PORT_MASK =
     nwide_mask<uint64_t>(NUM_DOS) << DO_PORT_BASE;
 
 inline constexpr size_t NUM_EXT_TRIGGERS = 4;
-inline constexpr size_t EXT_TRIGGER_BASE = 29;
+inline constexpr size_t EXT_TRIGGER_BASE = DI_PORT_BASE;
 inline constexpr uint64_t EXT_TRIGGER_MASK =
     nwide_mask<uint64_t>(NUM_EXT_TRIGGERS) << EXT_TRIGGER_BASE;
 
