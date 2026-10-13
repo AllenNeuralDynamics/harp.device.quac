@@ -181,7 +181,7 @@ void read_any_waveform_hash(uint8_t address);
 
 void write_any_waveform_data(msg_t& msg);
 
-void apply_blanking_settings_to_ao_channel(uint32_t ao_channel);
+//void apply_blanking_settings_to_ao_channel(uint32_t ao_channel);
 
 void reset_app();
 
@@ -246,13 +246,6 @@ void write_di_setting(msg_t& msg, DI_SETTING_TYPE* base_address)
         if (!HarpCore::is_muted())
             HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
         return;
-    }
-    // Apply any new blanking settings to any channels that have already been setup.
-    for (size_t ao_chan = 0; ao_chan < NUM_CHANNELS; ++ao_chan)
-    {
-        player_t active_player = player_t(app_regs.active_players[ao_chan]);
-        if (player_is_ready(ao_chan, active_player))
-            apply_blanking_settings_to_ao_channel(ao_chan);
     }
 
     // Write the setting

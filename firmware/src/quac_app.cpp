@@ -284,7 +284,7 @@ void write_dac_start(msg_t& msg)
 {
     // TODO: handle paused logic.
     // Ensure specified channels are ready.
-    uint32_t started_dacs = app_regs.dac_start;
+    uint32_t started_dacs = app_regs.dac_start; // Save old setting.
     HarpCore::copy_msg_payload_to_register(msg); // update dac_start
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
@@ -306,6 +306,35 @@ void write_dac_start(msg_t& msg)
             return;
         }
     }
+    // Apply any BLANKING settings such that AO channel outputs starts in a state
+    // consistent with the associated BLANKING pin state.
+    uint32_t di_port_state = (gpio_get_all64() & DI_PORT_MASK) >> DI_PORT_BASE;
+    uint32_t ao_blanking_mask = 0;
+    uint32_t ao_blanking_state = 0;
+    // Identify any AO channels also controlled by a blanking setting and apply
+    // the blanking state before starting the AO channel.
+    for (size_t i = 0; i < NUM_DIS; ++i)
+    {
+        if (app_regs.di_pin_modes[i] != BLANKING)
+            continue;
+        // Only apply blanking settings to AO channels triggered.
+        if (!(app_regs.input_to_ao_channel_mapping[i] & app_regs.dac_start))
+            continue;
+        ao_blanking_mask |= (app_regs.input_to_ao_channel_mapping[i] &
+                             app_regs.dac_start);
+        // Apply pin setting. Assume BLANKING settings are valid.
+        // i.e: only max-1 DI pin can drive the state of this AO channel.
+        if ((di_port_state >> i) & 1u)  // If DI pin is HIGH
+            ao_blanking_state |= app_regs.input_to_ao_channel_mapping[i];
+        else
+            ao_blanking_state &= ~app_regs.input_to_ao_channel_mapping[i];
+    }
+    //transfer_manager.mute_outputs(app_regs.dac_start, 1); // sanity check.
+    // Apply BLANKING settings first so we don't "chirp" any externally
+    // triggered output.
+    if (ao_blanking_mask)
+        transfer_manager.mute_outputs(ao_blanking_mask, ao_blanking_state);
+    // Start the channel.
     transfer_manager.start(uint32_t(app_regs.dac_start)); // Can start from core0.
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
@@ -475,7 +504,6 @@ void select_player(size_t channel, player_t player_type)
     }
     players[player_type]->setup();
     app_regs.active_players[i] = player_type; // Update Harp register.
-    apply_blanking_settings_to_ao_channel(channel);
 }
 
 bool player_is_ready(size_t channel, player_t player_type)
@@ -553,31 +581,8 @@ void reset_app()
     irq_set_enabled(IO_IRQ_BANK0, true);
 }
 
-void apply_blanking_settings_to_ao_channel(uint32_t ao_channel)
-{
-    // Apply any BLANKING settings such that channel output starts in a state
-    // consistent with the associated BLANKING pin state.
-    // Deduce if this AO channel is BLANKED by any DI pin.
-    for (size_t i = 0; i < NUM_DIS; ++i)
-    {
-        if (app_regs.di_pin_modes[i] != BLANKING)
-            continue;
-        // Check if di ao channel mapping includes this ao channel
-        if (!((app_regs.input_to_ao_channel_mapping[i] >> ao_channel) & 1u))
-            continue;
-        // Apply the current DI pin blanking state to this AO channel.
-        uint32_t di_port_state = (gpio_get_all64() & DI_PORT_MASK) >> DI_PORT_BASE;
-        uint32_t di_pin_state = (di_port_state >> i) & 1u;
-        transfer_manager.mute_outputs(1u << ao_channel, di_pin_state << ao_channel);
-        // Assume only valid BLANKING settings are present.
-        // i.e: only max-1 DI pin can drive the state of this AO channel.
-        // Once we find it, we're done.
-        break;
-    }
-}
 
 // TODO: check DI0 blanks AO3 while DI3 blanks AO0
-
 // FYI: this ISR will fire for every rising edge event on said pins--even if
 // all channels are busy.
 void __not_in_flash_func(handle_digital_input)()
@@ -590,35 +595,16 @@ void __not_in_flash_func(handle_digital_input)()
     uint32_t changed_pins = di_port_state ^ old_di_port_state;
     old_di_port_state = di_port_state;
 
-    // Deduce overall AO BLANKING State.
-    // Note: the Harp register write functions will prevent us from invalid
-    // settings where multiple DO pins are BLANKING the same AO channel.
-    uint32_t ao_blanking_mask = 0;
-    uint32_t ao_blanking_state = 0;
-    for (size_t i = 0; i < NUM_CHANNELS; ++i)
-    {
-        if (app_regs.di_pin_modes[i] != BLANKING)
-            continue;
-        // Only apply blanking settings for the pins that actually changed.
-        if (!((changed_pins >> i) & 1u))  // If DI pin did not change
-            continue;
-        ao_blanking_mask |= app_regs.input_to_ao_channel_mapping[i];
-        // Apply pin setting.
-        if ((di_port_state >> i) & 1u)  // If DI pin is HIGH
-            ao_blanking_state |= app_regs.input_to_ao_channel_mapping[i];
-        else
-            ao_blanking_state &= ~app_regs.input_to_ao_channel_mapping[i];
-    }
-
-    // Deduce which AO channels are assigned an external trigger setting (any DI pin).
+    // Deduce overall External Trigger result.
+    // For any DI Pin in EXTERNAL_TRIGGER mode that rose, mark all of its
+    // assigned AO channels to be started.
     uint32_t ao_ext_trigger_mask = 0;
-    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    for (size_t i = 0; i < NUM_DIS; ++i)
     {
-        if (app_regs.di_pin_modes[i] == EXTERNAL_TRIGGER)
-        {
-            if ((di_port_state >> i) & 1u)
-                ao_ext_trigger_mask |= app_regs.input_to_ao_channel_mapping[i];
-        }
+        if (app_regs.di_pin_modes[i] != EXTERNAL_TRIGGER)
+            continue;
+        if ((di_port_state >> i) & 1u)
+            ao_ext_trigger_mask |= app_regs.input_to_ao_channel_mapping[i];
     }
     // For external triggers, filter out already-transferring channels.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
@@ -627,11 +613,38 @@ void __not_in_flash_func(handle_digital_input)()
             ao_ext_trigger_mask &= ~(1u << i);
     }
 
-    // apply BLANKING settings first so we don't "chirp" any externally
+    // Deduce overall BLANKING result.
+    // Note: the Harp register write functions will prevent us from invalid
+    // settings where multiple DO pins are BLANKING the same AO channel.
+    uint32_t ao_blanking_mask = 0;
+    uint32_t ao_blanking_state = 0;
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        if (app_regs.di_pin_modes[i] != BLANKING)
+            continue;
+        // Only apply blanking settings for the pins that actually changed OR
+        // pins that are about to be externally triggered. i.e:
+        // Bail early if the pin did not change AND any AO channels controlled
+        // by this BLANKING pin are not about to be externally triggered
+        bool di_pin_changed = (changed_pins >> i) & 1u;
+        if (!di_pin_changed &&
+            !(app_regs.input_to_ao_channel_mapping[i] & ao_ext_trigger_mask))
+            continue;
+        ao_blanking_mask |= di_pin_changed?
+                                app_regs.input_to_ao_channel_mapping[i]:
+                                ao_ext_trigger_mask;
+        // Apply pin setting.
+        if ((di_port_state >> i) & 1u)  // If DI pin is HIGH
+            ao_blanking_state |= app_regs.input_to_ao_channel_mapping[i];
+        else
+            ao_blanking_state &= ~app_regs.input_to_ao_channel_mapping[i];
+    }
+
+    // Apply BLANKING settings first so we don't "chirp" any externally
     // triggered output.
     if (ao_blanking_mask)
         transfer_manager.mute_outputs(ao_blanking_mask, ao_blanking_state);
-    // apply EXTERNAL_TRIGGER settings next.
+    // apply EXTERNAL_TRIGGER settings after BLANKING settings.
     if (ao_ext_trigger_mask)
     {
         ext_trigger_event_t trigger_event;
