@@ -26,12 +26,12 @@ registers:
     maskType: DigitalOutputs
     description: Clears the digital output lines specified in the mask to logic LOW.
 
-  ExternalTriggerState:
+  DIPortState:
     address: 35
     type: U8
     access: Read
     maskType: DigitalInputs
-    description: Reflects the raw state of the external trigger input lines.
+    description: Reflects the raw state of the digital input lines.
 
   AOPortState:
     address: 36

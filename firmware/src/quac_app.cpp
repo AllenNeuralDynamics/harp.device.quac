@@ -17,8 +17,8 @@ RegSpec app_reg_specs[]
         HarpCore::read_reg_error, write_digital_output_port_set),
     RegSpec::U8(&app_regs.digital_output_port_clear,
         HarpCore::read_reg_error, write_digital_output_port_clear),
-    RegSpec::U8(&app_regs.ext_trigger_state,
-        read_ext_trigger_state, HarpCore::write_reg_error),
+    RegSpec::U8(&app_regs.di_port_state,
+        read_di_port_state, HarpCore::write_reg_error),
 
     RegSpec::FloatArray(&app_regs.analog_output_port_state,
         std::size(app_regs.analog_output_port_state),
@@ -142,10 +142,10 @@ void write_digital_output_port_clear(msg_t& msg)
 }
 
 
-void read_ext_trigger_state(uint8_t address)
+void read_di_port_state(uint8_t address)
 {
-    app_regs.ext_trigger_state =
-        uint8_t((EXT_TRIGGER_MASK & gpio_get_all64()) >> EXT_TRIGGER_BASE);
+    app_regs.di_port_state =
+        uint8_t((DI_PORT_MASK & gpio_get_all64()) >> DI_PORT_BASE);
     HarpCore::read_reg_generic(address);
 }
 
@@ -329,7 +329,6 @@ void write_dac_start(msg_t& msg)
         else
             ao_blanking_state &= ~app_regs.input_to_ao_channel_mapping[i];
     }
-    //transfer_manager.mute_outputs(app_regs.dac_start, 1); // sanity check.
     // Apply BLANKING settings first so we don't "chirp" any externally
     // triggered output.
     if (ao_blanking_mask)
@@ -359,15 +358,11 @@ void write_dac_abort(msg_t& msg)
 
 
 void write_any_di_pin_mode(msg_t &msg)
-{
-    write_di_setting<uint8_t>(msg, app_regs.di_pin_modes);
-}
+{write_di_setting<uint8_t>(msg, app_regs.di_pin_modes);}
 
 
 void write_map_any_di_pin_to_ao_channels(msg_t& msg)
-{
-    write_di_setting<uint8_t>(msg, app_regs.input_to_ao_channel_mapping);
-}
+{write_di_setting<uint8_t>(msg, app_regs.input_to_ao_channel_mapping);}
 
 
 void write_any_channel_active_player(msg_t &msg)
@@ -506,6 +501,7 @@ void select_player(size_t channel, player_t player_type)
     app_regs.active_players[i] = player_type; // Update Harp register.
 }
 
+
 bool player_is_ready(size_t channel, player_t player_type)
 {
     switch (player_type)
@@ -554,6 +550,8 @@ void reset_app()
         app_regs.trapezoid_settings[i] = TrapezoidSettings();
     }
     transfer_manager.reset();
+    // Unmute everything
+    transfer_manager.mute_outputs(nwide_mask<uint32_t>(NUM_CHANNELS), 0);
     // FIXME: hardcoded reference to DMA_IRQ_1.
     transfer_manager.enable_end_of_transfer_interrupt(1); // corresponds to DMA_IRQ_1
     // Reset DoubleBuffers before DACs, since they send data to DACs.
@@ -582,7 +580,6 @@ void reset_app()
 }
 
 
-// TODO: check DI0 blanks AO3 while DI3 blanks AO0
 // FYI: this ISR will fire for every rising edge event on said pins--even if
 // all channels are busy.
 void __not_in_flash_func(handle_digital_input)()

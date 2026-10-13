@@ -65,7 +65,7 @@ struct app_regs_t
     uint8_t digital_output_port_clear;
 
     // Triggers.
-    uint8_t ext_trigger_state;
+    uint8_t di_port_state;
 
     float analog_output_port_state[NUM_CHANNELS];
     float& analog_output_channel_0  = analog_output_port_state[0];
@@ -120,7 +120,7 @@ void write_digital_output_port_set(msg_t& msg);
 
 void write_digital_output_port_clear(msg_t& msg);
 
-void read_ext_trigger_state(uint8_t address);
+void read_di_port_state(uint8_t address);
 
 void read_analog_output_port_state(uint8_t address);
 void write_analog_output_port_state(msg_t& msg);
@@ -220,9 +220,9 @@ void write_di_setting(msg_t& msg, DI_SETTING_TYPE* base_address)
     // i.e: 2 DI pins cannot blank the same AO pin.
     // i.e: do pairwise combination of all ao blanking masks to make sure any AO
     // channel is being blanked by at most 1 DI pin. (oof.)
-    // Temporarily write the settings.
     // Save current settings.
     DI_SETTING_TYPE old_setting = base_address[di_index];
+    // Temporarily write the settings.
     HarpCore::copy_msg_payload_to_register(msg);
     bool valid_settings = true;
     for (size_t i = 0; i < NUM_DIS; ++i)
@@ -247,10 +247,8 @@ void write_di_setting(msg_t& msg, DI_SETTING_TYPE* base_address)
             HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
         return;
     }
-
     // Write the setting
     HarpCore::write_reg_generic(msg);
-
 }
 
 

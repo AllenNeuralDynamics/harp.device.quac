@@ -99,12 +99,6 @@ inline constexpr size_t DO_PORT_BASE = 33;
 inline constexpr uint64_t DO_PORT_MASK =
     nwide_mask<uint64_t>(NUM_DOS) << DO_PORT_BASE;
 
-inline constexpr size_t NUM_EXT_TRIGGERS = 4;
-inline constexpr size_t EXT_TRIGGER_BASE = DI_PORT_BASE;
-inline constexpr uint64_t EXT_TRIGGER_MASK =
-    nwide_mask<uint64_t>(NUM_EXT_TRIGGERS) << EXT_TRIGGER_BASE;
-
-
 inline constexpr std::array<uint32_t, NUM_CHANNELS> EXTERNAL_TRIGGERS
 {{29, 30, 31, 32}};
 
