@@ -31,7 +31,7 @@ __all__ = [
     "DOPortStatePayload",
     "DOPortSetPayload",
     "DOPortClearPayload",
-    "ExternalTriggerStatePayload",
+    "DIPortStatePayload",
     "AOPortStatePayload",
     "DacReadyPayload",
     "DacStartPayload",
@@ -65,7 +65,7 @@ __all__ = [
     "DOPortState",
     "DOPortSet",
     "DOPortClear",
-    "ExternalTriggerState",
+    "DIPortState",
     "AOPortState",
     "AOChannel0",
     "AOChannel1",
@@ -200,8 +200,8 @@ class DOPortClearPayload(AnonymousPayload[np.uint8]):
     __value__: DigitalOutputs = BitMask(enum=DigitalOutputs)
 
 
-class ExternalTriggerStatePayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the ExternalTriggerState register."""
+class DIPortStatePayload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the DIPortState register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
@@ -648,12 +648,12 @@ class DOPortClear(RegisterBase[DigitalOutputs]):
     payload_class = DOPortClearPayload
 
 
-class ExternalTriggerState(RegisterBase[DigitalInputs]):
-    """Reflects the raw state of the external trigger input lines."""
+class DIPortState(RegisterBase[DigitalInputs]):
+    """Reflects the raw state of the digital input lines."""
 
     address: ClassVar[int] = 35
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = ExternalTriggerStatePayload
+    payload_class = DIPortStatePayload
 
 
 class AOPortState(RegisterBase[AOPortStatePayload]):
@@ -925,7 +925,7 @@ REGISTER_MAP: dict[int, type[RegisterBase[Any]]] = {
     32: DOPortState,
     33: DOPortSet,
     34: DOPortClear,
-    35: ExternalTriggerState,
+    35: DIPortState,
     36: AOPortState,
     37: AOChannel0,
     38: AOChannel1,
