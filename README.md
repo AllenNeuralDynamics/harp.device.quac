@@ -15,6 +15,8 @@ hardware, firmware, and software source files for a Harp-compatible 4-channel Di
 * absolute deviation from 0 [V]: ±2.5 [mV]
 * Power Input: 12-24 [V]
 * Power Input Plug: 2.1 x 5.5mm barrel jack (positive center)
+* External Trigger and Blanking (aka "Mute") option.
+  * Any of the devices 4 digital inputs can be mapped to one or more Analog Outputs to either trigger or mute/unmute those channels.
 * Reverse Polarity protected.
 * Additional M4 _ground lug_ provided for de-noising.
 * Open source hardware, firmware, and software.

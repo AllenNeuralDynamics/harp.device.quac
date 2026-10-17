@@ -1,9 +1,12 @@
 #include "quac_app.h"
+#include "bitmask_gen.h"
+#include "config.h"
 #include "pio_ltc264x.h"
 #include "waveform_settings.h"
+#include <hardware/gpio.h>
 
-app_regs_t app_regs;
-queue_t ext_trigger_event_queue;
+app_regs_t __not_in_flash("app_regs") app_regs;
+queue_t __not_in_flash("ext_trigger_event_queue") ext_trigger_event_queue;
 
 
 RegSpec app_reg_specs[]
@@ -14,8 +17,8 @@ RegSpec app_reg_specs[]
         HarpCore::read_reg_error, write_digital_output_port_set),
     RegSpec::U8(&app_regs.digital_output_port_clear,
         HarpCore::read_reg_error, write_digital_output_port_clear),
-    RegSpec::U8(&app_regs.ext_trigger_state,
-        read_ext_trigger_state, HarpCore::write_reg_error),
+    RegSpec::U8(&app_regs.di_port_state,
+        read_di_port_state, HarpCore::write_reg_error),
 
     RegSpec::FloatArray(&app_regs.analog_output_port_state,
         std::size(app_regs.analog_output_port_state),
@@ -40,14 +43,23 @@ RegSpec app_reg_specs[]
     RegSpec::U8(&app_regs.dac_finished,
         HarpCore::read_reg_error, HarpCore::write_reg_error),
 
-    RegSpec::U8(&app_regs.channel_external_triggers[0],
-        HarpCore::read_reg_generic, write_any_channel_external_triggers),
-    RegSpec::U8(&app_regs.channel_external_triggers[1],
-        HarpCore::read_reg_generic, write_any_channel_external_triggers),
-    RegSpec::U8(&app_regs.channel_external_triggers[2],
-        HarpCore::read_reg_generic, write_any_channel_external_triggers),
-    RegSpec::U8(&app_regs.channel_external_triggers[3],
-        HarpCore::read_reg_generic, write_any_channel_external_triggers),
+    RegSpec::U8(&app_regs.di0_pin_mode,
+        HarpCore::read_reg_generic, write_any_di_pin_mode),
+    RegSpec::U8(&app_regs.di1_pin_mode,
+        HarpCore::read_reg_generic, write_any_di_pin_mode),
+    RegSpec::U8(&app_regs.di2_pin_mode,
+        HarpCore::read_reg_generic, write_any_di_pin_mode),
+    RegSpec::U8(&app_regs.di3_pin_mode,
+        HarpCore::read_reg_generic, write_any_di_pin_mode),
+
+    RegSpec::U8(&app_regs.di0_to_ao_channel_mapping,
+        HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
+    RegSpec::U8(&app_regs.di1_to_ao_channel_mapping,
+        HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
+    RegSpec::U8(&app_regs.di2_to_ao_channel_mapping,
+        HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
+    RegSpec::U8(&app_regs.di3_to_ao_channel_mapping,
+        HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
 
     RegSpec::U8(&app_regs.active_players[0],
         HarpCore::read_reg_generic, write_any_channel_active_player),
@@ -130,10 +142,10 @@ void write_digital_output_port_clear(msg_t& msg)
 }
 
 
-void read_ext_trigger_state(uint8_t address)
+void read_di_port_state(uint8_t address)
 {
-    app_regs.ext_trigger_state =
-        uint8_t((EXT_TRIGGER_MASK & gpio_get_all64()) >> EXT_TRIGGER_BASE);
+    app_regs.di_port_state =
+        uint8_t((DI_PORT_MASK & gpio_get_all64()) >> DI_PORT_BASE);
     HarpCore::read_reg_generic(address);
 }
 
@@ -272,7 +284,7 @@ void write_dac_start(msg_t& msg)
 {
     // TODO: handle paused logic.
     // Ensure specified channels are ready.
-    uint32_t started_dacs = app_regs.dac_start;
+    uint32_t started_dacs = app_regs.dac_start; // Save old setting.
     HarpCore::copy_msg_payload_to_register(msg); // update dac_start
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
@@ -294,6 +306,34 @@ void write_dac_start(msg_t& msg)
             return;
         }
     }
+    // Apply any BLANKING settings such that AO channel outputs starts in a state
+    // consistent with the associated BLANKING pin state.
+    uint32_t di_port_state = (gpio_get_all64() & DI_PORT_MASK) >> DI_PORT_BASE;
+    uint32_t ao_blanking_mask = 0;
+    uint32_t ao_blanking_state = 0;
+    // Identify any AO channels also controlled by a blanking setting and apply
+    // the blanking state before starting the AO channel.
+    for (size_t i = 0; i < NUM_DIS; ++i)
+    {
+        if (app_regs.di_pin_modes[i] != BLANKING)
+            continue;
+        // Only apply blanking settings to AO channels triggered.
+        if (!(app_regs.input_to_ao_channel_mapping[i] & app_regs.dac_start))
+            continue;
+        ao_blanking_mask |= (app_regs.input_to_ao_channel_mapping[i] &
+                             app_regs.dac_start);
+        // Apply pin setting. Assume BLANKING settings are valid.
+        // i.e: only max-1 DI pin can drive the state of this AO channel.
+        if ((di_port_state >> i) & 1u)  // If DI pin is HIGH
+            ao_blanking_state |= app_regs.input_to_ao_channel_mapping[i];
+        else
+            ao_blanking_state &= ~app_regs.input_to_ao_channel_mapping[i];
+    }
+    // Apply BLANKING settings first so we don't "chirp" any externally
+    // triggered output.
+    if (ao_blanking_mask)
+        transfer_manager.mute_outputs(ao_blanking_mask, ao_blanking_state);
+    // Start the channel.
     transfer_manager.start(uint32_t(app_regs.dac_start)); // Can start from core0.
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
@@ -316,20 +356,13 @@ void write_dac_abort(msg_t& msg)
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
 
-void write_any_channel_external_triggers(msg_t &msg)
-{
-    // Convert address to output channel with pointer arithmetic.
-    const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
-    size_t i = ((uint8_t*)spec.base_ptr - app_regs.channel_external_triggers);
-    // Error if we try to change the specified channel settings while it's busy.
-    if (bufs[i].is_transferring())
-    {
-        if (!HarpCore::is_muted())
-            HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
-        return;
-    }
-   HarpCore::write_reg_generic(msg);
-}
+
+void write_any_di_pin_mode(msg_t &msg)
+{write_di_setting<uint8_t>(msg, app_regs.di_pin_modes);}
+
+
+void write_map_any_di_pin_to_ao_channels(msg_t& msg)
+{write_di_setting<uint8_t>(msg, app_regs.input_to_ao_channel_mapping);}
 
 
 void write_any_channel_active_player(msg_t &msg)
@@ -468,6 +501,7 @@ void select_player(size_t channel, player_t player_type)
     app_regs.active_players[i] = player_type; // Update Harp register.
 }
 
+
 bool player_is_ready(size_t channel, player_t player_type)
 {
     switch (player_type)
@@ -500,9 +534,13 @@ void reset_app()
     // Reset app reg values that are not write-only and are not updated
     // inside their handlers.
     app_regs.dac_pause = 0;
-    // Reset Waveform trigger settings. Default: DI[i] triggers AO[i].
+    // Reset Digital Input Pin Function Settings.
+    // Default: DI[i] triggers AO[i] in external trigger mode.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
-        app_regs.channel_external_triggers[i] = (1u << i);
+    {
+        app_regs.di_pin_modes[i] = EXTERNAL_TRIGGER;
+        app_regs.input_to_ao_channel_mapping[i] = (1u << i);
+    }
     // Reset all Player settings to defaults.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
@@ -512,6 +550,8 @@ void reset_app()
         app_regs.trapezoid_settings[i] = TrapezoidSettings();
     }
     transfer_manager.reset();
+    // Unmute everything
+    transfer_manager.mute_outputs(nwide_mask<uint32_t>(NUM_CHANNELS), 0);
     // FIXME: hardcoded reference to DMA_IRQ_1.
     transfer_manager.enable_end_of_transfer_interrupt(1); // corresponds to DMA_IRQ_1
     // Reset DoubleBuffers before DACs, since they send data to DACs.
@@ -532,43 +572,86 @@ void reset_app()
     multicore_launch_core1(core1main);
     // Setup External Trigger Callback
     // Enable all External Trigger GPIOS to trigger the callback.
-    irq_set_exclusive_handler(IO_IRQ_BANK0, handle_external_trigger);
+    irq_set_exclusive_handler(IO_IRQ_BANK0, handle_digital_input);
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
-        gpio_set_irq_enabled(i + DI_PORT_BASE, GPIO_IRQ_EDGE_RISE, true);
+        gpio_set_irq_enabled(i + DI_PORT_BASE,
+            GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true);
     irq_set_enabled(IO_IRQ_BANK0, true);
 }
 
+
 // FYI: this ISR will fire for every rising edge event on said pins--even if
 // all channels are busy.
-void __not_in_flash_func(handle_external_trigger)()
+void __not_in_flash_func(handle_digital_input)()
 {
+    static uint32_t old_di_port_state = 0;
     // Note: we must read gpios here directly because we are not on a clean
     // multiple of 8-boundary, so it's cumbersome to assemble the interrupt
     // state from multiple reads.
-    // Start the waveform per the 1s in the channel.
-    // Filter out the busy channels first.
-    uint32_t trigger_mask = ((gpio_get_all64() & DI_PORT_MASK) >> DI_PORT_BASE);
-    // Combine per-channel external trigger settings into the final trigger mask
-    // to trigger waveforms simultaneously.
-    uint32_t start_mask = 0; // aggregate multi-channel trigger mask.
+    uint32_t di_port_state = ((gpio_get_all64() & DI_PORT_MASK) >> DI_PORT_BASE);
+    uint32_t changed_pins = di_port_state ^ old_di_port_state;
+    old_di_port_state = di_port_state;
+
+    // Deduce overall External Trigger result.
+    // For any DI Pin in EXTERNAL_TRIGGER mode that rose, mark all of its
+    // assigned AO channels to be started.
+    uint32_t ao_ext_trigger_mask = 0;
+    for (size_t i = 0; i < NUM_DIS; ++i)
+    {
+        if (app_regs.di_pin_modes[i] != EXTERNAL_TRIGGER)
+            continue;
+        if ((di_port_state >> i) & 1u)
+            ao_ext_trigger_mask |= app_regs.input_to_ao_channel_mapping[i];
+    }
+    // For external triggers, filter out already-transferring channels.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (bufs[i].is_transferring()) // Skip re-triggering busy channels.
-            continue;
-        // Check if any currently HIGH pins would trigger this channel.
-        if (trigger_mask & app_regs.channel_external_triggers[i])
-            start_mask |= (1u << i);
+        if (bufs[i].is_transferring())
+            ao_ext_trigger_mask &= ~(1u << i);
     }
-    if (start_mask)
+
+    // Deduce overall BLANKING result.
+    // Note: the Harp register write functions will prevent us from invalid
+    // settings where multiple DO pins are BLANKING the same AO channel.
+    uint32_t ao_blanking_mask = 0;
+    uint32_t ao_blanking_state = 0;
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        if (app_regs.di_pin_modes[i] != BLANKING)
+            continue;
+        // Only apply blanking settings for the pins that actually changed OR
+        // pins that are about to be externally triggered. i.e:
+        // Bail early if the pin did not change AND any AO channels controlled
+        // by this BLANKING pin are not about to be externally triggered
+        bool di_pin_changed = (changed_pins >> i) & 1u;
+        if (!di_pin_changed &&
+            !(app_regs.input_to_ao_channel_mapping[i] & ao_ext_trigger_mask))
+            continue;
+        ao_blanking_mask |= di_pin_changed?
+                                app_regs.input_to_ao_channel_mapping[i]:
+                                ao_ext_trigger_mask;
+        // Apply pin setting.
+        if ((di_port_state >> i) & 1u)  // If DI pin is HIGH
+            ao_blanking_state |= app_regs.input_to_ao_channel_mapping[i];
+        else
+            ao_blanking_state &= ~app_regs.input_to_ao_channel_mapping[i];
+    }
+
+    // Apply BLANKING settings first so we don't "chirp" any externally
+    // triggered output.
+    if (ao_blanking_mask)
+        transfer_manager.mute_outputs(ao_blanking_mask, ao_blanking_state);
+    // apply EXTERNAL_TRIGGER settings after BLANKING settings.
+    if (ao_ext_trigger_mask)
     {
         ext_trigger_event_t trigger_event;
-        transfer_manager.start(start_mask); // Can be started from core1.
-        trigger_event.channel_start_mask = start_mask;
+        transfer_manager.start(ao_ext_trigger_mask); // Can be started from core1.
+        trigger_event.channel_start_mask = ao_ext_trigger_mask;
         trigger_event.timestamp = time_us_64();
-        // Push harp message
+        // Push Harp message for external trigger event.
         queue_try_add(&ext_trigger_event_queue, &trigger_event);
         // Update which dacs have started.
-        app_regs.dac_start |= start_mask;
+        app_regs.dac_start |= ao_ext_trigger_mask;
     }
     // Acknowledge the interrupt. Assume nothing else is setting these pins.
     // Clear the INTR[n] state since we dealt with all pin changes.

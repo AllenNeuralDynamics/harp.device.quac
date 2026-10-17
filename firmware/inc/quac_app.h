@@ -43,6 +43,13 @@ enum player_t: uint8_t
     trapezoid = 2
 };
 
+enum di_pin_mode_t: uint8_t
+{
+    NONE = 0,
+    EXTERNAL_TRIGGER = 1,
+    BLANKING = 2
+};
+
 struct ext_trigger_event_t
 {
     uint32_t channel_start_mask;
@@ -58,7 +65,7 @@ struct app_regs_t
     uint8_t digital_output_port_clear;
 
     // Triggers.
-    uint8_t ext_trigger_state;
+    uint8_t di_port_state;
 
     float analog_output_port_state[NUM_CHANNELS];
     float& analog_output_channel_0  = analog_output_port_state[0];
@@ -73,8 +80,23 @@ struct app_regs_t
     uint8_t dac_abort;
     uint8_t dac_finished;
 
-    // External trigger masks per-channel. Assign channel[i] to one or more triggers.
-    uint8_t channel_external_triggers[NUM_CHANNELS];
+    // DAC DI Pin Modes
+    uint8_t di_pin_modes[NUM_CHANNELS];
+    uint8_t& di0_pin_mode = di_pin_modes[0];
+    uint8_t& di1_pin_mode = di_pin_modes[1];
+    uint8_t& di2_pin_mode = di_pin_modes[2];
+    uint8_t& di3_pin_mode = di_pin_modes[3];
+
+    // DI0-3 pin mapping to one or more analog output channels.
+    // i.e: Which analog outputs are assigned to digital inputs 0-3.
+    uint8_t input_to_ao_channel_mapping[NUM_CHANNELS];
+    uint8_t& di0_to_ao_channel_mapping = input_to_ao_channel_mapping[0];
+    uint8_t& di1_to_ao_channel_mapping = input_to_ao_channel_mapping[1];
+    uint8_t& di2_to_ao_channel_mapping = input_to_ao_channel_mapping[2];
+    uint8_t& di3_to_ao_channel_mapping = input_to_ao_channel_mapping[3];
+
+    // External blanking masks per-channel. Assign channel[i] to one or more blanking pins.
+    uint8_t channel_blanking_pins[NUM_CHANNELS];
 
     // Which player is active per channel.
     uint8_t active_players[NUM_CHANNELS];
@@ -98,7 +120,7 @@ void write_digital_output_port_set(msg_t& msg);
 
 void write_digital_output_port_clear(msg_t& msg);
 
-void read_ext_trigger_state(uint8_t address);
+void read_di_port_state(uint8_t address);
 
 void read_analog_output_port_state(uint8_t address);
 void write_analog_output_port_state(msg_t& msg);
@@ -114,11 +136,15 @@ void write_dac_pause(msg_t& msg);
 
 void write_dac_abort(msg_t& msg);
 
-void write_any_channel_external_triggers(msg_t& msg);
+void write_any_di_pin_mode(msg_t& msg);
+
+void write_map_any_di_pin_to_ao_channels(msg_t& msg);
 
 void write_any_channel_active_player(msg_t& msg);
 
 void select_player(size_t channel, player_t player);
+
+
 
 /**
  * \brief handler function to write any settings to a specific player type.
@@ -155,6 +181,8 @@ void read_any_waveform_hash(uint8_t address);
 
 void write_any_waveform_data(msg_t& msg);
 
+//void apply_blanking_settings_to_ao_channel(uint32_t ao_channel);
+
 void reset_app();
 
 
@@ -164,8 +192,64 @@ void update_app();
 
 
 /// Callbacks
-void handle_external_trigger();
+void handle_digital_input();
 
+
+template <typename DI_SETTING_TYPE>
+void write_di_setting(msg_t& msg, DI_SETTING_TYPE* base_address)
+{
+    // Convert address to output channel with pointer arithmetic.
+    const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
+    size_t di_index = ((DI_SETTING_TYPE*)spec.base_ptr - base_address);
+    // Error if we try to change the DI setting while any of its
+    // assigned analog outputs are busy playing.
+    for (size_t ao_chan = 0; ao_chan < NUM_CHANNELS; ++ao_chan)
+    {
+        // Skip checking unassigned analog output channels.
+        if (!((app_regs.input_to_ao_channel_mapping[di_index] >> ao_chan) & 1u))
+            continue;
+        // Check if this analog output channel is busy.
+        if (bufs[ao_chan].is_transferring())
+        {
+            if (!HarpCore::is_muted())
+                HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+            return;
+        }
+    }
+    // Check if resulting blanking settings are valid.
+    // i.e: 2 DI pins cannot blank the same AO pin.
+    // i.e: do pairwise combination of all ao blanking masks to make sure any AO
+    // channel is being blanked by at most 1 DI pin. (oof.)
+    // Save current settings.
+    DI_SETTING_TYPE old_setting = base_address[di_index];
+    // Temporarily write the settings.
+    HarpCore::copy_msg_payload_to_register(msg);
+    bool valid_settings = true;
+    for (size_t i = 0; i < NUM_DIS; ++i)
+    {
+        // Only check overlapping BLANKING settings.
+        if (app_regs.di_pin_modes[i] != BLANKING)
+            continue;
+        for (size_t j = i+1; j < NUM_DIS; ++j)
+        {
+            if (app_regs.di_pin_modes[j] != BLANKING)
+                continue;
+            if (app_regs.input_to_ao_channel_mapping[i] &
+                app_regs.input_to_ao_channel_mapping[j])
+                valid_settings = false;
+        }
+    }
+    if (!valid_settings)
+    {
+        // restore settings. Harp error.
+        base_address[di_index] = old_setting;
+        if (!HarpCore::is_muted())
+            HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+        return;
+    }
+    // Write the setting
+    HarpCore::write_reg_generic(msg);
+}
 
 
 #endif // QUAC_H

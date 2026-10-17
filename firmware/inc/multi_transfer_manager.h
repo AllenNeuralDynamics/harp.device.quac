@@ -82,6 +82,29 @@ public:
     }
 
 /**
+ * \brief Mute or un-mute the specified channels. (aka: "blanking")
+ */
+    void mute_outputs(uint32_t mute_mask, uint32_t mute_setting)
+    {
+        for (size_t i = 0; i < NUM_CHANNELS; ++i)
+        {
+            if (!(mute_mask & (1u << i)))
+                continue;
+            size_t mute = ((mute_setting >> i) & 1u);
+            if (mute)
+            {
+                buf_ptrs_[i]->mute_transfer();
+                // Manually write output to 0 V.
+                dacs_[i].write_value(PIO_LTC264x::OUTPUT_MIDSCALE);
+            }
+            else // unmute
+            {
+                buf_ptrs_[i]->unmute_transfer();
+            }
+        }
+    }
+
+/**
  * \brief abort multiple buffer transfers simultaneously
  */
     void abort(uint32_t channel_mask)
