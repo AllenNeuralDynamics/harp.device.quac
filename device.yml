@@ -123,40 +123,40 @@ registers:
     maskType: AnalogOutputs
     description: Reports which analog output channels have finished playing their waveform.
 
-  DI0PinMode: &diPinMode
+  PinModeDI0: &diPinMode
     address: 46
     type: U8
     access: Write
     maskType: DIPinMode
     description: Specifies the function assigned to digital input pin 0.
-  DI1PinMode:
+  PinModeDI1:
     <<: *diPinMode
     address: 47
     description: Specifies the function assigned to digital input pin 1.
-  DI2PinMode:
+  PinModeDI2:
     <<: *diPinMode
     address: 48
     description: Specifies the function assigned to digital input pin 2.
-  DI3PinMode:
+  PinModeDI3:
     <<: *diPinMode
     address: 49
     description: Specifies the function assigned to digital input pin 3.
 
-  DI0AnalogOutputChannelAssignment: &analogOutputChannelAssignment
+  AnalogOutputChannelAssignmentDI0: &analogOutputChannelAssignment
     address: 50
     type: U8
     access: Write
     maskType: DigitalInputs
     description: Specifies which AO channels are assigned to DI Pin 0.
-  DI1AnalogOutputChannelAssignment:
+  AnalogOutputChannelAssignmentDI1:
     <<: *analogOutputChannelAssignment
     address: 51
     description: Specifies which AO channels are assigned to DI Pin 1.
-  DI2AnalogOutputChannelAssignment:
+  AnalogOutputChannelAssignmentDI2:
     <<: *analogOutputChannelAssignment
     address: 52
     description: Specifies which AO channels are assigned to DI Pin 2.
-  DI3AnalogOutputChannelAssignment:
+  AnalogOutputChannelAssignmentDI3:
     <<: *analogOutputChannelAssignment
     address: 53
     description: Specifies which AO channels are assigned to DI Pin 3.

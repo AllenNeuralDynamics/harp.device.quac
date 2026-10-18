@@ -58,14 +58,14 @@ namespace AllenNeuralDynamics.Quac
             { 43, typeof(DacPause) },
             { 44, typeof(DacAbort) },
             { 45, typeof(DacFinished) },
-            { 46, typeof(DI0PinMode) },
-            { 47, typeof(DI1PinMode) },
-            { 48, typeof(DI2PinMode) },
-            { 49, typeof(DI3PinMode) },
-            { 50, typeof(DI0AnalogOutputChannelAssignment) },
-            { 51, typeof(DI1AnalogOutputChannelAssignment) },
-            { 52, typeof(DI2AnalogOutputChannelAssignment) },
-            { 53, typeof(DI3AnalogOutputChannelAssignment) },
+            { 46, typeof(PinModeDI0) },
+            { 47, typeof(PinModeDI1) },
+            { 48, typeof(PinModeDI2) },
+            { 49, typeof(PinModeDI3) },
+            { 50, typeof(AnalogOutputChannelAssignmentDI0) },
+            { 51, typeof(AnalogOutputChannelAssignmentDI1) },
+            { 52, typeof(AnalogOutputChannelAssignmentDI2) },
+            { 53, typeof(AnalogOutputChannelAssignmentDI3) },
             { 54, typeof(ActivePlayer0) },
             { 55, typeof(ActivePlayer1) },
             { 56, typeof(ActivePlayer2) },
@@ -312,14 +312,14 @@ namespace AllenNeuralDynamics.Quac
     /// <seealso cref="DacPause"/>
     /// <seealso cref="DacAbort"/>
     /// <seealso cref="DacFinished"/>
-    /// <seealso cref="DI0PinMode"/>
-    /// <seealso cref="DI1PinMode"/>
-    /// <seealso cref="DI2PinMode"/>
-    /// <seealso cref="DI3PinMode"/>
-    /// <seealso cref="DI0AnalogOutputChannelAssignment"/>
-    /// <seealso cref="DI1AnalogOutputChannelAssignment"/>
-    /// <seealso cref="DI2AnalogOutputChannelAssignment"/>
-    /// <seealso cref="DI3AnalogOutputChannelAssignment"/>
+    /// <seealso cref="PinModeDI0"/>
+    /// <seealso cref="PinModeDI1"/>
+    /// <seealso cref="PinModeDI2"/>
+    /// <seealso cref="PinModeDI3"/>
+    /// <seealso cref="AnalogOutputChannelAssignmentDI0"/>
+    /// <seealso cref="AnalogOutputChannelAssignmentDI1"/>
+    /// <seealso cref="AnalogOutputChannelAssignmentDI2"/>
+    /// <seealso cref="AnalogOutputChannelAssignmentDI3"/>
     /// <seealso cref="ActivePlayer0"/>
     /// <seealso cref="ActivePlayer1"/>
     /// <seealso cref="ActivePlayer2"/>
@@ -350,14 +350,14 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(DacPause))]
     [XmlInclude(typeof(DacAbort))]
     [XmlInclude(typeof(DacFinished))]
-    [XmlInclude(typeof(DI0PinMode))]
-    [XmlInclude(typeof(DI1PinMode))]
-    [XmlInclude(typeof(DI2PinMode))]
-    [XmlInclude(typeof(DI3PinMode))]
-    [XmlInclude(typeof(DI0AnalogOutputChannelAssignment))]
-    [XmlInclude(typeof(DI1AnalogOutputChannelAssignment))]
-    [XmlInclude(typeof(DI2AnalogOutputChannelAssignment))]
-    [XmlInclude(typeof(DI3AnalogOutputChannelAssignment))]
+    [XmlInclude(typeof(PinModeDI0))]
+    [XmlInclude(typeof(PinModeDI1))]
+    [XmlInclude(typeof(PinModeDI2))]
+    [XmlInclude(typeof(PinModeDI3))]
+    [XmlInclude(typeof(AnalogOutputChannelAssignmentDI0))]
+    [XmlInclude(typeof(AnalogOutputChannelAssignmentDI1))]
+    [XmlInclude(typeof(AnalogOutputChannelAssignmentDI2))]
+    [XmlInclude(typeof(AnalogOutputChannelAssignmentDI3))]
     [XmlInclude(typeof(ActivePlayer0))]
     [XmlInclude(typeof(ActivePlayer1))]
     [XmlInclude(typeof(ActivePlayer2))]
@@ -409,14 +409,14 @@ namespace AllenNeuralDynamics.Quac
     /// <seealso cref="DacPause"/>
     /// <seealso cref="DacAbort"/>
     /// <seealso cref="DacFinished"/>
-    /// <seealso cref="DI0PinMode"/>
-    /// <seealso cref="DI1PinMode"/>
-    /// <seealso cref="DI2PinMode"/>
-    /// <seealso cref="DI3PinMode"/>
-    /// <seealso cref="DI0AnalogOutputChannelAssignment"/>
-    /// <seealso cref="DI1AnalogOutputChannelAssignment"/>
-    /// <seealso cref="DI2AnalogOutputChannelAssignment"/>
-    /// <seealso cref="DI3AnalogOutputChannelAssignment"/>
+    /// <seealso cref="PinModeDI0"/>
+    /// <seealso cref="PinModeDI1"/>
+    /// <seealso cref="PinModeDI2"/>
+    /// <seealso cref="PinModeDI3"/>
+    /// <seealso cref="AnalogOutputChannelAssignmentDI0"/>
+    /// <seealso cref="AnalogOutputChannelAssignmentDI1"/>
+    /// <seealso cref="AnalogOutputChannelAssignmentDI2"/>
+    /// <seealso cref="AnalogOutputChannelAssignmentDI3"/>
     /// <seealso cref="ActivePlayer0"/>
     /// <seealso cref="ActivePlayer1"/>
     /// <seealso cref="ActivePlayer2"/>
@@ -447,14 +447,14 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(DacPause))]
     [XmlInclude(typeof(DacAbort))]
     [XmlInclude(typeof(DacFinished))]
-    [XmlInclude(typeof(DI0PinMode))]
-    [XmlInclude(typeof(DI1PinMode))]
-    [XmlInclude(typeof(DI2PinMode))]
-    [XmlInclude(typeof(DI3PinMode))]
-    [XmlInclude(typeof(DI0AnalogOutputChannelAssignment))]
-    [XmlInclude(typeof(DI1AnalogOutputChannelAssignment))]
-    [XmlInclude(typeof(DI2AnalogOutputChannelAssignment))]
-    [XmlInclude(typeof(DI3AnalogOutputChannelAssignment))]
+    [XmlInclude(typeof(PinModeDI0))]
+    [XmlInclude(typeof(PinModeDI1))]
+    [XmlInclude(typeof(PinModeDI2))]
+    [XmlInclude(typeof(PinModeDI3))]
+    [XmlInclude(typeof(AnalogOutputChannelAssignmentDI0))]
+    [XmlInclude(typeof(AnalogOutputChannelAssignmentDI1))]
+    [XmlInclude(typeof(AnalogOutputChannelAssignmentDI2))]
+    [XmlInclude(typeof(AnalogOutputChannelAssignmentDI3))]
     [XmlInclude(typeof(ActivePlayer0))]
     [XmlInclude(typeof(ActivePlayer1))]
     [XmlInclude(typeof(ActivePlayer2))]
@@ -485,14 +485,14 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(TimestampedDacPause))]
     [XmlInclude(typeof(TimestampedDacAbort))]
     [XmlInclude(typeof(TimestampedDacFinished))]
-    [XmlInclude(typeof(TimestampedDI0PinMode))]
-    [XmlInclude(typeof(TimestampedDI1PinMode))]
-    [XmlInclude(typeof(TimestampedDI2PinMode))]
-    [XmlInclude(typeof(TimestampedDI3PinMode))]
-    [XmlInclude(typeof(TimestampedDI0AnalogOutputChannelAssignment))]
-    [XmlInclude(typeof(TimestampedDI1AnalogOutputChannelAssignment))]
-    [XmlInclude(typeof(TimestampedDI2AnalogOutputChannelAssignment))]
-    [XmlInclude(typeof(TimestampedDI3AnalogOutputChannelAssignment))]
+    [XmlInclude(typeof(TimestampedPinModeDI0))]
+    [XmlInclude(typeof(TimestampedPinModeDI1))]
+    [XmlInclude(typeof(TimestampedPinModeDI2))]
+    [XmlInclude(typeof(TimestampedPinModeDI3))]
+    [XmlInclude(typeof(TimestampedAnalogOutputChannelAssignmentDI0))]
+    [XmlInclude(typeof(TimestampedAnalogOutputChannelAssignmentDI1))]
+    [XmlInclude(typeof(TimestampedAnalogOutputChannelAssignmentDI2))]
+    [XmlInclude(typeof(TimestampedAnalogOutputChannelAssignmentDI3))]
     [XmlInclude(typeof(TimestampedActivePlayer0))]
     [XmlInclude(typeof(TimestampedActivePlayer1))]
     [XmlInclude(typeof(TimestampedActivePlayer2))]
@@ -541,14 +541,14 @@ namespace AllenNeuralDynamics.Quac
     /// <seealso cref="DacPause"/>
     /// <seealso cref="DacAbort"/>
     /// <seealso cref="DacFinished"/>
-    /// <seealso cref="DI0PinMode"/>
-    /// <seealso cref="DI1PinMode"/>
-    /// <seealso cref="DI2PinMode"/>
-    /// <seealso cref="DI3PinMode"/>
-    /// <seealso cref="DI0AnalogOutputChannelAssignment"/>
-    /// <seealso cref="DI1AnalogOutputChannelAssignment"/>
-    /// <seealso cref="DI2AnalogOutputChannelAssignment"/>
-    /// <seealso cref="DI3AnalogOutputChannelAssignment"/>
+    /// <seealso cref="PinModeDI0"/>
+    /// <seealso cref="PinModeDI1"/>
+    /// <seealso cref="PinModeDI2"/>
+    /// <seealso cref="PinModeDI3"/>
+    /// <seealso cref="AnalogOutputChannelAssignmentDI0"/>
+    /// <seealso cref="AnalogOutputChannelAssignmentDI1"/>
+    /// <seealso cref="AnalogOutputChannelAssignmentDI2"/>
+    /// <seealso cref="AnalogOutputChannelAssignmentDI3"/>
     /// <seealso cref="ActivePlayer0"/>
     /// <seealso cref="ActivePlayer1"/>
     /// <seealso cref="ActivePlayer2"/>
@@ -579,14 +579,14 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(DacPause))]
     [XmlInclude(typeof(DacAbort))]
     [XmlInclude(typeof(DacFinished))]
-    [XmlInclude(typeof(DI0PinMode))]
-    [XmlInclude(typeof(DI1PinMode))]
-    [XmlInclude(typeof(DI2PinMode))]
-    [XmlInclude(typeof(DI3PinMode))]
-    [XmlInclude(typeof(DI0AnalogOutputChannelAssignment))]
-    [XmlInclude(typeof(DI1AnalogOutputChannelAssignment))]
-    [XmlInclude(typeof(DI2AnalogOutputChannelAssignment))]
-    [XmlInclude(typeof(DI3AnalogOutputChannelAssignment))]
+    [XmlInclude(typeof(PinModeDI0))]
+    [XmlInclude(typeof(PinModeDI1))]
+    [XmlInclude(typeof(PinModeDI2))]
+    [XmlInclude(typeof(PinModeDI3))]
+    [XmlInclude(typeof(AnalogOutputChannelAssignmentDI0))]
+    [XmlInclude(typeof(AnalogOutputChannelAssignmentDI1))]
+    [XmlInclude(typeof(AnalogOutputChannelAssignmentDI2))]
+    [XmlInclude(typeof(AnalogOutputChannelAssignmentDI3))]
     [XmlInclude(typeof(ActivePlayer0))]
     [XmlInclude(typeof(ActivePlayer1))]
     [XmlInclude(typeof(ActivePlayer2))]
@@ -1996,25 +1996,25 @@ namespace AllenNeuralDynamics.Quac
     /// Represents a register that specifies the function assigned to digital input pin 0.
     /// </summary>
     [Description("Specifies the function assigned to digital input pin 0.")]
-    public partial class DI0PinMode
+    public partial class PinModeDI0
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI0PinMode"/> register. This field is constant.
+        /// Represents the address of the <see cref="PinModeDI0"/> register. This field is constant.
         /// </summary>
         public const int Address = 46;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="DI0PinMode"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="PinModeDI0"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="DI0PinMode"/> register. This field is constant.
+        /// Represents the length of the <see cref="PinModeDI0"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="DI0PinMode"/> register messages.
+        /// Returns the payload data for <see cref="PinModeDI0"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -2024,7 +2024,7 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="DI0PinMode"/> register messages.
+        /// Returns the timestamped payload data for <see cref="PinModeDI0"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -2035,12 +2035,12 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="DI0PinMode"/> register.
+        /// Returns a Harp message for the <see cref="PinModeDI0"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI0PinMode"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="PinModeDI0"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, DIPinMode value)
@@ -2049,14 +2049,14 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="DI0PinMode"/>
+        /// Returns a timestamped Harp message for the <see cref="PinModeDI0"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI0PinMode"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="PinModeDI0"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, DIPinMode value)
@@ -2067,25 +2067,25 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// DI0PinMode register.
+    /// PinModeDI0 register.
     /// </summary>
-    /// <seealso cref="DI0PinMode"/>
-    [Description("Filters and selects timestamped messages from the DI0PinMode register.")]
-    public partial class TimestampedDI0PinMode
+    /// <seealso cref="PinModeDI0"/>
+    [Description("Filters and selects timestamped messages from the PinModeDI0 register.")]
+    public partial class TimestampedPinModeDI0
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI0PinMode"/> register. This field is constant.
+        /// Represents the address of the <see cref="PinModeDI0"/> register. This field is constant.
         /// </summary>
-        public const int Address = DI0PinMode.Address;
+        public const int Address = PinModeDI0.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="DI0PinMode"/> register messages.
+        /// Returns timestamped payload data for <see cref="PinModeDI0"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<DIPinMode> GetPayload(HarpMessage message)
         {
-            return DI0PinMode.GetTimestampedPayload(message);
+            return PinModeDI0.GetTimestampedPayload(message);
         }
     }
 
@@ -2093,25 +2093,25 @@ namespace AllenNeuralDynamics.Quac
     /// Represents a register that specifies the function assigned to digital input pin 1.
     /// </summary>
     [Description("Specifies the function assigned to digital input pin 1.")]
-    public partial class DI1PinMode
+    public partial class PinModeDI1
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI1PinMode"/> register. This field is constant.
+        /// Represents the address of the <see cref="PinModeDI1"/> register. This field is constant.
         /// </summary>
         public const int Address = 47;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="DI1PinMode"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="PinModeDI1"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="DI1PinMode"/> register. This field is constant.
+        /// Represents the length of the <see cref="PinModeDI1"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="DI1PinMode"/> register messages.
+        /// Returns the payload data for <see cref="PinModeDI1"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -2121,7 +2121,7 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="DI1PinMode"/> register messages.
+        /// Returns the timestamped payload data for <see cref="PinModeDI1"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -2132,12 +2132,12 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="DI1PinMode"/> register.
+        /// Returns a Harp message for the <see cref="PinModeDI1"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI1PinMode"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="PinModeDI1"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, DIPinMode value)
@@ -2146,14 +2146,14 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="DI1PinMode"/>
+        /// Returns a timestamped Harp message for the <see cref="PinModeDI1"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI1PinMode"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="PinModeDI1"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, DIPinMode value)
@@ -2164,25 +2164,25 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// DI1PinMode register.
+    /// PinModeDI1 register.
     /// </summary>
-    /// <seealso cref="DI1PinMode"/>
-    [Description("Filters and selects timestamped messages from the DI1PinMode register.")]
-    public partial class TimestampedDI1PinMode
+    /// <seealso cref="PinModeDI1"/>
+    [Description("Filters and selects timestamped messages from the PinModeDI1 register.")]
+    public partial class TimestampedPinModeDI1
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI1PinMode"/> register. This field is constant.
+        /// Represents the address of the <see cref="PinModeDI1"/> register. This field is constant.
         /// </summary>
-        public const int Address = DI1PinMode.Address;
+        public const int Address = PinModeDI1.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="DI1PinMode"/> register messages.
+        /// Returns timestamped payload data for <see cref="PinModeDI1"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<DIPinMode> GetPayload(HarpMessage message)
         {
-            return DI1PinMode.GetTimestampedPayload(message);
+            return PinModeDI1.GetTimestampedPayload(message);
         }
     }
 
@@ -2190,25 +2190,25 @@ namespace AllenNeuralDynamics.Quac
     /// Represents a register that specifies the function assigned to digital input pin 2.
     /// </summary>
     [Description("Specifies the function assigned to digital input pin 2.")]
-    public partial class DI2PinMode
+    public partial class PinModeDI2
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI2PinMode"/> register. This field is constant.
+        /// Represents the address of the <see cref="PinModeDI2"/> register. This field is constant.
         /// </summary>
         public const int Address = 48;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="DI2PinMode"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="PinModeDI2"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="DI2PinMode"/> register. This field is constant.
+        /// Represents the length of the <see cref="PinModeDI2"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="DI2PinMode"/> register messages.
+        /// Returns the payload data for <see cref="PinModeDI2"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -2218,7 +2218,7 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="DI2PinMode"/> register messages.
+        /// Returns the timestamped payload data for <see cref="PinModeDI2"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -2229,12 +2229,12 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="DI2PinMode"/> register.
+        /// Returns a Harp message for the <see cref="PinModeDI2"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI2PinMode"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="PinModeDI2"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, DIPinMode value)
@@ -2243,14 +2243,14 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="DI2PinMode"/>
+        /// Returns a timestamped Harp message for the <see cref="PinModeDI2"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI2PinMode"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="PinModeDI2"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, DIPinMode value)
@@ -2261,25 +2261,25 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// DI2PinMode register.
+    /// PinModeDI2 register.
     /// </summary>
-    /// <seealso cref="DI2PinMode"/>
-    [Description("Filters and selects timestamped messages from the DI2PinMode register.")]
-    public partial class TimestampedDI2PinMode
+    /// <seealso cref="PinModeDI2"/>
+    [Description("Filters and selects timestamped messages from the PinModeDI2 register.")]
+    public partial class TimestampedPinModeDI2
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI2PinMode"/> register. This field is constant.
+        /// Represents the address of the <see cref="PinModeDI2"/> register. This field is constant.
         /// </summary>
-        public const int Address = DI2PinMode.Address;
+        public const int Address = PinModeDI2.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="DI2PinMode"/> register messages.
+        /// Returns timestamped payload data for <see cref="PinModeDI2"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<DIPinMode> GetPayload(HarpMessage message)
         {
-            return DI2PinMode.GetTimestampedPayload(message);
+            return PinModeDI2.GetTimestampedPayload(message);
         }
     }
 
@@ -2287,25 +2287,25 @@ namespace AllenNeuralDynamics.Quac
     /// Represents a register that specifies the function assigned to digital input pin 3.
     /// </summary>
     [Description("Specifies the function assigned to digital input pin 3.")]
-    public partial class DI3PinMode
+    public partial class PinModeDI3
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI3PinMode"/> register. This field is constant.
+        /// Represents the address of the <see cref="PinModeDI3"/> register. This field is constant.
         /// </summary>
         public const int Address = 49;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="DI3PinMode"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="PinModeDI3"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="DI3PinMode"/> register. This field is constant.
+        /// Represents the length of the <see cref="PinModeDI3"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="DI3PinMode"/> register messages.
+        /// Returns the payload data for <see cref="PinModeDI3"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -2315,7 +2315,7 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="DI3PinMode"/> register messages.
+        /// Returns the timestamped payload data for <see cref="PinModeDI3"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -2326,12 +2326,12 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="DI3PinMode"/> register.
+        /// Returns a Harp message for the <see cref="PinModeDI3"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI3PinMode"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="PinModeDI3"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, DIPinMode value)
@@ -2340,14 +2340,14 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="DI3PinMode"/>
+        /// Returns a timestamped Harp message for the <see cref="PinModeDI3"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI3PinMode"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="PinModeDI3"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, DIPinMode value)
@@ -2358,25 +2358,25 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// DI3PinMode register.
+    /// PinModeDI3 register.
     /// </summary>
-    /// <seealso cref="DI3PinMode"/>
-    [Description("Filters and selects timestamped messages from the DI3PinMode register.")]
-    public partial class TimestampedDI3PinMode
+    /// <seealso cref="PinModeDI3"/>
+    [Description("Filters and selects timestamped messages from the PinModeDI3 register.")]
+    public partial class TimestampedPinModeDI3
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI3PinMode"/> register. This field is constant.
+        /// Represents the address of the <see cref="PinModeDI3"/> register. This field is constant.
         /// </summary>
-        public const int Address = DI3PinMode.Address;
+        public const int Address = PinModeDI3.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="DI3PinMode"/> register messages.
+        /// Returns timestamped payload data for <see cref="PinModeDI3"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<DIPinMode> GetPayload(HarpMessage message)
         {
-            return DI3PinMode.GetTimestampedPayload(message);
+            return PinModeDI3.GetTimestampedPayload(message);
         }
     }
 
@@ -2384,25 +2384,25 @@ namespace AllenNeuralDynamics.Quac
     /// Represents a register that specifies which AO channels are assigned to DI Pin 0.
     /// </summary>
     [Description("Specifies which AO channels are assigned to DI Pin 0.")]
-    public partial class DI0AnalogOutputChannelAssignment
+    public partial class AnalogOutputChannelAssignmentDI0
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI0AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the address of the <see cref="AnalogOutputChannelAssignmentDI0"/> register. This field is constant.
         /// </summary>
         public const int Address = 50;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="DI0AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="AnalogOutputChannelAssignmentDI0"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="DI0AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the length of the <see cref="AnalogOutputChannelAssignmentDI0"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="DI0AnalogOutputChannelAssignment"/> register messages.
+        /// Returns the payload data for <see cref="AnalogOutputChannelAssignmentDI0"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -2412,7 +2412,7 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="DI0AnalogOutputChannelAssignment"/> register messages.
+        /// Returns the timestamped payload data for <see cref="AnalogOutputChannelAssignmentDI0"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -2423,12 +2423,12 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="DI0AnalogOutputChannelAssignment"/> register.
+        /// Returns a Harp message for the <see cref="AnalogOutputChannelAssignmentDI0"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI0AnalogOutputChannelAssignment"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="AnalogOutputChannelAssignmentDI0"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, DigitalInputs value)
@@ -2437,14 +2437,14 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="DI0AnalogOutputChannelAssignment"/>
+        /// Returns a timestamped Harp message for the <see cref="AnalogOutputChannelAssignmentDI0"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI0AnalogOutputChannelAssignment"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="AnalogOutputChannelAssignmentDI0"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, DigitalInputs value)
@@ -2455,25 +2455,25 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// DI0AnalogOutputChannelAssignment register.
+    /// AnalogOutputChannelAssignmentDI0 register.
     /// </summary>
-    /// <seealso cref="DI0AnalogOutputChannelAssignment"/>
-    [Description("Filters and selects timestamped messages from the DI0AnalogOutputChannelAssignment register.")]
-    public partial class TimestampedDI0AnalogOutputChannelAssignment
+    /// <seealso cref="AnalogOutputChannelAssignmentDI0"/>
+    [Description("Filters and selects timestamped messages from the AnalogOutputChannelAssignmentDI0 register.")]
+    public partial class TimestampedAnalogOutputChannelAssignmentDI0
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI0AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the address of the <see cref="AnalogOutputChannelAssignmentDI0"/> register. This field is constant.
         /// </summary>
-        public const int Address = DI0AnalogOutputChannelAssignment.Address;
+        public const int Address = AnalogOutputChannelAssignmentDI0.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="DI0AnalogOutputChannelAssignment"/> register messages.
+        /// Returns timestamped payload data for <see cref="AnalogOutputChannelAssignmentDI0"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<DigitalInputs> GetPayload(HarpMessage message)
         {
-            return DI0AnalogOutputChannelAssignment.GetTimestampedPayload(message);
+            return AnalogOutputChannelAssignmentDI0.GetTimestampedPayload(message);
         }
     }
 
@@ -2481,25 +2481,25 @@ namespace AllenNeuralDynamics.Quac
     /// Represents a register that specifies which AO channels are assigned to DI Pin 1.
     /// </summary>
     [Description("Specifies which AO channels are assigned to DI Pin 1.")]
-    public partial class DI1AnalogOutputChannelAssignment
+    public partial class AnalogOutputChannelAssignmentDI1
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI1AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the address of the <see cref="AnalogOutputChannelAssignmentDI1"/> register. This field is constant.
         /// </summary>
         public const int Address = 51;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="DI1AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="AnalogOutputChannelAssignmentDI1"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="DI1AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the length of the <see cref="AnalogOutputChannelAssignmentDI1"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="DI1AnalogOutputChannelAssignment"/> register messages.
+        /// Returns the payload data for <see cref="AnalogOutputChannelAssignmentDI1"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -2509,7 +2509,7 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="DI1AnalogOutputChannelAssignment"/> register messages.
+        /// Returns the timestamped payload data for <see cref="AnalogOutputChannelAssignmentDI1"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -2520,12 +2520,12 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="DI1AnalogOutputChannelAssignment"/> register.
+        /// Returns a Harp message for the <see cref="AnalogOutputChannelAssignmentDI1"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI1AnalogOutputChannelAssignment"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="AnalogOutputChannelAssignmentDI1"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, DigitalInputs value)
@@ -2534,14 +2534,14 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="DI1AnalogOutputChannelAssignment"/>
+        /// Returns a timestamped Harp message for the <see cref="AnalogOutputChannelAssignmentDI1"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI1AnalogOutputChannelAssignment"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="AnalogOutputChannelAssignmentDI1"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, DigitalInputs value)
@@ -2552,25 +2552,25 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// DI1AnalogOutputChannelAssignment register.
+    /// AnalogOutputChannelAssignmentDI1 register.
     /// </summary>
-    /// <seealso cref="DI1AnalogOutputChannelAssignment"/>
-    [Description("Filters and selects timestamped messages from the DI1AnalogOutputChannelAssignment register.")]
-    public partial class TimestampedDI1AnalogOutputChannelAssignment
+    /// <seealso cref="AnalogOutputChannelAssignmentDI1"/>
+    [Description("Filters and selects timestamped messages from the AnalogOutputChannelAssignmentDI1 register.")]
+    public partial class TimestampedAnalogOutputChannelAssignmentDI1
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI1AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the address of the <see cref="AnalogOutputChannelAssignmentDI1"/> register. This field is constant.
         /// </summary>
-        public const int Address = DI1AnalogOutputChannelAssignment.Address;
+        public const int Address = AnalogOutputChannelAssignmentDI1.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="DI1AnalogOutputChannelAssignment"/> register messages.
+        /// Returns timestamped payload data for <see cref="AnalogOutputChannelAssignmentDI1"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<DigitalInputs> GetPayload(HarpMessage message)
         {
-            return DI1AnalogOutputChannelAssignment.GetTimestampedPayload(message);
+            return AnalogOutputChannelAssignmentDI1.GetTimestampedPayload(message);
         }
     }
 
@@ -2578,25 +2578,25 @@ namespace AllenNeuralDynamics.Quac
     /// Represents a register that specifies which AO channels are assigned to DI Pin 2.
     /// </summary>
     [Description("Specifies which AO channels are assigned to DI Pin 2.")]
-    public partial class DI2AnalogOutputChannelAssignment
+    public partial class AnalogOutputChannelAssignmentDI2
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI2AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the address of the <see cref="AnalogOutputChannelAssignmentDI2"/> register. This field is constant.
         /// </summary>
         public const int Address = 52;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="DI2AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="AnalogOutputChannelAssignmentDI2"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="DI2AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the length of the <see cref="AnalogOutputChannelAssignmentDI2"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="DI2AnalogOutputChannelAssignment"/> register messages.
+        /// Returns the payload data for <see cref="AnalogOutputChannelAssignmentDI2"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -2606,7 +2606,7 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="DI2AnalogOutputChannelAssignment"/> register messages.
+        /// Returns the timestamped payload data for <see cref="AnalogOutputChannelAssignmentDI2"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -2617,12 +2617,12 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="DI2AnalogOutputChannelAssignment"/> register.
+        /// Returns a Harp message for the <see cref="AnalogOutputChannelAssignmentDI2"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI2AnalogOutputChannelAssignment"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="AnalogOutputChannelAssignmentDI2"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, DigitalInputs value)
@@ -2631,14 +2631,14 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="DI2AnalogOutputChannelAssignment"/>
+        /// Returns a timestamped Harp message for the <see cref="AnalogOutputChannelAssignmentDI2"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI2AnalogOutputChannelAssignment"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="AnalogOutputChannelAssignmentDI2"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, DigitalInputs value)
@@ -2649,25 +2649,25 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// DI2AnalogOutputChannelAssignment register.
+    /// AnalogOutputChannelAssignmentDI2 register.
     /// </summary>
-    /// <seealso cref="DI2AnalogOutputChannelAssignment"/>
-    [Description("Filters and selects timestamped messages from the DI2AnalogOutputChannelAssignment register.")]
-    public partial class TimestampedDI2AnalogOutputChannelAssignment
+    /// <seealso cref="AnalogOutputChannelAssignmentDI2"/>
+    [Description("Filters and selects timestamped messages from the AnalogOutputChannelAssignmentDI2 register.")]
+    public partial class TimestampedAnalogOutputChannelAssignmentDI2
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI2AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the address of the <see cref="AnalogOutputChannelAssignmentDI2"/> register. This field is constant.
         /// </summary>
-        public const int Address = DI2AnalogOutputChannelAssignment.Address;
+        public const int Address = AnalogOutputChannelAssignmentDI2.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="DI2AnalogOutputChannelAssignment"/> register messages.
+        /// Returns timestamped payload data for <see cref="AnalogOutputChannelAssignmentDI2"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<DigitalInputs> GetPayload(HarpMessage message)
         {
-            return DI2AnalogOutputChannelAssignment.GetTimestampedPayload(message);
+            return AnalogOutputChannelAssignmentDI2.GetTimestampedPayload(message);
         }
     }
 
@@ -2675,25 +2675,25 @@ namespace AllenNeuralDynamics.Quac
     /// Represents a register that specifies which AO channels are assigned to DI Pin 3.
     /// </summary>
     [Description("Specifies which AO channels are assigned to DI Pin 3.")]
-    public partial class DI3AnalogOutputChannelAssignment
+    public partial class AnalogOutputChannelAssignmentDI3
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI3AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the address of the <see cref="AnalogOutputChannelAssignmentDI3"/> register. This field is constant.
         /// </summary>
         public const int Address = 53;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="DI3AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="AnalogOutputChannelAssignmentDI3"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U8;
 
         /// <summary>
-        /// Represents the length of the <see cref="DI3AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the length of the <see cref="AnalogOutputChannelAssignmentDI3"/> register. This field is constant.
         /// </summary>
         public const int RegisterLength = 1;
 
         /// <summary>
-        /// Returns the payload data for <see cref="DI3AnalogOutputChannelAssignment"/> register messages.
+        /// Returns the payload data for <see cref="AnalogOutputChannelAssignmentDI3"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
@@ -2703,7 +2703,7 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="DI3AnalogOutputChannelAssignment"/> register messages.
+        /// Returns the timestamped payload data for <see cref="AnalogOutputChannelAssignmentDI3"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
@@ -2714,12 +2714,12 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="DI3AnalogOutputChannelAssignment"/> register.
+        /// Returns a Harp message for the <see cref="AnalogOutputChannelAssignmentDI3"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI3AnalogOutputChannelAssignment"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="AnalogOutputChannelAssignmentDI3"/> register
         /// with the specified message type and payload.
         /// </returns>
         public static HarpMessage FromPayload(MessageType messageType, DigitalInputs value)
@@ -2728,14 +2728,14 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="DI3AnalogOutputChannelAssignment"/>
+        /// Returns a timestamped Harp message for the <see cref="AnalogOutputChannelAssignmentDI3"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="DI3AnalogOutputChannelAssignment"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="AnalogOutputChannelAssignmentDI3"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
         public static HarpMessage FromPayload(double timestamp, MessageType messageType, DigitalInputs value)
@@ -2746,25 +2746,25 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// DI3AnalogOutputChannelAssignment register.
+    /// AnalogOutputChannelAssignmentDI3 register.
     /// </summary>
-    /// <seealso cref="DI3AnalogOutputChannelAssignment"/>
-    [Description("Filters and selects timestamped messages from the DI3AnalogOutputChannelAssignment register.")]
-    public partial class TimestampedDI3AnalogOutputChannelAssignment
+    /// <seealso cref="AnalogOutputChannelAssignmentDI3"/>
+    [Description("Filters and selects timestamped messages from the AnalogOutputChannelAssignmentDI3 register.")]
+    public partial class TimestampedAnalogOutputChannelAssignmentDI3
     {
         /// <summary>
-        /// Represents the address of the <see cref="DI3AnalogOutputChannelAssignment"/> register. This field is constant.
+        /// Represents the address of the <see cref="AnalogOutputChannelAssignmentDI3"/> register. This field is constant.
         /// </summary>
-        public const int Address = DI3AnalogOutputChannelAssignment.Address;
+        public const int Address = AnalogOutputChannelAssignmentDI3.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="DI3AnalogOutputChannelAssignment"/> register messages.
+        /// Returns timestamped payload data for <see cref="AnalogOutputChannelAssignmentDI3"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
         public static Timestamped<DigitalInputs> GetPayload(HarpMessage message)
         {
-            return DI3AnalogOutputChannelAssignment.GetTimestampedPayload(message);
+            return AnalogOutputChannelAssignmentDI3.GetTimestampedPayload(message);
         }
     }
 
@@ -4662,14 +4662,14 @@ namespace AllenNeuralDynamics.Quac
     /// <seealso cref="CreateDacPausePayload"/>
     /// <seealso cref="CreateDacAbortPayload"/>
     /// <seealso cref="CreateDacFinishedPayload"/>
-    /// <seealso cref="CreateDI0PinModePayload"/>
-    /// <seealso cref="CreateDI1PinModePayload"/>
-    /// <seealso cref="CreateDI2PinModePayload"/>
-    /// <seealso cref="CreateDI3PinModePayload"/>
-    /// <seealso cref="CreateDI0AnalogOutputChannelAssignmentPayload"/>
-    /// <seealso cref="CreateDI1AnalogOutputChannelAssignmentPayload"/>
-    /// <seealso cref="CreateDI2AnalogOutputChannelAssignmentPayload"/>
-    /// <seealso cref="CreateDI3AnalogOutputChannelAssignmentPayload"/>
+    /// <seealso cref="CreatePinModeDI0Payload"/>
+    /// <seealso cref="CreatePinModeDI1Payload"/>
+    /// <seealso cref="CreatePinModeDI2Payload"/>
+    /// <seealso cref="CreatePinModeDI3Payload"/>
+    /// <seealso cref="CreateAnalogOutputChannelAssignmentDI0Payload"/>
+    /// <seealso cref="CreateAnalogOutputChannelAssignmentDI1Payload"/>
+    /// <seealso cref="CreateAnalogOutputChannelAssignmentDI2Payload"/>
+    /// <seealso cref="CreateAnalogOutputChannelAssignmentDI3Payload"/>
     /// <seealso cref="CreateActivePlayer0Payload"/>
     /// <seealso cref="CreateActivePlayer1Payload"/>
     /// <seealso cref="CreateActivePlayer2Payload"/>
@@ -4700,14 +4700,14 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(CreateDacPausePayload))]
     [XmlInclude(typeof(CreateDacAbortPayload))]
     [XmlInclude(typeof(CreateDacFinishedPayload))]
-    [XmlInclude(typeof(CreateDI0PinModePayload))]
-    [XmlInclude(typeof(CreateDI1PinModePayload))]
-    [XmlInclude(typeof(CreateDI2PinModePayload))]
-    [XmlInclude(typeof(CreateDI3PinModePayload))]
-    [XmlInclude(typeof(CreateDI0AnalogOutputChannelAssignmentPayload))]
-    [XmlInclude(typeof(CreateDI1AnalogOutputChannelAssignmentPayload))]
-    [XmlInclude(typeof(CreateDI2AnalogOutputChannelAssignmentPayload))]
-    [XmlInclude(typeof(CreateDI3AnalogOutputChannelAssignmentPayload))]
+    [XmlInclude(typeof(CreatePinModeDI0Payload))]
+    [XmlInclude(typeof(CreatePinModeDI1Payload))]
+    [XmlInclude(typeof(CreatePinModeDI2Payload))]
+    [XmlInclude(typeof(CreatePinModeDI3Payload))]
+    [XmlInclude(typeof(CreateAnalogOutputChannelAssignmentDI0Payload))]
+    [XmlInclude(typeof(CreateAnalogOutputChannelAssignmentDI1Payload))]
+    [XmlInclude(typeof(CreateAnalogOutputChannelAssignmentDI2Payload))]
+    [XmlInclude(typeof(CreateAnalogOutputChannelAssignmentDI3Payload))]
     [XmlInclude(typeof(CreateActivePlayer0Payload))]
     [XmlInclude(typeof(CreateActivePlayer1Payload))]
     [XmlInclude(typeof(CreateActivePlayer2Payload))]
@@ -4738,14 +4738,14 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(CreateTimestampedDacPausePayload))]
     [XmlInclude(typeof(CreateTimestampedDacAbortPayload))]
     [XmlInclude(typeof(CreateTimestampedDacFinishedPayload))]
-    [XmlInclude(typeof(CreateTimestampedDI0PinModePayload))]
-    [XmlInclude(typeof(CreateTimestampedDI1PinModePayload))]
-    [XmlInclude(typeof(CreateTimestampedDI2PinModePayload))]
-    [XmlInclude(typeof(CreateTimestampedDI3PinModePayload))]
-    [XmlInclude(typeof(CreateTimestampedDI0AnalogOutputChannelAssignmentPayload))]
-    [XmlInclude(typeof(CreateTimestampedDI1AnalogOutputChannelAssignmentPayload))]
-    [XmlInclude(typeof(CreateTimestampedDI2AnalogOutputChannelAssignmentPayload))]
-    [XmlInclude(typeof(CreateTimestampedDI3AnalogOutputChannelAssignmentPayload))]
+    [XmlInclude(typeof(CreateTimestampedPinModeDI0Payload))]
+    [XmlInclude(typeof(CreateTimestampedPinModeDI1Payload))]
+    [XmlInclude(typeof(CreateTimestampedPinModeDI2Payload))]
+    [XmlInclude(typeof(CreateTimestampedPinModeDI3Payload))]
+    [XmlInclude(typeof(CreateTimestampedAnalogOutputChannelAssignmentDI0Payload))]
+    [XmlInclude(typeof(CreateTimestampedAnalogOutputChannelAssignmentDI1Payload))]
+    [XmlInclude(typeof(CreateTimestampedAnalogOutputChannelAssignmentDI2Payload))]
+    [XmlInclude(typeof(CreateTimestampedAnalogOutputChannelAssignmentDI3Payload))]
     [XmlInclude(typeof(CreateTimestampedActivePlayer0Payload))]
     [XmlInclude(typeof(CreateTimestampedActivePlayer1Payload))]
     [XmlInclude(typeof(CreateTimestampedActivePlayer2Payload))]
@@ -5567,33 +5567,33 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a message payload
     /// that specifies the function assigned to digital input pin 0.
     /// </summary>
-    [DisplayName("DI0PinModePayload")]
+    [DisplayName("PinModeDI0Payload")]
     [Description("Creates a message payload that specifies the function assigned to digital input pin 0.")]
-    public partial class CreateDI0PinModePayload
+    public partial class CreatePinModeDI0Payload
     {
         /// <summary>
         /// Gets or sets the value that specifies the function assigned to digital input pin 0.
         /// </summary>
         [Description("The value that specifies the function assigned to digital input pin 0.")]
-        public DIPinMode DI0PinMode { get; set; }
+        public DIPinMode PinModeDI0 { get; set; }
 
         /// <summary>
-        /// Creates a message payload for the DI0PinMode register.
+        /// Creates a message payload for the PinModeDI0 register.
         /// </summary>
         /// <returns>The created message payload value.</returns>
         public DIPinMode GetPayload()
         {
-            return DI0PinMode;
+            return PinModeDI0;
         }
 
         /// <summary>
         /// Creates a message that specifies the function assigned to digital input pin 0.
         /// </summary>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new message for the DI0PinMode register.</returns>
+        /// <returns>A new message for the PinModeDI0 register.</returns>
         public HarpMessage GetMessage(MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI0PinMode.FromPayload(messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.PinModeDI0.FromPayload(messageType, GetPayload());
         }
     }
 
@@ -5601,19 +5601,19 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a timestamped message payload
     /// that specifies the function assigned to digital input pin 0.
     /// </summary>
-    [DisplayName("TimestampedDI0PinModePayload")]
+    [DisplayName("TimestampedPinModeDI0Payload")]
     [Description("Creates a timestamped message payload that specifies the function assigned to digital input pin 0.")]
-    public partial class CreateTimestampedDI0PinModePayload : CreateDI0PinModePayload
+    public partial class CreateTimestampedPinModeDI0Payload : CreatePinModeDI0Payload
     {
         /// <summary>
         /// Creates a timestamped message that specifies the function assigned to digital input pin 0.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new timestamped message for the DI0PinMode register.</returns>
+        /// <returns>A new timestamped message for the PinModeDI0 register.</returns>
         public HarpMessage GetMessage(double timestamp, MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI0PinMode.FromPayload(timestamp, messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.PinModeDI0.FromPayload(timestamp, messageType, GetPayload());
         }
     }
 
@@ -5621,33 +5621,33 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a message payload
     /// that specifies the function assigned to digital input pin 1.
     /// </summary>
-    [DisplayName("DI1PinModePayload")]
+    [DisplayName("PinModeDI1Payload")]
     [Description("Creates a message payload that specifies the function assigned to digital input pin 1.")]
-    public partial class CreateDI1PinModePayload
+    public partial class CreatePinModeDI1Payload
     {
         /// <summary>
         /// Gets or sets the value that specifies the function assigned to digital input pin 1.
         /// </summary>
         [Description("The value that specifies the function assigned to digital input pin 1.")]
-        public DIPinMode DI1PinMode { get; set; }
+        public DIPinMode PinModeDI1 { get; set; }
 
         /// <summary>
-        /// Creates a message payload for the DI1PinMode register.
+        /// Creates a message payload for the PinModeDI1 register.
         /// </summary>
         /// <returns>The created message payload value.</returns>
         public DIPinMode GetPayload()
         {
-            return DI1PinMode;
+            return PinModeDI1;
         }
 
         /// <summary>
         /// Creates a message that specifies the function assigned to digital input pin 1.
         /// </summary>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new message for the DI1PinMode register.</returns>
+        /// <returns>A new message for the PinModeDI1 register.</returns>
         public HarpMessage GetMessage(MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI1PinMode.FromPayload(messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.PinModeDI1.FromPayload(messageType, GetPayload());
         }
     }
 
@@ -5655,19 +5655,19 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a timestamped message payload
     /// that specifies the function assigned to digital input pin 1.
     /// </summary>
-    [DisplayName("TimestampedDI1PinModePayload")]
+    [DisplayName("TimestampedPinModeDI1Payload")]
     [Description("Creates a timestamped message payload that specifies the function assigned to digital input pin 1.")]
-    public partial class CreateTimestampedDI1PinModePayload : CreateDI1PinModePayload
+    public partial class CreateTimestampedPinModeDI1Payload : CreatePinModeDI1Payload
     {
         /// <summary>
         /// Creates a timestamped message that specifies the function assigned to digital input pin 1.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new timestamped message for the DI1PinMode register.</returns>
+        /// <returns>A new timestamped message for the PinModeDI1 register.</returns>
         public HarpMessage GetMessage(double timestamp, MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI1PinMode.FromPayload(timestamp, messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.PinModeDI1.FromPayload(timestamp, messageType, GetPayload());
         }
     }
 
@@ -5675,33 +5675,33 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a message payload
     /// that specifies the function assigned to digital input pin 2.
     /// </summary>
-    [DisplayName("DI2PinModePayload")]
+    [DisplayName("PinModeDI2Payload")]
     [Description("Creates a message payload that specifies the function assigned to digital input pin 2.")]
-    public partial class CreateDI2PinModePayload
+    public partial class CreatePinModeDI2Payload
     {
         /// <summary>
         /// Gets or sets the value that specifies the function assigned to digital input pin 2.
         /// </summary>
         [Description("The value that specifies the function assigned to digital input pin 2.")]
-        public DIPinMode DI2PinMode { get; set; }
+        public DIPinMode PinModeDI2 { get; set; }
 
         /// <summary>
-        /// Creates a message payload for the DI2PinMode register.
+        /// Creates a message payload for the PinModeDI2 register.
         /// </summary>
         /// <returns>The created message payload value.</returns>
         public DIPinMode GetPayload()
         {
-            return DI2PinMode;
+            return PinModeDI2;
         }
 
         /// <summary>
         /// Creates a message that specifies the function assigned to digital input pin 2.
         /// </summary>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new message for the DI2PinMode register.</returns>
+        /// <returns>A new message for the PinModeDI2 register.</returns>
         public HarpMessage GetMessage(MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI2PinMode.FromPayload(messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.PinModeDI2.FromPayload(messageType, GetPayload());
         }
     }
 
@@ -5709,19 +5709,19 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a timestamped message payload
     /// that specifies the function assigned to digital input pin 2.
     /// </summary>
-    [DisplayName("TimestampedDI2PinModePayload")]
+    [DisplayName("TimestampedPinModeDI2Payload")]
     [Description("Creates a timestamped message payload that specifies the function assigned to digital input pin 2.")]
-    public partial class CreateTimestampedDI2PinModePayload : CreateDI2PinModePayload
+    public partial class CreateTimestampedPinModeDI2Payload : CreatePinModeDI2Payload
     {
         /// <summary>
         /// Creates a timestamped message that specifies the function assigned to digital input pin 2.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new timestamped message for the DI2PinMode register.</returns>
+        /// <returns>A new timestamped message for the PinModeDI2 register.</returns>
         public HarpMessage GetMessage(double timestamp, MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI2PinMode.FromPayload(timestamp, messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.PinModeDI2.FromPayload(timestamp, messageType, GetPayload());
         }
     }
 
@@ -5729,33 +5729,33 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a message payload
     /// that specifies the function assigned to digital input pin 3.
     /// </summary>
-    [DisplayName("DI3PinModePayload")]
+    [DisplayName("PinModeDI3Payload")]
     [Description("Creates a message payload that specifies the function assigned to digital input pin 3.")]
-    public partial class CreateDI3PinModePayload
+    public partial class CreatePinModeDI3Payload
     {
         /// <summary>
         /// Gets or sets the value that specifies the function assigned to digital input pin 3.
         /// </summary>
         [Description("The value that specifies the function assigned to digital input pin 3.")]
-        public DIPinMode DI3PinMode { get; set; }
+        public DIPinMode PinModeDI3 { get; set; }
 
         /// <summary>
-        /// Creates a message payload for the DI3PinMode register.
+        /// Creates a message payload for the PinModeDI3 register.
         /// </summary>
         /// <returns>The created message payload value.</returns>
         public DIPinMode GetPayload()
         {
-            return DI3PinMode;
+            return PinModeDI3;
         }
 
         /// <summary>
         /// Creates a message that specifies the function assigned to digital input pin 3.
         /// </summary>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new message for the DI3PinMode register.</returns>
+        /// <returns>A new message for the PinModeDI3 register.</returns>
         public HarpMessage GetMessage(MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI3PinMode.FromPayload(messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.PinModeDI3.FromPayload(messageType, GetPayload());
         }
     }
 
@@ -5763,19 +5763,19 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a timestamped message payload
     /// that specifies the function assigned to digital input pin 3.
     /// </summary>
-    [DisplayName("TimestampedDI3PinModePayload")]
+    [DisplayName("TimestampedPinModeDI3Payload")]
     [Description("Creates a timestamped message payload that specifies the function assigned to digital input pin 3.")]
-    public partial class CreateTimestampedDI3PinModePayload : CreateDI3PinModePayload
+    public partial class CreateTimestampedPinModeDI3Payload : CreatePinModeDI3Payload
     {
         /// <summary>
         /// Creates a timestamped message that specifies the function assigned to digital input pin 3.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new timestamped message for the DI3PinMode register.</returns>
+        /// <returns>A new timestamped message for the PinModeDI3 register.</returns>
         public HarpMessage GetMessage(double timestamp, MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI3PinMode.FromPayload(timestamp, messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.PinModeDI3.FromPayload(timestamp, messageType, GetPayload());
         }
     }
 
@@ -5783,33 +5783,33 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a message payload
     /// that specifies which AO channels are assigned to DI Pin 0.
     /// </summary>
-    [DisplayName("DI0AnalogOutputChannelAssignmentPayload")]
+    [DisplayName("AnalogOutputChannelAssignmentDI0Payload")]
     [Description("Creates a message payload that specifies which AO channels are assigned to DI Pin 0.")]
-    public partial class CreateDI0AnalogOutputChannelAssignmentPayload
+    public partial class CreateAnalogOutputChannelAssignmentDI0Payload
     {
         /// <summary>
         /// Gets or sets the value that specifies which AO channels are assigned to DI Pin 0.
         /// </summary>
         [Description("The value that specifies which AO channels are assigned to DI Pin 0.")]
-        public DigitalInputs DI0AnalogOutputChannelAssignment { get; set; }
+        public DigitalInputs AnalogOutputChannelAssignmentDI0 { get; set; }
 
         /// <summary>
-        /// Creates a message payload for the DI0AnalogOutputChannelAssignment register.
+        /// Creates a message payload for the AnalogOutputChannelAssignmentDI0 register.
         /// </summary>
         /// <returns>The created message payload value.</returns>
         public DigitalInputs GetPayload()
         {
-            return DI0AnalogOutputChannelAssignment;
+            return AnalogOutputChannelAssignmentDI0;
         }
 
         /// <summary>
         /// Creates a message that specifies which AO channels are assigned to DI Pin 0.
         /// </summary>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new message for the DI0AnalogOutputChannelAssignment register.</returns>
+        /// <returns>A new message for the AnalogOutputChannelAssignmentDI0 register.</returns>
         public HarpMessage GetMessage(MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI0AnalogOutputChannelAssignment.FromPayload(messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.AnalogOutputChannelAssignmentDI0.FromPayload(messageType, GetPayload());
         }
     }
 
@@ -5817,19 +5817,19 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a timestamped message payload
     /// that specifies which AO channels are assigned to DI Pin 0.
     /// </summary>
-    [DisplayName("TimestampedDI0AnalogOutputChannelAssignmentPayload")]
+    [DisplayName("TimestampedAnalogOutputChannelAssignmentDI0Payload")]
     [Description("Creates a timestamped message payload that specifies which AO channels are assigned to DI Pin 0.")]
-    public partial class CreateTimestampedDI0AnalogOutputChannelAssignmentPayload : CreateDI0AnalogOutputChannelAssignmentPayload
+    public partial class CreateTimestampedAnalogOutputChannelAssignmentDI0Payload : CreateAnalogOutputChannelAssignmentDI0Payload
     {
         /// <summary>
         /// Creates a timestamped message that specifies which AO channels are assigned to DI Pin 0.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new timestamped message for the DI0AnalogOutputChannelAssignment register.</returns>
+        /// <returns>A new timestamped message for the AnalogOutputChannelAssignmentDI0 register.</returns>
         public HarpMessage GetMessage(double timestamp, MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI0AnalogOutputChannelAssignment.FromPayload(timestamp, messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.AnalogOutputChannelAssignmentDI0.FromPayload(timestamp, messageType, GetPayload());
         }
     }
 
@@ -5837,33 +5837,33 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a message payload
     /// that specifies which AO channels are assigned to DI Pin 1.
     /// </summary>
-    [DisplayName("DI1AnalogOutputChannelAssignmentPayload")]
+    [DisplayName("AnalogOutputChannelAssignmentDI1Payload")]
     [Description("Creates a message payload that specifies which AO channels are assigned to DI Pin 1.")]
-    public partial class CreateDI1AnalogOutputChannelAssignmentPayload
+    public partial class CreateAnalogOutputChannelAssignmentDI1Payload
     {
         /// <summary>
         /// Gets or sets the value that specifies which AO channels are assigned to DI Pin 1.
         /// </summary>
         [Description("The value that specifies which AO channels are assigned to DI Pin 1.")]
-        public DigitalInputs DI1AnalogOutputChannelAssignment { get; set; }
+        public DigitalInputs AnalogOutputChannelAssignmentDI1 { get; set; }
 
         /// <summary>
-        /// Creates a message payload for the DI1AnalogOutputChannelAssignment register.
+        /// Creates a message payload for the AnalogOutputChannelAssignmentDI1 register.
         /// </summary>
         /// <returns>The created message payload value.</returns>
         public DigitalInputs GetPayload()
         {
-            return DI1AnalogOutputChannelAssignment;
+            return AnalogOutputChannelAssignmentDI1;
         }
 
         /// <summary>
         /// Creates a message that specifies which AO channels are assigned to DI Pin 1.
         /// </summary>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new message for the DI1AnalogOutputChannelAssignment register.</returns>
+        /// <returns>A new message for the AnalogOutputChannelAssignmentDI1 register.</returns>
         public HarpMessage GetMessage(MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI1AnalogOutputChannelAssignment.FromPayload(messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.AnalogOutputChannelAssignmentDI1.FromPayload(messageType, GetPayload());
         }
     }
 
@@ -5871,19 +5871,19 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a timestamped message payload
     /// that specifies which AO channels are assigned to DI Pin 1.
     /// </summary>
-    [DisplayName("TimestampedDI1AnalogOutputChannelAssignmentPayload")]
+    [DisplayName("TimestampedAnalogOutputChannelAssignmentDI1Payload")]
     [Description("Creates a timestamped message payload that specifies which AO channels are assigned to DI Pin 1.")]
-    public partial class CreateTimestampedDI1AnalogOutputChannelAssignmentPayload : CreateDI1AnalogOutputChannelAssignmentPayload
+    public partial class CreateTimestampedAnalogOutputChannelAssignmentDI1Payload : CreateAnalogOutputChannelAssignmentDI1Payload
     {
         /// <summary>
         /// Creates a timestamped message that specifies which AO channels are assigned to DI Pin 1.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new timestamped message for the DI1AnalogOutputChannelAssignment register.</returns>
+        /// <returns>A new timestamped message for the AnalogOutputChannelAssignmentDI1 register.</returns>
         public HarpMessage GetMessage(double timestamp, MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI1AnalogOutputChannelAssignment.FromPayload(timestamp, messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.AnalogOutputChannelAssignmentDI1.FromPayload(timestamp, messageType, GetPayload());
         }
     }
 
@@ -5891,33 +5891,33 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a message payload
     /// that specifies which AO channels are assigned to DI Pin 2.
     /// </summary>
-    [DisplayName("DI2AnalogOutputChannelAssignmentPayload")]
+    [DisplayName("AnalogOutputChannelAssignmentDI2Payload")]
     [Description("Creates a message payload that specifies which AO channels are assigned to DI Pin 2.")]
-    public partial class CreateDI2AnalogOutputChannelAssignmentPayload
+    public partial class CreateAnalogOutputChannelAssignmentDI2Payload
     {
         /// <summary>
         /// Gets or sets the value that specifies which AO channels are assigned to DI Pin 2.
         /// </summary>
         [Description("The value that specifies which AO channels are assigned to DI Pin 2.")]
-        public DigitalInputs DI2AnalogOutputChannelAssignment { get; set; }
+        public DigitalInputs AnalogOutputChannelAssignmentDI2 { get; set; }
 
         /// <summary>
-        /// Creates a message payload for the DI2AnalogOutputChannelAssignment register.
+        /// Creates a message payload for the AnalogOutputChannelAssignmentDI2 register.
         /// </summary>
         /// <returns>The created message payload value.</returns>
         public DigitalInputs GetPayload()
         {
-            return DI2AnalogOutputChannelAssignment;
+            return AnalogOutputChannelAssignmentDI2;
         }
 
         /// <summary>
         /// Creates a message that specifies which AO channels are assigned to DI Pin 2.
         /// </summary>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new message for the DI2AnalogOutputChannelAssignment register.</returns>
+        /// <returns>A new message for the AnalogOutputChannelAssignmentDI2 register.</returns>
         public HarpMessage GetMessage(MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI2AnalogOutputChannelAssignment.FromPayload(messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.AnalogOutputChannelAssignmentDI2.FromPayload(messageType, GetPayload());
         }
     }
 
@@ -5925,19 +5925,19 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a timestamped message payload
     /// that specifies which AO channels are assigned to DI Pin 2.
     /// </summary>
-    [DisplayName("TimestampedDI2AnalogOutputChannelAssignmentPayload")]
+    [DisplayName("TimestampedAnalogOutputChannelAssignmentDI2Payload")]
     [Description("Creates a timestamped message payload that specifies which AO channels are assigned to DI Pin 2.")]
-    public partial class CreateTimestampedDI2AnalogOutputChannelAssignmentPayload : CreateDI2AnalogOutputChannelAssignmentPayload
+    public partial class CreateTimestampedAnalogOutputChannelAssignmentDI2Payload : CreateAnalogOutputChannelAssignmentDI2Payload
     {
         /// <summary>
         /// Creates a timestamped message that specifies which AO channels are assigned to DI Pin 2.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new timestamped message for the DI2AnalogOutputChannelAssignment register.</returns>
+        /// <returns>A new timestamped message for the AnalogOutputChannelAssignmentDI2 register.</returns>
         public HarpMessage GetMessage(double timestamp, MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI2AnalogOutputChannelAssignment.FromPayload(timestamp, messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.AnalogOutputChannelAssignmentDI2.FromPayload(timestamp, messageType, GetPayload());
         }
     }
 
@@ -5945,33 +5945,33 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a message payload
     /// that specifies which AO channels are assigned to DI Pin 3.
     /// </summary>
-    [DisplayName("DI3AnalogOutputChannelAssignmentPayload")]
+    [DisplayName("AnalogOutputChannelAssignmentDI3Payload")]
     [Description("Creates a message payload that specifies which AO channels are assigned to DI Pin 3.")]
-    public partial class CreateDI3AnalogOutputChannelAssignmentPayload
+    public partial class CreateAnalogOutputChannelAssignmentDI3Payload
     {
         /// <summary>
         /// Gets or sets the value that specifies which AO channels are assigned to DI Pin 3.
         /// </summary>
         [Description("The value that specifies which AO channels are assigned to DI Pin 3.")]
-        public DigitalInputs DI3AnalogOutputChannelAssignment { get; set; }
+        public DigitalInputs AnalogOutputChannelAssignmentDI3 { get; set; }
 
         /// <summary>
-        /// Creates a message payload for the DI3AnalogOutputChannelAssignment register.
+        /// Creates a message payload for the AnalogOutputChannelAssignmentDI3 register.
         /// </summary>
         /// <returns>The created message payload value.</returns>
         public DigitalInputs GetPayload()
         {
-            return DI3AnalogOutputChannelAssignment;
+            return AnalogOutputChannelAssignmentDI3;
         }
 
         /// <summary>
         /// Creates a message that specifies which AO channels are assigned to DI Pin 3.
         /// </summary>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new message for the DI3AnalogOutputChannelAssignment register.</returns>
+        /// <returns>A new message for the AnalogOutputChannelAssignmentDI3 register.</returns>
         public HarpMessage GetMessage(MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI3AnalogOutputChannelAssignment.FromPayload(messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.AnalogOutputChannelAssignmentDI3.FromPayload(messageType, GetPayload());
         }
     }
 
@@ -5979,19 +5979,19 @@ namespace AllenNeuralDynamics.Quac
     /// Represents an operator that creates a timestamped message payload
     /// that specifies which AO channels are assigned to DI Pin 3.
     /// </summary>
-    [DisplayName("TimestampedDI3AnalogOutputChannelAssignmentPayload")]
+    [DisplayName("TimestampedAnalogOutputChannelAssignmentDI3Payload")]
     [Description("Creates a timestamped message payload that specifies which AO channels are assigned to DI Pin 3.")]
-    public partial class CreateTimestampedDI3AnalogOutputChannelAssignmentPayload : CreateDI3AnalogOutputChannelAssignmentPayload
+    public partial class CreateTimestampedAnalogOutputChannelAssignmentDI3Payload : CreateAnalogOutputChannelAssignmentDI3Payload
     {
         /// <summary>
         /// Creates a timestamped message that specifies which AO channels are assigned to DI Pin 3.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">Specifies the type of the created message.</param>
-        /// <returns>A new timestamped message for the DI3AnalogOutputChannelAssignment register.</returns>
+        /// <returns>A new timestamped message for the AnalogOutputChannelAssignmentDI3 register.</returns>
         public HarpMessage GetMessage(double timestamp, MessageType messageType)
         {
-            return AllenNeuralDynamics.Quac.DI3AnalogOutputChannelAssignment.FromPayload(timestamp, messageType, GetPayload());
+            return AllenNeuralDynamics.Quac.AnalogOutputChannelAssignmentDI3.FromPayload(timestamp, messageType, GetPayload());
         }
     }
 

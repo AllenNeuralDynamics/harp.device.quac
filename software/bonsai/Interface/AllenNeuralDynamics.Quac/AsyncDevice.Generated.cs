@@ -658,7 +658,7 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Asynchronously reads the contents of the <see cref="DI0PinMode"/> register.
+        /// Asynchronously reads the contents of the <see cref="PinModeDI0"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -667,14 +667,14 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the register payload.
         /// </returns>
-        public async Task<DIPinMode> ReadDI0PinModeAsync(CancellationToken cancellationToken = default)
+        public async Task<DIPinMode> ReadPinModeDI0Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI0PinMode.Address), cancellationToken);
-            return DI0PinMode.GetPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(PinModeDI0.Address), cancellationToken);
+            return PinModeDI0.GetPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously reads the timestamped contents of the <see cref="DI0PinMode"/> register.
+        /// Asynchronously reads the timestamped contents of the <see cref="PinModeDI0"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -683,28 +683,28 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<DIPinMode>> ReadTimestampedDI0PinModeAsync(CancellationToken cancellationToken = default)
+        public async Task<Timestamped<DIPinMode>> ReadTimestampedPinModeDI0Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI0PinMode.Address), cancellationToken);
-            return DI0PinMode.GetTimestampedPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(PinModeDI0.Address), cancellationToken);
+            return PinModeDI0.GetTimestampedPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously writes a value to the <see cref="DI0PinMode"/> register.
+        /// Asynchronously writes a value to the <see cref="PinModeDI0"/> register.
         /// </summary>
         /// <param name="value">The value to write in the register.</param>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
         /// </param>
         /// <returns>The task object representing the asynchronous write operation.</returns>
-        public async Task WriteDI0PinModeAsync(DIPinMode value, CancellationToken cancellationToken = default)
+        public async Task WritePinModeDI0Async(DIPinMode value, CancellationToken cancellationToken = default)
         {
-            var request = DI0PinMode.FromPayload(MessageType.Write, value);
+            var request = PinModeDI0.FromPayload(MessageType.Write, value);
             await CommandAsync(request, cancellationToken);
         }
 
         /// <summary>
-        /// Asynchronously reads the contents of the <see cref="DI1PinMode"/> register.
+        /// Asynchronously reads the contents of the <see cref="PinModeDI1"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -713,14 +713,14 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the register payload.
         /// </returns>
-        public async Task<DIPinMode> ReadDI1PinModeAsync(CancellationToken cancellationToken = default)
+        public async Task<DIPinMode> ReadPinModeDI1Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI1PinMode.Address), cancellationToken);
-            return DI1PinMode.GetPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(PinModeDI1.Address), cancellationToken);
+            return PinModeDI1.GetPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously reads the timestamped contents of the <see cref="DI1PinMode"/> register.
+        /// Asynchronously reads the timestamped contents of the <see cref="PinModeDI1"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -729,28 +729,28 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<DIPinMode>> ReadTimestampedDI1PinModeAsync(CancellationToken cancellationToken = default)
+        public async Task<Timestamped<DIPinMode>> ReadTimestampedPinModeDI1Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI1PinMode.Address), cancellationToken);
-            return DI1PinMode.GetTimestampedPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(PinModeDI1.Address), cancellationToken);
+            return PinModeDI1.GetTimestampedPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously writes a value to the <see cref="DI1PinMode"/> register.
+        /// Asynchronously writes a value to the <see cref="PinModeDI1"/> register.
         /// </summary>
         /// <param name="value">The value to write in the register.</param>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
         /// </param>
         /// <returns>The task object representing the asynchronous write operation.</returns>
-        public async Task WriteDI1PinModeAsync(DIPinMode value, CancellationToken cancellationToken = default)
+        public async Task WritePinModeDI1Async(DIPinMode value, CancellationToken cancellationToken = default)
         {
-            var request = DI1PinMode.FromPayload(MessageType.Write, value);
+            var request = PinModeDI1.FromPayload(MessageType.Write, value);
             await CommandAsync(request, cancellationToken);
         }
 
         /// <summary>
-        /// Asynchronously reads the contents of the <see cref="DI2PinMode"/> register.
+        /// Asynchronously reads the contents of the <see cref="PinModeDI2"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -759,14 +759,14 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the register payload.
         /// </returns>
-        public async Task<DIPinMode> ReadDI2PinModeAsync(CancellationToken cancellationToken = default)
+        public async Task<DIPinMode> ReadPinModeDI2Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI2PinMode.Address), cancellationToken);
-            return DI2PinMode.GetPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(PinModeDI2.Address), cancellationToken);
+            return PinModeDI2.GetPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously reads the timestamped contents of the <see cref="DI2PinMode"/> register.
+        /// Asynchronously reads the timestamped contents of the <see cref="PinModeDI2"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -775,28 +775,28 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<DIPinMode>> ReadTimestampedDI2PinModeAsync(CancellationToken cancellationToken = default)
+        public async Task<Timestamped<DIPinMode>> ReadTimestampedPinModeDI2Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI2PinMode.Address), cancellationToken);
-            return DI2PinMode.GetTimestampedPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(PinModeDI2.Address), cancellationToken);
+            return PinModeDI2.GetTimestampedPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously writes a value to the <see cref="DI2PinMode"/> register.
+        /// Asynchronously writes a value to the <see cref="PinModeDI2"/> register.
         /// </summary>
         /// <param name="value">The value to write in the register.</param>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
         /// </param>
         /// <returns>The task object representing the asynchronous write operation.</returns>
-        public async Task WriteDI2PinModeAsync(DIPinMode value, CancellationToken cancellationToken = default)
+        public async Task WritePinModeDI2Async(DIPinMode value, CancellationToken cancellationToken = default)
         {
-            var request = DI2PinMode.FromPayload(MessageType.Write, value);
+            var request = PinModeDI2.FromPayload(MessageType.Write, value);
             await CommandAsync(request, cancellationToken);
         }
 
         /// <summary>
-        /// Asynchronously reads the contents of the <see cref="DI3PinMode"/> register.
+        /// Asynchronously reads the contents of the <see cref="PinModeDI3"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -805,14 +805,14 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the register payload.
         /// </returns>
-        public async Task<DIPinMode> ReadDI3PinModeAsync(CancellationToken cancellationToken = default)
+        public async Task<DIPinMode> ReadPinModeDI3Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI3PinMode.Address), cancellationToken);
-            return DI3PinMode.GetPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(PinModeDI3.Address), cancellationToken);
+            return PinModeDI3.GetPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously reads the timestamped contents of the <see cref="DI3PinMode"/> register.
+        /// Asynchronously reads the timestamped contents of the <see cref="PinModeDI3"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -821,28 +821,28 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<DIPinMode>> ReadTimestampedDI3PinModeAsync(CancellationToken cancellationToken = default)
+        public async Task<Timestamped<DIPinMode>> ReadTimestampedPinModeDI3Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI3PinMode.Address), cancellationToken);
-            return DI3PinMode.GetTimestampedPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(PinModeDI3.Address), cancellationToken);
+            return PinModeDI3.GetTimestampedPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously writes a value to the <see cref="DI3PinMode"/> register.
+        /// Asynchronously writes a value to the <see cref="PinModeDI3"/> register.
         /// </summary>
         /// <param name="value">The value to write in the register.</param>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
         /// </param>
         /// <returns>The task object representing the asynchronous write operation.</returns>
-        public async Task WriteDI3PinModeAsync(DIPinMode value, CancellationToken cancellationToken = default)
+        public async Task WritePinModeDI3Async(DIPinMode value, CancellationToken cancellationToken = default)
         {
-            var request = DI3PinMode.FromPayload(MessageType.Write, value);
+            var request = PinModeDI3.FromPayload(MessageType.Write, value);
             await CommandAsync(request, cancellationToken);
         }
 
         /// <summary>
-        /// Asynchronously reads the contents of the <see cref="DI0AnalogOutputChannelAssignment"/> register.
+        /// Asynchronously reads the contents of the <see cref="AnalogOutputChannelAssignmentDI0"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -851,14 +851,14 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the register payload.
         /// </returns>
-        public async Task<DigitalInputs> ReadDI0AnalogOutputChannelAssignmentAsync(CancellationToken cancellationToken = default)
+        public async Task<DigitalInputs> ReadAnalogOutputChannelAssignmentDI0Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI0AnalogOutputChannelAssignment.Address), cancellationToken);
-            return DI0AnalogOutputChannelAssignment.GetPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(AnalogOutputChannelAssignmentDI0.Address), cancellationToken);
+            return AnalogOutputChannelAssignmentDI0.GetPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously reads the timestamped contents of the <see cref="DI0AnalogOutputChannelAssignment"/> register.
+        /// Asynchronously reads the timestamped contents of the <see cref="AnalogOutputChannelAssignmentDI0"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -867,28 +867,28 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<DigitalInputs>> ReadTimestampedDI0AnalogOutputChannelAssignmentAsync(CancellationToken cancellationToken = default)
+        public async Task<Timestamped<DigitalInputs>> ReadTimestampedAnalogOutputChannelAssignmentDI0Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI0AnalogOutputChannelAssignment.Address), cancellationToken);
-            return DI0AnalogOutputChannelAssignment.GetTimestampedPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(AnalogOutputChannelAssignmentDI0.Address), cancellationToken);
+            return AnalogOutputChannelAssignmentDI0.GetTimestampedPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously writes a value to the <see cref="DI0AnalogOutputChannelAssignment"/> register.
+        /// Asynchronously writes a value to the <see cref="AnalogOutputChannelAssignmentDI0"/> register.
         /// </summary>
         /// <param name="value">The value to write in the register.</param>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
         /// </param>
         /// <returns>The task object representing the asynchronous write operation.</returns>
-        public async Task WriteDI0AnalogOutputChannelAssignmentAsync(DigitalInputs value, CancellationToken cancellationToken = default)
+        public async Task WriteAnalogOutputChannelAssignmentDI0Async(DigitalInputs value, CancellationToken cancellationToken = default)
         {
-            var request = DI0AnalogOutputChannelAssignment.FromPayload(MessageType.Write, value);
+            var request = AnalogOutputChannelAssignmentDI0.FromPayload(MessageType.Write, value);
             await CommandAsync(request, cancellationToken);
         }
 
         /// <summary>
-        /// Asynchronously reads the contents of the <see cref="DI1AnalogOutputChannelAssignment"/> register.
+        /// Asynchronously reads the contents of the <see cref="AnalogOutputChannelAssignmentDI1"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -897,14 +897,14 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the register payload.
         /// </returns>
-        public async Task<DigitalInputs> ReadDI1AnalogOutputChannelAssignmentAsync(CancellationToken cancellationToken = default)
+        public async Task<DigitalInputs> ReadAnalogOutputChannelAssignmentDI1Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI1AnalogOutputChannelAssignment.Address), cancellationToken);
-            return DI1AnalogOutputChannelAssignment.GetPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(AnalogOutputChannelAssignmentDI1.Address), cancellationToken);
+            return AnalogOutputChannelAssignmentDI1.GetPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously reads the timestamped contents of the <see cref="DI1AnalogOutputChannelAssignment"/> register.
+        /// Asynchronously reads the timestamped contents of the <see cref="AnalogOutputChannelAssignmentDI1"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -913,28 +913,28 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<DigitalInputs>> ReadTimestampedDI1AnalogOutputChannelAssignmentAsync(CancellationToken cancellationToken = default)
+        public async Task<Timestamped<DigitalInputs>> ReadTimestampedAnalogOutputChannelAssignmentDI1Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI1AnalogOutputChannelAssignment.Address), cancellationToken);
-            return DI1AnalogOutputChannelAssignment.GetTimestampedPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(AnalogOutputChannelAssignmentDI1.Address), cancellationToken);
+            return AnalogOutputChannelAssignmentDI1.GetTimestampedPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously writes a value to the <see cref="DI1AnalogOutputChannelAssignment"/> register.
+        /// Asynchronously writes a value to the <see cref="AnalogOutputChannelAssignmentDI1"/> register.
         /// </summary>
         /// <param name="value">The value to write in the register.</param>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
         /// </param>
         /// <returns>The task object representing the asynchronous write operation.</returns>
-        public async Task WriteDI1AnalogOutputChannelAssignmentAsync(DigitalInputs value, CancellationToken cancellationToken = default)
+        public async Task WriteAnalogOutputChannelAssignmentDI1Async(DigitalInputs value, CancellationToken cancellationToken = default)
         {
-            var request = DI1AnalogOutputChannelAssignment.FromPayload(MessageType.Write, value);
+            var request = AnalogOutputChannelAssignmentDI1.FromPayload(MessageType.Write, value);
             await CommandAsync(request, cancellationToken);
         }
 
         /// <summary>
-        /// Asynchronously reads the contents of the <see cref="DI2AnalogOutputChannelAssignment"/> register.
+        /// Asynchronously reads the contents of the <see cref="AnalogOutputChannelAssignmentDI2"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -943,14 +943,14 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the register payload.
         /// </returns>
-        public async Task<DigitalInputs> ReadDI2AnalogOutputChannelAssignmentAsync(CancellationToken cancellationToken = default)
+        public async Task<DigitalInputs> ReadAnalogOutputChannelAssignmentDI2Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI2AnalogOutputChannelAssignment.Address), cancellationToken);
-            return DI2AnalogOutputChannelAssignment.GetPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(AnalogOutputChannelAssignmentDI2.Address), cancellationToken);
+            return AnalogOutputChannelAssignmentDI2.GetPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously reads the timestamped contents of the <see cref="DI2AnalogOutputChannelAssignment"/> register.
+        /// Asynchronously reads the timestamped contents of the <see cref="AnalogOutputChannelAssignmentDI2"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -959,28 +959,28 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<DigitalInputs>> ReadTimestampedDI2AnalogOutputChannelAssignmentAsync(CancellationToken cancellationToken = default)
+        public async Task<Timestamped<DigitalInputs>> ReadTimestampedAnalogOutputChannelAssignmentDI2Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI2AnalogOutputChannelAssignment.Address), cancellationToken);
-            return DI2AnalogOutputChannelAssignment.GetTimestampedPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(AnalogOutputChannelAssignmentDI2.Address), cancellationToken);
+            return AnalogOutputChannelAssignmentDI2.GetTimestampedPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously writes a value to the <see cref="DI2AnalogOutputChannelAssignment"/> register.
+        /// Asynchronously writes a value to the <see cref="AnalogOutputChannelAssignmentDI2"/> register.
         /// </summary>
         /// <param name="value">The value to write in the register.</param>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
         /// </param>
         /// <returns>The task object representing the asynchronous write operation.</returns>
-        public async Task WriteDI2AnalogOutputChannelAssignmentAsync(DigitalInputs value, CancellationToken cancellationToken = default)
+        public async Task WriteAnalogOutputChannelAssignmentDI2Async(DigitalInputs value, CancellationToken cancellationToken = default)
         {
-            var request = DI2AnalogOutputChannelAssignment.FromPayload(MessageType.Write, value);
+            var request = AnalogOutputChannelAssignmentDI2.FromPayload(MessageType.Write, value);
             await CommandAsync(request, cancellationToken);
         }
 
         /// <summary>
-        /// Asynchronously reads the contents of the <see cref="DI3AnalogOutputChannelAssignment"/> register.
+        /// Asynchronously reads the contents of the <see cref="AnalogOutputChannelAssignmentDI3"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -989,14 +989,14 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the register payload.
         /// </returns>
-        public async Task<DigitalInputs> ReadDI3AnalogOutputChannelAssignmentAsync(CancellationToken cancellationToken = default)
+        public async Task<DigitalInputs> ReadAnalogOutputChannelAssignmentDI3Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI3AnalogOutputChannelAssignment.Address), cancellationToken);
-            return DI3AnalogOutputChannelAssignment.GetPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(AnalogOutputChannelAssignmentDI3.Address), cancellationToken);
+            return AnalogOutputChannelAssignmentDI3.GetPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously reads the timestamped contents of the <see cref="DI3AnalogOutputChannelAssignment"/> register.
+        /// Asynchronously reads the timestamped contents of the <see cref="AnalogOutputChannelAssignmentDI3"/> register.
         /// </summary>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
@@ -1005,23 +1005,23 @@ namespace AllenNeuralDynamics.Quac
         /// A task that represents the asynchronous read operation. The task result contains
         /// the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<DigitalInputs>> ReadTimestampedDI3AnalogOutputChannelAssignmentAsync(CancellationToken cancellationToken = default)
+        public async Task<Timestamped<DigitalInputs>> ReadTimestampedAnalogOutputChannelAssignmentDI3Async(CancellationToken cancellationToken = default)
         {
-            var reply = await CommandAsync(HarpCommand.ReadByte(DI3AnalogOutputChannelAssignment.Address), cancellationToken);
-            return DI3AnalogOutputChannelAssignment.GetTimestampedPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadByte(AnalogOutputChannelAssignmentDI3.Address), cancellationToken);
+            return AnalogOutputChannelAssignmentDI3.GetTimestampedPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously writes a value to the <see cref="DI3AnalogOutputChannelAssignment"/> register.
+        /// Asynchronously writes a value to the <see cref="AnalogOutputChannelAssignmentDI3"/> register.
         /// </summary>
         /// <param name="value">The value to write in the register.</param>
         /// <param name="cancellationToken">
         /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
         /// </param>
         /// <returns>The task object representing the asynchronous write operation.</returns>
-        public async Task WriteDI3AnalogOutputChannelAssignmentAsync(DigitalInputs value, CancellationToken cancellationToken = default)
+        public async Task WriteAnalogOutputChannelAssignmentDI3Async(DigitalInputs value, CancellationToken cancellationToken = default)
         {
-            var request = DI3AnalogOutputChannelAssignment.FromPayload(MessageType.Write, value);
+            var request = AnalogOutputChannelAssignmentDI3.FromPayload(MessageType.Write, value);
             await CommandAsync(request, cancellationToken);
         }
 

@@ -38,14 +38,14 @@ __all__ = [
     "DacPausePayload",
     "DacAbortPayload",
     "DacFinishedPayload",
-    "DI0PinModePayload",
-    "DI1PinModePayload",
-    "DI2PinModePayload",
-    "DI3PinModePayload",
-    "DI0AnalogOutputChannelAssignmentPayload",
-    "DI1AnalogOutputChannelAssignmentPayload",
-    "DI2AnalogOutputChannelAssignmentPayload",
-    "DI3AnalogOutputChannelAssignmentPayload",
+    "PinModeDI0Payload",
+    "PinModeDI1Payload",
+    "PinModeDI2Payload",
+    "PinModeDI3Payload",
+    "AnalogOutputChannelAssignmentDI0Payload",
+    "AnalogOutputChannelAssignmentDI1Payload",
+    "AnalogOutputChannelAssignmentDI2Payload",
+    "AnalogOutputChannelAssignmentDI3Payload",
     "ActivePlayer0Payload",
     "ActivePlayer1Payload",
     "ActivePlayer2Payload",
@@ -76,14 +76,14 @@ __all__ = [
     "DacPause",
     "DacAbort",
     "DacFinished",
-    "DI0PinMode",
-    "DI1PinMode",
-    "DI2PinMode",
-    "DI3PinMode",
-    "DI0AnalogOutputChannelAssignment",
-    "DI1AnalogOutputChannelAssignment",
-    "DI2AnalogOutputChannelAssignment",
-    "DI3AnalogOutputChannelAssignment",
+    "PinModeDI0",
+    "PinModeDI1",
+    "PinModeDI2",
+    "PinModeDI3",
+    "AnalogOutputChannelAssignmentDI0",
+    "AnalogOutputChannelAssignmentDI1",
+    "AnalogOutputChannelAssignmentDI2",
+    "AnalogOutputChannelAssignmentDI3",
     "ActivePlayer0",
     "ActivePlayer1",
     "ActivePlayer2",
@@ -251,50 +251,50 @@ class DacFinishedPayload(AnonymousPayload[np.uint8]):
     __value__: AnalogOutputs = BitMask(enum=AnalogOutputs)
 
 
-class DI0PinModePayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI0PinMode register."""
+class PinModeDI0Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the PinModeDI0 register."""
 
     __value__: DIPinMode = GroupMask(enum=DIPinMode, mask=0xFF)
 
 
-class DI1PinModePayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI1PinMode register."""
+class PinModeDI1Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the PinModeDI1 register."""
 
     __value__: DIPinMode = GroupMask(enum=DIPinMode, mask=0xFF)
 
 
-class DI2PinModePayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI2PinMode register."""
+class PinModeDI2Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the PinModeDI2 register."""
 
     __value__: DIPinMode = GroupMask(enum=DIPinMode, mask=0xFF)
 
 
-class DI3PinModePayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI3PinMode register."""
+class PinModeDI3Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the PinModeDI3 register."""
 
     __value__: DIPinMode = GroupMask(enum=DIPinMode, mask=0xFF)
 
 
-class DI0AnalogOutputChannelAssignmentPayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI0AnalogOutputChannelAssignment register."""
+class AnalogOutputChannelAssignmentDI0Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the AnalogOutputChannelAssignmentDI0 register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
 
-class DI1AnalogOutputChannelAssignmentPayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI1AnalogOutputChannelAssignment register."""
+class AnalogOutputChannelAssignmentDI1Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the AnalogOutputChannelAssignmentDI1 register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
 
-class DI2AnalogOutputChannelAssignmentPayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI2AnalogOutputChannelAssignment register."""
+class AnalogOutputChannelAssignmentDI2Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the AnalogOutputChannelAssignmentDI2 register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
 
-class DI3AnalogOutputChannelAssignmentPayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI3AnalogOutputChannelAssignment register."""
+class AnalogOutputChannelAssignmentDI3Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the AnalogOutputChannelAssignmentDI3 register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
@@ -727,68 +727,68 @@ class DacFinished(RegisterBase[AnalogOutputs]):
     payload_class = DacFinishedPayload
 
 
-class DI0PinMode(RegisterBase[DIPinMode]):
+class PinModeDI0(RegisterBase[DIPinMode]):
     """Specifies the function assigned to digital input pin 0."""
 
     address: ClassVar[int] = 46
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI0PinModePayload
+    payload_class = PinModeDI0Payload
 
 
-class DI1PinMode(RegisterBase[DIPinMode]):
+class PinModeDI1(RegisterBase[DIPinMode]):
     """Specifies the function assigned to digital input pin 1."""
 
     address: ClassVar[int] = 47
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI1PinModePayload
+    payload_class = PinModeDI1Payload
 
 
-class DI2PinMode(RegisterBase[DIPinMode]):
+class PinModeDI2(RegisterBase[DIPinMode]):
     """Specifies the function assigned to digital input pin 2."""
 
     address: ClassVar[int] = 48
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI2PinModePayload
+    payload_class = PinModeDI2Payload
 
 
-class DI3PinMode(RegisterBase[DIPinMode]):
+class PinModeDI3(RegisterBase[DIPinMode]):
     """Specifies the function assigned to digital input pin 3."""
 
     address: ClassVar[int] = 49
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI3PinModePayload
+    payload_class = PinModeDI3Payload
 
 
-class DI0AnalogOutputChannelAssignment(RegisterBase[DigitalInputs]):
+class AnalogOutputChannelAssignmentDI0(RegisterBase[DigitalInputs]):
     """Specifies which AO channels are assigned to DI Pin 0."""
 
     address: ClassVar[int] = 50
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI0AnalogOutputChannelAssignmentPayload
+    payload_class = AnalogOutputChannelAssignmentDI0Payload
 
 
-class DI1AnalogOutputChannelAssignment(RegisterBase[DigitalInputs]):
+class AnalogOutputChannelAssignmentDI1(RegisterBase[DigitalInputs]):
     """Specifies which AO channels are assigned to DI Pin 1."""
 
     address: ClassVar[int] = 51
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI1AnalogOutputChannelAssignmentPayload
+    payload_class = AnalogOutputChannelAssignmentDI1Payload
 
 
-class DI2AnalogOutputChannelAssignment(RegisterBase[DigitalInputs]):
+class AnalogOutputChannelAssignmentDI2(RegisterBase[DigitalInputs]):
     """Specifies which AO channels are assigned to DI Pin 2."""
 
     address: ClassVar[int] = 52
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI2AnalogOutputChannelAssignmentPayload
+    payload_class = AnalogOutputChannelAssignmentDI2Payload
 
 
-class DI3AnalogOutputChannelAssignment(RegisterBase[DigitalInputs]):
+class AnalogOutputChannelAssignmentDI3(RegisterBase[DigitalInputs]):
     """Specifies which AO channels are assigned to DI Pin 3."""
 
     address: ClassVar[int] = 53
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI3AnalogOutputChannelAssignmentPayload
+    payload_class = AnalogOutputChannelAssignmentDI3Payload
 
 
 class ActivePlayer0(RegisterBase[PlayerType]):
@@ -935,14 +935,14 @@ REGISTER_MAP: dict[int, type[RegisterBase[Any]]] = {
     43: DacPause,
     44: DacAbort,
     45: DacFinished,
-    46: DI0PinMode,
-    47: DI1PinMode,
-    48: DI2PinMode,
-    49: DI3PinMode,
-    50: DI0AnalogOutputChannelAssignment,
-    51: DI1AnalogOutputChannelAssignment,
-    52: DI2AnalogOutputChannelAssignment,
-    53: DI3AnalogOutputChannelAssignment,
+    46: PinModeDI0,
+    47: PinModeDI1,
+    48: PinModeDI2,
+    49: PinModeDI3,
+    50: AnalogOutputChannelAssignmentDI0,
+    51: AnalogOutputChannelAssignmentDI1,
+    52: AnalogOutputChannelAssignmentDI2,
+    53: AnalogOutputChannelAssignmentDI3,
     54: ActivePlayer0,
     55: ActivePlayer1,
     56: ActivePlayer2,
