@@ -40,9 +40,8 @@ registers:
     access: Write
     description: >-
       Reflects and specifies the output voltage of all four analog output
-      channels in volts. Reads and writes fail with an error unless every
-      channel is idle, since a channel playing a preset waveform owns its
-      output value.
+      channels in volts, failing reads and writes unless every channel is idle
+      since a channel playing a preset waveform owns its output value.
     payloadSpec:
       AOChannel0:
         offset: 0
@@ -66,33 +65,29 @@ registers:
     defaultValue: 0
     description: >-
       Reflects and specifies the output voltage of analog output channel 0 in
-      volts. Writes fail with an error while this channel is playing a preset
-      waveform, and reads fail with an error while any channel is playing a
-      preset waveform.
+      volts, failing writes while this channel is playing a preset waveform and
+      reads while any channel is.
   AOChannel1:
     <<: *aoChannel
     address: 38
     description: >-
       Reflects and specifies the output voltage of analog output channel 1 in
-      volts. Writes fail with an error while this channel is playing a preset
-      waveform, and reads fail with an error while any channel is playing a
-      preset waveform.
+      volts, failing writes while this channel is playing a preset waveform and
+      reads while any channel is.
   AOChannel2:
     <<: *aoChannel
     address: 39
     description: >-
       Reflects and specifies the output voltage of analog output channel 2 in
-      volts. Writes fail with an error while this channel is playing a preset
-      waveform, and reads fail with an error while any channel is playing a
-      preset waveform.
+      volts, failing writes while this channel is playing a preset waveform and
+      reads while any channel is.
   AOChannel3:
     <<: *aoChannel
     address: 40
     description: >-
       Reflects and specifies the output voltage of analog output channel 3 in
-      volts. Writes fail with an error while this channel is playing a preset
-      waveform, and reads fail with an error while any channel is playing a
-      preset waveform.
+      volts, failing writes while this channel is playing a preset waveform and
+      reads while any channel is.
 
   DacReady:
     address: 41
@@ -107,8 +102,8 @@ registers:
     maskType: AnalogOutputs
     description: >-
       Starts the waveform player on the ready analog output channels specified
-      in the mask. Events from this register report the channels that were
-      started by an external trigger.
+      in the mask and reports, through events, the channels started by an
+      external trigger.
   DacPause:
     address: 43
     type: U8
@@ -128,28 +123,27 @@ registers:
     maskType: AnalogOutputs
     description: Reports which analog output channels have finished playing their waveform.
 
-
   DI0PinMode: &diPinMode
     address: 46
     type: U8
     access: Write
     maskType: DIPinMode
     defaultValue: 1  # External Trigger
-    description: "DI Pin 0's Function assignment (external trigger or blanking)."
+    description: Specifies the function assigned to digital input pin 0.
   DI1PinMode:
     <<: *diPinMode
     address: 47
-    description: "DI Pin 1's Function assignment (external trigger or blanking)."
+    description: Specifies the function assigned to digital input pin 1.
   DI2PinMode:
     <<: *diPinMode
     address: 48
-    description: "DI Pin 2's Function assignment (external trigger or blanking)."
+    description: Specifies the function assigned to digital input pin 2.
   DI3PinMode:
     <<: *diPinMode
     address: 49
-    description: "DI Pin 3's Function assignment (external trigger or blanking)."
+    description: Specifies the function assigned to digital input pin 3.
 
-  DI0AnalogOutputChannelAssignment: &AnalogOutputChannelAssignment
+  DI0AnalogOutputChannelAssignment: &analogOutputChannelAssignment
     address: 50
     type: U8
     access: Write
@@ -157,17 +151,17 @@ registers:
     defaultValue: 1
     description: Specifies which AO channels are assigned to DI Pin 0.
   DI1AnalogOutputChannelAssignment:
-    <<: *AnalogOutputChannelAssignment
+    <<: *analogOutputChannelAssignment
     address: 51
     defaultValue: 2
     description: Specifies which AO channels are assigned to DI Pin 1.
   DI2AnalogOutputChannelAssignment:
-    <<: *AnalogOutputChannelAssignment
+    <<: *analogOutputChannelAssignment
     address: 52
     defaultValue: 4
     description: Specifies which AO channels are assigned to DI Pin 2.
   DI3AnalogOutputChannelAssignment:
-    <<: *AnalogOutputChannelAssignment
+    <<: *analogOutputChannelAssignment
     address: 53
     defaultValue: 8
     description: Specifies which AO channels are assigned to DI Pin 3.
@@ -299,8 +293,8 @@ registers:
         maxValue: 1
         defaultValue: 0
         description: >-
-          Normalized phase shift relative to the period with range:
-          -1.0 (max right shift) to 1.0 (max left shift).
+          Specifies the phase shift relative to the period, from -1.0 (maximum
+          right shift) to 1.0 (maximum left shift).
   SineSettings1:
     <<: *sineSettings
     address: 63
@@ -359,7 +353,9 @@ bitMasks:
   DigitalInputs:
     description: Specifies the external trigger input lines available on the device.
     bits:
-      None: 0x0
+      None:
+        value: 0x0
+        description: No digital input line is selected.
       DI0:
         value: 0x1
         description: External trigger input line 0.
@@ -376,7 +372,9 @@ bitMasks:
   DigitalOutputs:
     description: Specifies the digital output lines available on the device.
     bits:
-      None: 0x0
+      None:
+        value: 0x0
+        description: No digital output line is selected.
       DO0:
         value: 0x1
         description: Digital output line 0.
@@ -393,7 +391,9 @@ bitMasks:
   AnalogOutputs:
     description: Specifies the ten volt bipolar analog output channels available on the device.
     bits:
-      None: 0x0
+      None:
+        value: 0x0
+        description: No analog output channel is selected.
       AO0:
         value: 0x1
         description: Analog output channel 0.
@@ -422,7 +422,7 @@ groupMasks:
         description: Plays a synthesized trapezoid waveform.
 
   DIPinMode:
-    description: Specifies the digital input pin function
+    description: Specifies the function of a digital input pin.
     values:
       None:
         value: 0
@@ -432,6 +432,6 @@ groupMasks:
         description: Setting the pin HIGH will start the assigned AO channels.
       Blanking:
         value: 2
-        description: >
+        description: >-
           Setting the pin HIGH will mute (i.e set to 0[V]) the assigned AO
           channels until the pin is brought low.
