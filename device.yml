@@ -128,7 +128,6 @@ registers:
     type: U8
     access: Write
     maskType: DIPinMode
-    defaultValue: 1  # External Trigger
     description: Specifies the function assigned to digital input pin 0.
   DI1PinMode:
     <<: *diPinMode
@@ -148,22 +147,18 @@ registers:
     type: U8
     access: Write
     maskType: DigitalInputs
-    defaultValue: 1
     description: Specifies which AO channels are assigned to DI Pin 0.
   DI1AnalogOutputChannelAssignment:
     <<: *analogOutputChannelAssignment
     address: 51
-    defaultValue: 2
     description: Specifies which AO channels are assigned to DI Pin 1.
   DI2AnalogOutputChannelAssignment:
     <<: *analogOutputChannelAssignment
     address: 52
-    defaultValue: 4
     description: Specifies which AO channels are assigned to DI Pin 2.
   DI3AnalogOutputChannelAssignment:
     <<: *analogOutputChannelAssignment
     address: 53
-    defaultValue: 8
     description: Specifies which AO channels are assigned to DI Pin 3.
 
   ActivePlayer0: &activePlayer
