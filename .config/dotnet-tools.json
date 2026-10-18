@@ -3,7 +3,7 @@
   "isRoot": true,
   "tools": {
     "harp.toolkit": {
-      "version": "0.2.3-refs-pull-34-merge-ci56",
+      "version": "0.4.0",
       "commands": [
         "harp.toolkit"
       ],
