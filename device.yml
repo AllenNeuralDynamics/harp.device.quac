@@ -142,22 +142,22 @@ registers:
     address: 49
     description: Specifies the function assigned to digital input pin 3.
 
-  AnalogOutputChannelAssignmentDI0: &analogOutputChannelAssignment
+  AOChannelsAssignedToDI0: &AOChannelAssignment
     address: 50
     type: U8
     access: Write
     maskType: DigitalInputs
     description: Specifies which AO channels are assigned to DI Pin 0.
-  AnalogOutputChannelAssignmentDI1:
-    <<: *analogOutputChannelAssignment
+  AOChannelsAssignedToDI1:
+    <<: *AOChannelAssignment
     address: 51
     description: Specifies which AO channels are assigned to DI Pin 1.
-  AnalogOutputChannelAssignmentDI2:
-    <<: *analogOutputChannelAssignment
+  AOChannelsAssignedToDI2:
+    <<: *AOChannelAssignment
     address: 52
     description: Specifies which AO channels are assigned to DI Pin 2.
-  AnalogOutputChannelAssignmentDI3:
-    <<: *analogOutputChannelAssignment
+  AOChannelsAssignedToDI3:
+    <<: *AOChannelAssignment
     address: 53
     description: Specifies which AO channels are assigned to DI Pin 3.
 

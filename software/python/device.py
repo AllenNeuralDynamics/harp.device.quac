@@ -42,10 +42,10 @@ __all__ = [
     "PinModeDI1Payload",
     "PinModeDI2Payload",
     "PinModeDI3Payload",
-    "AnalogOutputChannelAssignmentDI0Payload",
-    "AnalogOutputChannelAssignmentDI1Payload",
-    "AnalogOutputChannelAssignmentDI2Payload",
-    "AnalogOutputChannelAssignmentDI3Payload",
+    "AOChannelsAssignedToDI0Payload",
+    "AOChannelsAssignedToDI1Payload",
+    "AOChannelsAssignedToDI2Payload",
+    "AOChannelsAssignedToDI3Payload",
     "ActivePlayer0Payload",
     "ActivePlayer1Payload",
     "ActivePlayer2Payload",
@@ -80,10 +80,10 @@ __all__ = [
     "PinModeDI1",
     "PinModeDI2",
     "PinModeDI3",
-    "AnalogOutputChannelAssignmentDI0",
-    "AnalogOutputChannelAssignmentDI1",
-    "AnalogOutputChannelAssignmentDI2",
-    "AnalogOutputChannelAssignmentDI3",
+    "AOChannelsAssignedToDI0",
+    "AOChannelsAssignedToDI1",
+    "AOChannelsAssignedToDI2",
+    "AOChannelsAssignedToDI3",
     "ActivePlayer0",
     "ActivePlayer1",
     "ActivePlayer2",
@@ -275,26 +275,26 @@ class PinModeDI3Payload(AnonymousPayload[np.uint8]):
     __value__: DIPinMode = GroupMask(enum=DIPinMode, mask=0xFF)
 
 
-class AnalogOutputChannelAssignmentDI0Payload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the AnalogOutputChannelAssignmentDI0 register."""
+class AOChannelsAssignedToDI0Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the AOChannelsAssignedToDI0 register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
 
-class AnalogOutputChannelAssignmentDI1Payload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the AnalogOutputChannelAssignmentDI1 register."""
+class AOChannelsAssignedToDI1Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the AOChannelsAssignedToDI1 register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
 
-class AnalogOutputChannelAssignmentDI2Payload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the AnalogOutputChannelAssignmentDI2 register."""
+class AOChannelsAssignedToDI2Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the AOChannelsAssignedToDI2 register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
 
-class AnalogOutputChannelAssignmentDI3Payload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the AnalogOutputChannelAssignmentDI3 register."""
+class AOChannelsAssignedToDI3Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the AOChannelsAssignedToDI3 register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
@@ -759,36 +759,36 @@ class PinModeDI3(RegisterBase[DIPinMode]):
     payload_class = PinModeDI3Payload
 
 
-class AnalogOutputChannelAssignmentDI0(RegisterBase[DigitalInputs]):
+class AOChannelsAssignedToDI0(RegisterBase[DigitalInputs]):
     """Specifies which AO channels are assigned to DI Pin 0."""
 
     address: ClassVar[int] = 50
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = AnalogOutputChannelAssignmentDI0Payload
+    payload_class = AOChannelsAssignedToDI0Payload
 
 
-class AnalogOutputChannelAssignmentDI1(RegisterBase[DigitalInputs]):
+class AOChannelsAssignedToDI1(RegisterBase[DigitalInputs]):
     """Specifies which AO channels are assigned to DI Pin 1."""
 
     address: ClassVar[int] = 51
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = AnalogOutputChannelAssignmentDI1Payload
+    payload_class = AOChannelsAssignedToDI1Payload
 
 
-class AnalogOutputChannelAssignmentDI2(RegisterBase[DigitalInputs]):
+class AOChannelsAssignedToDI2(RegisterBase[DigitalInputs]):
     """Specifies which AO channels are assigned to DI Pin 2."""
 
     address: ClassVar[int] = 52
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = AnalogOutputChannelAssignmentDI2Payload
+    payload_class = AOChannelsAssignedToDI2Payload
 
 
-class AnalogOutputChannelAssignmentDI3(RegisterBase[DigitalInputs]):
+class AOChannelsAssignedToDI3(RegisterBase[DigitalInputs]):
     """Specifies which AO channels are assigned to DI Pin 3."""
 
     address: ClassVar[int] = 53
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = AnalogOutputChannelAssignmentDI3Payload
+    payload_class = AOChannelsAssignedToDI3Payload
 
 
 class ActivePlayer0(RegisterBase[PlayerType]):
@@ -939,10 +939,10 @@ REGISTER_MAP: dict[int, type[RegisterBase[Any]]] = {
     47: PinModeDI1,
     48: PinModeDI2,
     49: PinModeDI3,
-    50: AnalogOutputChannelAssignmentDI0,
-    51: AnalogOutputChannelAssignmentDI1,
-    52: AnalogOutputChannelAssignmentDI2,
-    53: AnalogOutputChannelAssignmentDI3,
+    50: AOChannelsAssignedToDI0,
+    51: AOChannelsAssignedToDI1,
+    52: AOChannelsAssignedToDI2,
+    53: AOChannelsAssignedToDI3,
     54: ActivePlayer0,
     55: ActivePlayer1,
     56: ActivePlayer2,

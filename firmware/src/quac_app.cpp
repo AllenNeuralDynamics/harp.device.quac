@@ -52,13 +52,13 @@ RegSpec app_reg_specs[]
     RegSpec::U8(&app_regs.di3_pin_mode,
         HarpCore::read_reg_generic, write_any_di_pin_mode),
 
-    RegSpec::U8(&app_regs.di0_to_ao_channel_mapping,
+    RegSpec::U8(&app_regs.ao_channels_assigned_to_di0,
         HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
-    RegSpec::U8(&app_regs.di1_to_ao_channel_mapping,
+    RegSpec::U8(&app_regs.ao_channels_assigned_to_di1,
         HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
-    RegSpec::U8(&app_regs.di2_to_ao_channel_mapping,
+    RegSpec::U8(&app_regs.ao_channels_assigned_to_di2,
         HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
-    RegSpec::U8(&app_regs.di3_to_ao_channel_mapping,
+    RegSpec::U8(&app_regs.ao_channels_assigned_to_di3,
         HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
 
     RegSpec::U8(&app_regs.active_players[0],
@@ -318,16 +318,16 @@ void write_dac_start(msg_t& msg)
         if (app_regs.di_pin_modes[i] != BLANKING)
             continue;
         // Only apply blanking settings to AO channels triggered.
-        if (!(app_regs.input_to_ao_channel_mapping[i] & app_regs.dac_start))
+        if (!(app_regs.ao_channels_assigned_to_di[i] & app_regs.dac_start))
             continue;
-        ao_blanking_mask |= (app_regs.input_to_ao_channel_mapping[i] &
+        ao_blanking_mask |= (app_regs.ao_channels_assigned_to_di[i] &
                              app_regs.dac_start);
         // Apply pin setting. Assume BLANKING settings are valid.
         // i.e: only max-1 DI pin can drive the state of this AO channel.
         if ((di_port_state >> i) & 1u)  // If DI pin is HIGH
-            ao_blanking_state |= app_regs.input_to_ao_channel_mapping[i];
+            ao_blanking_state |= app_regs.ao_channels_assigned_to_di[i];
         else
-            ao_blanking_state &= ~app_regs.input_to_ao_channel_mapping[i];
+            ao_blanking_state &= ~app_regs.ao_channels_assigned_to_di[i];
     }
     // Apply BLANKING settings first so we don't "chirp" any externally
     // triggered output.
@@ -362,7 +362,7 @@ void write_any_di_pin_mode(msg_t &msg)
 
 
 void write_map_any_di_pin_to_ao_channels(msg_t& msg)
-{write_di_setting<uint8_t>(msg, app_regs.input_to_ao_channel_mapping);}
+{write_di_setting<uint8_t>(msg, app_regs.ao_channels_assigned_to_di);}
 
 
 void write_any_channel_active_player(msg_t &msg)
@@ -539,7 +539,7 @@ void reset_app()
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
         app_regs.di_pin_modes[i] = EXTERNAL_TRIGGER;
-        app_regs.input_to_ao_channel_mapping[i] = (1u << i);
+        app_regs.ao_channels_assigned_to_di[i] = (1u << i);
     }
     // Reset all Player settings to defaults.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
@@ -601,7 +601,7 @@ void __not_in_flash_func(handle_digital_input)()
         if (app_regs.di_pin_modes[i] != EXTERNAL_TRIGGER)
             continue;
         if ((di_port_state >> i) & 1u)
-            ao_ext_trigger_mask |= app_regs.input_to_ao_channel_mapping[i];
+            ao_ext_trigger_mask |= app_regs.ao_channels_assigned_to_di[i];
     }
     // For external triggers, filter out already-transferring channels.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
@@ -625,16 +625,16 @@ void __not_in_flash_func(handle_digital_input)()
         // by this BLANKING pin are not about to be externally triggered
         bool di_pin_changed = (changed_pins >> i) & 1u;
         if (!di_pin_changed &&
-            !(app_regs.input_to_ao_channel_mapping[i] & ao_ext_trigger_mask))
+            !(app_regs.ao_channels_assigned_to_di[i] & ao_ext_trigger_mask))
             continue;
         ao_blanking_mask |= di_pin_changed?
-                                app_regs.input_to_ao_channel_mapping[i]:
+                                app_regs.ao_channels_assigned_to_di[i]:
                                 ao_ext_trigger_mask;
         // Apply pin setting.
         if ((di_port_state >> i) & 1u)  // If DI pin is HIGH
-            ao_blanking_state |= app_regs.input_to_ao_channel_mapping[i];
+            ao_blanking_state |= app_regs.ao_channels_assigned_to_di[i];
         else
-            ao_blanking_state &= ~app_regs.input_to_ao_channel_mapping[i];
+            ao_blanking_state &= ~app_regs.ao_channels_assigned_to_di[i];
     }
 
     // Apply BLANKING settings first so we don't "chirp" any externally
