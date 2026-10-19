@@ -53,9 +53,9 @@ with serial.open_device(quac, port=COM_PORT) as device:
 
     print("Setting DI0 to BLANKING and setting DIO to BLANK AO0.")
     # Set DI0 to BLANKING function.
-    device.write(quac.DI0PinMode, quac.DIPinMode.BLANKING)
+    device.write(quac.PinModeDI0, quac.DIPinMode.BLANKING)
     # Setup DI0 to mute AO0.
-    device.write(quac.DI0AnalogOutputChannelAssignment, 0b0001)
+    device.write(quac.AOChannelsAssignedToDI0, 0b0001)
 
     # Specify Player
     print(f"Setting channel {CHANNEL} to {WAVEFORM_TYPE.name} Player.")

@@ -38,14 +38,14 @@ __all__ = [
     "DacPausePayload",
     "DacAbortPayload",
     "DacFinishedPayload",
-    "DI0PinModePayload",
-    "DI1PinModePayload",
-    "DI2PinModePayload",
-    "DI3PinModePayload",
-    "DI0AnalogOutputChannelAssignmentPayload",
-    "DI1AnalogOutputChannelAssignmentPayload",
-    "DI2AnalogOutputChannelAssignmentPayload",
-    "DI3AnalogOutputChannelAssignmentPayload",
+    "PinModeDI0Payload",
+    "PinModeDI1Payload",
+    "PinModeDI2Payload",
+    "PinModeDI3Payload",
+    "AOChannelsAssignedToDI0Payload",
+    "AOChannelsAssignedToDI1Payload",
+    "AOChannelsAssignedToDI2Payload",
+    "AOChannelsAssignedToDI3Payload",
     "ActivePlayer0Payload",
     "ActivePlayer1Payload",
     "ActivePlayer2Payload",
@@ -76,14 +76,14 @@ __all__ = [
     "DacPause",
     "DacAbort",
     "DacFinished",
-    "DI0PinMode",
-    "DI1PinMode",
-    "DI2PinMode",
-    "DI3PinMode",
-    "DI0AnalogOutputChannelAssignment",
-    "DI1AnalogOutputChannelAssignment",
-    "DI2AnalogOutputChannelAssignment",
-    "DI3AnalogOutputChannelAssignment",
+    "PinModeDI0",
+    "PinModeDI1",
+    "PinModeDI2",
+    "PinModeDI3",
+    "AOChannelsAssignedToDI0",
+    "AOChannelsAssignedToDI1",
+    "AOChannelsAssignedToDI2",
+    "AOChannelsAssignedToDI3",
     "ActivePlayer0",
     "ActivePlayer1",
     "ActivePlayer2",
@@ -169,7 +169,7 @@ class PlayerType(enum.IntEnum):
 
 
 class DIPinMode(enum.IntEnum):
-    """Specifies the digital input pin function"""
+    """Specifies the function of a digital input pin."""
 
     NONE = 0
     """Setting the pin HIGH does nothing."""
@@ -178,8 +178,7 @@ class DIPinMode(enum.IntEnum):
     """Setting the pin HIGH will start the assigned AO channels."""
 
     BLANKING = 2
-    """Setting the pin HIGH will mute (i.e set to 0[V]) the assigned AO channels until the pin is brought low.
-"""
+    """Setting the pin HIGH will mute (i.e set to 0[V]) the assigned AO channels until the pin is brought low."""
 
 
 class DOPortStatePayload(AnonymousPayload[np.uint8]):
@@ -252,50 +251,50 @@ class DacFinishedPayload(AnonymousPayload[np.uint8]):
     __value__: AnalogOutputs = BitMask(enum=AnalogOutputs)
 
 
-class DI0PinModePayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI0PinMode register."""
+class PinModeDI0Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the PinModeDI0 register."""
 
     __value__: DIPinMode = GroupMask(enum=DIPinMode, mask=0xFF)
 
 
-class DI1PinModePayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI1PinMode register."""
+class PinModeDI1Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the PinModeDI1 register."""
 
     __value__: DIPinMode = GroupMask(enum=DIPinMode, mask=0xFF)
 
 
-class DI2PinModePayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI2PinMode register."""
+class PinModeDI2Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the PinModeDI2 register."""
 
     __value__: DIPinMode = GroupMask(enum=DIPinMode, mask=0xFF)
 
 
-class DI3PinModePayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI3PinMode register."""
+class PinModeDI3Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the PinModeDI3 register."""
 
     __value__: DIPinMode = GroupMask(enum=DIPinMode, mask=0xFF)
 
 
-class DI0AnalogOutputChannelAssignmentPayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI0AnalogOutputChannelAssignment register."""
+class AOChannelsAssignedToDI0Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the AOChannelsAssignedToDI0 register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
 
-class DI1AnalogOutputChannelAssignmentPayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI1AnalogOutputChannelAssignment register."""
+class AOChannelsAssignedToDI1Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the AOChannelsAssignedToDI1 register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
 
-class DI2AnalogOutputChannelAssignmentPayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI2AnalogOutputChannelAssignment register."""
+class AOChannelsAssignedToDI2Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the AOChannelsAssignedToDI2 register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
 
-class DI3AnalogOutputChannelAssignmentPayload(AnonymousPayload[np.uint8]):
-    """Represents the payload of the DI3AnalogOutputChannelAssignment register."""
+class AOChannelsAssignedToDI3Payload(AnonymousPayload[np.uint8]):
+    """Represents the payload of the AOChannelsAssignedToDI3 register."""
 
     __value__: DigitalInputs = BitMask(enum=DigitalInputs)
 
@@ -410,7 +409,7 @@ class SineSettings0Payload(StructPayload[np.uint8], length=28):
     """Specifies the vertical offset applied to the waveform in volts."""
 
     normalized_phase_shift: np.float32 = Field(IdentityConverter(np.float32), offset=24)
-    """Normalized phase shift relative to the period with range: -1.0 (max right shift) to 1.0 (max left shift)."""
+    """Specifies the phase shift relative to the period, from -1.0 (maximum right shift) to 1.0 (maximum left shift)."""
 
 
 class SineSettings1Payload(StructPayload[np.uint8], length=28):
@@ -435,7 +434,7 @@ class SineSettings1Payload(StructPayload[np.uint8], length=28):
     """Specifies the vertical offset applied to the waveform in volts."""
 
     normalized_phase_shift: np.float32 = Field(IdentityConverter(np.float32), offset=24)
-    """Normalized phase shift relative to the period with range: -1.0 (max right shift) to 1.0 (max left shift)."""
+    """Specifies the phase shift relative to the period, from -1.0 (maximum right shift) to 1.0 (maximum left shift)."""
 
 
 class SineSettings2Payload(StructPayload[np.uint8], length=28):
@@ -460,7 +459,7 @@ class SineSettings2Payload(StructPayload[np.uint8], length=28):
     """Specifies the vertical offset applied to the waveform in volts."""
 
     normalized_phase_shift: np.float32 = Field(IdentityConverter(np.float32), offset=24)
-    """Normalized phase shift relative to the period with range: -1.0 (max right shift) to 1.0 (max left shift)."""
+    """Specifies the phase shift relative to the period, from -1.0 (maximum right shift) to 1.0 (maximum left shift)."""
 
 
 class SineSettings3Payload(StructPayload[np.uint8], length=28):
@@ -485,7 +484,7 @@ class SineSettings3Payload(StructPayload[np.uint8], length=28):
     """Specifies the vertical offset applied to the waveform in volts."""
 
     normalized_phase_shift: np.float32 = Field(IdentityConverter(np.float32), offset=24)
-    """Normalized phase shift relative to the period with range: -1.0 (max right shift) to 1.0 (max left shift)."""
+    """Specifies the phase shift relative to the period, from -1.0 (maximum right shift) to 1.0 (maximum left shift)."""
 
 
 class TrapezoidSettings0Payload(StructPayload[np.uint8], length=40):
@@ -510,7 +509,7 @@ class TrapezoidSettings0Payload(StructPayload[np.uint8], length=40):
     """Specifies the vertical offset applied to the waveform in volts."""
 
     normalized_phase_shift: np.float32 = Field(IdentityConverter(np.float32), offset=24)
-    """Normalized phase shift relative to the period with range: -1.0 (max right shift) to 1.0 (max left shift)."""
+    """Specifies the phase shift relative to the period, from -1.0 (maximum right shift) to 1.0 (maximum left shift)."""
 
     ramp_on_duration: np.uint32 = Field(IdentityConverter(np.uint32), offset=28)
     """Specifies the duration of the rising ramp in microseconds."""
@@ -544,7 +543,7 @@ class TrapezoidSettings1Payload(StructPayload[np.uint8], length=40):
     """Specifies the vertical offset applied to the waveform in volts."""
 
     normalized_phase_shift: np.float32 = Field(IdentityConverter(np.float32), offset=24)
-    """Normalized phase shift relative to the period with range: -1.0 (max right shift) to 1.0 (max left shift)."""
+    """Specifies the phase shift relative to the period, from -1.0 (maximum right shift) to 1.0 (maximum left shift)."""
 
     ramp_on_duration: np.uint32 = Field(IdentityConverter(np.uint32), offset=28)
     """Specifies the duration of the rising ramp in microseconds."""
@@ -578,7 +577,7 @@ class TrapezoidSettings2Payload(StructPayload[np.uint8], length=40):
     """Specifies the vertical offset applied to the waveform in volts."""
 
     normalized_phase_shift: np.float32 = Field(IdentityConverter(np.float32), offset=24)
-    """Normalized phase shift relative to the period with range: -1.0 (max right shift) to 1.0 (max left shift)."""
+    """Specifies the phase shift relative to the period, from -1.0 (maximum right shift) to 1.0 (maximum left shift)."""
 
     ramp_on_duration: np.uint32 = Field(IdentityConverter(np.uint32), offset=28)
     """Specifies the duration of the rising ramp in microseconds."""
@@ -612,7 +611,7 @@ class TrapezoidSettings3Payload(StructPayload[np.uint8], length=40):
     """Specifies the vertical offset applied to the waveform in volts."""
 
     normalized_phase_shift: np.float32 = Field(IdentityConverter(np.float32), offset=24)
-    """Normalized phase shift relative to the period with range: -1.0 (max right shift) to 1.0 (max left shift)."""
+    """Specifies the phase shift relative to the period, from -1.0 (maximum right shift) to 1.0 (maximum left shift)."""
 
     ramp_on_duration: np.uint32 = Field(IdentityConverter(np.uint32), offset=28)
     """Specifies the duration of the rising ramp in microseconds."""
@@ -657,7 +656,7 @@ class DIPortState(RegisterBase[DigitalInputs]):
 
 
 class AOPortState(RegisterBase[AOPortStatePayload]):
-    """Reflects and specifies the output voltage of all four analog output channels in volts. Reads and writes fail with an error unless every channel is idle, since a channel playing a preset waveform owns its output value."""
+    """Reflects and specifies the output voltage of all four analog output channels in volts, failing reads and writes unless every channel is idle since a channel playing a preset waveform owns its output value."""
 
     address: ClassVar[int] = 36
     payload_type: ClassVar[PayloadType] = PayloadType.Float
@@ -665,25 +664,25 @@ class AOPortState(RegisterBase[AOPortStatePayload]):
 
 
 class AOChannel0(RegisterFloat):
-    """Reflects and specifies the output voltage of analog output channel 0 in volts. Writes fail with an error while this channel is playing a preset waveform, and reads fail with an error while any channel is playing a preset waveform."""
+    """Reflects and specifies the output voltage of analog output channel 0 in volts, failing writes while this channel is playing a preset waveform and reads while any channel is."""
 
     address: ClassVar[int] = 37
 
 
 class AOChannel1(RegisterFloat):
-    """Reflects and specifies the output voltage of analog output channel 1 in volts. Writes fail with an error while this channel is playing a preset waveform, and reads fail with an error while any channel is playing a preset waveform."""
+    """Reflects and specifies the output voltage of analog output channel 1 in volts, failing writes while this channel is playing a preset waveform and reads while any channel is."""
 
     address: ClassVar[int] = 38
 
 
 class AOChannel2(RegisterFloat):
-    """Reflects and specifies the output voltage of analog output channel 2 in volts. Writes fail with an error while this channel is playing a preset waveform, and reads fail with an error while any channel is playing a preset waveform."""
+    """Reflects and specifies the output voltage of analog output channel 2 in volts, failing writes while this channel is playing a preset waveform and reads while any channel is."""
 
     address: ClassVar[int] = 39
 
 
 class AOChannel3(RegisterFloat):
-    """Reflects and specifies the output voltage of analog output channel 3 in volts. Writes fail with an error while this channel is playing a preset waveform, and reads fail with an error while any channel is playing a preset waveform."""
+    """Reflects and specifies the output voltage of analog output channel 3 in volts, failing writes while this channel is playing a preset waveform and reads while any channel is."""
 
     address: ClassVar[int] = 40
 
@@ -697,7 +696,7 @@ class DacReady(RegisterBase[AnalogOutputs]):
 
 
 class DacStart(RegisterBase[AnalogOutputs]):
-    """Starts the waveform player on the ready analog output channels specified in the mask. Events from this register report the channels that were started by an external trigger."""
+    """Starts the waveform player on the ready analog output channels specified in the mask and reports, through events, the channels started by an external trigger."""
 
     address: ClassVar[int] = 42
     payload_type: ClassVar[PayloadType] = PayloadType.U8
@@ -728,68 +727,68 @@ class DacFinished(RegisterBase[AnalogOutputs]):
     payload_class = DacFinishedPayload
 
 
-class DI0PinMode(RegisterBase[DIPinMode]):
-    """DI Pin 0's Function assignment (external trigger or blanking)."""
+class PinModeDI0(RegisterBase[DIPinMode]):
+    """Specifies the function assigned to digital input pin 0."""
 
     address: ClassVar[int] = 46
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI0PinModePayload
+    payload_class = PinModeDI0Payload
 
 
-class DI1PinMode(RegisterBase[DIPinMode]):
-    """DI Pin 1's Function assignment (external trigger or blanking)."""
+class PinModeDI1(RegisterBase[DIPinMode]):
+    """Specifies the function assigned to digital input pin 1."""
 
     address: ClassVar[int] = 47
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI1PinModePayload
+    payload_class = PinModeDI1Payload
 
 
-class DI2PinMode(RegisterBase[DIPinMode]):
-    """DI Pin 2's Function assignment (external trigger or blanking)."""
+class PinModeDI2(RegisterBase[DIPinMode]):
+    """Specifies the function assigned to digital input pin 2."""
 
     address: ClassVar[int] = 48
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI2PinModePayload
+    payload_class = PinModeDI2Payload
 
 
-class DI3PinMode(RegisterBase[DIPinMode]):
-    """DI Pin 3's Function assignment (external trigger or blanking)."""
+class PinModeDI3(RegisterBase[DIPinMode]):
+    """Specifies the function assigned to digital input pin 3."""
 
     address: ClassVar[int] = 49
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI3PinModePayload
+    payload_class = PinModeDI3Payload
 
 
-class DI0AnalogOutputChannelAssignment(RegisterBase[DigitalInputs]):
+class AOChannelsAssignedToDI0(RegisterBase[DigitalInputs]):
     """Specifies which AO channels are assigned to DI Pin 0."""
 
     address: ClassVar[int] = 50
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI0AnalogOutputChannelAssignmentPayload
+    payload_class = AOChannelsAssignedToDI0Payload
 
 
-class DI1AnalogOutputChannelAssignment(RegisterBase[DigitalInputs]):
+class AOChannelsAssignedToDI1(RegisterBase[DigitalInputs]):
     """Specifies which AO channels are assigned to DI Pin 1."""
 
     address: ClassVar[int] = 51
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI1AnalogOutputChannelAssignmentPayload
+    payload_class = AOChannelsAssignedToDI1Payload
 
 
-class DI2AnalogOutputChannelAssignment(RegisterBase[DigitalInputs]):
+class AOChannelsAssignedToDI2(RegisterBase[DigitalInputs]):
     """Specifies which AO channels are assigned to DI Pin 2."""
 
     address: ClassVar[int] = 52
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI2AnalogOutputChannelAssignmentPayload
+    payload_class = AOChannelsAssignedToDI2Payload
 
 
-class DI3AnalogOutputChannelAssignment(RegisterBase[DigitalInputs]):
+class AOChannelsAssignedToDI3(RegisterBase[DigitalInputs]):
     """Specifies which AO channels are assigned to DI Pin 3."""
 
     address: ClassVar[int] = 53
     payload_type: ClassVar[PayloadType] = PayloadType.U8
-    payload_class = DI3AnalogOutputChannelAssignmentPayload
+    payload_class = AOChannelsAssignedToDI3Payload
 
 
 class ActivePlayer0(RegisterBase[PlayerType]):
@@ -936,14 +935,14 @@ REGISTER_MAP: dict[int, type[RegisterBase[Any]]] = {
     43: DacPause,
     44: DacAbort,
     45: DacFinished,
-    46: DI0PinMode,
-    47: DI1PinMode,
-    48: DI2PinMode,
-    49: DI3PinMode,
-    50: DI0AnalogOutputChannelAssignment,
-    51: DI1AnalogOutputChannelAssignment,
-    52: DI2AnalogOutputChannelAssignment,
-    53: DI3AnalogOutputChannelAssignment,
+    46: PinModeDI0,
+    47: PinModeDI1,
+    48: PinModeDI2,
+    49: PinModeDI3,
+    50: AOChannelsAssignedToDI0,
+    51: AOChannelsAssignedToDI1,
+    52: AOChannelsAssignedToDI2,
+    53: AOChannelsAssignedToDI3,
     54: ActivePlayer0,
     55: ActivePlayer1,
     56: ActivePlayer2,

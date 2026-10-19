@@ -89,11 +89,11 @@ struct app_regs_t
 
     // DI0-3 pin mapping to one or more analog output channels.
     // i.e: Which analog outputs are assigned to digital inputs 0-3.
-    uint8_t input_to_ao_channel_mapping[NUM_CHANNELS];
-    uint8_t& di0_to_ao_channel_mapping = input_to_ao_channel_mapping[0];
-    uint8_t& di1_to_ao_channel_mapping = input_to_ao_channel_mapping[1];
-    uint8_t& di2_to_ao_channel_mapping = input_to_ao_channel_mapping[2];
-    uint8_t& di3_to_ao_channel_mapping = input_to_ao_channel_mapping[3];
+    uint8_t ao_channels_assigned_to_di[NUM_CHANNELS];
+    uint8_t& ao_channels_assigned_to_di0 = ao_channels_assigned_to_di[0];
+    uint8_t& ao_channels_assigned_to_di1 = ao_channels_assigned_to_di[1];
+    uint8_t& ao_channels_assigned_to_di2 = ao_channels_assigned_to_di[2];
+    uint8_t& ao_channels_assigned_to_di3 = ao_channels_assigned_to_di[3];
 
     // External blanking masks per-channel. Assign channel[i] to one or more blanking pins.
     uint8_t channel_blanking_pins[NUM_CHANNELS];
@@ -206,7 +206,7 @@ void write_di_setting(msg_t& msg, DI_SETTING_TYPE* base_address)
     for (size_t ao_chan = 0; ao_chan < NUM_CHANNELS; ++ao_chan)
     {
         // Skip checking unassigned analog output channels.
-        if (!((app_regs.input_to_ao_channel_mapping[di_index] >> ao_chan) & 1u))
+        if (!((app_regs.ao_channels_assigned_to_di[di_index] >> ao_chan) & 1u))
             continue;
         // Check if this analog output channel is busy.
         if (bufs[ao_chan].is_transferring())
@@ -234,8 +234,8 @@ void write_di_setting(msg_t& msg, DI_SETTING_TYPE* base_address)
         {
             if (app_regs.di_pin_modes[j] != BLANKING)
                 continue;
-            if (app_regs.input_to_ao_channel_mapping[i] &
-                app_regs.input_to_ao_channel_mapping[j])
+            if (app_regs.ao_channels_assigned_to_di[i] &
+                app_regs.ao_channels_assigned_to_di[j])
                 valid_settings = false;
         }
     }
