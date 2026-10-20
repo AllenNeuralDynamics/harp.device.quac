@@ -95,8 +95,20 @@ struct app_regs_t
     uint8_t& ao_channels_assigned_to_di2 = ao_channels_assigned_to_di[2];
     uint8_t& ao_channels_assigned_to_di3 = ao_channels_assigned_to_di[3];
 
-    // External blanking masks per-channel. Assign channel[i] to one or more blanking pins.
-    uint8_t channel_blanking_pins[NUM_CHANNELS];
+    // DAC DO Pin Modes
+    uint8_t do_pin_modes[NUM_CHANNELS];
+    uint8_t& do0_pin_mode = do_pin_modes[0];
+    uint8_t& do1_pin_mode = do_pin_modes[1];
+    uint8_t& do2_pin_mode = do_pin_modes[2];
+    uint8_t& do3_pin_mode = do_pin_modes[3];
+
+    // DO0-3 pin mapping to one or more analog output channels.
+    // i.e: Which analog outputs are assigned to digital inputs 0-3.
+    uint8_t ao_channels_assigned_to_do[NUM_CHANNELS];
+    uint8_t& ao_channels_assigned_to_do0 = ao_channels_assigned_to_do[0];
+    uint8_t& ao_channels_assigned_to_do1 = ao_channels_assigned_to_do[1];
+    uint8_t& ao_channels_assigned_to_do2 = ao_channels_assigned_to_do[2];
+    uint8_t& ao_channels_assigned_to_do3 = ao_channels_assigned_to_do[3];
 
     // Which player is active per channel.
     uint8_t active_players[NUM_CHANNELS];
@@ -138,7 +150,11 @@ void write_dac_abort(msg_t& msg);
 
 void write_any_di_pin_mode(msg_t& msg);
 
-void write_map_any_di_pin_to_ao_channels(msg_t& msg);
+void write_assign_ao_channels_to_di_pin(msg_t& msg);
+
+void write_any_do_pin_mode(msg_t& msg);
+
+void write_assign_ao_channels_to_do_pin(msg_t& msg);
 
 void write_any_channel_active_player(msg_t& msg);
 

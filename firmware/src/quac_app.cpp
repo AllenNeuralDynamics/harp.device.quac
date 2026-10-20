@@ -53,13 +53,32 @@ RegSpec app_reg_specs[]
         HarpCore::read_reg_generic, write_any_di_pin_mode),
 
     RegSpec::U8(&app_regs.ao_channels_assigned_to_di0,
-        HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_di_pin),
     RegSpec::U8(&app_regs.ao_channels_assigned_to_di1,
-        HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_di_pin),
     RegSpec::U8(&app_regs.ao_channels_assigned_to_di2,
-        HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_di_pin),
     RegSpec::U8(&app_regs.ao_channels_assigned_to_di3,
-        HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_di_pin),
+
+    RegSpec::U8(&app_regs.do0_pin_mode,
+        HarpCore::read_reg_generic, write_any_do_pin_mode),
+    RegSpec::U8(&app_regs.do1_pin_mode,
+        HarpCore::read_reg_generic, write_any_do_pin_mode),
+    RegSpec::U8(&app_regs.do2_pin_mode,
+        HarpCore::read_reg_generic, write_any_do_pin_mode),
+    RegSpec::U8(&app_regs.do3_pin_mode,
+        HarpCore::read_reg_generic, write_any_do_pin_mode),
+
+    RegSpec::U8(&app_regs.ao_channels_assigned_to_do0,
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
+    RegSpec::U8(&app_regs.ao_channels_assigned_to_do1,
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
+    RegSpec::U8(&app_regs.ao_channels_assigned_to_do2,
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
+    RegSpec::U8(&app_regs.ao_channels_assigned_to_do3,
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
+
 
     RegSpec::U8(&app_regs.active_players[0],
         HarpCore::read_reg_generic, write_any_channel_active_player),
@@ -361,8 +380,20 @@ void write_any_di_pin_mode(msg_t &msg)
 {write_di_setting<uint8_t>(msg, app_regs.di_pin_modes);}
 
 
-void write_map_any_di_pin_to_ao_channels(msg_t& msg)
+void write_assign_ao_channels_to_di_pin(msg_t& msg)
 {write_di_setting<uint8_t>(msg, app_regs.ao_channels_assigned_to_di);}
+
+
+void write_any_do_pin_mode(msg_t &msg)
+{
+
+}
+
+
+void write_assign_ao_channels_to_do_pin(msg_t& msg)
+{
+
+}
 
 
 void write_any_channel_active_player(msg_t &msg)
@@ -646,6 +677,9 @@ void __not_in_flash_func(handle_digital_input)()
     {
         ext_trigger_event_t trigger_event;
         transfer_manager.start(ao_ext_trigger_mask); // Can be started from core1.
+        // TODO: trigger the associated DO Tracking Channels.
+        // ...
+        // ...
         trigger_event.channel_start_mask = ao_ext_trigger_mask;
         trigger_event.timestamp = time_us_64();
         // Push Harp message for external trigger event.
