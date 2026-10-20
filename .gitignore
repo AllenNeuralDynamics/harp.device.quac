@@ -1,12 +1,13 @@
 # files created for compiling the code
 build/
-exports/ # or exporting Kicad files.
+exports/
 
 # Kicad-generated
 *-backups/
 *.kicad_prl
 *.lck
-__fp-info-cache__/
+fp-info-cache
+fp-lib-table
 
 # Vim temporary files
 *.swp
