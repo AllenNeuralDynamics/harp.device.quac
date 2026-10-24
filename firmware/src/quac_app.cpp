@@ -354,6 +354,9 @@ void write_dac_start(msg_t& msg)
         transfer_manager.mute_outputs(ao_blanking_mask, ao_blanking_state);
     // Start the channel.
     transfer_manager.start(uint32_t(app_regs.dac_start)); // Can start from core0.
+    // TODO: trigger the associated DO Tracking Channels.
+    // ...
+    // ...
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -583,8 +586,8 @@ void reset_app()
     transfer_manager.reset();
     // Unmute everything
     transfer_manager.mute_outputs(nwide_mask<uint32_t>(NUM_CHANNELS), 0);
-    // FIXME: hardcoded reference to DMA_IRQ_1.
-    transfer_manager.enable_end_of_transfer_interrupt(1); // corresponds to DMA_IRQ_1
+    transfer_manager.enable_end_of_transfer_interrupt(TRANSFER_MANAGER_DMA_IRQ_NUM,
+        handle_end_of_transfer);
     // Reset DoubleBuffers before DACs, since they send data to DACs.
     for (auto& buf: bufs)
         buf.reset();
@@ -608,6 +611,25 @@ void reset_app()
         gpio_set_irq_enabled(i + DI_PORT_BASE,
             GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true);
     irq_set_enabled(IO_IRQ_BANK0, true);
+}
+
+
+void __not_in_flash_func(handle_end_of_transfer)()
+{
+    // Get most recent AO channels that cause the end of transfer.
+    //uint8_t finished_ao_transfers = transfer_manager.get_most_recent_finished_transfers();
+    // Deduce the current AO state.
+    // FYI this ISR fires before the superloop, so we must create the latest
+    // state from the current state and most recently finished transfer.
+    uint8_t active_ao_channels = app_regs.dac_start; // current state
+    //active_ao_channels &= ~finished_ao_transfers; // most recent finished xfer.
+    //for (size_t i = 0; i < NUM_DOS; ++i)
+    //{
+    //    // if all AO channels are now off, set the DO pin LOW.
+    //}
+    gpio_init(DEBUG_LEDS[1]);
+    gpio_set_dir(DEBUG_LEDS[1], GPIO_OUT);
+    gpio_put(DEBUG_LEDS[1], 1);
 }
 
 

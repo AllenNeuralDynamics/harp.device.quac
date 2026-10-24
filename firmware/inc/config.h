@@ -2,6 +2,7 @@
 #define CONFIG_H
 #include <array>
 #include <cstdint>
+#include "hardware/regs/intctrl.h" // for DMA_IRQ_0
 #include "core_registers.h" // for semver_t
 #include "sd_card.h"  // from no-os* sd card library.
 #include "pio_ltc264x.h"
@@ -110,6 +111,9 @@ inline constexpr std::array<uint32_t, NUM_CHANNELS> CURRENT_MEASUREMENTS
 
 inline constexpr std::array<uint32_t, 2> DEBUG_LEDS
 {{2, 3}};
+
+inline constexpr size_t FATFS_DMA_IRQ_NUM = DMA_IRQ_0;
+inline constexpr size_t TRANSFER_MANAGER_DMA_IRQ_NUM = DMA_IRQ_1;
 
 inline constexpr size_t DEBUG_UART_TX_PIN = 0;
 inline constexpr size_t DEBUG_UART_RX_PIN = 1;

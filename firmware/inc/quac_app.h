@@ -208,6 +208,7 @@ void update_app();
 
 
 /// Callbacks
+void handle_end_of_transfer();
 void handle_digital_input();
 
 
