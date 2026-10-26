@@ -66,6 +66,7 @@ struct app_regs_t
 
     // Triggers.
     uint8_t di_port_state;
+    uint8_t di_port_invert;
 
     float analog_output_port_state[NUM_CHANNELS];
     float& analog_output_channel_0  = analog_output_port_state[0];
@@ -133,6 +134,8 @@ void write_digital_output_port_set(msg_t& msg);
 void write_digital_output_port_clear(msg_t& msg);
 
 void read_di_port_state(uint8_t address);
+
+void write_di_port_invert(msg_t& msg);
 
 void read_analog_output_port_state(uint8_t address);
 void write_analog_output_port_state(msg_t& msg);

@@ -33,8 +33,19 @@ registers:
     maskType: DigitalInputs
     description: Reflects the raw state of the digital input lines.
 
-  AOPortState:
+  DIPortInvert:
     address: 36
+    type: U8
+    access: Write
+    maskType: DigitalInputs
+    description: >-
+      Bits set in this register will INVERT the downstream corresponding DI pin
+      function, i.e: DI pins specified as an external trigger will trigger when
+      the pin goes LOW. Note that downstream DI pin settings are unaware of this
+      inversion setting and specified as normal.
+
+  AOPortState:
+    address: 37
     type: Float
     length: 4
     access: Write
@@ -57,7 +68,7 @@ registers:
         description: The output voltage of analog output channel 3 in volts.
 
   AOChannel0: &aoChannel
-    address: 37
+    address: 38
     type: Float
     access: Write
     minValue: -10
@@ -69,34 +80,34 @@ registers:
       reads while any channel is.
   AOChannel1:
     <<: *aoChannel
-    address: 38
+    address: 39
     description: >-
       Reflects and specifies the output voltage of analog output channel 1 in
       volts, failing writes while this channel is playing a preset waveform and
       reads while any channel is.
   AOChannel2:
     <<: *aoChannel
-    address: 39
+    address: 40
     description: >-
       Reflects and specifies the output voltage of analog output channel 2 in
       volts, failing writes while this channel is playing a preset waveform and
       reads while any channel is.
   AOChannel3:
     <<: *aoChannel
-    address: 40
+    address: 41
     description: >-
       Reflects and specifies the output voltage of analog output channel 3 in
       volts, failing writes while this channel is playing a preset waveform and
       reads while any channel is.
 
   DacReady:
-    address: 41
+    address: 42
     type: U8
     access: Read
     maskType: AnalogOutputs
     description: Reflects which analog output channels are configured and ready to start.
   DacStart:
-    address: 42
+    address: 43
     type: U8
     access: [Write, Event]
     maskType: AnalogOutputs
@@ -105,65 +116,65 @@ registers:
       in the mask and reports, through events, the channels started by an
       external trigger.
   DacPause:
-    address: 43
+    address: 44
     type: U8
     access: Write
     maskType: AnalogOutputs
     description: Pauses the channels set in the mask and resumes those cleared in it.
   DacAbort:
-    address: 44
+    address: 45
     type: U8
     access: Write
     maskType: AnalogOutputs
     description: Aborts waveform playback on the analog output channels specified in the mask.
   DacFinished:
-    address: 45
+    address: 46
     type: U8
     access: Event
     maskType: AnalogOutputs
     description: Reports which analog output channels have finished playing their waveform.
 
   PinModeDI0: &diPinMode
-    address: 46
+    address: 47
     type: U8
     access: Write
     maskType: DIPinMode
     description: Specifies the function assigned to digital input pin 0.
   PinModeDI1:
     <<: *diPinMode
-    address: 47
+    address: 48
     description: Specifies the function assigned to digital input pin 1.
   PinModeDI2:
     <<: *diPinMode
-    address: 48
+    address: 49
     description: Specifies the function assigned to digital input pin 2.
   PinModeDI3:
     <<: *diPinMode
-    address: 49
+    address: 50
     description: Specifies the function assigned to digital input pin 3.
 
   AOChannelsAssignedToDI0: &AOChannelAssignmentToDI
-    address: 50
+    address: 51
     type: U8
     access: Write
     maskType: DigitalInputs
     description: Specifies which AO channels are assigned to DI Pin 0.
   AOChannelsAssignedToDI1:
     <<: *AOChannelAssignmentToDI
-    address: 51
+    address: 52
     description: Specifies which AO channels are assigned to DI Pin 1.
   AOChannelsAssignedToDI2:
     <<: *AOChannelAssignmentToDI
-    address: 52
+    address: 53
     description: Specifies which AO channels are assigned to DI Pin 2.
   AOChannelsAssignedToDI3:
     <<: *AOChannelAssignmentToDI
-    address: 53
+    address: 54
     description: Specifies which AO channels are assigned to DI Pin 3.
 
   DO0PinMode: &doPinMode
     access: Write
-    address: 54
+    address: 55
     type: U8
     maskType: DOPinMode
     defaultValue: 0
@@ -171,61 +182,61 @@ registers:
       Digital Output 0's pin function assignment ("None" or "Tracking")
   DO1PinMode:
     <<: *doPinMode
-    address: 55
+    address: 56
     description: >
       Digital Output 1's pin function assignment ("None" or "Tracking")
   DO2PinMode:
     <<: *doPinMode
-    address: 56
+    address: 57
     description: >
       Digital Output 2's pin function assignment ("None" or "Tracking")
   DO3PinMode:
     <<: *doPinMode
-    address: 57
+    address: 58
     description: >
       Digital Output 3's pin function assignment ("None" or "Tracking")
 
   AOChannelsAssignedToDO0: &AOChannelAssignmentToDO
-    address: 58
+    address: 59
     type: U8
     access: Write
     maskType: DigitalOutputs
     description: Specifies which AO channels are assigned to DO Pin 0.
   AOChannelsAssignedToDO1:
     <<: *AOChannelAssignmentToDO
-    address: 59
+    address: 60
     description: Specifies which AO channels are assigned to DO Pin 1.
   AOChannelsAssignedToDO2:
     <<: *AOChannelAssignmentToDO
-    address: 60
+    address: 61
     description: Specifies which AO channels are assigned to DO Pin 2.
   AOChannelsAssignedToDO3:
     <<: *AOChannelAssignmentToDO
-    address: 61
+    address: 62
     description: Specifies which AO channels are assigned to DO Pin 3.
 
 
   ActivePlayer0: &activePlayer
-    address: 62
+    address: 63
     type: U8
     access: Write
     maskType: PlayerType
     description: Specifies which waveform player drives analog output channel 0.
   ActivePlayer1:
     <<: *activePlayer
-    address: 63
+    address: 64
     description: Specifies which waveform player drives analog output channel 1.
   ActivePlayer2:
     <<: *activePlayer
-    address: 64
+    address: 65
     description: Specifies which waveform player drives analog output channel 2.
   ActivePlayer3:
     <<: *activePlayer
-    address: 65
+    address: 66
     description: Specifies which waveform player drives analog output channel 3.
 
   FileSettings0: &fileSettings
-    address: 66
+    address: 67
     type: U8
     length: 45
     access: Write
@@ -260,19 +271,19 @@ registers:
         description: Specifies the null-terminated path of the waveform file on the SD card.
   FileSettings1:
     <<: *fileSettings
-    address: 67
+    address: 68
     description: Specifies the file player settings for analog output channel 1.
   FileSettings2:
     <<: *fileSettings
-    address: 68
+    address: 69
     description: Specifies the file player settings for analog output channel 2.
   FileSettings3:
     <<: *fileSettings
-    address: 69
+    address: 70
     description: Specifies the file player settings for analog output channel 3.
 
   SineSettings0: &sineSettings
-    address: 70
+    address: 71
     type: U8
     length: 28
     access: Write
@@ -336,19 +347,19 @@ registers:
           right shift) to 1.0 (maximum left shift).
   SineSettings1:
     <<: *sineSettings
-    address: 71
+    address: 72
     description: Specifies the sine player settings for analog output channel 1.
   SineSettings2:
     <<: *sineSettings
-    address: 72
+    address: 73
     description: Specifies the sine player settings for analog output channel 2.
   SineSettings3:
     <<: *sineSettings
-    address: 73
+    address: 74
     description: Specifies the sine player settings for analog output channel 3.
 
   TrapezoidSettings0: &trapezoidSettings
-    address: 74
+    address: 75
     type: U8
     length: 40
     access: Write
@@ -377,15 +388,15 @@ registers:
         description: Specifies the duration of the falling ramp in microseconds.
   TrapezoidSettings1:
     <<: *trapezoidSettings
-    address: 75
+    address: 76
     description: Specifies the trapezoid player settings for analog output channel 1.
   TrapezoidSettings2:
     <<: *trapezoidSettings
-    address: 76
+    address: 77
     description: Specifies the trapezoid player settings for analog output channel 2.
   TrapezoidSettings3:
     <<: *trapezoidSettings
-    address: 77
+    address: 78
     description: Specifies the trapezoid player settings for analog output channel 3.
 
 bitMasks:

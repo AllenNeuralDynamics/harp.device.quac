@@ -20,6 +20,8 @@ RegSpec app_reg_specs[]
         HarpCore::read_reg_error, write_digital_output_port_clear),
     RegSpec::U8(&app_regs.di_port_state,
         read_di_port_state, HarpCore::write_reg_error),
+    RegSpec::U8(&app_regs.di_port_invert,
+        HarpCore::read_reg_generic, write_di_port_invert),
 
     RegSpec::FloatArray(&app_regs.analog_output_port_state,
         std::size(app_regs.analog_output_port_state),
@@ -167,6 +169,21 @@ void read_di_port_state(uint8_t address)
     app_regs.di_port_state =
         uint8_t((DI_PORT_MASK & gpio_get_all64()) >> DI_PORT_BASE);
     HarpCore::read_reg_generic(address);
+}
+
+
+void write_di_port_invert(msg_t& msg)
+{
+    HarpCore::copy_msg_payload_to_register(msg);
+    for (size_t i = 0; i < NUM_DIS; ++i)
+    {
+        gpio_override override_setting = (app_regs.di_port_invert & (1u << i))?
+            GPIO_OVERRIDE_INVERT:
+            GPIO_OVERRIDE_NORMAL;
+        gpio_set_inover(DI_PORT_BASE + i, override_setting);
+    }
+    if (!HarpCore::is_muted())
+        HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
 
 
@@ -554,7 +571,10 @@ void reset_app()
 {
     // Init all digital inputs and outputs.
     for (size_t i = DI_PORT_BASE; i < DI_PORT_BASE + NUM_DIS; ++i)
+    {
         gpio_init(i);
+        gpio_set_inover(i, GPIO_OVERRIDE_NORMAL); // uninvert all DI pins.
+    }
     for (size_t i = DO_PORT_BASE; i < DO_PORT_BASE + NUM_DOS; ++i)
         gpio_init(i);
 
