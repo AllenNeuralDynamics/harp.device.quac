@@ -197,18 +197,26 @@ void read_any_waveform_hash(uint8_t address);
 
 void write_any_waveform_data(msg_t& msg);
 
-//void apply_blanking_settings_to_ao_channel(uint32_t ao_channel);
-
-void reset_app();
-
-
 bool player_is_ready(size_t channel, player_t player_type);
 
+inline void update_do_tracking_state(uint8_t ao_port_state);
+
+void reset_app();
 void update_app();
 
 
 /// Callbacks
+/**
+ * \brief ISR that triggers when any AO channel finishes. This fn should handle
+ * any behavior outside the scope of MultiTransferManager.
+ * \details because this function is called from inside MultiTransferManager's
+ * interrupt, this ISR can ignore acknowledging the interrupt.
+ */
 void handle_end_of_transfer();
+
+/**
+ * \brief
+ */
 void handle_digital_input();
 
 

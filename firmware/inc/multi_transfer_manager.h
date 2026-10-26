@@ -16,7 +16,7 @@
  */
 struct end_of_transfer_event_t
 {
-    uint32_t finished_channels_mask;
+    uint32_t finished_channels_mask; // channel0 = bit0, channel1 = bit1, etc.
     uint64_t timestamp_us;
 };
 
@@ -231,9 +231,8 @@ public:
  */
     inline void handle_end_of_transfer()
     {
-        end_of_transfer_event_t end_of_transfer_event;
-        end_of_transfer_event.timestamp_us = time_us_64(); // record time asap.
-        end_of_transfer_event.finished_channels_mask = 0;
+        latest_end_of_transfer_event_.timestamp_us = time_us_64(); // record time asap.
+        latest_end_of_transfer_event_.finished_channels_mask = 0;
 
         // Identify which channel(s) triggered the handler.
         uint32_t irq_index = dma_irq_num_ - DMA_IRQ_0;
@@ -249,17 +248,28 @@ public:
             if (!((1u << buf_ptrs_[i]->get_data_channel()) & int_status))
                 continue; // Skip channels that did not trigger the interrupt.
             dacs_[i].write_value(PIO_LTC264x::OUTPUT_MIDSCALE);
-            end_of_transfer_event.finished_channels_mask |= 1u << i;
+            latest_end_of_transfer_event_.finished_channels_mask |= 1u << i;
         }
         // Push a timestamp bitmask to a queue.
-        queue_try_add(&end_of_transfer_event_queue_, &end_of_transfer_event);
+        // Note that this fn makes a copy of the data.
+        queue_try_add(&end_of_transfer_event_queue_,
+            &latest_end_of_transfer_event_);
     }
+
+/**
+ * \brief return a read-only reference to the latest end-of-transfer event.
+ * \warning this function should only be used within a user-specified ISR.
+ *  Getting transfer events in all other cases should use get_finished_transfers().
+ */
+    inline const end_of_transfer_event_t& get_latest_transfer_event() const
+    {return latest_end_of_transfer_event_;}
 
 private:
     std::array<DMADoubleBuffer<T, BUF_SIZE>*, NUM_CHANNELS>& buf_ptrs_;
     std::array<PIO_LTC264x, NUM_CHANNELS>& dacs_;
     queue_t end_of_transfer_event_queue_;
     int dma_irq_num_;
+    end_of_transfer_event_t latest_end_of_transfer_event_;
 
     static inline constexpr size_t MAX_INSTANCES = 2;
     static inline constexpr int DMA_IRQ_NUM_UNSPECIFIED = -1;

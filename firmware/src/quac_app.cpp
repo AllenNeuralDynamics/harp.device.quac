@@ -1,6 +1,7 @@
 #include "quac_app.h"
 #include "bitmask_gen.h"
 #include "config.h"
+#include "multi_transfer_manager.h"
 #include "pio_ltc264x.h"
 #include "waveform_settings.h"
 #include <hardware/gpio.h>
@@ -354,9 +355,8 @@ void write_dac_start(msg_t& msg)
         transfer_manager.mute_outputs(ao_blanking_mask, ao_blanking_state);
     // Start the channel.
     transfer_manager.start(uint32_t(app_regs.dac_start)); // Can start from core0.
-    // TODO: trigger the associated DO Tracking Channels.
-    // ...
-    // ...
+    // Update associated DO Tracking Channels.
+    update_do_tracking_state(app_regs.dac_start);
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -614,22 +614,33 @@ void reset_app()
 }
 
 
+void update_do_tracking_state(uint8_t ao_port_state)
+{
+    // Iterate through every DO's assigned AO channels.
+    uint64_t do_port_state = 0;
+    for (size_t i = 0; i < NUM_DOS; ++i)
+    {
+        // if any assigned AO channels are on, set the DO pin HIGH.
+        // if all assigned AO channels are now off, set the DO pin LOW.
+        bool do_state = ao_port_state & app_regs.ao_channels_assigned_to_do[i];
+        do_port_state |= do_state << (DO_PORT_BASE + i);
+    }
+    gpio_put_masked64(DO_PORT_MASK, do_port_state); // Set all DOs simultaneously.
+}
+
+
 void __not_in_flash_func(handle_end_of_transfer)()
 {
-    // Get most recent AO channels that cause the end of transfer.
-    //uint8_t finished_ao_transfers = transfer_manager.get_most_recent_finished_transfers();
+    // Handle DO Tracking.
     // Deduce the current AO state.
-    // FYI this ISR fires before the superloop, so we must create the latest
-    // state from the current state and most recently finished transfer.
+    // Because this ISR fires before the update loop, we must create the latest
+    // state from both the current state and most recently finished transfer.
+    // Get most recent AO channels mask that caused the end of transfer.
+    const uint8_t& finished_ao_transfers =
+        transfer_manager.get_latest_transfer_event().finished_channels_mask;
     uint8_t active_ao_channels = app_regs.dac_start; // current state
-    //active_ao_channels &= ~finished_ao_transfers; // most recent finished xfer.
-    //for (size_t i = 0; i < NUM_DOS; ++i)
-    //{
-    //    // if all AO channels are now off, set the DO pin LOW.
-    //}
-    gpio_init(DEBUG_LEDS[1]);
-    gpio_set_dir(DEBUG_LEDS[1], GPIO_OUT);
-    gpio_put(DEBUG_LEDS[1], 1);
+    active_ao_channels &= ~finished_ao_transfers; // mask off finished channels.
+    update_do_tracking_state(active_ao_channels);
 }
 
 
@@ -699,15 +710,14 @@ void __not_in_flash_func(handle_digital_input)()
     {
         ext_trigger_event_t trigger_event;
         transfer_manager.start(ao_ext_trigger_mask); // Can be started from core1.
-        // TODO: trigger the associated DO Tracking Channels.
-        // ...
-        // ...
         trigger_event.channel_start_mask = ao_ext_trigger_mask;
         trigger_event.timestamp = time_us_64();
         // Push Harp message for external trigger event.
         queue_try_add(&ext_trigger_event_queue, &trigger_event);
         // Update which dacs have started.
         app_regs.dac_start |= ao_ext_trigger_mask;
+        // Trigger any DO Tracking Channels.
+        update_do_tracking_state(app_regs.dac_start);
     }
     // Acknowledge the interrupt. Assume nothing else is setting these pins.
     // Clear the INTR[n] state since we dealt with all pin changes.
