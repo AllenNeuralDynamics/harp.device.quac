@@ -48,48 +48,49 @@ namespace AllenNeuralDynamics.Quac
             { 33, typeof(DOPortSet) },
             { 34, typeof(DOPortClear) },
             { 35, typeof(DIPortState) },
-            { 36, typeof(AOPortState) },
-            { 37, typeof(AOChannel0) },
-            { 38, typeof(AOChannel1) },
-            { 39, typeof(AOChannel2) },
-            { 40, typeof(AOChannel3) },
-            { 41, typeof(DacReady) },
-            { 42, typeof(DacStart) },
-            { 43, typeof(DacPause) },
-            { 44, typeof(DacAbort) },
-            { 45, typeof(DacFinished) },
-            { 46, typeof(PinModeDI0) },
-            { 47, typeof(PinModeDI1) },
-            { 48, typeof(PinModeDI2) },
-            { 49, typeof(PinModeDI3) },
-            { 50, typeof(AOChannelsAssignedToDI0) },
-            { 51, typeof(AOChannelsAssignedToDI1) },
-            { 52, typeof(AOChannelsAssignedToDI2) },
-            { 53, typeof(AOChannelsAssignedToDI3) },
-            { 54, typeof(DO0PinMode) },
-            { 55, typeof(DO1PinMode) },
-            { 56, typeof(DO2PinMode) },
-            { 57, typeof(DO3PinMode) },
-            { 58, typeof(AOChannelsAssignedToDO0) },
-            { 59, typeof(AOChannelsAssignedToDO1) },
-            { 60, typeof(AOChannelsAssignedToDO2) },
-            { 61, typeof(AOChannelsAssignedToDO3) },
-            { 62, typeof(ActivePlayer0) },
-            { 63, typeof(ActivePlayer1) },
-            { 64, typeof(ActivePlayer2) },
-            { 65, typeof(ActivePlayer3) },
-            { 66, typeof(FileSettings0) },
-            { 67, typeof(FileSettings1) },
-            { 68, typeof(FileSettings2) },
-            { 69, typeof(FileSettings3) },
-            { 70, typeof(SineSettings0) },
-            { 71, typeof(SineSettings1) },
-            { 72, typeof(SineSettings2) },
-            { 73, typeof(SineSettings3) },
-            { 74, typeof(TrapezoidSettings0) },
-            { 75, typeof(TrapezoidSettings1) },
-            { 76, typeof(TrapezoidSettings2) },
-            { 77, typeof(TrapezoidSettings3) }
+            { 36, typeof(DIPortInvert) },
+            { 37, typeof(AOPortState) },
+            { 38, typeof(AOChannel0) },
+            { 39, typeof(AOChannel1) },
+            { 40, typeof(AOChannel2) },
+            { 41, typeof(AOChannel3) },
+            { 42, typeof(DacReady) },
+            { 43, typeof(DacStart) },
+            { 44, typeof(DacPause) },
+            { 45, typeof(DacAbort) },
+            { 46, typeof(DacFinished) },
+            { 47, typeof(PinModeDI0) },
+            { 48, typeof(PinModeDI1) },
+            { 49, typeof(PinModeDI2) },
+            { 50, typeof(PinModeDI3) },
+            { 51, typeof(AOChannelsAssignedToDI0) },
+            { 52, typeof(AOChannelsAssignedToDI1) },
+            { 53, typeof(AOChannelsAssignedToDI2) },
+            { 54, typeof(AOChannelsAssignedToDI3) },
+            { 55, typeof(DO0PinMode) },
+            { 56, typeof(DO1PinMode) },
+            { 57, typeof(DO2PinMode) },
+            { 58, typeof(DO3PinMode) },
+            { 59, typeof(AOChannelsAssignedToDO0) },
+            { 60, typeof(AOChannelsAssignedToDO1) },
+            { 61, typeof(AOChannelsAssignedToDO2) },
+            { 62, typeof(AOChannelsAssignedToDO3) },
+            { 63, typeof(ActivePlayer0) },
+            { 64, typeof(ActivePlayer1) },
+            { 65, typeof(ActivePlayer2) },
+            { 66, typeof(ActivePlayer3) },
+            { 67, typeof(FileSettings0) },
+            { 68, typeof(FileSettings1) },
+            { 69, typeof(FileSettings2) },
+            { 70, typeof(FileSettings3) },
+            { 71, typeof(SineSettings0) },
+            { 72, typeof(SineSettings1) },
+            { 73, typeof(SineSettings2) },
+            { 74, typeof(SineSettings3) },
+            { 75, typeof(TrapezoidSettings0) },
+            { 76, typeof(TrapezoidSettings1) },
+            { 77, typeof(TrapezoidSettings2) },
+            { 78, typeof(TrapezoidSettings3) }
         };
 
         /// <summary>
@@ -310,6 +311,7 @@ namespace AllenNeuralDynamics.Quac
     /// <seealso cref="DOPortSet"/>
     /// <seealso cref="DOPortClear"/>
     /// <seealso cref="DIPortState"/>
+    /// <seealso cref="DIPortInvert"/>
     /// <seealso cref="AOPortState"/>
     /// <seealso cref="AOChannel0"/>
     /// <seealso cref="AOChannel1"/>
@@ -356,6 +358,7 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(DOPortSet))]
     [XmlInclude(typeof(DOPortClear))]
     [XmlInclude(typeof(DIPortState))]
+    [XmlInclude(typeof(DIPortInvert))]
     [XmlInclude(typeof(AOPortState))]
     [XmlInclude(typeof(AOChannel0))]
     [XmlInclude(typeof(AOChannel1))]
@@ -423,6 +426,7 @@ namespace AllenNeuralDynamics.Quac
     /// <seealso cref="DOPortSet"/>
     /// <seealso cref="DOPortClear"/>
     /// <seealso cref="DIPortState"/>
+    /// <seealso cref="DIPortInvert"/>
     /// <seealso cref="AOPortState"/>
     /// <seealso cref="AOChannel0"/>
     /// <seealso cref="AOChannel1"/>
@@ -469,6 +473,7 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(DOPortSet))]
     [XmlInclude(typeof(DOPortClear))]
     [XmlInclude(typeof(DIPortState))]
+    [XmlInclude(typeof(DIPortInvert))]
     [XmlInclude(typeof(AOPortState))]
     [XmlInclude(typeof(AOChannel0))]
     [XmlInclude(typeof(AOChannel1))]
@@ -515,6 +520,7 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(TimestampedDOPortSet))]
     [XmlInclude(typeof(TimestampedDOPortClear))]
     [XmlInclude(typeof(TimestampedDIPortState))]
+    [XmlInclude(typeof(TimestampedDIPortInvert))]
     [XmlInclude(typeof(TimestampedAOPortState))]
     [XmlInclude(typeof(TimestampedAOChannel0))]
     [XmlInclude(typeof(TimestampedAOChannel1))]
@@ -579,6 +585,7 @@ namespace AllenNeuralDynamics.Quac
     /// <seealso cref="DOPortSet"/>
     /// <seealso cref="DOPortClear"/>
     /// <seealso cref="DIPortState"/>
+    /// <seealso cref="DIPortInvert"/>
     /// <seealso cref="AOPortState"/>
     /// <seealso cref="AOChannel0"/>
     /// <seealso cref="AOChannel1"/>
@@ -625,6 +632,7 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(DOPortSet))]
     [XmlInclude(typeof(DOPortClear))]
     [XmlInclude(typeof(DIPortState))]
+    [XmlInclude(typeof(DIPortInvert))]
     [XmlInclude(typeof(AOPortState))]
     [XmlInclude(typeof(AOChannel0))]
     [XmlInclude(typeof(AOChannel1))]
@@ -1070,6 +1078,103 @@ namespace AllenNeuralDynamics.Quac
     }
 
     /// <summary>
+    /// Represents a register that bits set in this register will INVERT the downstream corresponding DI pin function, i.e: DI pins specified as an external trigger will trigger when the pin goes LOW. Note that downstream DI pin settings are unaware of this inversion setting and specified as normal.
+    /// </summary>
+    [Description("Bits set in this register will INVERT the downstream corresponding DI pin function, i.e: DI pins specified as an external trigger will trigger when the pin goes LOW. Note that downstream DI pin settings are unaware of this inversion setting and specified as normal.")]
+    public partial class DIPortInvert
+    {
+        /// <summary>
+        /// Represents the address of the <see cref="DIPortInvert"/> register. This field is constant.
+        /// </summary>
+        public const int Address = 36;
+
+        /// <summary>
+        /// Represents the payload type of the <see cref="DIPortInvert"/> register. This field is constant.
+        /// </summary>
+        public const PayloadType RegisterType = PayloadType.U8;
+
+        /// <summary>
+        /// Represents the length of the <see cref="DIPortInvert"/> register. This field is constant.
+        /// </summary>
+        public const int RegisterLength = 1;
+
+        /// <summary>
+        /// Returns the payload data for <see cref="DIPortInvert"/> register messages.
+        /// </summary>
+        /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
+        /// <returns>A value representing the message payload.</returns>
+        public static DigitalInputs GetPayload(HarpMessage message)
+        {
+            return (DigitalInputs)message.GetPayloadByte();
+        }
+
+        /// <summary>
+        /// Returns the timestamped payload data for <see cref="DIPortInvert"/> register messages.
+        /// </summary>
+        /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
+        /// <returns>A value representing the timestamped message payload.</returns>
+        public static Timestamped<DigitalInputs> GetTimestampedPayload(HarpMessage message)
+        {
+            var (payload, timestamp) = message.GetTimestampedPayloadByte();
+            return Timestamped.Create((DigitalInputs)payload, timestamp);
+        }
+
+        /// <summary>
+        /// Returns a Harp message for the <see cref="DIPortInvert"/> register.
+        /// </summary>
+        /// <param name="messageType">The type of the Harp message.</param>
+        /// <param name="value">The value to be stored in the message payload.</param>
+        /// <returns>
+        /// A <see cref="HarpMessage"/> object for the <see cref="DIPortInvert"/> register
+        /// with the specified message type and payload.
+        /// </returns>
+        public static HarpMessage FromPayload(MessageType messageType, DigitalInputs value)
+        {
+            return HarpMessage.FromByte(Address, messageType, (byte)value);
+        }
+
+        /// <summary>
+        /// Returns a timestamped Harp message for the <see cref="DIPortInvert"/>
+        /// register.
+        /// </summary>
+        /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+        /// <param name="messageType">The type of the Harp message.</param>
+        /// <param name="value">The value to be stored in the message payload.</param>
+        /// <returns>
+        /// A <see cref="HarpMessage"/> object for the <see cref="DIPortInvert"/> register
+        /// with the specified message type, timestamp, and payload.
+        /// </returns>
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, DigitalInputs value)
+        {
+            return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
+        }
+    }
+
+    /// <summary>
+    /// Provides methods for manipulating timestamped messages from the
+    /// DIPortInvert register.
+    /// </summary>
+    /// <seealso cref="DIPortInvert"/>
+    [Description("Filters and selects timestamped messages from the DIPortInvert register.")]
+    public partial class TimestampedDIPortInvert
+    {
+        /// <summary>
+        /// Represents the address of the <see cref="DIPortInvert"/> register. This field is constant.
+        /// </summary>
+        public const int Address = DIPortInvert.Address;
+
+        /// <summary>
+        /// Returns timestamped payload data for <see cref="DIPortInvert"/> register messages.
+        /// </summary>
+        /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
+        /// <returns>A value representing the timestamped message payload.</returns>
+        public static Timestamped<DigitalInputs> GetPayload(HarpMessage message)
+        {
+            return DIPortInvert.GetTimestampedPayload(message);
+        }
+    }
+
+    /// <summary>
     /// Represents a register that reflects and specifies the output voltage of all four analog output channels in volts, failing reads and writes unless every channel is idle since a channel playing a preset waveform owns its output value.
     /// </summary>
     [Description("Reflects and specifies the output voltage of all four analog output channels in volts, failing reads and writes unless every channel is idle since a channel playing a preset waveform owns its output value.")]
@@ -1078,7 +1183,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOPortState"/> register. This field is constant.
         /// </summary>
-        public const int Address = 36;
+        public const int Address = 37;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOPortState"/> register. This field is constant.
@@ -1196,7 +1301,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannel0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 37;
+        public const int Address = 38;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannel0"/> register. This field is constant.
@@ -1292,7 +1397,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannel1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 38;
+        public const int Address = 39;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannel1"/> register. This field is constant.
@@ -1388,7 +1493,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannel2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 39;
+        public const int Address = 40;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannel2"/> register. This field is constant.
@@ -1484,7 +1589,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannel3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 40;
+        public const int Address = 41;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannel3"/> register. This field is constant.
@@ -1580,7 +1685,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="DacReady"/> register. This field is constant.
         /// </summary>
-        public const int Address = 41;
+        public const int Address = 42;
 
         /// <summary>
         /// Represents the payload type of the <see cref="DacReady"/> register. This field is constant.
@@ -1677,7 +1782,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="DacStart"/> register. This field is constant.
         /// </summary>
-        public const int Address = 42;
+        public const int Address = 43;
 
         /// <summary>
         /// Represents the payload type of the <see cref="DacStart"/> register. This field is constant.
@@ -1774,7 +1879,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="DacPause"/> register. This field is constant.
         /// </summary>
-        public const int Address = 43;
+        public const int Address = 44;
 
         /// <summary>
         /// Represents the payload type of the <see cref="DacPause"/> register. This field is constant.
@@ -1871,7 +1976,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="DacAbort"/> register. This field is constant.
         /// </summary>
-        public const int Address = 44;
+        public const int Address = 45;
 
         /// <summary>
         /// Represents the payload type of the <see cref="DacAbort"/> register. This field is constant.
@@ -1968,7 +2073,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="DacFinished"/> register. This field is constant.
         /// </summary>
-        public const int Address = 45;
+        public const int Address = 46;
 
         /// <summary>
         /// Represents the payload type of the <see cref="DacFinished"/> register. This field is constant.
@@ -2065,7 +2170,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="PinModeDI0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 46;
+        public const int Address = 47;
 
         /// <summary>
         /// Represents the payload type of the <see cref="PinModeDI0"/> register. This field is constant.
@@ -2162,7 +2267,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="PinModeDI1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 47;
+        public const int Address = 48;
 
         /// <summary>
         /// Represents the payload type of the <see cref="PinModeDI1"/> register. This field is constant.
@@ -2259,7 +2364,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="PinModeDI2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 48;
+        public const int Address = 49;
 
         /// <summary>
         /// Represents the payload type of the <see cref="PinModeDI2"/> register. This field is constant.
@@ -2356,7 +2461,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="PinModeDI3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 49;
+        public const int Address = 50;
 
         /// <summary>
         /// Represents the payload type of the <see cref="PinModeDI3"/> register. This field is constant.
@@ -2453,7 +2558,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDI0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 50;
+        public const int Address = 51;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDI0"/> register. This field is constant.
@@ -2550,7 +2655,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDI1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 51;
+        public const int Address = 52;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDI1"/> register. This field is constant.
@@ -2647,7 +2752,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDI2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 52;
+        public const int Address = 53;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDI2"/> register. This field is constant.
@@ -2744,7 +2849,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDI3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 53;
+        public const int Address = 54;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDI3"/> register. This field is constant.
@@ -2843,7 +2948,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="DO0PinMode"/> register. This field is constant.
         /// </summary>
-        public const int Address = 54;
+        public const int Address = 55;
 
         /// <summary>
         /// Represents the payload type of the <see cref="DO0PinMode"/> register. This field is constant.
@@ -2942,7 +3047,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="DO1PinMode"/> register. This field is constant.
         /// </summary>
-        public const int Address = 55;
+        public const int Address = 56;
 
         /// <summary>
         /// Represents the payload type of the <see cref="DO1PinMode"/> register. This field is constant.
@@ -3041,7 +3146,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="DO2PinMode"/> register. This field is constant.
         /// </summary>
-        public const int Address = 56;
+        public const int Address = 57;
 
         /// <summary>
         /// Represents the payload type of the <see cref="DO2PinMode"/> register. This field is constant.
@@ -3140,7 +3245,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="DO3PinMode"/> register. This field is constant.
         /// </summary>
-        public const int Address = 57;
+        public const int Address = 58;
 
         /// <summary>
         /// Represents the payload type of the <see cref="DO3PinMode"/> register. This field is constant.
@@ -3237,7 +3342,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDO0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 58;
+        public const int Address = 59;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDO0"/> register. This field is constant.
@@ -3334,7 +3439,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDO1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 59;
+        public const int Address = 60;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDO1"/> register. This field is constant.
@@ -3431,7 +3536,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDO2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 60;
+        public const int Address = 61;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDO2"/> register. This field is constant.
@@ -3528,7 +3633,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDO3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 61;
+        public const int Address = 62;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDO3"/> register. This field is constant.
@@ -3625,7 +3730,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="ActivePlayer0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 62;
+        public const int Address = 63;
 
         /// <summary>
         /// Represents the payload type of the <see cref="ActivePlayer0"/> register. This field is constant.
@@ -3722,7 +3827,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="ActivePlayer1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 63;
+        public const int Address = 64;
 
         /// <summary>
         /// Represents the payload type of the <see cref="ActivePlayer1"/> register. This field is constant.
@@ -3819,7 +3924,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="ActivePlayer2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 64;
+        public const int Address = 65;
 
         /// <summary>
         /// Represents the payload type of the <see cref="ActivePlayer2"/> register. This field is constant.
@@ -3916,7 +4021,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="ActivePlayer3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 65;
+        public const int Address = 66;
 
         /// <summary>
         /// Represents the payload type of the <see cref="ActivePlayer3"/> register. This field is constant.
@@ -4013,7 +4118,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="FileSettings0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 66;
+        public const int Address = 67;
 
         /// <summary>
         /// Represents the payload type of the <see cref="FileSettings0"/> register. This field is constant.
@@ -4131,7 +4236,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="FileSettings1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 67;
+        public const int Address = 68;
 
         /// <summary>
         /// Represents the payload type of the <see cref="FileSettings1"/> register. This field is constant.
@@ -4249,7 +4354,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="FileSettings2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 68;
+        public const int Address = 69;
 
         /// <summary>
         /// Represents the payload type of the <see cref="FileSettings2"/> register. This field is constant.
@@ -4367,7 +4472,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="FileSettings3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 69;
+        public const int Address = 70;
 
         /// <summary>
         /// Represents the payload type of the <see cref="FileSettings3"/> register. This field is constant.
@@ -4485,7 +4590,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="SineSettings0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 70;
+        public const int Address = 71;
 
         /// <summary>
         /// Represents the payload type of the <see cref="SineSettings0"/> register. This field is constant.
@@ -4609,7 +4714,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="SineSettings1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 71;
+        public const int Address = 72;
 
         /// <summary>
         /// Represents the payload type of the <see cref="SineSettings1"/> register. This field is constant.
@@ -4733,7 +4838,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="SineSettings2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 72;
+        public const int Address = 73;
 
         /// <summary>
         /// Represents the payload type of the <see cref="SineSettings2"/> register. This field is constant.
@@ -4857,7 +4962,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="SineSettings3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 73;
+        public const int Address = 74;
 
         /// <summary>
         /// Represents the payload type of the <see cref="SineSettings3"/> register. This field is constant.
@@ -4981,7 +5086,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="TrapezoidSettings0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 74;
+        public const int Address = 75;
 
         /// <summary>
         /// Represents the payload type of the <see cref="TrapezoidSettings0"/> register. This field is constant.
@@ -5111,7 +5216,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="TrapezoidSettings1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 75;
+        public const int Address = 76;
 
         /// <summary>
         /// Represents the payload type of the <see cref="TrapezoidSettings1"/> register. This field is constant.
@@ -5241,7 +5346,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="TrapezoidSettings2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 76;
+        public const int Address = 77;
 
         /// <summary>
         /// Represents the payload type of the <see cref="TrapezoidSettings2"/> register. This field is constant.
@@ -5371,7 +5476,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="TrapezoidSettings3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 77;
+        public const int Address = 78;
 
         /// <summary>
         /// Represents the payload type of the <see cref="TrapezoidSettings3"/> register. This field is constant.
@@ -5500,6 +5605,7 @@ namespace AllenNeuralDynamics.Quac
     /// <seealso cref="CreateDOPortSetPayload"/>
     /// <seealso cref="CreateDOPortClearPayload"/>
     /// <seealso cref="CreateDIPortStatePayload"/>
+    /// <seealso cref="CreateDIPortInvertPayload"/>
     /// <seealso cref="CreateAOPortStatePayload"/>
     /// <seealso cref="CreateAOChannel0Payload"/>
     /// <seealso cref="CreateAOChannel1Payload"/>
@@ -5546,6 +5652,7 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(CreateDOPortSetPayload))]
     [XmlInclude(typeof(CreateDOPortClearPayload))]
     [XmlInclude(typeof(CreateDIPortStatePayload))]
+    [XmlInclude(typeof(CreateDIPortInvertPayload))]
     [XmlInclude(typeof(CreateAOPortStatePayload))]
     [XmlInclude(typeof(CreateAOChannel0Payload))]
     [XmlInclude(typeof(CreateAOChannel1Payload))]
@@ -5592,6 +5699,7 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(CreateTimestampedDOPortSetPayload))]
     [XmlInclude(typeof(CreateTimestampedDOPortClearPayload))]
     [XmlInclude(typeof(CreateTimestampedDIPortStatePayload))]
+    [XmlInclude(typeof(CreateTimestampedDIPortInvertPayload))]
     [XmlInclude(typeof(CreateTimestampedAOPortStatePayload))]
     [XmlInclude(typeof(CreateTimestampedAOChannel0Payload))]
     [XmlInclude(typeof(CreateTimestampedAOChannel1Payload))]
@@ -5861,6 +5969,60 @@ namespace AllenNeuralDynamics.Quac
         public HarpMessage GetMessage(double timestamp, MessageType messageType)
         {
             return AllenNeuralDynamics.Quac.DIPortState.FromPayload(timestamp, messageType, GetPayload());
+        }
+    }
+
+    /// <summary>
+    /// Represents an operator that creates a message payload
+    /// that bits set in this register will INVERT the downstream corresponding DI pin function, i.e: DI pins specified as an external trigger will trigger when the pin goes LOW. Note that downstream DI pin settings are unaware of this inversion setting and specified as normal.
+    /// </summary>
+    [DisplayName("DIPortInvertPayload")]
+    [Description("Creates a message payload that bits set in this register will INVERT the downstream corresponding DI pin function, i.e: DI pins specified as an external trigger will trigger when the pin goes LOW. Note that downstream DI pin settings are unaware of this inversion setting and specified as normal.")]
+    public partial class CreateDIPortInvertPayload
+    {
+        /// <summary>
+        /// Gets or sets the value that bits set in this register will INVERT the downstream corresponding DI pin function, i.e: DI pins specified as an external trigger will trigger when the pin goes LOW. Note that downstream DI pin settings are unaware of this inversion setting and specified as normal.
+        /// </summary>
+        [Description("The value that bits set in this register will INVERT the downstream corresponding DI pin function, i.e: DI pins specified as an external trigger will trigger when the pin goes LOW. Note that downstream DI pin settings are unaware of this inversion setting and specified as normal.")]
+        public DigitalInputs DIPortInvert { get; set; }
+
+        /// <summary>
+        /// Creates a message payload for the DIPortInvert register.
+        /// </summary>
+        /// <returns>The created message payload value.</returns>
+        public DigitalInputs GetPayload()
+        {
+            return DIPortInvert;
+        }
+
+        /// <summary>
+        /// Creates a message that bits set in this register will INVERT the downstream corresponding DI pin function, i.e: DI pins specified as an external trigger will trigger when the pin goes LOW. Note that downstream DI pin settings are unaware of this inversion setting and specified as normal.
+        /// </summary>
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new message for the DIPortInvert register.</returns>
+        public HarpMessage GetMessage(MessageType messageType)
+        {
+            return AllenNeuralDynamics.Quac.DIPortInvert.FromPayload(messageType, GetPayload());
+        }
+    }
+
+    /// <summary>
+    /// Represents an operator that creates a timestamped message payload
+    /// that bits set in this register will INVERT the downstream corresponding DI pin function, i.e: DI pins specified as an external trigger will trigger when the pin goes LOW. Note that downstream DI pin settings are unaware of this inversion setting and specified as normal.
+    /// </summary>
+    [DisplayName("TimestampedDIPortInvertPayload")]
+    [Description("Creates a timestamped message payload that bits set in this register will INVERT the downstream corresponding DI pin function, i.e: DI pins specified as an external trigger will trigger when the pin goes LOW. Note that downstream DI pin settings are unaware of this inversion setting and specified as normal.")]
+    public partial class CreateTimestampedDIPortInvertPayload : CreateDIPortInvertPayload
+    {
+        /// <summary>
+        /// Creates a timestamped message that bits set in this register will INVERT the downstream corresponding DI pin function, i.e: DI pins specified as an external trigger will trigger when the pin goes LOW. Note that downstream DI pin settings are unaware of this inversion setting and specified as normal.
+        /// </summary>
+        /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new timestamped message for the DIPortInvert register.</returns>
+        public HarpMessage GetMessage(double timestamp, MessageType messageType)
+        {
+            return AllenNeuralDynamics.Quac.DIPortInvert.FromPayload(timestamp, messageType, GetPayload());
         }
     }
 

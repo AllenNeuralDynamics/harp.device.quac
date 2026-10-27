@@ -1,10 +1,13 @@
 #include "quac_app.h"
 #include "bitmask_gen.h"
 #include "config.h"
+#include "harp_message.h"
 #include "multi_transfer_manager.h"
 #include "pio_ltc264x.h"
 #include "waveform_settings.h"
 #include <hardware/gpio.h>
+
+using std::to_underlying;
 
 app_regs_t __not_in_flash("app_regs") app_regs;
 queue_t __not_in_flash("ext_trigger_event_queue") ext_trigger_event_queue;
@@ -74,13 +77,13 @@ RegSpec app_reg_specs[]
         HarpCore::read_reg_generic, write_any_do_pin_mode),
 
     RegSpec::U8(&app_regs.ao_channels_assigned_to_do0,
-        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
+        HarpCore::read_reg_generic, HarpCore::write_reg_generic),
     RegSpec::U8(&app_regs.ao_channels_assigned_to_do1,
-        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
+        HarpCore::read_reg_generic, HarpCore::write_reg_generic),
     RegSpec::U8(&app_regs.ao_channels_assigned_to_do2,
-        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
+        HarpCore::read_reg_generic, HarpCore::write_reg_generic),
     RegSpec::U8(&app_regs.ao_channels_assigned_to_do3,
-        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
+        HarpCore::read_reg_generic, HarpCore::write_reg_generic),
 
 
     RegSpec::U8(&app_regs.active_players[0],
@@ -352,7 +355,7 @@ void write_dac_start(msg_t& msg)
     // the blanking state before starting the AO channel.
     for (size_t i = 0; i < NUM_DIS; ++i)
     {
-        if (app_regs.di_pin_modes[i] != BLANKING)
+        if (app_regs.di_pin_modes[i] != to_underlying(DIPinMode::BLANKING))
             continue;
         // Only apply blanking settings to AO channels triggered.
         if (!(app_regs.ao_channels_assigned_to_di[i] & app_regs.dac_start))
@@ -406,13 +409,19 @@ void write_assign_ao_channels_to_di_pin(msg_t& msg)
 
 void write_any_do_pin_mode(msg_t &msg)
 {
-
-}
-
-
-void write_assign_ao_channels_to_do_pin(msg_t& msg)
-{
-
+    // Deduce DO index with pointer arithmetic.
+    const RegSpec& specs = HarpCore::reg_address_to_spec(msg.header.address);
+    size_t do_pin = ((uint8_t*)specs.base_ptr - app_regs.do_pin_modes);
+    uint8_t old_do_pin_mode = app_regs.do_pin_modes[do_pin];
+    HarpCore::copy_msg_payload_to_register(msg);
+    // Enum Bounds check.
+    if (app_regs.do_pin_modes[do_pin] > to_underlying(DOPinMode::TRACKING))
+    {
+        app_regs.do_pin_modes[do_pin] = old_do_pin_mode;
+        HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+        return;
+    }
+    HarpCore::write_reg_generic(msg);
 }
 
 
@@ -590,10 +599,16 @@ void reset_app()
     app_regs.dac_pause = 0;
     // Reset Digital Input Pin Function Settings.
     // Default: DI[i] triggers AO[i] in external trigger mode.
-    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    for (size_t i = 0; i < NUM_DIS; ++i)
     {
-        app_regs.di_pin_modes[i] = EXTERNAL_TRIGGER;
+        app_regs.di_pin_modes[i] = to_underlying(DIPinMode::EXTERNAL_TRIGGER);
         app_regs.ao_channels_assigned_to_di[i] = (1u << i);
+    }
+    // Reset Digital Output Pin Function Settings
+    for (size_t i = 0; i < NUM_DOS; ++i)
+    {
+        app_regs.do_pin_modes[i] = to_underlying(DOPinMode::OUTPUT);
+        app_regs.ao_channels_assigned_to_do[i] = 0;
     }
     // Reset all Player settings to defaults.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
@@ -682,7 +697,7 @@ void __not_in_flash_func(handle_digital_input)()
     uint32_t ao_ext_trigger_mask = 0;
     for (size_t i = 0; i < NUM_DIS; ++i)
     {
-        if (app_regs.di_pin_modes[i] != EXTERNAL_TRIGGER)
+        if (app_regs.di_pin_modes[i] != to_underlying(DIPinMode::EXTERNAL_TRIGGER))
             continue;
         if ((di_port_state >> i) & 1u)
             ao_ext_trigger_mask |= app_regs.ao_channels_assigned_to_di[i];
@@ -701,7 +716,7 @@ void __not_in_flash_func(handle_digital_input)()
     uint32_t ao_blanking_state = 0;
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (app_regs.di_pin_modes[i] != BLANKING)
+        if (app_regs.di_pin_modes[i] != to_underlying(DIPinMode::BLANKING))
             continue;
         // Only apply blanking settings for the pins that actually changed OR
         // pins that are about to be externally triggered. i.e:
