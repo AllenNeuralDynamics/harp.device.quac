@@ -164,6 +164,8 @@ void write_assign_ao_channels_to_di_pin(msg_t& msg);
 
 void write_any_do_pin_mode(msg_t& msg);
 
+void write_assign_ao_channels_to_do_pin(msg_t& msg);
+
 void write_any_channel_active_player(msg_t& msg);
 
 void select_player(size_t channel, player_t player);
@@ -228,6 +230,10 @@ void handle_end_of_transfer();
 void handle_digital_input();
 
 
+/**
+ * \brief write to registers related to DI pin functionality and ensure settings
+ * will be valid.
+ */
 template <typename DI_SETTING_TYPE>
 void write_di_setting(msg_t& msg, DI_SETTING_TYPE* base_address)
 {

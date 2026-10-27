@@ -77,13 +77,13 @@ RegSpec app_reg_specs[]
         HarpCore::read_reg_generic, write_any_do_pin_mode),
 
     RegSpec::U8(&app_regs.ao_channels_assigned_to_do0,
-        HarpCore::read_reg_generic, HarpCore::write_reg_generic),
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
     RegSpec::U8(&app_regs.ao_channels_assigned_to_do1,
-        HarpCore::read_reg_generic, HarpCore::write_reg_generic),
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
     RegSpec::U8(&app_regs.ao_channels_assigned_to_do2,
-        HarpCore::read_reg_generic, HarpCore::write_reg_generic),
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
     RegSpec::U8(&app_regs.ao_channels_assigned_to_do3,
-        HarpCore::read_reg_generic, HarpCore::write_reg_generic),
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
 
 
     RegSpec::U8(&app_regs.active_players[0],
@@ -425,6 +425,30 @@ void write_any_do_pin_mode(msg_t &msg)
 }
 
 
+void write_assign_ao_channels_to_do_pin(msg_t &msg)
+{
+    // Deduce DO index with pointer arithmetic.
+    const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
+    size_t do_index = ((uint8_t*)spec.base_ptr - app_regs.ao_channels_assigned_to_do);
+    // Error if we try to change the DO setting while any of its
+    // assigned analog outputs are busy playing.
+    for (size_t ao_chan = 0; ao_chan < NUM_CHANNELS; ++ao_chan)
+    {
+        // Skip checking unassigned analog output channels.
+        if (!((app_regs.ao_channels_assigned_to_di[do_index] >> ao_chan) & 1u))
+            continue;
+        // Check if this analog output channel is busy.
+        if (bufs[ao_chan].is_transferring())
+        {
+            if (!HarpCore::is_muted())
+                HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+            return;
+        }
+    }
+    HarpCore::write_reg_generic(msg);
+}
+
+
 void write_any_channel_active_player(msg_t &msg)
 {
     // Convert address to output channel with pointer arithmetic.
@@ -658,7 +682,7 @@ void update_do_tracking_state(uint8_t ao_port_state)
         // if any assigned AO channels are on, set the DO pin HIGH.
         // if all assigned AO channels are now off, set the DO pin LOW.
         bool do_state = ao_port_state & app_regs.ao_channels_assigned_to_do[i];
-        do_port_state |= do_state << (DO_PORT_BASE + i);
+        do_port_state |= uint64_t{do_state} << (DO_PORT_BASE + i);
     }
     gpio_put_masked64(DO_PORT_MASK, do_port_state); // Set all DOs simultaneously.
 }
