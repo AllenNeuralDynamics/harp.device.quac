@@ -179,22 +179,22 @@ registers:
     maskType: DOPinMode
     defaultValue: 0
     description: >
-      Digital Output 0's pin function assignment ("None" or "Tracking")
+      Digital Output 0's pin function assignment.
   DO1PinMode:
     <<: *doPinMode
     address: 56
     description: >
-      Digital Output 1's pin function assignment ("None" or "Tracking")
+      Digital Output 1's pin function assignment.
   DO2PinMode:
     <<: *doPinMode
     address: 57
     description: >
-      Digital Output 2's pin function assignment ("None" or "Tracking")
+      Digital Output 2's pin function assignment.
   DO3PinMode:
     <<: *doPinMode
     address: 58
     description: >
-      Digital Output 3's pin function assignment ("None" or "Tracking")
+      Digital Output 3's pin function assignment.
 
   AOChannelsAssignedToDO0: &AOChannelAssignmentToDO
     address: 59
