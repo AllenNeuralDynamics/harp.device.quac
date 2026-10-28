@@ -6,12 +6,14 @@
 #include "pio_ltc264x.h"
 #include "waveform_settings.h"
 #include <hardware/gpio.h>
+#include <hardware/regs/intctrl.h>
+#include <hardware/timer.h>
+#include <pico/platform/sections.h>
 
 using std::to_underlying;
 
 app_regs_t __not_in_flash("app_regs") app_regs;
 queue_t __not_in_flash("ext_trigger_event_queue") ext_trigger_event_queue;
-
 
 RegSpec app_reg_specs[]
 {
@@ -374,9 +376,9 @@ void write_dac_start(msg_t& msg)
     if (ao_blanking_mask)
         transfer_manager.mute_outputs(ao_blanking_mask, ao_blanking_state);
     // Start the channel.
+    uint32_t newly_started_mask = uint32_t(app_regs.dac_start) & ~started_dacs;
+    enable_ao_channel_start_to_trigger_isr(newly_started_mask);
     transfer_manager.start(uint32_t(app_regs.dac_start)); // Can start from core0.
-    // Update associated DO Tracking Channels.
-    update_do_tracking_state(app_regs.dac_start);
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -394,6 +396,9 @@ void write_dac_abort(msg_t& msg)
     transfer_manager.abort(app_regs.dac_abort);
     // Update DacStart Register state to reflect aborted state.
     app_regs.dac_start &= ~app_regs.dac_abort;
+    // Cancel any not-yet-observed DO Tracking arm for aborted channels so a
+    // stale one-shot CS interrupt can't mis-fire a DO update later.
+    disable_ao_channel_to_trigger_isr(app_regs.dac_abort);
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -663,6 +668,7 @@ void reset_app()
     multicore_reset_core1();
     (void)multicore_fifo_pop_blocking(); // Wait until core1 is ready.
     multicore_launch_core1(core1main);
+    disable_ao_channel_to_trigger_isr(nwide_mask<uint32_t>(NUM_CHANNELS));
     // Setup External Trigger Callback
     // Enable all External Trigger GPIOS to trigger the callback.
     irq_set_exclusive_handler(IO_IRQ_BANK0, handle_digital_input);
@@ -673,18 +679,46 @@ void reset_app()
 }
 
 
-void update_do_tracking_state(uint8_t ao_port_state)
+void update_do_tracking_state(uint8_t changed_ao_channels, uint8_t ao_port_state)
 {
     // Iterate through every DO's assigned AO channels.
     uint64_t do_port_state = 0;
+    uint64_t final_do_port_mask = 0;//DO_PORT_MASK;
     for (size_t i = 0; i < NUM_DOS; ++i)
     {
         // if any assigned AO channels are on, set the DO pin HIGH.
         // if all assigned AO channels are now off, set the DO pin LOW.
         bool do_state = ao_port_state & app_regs.ao_channels_assigned_to_do[i];
+        // Only apply the change if the AO channel changed.
+        if (changed_ao_channels & app_regs.ao_channels_assigned_to_do[i])
+            final_do_port_mask |= uint64_t{1u} << (DO_PORT_BASE + i);
         do_port_state |= uint64_t{do_state} << (DO_PORT_BASE + i);
     }
-    gpio_put_masked64(DO_PORT_MASK, do_port_state); // Set all DOs simultaneously.
+    gpio_put_masked64(final_do_port_mask, do_port_state); // Set all DOs simultaneously.
+}
+
+
+void enable_ao_channel_start_to_trigger_isr(uint32_t ao_channels_mask)
+{
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        if ((ao_channels_mask >> i) & 1u)
+            gpio_set_irq_enabled(DAC_PINS[i].cs, GPIO_IRQ_EDGE_RISE, true);
+    }
+}
+
+
+void disable_ao_channel_to_trigger_isr(uint32_t channel_mask)
+{
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        if (!((channel_mask >> i) & 1u))
+            continue;
+        uint32_t cs_pin = DAC_PINS[i].cs;
+        gpio_set_irq_enabled(cs_pin, GPIO_IRQ_EDGE_RISE, false);
+        // Acknowledge in case the edge already latched.
+        gpio_acknowledge_irq(cs_pin, GPIO_IRQ_EDGE_RISE);
+    }
 }
 
 
@@ -697,9 +731,9 @@ void __not_in_flash_func(handle_end_of_transfer)()
     // Get most recent AO channels mask that caused the end of transfer.
     const uint8_t& finished_ao_transfers =
         transfer_manager.get_latest_transfer_event().finished_channels_mask;
-    uint8_t active_ao_channels = app_regs.dac_start; // current state
-    active_ao_channels &= ~finished_ao_transfers; // mask off finished channels.
-    update_do_tracking_state(active_ao_channels);
+    uint8_t current_ao_port_state = app_regs.dac_start; // current state
+    current_ao_port_state &= ~finished_ao_transfers; // mask off finished channels.
+    update_do_tracking_state(finished_ao_transfers, current_ao_port_state);
 }
 
 
@@ -768,6 +802,7 @@ void __not_in_flash_func(handle_digital_input)()
     if (ao_ext_trigger_mask)
     {
         ext_trigger_event_t trigger_event;
+        enable_ao_channel_start_to_trigger_isr(ao_ext_trigger_mask);
         transfer_manager.start(ao_ext_trigger_mask); // Can be started from core1.
         trigger_event.channel_start_mask = ao_ext_trigger_mask;
         trigger_event.timestamp = time_us_64();
@@ -775,10 +810,28 @@ void __not_in_flash_func(handle_digital_input)()
         queue_try_add(&ext_trigger_event_queue, &trigger_event);
         // Update which dacs have started.
         app_regs.dac_start |= ao_ext_trigger_mask;
-        // Trigger any DO Tracking Channels.
-        update_do_tracking_state(app_regs.dac_start);
     }
-    // Acknowledge the interrupt. Assume nothing else is setting these pins.
+
+    // Handle DO Tracking for AO channels awaiting their first DAC update.
+    // Each channel's CS pin will rise when the first setting has been written.
+
+    // Deduce which AO channels just started and clear the event mask so we
+    // don't trigger on subsequent CS pin rising edges.
+    uint32_t started_ao_channels = 0;
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        const uint32_t& cs_pin = DAC_PINS[i].cs;
+        if (gpio_get_irq_event_mask(cs_pin) & GPIO_IRQ_EDGE_RISE)
+        {
+            started_ao_channels |= (1u << i);
+            gpio_acknowledge_irq(cs_pin, GPIO_IRQ_EDGE_RISE);
+            gpio_set_irq_enabled(cs_pin, GPIO_IRQ_EDGE_RISE, false);
+        }
+    }
+    if (started_ao_channels)
+        update_do_tracking_state(started_ao_channels, app_regs.dac_start);
+
+    // Acknowledge interrupts on DI pins. Assume nothing else is setting these pins.
     // Clear the INTR[n] state since we dealt with all pin changes.
     // Clear by "writing a 1" to the set bits.
     io_bank0_hw->intr[DI_PORT_BASE >> 3] = 0xFFFFFFFF; // >> 3: floor-divide by 8

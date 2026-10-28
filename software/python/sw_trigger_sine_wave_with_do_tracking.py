@@ -68,7 +68,7 @@ with serial.open_device(quac, port=COM_PORT) as device:
             frequency=frequency_hz,
             amplitude=amplitude_volts,
             vertical_shift=vertical_shift_volts,
-            normalized_phase_shift=normalized_phase_shift
+            normalized_phase_shift=normalized_phase_shift + (0.5)
         )
         # Apply settings.
         reply = device.write(SINE_SETTINGS[channel], settings)

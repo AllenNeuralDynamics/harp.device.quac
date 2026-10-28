@@ -6,6 +6,7 @@
 #include <cstring> // for memcpy
 #include "pico/util/queue.h"
 #include "pico/multicore.h"
+#include "hardware/timer.h"
 #include "config.h"
 #include "core1_file_player.h"
 #include "harp_core.h"
@@ -209,13 +210,18 @@ void write_any_waveform_data(msg_t& msg);
 
 bool player_is_ready(size_t channel, player_t player_type);
 
-inline void update_do_tracking_state(uint8_t ao_port_state);
+inline void update_do_tracking_state(uint8_t changed_ao_channels, uint8_t ao_port_state);
+
+void enable_ao_channel_start_to_trigger_isr(uint32_t ao_channel_mask);
+
+void disable_ao_channel_to_trigger_isr(uint32_t channel_mask);
 
 void reset_app();
 void update_app();
 
 
 /// Callbacks
+
 /**
  * \brief ISR that triggers when any AO channel finishes. This fn should handle
  * any behavior outside the scope of MultiTransferManager.

@@ -3,6 +3,7 @@
 #include <array>
 #include <cstdint>
 #include "hardware/regs/intctrl.h" // for DMA_IRQ_0
+#include "hardware/timer.h"
 #include "core_registers.h" // for semver_t
 #include "sd_card.h"  // from no-os* sd card library.
 #include "pio_ltc264x.h"
@@ -51,7 +52,6 @@ inline constexpr size_t READ_BUF_SIZE = SD_CHUNK_SIZE_BYTES/sizeof(T);
 #define DAC_PIO (pio1)
 #define SD_PIO (pio0)
 
-// Double Buffers must be accessible by both cores.
 extern std::array<PIO_LTC264x, NUM_CHANNELS> dacs;
 
 static_assert(SD_CHUNK_SIZE_BYTES % 512 == 0,
