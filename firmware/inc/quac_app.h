@@ -1,10 +1,12 @@
 #ifndef QUAC_H
 #define QUAC_H
+#include <utility>
 #include <array>
 #include <cstdint>
 #include <cstring> // for memcpy
 #include "pico/util/queue.h"
 #include "pico/multicore.h"
+#include "hardware/timer.h"
 #include "config.h"
 #include "core1_file_player.h"
 #include "harp_core.h"
@@ -33,8 +35,8 @@ extern MultiTransferManager<T, READ_BUF_SIZE, NUM_CHANNELS> transfer_manager;
 extern RegSpec app_reg_specs[];
 
 extern const size_t APP_REG_COUNT;
-inline constexpr size_t DAC_START_ADDRESS = HarpCore::APP_REG_START_ADDRESS + 10;
-inline constexpr size_t DAC_FINISHED_ADDRESS = HarpCore::APP_REG_START_ADDRESS + 13;
+inline constexpr size_t DAC_START_ADDRESS = HarpCore::APP_REG_START_ADDRESS + 11;
+inline constexpr size_t DAC_FINISHED_ADDRESS = HarpCore::APP_REG_START_ADDRESS + 14;
 
 enum player_t: uint8_t
 {
@@ -43,11 +45,17 @@ enum player_t: uint8_t
     trapezoid = 2
 };
 
-enum di_pin_mode_t: uint8_t
+enum class DIPinMode: uint8_t
 {
-    NONE = 0,
+    INPUT = 0,
     EXTERNAL_TRIGGER = 1,
     BLANKING = 2
+};
+
+enum class DOPinMode: uint8_t
+{
+    OUTPUT = 0,
+    TRACKING = 1
 };
 
 struct ext_trigger_event_t
@@ -66,6 +74,7 @@ struct app_regs_t
 
     // Triggers.
     uint8_t di_port_state;
+    uint8_t di_port_invert;
 
     float analog_output_port_state[NUM_CHANNELS];
     float& analog_output_channel_0  = analog_output_port_state[0];
@@ -95,8 +104,20 @@ struct app_regs_t
     uint8_t& ao_channels_assigned_to_di2 = ao_channels_assigned_to_di[2];
     uint8_t& ao_channels_assigned_to_di3 = ao_channels_assigned_to_di[3];
 
-    // External blanking masks per-channel. Assign channel[i] to one or more blanking pins.
-    uint8_t channel_blanking_pins[NUM_CHANNELS];
+    // DAC DO Pin Modes
+    uint8_t do_pin_modes[NUM_CHANNELS];
+    uint8_t& do0_pin_mode = do_pin_modes[0];
+    uint8_t& do1_pin_mode = do_pin_modes[1];
+    uint8_t& do2_pin_mode = do_pin_modes[2];
+    uint8_t& do3_pin_mode = do_pin_modes[3];
+
+    // DO0-3 pin mapping to one or more analog output channels.
+    // i.e: Which analog outputs are assigned to digital inputs 0-3.
+    uint8_t ao_channels_assigned_to_do[NUM_CHANNELS];
+    uint8_t& ao_channels_assigned_to_do0 = ao_channels_assigned_to_do[0];
+    uint8_t& ao_channels_assigned_to_do1 = ao_channels_assigned_to_do[1];
+    uint8_t& ao_channels_assigned_to_do2 = ao_channels_assigned_to_do[2];
+    uint8_t& ao_channels_assigned_to_do3 = ao_channels_assigned_to_do[3];
 
     // Which player is active per channel.
     uint8_t active_players[NUM_CHANNELS];
@@ -122,6 +143,8 @@ void write_digital_output_port_clear(msg_t& msg);
 
 void read_di_port_state(uint8_t address);
 
+void write_di_port_invert(msg_t& msg);
+
 void read_analog_output_port_state(uint8_t address);
 void write_analog_output_port_state(msg_t& msg);
 
@@ -138,7 +161,11 @@ void write_dac_abort(msg_t& msg);
 
 void write_any_di_pin_mode(msg_t& msg);
 
-void write_map_any_di_pin_to_ao_channels(msg_t& msg);
+void write_assign_ao_channels_to_di_pin(msg_t& msg);
+
+void write_any_do_pin_mode(msg_t& msg);
+
+void write_assign_ao_channels_to_do_pin(msg_t& msg);
 
 void write_any_channel_active_player(msg_t& msg);
 
@@ -181,23 +208,42 @@ void read_any_waveform_hash(uint8_t address);
 
 void write_any_waveform_data(msg_t& msg);
 
-//void apply_blanking_settings_to_ao_channel(uint32_t ao_channel);
-
-void reset_app();
-
-
 bool player_is_ready(size_t channel, player_t player_type);
 
+inline void update_do_tracking_state(uint8_t changed_ao_channels, uint8_t ao_port_state);
+
+void enable_ao_channel_start_to_trigger_isr(uint32_t ao_channel_mask);
+
+void disable_ao_channel_to_trigger_isr(uint32_t channel_mask);
+
+void reset_app();
 void update_app();
 
 
 /// Callbacks
+
+/**
+ * \brief ISR that triggers when any AO channel finishes. This fn should handle
+ * any behavior outside the scope of MultiTransferManager.
+ * \details because this function is called from inside MultiTransferManager's
+ * interrupt, this ISR can ignore acknowledging the interrupt.
+ */
+void handle_end_of_transfer();
+
+/**
+ * \brief
+ */
 void handle_digital_input();
 
 
+/**
+ * \brief write to registers related to DI pin functionality and ensure settings
+ * will be valid.
+ */
 template <typename DI_SETTING_TYPE>
 void write_di_setting(msg_t& msg, DI_SETTING_TYPE* base_address)
 {
+    using std::to_underlying;
     // Convert address to output channel with pointer arithmetic.
     const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
     size_t di_index = ((DI_SETTING_TYPE*)spec.base_ptr - base_address);
@@ -228,11 +274,11 @@ void write_di_setting(msg_t& msg, DI_SETTING_TYPE* base_address)
     for (size_t i = 0; i < NUM_DIS; ++i)
     {
         // Only check overlapping BLANKING settings.
-        if (app_regs.di_pin_modes[i] != BLANKING)
+        if (app_regs.di_pin_modes[i] != to_underlying(DIPinMode::BLANKING))
             continue;
         for (size_t j = i+1; j < NUM_DIS; ++j)
         {
-            if (app_regs.di_pin_modes[j] != BLANKING)
+            if (app_regs.di_pin_modes[j] != to_underlying(DIPinMode::BLANKING))
                 continue;
             if (app_regs.ao_channels_assigned_to_di[i] &
                 app_regs.ao_channels_assigned_to_di[j])

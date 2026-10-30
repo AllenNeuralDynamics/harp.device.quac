@@ -2,6 +2,7 @@
 #define MULTI_TRANSFER_MANAGER
 #include <array>
 #include <cstdint>
+#include "hardware/regs/intctrl.h" // for DMA_IRQ_0
 #include "pico/stdlib.h"
 #include "pico/util/queue.h"
 #include "hardware/dma.h"
@@ -15,7 +16,7 @@
  */
 struct end_of_transfer_event_t
 {
-    uint32_t finished_channels_mask;
+    uint32_t finished_channels_mask; // channel0 = bit0, channel1 = bit1, etc.
     uint64_t timestamp_us;
 };
 
@@ -40,7 +41,7 @@ public:
     MultiTransferManager(
         std::array<DMADoubleBuffer<T, BUF_SIZE>*, NUM_CHANNELS>& buf_ptrs,
         std::array<PIO_LTC264x, NUM_CHANNELS>& dacs)
-    : buf_ptrs_{buf_ptrs}, dacs_{dacs}, irq_{-1}
+    : buf_ptrs_{buf_ptrs}, dacs_{dacs}, dma_irq_num_{DMA_IRQ_NUM_UNSPECIFIED}
     {
         queue_init(&end_of_transfer_event_queue_,
                    sizeof(end_of_transfer_event_t), DEFAULT_QUEUE_SIZE);
@@ -63,6 +64,9 @@ public:
                                 &transfer_done_event)){}
         // Detach interrupt.
         disable_end_of_transfer_interrupt();
+        // Stub latest transfer with null transfer data.
+        latest_end_of_transfer_event_.timestamp_us = 0;
+        latest_end_of_transfer_event_.finished_channels_mask = 0;
     }
 
 
@@ -138,28 +142,28 @@ public:
  * \param dma_irq_index 0 or 1 corresponding to DMA_IRQ_0 or DMA_IRQ_1
  * \param fn_ptr optional callback function to call instead of the default.
  */
-    void enable_end_of_transfer_interrupt(size_t dma_irq_index,
+    void enable_end_of_transfer_interrupt(size_t dma_irq_num,
                                           void (*fn_ptr)(void) = nullptr)
     {
-        // Limit one DMA IRQ line per class instance.
-        if (irq_ >= 0) // Bail early if already specified
+        // Limit one DMA IRQ line per class instance. Bail if already specified.
+        if (dma_irq_num_ != DMA_IRQ_NUM_UNSPECIFIED)
             return;
-        irq_ = DMA_IRQ_0 + dma_irq_index; // get associated IRQ number
+        dma_irq_num_ = dma_irq_num;
+        const size_t dma_irq_index = dma_irq_num_ - DMA_IRQ_0;
         // For the default interrupt callback fn,
         // use the wrapper ("trampoline") function so that we can pass a
         // pointer-to-function to the IRQ (cannot be pointer-to-member).
         // Connect IRQ to handler function.
-        if (fn_ptr == nullptr)
-        {
-            fn_ptr = static_end_of_transfer_callbacks[dma_irq_index];
-            insts_[dma_irq_index] = this;
-        }
-        irq_set_exclusive_handler(irq_, fn_ptr);
+        insts_[dma_irq_index] = this;
+        if (fn_ptr)
+            static_user_end_of_transfer_callbacks[dma_irq_index] = fn_ptr;
+        irq_set_exclusive_handler(dma_irq_num_,
+            static_end_of_transfer_callbacks[dma_irq_index]);
         // Enable underlying dma channels to trigger IRQ.
         for (auto& buf_ptr: buf_ptrs_)
             buf_ptr->enable_end_of_transfer_irq(dma_irq_index); // from 0.
         // Enable the interrupt.
-        irq_set_enabled(irq_, true);
+        irq_set_enabled(dma_irq_num_, true);
     }
 
 /**
@@ -168,15 +172,15 @@ public:
     void disable_end_of_transfer_interrupt()
     {
         // Disconnect irq handler function if it was set.
-        if (irq_ < 0)
+        if (dma_irq_num_ == DMA_IRQ_NUM_UNSPECIFIED)
             return;
-        irq_set_exclusive_handler(irq_, nullptr);
-        irq_ = -1;
         // Disable the interrupt.
         for (auto& buf_ptr: buf_ptrs_)
             buf_ptr->disable_end_of_transfer_irq();
-        // Enable the interrupt.
-        irq_set_enabled(irq_, false);
+        // Disable the interrupt.
+        irq_set_enabled(dma_irq_num_, false);
+        irq_set_exclusive_handler(dma_irq_num_, nullptr);
+        dma_irq_num_ = DMA_IRQ_NUM_UNSPECIFIED;
     }
 
 /**
@@ -192,11 +196,17 @@ public:
 
 /**
  * \brief static trampoline function to pass to the ISR for DMA_IRQ_0.
+ *   If a user-specified handler function was specified, invoke that function
+ *   after invoking the original function.
  * \details ISRs cannot invoke a pointer-to-member function, so we pass this
  * wrapper function instead.
  */
     static void static_handle_end_of_transfer0()
-    {insts_[0]->handle_end_of_transfer();}
+    {
+        insts_[0]->handle_end_of_transfer();
+        if (static_user_end_of_transfer_callbacks[0])
+            static_user_end_of_transfer_callbacks[0]();
+    }
 
 /**
  * \brief static trampoline function to pass to the ISR for DMA_IRQ_0.
@@ -204,7 +214,11 @@ public:
  * wrapper function instead.
  */
     static void static_handle_end_of_transfer1()
-    {insts_[1]->handle_end_of_transfer();}
+    {
+        insts_[1]->handle_end_of_transfer();
+        if (static_user_end_of_transfer_callbacks[1])
+            static_user_end_of_transfer_callbacks[1]();
+    }
 
 /**
  * \brief The ISR callback function to handle the end of any (or multiple)
@@ -220,12 +234,11 @@ public:
  */
     inline void handle_end_of_transfer()
     {
-        end_of_transfer_event_t end_of_transfer_event;
-        end_of_transfer_event.timestamp_us = time_us_64(); // record time asap.
-        end_of_transfer_event.finished_channels_mask = 0;
-
+        // record time asap.
+        latest_end_of_transfer_event_.timestamp_us = time_us_64();
+        latest_end_of_transfer_event_.finished_channels_mask = 0;
         // Identify which channel(s) triggered the handler.
-        uint32_t irq_index = irq_ - DMA_IRQ_0;
+        uint32_t irq_index = dma_irq_num_ - DMA_IRQ_0;
         uint32_t int_status = dma_hw->irq_ctrl[irq_index].ints;
         // Clear the interrupt(s).
         dma_hw->irq_ctrl[irq_index].ints = int_status;
@@ -238,23 +251,38 @@ public:
             if (!((1u << buf_ptrs_[i]->get_data_channel()) & int_status))
                 continue; // Skip channels that did not trigger the interrupt.
             dacs_[i].write_value(PIO_LTC264x::OUTPUT_MIDSCALE);
-            end_of_transfer_event.finished_channels_mask |= 1u << i;
+            latest_end_of_transfer_event_.finished_channels_mask |= 1u << i;
         }
         // Push a timestamp bitmask to a queue.
-        queue_try_add(&end_of_transfer_event_queue_, &end_of_transfer_event);
+        // Note that this fn makes a copy of the data.
+        // const_cast bc data is volatile.
+        queue_try_add(&end_of_transfer_event_queue_,
+            const_cast<end_of_transfer_event_t*>(&latest_end_of_transfer_event_));
     }
+
+/**
+ * \brief return a read-only reference to the latest end-of-transfer event.
+ * \warning this function should only be used within a user-specified ISR.
+ *  Getting transfer events in all other cases should use get_finished_transfers().
+ */
+    inline const volatile end_of_transfer_event_t& get_latest_transfer_event() const
+    {return latest_end_of_transfer_event_;}
 
 private:
     std::array<DMADoubleBuffer<T, BUF_SIZE>*, NUM_CHANNELS>& buf_ptrs_;
     std::array<PIO_LTC264x, NUM_CHANNELS>& dacs_;
+    int dma_irq_num_;
     queue_t end_of_transfer_event_queue_;
-    int irq_;
+    volatile end_of_transfer_event_t latest_end_of_transfer_event_;
 
     static inline constexpr size_t MAX_INSTANCES = 2;
+    static inline constexpr int DMA_IRQ_NUM_UNSPECIFIED = -1;
 
     typedef void (*callback_fn_ptr)(void);
     static inline callback_fn_ptr static_end_of_transfer_callbacks[MAX_INSTANCES] =
         {static_handle_end_of_transfer0, static_handle_end_of_transfer1};
+    static inline callback_fn_ptr static_user_end_of_transfer_callbacks[MAX_INSTANCES] =
+        {nullptr, nullptr};
     static inline MultiTransferManager<T, BUF_SIZE, NUM_CHANNELS>* insts_[MAX_INSTANCES] =
         {nullptr, nullptr};
 };

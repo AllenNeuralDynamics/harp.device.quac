@@ -1,13 +1,19 @@
 #include "quac_app.h"
 #include "bitmask_gen.h"
 #include "config.h"
+#include "harp_message.h"
+#include "multi_transfer_manager.h"
 #include "pio_ltc264x.h"
 #include "waveform_settings.h"
 #include <hardware/gpio.h>
+#include <hardware/regs/intctrl.h>
+#include <hardware/timer.h>
+#include <pico/platform/sections.h>
+
+using std::to_underlying;
 
 app_regs_t __not_in_flash("app_regs") app_regs;
 queue_t __not_in_flash("ext_trigger_event_queue") ext_trigger_event_queue;
-
 
 RegSpec app_reg_specs[]
 {
@@ -19,6 +25,8 @@ RegSpec app_reg_specs[]
         HarpCore::read_reg_error, write_digital_output_port_clear),
     RegSpec::U8(&app_regs.di_port_state,
         read_di_port_state, HarpCore::write_reg_error),
+    RegSpec::U8(&app_regs.di_port_invert,
+        HarpCore::read_reg_generic, write_di_port_invert),
 
     RegSpec::FloatArray(&app_regs.analog_output_port_state,
         std::size(app_regs.analog_output_port_state),
@@ -53,13 +61,32 @@ RegSpec app_reg_specs[]
         HarpCore::read_reg_generic, write_any_di_pin_mode),
 
     RegSpec::U8(&app_regs.ao_channels_assigned_to_di0,
-        HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_di_pin),
     RegSpec::U8(&app_regs.ao_channels_assigned_to_di1,
-        HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_di_pin),
     RegSpec::U8(&app_regs.ao_channels_assigned_to_di2,
-        HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_di_pin),
     RegSpec::U8(&app_regs.ao_channels_assigned_to_di3,
-        HarpCore::read_reg_generic, write_map_any_di_pin_to_ao_channels),
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_di_pin),
+
+    RegSpec::U8(&app_regs.do0_pin_mode,
+        HarpCore::read_reg_generic, write_any_do_pin_mode),
+    RegSpec::U8(&app_regs.do1_pin_mode,
+        HarpCore::read_reg_generic, write_any_do_pin_mode),
+    RegSpec::U8(&app_regs.do2_pin_mode,
+        HarpCore::read_reg_generic, write_any_do_pin_mode),
+    RegSpec::U8(&app_regs.do3_pin_mode,
+        HarpCore::read_reg_generic, write_any_do_pin_mode),
+
+    RegSpec::U8(&app_regs.ao_channels_assigned_to_do0,
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
+    RegSpec::U8(&app_regs.ao_channels_assigned_to_do1,
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
+    RegSpec::U8(&app_regs.ao_channels_assigned_to_do2,
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
+    RegSpec::U8(&app_regs.ao_channels_assigned_to_do3,
+        HarpCore::read_reg_generic, write_assign_ao_channels_to_do_pin),
+
 
     RegSpec::U8(&app_regs.active_players[0],
         HarpCore::read_reg_generic, write_any_channel_active_player),
@@ -147,6 +174,21 @@ void read_di_port_state(uint8_t address)
     app_regs.di_port_state =
         uint8_t((DI_PORT_MASK & gpio_get_all64()) >> DI_PORT_BASE);
     HarpCore::read_reg_generic(address);
+}
+
+
+void write_di_port_invert(msg_t& msg)
+{
+    HarpCore::copy_msg_payload_to_register(msg);
+    for (size_t i = 0; i < NUM_DIS; ++i)
+    {
+        gpio_override override_setting = (app_regs.di_port_invert & (1u << i))?
+            GPIO_OVERRIDE_INVERT:
+            GPIO_OVERRIDE_NORMAL;
+        gpio_set_inover(DI_PORT_BASE + i, override_setting);
+    }
+    if (!HarpCore::is_muted())
+        HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
 
 
@@ -315,7 +357,7 @@ void write_dac_start(msg_t& msg)
     // the blanking state before starting the AO channel.
     for (size_t i = 0; i < NUM_DIS; ++i)
     {
-        if (app_regs.di_pin_modes[i] != BLANKING)
+        if (app_regs.di_pin_modes[i] != to_underlying(DIPinMode::BLANKING))
             continue;
         // Only apply blanking settings to AO channels triggered.
         if (!(app_regs.ao_channels_assigned_to_di[i] & app_regs.dac_start))
@@ -334,6 +376,8 @@ void write_dac_start(msg_t& msg)
     if (ao_blanking_mask)
         transfer_manager.mute_outputs(ao_blanking_mask, ao_blanking_state);
     // Start the channel.
+    uint32_t newly_started_mask = uint32_t(app_regs.dac_start) & ~started_dacs;
+    enable_ao_channel_start_to_trigger_isr(newly_started_mask);
     transfer_manager.start(uint32_t(app_regs.dac_start)); // Can start from core0.
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
@@ -352,6 +396,9 @@ void write_dac_abort(msg_t& msg)
     transfer_manager.abort(app_regs.dac_abort);
     // Update DacStart Register state to reflect aborted state.
     app_regs.dac_start &= ~app_regs.dac_abort;
+    // Cancel any not-yet-observed DO Tracking arm for aborted channels so a
+    // stale one-shot CS interrupt can't mis-fire a DO update later.
+    disable_ao_channel_to_trigger_isr(app_regs.dac_abort);
     if (!HarpCore::is_muted())
         HarpCore::send_harp_reply(WRITE, msg.header.address);
 }
@@ -361,8 +408,50 @@ void write_any_di_pin_mode(msg_t &msg)
 {write_di_setting<uint8_t>(msg, app_regs.di_pin_modes);}
 
 
-void write_map_any_di_pin_to_ao_channels(msg_t& msg)
+void write_assign_ao_channels_to_di_pin(msg_t& msg)
 {write_di_setting<uint8_t>(msg, app_regs.ao_channels_assigned_to_di);}
+
+
+void write_any_do_pin_mode(msg_t &msg)
+{
+    // Deduce DO index with pointer arithmetic.
+    const RegSpec& specs = HarpCore::reg_address_to_spec(msg.header.address);
+    size_t do_pin = ((uint8_t*)specs.base_ptr - app_regs.do_pin_modes);
+    uint8_t old_do_pin_mode = app_regs.do_pin_modes[do_pin];
+    HarpCore::copy_msg_payload_to_register(msg);
+    // Enum Bounds check.
+    if (app_regs.do_pin_modes[do_pin] > to_underlying(DOPinMode::TRACKING))
+    {
+        app_regs.do_pin_modes[do_pin] = old_do_pin_mode;
+        HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+        return;
+    }
+    HarpCore::write_reg_generic(msg);
+}
+
+
+void write_assign_ao_channels_to_do_pin(msg_t &msg)
+{
+    // Deduce DO index with pointer arithmetic.
+    const RegSpec& spec = HarpCore::reg_address_to_spec(msg.header.address);
+    size_t do_index = ((uint8_t*)spec.base_ptr - app_regs.ao_channels_assigned_to_do);
+    // Error if we try to change the DO setting while any of its
+    // assigned analog outputs are busy playing.
+    for (size_t ao_chan = 0; ao_chan < NUM_CHANNELS; ++ao_chan)
+    {
+        // Skip checking unassigned analog output channels.
+        if (!((app_regs.ao_channels_assigned_to_di[do_index] >> ao_chan) & 1u))
+            continue;
+        // Check if this analog output channel is busy.
+        if (bufs[ao_chan].is_transferring())
+        {
+            if (!HarpCore::is_muted())
+                HarpCore::send_harp_reply(WRITE_ERROR, msg.header.address);
+            return;
+        }
+    }
+    HarpCore::write_reg_generic(msg);
+}
 
 
 void write_any_channel_active_player(msg_t &msg)
@@ -520,7 +609,10 @@ void reset_app()
 {
     // Init all digital inputs and outputs.
     for (size_t i = DI_PORT_BASE; i < DI_PORT_BASE + NUM_DIS; ++i)
+    {
         gpio_init(i);
+        gpio_set_inover(i, GPIO_OVERRIDE_NORMAL); // uninvert all DI pins.
+    }
     for (size_t i = DO_PORT_BASE; i < DO_PORT_BASE + NUM_DOS; ++i)
         gpio_init(i);
 
@@ -536,10 +628,16 @@ void reset_app()
     app_regs.dac_pause = 0;
     // Reset Digital Input Pin Function Settings.
     // Default: DI[i] triggers AO[i] in external trigger mode.
-    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    for (size_t i = 0; i < NUM_DIS; ++i)
     {
-        app_regs.di_pin_modes[i] = EXTERNAL_TRIGGER;
+        app_regs.di_pin_modes[i] = to_underlying(DIPinMode::EXTERNAL_TRIGGER);
         app_regs.ao_channels_assigned_to_di[i] = (1u << i);
+    }
+    // Reset Digital Output Pin Function Settings
+    for (size_t i = 0; i < NUM_DOS; ++i)
+    {
+        app_regs.do_pin_modes[i] = to_underlying(DOPinMode::OUTPUT);
+        app_regs.ao_channels_assigned_to_do[i] = 0;
     }
     // Reset all Player settings to defaults.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
@@ -552,8 +650,8 @@ void reset_app()
     transfer_manager.reset();
     // Unmute everything
     transfer_manager.mute_outputs(nwide_mask<uint32_t>(NUM_CHANNELS), 0);
-    // FIXME: hardcoded reference to DMA_IRQ_1.
-    transfer_manager.enable_end_of_transfer_interrupt(1); // corresponds to DMA_IRQ_1
+    transfer_manager.enable_end_of_transfer_interrupt(TRANSFER_MANAGER_DMA_IRQ_NUM,
+        handle_end_of_transfer);
     // Reset DoubleBuffers before DACs, since they send data to DACs.
     for (auto& buf: bufs)
         buf.reset();
@@ -570,6 +668,7 @@ void reset_app()
     multicore_reset_core1();
     (void)multicore_fifo_pop_blocking(); // Wait until core1 is ready.
     multicore_launch_core1(core1main);
+    disable_ao_channel_to_trigger_isr(nwide_mask<uint32_t>(NUM_CHANNELS));
     // Setup External Trigger Callback
     // Enable all External Trigger GPIOS to trigger the callback.
     irq_set_exclusive_handler(IO_IRQ_BANK0, handle_digital_input);
@@ -577,6 +676,64 @@ void reset_app()
         gpio_set_irq_enabled(i + DI_PORT_BASE,
             GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true);
     irq_set_enabled(IO_IRQ_BANK0, true);
+}
+
+
+void update_do_tracking_state(uint8_t changed_ao_channels, uint8_t ao_port_state)
+{
+    // Iterate through every DO's assigned AO channels.
+    uint64_t do_port_state = 0;
+    uint64_t final_do_port_mask = 0;//DO_PORT_MASK;
+    for (size_t i = 0; i < NUM_DOS; ++i)
+    {
+        // if any assigned AO channels are on, set the DO pin HIGH.
+        // if all assigned AO channels are now off, set the DO pin LOW.
+        bool do_state = ao_port_state & app_regs.ao_channels_assigned_to_do[i];
+        // Only apply the change if the AO channel changed.
+        if (changed_ao_channels & app_regs.ao_channels_assigned_to_do[i])
+            final_do_port_mask |= uint64_t{1u} << (DO_PORT_BASE + i);
+        do_port_state |= uint64_t{do_state} << (DO_PORT_BASE + i);
+    }
+    gpio_put_masked64(final_do_port_mask, do_port_state); // Set all DOs simultaneously.
+}
+
+
+void enable_ao_channel_start_to_trigger_isr(uint32_t ao_channels_mask)
+{
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        if ((ao_channels_mask >> i) & 1u)
+            gpio_set_irq_enabled(DAC_PINS[i].cs, GPIO_IRQ_EDGE_RISE, true);
+    }
+}
+
+
+void disable_ao_channel_to_trigger_isr(uint32_t channel_mask)
+{
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        if (!((channel_mask >> i) & 1u))
+            continue;
+        uint32_t cs_pin = DAC_PINS[i].cs;
+        gpio_set_irq_enabled(cs_pin, GPIO_IRQ_EDGE_RISE, false);
+        // Acknowledge in case the edge already latched.
+        gpio_acknowledge_irq(cs_pin, GPIO_IRQ_EDGE_RISE);
+    }
+}
+
+
+void __not_in_flash_func(handle_end_of_transfer)()
+{
+    // Handle DO Tracking.
+    // Deduce the current AO state.
+    // Because this ISR fires before the update loop, we must create the latest
+    // state from both the current state and most recently finished transfer.
+    // Get most recent AO channels mask that caused the end of transfer.
+    const uint8_t& finished_ao_transfers =
+        transfer_manager.get_latest_transfer_event().finished_channels_mask;
+    uint8_t current_ao_port_state = app_regs.dac_start; // current state
+    current_ao_port_state &= ~finished_ao_transfers; // mask off finished channels.
+    update_do_tracking_state(finished_ao_transfers, current_ao_port_state);
 }
 
 
@@ -598,7 +755,7 @@ void __not_in_flash_func(handle_digital_input)()
     uint32_t ao_ext_trigger_mask = 0;
     for (size_t i = 0; i < NUM_DIS; ++i)
     {
-        if (app_regs.di_pin_modes[i] != EXTERNAL_TRIGGER)
+        if (app_regs.di_pin_modes[i] != to_underlying(DIPinMode::EXTERNAL_TRIGGER))
             continue;
         if ((di_port_state >> i) & 1u)
             ao_ext_trigger_mask |= app_regs.ao_channels_assigned_to_di[i];
@@ -617,7 +774,7 @@ void __not_in_flash_func(handle_digital_input)()
     uint32_t ao_blanking_state = 0;
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (app_regs.di_pin_modes[i] != BLANKING)
+        if (app_regs.di_pin_modes[i] != to_underlying(DIPinMode::BLANKING))
             continue;
         // Only apply blanking settings for the pins that actually changed OR
         // pins that are about to be externally triggered. i.e:
@@ -645,6 +802,7 @@ void __not_in_flash_func(handle_digital_input)()
     if (ao_ext_trigger_mask)
     {
         ext_trigger_event_t trigger_event;
+        enable_ao_channel_start_to_trigger_isr(ao_ext_trigger_mask);
         transfer_manager.start(ao_ext_trigger_mask); // Can be started from core1.
         trigger_event.channel_start_mask = ao_ext_trigger_mask;
         trigger_event.timestamp = time_us_64();
@@ -653,7 +811,27 @@ void __not_in_flash_func(handle_digital_input)()
         // Update which dacs have started.
         app_regs.dac_start |= ao_ext_trigger_mask;
     }
-    // Acknowledge the interrupt. Assume nothing else is setting these pins.
+
+    // Handle DO Tracking for AO channels awaiting their first DAC update.
+    // Each channel's CS pin will rise when the first setting has been written.
+
+    // Deduce which AO channels just started and clear the event mask so we
+    // don't trigger on subsequent CS pin rising edges.
+    uint32_t started_ao_channels = 0;
+    for (size_t i = 0; i < NUM_CHANNELS; ++i)
+    {
+        const uint32_t& cs_pin = DAC_PINS[i].cs;
+        if (gpio_get_irq_event_mask(cs_pin) & GPIO_IRQ_EDGE_RISE)
+        {
+            started_ao_channels |= (1u << i);
+            gpio_acknowledge_irq(cs_pin, GPIO_IRQ_EDGE_RISE);
+            gpio_set_irq_enabled(cs_pin, GPIO_IRQ_EDGE_RISE, false);
+        }
+    }
+    if (started_ao_channels)
+        update_do_tracking_state(started_ao_channels, app_regs.dac_start);
+
+    // Acknowledge interrupts on DI pins. Assume nothing else is setting these pins.
     // Clear the INTR[n] state since we dealt with all pin changes.
     // Clear by "writing a 1" to the set bits.
     io_bank0_hw->intr[DI_PORT_BASE >> 3] = 0xFFFFFFFF; // >> 3: floor-divide by 8
