@@ -77,6 +77,8 @@ int main()
     printf("Hello, from the quac board!\r\n");
 #endif
     queue_init(&ext_trigger_event_queue, sizeof(ext_trigger_event_t), 32);
+    queue_init(&scheduler_error_event_queue, sizeof(scheduler_error_event_t),
+               NUM_CHANNELS * NUM_PLAYER_TYPES);
     // Populate player_ptrs.
     size_t index = 0;
     for (auto& file_player: file_players) player_ptrs[index++] = &file_player;

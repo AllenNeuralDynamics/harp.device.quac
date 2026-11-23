@@ -2,6 +2,7 @@
 #define MULTI_TRANSFER_MANAGER
 #include <array>
 #include <cstdint>
+#include "bitmask_gen.h"
 #include "hardware/regs/intctrl.h" // for DMA_IRQ_0
 #include "pico/stdlib.h"
 #include "pico/util/queue.h"
@@ -58,6 +59,7 @@ public:
  */
     void reset()
     {
+        abort(nwide_mask<uint32_t>(NUM_CHANNELS));
         // Drain queue.
         end_of_transfer_event_t transfer_done_event;
         while (queue_try_remove(&end_of_transfer_event_queue_,
@@ -67,6 +69,12 @@ public:
         // Stub latest transfer with null transfer data.
         latest_end_of_transfer_event_.timestamp_us = 0;
         latest_end_of_transfer_event_.finished_channels_mask = 0;
+        // Reset DoubleBuffers before DACs, since they send data to DACs.
+        for (auto& buf_ptr: buf_ptrs_)
+            buf_ptr->reset();
+        // FYI: PIO_LTC264x instances manage GPIO pin function.
+        for (auto& dac: dacs_)
+            dac.write_value(PIO_LTC264x::OUTPUT_MIDSCALE);
     }
 
 
@@ -109,7 +117,8 @@ public:
     }
 
 /**
- * \brief abort multiple buffer transfers simultaneously
+ * \brief abort multiple buffer transfers simultaneously and set the
+ *  corresponding DAC outputs to midscale, i.e: the "idle" value.
  */
     void abort(uint32_t channel_mask)
     {
@@ -124,11 +133,14 @@ public:
         // RP2350 only: poll set bits until they clear (i.e abort took effect).
         while (dma_hw->abort & abort_mask)
             tight_loop_contents();
-        // Additionally, call each channel's abort to clear DMA config.
+        // Additionally, call each channel's abort to clear DMA config and
+        // return each DAC's output to its idle value.
         for (size_t i = 0; i < NUM_CHANNELS; ++i)
         {
-            if ((channel_mask & (1u << i)))
-                buf_ptrs_[i]->abort_transfer();
+            if (!(channel_mask & (1u << i)))
+                continue;
+            buf_ptrs_[i]->abort_transfer();
+            dacs_[i].write_value(PIO_LTC264x::OUTPUT_MIDSCALE);
         }
     }
 

@@ -18,13 +18,23 @@ class SourcePlayer
 {
 public:
 /**
+ * \brief signature of an optional function called when the player fails to
+ *  produce the next buffer's worth of samples before its deadline.
+ * \param player pointer to the player that missed its deadline. This class
+ *  wil populate the input with the this pointer.
+ */
+    using scheduler_error_callback_t =
+        void (*)(SourcePlayer<T, BUF_SIZE>* player);
+
+/**
  * \brief constructor.
  */
     SourcePlayer()
     : idle_buf_ptr_{nullptr}, buf_ptr_{nullptr}, curr_cycles_{0},
     settings_ptr_{nullptr}, samples_emitted_{0}, total_samples_emitted_{0},
     chunk_bytes_read_{0}, manage_buffer_timing_{false}, is_updating{false},
-    is_armed_{false}
+    is_armed_{false}, scheduler_error_{false},
+    scheduler_error_callback_{nullptr}
     {}
 
 /**
@@ -111,6 +121,24 @@ public:
     {return buf_ptr_ == nullptr;}
 
 /**
+ * \brief specify an optional function to call (with this player as its
+ *  argument) if the player cannot produce samples before the output buffer
+ *  needs them. Pass `nullptr` to remove a previously-specified callback.
+ * \warning the callback is invoked from within update() (i.e: from whichever
+ *  core calls update()) and should return quickly.
+ */
+    void set_scheduler_error_callback(scheduler_error_callback_t callback)
+    {scheduler_error_callback_ = callback;}
+
+/**
+ * \brief true if the player missed a deadline to produce samples (i.e: the
+ *  output buffer switched before it was fully filled). Once set, the player
+ *  aborts its transfer and stops producing samples until reset().
+ */
+    inline bool has_scheduler_error()
+    {return scheduler_error_.load();}
+
+/**
  * \brief Clear internal state but do not release claimed resources
  */
     virtual void reset()
@@ -121,6 +149,7 @@ public:
         while (is_updating.load()) // wait for core1 update to finish any update.
             __asm__ __volatile__ ("nop");
         is_armed_ = false;
+        scheduler_error_.store(false);
         idle_buf_ptr_ = nullptr;
         total_samples_emitted_ = 0;
         curr_cycles_ = 0;
@@ -215,7 +244,7 @@ public:
     inline bool is_ready()
     {
         // FIXME: validate that this will be multicore safe.
-        return (!is_active()) && is_armed();
+        return (!is_active()) && is_armed() && !has_scheduler_error();
     }
 
 /**
@@ -234,8 +263,7 @@ public:
 
     inline void _update()
     {
-        // TODO: deadlne check between chunk transfers to ensure buffers are topped off.
-        if (output_buffer_unspecified())
+        if (output_buffer_unspecified() || has_scheduler_error())
             return;
         // Skip if channel is ready but not transferring.
         if (!is_active() && is_armed())
@@ -243,6 +271,16 @@ public:
         if (buf_ptr_->last_transfer_configured())
             return;
         T* curr_idle_buf_ptr_ = buf_ptr_->get_idle_buffer();
+        // Deadline check: if the output switched to the buffer we were still
+        // filling, then it is now playing a partially-filled buffer.
+        // Warning: deadline check will not catch the error case where the
+        // buffer switches twice.
+        if (is_active() && (idle_buf_ptr_ != nullptr)
+            && (idle_buf_ptr_ != curr_idle_buf_ptr_) && remaining_buf_size())
+        {
+            handle_scheduler_error();
+            return;
+        }
         // Reset chunk index tracking as soon as we switch buffers.
         if (idle_buf_ptr_ != curr_idle_buf_ptr_)
             chunk_bytes_read_ = 0;
@@ -351,7 +389,20 @@ private:
     inline size_t chunk_index()
     {return chunk_bytes_read_ / sizeof(T);}
 
+/**
+ * \brief stop producing samples, stop the output, and notify any listener.
+ */
+    void handle_scheduler_error()
+    {
+        scheduler_error_.store(true);
+        abort_transfer();
+        if (scheduler_error_callback_)
+            scheduler_error_callback_(this);
+    }
+
     bool manage_buffer_timing_; // Flag that we need to deal with timer.
     T* idle_buf_ptr_;
+    std::atomic<bool> scheduler_error_; // Cleared only on reset().
+    scheduler_error_callback_t scheduler_error_callback_;
 };
 #endif // SOURCE_PLAYER_H

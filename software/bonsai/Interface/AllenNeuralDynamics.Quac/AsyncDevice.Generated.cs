@@ -704,6 +704,38 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
+        /// Asynchronously reads the contents of the <see cref="DacSchedulerError"/> register.
+        /// </summary>
+        /// <param name="cancellationToken">
+        /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
+        /// </param>
+        /// <returns>
+        /// A task that represents the asynchronous read operation. The task result contains
+        /// the register payload.
+        /// </returns>
+        public async Task<AnalogOutputs> ReadDacSchedulerErrorAsync(CancellationToken cancellationToken = default)
+        {
+            var reply = await CommandAsync(HarpCommand.ReadByte(DacSchedulerError.Address), cancellationToken);
+            return DacSchedulerError.GetPayload(reply);
+        }
+
+        /// <summary>
+        /// Asynchronously reads the timestamped contents of the <see cref="DacSchedulerError"/> register.
+        /// </summary>
+        /// <param name="cancellationToken">
+        /// A <see cref="CancellationToken"/> which can be used to cancel the operation.
+        /// </param>
+        /// <returns>
+        /// A task that represents the asynchronous read operation. The task result contains
+        /// the timestamped register payload.
+        /// </returns>
+        public async Task<Timestamped<AnalogOutputs>> ReadTimestampedDacSchedulerErrorAsync(CancellationToken cancellationToken = default)
+        {
+            var reply = await CommandAsync(HarpCommand.ReadByte(DacSchedulerError.Address), cancellationToken);
+            return DacSchedulerError.GetTimestampedPayload(reply);
+        }
+
+        /// <summary>
         /// Asynchronously reads the contents of the <see cref="PinModeDI0"/> register.
         /// </summary>
         /// <param name="cancellationToken">
