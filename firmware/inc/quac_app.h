@@ -25,6 +25,7 @@ using enum reg_type_t;
 
 extern std::array<PIO_LTC264x, NUM_CHANNELS> dacs;
 extern queue_t ext_trigger_event_queue;
+extern queue_t scheduler_error_event_queue;
 
 extern std::array<TimerPacedDMADoubleBuffer<T, READ_BUF_SIZE>, NUM_CHANNELS> bufs;
 extern std::array<DMADoubleBuffer<T, READ_BUF_SIZE>*, NUM_CHANNELS> buf_ptrs;
@@ -37,6 +38,7 @@ extern RegSpec app_reg_specs[];
 extern const size_t APP_REG_COUNT;
 inline constexpr size_t DAC_START_ADDRESS = HarpCore::APP_REG_START_ADDRESS + 11;
 inline constexpr size_t DAC_FINISHED_ADDRESS = HarpCore::APP_REG_START_ADDRESS + 14;
+inline constexpr size_t DAC_SCHEDULER_ERROR_ADDRESS = HarpCore::APP_REG_START_ADDRESS + 15;
 
 enum player_t: uint8_t
 {
@@ -64,6 +66,12 @@ struct ext_trigger_event_t
     uint64_t timestamp;
 };
 
+struct scheduler_error_event_t
+{
+    uint32_t channel_mask;
+    uint64_t timestamp;
+};
+
 #pragma pack(push, 1)
 struct app_regs_t
 {
@@ -88,6 +96,7 @@ struct app_regs_t
     uint8_t dac_pause; // 1-bit: pause active channel, 0-bit: unpause paused channel
     uint8_t dac_abort;
     uint8_t dac_finished;
+    uint8_t dac_scheduler_error; // AO channels that could not produce samples in time.
 
     // DAC DI Pin Modes
     uint8_t di_pin_modes[NUM_CHANNELS];
@@ -229,6 +238,13 @@ void update_app();
  * interrupt, this ISR can ignore acknowledging the interrupt.
  */
 void handle_end_of_transfer();
+
+/**
+ * \brief callback invoked (from core1) when a SourcePlayer misses its deadline
+ *  to produce samples. Queues an event for core0 to dispatch.
+ * \param player the player that missed its deadline.
+ */
+void handle_scheduler_error(SourcePlayer<T, READ_BUF_SIZE>* player);
 
 /**
  * \brief

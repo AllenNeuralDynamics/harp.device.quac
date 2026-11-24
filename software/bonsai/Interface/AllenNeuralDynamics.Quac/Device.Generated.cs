@@ -59,38 +59,39 @@ namespace AllenNeuralDynamics.Quac
             { 44, typeof(DacPause) },
             { 45, typeof(DacAbort) },
             { 46, typeof(DacFinished) },
-            { 47, typeof(PinModeDI0) },
-            { 48, typeof(PinModeDI1) },
-            { 49, typeof(PinModeDI2) },
-            { 50, typeof(PinModeDI3) },
-            { 51, typeof(AOChannelsAssignedToDI0) },
-            { 52, typeof(AOChannelsAssignedToDI1) },
-            { 53, typeof(AOChannelsAssignedToDI2) },
-            { 54, typeof(AOChannelsAssignedToDI3) },
-            { 55, typeof(DO0PinMode) },
-            { 56, typeof(DO1PinMode) },
-            { 57, typeof(DO2PinMode) },
-            { 58, typeof(DO3PinMode) },
-            { 59, typeof(AOChannelsAssignedToDO0) },
-            { 60, typeof(AOChannelsAssignedToDO1) },
-            { 61, typeof(AOChannelsAssignedToDO2) },
-            { 62, typeof(AOChannelsAssignedToDO3) },
-            { 63, typeof(ActivePlayer0) },
-            { 64, typeof(ActivePlayer1) },
-            { 65, typeof(ActivePlayer2) },
-            { 66, typeof(ActivePlayer3) },
-            { 67, typeof(FileSettings0) },
-            { 68, typeof(FileSettings1) },
-            { 69, typeof(FileSettings2) },
-            { 70, typeof(FileSettings3) },
-            { 71, typeof(SineSettings0) },
-            { 72, typeof(SineSettings1) },
-            { 73, typeof(SineSettings2) },
-            { 74, typeof(SineSettings3) },
-            { 75, typeof(TrapezoidSettings0) },
-            { 76, typeof(TrapezoidSettings1) },
-            { 77, typeof(TrapezoidSettings2) },
-            { 78, typeof(TrapezoidSettings3) }
+            { 47, typeof(DacSchedulerError) },
+            { 48, typeof(PinModeDI0) },
+            { 49, typeof(PinModeDI1) },
+            { 50, typeof(PinModeDI2) },
+            { 51, typeof(PinModeDI3) },
+            { 52, typeof(AOChannelsAssignedToDI0) },
+            { 53, typeof(AOChannelsAssignedToDI1) },
+            { 54, typeof(AOChannelsAssignedToDI2) },
+            { 55, typeof(AOChannelsAssignedToDI3) },
+            { 56, typeof(DO0PinMode) },
+            { 57, typeof(DO1PinMode) },
+            { 58, typeof(DO2PinMode) },
+            { 59, typeof(DO3PinMode) },
+            { 60, typeof(AOChannelsAssignedToDO0) },
+            { 61, typeof(AOChannelsAssignedToDO1) },
+            { 62, typeof(AOChannelsAssignedToDO2) },
+            { 63, typeof(AOChannelsAssignedToDO3) },
+            { 64, typeof(ActivePlayer0) },
+            { 65, typeof(ActivePlayer1) },
+            { 66, typeof(ActivePlayer2) },
+            { 67, typeof(ActivePlayer3) },
+            { 68, typeof(FileSettings0) },
+            { 69, typeof(FileSettings1) },
+            { 70, typeof(FileSettings2) },
+            { 71, typeof(FileSettings3) },
+            { 72, typeof(SineSettings0) },
+            { 73, typeof(SineSettings1) },
+            { 74, typeof(SineSettings2) },
+            { 75, typeof(SineSettings3) },
+            { 76, typeof(TrapezoidSettings0) },
+            { 77, typeof(TrapezoidSettings1) },
+            { 78, typeof(TrapezoidSettings2) },
+            { 79, typeof(TrapezoidSettings3) }
         };
 
         /// <summary>
@@ -322,6 +323,7 @@ namespace AllenNeuralDynamics.Quac
     /// <seealso cref="DacPause"/>
     /// <seealso cref="DacAbort"/>
     /// <seealso cref="DacFinished"/>
+    /// <seealso cref="DacSchedulerError"/>
     /// <seealso cref="PinModeDI0"/>
     /// <seealso cref="PinModeDI1"/>
     /// <seealso cref="PinModeDI2"/>
@@ -369,6 +371,7 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(DacPause))]
     [XmlInclude(typeof(DacAbort))]
     [XmlInclude(typeof(DacFinished))]
+    [XmlInclude(typeof(DacSchedulerError))]
     [XmlInclude(typeof(PinModeDI0))]
     [XmlInclude(typeof(PinModeDI1))]
     [XmlInclude(typeof(PinModeDI2))]
@@ -437,6 +440,7 @@ namespace AllenNeuralDynamics.Quac
     /// <seealso cref="DacPause"/>
     /// <seealso cref="DacAbort"/>
     /// <seealso cref="DacFinished"/>
+    /// <seealso cref="DacSchedulerError"/>
     /// <seealso cref="PinModeDI0"/>
     /// <seealso cref="PinModeDI1"/>
     /// <seealso cref="PinModeDI2"/>
@@ -484,6 +488,7 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(DacPause))]
     [XmlInclude(typeof(DacAbort))]
     [XmlInclude(typeof(DacFinished))]
+    [XmlInclude(typeof(DacSchedulerError))]
     [XmlInclude(typeof(PinModeDI0))]
     [XmlInclude(typeof(PinModeDI1))]
     [XmlInclude(typeof(PinModeDI2))]
@@ -531,6 +536,7 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(TimestampedDacPause))]
     [XmlInclude(typeof(TimestampedDacAbort))]
     [XmlInclude(typeof(TimestampedDacFinished))]
+    [XmlInclude(typeof(TimestampedDacSchedulerError))]
     [XmlInclude(typeof(TimestampedPinModeDI0))]
     [XmlInclude(typeof(TimestampedPinModeDI1))]
     [XmlInclude(typeof(TimestampedPinModeDI2))]
@@ -596,6 +602,7 @@ namespace AllenNeuralDynamics.Quac
     /// <seealso cref="DacPause"/>
     /// <seealso cref="DacAbort"/>
     /// <seealso cref="DacFinished"/>
+    /// <seealso cref="DacSchedulerError"/>
     /// <seealso cref="PinModeDI0"/>
     /// <seealso cref="PinModeDI1"/>
     /// <seealso cref="PinModeDI2"/>
@@ -643,6 +650,7 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(DacPause))]
     [XmlInclude(typeof(DacAbort))]
     [XmlInclude(typeof(DacFinished))]
+    [XmlInclude(typeof(DacSchedulerError))]
     [XmlInclude(typeof(PinModeDI0))]
     [XmlInclude(typeof(PinModeDI1))]
     [XmlInclude(typeof(PinModeDI2))]
@@ -2162,6 +2170,103 @@ namespace AllenNeuralDynamics.Quac
     }
 
     /// <summary>
+    /// Represents a register that reports which analog output channels were aborted because their player could not produce samples fast enough for the current settings. Affected channels are reset automatically. Note that while the error indicates which channel failed and has been aborted and reset, the source of the error may be an interaction effect between the settings of multiple channels playing concurrently if other channels are playing.
+    /// </summary>
+    [Description("Reports which analog output channels were aborted because their player could not produce samples fast enough for the current settings. Affected channels are reset automatically. Note that while the error indicates which channel failed and has been aborted and reset, the source of the error may be an interaction effect between the settings of multiple channels playing concurrently if other channels are playing.")]
+    public partial class DacSchedulerError
+    {
+        /// <summary>
+        /// Represents the address of the <see cref="DacSchedulerError"/> register. This field is constant.
+        /// </summary>
+        public const int Address = 47;
+
+        /// <summary>
+        /// Represents the payload type of the <see cref="DacSchedulerError"/> register. This field is constant.
+        /// </summary>
+        public const PayloadType RegisterType = PayloadType.U8;
+
+        /// <summary>
+        /// Represents the length of the <see cref="DacSchedulerError"/> register. This field is constant.
+        /// </summary>
+        public const int RegisterLength = 1;
+
+        /// <summary>
+        /// Returns the payload data for <see cref="DacSchedulerError"/> register messages.
+        /// </summary>
+        /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
+        /// <returns>A value representing the message payload.</returns>
+        public static AnalogOutputs GetPayload(HarpMessage message)
+        {
+            return (AnalogOutputs)message.GetPayloadByte();
+        }
+
+        /// <summary>
+        /// Returns the timestamped payload data for <see cref="DacSchedulerError"/> register messages.
+        /// </summary>
+        /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
+        /// <returns>A value representing the timestamped message payload.</returns>
+        public static Timestamped<AnalogOutputs> GetTimestampedPayload(HarpMessage message)
+        {
+            var (payload, timestamp) = message.GetTimestampedPayloadByte();
+            return Timestamped.Create((AnalogOutputs)payload, timestamp);
+        }
+
+        /// <summary>
+        /// Returns a Harp message for the <see cref="DacSchedulerError"/> register.
+        /// </summary>
+        /// <param name="messageType">The type of the Harp message.</param>
+        /// <param name="value">The value to be stored in the message payload.</param>
+        /// <returns>
+        /// A <see cref="HarpMessage"/> object for the <see cref="DacSchedulerError"/> register
+        /// with the specified message type and payload.
+        /// </returns>
+        public static HarpMessage FromPayload(MessageType messageType, AnalogOutputs value)
+        {
+            return HarpMessage.FromByte(Address, messageType, (byte)value);
+        }
+
+        /// <summary>
+        /// Returns a timestamped Harp message for the <see cref="DacSchedulerError"/>
+        /// register.
+        /// </summary>
+        /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+        /// <param name="messageType">The type of the Harp message.</param>
+        /// <param name="value">The value to be stored in the message payload.</param>
+        /// <returns>
+        /// A <see cref="HarpMessage"/> object for the <see cref="DacSchedulerError"/> register
+        /// with the specified message type, timestamp, and payload.
+        /// </returns>
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, AnalogOutputs value)
+        {
+            return HarpMessage.FromByte(Address, timestamp, messageType, (byte)value);
+        }
+    }
+
+    /// <summary>
+    /// Provides methods for manipulating timestamped messages from the
+    /// DacSchedulerError register.
+    /// </summary>
+    /// <seealso cref="DacSchedulerError"/>
+    [Description("Filters and selects timestamped messages from the DacSchedulerError register.")]
+    public partial class TimestampedDacSchedulerError
+    {
+        /// <summary>
+        /// Represents the address of the <see cref="DacSchedulerError"/> register. This field is constant.
+        /// </summary>
+        public const int Address = DacSchedulerError.Address;
+
+        /// <summary>
+        /// Returns timestamped payload data for <see cref="DacSchedulerError"/> register messages.
+        /// </summary>
+        /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
+        /// <returns>A value representing the timestamped message payload.</returns>
+        public static Timestamped<AnalogOutputs> GetPayload(HarpMessage message)
+        {
+            return DacSchedulerError.GetTimestampedPayload(message);
+        }
+    }
+
+    /// <summary>
     /// Represents a register that specifies the function assigned to digital input pin 0.
     /// </summary>
     [Description("Specifies the function assigned to digital input pin 0.")]
@@ -2170,7 +2275,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="PinModeDI0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 47;
+        public const int Address = 48;
 
         /// <summary>
         /// Represents the payload type of the <see cref="PinModeDI0"/> register. This field is constant.
@@ -2267,7 +2372,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="PinModeDI1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 48;
+        public const int Address = 49;
 
         /// <summary>
         /// Represents the payload type of the <see cref="PinModeDI1"/> register. This field is constant.
@@ -2364,7 +2469,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="PinModeDI2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 49;
+        public const int Address = 50;
 
         /// <summary>
         /// Represents the payload type of the <see cref="PinModeDI2"/> register. This field is constant.
@@ -2461,7 +2566,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="PinModeDI3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 50;
+        public const int Address = 51;
 
         /// <summary>
         /// Represents the payload type of the <see cref="PinModeDI3"/> register. This field is constant.
@@ -2558,7 +2663,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDI0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 51;
+        public const int Address = 52;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDI0"/> register. This field is constant.
@@ -2655,7 +2760,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDI1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 52;
+        public const int Address = 53;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDI1"/> register. This field is constant.
@@ -2752,7 +2857,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDI2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 53;
+        public const int Address = 54;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDI2"/> register. This field is constant.
@@ -2849,7 +2954,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDI3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 54;
+        public const int Address = 55;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDI3"/> register. This field is constant.
@@ -2938,17 +3043,17 @@ namespace AllenNeuralDynamics.Quac
     }
 
     /// <summary>
-    /// Represents a register that digital Output 0's pin function assignment ("None" or "Tracking")
+    /// Represents a register that digital Output 0's pin function assignment.
 .
     /// </summary>
-    [Description("Digital Output 0's pin function assignment ("None" or "Tracking")
+    [Description("Digital Output 0's pin function assignment.
 ")]
     public partial class DO0PinMode
     {
         /// <summary>
         /// Represents the address of the <see cref="DO0PinMode"/> register. This field is constant.
         /// </summary>
-        public const int Address = 55;
+        public const int Address = 56;
 
         /// <summary>
         /// Represents the payload type of the <see cref="DO0PinMode"/> register. This field is constant.
@@ -3037,17 +3142,17 @@ namespace AllenNeuralDynamics.Quac
     }
 
     /// <summary>
-    /// Represents a register that digital Output 1's pin function assignment ("None" or "Tracking")
+    /// Represents a register that digital Output 1's pin function assignment.
 .
     /// </summary>
-    [Description("Digital Output 1's pin function assignment ("None" or "Tracking")
+    [Description("Digital Output 1's pin function assignment.
 ")]
     public partial class DO1PinMode
     {
         /// <summary>
         /// Represents the address of the <see cref="DO1PinMode"/> register. This field is constant.
         /// </summary>
-        public const int Address = 56;
+        public const int Address = 57;
 
         /// <summary>
         /// Represents the payload type of the <see cref="DO1PinMode"/> register. This field is constant.
@@ -3136,17 +3241,17 @@ namespace AllenNeuralDynamics.Quac
     }
 
     /// <summary>
-    /// Represents a register that digital Output 2's pin function assignment ("None" or "Tracking")
+    /// Represents a register that digital Output 2's pin function assignment.
 .
     /// </summary>
-    [Description("Digital Output 2's pin function assignment ("None" or "Tracking")
+    [Description("Digital Output 2's pin function assignment.
 ")]
     public partial class DO2PinMode
     {
         /// <summary>
         /// Represents the address of the <see cref="DO2PinMode"/> register. This field is constant.
         /// </summary>
-        public const int Address = 57;
+        public const int Address = 58;
 
         /// <summary>
         /// Represents the payload type of the <see cref="DO2PinMode"/> register. This field is constant.
@@ -3235,17 +3340,17 @@ namespace AllenNeuralDynamics.Quac
     }
 
     /// <summary>
-    /// Represents a register that digital Output 3's pin function assignment ("None" or "Tracking")
+    /// Represents a register that digital Output 3's pin function assignment.
 .
     /// </summary>
-    [Description("Digital Output 3's pin function assignment ("None" or "Tracking")
+    [Description("Digital Output 3's pin function assignment.
 ")]
     public partial class DO3PinMode
     {
         /// <summary>
         /// Represents the address of the <see cref="DO3PinMode"/> register. This field is constant.
         /// </summary>
-        public const int Address = 58;
+        public const int Address = 59;
 
         /// <summary>
         /// Represents the payload type of the <see cref="DO3PinMode"/> register. This field is constant.
@@ -3342,7 +3447,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDO0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 59;
+        public const int Address = 60;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDO0"/> register. This field is constant.
@@ -3439,7 +3544,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDO1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 60;
+        public const int Address = 61;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDO1"/> register. This field is constant.
@@ -3536,7 +3641,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDO2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 61;
+        public const int Address = 62;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDO2"/> register. This field is constant.
@@ -3633,7 +3738,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="AOChannelsAssignedToDO3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 62;
+        public const int Address = 63;
 
         /// <summary>
         /// Represents the payload type of the <see cref="AOChannelsAssignedToDO3"/> register. This field is constant.
@@ -3730,7 +3835,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="ActivePlayer0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 63;
+        public const int Address = 64;
 
         /// <summary>
         /// Represents the payload type of the <see cref="ActivePlayer0"/> register. This field is constant.
@@ -3827,7 +3932,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="ActivePlayer1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 64;
+        public const int Address = 65;
 
         /// <summary>
         /// Represents the payload type of the <see cref="ActivePlayer1"/> register. This field is constant.
@@ -3924,7 +4029,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="ActivePlayer2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 65;
+        public const int Address = 66;
 
         /// <summary>
         /// Represents the payload type of the <see cref="ActivePlayer2"/> register. This field is constant.
@@ -4021,7 +4126,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="ActivePlayer3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 66;
+        public const int Address = 67;
 
         /// <summary>
         /// Represents the payload type of the <see cref="ActivePlayer3"/> register. This field is constant.
@@ -4118,7 +4223,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="FileSettings0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 67;
+        public const int Address = 68;
 
         /// <summary>
         /// Represents the payload type of the <see cref="FileSettings0"/> register. This field is constant.
@@ -4236,7 +4341,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="FileSettings1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 68;
+        public const int Address = 69;
 
         /// <summary>
         /// Represents the payload type of the <see cref="FileSettings1"/> register. This field is constant.
@@ -4354,7 +4459,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="FileSettings2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 69;
+        public const int Address = 70;
 
         /// <summary>
         /// Represents the payload type of the <see cref="FileSettings2"/> register. This field is constant.
@@ -4472,7 +4577,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="FileSettings3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 70;
+        public const int Address = 71;
 
         /// <summary>
         /// Represents the payload type of the <see cref="FileSettings3"/> register. This field is constant.
@@ -4590,7 +4695,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="SineSettings0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 71;
+        public const int Address = 72;
 
         /// <summary>
         /// Represents the payload type of the <see cref="SineSettings0"/> register. This field is constant.
@@ -4714,7 +4819,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="SineSettings1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 72;
+        public const int Address = 73;
 
         /// <summary>
         /// Represents the payload type of the <see cref="SineSettings1"/> register. This field is constant.
@@ -4838,7 +4943,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="SineSettings2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 73;
+        public const int Address = 74;
 
         /// <summary>
         /// Represents the payload type of the <see cref="SineSettings2"/> register. This field is constant.
@@ -4962,7 +5067,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="SineSettings3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 74;
+        public const int Address = 75;
 
         /// <summary>
         /// Represents the payload type of the <see cref="SineSettings3"/> register. This field is constant.
@@ -5086,7 +5191,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="TrapezoidSettings0"/> register. This field is constant.
         /// </summary>
-        public const int Address = 75;
+        public const int Address = 76;
 
         /// <summary>
         /// Represents the payload type of the <see cref="TrapezoidSettings0"/> register. This field is constant.
@@ -5216,7 +5321,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="TrapezoidSettings1"/> register. This field is constant.
         /// </summary>
-        public const int Address = 76;
+        public const int Address = 77;
 
         /// <summary>
         /// Represents the payload type of the <see cref="TrapezoidSettings1"/> register. This field is constant.
@@ -5346,7 +5451,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="TrapezoidSettings2"/> register. This field is constant.
         /// </summary>
-        public const int Address = 77;
+        public const int Address = 78;
 
         /// <summary>
         /// Represents the payload type of the <see cref="TrapezoidSettings2"/> register. This field is constant.
@@ -5476,7 +5581,7 @@ namespace AllenNeuralDynamics.Quac
         /// <summary>
         /// Represents the address of the <see cref="TrapezoidSettings3"/> register. This field is constant.
         /// </summary>
-        public const int Address = 78;
+        public const int Address = 79;
 
         /// <summary>
         /// Represents the payload type of the <see cref="TrapezoidSettings3"/> register. This field is constant.
@@ -5616,6 +5721,7 @@ namespace AllenNeuralDynamics.Quac
     /// <seealso cref="CreateDacPausePayload"/>
     /// <seealso cref="CreateDacAbortPayload"/>
     /// <seealso cref="CreateDacFinishedPayload"/>
+    /// <seealso cref="CreateDacSchedulerErrorPayload"/>
     /// <seealso cref="CreatePinModeDI0Payload"/>
     /// <seealso cref="CreatePinModeDI1Payload"/>
     /// <seealso cref="CreatePinModeDI2Payload"/>
@@ -5663,6 +5769,7 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(CreateDacPausePayload))]
     [XmlInclude(typeof(CreateDacAbortPayload))]
     [XmlInclude(typeof(CreateDacFinishedPayload))]
+    [XmlInclude(typeof(CreateDacSchedulerErrorPayload))]
     [XmlInclude(typeof(CreatePinModeDI0Payload))]
     [XmlInclude(typeof(CreatePinModeDI1Payload))]
     [XmlInclude(typeof(CreatePinModeDI2Payload))]
@@ -5710,6 +5817,7 @@ namespace AllenNeuralDynamics.Quac
     [XmlInclude(typeof(CreateTimestampedDacPausePayload))]
     [XmlInclude(typeof(CreateTimestampedDacAbortPayload))]
     [XmlInclude(typeof(CreateTimestampedDacFinishedPayload))]
+    [XmlInclude(typeof(CreateTimestampedDacSchedulerErrorPayload))]
     [XmlInclude(typeof(CreateTimestampedPinModeDI0Payload))]
     [XmlInclude(typeof(CreateTimestampedPinModeDI1Payload))]
     [XmlInclude(typeof(CreateTimestampedPinModeDI2Payload))]
@@ -6599,6 +6707,60 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Represents an operator that creates a message payload
+    /// that reports which analog output channels were aborted because their player could not produce samples fast enough for the current settings. Affected channels are reset automatically. Note that while the error indicates which channel failed and has been aborted and reset, the source of the error may be an interaction effect between the settings of multiple channels playing concurrently if other channels are playing.
+    /// </summary>
+    [DisplayName("DacSchedulerErrorPayload")]
+    [Description("Creates a message payload that reports which analog output channels were aborted because their player could not produce samples fast enough for the current settings. Affected channels are reset automatically. Note that while the error indicates which channel failed and has been aborted and reset, the source of the error may be an interaction effect between the settings of multiple channels playing concurrently if other channels are playing.")]
+    public partial class CreateDacSchedulerErrorPayload
+    {
+        /// <summary>
+        /// Gets or sets the value that reports which analog output channels were aborted because their player could not produce samples fast enough for the current settings. Affected channels are reset automatically. Note that while the error indicates which channel failed and has been aborted and reset, the source of the error may be an interaction effect between the settings of multiple channels playing concurrently if other channels are playing.
+        /// </summary>
+        [Description("The value that reports which analog output channels were aborted because their player could not produce samples fast enough for the current settings. Affected channels are reset automatically. Note that while the error indicates which channel failed and has been aborted and reset, the source of the error may be an interaction effect between the settings of multiple channels playing concurrently if other channels are playing.")]
+        public AnalogOutputs DacSchedulerError { get; set; }
+
+        /// <summary>
+        /// Creates a message payload for the DacSchedulerError register.
+        /// </summary>
+        /// <returns>The created message payload value.</returns>
+        public AnalogOutputs GetPayload()
+        {
+            return DacSchedulerError;
+        }
+
+        /// <summary>
+        /// Creates a message that reports which analog output channels were aborted because their player could not produce samples fast enough for the current settings. Affected channels are reset automatically. Note that while the error indicates which channel failed and has been aborted and reset, the source of the error may be an interaction effect between the settings of multiple channels playing concurrently if other channels are playing.
+        /// </summary>
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new message for the DacSchedulerError register.</returns>
+        public HarpMessage GetMessage(MessageType messageType)
+        {
+            return AllenNeuralDynamics.Quac.DacSchedulerError.FromPayload(messageType, GetPayload());
+        }
+    }
+
+    /// <summary>
+    /// Represents an operator that creates a timestamped message payload
+    /// that reports which analog output channels were aborted because their player could not produce samples fast enough for the current settings. Affected channels are reset automatically. Note that while the error indicates which channel failed and has been aborted and reset, the source of the error may be an interaction effect between the settings of multiple channels playing concurrently if other channels are playing.
+    /// </summary>
+    [DisplayName("TimestampedDacSchedulerErrorPayload")]
+    [Description("Creates a timestamped message payload that reports which analog output channels were aborted because their player could not produce samples fast enough for the current settings. Affected channels are reset automatically. Note that while the error indicates which channel failed and has been aborted and reset, the source of the error may be an interaction effect between the settings of multiple channels playing concurrently if other channels are playing.")]
+    public partial class CreateTimestampedDacSchedulerErrorPayload : CreateDacSchedulerErrorPayload
+    {
+        /// <summary>
+        /// Creates a timestamped message that reports which analog output channels were aborted because their player could not produce samples fast enough for the current settings. Affected channels are reset automatically. Note that while the error indicates which channel failed and has been aborted and reset, the source of the error may be an interaction effect between the settings of multiple channels playing concurrently if other channels are playing.
+        /// </summary>
+        /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new timestamped message for the DacSchedulerError register.</returns>
+        public HarpMessage GetMessage(double timestamp, MessageType messageType)
+        {
+            return AllenNeuralDynamics.Quac.DacSchedulerError.FromPayload(timestamp, messageType, GetPayload());
+        }
+    }
+
+    /// <summary>
+    /// Represents an operator that creates a message payload
     /// that specifies the function assigned to digital input pin 0.
     /// </summary>
     [DisplayName("PinModeDI0Payload")]
@@ -7031,19 +7193,19 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Represents an operator that creates a message payload
-    /// that digital Output 0's pin function assignment ("None" or "Tracking")
+    /// that digital Output 0's pin function assignment.
 .
     /// </summary>
     [DisplayName("DO0PinModePayload")]
-    [Description("Creates a message payload that digital Output 0's pin function assignment ("None" or "Tracking")
+    [Description("Creates a message payload that digital Output 0's pin function assignment.
 .")]
     public partial class CreateDO0PinModePayload
     {
         /// <summary>
-        /// Gets or sets the value that digital Output 0's pin function assignment ("None" or "Tracking")
+        /// Gets or sets the value that digital Output 0's pin function assignment.
 .
         /// </summary>
-        [Description("The value that digital Output 0's pin function assignment ("None" or "Tracking")
+        [Description("The value that digital Output 0's pin function assignment.
 .")]
         public DOPinMode DO0PinMode { get; set; } = 0;
 
@@ -7057,7 +7219,7 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Creates a message that digital Output 0's pin function assignment ("None" or "Tracking")
+        /// Creates a message that digital Output 0's pin function assignment.
 .
         /// </summary>
         /// <param name="messageType">Specifies the type of the created message.</param>
@@ -7070,16 +7232,16 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Represents an operator that creates a timestamped message payload
-    /// that digital Output 0's pin function assignment ("None" or "Tracking")
+    /// that digital Output 0's pin function assignment.
 .
     /// </summary>
     [DisplayName("TimestampedDO0PinModePayload")]
-    [Description("Creates a timestamped message payload that digital Output 0's pin function assignment ("None" or "Tracking")
+    [Description("Creates a timestamped message payload that digital Output 0's pin function assignment.
 .")]
     public partial class CreateTimestampedDO0PinModePayload : CreateDO0PinModePayload
     {
         /// <summary>
-        /// Creates a timestamped message that digital Output 0's pin function assignment ("None" or "Tracking")
+        /// Creates a timestamped message that digital Output 0's pin function assignment.
 .
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
@@ -7093,19 +7255,19 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Represents an operator that creates a message payload
-    /// that digital Output 1's pin function assignment ("None" or "Tracking")
+    /// that digital Output 1's pin function assignment.
 .
     /// </summary>
     [DisplayName("DO1PinModePayload")]
-    [Description("Creates a message payload that digital Output 1's pin function assignment ("None" or "Tracking")
+    [Description("Creates a message payload that digital Output 1's pin function assignment.
 .")]
     public partial class CreateDO1PinModePayload
     {
         /// <summary>
-        /// Gets or sets the value that digital Output 1's pin function assignment ("None" or "Tracking")
+        /// Gets or sets the value that digital Output 1's pin function assignment.
 .
         /// </summary>
-        [Description("The value that digital Output 1's pin function assignment ("None" or "Tracking")
+        [Description("The value that digital Output 1's pin function assignment.
 .")]
         public DOPinMode DO1PinMode { get; set; } = 0;
 
@@ -7119,7 +7281,7 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Creates a message that digital Output 1's pin function assignment ("None" or "Tracking")
+        /// Creates a message that digital Output 1's pin function assignment.
 .
         /// </summary>
         /// <param name="messageType">Specifies the type of the created message.</param>
@@ -7132,16 +7294,16 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Represents an operator that creates a timestamped message payload
-    /// that digital Output 1's pin function assignment ("None" or "Tracking")
+    /// that digital Output 1's pin function assignment.
 .
     /// </summary>
     [DisplayName("TimestampedDO1PinModePayload")]
-    [Description("Creates a timestamped message payload that digital Output 1's pin function assignment ("None" or "Tracking")
+    [Description("Creates a timestamped message payload that digital Output 1's pin function assignment.
 .")]
     public partial class CreateTimestampedDO1PinModePayload : CreateDO1PinModePayload
     {
         /// <summary>
-        /// Creates a timestamped message that digital Output 1's pin function assignment ("None" or "Tracking")
+        /// Creates a timestamped message that digital Output 1's pin function assignment.
 .
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
@@ -7155,19 +7317,19 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Represents an operator that creates a message payload
-    /// that digital Output 2's pin function assignment ("None" or "Tracking")
+    /// that digital Output 2's pin function assignment.
 .
     /// </summary>
     [DisplayName("DO2PinModePayload")]
-    [Description("Creates a message payload that digital Output 2's pin function assignment ("None" or "Tracking")
+    [Description("Creates a message payload that digital Output 2's pin function assignment.
 .")]
     public partial class CreateDO2PinModePayload
     {
         /// <summary>
-        /// Gets or sets the value that digital Output 2's pin function assignment ("None" or "Tracking")
+        /// Gets or sets the value that digital Output 2's pin function assignment.
 .
         /// </summary>
-        [Description("The value that digital Output 2's pin function assignment ("None" or "Tracking")
+        [Description("The value that digital Output 2's pin function assignment.
 .")]
         public DOPinMode DO2PinMode { get; set; } = 0;
 
@@ -7181,7 +7343,7 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Creates a message that digital Output 2's pin function assignment ("None" or "Tracking")
+        /// Creates a message that digital Output 2's pin function assignment.
 .
         /// </summary>
         /// <param name="messageType">Specifies the type of the created message.</param>
@@ -7194,16 +7356,16 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Represents an operator that creates a timestamped message payload
-    /// that digital Output 2's pin function assignment ("None" or "Tracking")
+    /// that digital Output 2's pin function assignment.
 .
     /// </summary>
     [DisplayName("TimestampedDO2PinModePayload")]
-    [Description("Creates a timestamped message payload that digital Output 2's pin function assignment ("None" or "Tracking")
+    [Description("Creates a timestamped message payload that digital Output 2's pin function assignment.
 .")]
     public partial class CreateTimestampedDO2PinModePayload : CreateDO2PinModePayload
     {
         /// <summary>
-        /// Creates a timestamped message that digital Output 2's pin function assignment ("None" or "Tracking")
+        /// Creates a timestamped message that digital Output 2's pin function assignment.
 .
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
@@ -7217,19 +7379,19 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Represents an operator that creates a message payload
-    /// that digital Output 3's pin function assignment ("None" or "Tracking")
+    /// that digital Output 3's pin function assignment.
 .
     /// </summary>
     [DisplayName("DO3PinModePayload")]
-    [Description("Creates a message payload that digital Output 3's pin function assignment ("None" or "Tracking")
+    [Description("Creates a message payload that digital Output 3's pin function assignment.
 .")]
     public partial class CreateDO3PinModePayload
     {
         /// <summary>
-        /// Gets or sets the value that digital Output 3's pin function assignment ("None" or "Tracking")
+        /// Gets or sets the value that digital Output 3's pin function assignment.
 .
         /// </summary>
-        [Description("The value that digital Output 3's pin function assignment ("None" or "Tracking")
+        [Description("The value that digital Output 3's pin function assignment.
 .")]
         public DOPinMode DO3PinMode { get; set; } = 0;
 
@@ -7243,7 +7405,7 @@ namespace AllenNeuralDynamics.Quac
         }
 
         /// <summary>
-        /// Creates a message that digital Output 3's pin function assignment ("None" or "Tracking")
+        /// Creates a message that digital Output 3's pin function assignment.
 .
         /// </summary>
         /// <param name="messageType">Specifies the type of the created message.</param>
@@ -7256,16 +7418,16 @@ namespace AllenNeuralDynamics.Quac
 
     /// <summary>
     /// Represents an operator that creates a timestamped message payload
-    /// that digital Output 3's pin function assignment ("None" or "Tracking")
+    /// that digital Output 3's pin function assignment.
 .
     /// </summary>
     [DisplayName("TimestampedDO3PinModePayload")]
-    [Description("Creates a timestamped message payload that digital Output 3's pin function assignment ("None" or "Tracking")
+    [Description("Creates a timestamped message payload that digital Output 3's pin function assignment.
 .")]
     public partial class CreateTimestampedDO3PinModePayload : CreateDO3PinModePayload
     {
         /// <summary>
-        /// Creates a timestamped message that digital Output 3's pin function assignment ("None" or "Tracking")
+        /// Creates a timestamped message that digital Output 3's pin function assignment.
 .
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
@@ -10226,18 +10388,14 @@ namespace AllenNeuralDynamics.Quac
     {
         /// <summary>
         /// The pin is a plain digital output and can be controlled with DOPortSet and DOPortClear.
-
         /// </summary>
-        [Description("The pin is a plain digital output and can be controlled with DOPortSet and DOPortClear.
-")]
+        [Description("The pin is a plain digital output and can be controlled with DOPortSet and DOPortClear.")]
         None = 0,
 
         /// <summary>
         /// The digital output pin will be HIGH as long as any assigned AO channels are active (including if they are muted) and LOW when all assigned AO channels are inactive.
-
         /// </summary>
-        [Description("The digital output pin will be HIGH as long as any assigned AO channels are active (including if they are muted) and LOW when all assigned AO channels are inactive.
-")]
+        [Description("The digital output pin will be HIGH as long as any assigned AO channels are active (including if they are muted) and LOW when all assigned AO channels are inactive.")]
         Tracking = 1
     }
 

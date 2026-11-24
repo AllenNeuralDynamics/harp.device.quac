@@ -225,6 +225,7 @@ public:
 
 /**
  * \brief true if the last dma transfer has been setup.
+ * \warning this returns false as soon as the last transfer has started playing.
  */
     inline bool last_transfer_configured()
     {return (ctrl_chan_data_al0_t*)dma_channel_hw_addr(ctrl_chan_)->read_addr == &ctrl_chan_last_xfer_data_;}

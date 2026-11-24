@@ -86,7 +86,7 @@ struct FunctionSettings: WaveformSettings
     {return uint32_t(amplitude_volts/MAX_VOLTS * 65535u);}
 
     uint32_t vertical_shift_16bit()
-    {return uint32_t(vertical_shift_volts/MAX_VOLTS * 65535u);}
+    {return uint32_t(vertical_shift_volts/(MAX_VOLTS - MIN_VOLTS) * 65535u);}
 
     static uint16_t volts_float_to_16bit(float volts)
     {return static_cast<uint16_t>(volts * 65535u/(MAX_VOLTS - MIN_VOLTS) + 32767.5);}

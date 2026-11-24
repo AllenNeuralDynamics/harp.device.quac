@@ -21,7 +21,7 @@ inline constexpr semver_t HW_VERSION = {HW_VERSION_MAJOR, HW_VERSION_MINOR, 0};
 #warning("Compiling for prototype target with distinct pinout.")
 #endif
 
-inline constexpr semver_t FW_VERSION = {2, 0, 0};
+inline constexpr semver_t FW_VERSION = {3, 0, 0};
 
 inline constexpr size_t UNUSED_SERIAL_NUMBER = 0; // Deprecated in favor of R_UUID
 

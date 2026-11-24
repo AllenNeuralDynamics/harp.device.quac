@@ -14,6 +14,7 @@ using std::to_underlying;
 
 app_regs_t __not_in_flash("app_regs") app_regs;
 queue_t __not_in_flash("ext_trigger_event_queue") ext_trigger_event_queue;
+queue_t __not_in_flash("scheduler_error_event_queue") scheduler_error_event_queue;
 
 RegSpec app_reg_specs[]
 {
@@ -49,6 +50,8 @@ RegSpec app_reg_specs[]
     RegSpec::U8(&app_regs.dac_abort,
         HarpCore::read_reg_error, write_dac_abort),
     RegSpec::U8(&app_regs.dac_finished,
+        HarpCore::read_reg_error, HarpCore::write_reg_error),
+    RegSpec::U8(&app_regs.dac_scheduler_error,
         HarpCore::read_reg_error, HarpCore::write_reg_error),
 
     RegSpec::U8(&app_regs.di0_pin_mode,
@@ -543,15 +546,38 @@ void update_app()
                 HarpCore::system_to_harp_us_64(transfer_done_event.timestamp_us));
         app_regs.dac_finished = 0; // Clear it since it's event-only.
     }
+    // Dispatch any scheduler error events.
+    // Players that missed a deadline have already aborted their transfer.
+    scheduler_error_event_t scheduler_error_event;
+    uint8_t errored_transfers = 0;
+    while (queue_try_remove(&scheduler_error_event_queue, &scheduler_error_event))
+    {
+        app_regs.dac_scheduler_error = uint8_t(scheduler_error_event.channel_mask);
+        errored_transfers |= app_regs.dac_scheduler_error;
+        if (!HarpCore::is_muted())
+            HarpCore::send_harp_reply(EVENT, DAC_SCHEDULER_ERROR_ADDRESS,
+                HarpCore::system_to_harp_us_64(scheduler_error_event.timestamp));
+        app_regs.dac_scheduler_error = 0; // Clear it since it's event-only.
+    }
+    if (errored_transfers)
+    {
+        // Ensure errored channels are fully stopped and idle.
+        transfer_manager.abort(errored_transfers);
+        disable_ao_channel_to_trigger_isr(errored_transfers);
+        app_regs.dac_start &= ~errored_transfers;
+        update_do_tracking_state(errored_transfers, app_regs.dac_start);
+    }
     // TODO: mixed inputs.
-    // Re-arm any finished waveforms.
+    // Re-arm any finished (or errored) waveforms.
     // In the future, have SourcePlayer FSM preload waveforms as soon as the
     // last dma transfer from the previous run starts.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
     {
-        if (!((finished_transfers >> i) & 1u)) // Skip unfinished/untriggered channels.
+        // Skip unfinished/untriggered channels.
+        if (!(((finished_transfers | errored_transfers) >> i) & 1u))
             continue;
         // Do the reset. (select player is the lazy way.)
+        // This also clears any player scheduler error.
         select_player(i, player_t(app_regs.active_players[i]));
     }
     // Clear all started dacs that have finished.
@@ -648,19 +674,21 @@ void reset_app()
         app_regs.trapezoid_settings[i] = TrapezoidSettings();
     }
     transfer_manager.reset();
+    // Drain any stale scheduler errors and attach the handler to all players.
+    scheduler_error_event_t stale_scheduler_error_event;
+    while (queue_try_remove(&scheduler_error_event_queue,
+                            &stale_scheduler_error_event)){}
+    for (auto player_ptr: player_ptrs)
+        player_ptr->set_scheduler_error_callback(handle_scheduler_error);
+    app_regs.dac_scheduler_error = 0;
     // Unmute everything
     transfer_manager.mute_outputs(nwide_mask<uint32_t>(NUM_CHANNELS), 0);
     transfer_manager.enable_end_of_transfer_interrupt(TRANSFER_MANAGER_DMA_IRQ_NUM,
         handle_end_of_transfer);
-    // Reset DoubleBuffers before DACs, since they send data to DACs.
-    for (auto& buf: bufs)
-        buf.reset();
-    // FYI: PIO_LTC264x instances manage GPIO pin function.
-    for (auto& dac: dacs)
-        dac.write_value(PIO_LTC264x::OUTPUT_MIDSCALE);
+    // Update Harp register with default value.
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         app_regs.analog_output_port_state[i] =
-            FunctionSettings::volts_16bit_to_float(PIO_LTC264x::OUTPUT_MIDSCALE);
+            FunctionSettings::volts_16bit_to_float(dacs[i].get_last_value());
     // Select default player (also does a reset).
     for (size_t i = 0; i < NUM_CHANNELS; ++i)
         select_player(i, player_t::sine); // claims buffer & applies settings.
@@ -734,6 +762,24 @@ void __not_in_flash_func(handle_end_of_transfer)()
     uint8_t current_ao_port_state = app_regs.dac_start; // current state
     current_ao_port_state &= ~finished_ao_transfers; // mask off finished channels.
     update_do_tracking_state(finished_ao_transfers, current_ao_port_state);
+}
+
+
+void __not_in_flash_func(handle_scheduler_error)(
+    SourcePlayer<T, READ_BUF_SIZE>* player)
+{
+    uint64_t timestamp = time_us_64();
+    // Deduce the AO channel from the player's position in player_ptrs, which
+    // is grouped by player type, then by channel.
+    for (size_t i = 0; i < player_ptrs.size(); ++i)
+    {
+        if (player_ptrs[i] != player)
+            continue;
+        scheduler_error_event_t event{.channel_mask = 1u << (i % NUM_CHANNELS),
+                                      .timestamp = timestamp};
+        queue_try_add(&scheduler_error_event_queue, &event);
+        return;
+    }
 }
 
 

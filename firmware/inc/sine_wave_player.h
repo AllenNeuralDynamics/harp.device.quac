@@ -5,6 +5,7 @@
 #include "source_player.h"
 #include "waveform_settings.h"
 #include <cstdint>
+#include <pico/time.h>
 
 /**
  * \brief generates raised-cosine sinusoids and streams them to the specified
