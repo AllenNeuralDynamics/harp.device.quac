@@ -16,7 +16,7 @@ from harp.protocol import HarpMessage
 import device as quac
 
 # ----CUSTOM SETTINGS------------------------------------------------
-COM_PORT = "/dev/ttyACM0" if os.name == "posix" else "COM3"
+COM_PORT = "/dev/ttyACM1" if os.name == "posix" else "COM3"
 
 CHANNEL = 0
 WAVEFORM_TYPE = quac.PlayerType.SINE
@@ -30,7 +30,7 @@ update_frequency_hz = 10_000
 frequency_hz = 1
 duration_us = 3_000_000
 amplitude_volts = 2.5 # center-to-peak, not peak-to-peak
-vertical_shift_volts = 1.25
+vertical_shift_volts = 2.5
 normalized_phase_shift = 0
 
 # ----END OF CUSTOM SETTINGS-----------------------------------------
@@ -72,8 +72,15 @@ with serial.open_device(quac, port=COM_PORT) as device:
         print()
         waveform_finished.set()
 
+    def on_dac_error(msg: HarpMessage) -> None:
+        print(msg)
+        print("Scheduler Error!")
 
-    with device.subscribe(quac.DacFinished, on_dac_finished):
+
+    with (
+        device.subscribe(quac.DacFinished, on_dac_finished),
+        device.subscribe(quac.DacSchedulerError, on_dac_error),
+        ):
         # Trigger waveform.
         print("Starting waveform.")
         reply = device.write(quac.DacStart, channel_mask)

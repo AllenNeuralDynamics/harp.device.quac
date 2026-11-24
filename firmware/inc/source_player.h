@@ -271,16 +271,6 @@ public:
         if (buf_ptr_->last_transfer_configured())
             return;
         T* curr_idle_buf_ptr_ = buf_ptr_->get_idle_buffer();
-        // Deadline check: if the output switched to the buffer we were still
-        // filling, then it is now playing a partially-filled buffer.
-        // Warning: deadline check will not catch the error case where the
-        // buffer switches twice.
-        if (is_active() && (idle_buf_ptr_ != nullptr)
-            && (idle_buf_ptr_ != curr_idle_buf_ptr_) && remaining_buf_size())
-        {
-            handle_scheduler_error();
-            return;
-        }
         // Reset chunk index tracking as soon as we switch buffers.
         if (idle_buf_ptr_ != curr_idle_buf_ptr_)
             chunk_bytes_read_ = 0;
@@ -302,21 +292,24 @@ public:
         size_t bytes_transferred;
         transfer_source_chunk(idle_buf_ptr_ + chunk_index(), bytes_to_read,
                               bytes_transferred);
+        // Deadline check. Ensure bytes landed in the buffer *before* it swapped.
+        if (idle_buf_ptr_ != buf_ptr_->get_idle_buffer())
+        {
+            handle_scheduler_error();
+            return;
+        }
         chunk_bytes_read_ += bytes_transferred;
         size_t samples_transferred = bytes_transferred / sizeof(T);
         samples_emitted_ += samples_transferred;
         total_samples_emitted_ += samples_transferred;
-        bool source_subset_finished = ((samples_emitted_ == sample_count_)
-                                       && (sample_count_ != 0));
         // armed long-waveform (>1 buffer) case:
         //   armed as soon as we've fully stuffed the first buffer
         if (!remaining_buf_size())
             is_armed_ = true;
-        if (!source_finished() && !source_subset_finished)
+        if (!source_finished() && !cycle_finished())
             return;
         // Handle end-of-source (or end of subset of source).
          ++curr_cycles_; // increment full source read iterations.
-         samples_emitted_ = 0; // Reset tracking of samples within a cycle.
         // Handle last transfer condition.
         if ((curr_cycles_ == settings_ptr_->cycles) && (settings_ptr_->cycles != 0))
         {
@@ -329,10 +322,10 @@ public:
             // At that point, user will be able to retrigger the waveform once
             // is_busy() is false.
             buf_ptr_->setup_last_dma_transfer(chunk_index(), idle_buf_ptr_);
-            curr_cycles_ = 0;
             return;
         }
-        // Handle endless/many-iteration transfer condition.
+        // Handle endless/many-cycle transfer condition.
+        samples_emitted_ = 0; // Reset tracking of samples within a cycle.
         // i.e: rewind at the completion of a cycle.
         rewind_source();
     }
@@ -388,6 +381,9 @@ private:
 
     inline size_t chunk_index()
     {return chunk_bytes_read_ / sizeof(T);}
+
+    inline bool cycle_finished()
+    {return (samples_emitted_ == sample_count_) && (sample_count_ != 0);}
 
 /**
  * \brief stop producing samples, stop the output, and notify any listener.
