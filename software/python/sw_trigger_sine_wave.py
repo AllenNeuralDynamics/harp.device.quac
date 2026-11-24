@@ -16,7 +16,7 @@ from harp.protocol import HarpMessage
 import device as quac
 
 # ----CUSTOM SETTINGS------------------------------------------------
-COM_PORT = "/dev/ttyACM1" if os.name == "posix" else "COM3"
+COM_PORT = "/dev/ttyACM0" if os.name == "posix" else "COM3"
 
 CHANNEL = 0
 WAVEFORM_TYPE = quac.PlayerType.SINE
